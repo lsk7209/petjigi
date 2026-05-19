@@ -35,7 +35,7 @@ export async function GET() {
       <link>${SITE_URL}/guide/${p.slug}</link>
       <guid>${SITE_URL}/guide/${p.slug}</guid>
       <description><![CDATA[${p.metaDescription ?? ""}]]></description>
-      <pubDate>${new Date(p.publishedAt ?? p.updatedAt).toUTCString()}</pubDate>
+      <pubDate>${new Date(p.publishedAt ?? p.updatedAt ?? new Date().toISOString()).toUTCString()}</pubDate>
     </item>`
       )
       .join("")}

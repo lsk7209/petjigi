@@ -18,7 +18,6 @@ export const metadata: Metadata = {
     type: "website",
     locale: "ko_KR",
     siteName: "펫지기",
-    images: [{ url: "/og-image.png", width: 1200, height: 630 }],
   },
   robots: {
     index: true,
@@ -26,7 +25,6 @@ export const metadata: Metadata = {
     googleBot: { index: true, follow: true },
   },
   other: {
-    // AI 크롤러 전체 허용 (spec §9)
     "google-extended": "allow",
   },
 };
