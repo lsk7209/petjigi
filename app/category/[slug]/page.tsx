@@ -64,17 +64,63 @@ export default async function CategoryPage({
             <section className="mt-8">
               <h2 className="text-xl font-semibold mb-4">지역별 검색</h2>
               <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
-                {["서울", "부산", "인천", "대구", "광주", "대전", "울산", "경기"].map((sido) => (
+                {[
+                  { label: "서울", slug: "seoul" },
+                  { label: "부산", slug: "busan" },
+                  { label: "인천", slug: "incheon" },
+                  { label: "대구", slug: "daegu" },
+                  { label: "광주", slug: "gwangju" },
+                  { label: "대전", slug: "daejeon" },
+                  { label: "울산", slug: "ulsan" },
+                  { label: "경기", slug: "gyeonggi" },
+                ].map(({ label, slug: sidoSlug }) => (
                   <Link
-                    key={sido}
-                    href={`/sido/${encodeURIComponent(sido)}`}
+                    key={sidoSlug}
+                    href={`/sido/${sidoSlug}`}
                     className="p-3 rounded-[var(--radius-card)] border border-[var(--brand-border)] hover:border-[var(--brand-accent)] text-sm text-center transition-colors"
                   >
-                    {sido}
+                    {label}
                   </Link>
                 ))}
               </div>
             </section>
+
+            {/* 입양·등록 카테고리에 견종 링크 */}
+            {cat.slug === "adoption" && (
+              <section className="mt-8">
+                <h2 className="text-xl font-semibold mb-4">품종 정보</h2>
+                <div className="flex gap-3">
+                  <Link href="/breed/dog" className="px-4 py-2 rounded-full border border-[var(--brand-border)] text-sm hover:border-[var(--brand-accent)] transition-colors">🐕 강아지 품종</Link>
+                  <Link href="/breed/cat" className="px-4 py-2 rounded-full border border-[var(--brand-border)] text-sm hover:border-[var(--brand-accent)] transition-colors">🐈 고양이 품종</Link>
+                </div>
+              </section>
+            )}
+
+            {/* 보험·법률 카테고리에 보험 비교 링크 */}
+            {cat.slug === "insurance" && (
+              <section className="mt-8">
+                <h2 className="text-xl font-semibold mb-4">펫보험</h2>
+                <Link
+                  href="/insurance/compare"
+                  className="inline-block px-5 py-2.5 rounded-[var(--radius-button)] bg-[var(--brand-accent)] text-white text-sm font-medium hover:opacity-90 transition-opacity"
+                >
+                  펫보험 비교하기 →
+                </Link>
+              </section>
+            )}
+
+            {/* 장례·추모 카테고리에 펫로스 케어 링크 */}
+            {cat.slug === "memorial" && (
+              <section className="mt-8">
+                <h2 className="text-xl font-semibold mb-4">펫로스 케어</h2>
+                <Link
+                  href="/guide/pet-loss-care"
+                  className="inline-block px-5 py-2.5 rounded-[var(--radius-button)] border border-[var(--brand-border)] text-sm hover:border-[var(--brand-accent)] transition-colors"
+                >
+                  펫로스 케어 가이드 읽기 →
+                </Link>
+              </section>
+            )}
           </main>
         </AdPolicyProvider>
       </ThemeMode>
