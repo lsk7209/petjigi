@@ -3,6 +3,8 @@ import { z } from "zod";
 import { db } from "@/db/client";
 import { emailSubscribers } from "@/db/schema";
 import { eq } from "drizzle-orm";
+import { Resend } from "resend";
+import { renderWelcomeEmail } from "@/lib/email/templates";
 
 const bodySchema = z.object({
   email: z.string().email("올바른 이메일 형식이 아닙니다."),
@@ -12,19 +14,43 @@ const bodySchema = z.object({
   source: z.string().optional(),
 });
 
+async function sendWelcomeEmail(
+  email: string,
+  subscriberId: string,
+  hasMarketingConsent: boolean,
+  source?: string,
+) {
+  const apiKey = process.env.RESEND_API_KEY;
+  if (!apiKey) return; // RESEND_API_KEY 미설정 시 조용히 스킵
+
+  try {
+    const resend = new Resend(apiKey);
+    const from = process.env.RESEND_FROM_EMAIL ?? "noreply@petjigi.com";
+    const html = await renderWelcomeEmail({
+      email,
+      unsubscribeToken: subscriberId,
+      hasMarketingConsent,
+      source,
+    });
+    const subject =
+      source === "pet_loss_care"
+        ? "[펫지기] 펫로스 케어 가이드 PDF가 도착했습니다"
+        : "[펫지기] 구독을 환영합니다";
+
+    await resend.emails.send({ from, to: email, subject, html });
+  } catch {
+    // 이메일 발송 실패는 구독 자체를 실패 처리하지 않음
+  }
+}
+
 export async function POST(req: NextRequest) {
-  // JSON 파싱
   let raw: unknown;
   try {
     raw = await req.json();
   } catch {
-    return NextResponse.json(
-      { message: "요청 본문을 파싱할 수 없습니다." },
-      { status: 400 },
-    );
+    return NextResponse.json({ message: "요청 본문을 파싱할 수 없습니다." }, { status: 400 });
   }
 
-  // Zod 유효성 검사
   const parsed = bodySchema.safeParse(raw);
   if (!parsed.success) {
     const firstError = parsed.error.issues[0]?.message ?? "입력값이 올바르지 않습니다.";
@@ -33,23 +59,13 @@ export async function POST(req: NextRequest) {
 
   const { email, consentRequired, consentMarketing, ageConfirmed, source } = parsed.data;
 
-  // 개인정보보호법: 필수 동의 미체크 → 400
   if (!consentRequired) {
-    return NextResponse.json(
-      { message: "개인정보 수집·이용 동의가 필요합니다." },
-      { status: 400 },
-    );
+    return NextResponse.json({ message: "개인정보 수집·이용 동의가 필요합니다." }, { status: 400 });
   }
-
-  // 개인정보보호법 제22조: 14세 미만 보호
   if (!ageConfirmed) {
-    return NextResponse.json(
-      { message: "만 14세 이상만 구독할 수 있습니다." },
-      { status: 400 },
-    );
+    return NextResponse.json({ message: "만 14세 이상만 구독할 수 있습니다." }, { status: 400 });
   }
 
-  // 중복 이메일 확인
   const existing = await db
     .select({ id: emailSubscribers.id, unsubscribedAt: emailSubscribers.unsubscribedAt })
     .from(emailSubscribers)
@@ -57,15 +73,9 @@ export async function POST(req: NextRequest) {
     .get();
 
   if (existing) {
-    // 이미 구독 중 (unsubscribedAt이 없음)
     if (!existing.unsubscribedAt) {
-      return NextResponse.json(
-        { message: "이미 구독 중인 이메일입니다." },
-        { status: 200 },
-      );
+      return NextResponse.json({ message: "이미 구독 중인 이메일입니다." }, { status: 200 });
     }
-
-    // 구독 취소 후 재구독: unsubscribedAt 초기화
     await db
       .update(emailSubscribers)
       .set({
@@ -76,13 +86,10 @@ export async function POST(req: NextRequest) {
       })
       .where(eq(emailSubscribers.email, email));
 
-    return NextResponse.json(
-      { message: "구독이 재활성화되었습니다. 환영합니다!" },
-      { status: 200 },
-    );
+    await sendWelcomeEmail(existing.id, existing.id, consentMarketing, source);
+    return NextResponse.json({ message: "구독이 재활성화되었습니다. 환영합니다!" }, { status: 200 });
   }
 
-  // 신규 구독 삽입
   const id = crypto.randomUUID();
   await db.insert(emailSubscribers).values({
     id,
@@ -92,8 +99,6 @@ export async function POST(req: NextRequest) {
     source: source ?? null,
   });
 
-  return NextResponse.json(
-    { message: "구독이 완료되었습니다. 환영합니다!" },
-    { status: 201 },
-  );
+  await sendWelcomeEmail(email, id, consentMarketing, source);
+  return NextResponse.json({ message: "구독이 완료되었습니다. 환영합니다!" }, { status: 201 });
 }

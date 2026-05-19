@@ -5,23 +5,21 @@ import { and, eq } from "drizzle-orm";
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://petjigi.com";
 
-// GET /api/unsubscribe?token=xxx&email=yyy
+// GET /api/unsubscribe?token={subscriberId}&email={email}
+// token = emailSubscribers.id (UUID, 이메일 발송 시 포함)
 export async function GET(req: NextRequest) {
   const { searchParams } = req.nextUrl;
   const email = searchParams.get("email") ?? "";
   const token = searchParams.get("token") ?? "";
 
   if (!email || !token) {
-    return new NextResponse("잘못된 수신 거부 링크입니다.", {
-      status: 400,
-      headers: { "Content-Type": "text/plain; charset=utf-8" },
-    });
+    return NextResponse.redirect(`${SITE_URL}/?unsubscribe=invalid`);
   }
 
   const subscriber = await db
     .select({ id: emailSubscribers.id, unsubscribedAt: emailSubscribers.unsubscribedAt })
     .from(emailSubscribers)
-    .where(eq(emailSubscribers.email, email))
+    .where(and(eq(emailSubscribers.email, email), eq(emailSubscribers.id, token)))
     .get();
 
   if (!subscriber) {
@@ -35,7 +33,7 @@ export async function GET(req: NextRequest) {
   await db
     .update(emailSubscribers)
     .set({ unsubscribedAt: new Date().toISOString() })
-    .where(and(eq(emailSubscribers.email, email), eq(emailSubscribers.id, subscriber.id)));
+    .where(eq(emailSubscribers.id, token));
 
   return NextResponse.redirect(`${SITE_URL}/?unsubscribe=ok`);
 }
