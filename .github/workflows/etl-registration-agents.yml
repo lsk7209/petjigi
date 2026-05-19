@@ -1,0 +1,41 @@
+name: ETL — Registration Agents (검역본부 등록대행업체)
+
+on:
+  schedule:
+    - cron: "0 21 1 * *"  # 매월 1일 06:00 KST
+  workflow_dispatch:
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 10
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+
+      - name: Run registration agents ETL
+        run: pnpm tsx etl/mafra/registration-agents.ts
+        env:
+          TURSO_DATABASE_URL: ${{ secrets.TURSO_DATABASE_URL }}
+          TURSO_AUTH_TOKEN: ${{ secrets.TURSO_AUTH_TOKEN }}
+
+      - name: Alert on failure
+        if: failure()
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const webhook = process.env.ALERT_SLACK_WEBHOOK_URL;
+            if (webhook) {
+              await fetch(webhook, { method: 'POST', headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ text: '⚠️ 펫지기 ETL-RegistrationAgents 실패.' }) });
+            }
+        env:
+          ALERT_SLACK_WEBHOOK_URL: ${{ secrets.ALERT_SLACK_WEBHOOK_URL }}

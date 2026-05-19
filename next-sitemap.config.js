@@ -1,0 +1,36 @@
+/** @type {import('next-sitemap').IConfig} */
+module.exports = {
+  siteUrl: process.env.NEXT_PUBLIC_SITE_URL || "https://petjigi.com",
+  generateRobotsTxt: true,
+  robotsTxtOptions: {
+    additionalSitemaps: [],
+    policies: [
+      { userAgent: "*", allow: "/" },
+      // 구조동물·검색결과·페이지네이션 noindex (URL 레벨 차단)
+      { userAgent: "*", disallow: ["/rescue/", "/search"] },
+      // AI 크롤러 전체 허용 (spec §9)
+      { userAgent: "GPTBot", allow: "/" },
+      { userAgent: "ClaudeBot", allow: "/" },
+      { userAgent: "PerplexityBot", allow: "/" },
+      { userAgent: "Google-Extended", allow: "/" },
+      { userAgent: "Yeti", allow: "/" }, // Naver
+      { userAgent: "Applebot-Extended", allow: "/" },
+      { userAgent: "CCBot", allow: "/" },
+      { userAgent: "Bytespider", allow: "/" },
+    ],
+  },
+  // 동 단위 페이지, 구조동물, 검색 결과 제외
+  exclude: ["/rescue/*", "/search*", "/*?page=*"],
+  changefreq: "daily",
+  priority: 0.7,
+  transform: async (config, path) => {
+    // 카테고리 허브·홈 우선순위 높게
+    if (path === "/" || path.startsWith("/category/")) {
+      return { loc: path, changefreq: "hourly", priority: 1.0, lastmod: new Date().toISOString() };
+    }
+    if (path.startsWith("/sido/") || path.startsWith("/guide/")) {
+      return { loc: path, changefreq: "weekly", priority: 0.8, lastmod: new Date().toISOString() };
+    }
+    return { loc: path, changefreq: config.changefreq, priority: config.priority, lastmod: new Date().toISOString() };
+  },
+};

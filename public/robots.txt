@@ -1,0 +1,46 @@
+# *
+User-agent: *
+Allow: /
+
+# *
+User-agent: *
+Disallow: /rescue/
+Disallow: /search
+
+# GPTBot
+User-agent: GPTBot
+Allow: /
+
+# ClaudeBot
+User-agent: ClaudeBot
+Allow: /
+
+# PerplexityBot
+User-agent: PerplexityBot
+Allow: /
+
+# Google-Extended
+User-agent: Google-Extended
+Allow: /
+
+# Yeti
+User-agent: Yeti
+Allow: /
+
+# Applebot-Extended
+User-agent: Applebot-Extended
+Allow: /
+
+# CCBot
+User-agent: CCBot
+Allow: /
+
+# Bytespider
+User-agent: Bytespider
+Allow: /
+
+# Host
+Host: https://petjigi.com
+
+# Sitemaps
+Sitemap: https://petjigi.com/sitemap.xml

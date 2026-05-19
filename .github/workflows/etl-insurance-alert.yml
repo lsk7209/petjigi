@@ -1,0 +1,27 @@
+name: ETL — Pet Insurance (분기 알림)
+
+on:
+  schedule:
+    - cron: "0 0 1 1,4,7,10 *"  # 분기 1회 (1, 4, 7, 10월 1일 09:00 KST)
+  workflow_dispatch:
+
+jobs:
+  alert:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Send quarterly insurance review alert
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const webhook = process.env.ALERT_SLACK_WEBHOOK_URL;
+            if (webhook) {
+              await fetch(webhook, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                  text: '📋 펫지기 분기 알림: 6대 손보사 펫보험 공시 자료 수동 수집 및 비교표 업데이트 필요합니다.'
+                })
+              });
+            }
+        env:
+          ALERT_SLACK_WEBHOOK_URL: ${{ secrets.ALERT_SLACK_WEBHOOK_URL }}
