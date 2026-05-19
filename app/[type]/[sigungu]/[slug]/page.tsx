@@ -74,8 +74,7 @@ export default async function BusinessDetailPage({
     .where(eq(regions.sigunguSlug, sigungu))
     .get();
 
-  // unique signal 3: 인근 시설 (같은 시군구, 다른 업종 중 친화 카테고리)
-  const nearbyTypes = type === "funeral" ? ["vet"] : type === "vet" ? ["grooming", "boarding"] : ["vet"];
+  // unique signal 3: 인근 시설 (같은 시군구)
   const nearby = await db
     .select()
     .from(businesses)
