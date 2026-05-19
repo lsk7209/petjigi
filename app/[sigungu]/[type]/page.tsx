@@ -65,7 +65,9 @@ export default async function SigunguTypePage({
     <main className="max-w-5xl mx-auto px-4 py-12">
       <nav className="text-sm text-[var(--brand-text-secondary)] mb-4">
         <Link href="/">홈</Link> /{" "}
-        <Link href={`/sido/${region?.sido ?? ""}`}>{region?.sido}</Link> /{" "}
+        {region && (
+          <><Link href={`/sido/${region.sidoSlug}`}>{region.sido}</Link> / </>
+        )}
         <span>{sigunguName} {meta.label}</span>
       </nav>
 
