@@ -38,6 +38,13 @@ export function Header() {
 
         <div className="hidden md:flex items-center gap-3">
           <Link
+            href="/search"
+            className="text-[var(--brand-text-secondary)] hover:text-[var(--brand-text)] transition-colors"
+            aria-label="검색"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+          </Link>
+          <Link
             href="/guide/pet-loss-care"
             className="text-sm text-[var(--brand-accent)] hover:underline"
           >
