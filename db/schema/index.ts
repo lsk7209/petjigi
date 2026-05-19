@@ -6,3 +6,4 @@ export * from "./regions";
 export * from "./review-queue";
 export * from "./ad-policies";
 export * from "./email-subscribers";
+export * from "./rescued-animals";

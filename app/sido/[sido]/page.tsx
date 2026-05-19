@@ -7,13 +7,6 @@ import { eq } from "drizzle-orm";
 
 export const revalidate = 86400;
 
-const BUSINESS_TYPES = [
-  { type: "vet", label: "동물병원" },
-  { type: "grooming", label: "펫미용" },
-  { type: "boarding", label: "펫호텔" },
-  { type: "funeral", label: "장묘" },
-  { type: "sale", label: "분양" },
-];
 
 export async function generateMetadata({
   params,
@@ -66,22 +59,6 @@ export default async function SidoPage({
         {sidoName} 지역 반려동물 관련 업장을 시군구별로 찾아보세요.
       </p>
 
-      {/* 업종별 카드 */}
-      <section className="mb-10">
-        <h2 className="text-lg font-semibold text-[var(--brand-text)] mb-4">업종별 찾기</h2>
-        <div className="flex flex-wrap gap-2">
-          {BUSINESS_TYPES.map((bt) => (
-            <Link
-              key={bt.type}
-              href={`/${sigunguList[0].sigunguSlug}/${bt.type}`}
-              className="px-4 py-2 rounded-full border border-[var(--brand-border)] text-sm text-[var(--brand-text)] hover:border-[var(--brand-accent)] hover:text-[var(--brand-accent)] transition-colors"
-            >
-              {bt.label}
-            </Link>
-          ))}
-        </div>
-      </section>
-
       {/* 시군구 목록 */}
       <section>
         <h2 className="text-lg font-semibold text-[var(--brand-text)] mb-4">
@@ -89,13 +66,25 @@ export default async function SidoPage({
         </h2>
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
           {sigunguList.map((r) => (
-            <Link
-              key={r.code}
-              href={`/${r.sigunguSlug}/vet`}
-              className="p-3 rounded-lg border border-[var(--brand-border)] hover:border-[var(--brand-accent)] text-sm text-[var(--brand-text)] hover:text-[var(--brand-accent)] transition-colors"
-            >
-              {r.sigungu}
-            </Link>
+            <div key={r.code} className="p-3 rounded-lg border border-[var(--brand-border)] text-sm">
+              <p className="font-medium text-[var(--brand-text)] mb-2">{r.sigungu}</p>
+              <div className="flex flex-wrap gap-1">
+                {[
+                  { type: "vet", label: "동물병원" },
+                  { type: "grooming", label: "펫미용" },
+                  { type: "boarding", label: "펫호텔" },
+                  { type: "funeral", label: "장묘" },
+                ].map((bt) => (
+                  <Link
+                    key={bt.type}
+                    href={`/${r.sigunguSlug}/${bt.type}`}
+                    className="px-2 py-0.5 rounded text-xs border border-[var(--brand-border)] hover:border-[var(--brand-accent)] hover:text-[var(--brand-accent)] transition-colors"
+                  >
+                    {bt.label}
+                  </Link>
+                ))}
+              </div>
+            </div>
           ))}
         </div>
       </section>

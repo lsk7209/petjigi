@@ -5,11 +5,13 @@
  */
 
 import { db } from "../../db/client";
+import { rescuedAnimals } from "../../db/schema";
 
 const API_KEY = process.env.APMS_API_KEY ?? "";
-const API_URL = "http://apis.data.go.kr/1543061/abandonmentPublicSrvc/abandonmentPublic";
+const API_URL =
+  "http://apis.data.go.kr/1543061/abandonmentPublicSrvc/abandonmentPublic";
 
-interface RescuedAnimal {
+interface RescuedAnimalRow {
   desertionNo: string;
   happenDt: string;
   happenPlace: string;
@@ -32,7 +34,10 @@ interface RescuedAnimal {
   noticeComment: string;
 }
 
-async function fetchRescuedPage(pageNo: number, numOfRows = 1000): Promise<RescuedAnimal[]> {
+async function fetchRescuedPage(
+  pageNo: number,
+  numOfRows = 1000,
+): Promise<RescuedAnimalRow[]> {
   const url = `${API_URL}?serviceKey=${encodeURIComponent(API_KEY)}&pageNo=${pageNo}&numOfRows=${numOfRows}&_type=json`;
   const res = await fetch(url, { signal: AbortSignal.timeout(30000) });
   if (!res.ok) throw new Error(`APMS 구조동물 API 오류: ${res.status}`);
@@ -44,11 +49,77 @@ async function fetchRescuedPage(pageNo: number, numOfRows = 1000): Promise<Rescu
 
 export async function syncRescuedAnimals(): Promise<void> {
   console.log("[ETL:rescued-animals] 시작 (noindex 데이터)");
-  // 구조동물은 DB 별도 테이블 없이 캐시 레이어에서만 서빙 (Phase 2에서 테이블 추가 예정)
-  // 현재는 로그만 기록
-  const rows = await fetchRescuedPage(1, 10);
-  console.log(`[ETL:rescued-animals] API 응답 확인: ${rows.length}건`);
-  console.log("[ETL:rescued-animals] 완료 (Phase 2에서 테이블 + 페이지 구현 예정)");
+
+  const rows = await fetchRescuedPage(1, 1000);
+  console.log(`[ETL:rescued-animals] API 응답: ${rows.length}건`);
+
+  if (rows.length === 0) {
+    console.log("[ETL:rescued-animals] 데이터 없음 — 종료");
+    return;
+  }
+
+  const now = new Date().toISOString();
+  let upserted = 0;
+
+  for (const row of rows) {
+    await db
+      .insert(rescuedAnimals)
+      .values({
+        id: row.desertionNo,
+        happenDate: row.happenDt || null,
+        happenPlace: row.happenPlace || null,
+        kindCd: row.kindCd || null,
+        colorCd: row.colorCd || null,
+        age: row.age || null,
+        weight: row.weight || null,
+        noticeNo: row.noticeNo || null,
+        noticeSdt: row.noticeSdt || null,
+        noticeEdt: row.noticeEdt || null,
+        imageUrl: row.popfile || null,
+        processState: row.processState || null,
+        sexCd: row.sexCd || null,
+        neuterYn: row.neuterYn || null,
+        careNm: row.careNm || null,
+        careTel: row.careTel || null,
+        careAddr: row.careAddr || null,
+        chargeNm: row.chargeNm || null,
+        orgNm: row.orgNm || null,
+        noticeComment: row.noticeComment || null,
+        lastSyncedAt: now,
+        createdAt: now,
+        updatedAt: now,
+      })
+      .onConflictDoUpdate({
+        target: rescuedAnimals.id,
+        set: {
+          happenDate: row.happenDt || null,
+          happenPlace: row.happenPlace || null,
+          kindCd: row.kindCd || null,
+          colorCd: row.colorCd || null,
+          age: row.age || null,
+          weight: row.weight || null,
+          noticeNo: row.noticeNo || null,
+          noticeSdt: row.noticeSdt || null,
+          noticeEdt: row.noticeEdt || null,
+          imageUrl: row.popfile || null,
+          processState: row.processState || null,
+          sexCd: row.sexCd || null,
+          neuterYn: row.neuterYn || null,
+          careNm: row.careNm || null,
+          careTel: row.careTel || null,
+          careAddr: row.careAddr || null,
+          chargeNm: row.chargeNm || null,
+          orgNm: row.orgNm || null,
+          noticeComment: row.noticeComment || null,
+          lastSyncedAt: now,
+          updatedAt: now,
+        },
+      });
+
+    upserted++;
+  }
+
+  console.log(`[ETL:rescued-animals] 완료 — ${upserted}건 upsert`);
 }
 
 syncRescuedAnimals().catch((err) => {
