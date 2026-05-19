@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { db } from "@/db/client";
-import { businesses, contents } from "@/db/schema";
+import { businesses, contents, regions } from "@/db/schema";
 import { like, or, and, eq } from "drizzle-orm";
 
 // GET /api/search?q=검색어&type=business|guide
@@ -26,6 +26,8 @@ export async function GET(req: NextRequest) {
     name: string;
     category: number | null;
     address?: string;
+    bizType?: string;
+    sigunguSlug?: string;
   }[] = [];
 
   // ── 사업장(businesses) 검색 ──────────────────────────────────────────────
@@ -35,6 +37,7 @@ export async function GET(req: NextRequest) {
         id: businesses.id,
         name: businesses.name,
         address: businesses.address,
+        addressSigungu: businesses.addressSigungu,
         category: businesses.category,
         type: businesses.type,
       })
@@ -51,12 +54,18 @@ export async function GET(req: NextRequest) {
       .limit(type === "business" ? 20 : 10);
 
     for (const row of bizRows) {
+      const region = row.addressSigungu
+        ? await db.select({ sigunguSlug: regions.sigunguSlug }).from(regions)
+            .where(eq(regions.sigungu, row.addressSigungu)).get()
+        : null;
       results.push({
         type: "business",
-        slug: row.id,
+        slug: encodeURIComponent(row.name),
         name: row.name,
         category: row.category,
         address: row.address,
+        bizType: row.type,
+        sigunguSlug: region?.sigunguSlug ?? undefined,
       });
     }
   }

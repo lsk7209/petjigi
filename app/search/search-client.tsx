@@ -10,6 +10,8 @@ interface SearchResult {
   name: string;
   category: number | null;
   address?: string;
+  bizType?: string;
+  sigunguSlug?: string;
 }
 
 interface SearchResponse {
@@ -91,6 +93,8 @@ export default function SearchClient() {
               {data.results.map((item, i) => {
                 const href = item.type === "guide"
                   ? `/guide/${item.slug}`
+                  : item.bizType && item.sigunguSlug && item.slug
+                  ? `/${item.bizType}/${item.sigunguSlug}/${item.slug}`
                   : "#";
                 return (
                   <li key={i}>
