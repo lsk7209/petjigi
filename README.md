@@ -34,3 +34,12 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+# 펫지기 (PetJigi)
+
+반려동물 보호자를 위한 공공데이터 기반 종합 정보 서비스. 입양부터 장례까지.
+
+## 기술 스택
+- Next.js 16 App Router + Vercel Pro
+- Turso (libSQL) + Drizzle ORM
+- Tailwind CSS v4 + shadcn/ui
+- GitHub Actions ETL cron (5개)
