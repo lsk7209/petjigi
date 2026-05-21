@@ -5423,6 +5423,154 @@ const SEED_CONTENTS: NewContent[] = [
     createdAt: NOW,
     updatedAt: NOW,
   },
+
+  // ── 76. 고양이 당뇨 (condition, cat.3, YMYL) ──────────────────────────────
+  {
+    id: "seed-condition-cat-diabetes",
+    slug: "cat-diabetes",
+    type: "condition",
+    category: 3,
+    title: "고양이 당뇨 — 증상·진단·인슐린 치료와 식이 관리",
+    metaTitle: "고양이 당뇨 증상·치료·식이 관리 | 수의사 검토 | 펫지기",
+    metaDescription:
+      "고양이 당뇨의 주요 증상(다음다뇨·체중감소), 진단 기준, 인슐린 치료와 저탄수화물 식이 관리, 관해(remission) 가능성을 수의사 검토를 거쳐 안내합니다.",
+    body: `<h2>고양이 당뇨란?</h2>
+<p>췌장의 인슐린 분비 감소 또는 세포의 인슐린 저항성 증가로 혈당이 지속 상승하는 질환입니다. 주로 중령·노령(7세 이상) 중성화 수컷 과체중 고양이에서 많이 발생합니다. 사람의 제2형 당뇨와 유사하며, 조기 발견과 치료 시 <strong>관해(Remission, 인슐린 없이 정상 혈당 유지)</strong>도 가능합니다.</p>
+
+<h2>위험 요인</h2>
+<ul>
+  <li><strong>비만</strong>: 가장 큰 위험 요인 — 체중 감량으로 발병 위험 낮출 수 있음</li>
+  <li>중성화 수컷, 실내 생활·운동 부족</li>
+  <li>장기 스테로이드 약물 사용</li>
+  <li>말단비대증(Acromegaly)</li>
+  <li>버마(Burmese) 품종은 유전적으로 발병률 높음</li>
+</ul>
+
+<h2>주요 증상</h2>
+<ul>
+  <li>물을 많이 마심 (다음증)</li>
+  <li>소변량·횟수 증가 (다뇨증)</li>
+  <li>먹는 양은 많은데 체중 감소</li>
+  <li>기력 저하·무기력</li>
+  <li>뒷다리 약화(末梢 신경병증) — 발뒤꿈치로 걷는 듯한 자세 (Plantigrade Stance)</li>
+</ul>
+
+<h2>즉시 병원을 가야 할 위험 신호</h2>
+<ul>
+  <li>구토 반복 + 식욕 완전 소실 (당뇨병성 케톤산증 의심 — 응급)</li>
+  <li>호흡이 빠르거나 과일 냄새 나는 호흡</li>
+  <li>갑작스러운 의식 저하·경련</li>
+</ul>
+
+<h2>진단</h2>
+<ul>
+  <li><strong>혈액·소변 검사</strong>: 혈당 수치, 소변 포도당, 프럭토사민(2~3주 혈당 평균)</li>
+  <li>단순 스트레스성 고혈당과 구분이 중요 — 입원 중 반복 측정 또는 프럭토사민 검사</li>
+</ul>
+
+<h2>치료</h2>
+<h3>인슐린 요법</h3>
+<p>대부분의 고양이 당뇨는 인슐린 주사가 필요합니다. 수의사가 용량·주사 방법·시간을 지도하며, 보호자가 집에서 시행합니다. 인슐린 종류·용량·주사 방법은 반드시 수의사의 지시에 따르세요.</p>
+
+<h3>저탄수화물 식이</h3>
+<ul>
+  <li>고단백·저탄수화물 습식 사료 → 혈당 변동 감소</li>
+  <li>건식 사료는 탄수화물 함량이 높아 당뇨 고양이에게 권장되지 않음</li>
+  <li>식이 변경은 수의사 지도 하에 점진적으로</li>
+</ul>
+
+<h3>체중 감량</h3>
+<p>비만 고양이의 경우 적절한 체중 감량만으로도 인슐린 감수성이 회복되어 관해에 도달할 수 있습니다. 급격한 체중 감량은 지방간(간지질증) 유발 가능 — 천천히 수의사 감독 하에 진행.</p>
+
+<h2>가정 모니터링</h2>
+<ul>
+  <li>혈당 수치 정기 측정 (고양이 전용 혈당계 또는 병원 방문)</li>
+  <li>음수량·소변량·체중 변화 기록</li>
+  <li>저혈당 증상(떨림·비틀거림·의식 저하) 발생 시 즉시 당분 공급 후 병원 방문</li>
+</ul>`,
+    disclaimer:
+      "본 정보는 수의학 참고 자료로 제공되며 의학적 진단과 치료를 대체하지 않습니다. 인슐린 용량과 식이 처방은 반드시 담당 수의사와 상의하세요. 저혈당 응급 상황은 즉시 동물병원을 방문하세요.",
+    sources: [
+      "Sparkes AH et al. ISFM and AAFP Consensus Guidelines: Diagnosis and Management of Feline Diabetes. J Feline Med Surg (2015)",
+      "Niessen SJM et al. Pathology of Insulin-Dependent Diabetes Mellitus in the Cat. Vet Pathol (2022)",
+      "대한수의사회 소동물 내분비 임상 가이드 (2023)",
+    ],
+    ymyl: true,
+    status: "published",
+    publishedAt: "2026-05-22T00:00:00.000Z",
+    createdAt: NOW,
+    updatedAt: NOW,
+  },
+
+  // ── 77. 강아지 식이 알레르기 (condition, cat.3, YMYL) ─────────────────────
+  {
+    id: "seed-condition-dog-food-allergy",
+    slug: "dog-food-allergy",
+    type: "condition",
+    category: 3,
+    title: "강아지 식이 알레르기 — 증상·원인 식재료·제거 식이 시험",
+    metaTitle: "강아지 식이 알레르기 증상·원인·제거 식이 | 수의사 검토 | 펫지기",
+    metaDescription:
+      "강아지 식이 알레르기(음식 과민증)의 증상, 흔한 알레르겐(닭·소·밀·유제품), 제거 식이 시험 방법과 저알레르기 사료 선택법을 안내합니다.",
+    body: `<h2>식이 알레르기 vs 아토피 피부염</h2>
+<p>강아지 피부 가려움증의 원인은 크게 세 가지입니다: <strong>환경 알레르기(아토피)</strong>, <strong>식이 알레르기(음식 과민증)</strong>, <strong>벼룩 알레르기</strong>. 식이 알레르기는 전체 알레르기성 피부 질환의 약 10~15%를 차지하며, 아토피와 증상이 매우 유사해 구별이 어렵습니다.</p>
+
+<h2>흔한 알레르겐 (식이 원인)</h2>
+<p>개에서 가장 자주 보고되는 알레르겐 원료:</p>
+<ol>
+  <li>소고기 (가장 흔함)</li>
+  <li>유제품</li>
+  <li>닭고기</li>
+  <li>밀·글루텐</li>
+  <li>달걀</li>
+  <li>옥수수·콩</li>
+</ol>
+<p>의외로 곡물(글루텐)보다 <strong>동물성 단백질</strong>이 더 흔한 알레르겐입니다.</p>
+
+<h2>주요 증상</h2>
+<ul>
+  <li><strong>피부 증상</strong>: 발·귀·눈 주위·겨드랑이·사타구니 가려움·발적·탈모</li>
+  <li><strong>반복성 귀 감염(외이염)</strong>: 알레르기로 인한 귀 환경 변화</li>
+  <li><strong>소화기 증상</strong>: 연변·구토·방귀 (일부 경우)</li>
+  <li>계절과 무관하게 연중 지속 (환경 알레르기는 계절성이 있음)</li>
+</ul>
+
+<h2>진단 — 제거 식이 시험 (Elimination Diet Trial)</h2>
+<p>혈액 알레르기 검사(IgE ELISA)는 신뢰도가 낮아, <strong>제거 식이 시험이 표준 진단법</strong>입니다.</p>
+<ol>
+  <li><strong>신규 단백질 사료 선택</strong>: 기존 먹지 않은 단일 단백질(예: 오리·캥거루·양) + 탄수화물로 구성된 처방 사료 또는 가수분해 단백질 사료</li>
+  <li><strong>8~12주 엄격 시행</strong>: 사료 외 간식·약물(맛있는 약 포함)·사람 음식 일체 금지</li>
+  <li><strong>증상 개선 확인</strong>: 피부·귀 증상이 50% 이상 감소하면 양성 의심</li>
+  <li><strong>유발 시험</strong>: 기존 사료로 재전환 후 증상 재발하면 식이 알레르기 확진</li>
+</ol>
+
+<h2>저알레르기 사료 종류</h2>
+<ul>
+  <li><strong>신규 단백질 사료(Novel Protein)</strong>: 기존 사료에 없는 단백질 사용 (오리·연어·캥거루·말 등)</li>
+  <li><strong>가수분해 단백질 사료(Hydrolyzed Protein)</strong>: 단백질을 작은 펩타이드로 분해해 면역 반응 최소화 — 처방식</li>
+  <li><strong>홈메이드 식단</strong>: 수의 영양학 전문가 처방 하에만 권장</li>
+</ul>
+
+<h2>관리 및 예방</h2>
+<ul>
+  <li>원인 식재료 특정 후 평생 회피</li>
+  <li>간식·보충제도 원인 원료 포함 여부 확인</li>
+  <li>다른 반려동물 사료를 훔쳐 먹지 않도록 주의</li>
+  <li>피부 2차 감염(세균·효모균) 수의사 처방으로 관리</li>
+</ul>`,
+    disclaimer:
+      "본 정보는 수의학 참고 자료로 제공되며 의학적 진단과 치료를 대체하지 않습니다. 제거 식이 시험은 수의사 지도 하에 시행하세요. 중증 피부 감염이 동반된 경우 즉시 수의사 진료가 필요합니다.",
+    sources: [
+      "Olivry T et al. Diagnosis of Canine Atopic Dermatitis. Vet Dermatol (2010)",
+      "Mueller RS et al. A Critically Appraised Topic on the Use of Serum IgE Testing for Diagnosis of Food Allergy in Dogs. Vet Dermatol (2016)",
+      "대한수의사회 소동물 피부과 임상 가이드라인 (2022)",
+    ],
+    ymyl: true,
+    status: "published",
+    publishedAt: "2026-05-22T00:00:00.000Z",
+    createdAt: NOW,
+    updatedAt: NOW,
+  },
 ];
 
 async function seedContents() {
