@@ -10,10 +10,22 @@ import { YmylDisclaimer } from "@/components/content/ymyl-disclaimer";
 import { AdSlot } from "@/components/ads/ad-slot";
 import { AdPolicyProvider } from "@/components/providers/ad-policy-provider";
 import { articleSchema, breadcrumbSchema } from "@/lib/seo/structured-data";
+import { TableOfContents } from "@/components/content/table-of-contents";
+import { ReadingProgress } from "@/components/content/reading-progress";
+import { ShareButtons } from "@/components/content/share-buttons";
+import type { TocHeading } from "@/components/content/table-of-contents";
 
 export const revalidate = 604800;
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://petjigi.kr";
+
+export async function generateStaticParams() {
+  const rows = await db
+    .select({ slug: contents.slug })
+    .from(contents)
+    .where(and(eq(contents.status, "published"), eq(contents.type, "guide")));
+  return rows.map((r) => ({ slug: r.slug }));
+}
 
 export async function generateMetadata({
   params,
@@ -69,6 +81,30 @@ async function getRelatedGuides(slug: string, category: number) {
     .limit(4);
 }
 
+function extractHeadings(html: string): TocHeading[] {
+  const headings: TocHeading[] = [];
+  const re = /<h([23])([^>]*)>([\s\S]*?)<\/h\1>/gi;
+  let match;
+  while ((match = re.exec(html)) !== null) {
+    const level = parseInt(match[1]) as 2 | 3;
+    const text = match[3].replace(/<[^>]+>/g, "").trim();
+    if (!text) continue;
+    const id = `h-${headings.length}-${text.slice(0, 30).replace(/[^\w가-힣]/g, "-").replace(/-+/g, "-").replace(/^-|-$/g, "")}`;
+    headings.push({ id, level, text });
+  }
+  return headings;
+}
+
+function injectHeadingIds(html: string, headings: TocHeading[]): string {
+  let idx = 0;
+  return html.replace(/<h([23])([^>]*)>([\s\S]*?)<\/h\1>/gi, (_, level, attrs, inner) => {
+    const h = headings[idx++];
+    if (!h) return _;
+    if (attrs.includes("id=")) return _;
+    return `<h${level}${attrs} id="${h.id}">${inner}</h${level}>`;
+  });
+}
+
 const CATEGORY_EMOJI: Record<number, string> = {
   1: "🐾",
   2: "🥗",
@@ -96,6 +132,9 @@ export default async function GuidePage({
   const cat = CATEGORIES[categoryId];
   const relatedGuides = await getRelatedGuides(slug, content.category);
 
+  const headings = extractHeadings(content.body ?? "");
+  const bodyWithIds = injectHeadingIds(content.body ?? "", headings);
+
   const article = articleSchema({
     title: content.title,
     description: content.metaDescription ?? undefined,
@@ -118,6 +157,7 @@ export default async function GuidePage({
 
   return (
     <>
+      <ReadingProgress />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(article) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb) }} />
       <main className="max-w-3xl mx-auto px-4 py-6 sm:py-10">
@@ -188,7 +228,10 @@ export default async function GuidePage({
 
         <YmylDisclaimer categoryId={categoryId} />
 
-        {/* 본문 상단 광고 (자동 광고 보완용 — AdSense 콘솔에서 슬롯 ID 발급 후 slotId prop 추가) */}
+        {/* 목차 */}
+        <TableOfContents headings={headings} />
+
+        {/* 본문 상단 광고 (AdSense 콘솔에서 슬롯 ID 발급 후 slotId prop 추가) */}
         <AdPolicyProvider category={categoryId}>
           <AdSlot adType="adsense" format="horizontal" className="my-4" />
         </AdPolicyProvider>
@@ -197,13 +240,18 @@ export default async function GuidePage({
         <article
           id="article-body"
           className="prose prose-sm sm:prose-base max-w-none mt-5 sm:mt-6"
-          dangerouslySetInnerHTML={{ __html: content.body }}
+          dangerouslySetInnerHTML={{ __html: bodyWithIds }}
         />
 
         {/* 본문 하단 광고 */}
         <AdPolicyProvider category={categoryId}>
           <AdSlot adType="adsense" format="rectangle" className="my-6" />
         </AdPolicyProvider>
+
+        {/* 공유 버튼 */}
+        <div className="mt-6 pt-5 border-t border-[var(--brand-border)]">
+          <ShareButtons url={`${SITE_URL}/guide/${slug}`} title={content.title} />
+        </div>
 
         {/* 참고 자료 */}
         {Array.isArray(content.sources) && content.sources.length > 0 && (
