@@ -17,8 +17,7 @@
     "etl:businesses": "tsx --env-file=.env.local etl/localdata/sync.ts",
     "etl:shelters": "tsx --env-file=.env.local etl/apms/shelters.ts",
     "etl:rescued": "tsx --env-file=.env.local etl/apms/rescued-animals.ts",
-    "etl:registration": "tsx --env-file=.env.local etl/mafra/registration-agents.ts",
-    "postinstall": "pnpm approve-builds --all"
+    "etl:registration": "tsx --env-file=.env.local etl/mafra/registration-agents.ts"
   },
   "dependencies": {
     "@base-ui/react": "^1.4.1",
