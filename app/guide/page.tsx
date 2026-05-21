@@ -154,8 +154,25 @@ export default async function GuideIndexPage() {
           </div>
         )}
 
+        {/* FAQ */}
+        <section className="mt-12 pt-8 border-t border-[var(--brand-border)]" aria-label="자주 묻는 질문">
+          <h2 className="text-xl font-bold text-[var(--brand-text)] mb-4">가이드 자주 묻는 질문</h2>
+          <dl className="space-y-3">
+            {[
+              { q: "펫지기 가이드는 누가 작성하나요?", a: "수의사·전문가 검토를 거친 가이드만 게재합니다. YMYL(건강·의료·보험·장례) 카테고리 콘텐츠는 자격을 갖춘 전문가 검수 후 발행됩니다." },
+              { q: "가이드 정보는 얼마나 자주 업데이트되나요?", a: "수의학 가이드라인, 법령 개정, 최신 연구 결과를 반영해 정기적으로 검토합니다. 각 가이드 하단의 출처와 업데이트 날짜를 확인하세요." },
+              { q: "특정 질병이나 증상 정보는 어디서 찾나요?", a: "건강·의료 카테고리 가이드 또는 질병·증상 상세 페이지에서 확인하세요. 응급 상황이면 즉시 가까운 동물병원을 방문하세요." },
+            ].map((item, i) => (
+              <div key={i} className="rounded-xl border border-[var(--brand-border)] p-4">
+                <dt className="font-semibold text-sm text-[var(--brand-text)] mb-1.5">Q. {item.q}</dt>
+                <dd className="text-sm text-[var(--brand-text-secondary)] leading-relaxed">{item.a}</dd>
+              </div>
+            ))}
+          </dl>
+        </section>
+
         {/* 관련 섹션 링크 */}
-        <section className="mt-12 pt-8 border-t border-[var(--brand-border)]">
+        <section className="mt-8 pt-6 border-t border-[var(--brand-border)]">
           <h2 className="text-base font-semibold text-[var(--brand-text)] mb-4">함께 보면 좋은 정보</h2>
           <div className="flex flex-wrap gap-3">
             <Link href="/condition" className="text-sm text-[var(--brand-accent)] hover:underline">
