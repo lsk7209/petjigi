@@ -4290,6 +4290,166 @@ const SEED_CONTENTS: NewContent[] = [
     createdAt: NOW,
     updatedAt: NOW,
   },
+
+  // ── 60. 고양이 FIV·FeLV 바이러스 (condition, cat.3, YMYL) ──────────────
+  {
+    id: "seed-condition-cat-fiv-felv",
+    slug: "cat-fiv-felv",
+    type: "condition",
+    category: 3,
+    title: "고양이 에이즈(FIV)·백혈병(FeLV) — 증상·감염 경로·관리",
+    metaTitle: "고양이 에이즈(FIV)·백혈병(FeLV) 증상·검사·관리 | 펫지기",
+    metaDescription:
+      "고양이 에이즈(FIV)와 백혈병(FeLV) 바이러스의 증상, 감염 경로, 진단 검사, 관리 방법, 함께 사는 고양이 보호 방법을 안내합니다.",
+    body: `<h2>고양이 면역결핍 바이러스(FIV) — '고양이 에이즈'</h2>
+<p>FIV(Feline Immunodeficiency Virus)는 면역 세포(CD4+ T 림프구)를 파괴해 면역 기능을 서서히 떨어뜨리는 바이러스입니다. 인간 HIV와 유사한 기전이지만, 고양이와 사람 사이에는 전파되지 않습니다.</p>
+
+<h3>FIV 감염 경로</h3>
+<ul>
+  <li><strong>주 경로</strong>: 깊은 교상(물림 상처) — 수컷 고양이 싸움에서 흔함</li>
+  <li>수직감염(어미→새끼)은 드문 편</li>
+  <li>일반 접촉(밥그릇·화장실 공유)으로는 거의 전파되지 않음</li>
+</ul>
+
+<h3>FIV 증상</h3>
+<ul>
+  <li>초기: 일시적 발열·림프절 종창 (수주 후 무증상 잠복기 수년)</li>
+  <li>진행: 반복적 감염(구강 질환·상부 호흡기 감염), 체중 감소, 기력 저하</li>
+  <li>말기: 심각한 면역 억제 상태</li>
+</ul>
+
+<h2>고양이 백혈병 바이러스(FeLV)</h2>
+<p>FeLV(Feline Leukemia Virus)는 FIV보다 전파가 쉬우며, 면역 억제·빈혈·림프종 등을 유발합니다. 고양이의 중요한 사망 원인 중 하나입니다.</p>
+
+<h3>FeLV 감염 경로</h3>
+<ul>
+  <li><strong>주 경로</strong>: 침·눈물·오줌·대변 등 분비물 접촉</li>
+  <li>그루밍, 밥그릇·화장실 공유로도 전파 가능</li>
+  <li>어미 고양이 → 새끼 수직감염 가능</li>
+</ul>
+
+<h3>FeLV 증상</h3>
+<ul>
+  <li>기력 저하, 식욕 감소, 체중 감소</li>
+  <li>빈혈 (창백한 잇몸)</li>
+  <li>반복적 감염, 상처 회복 지연</li>
+  <li>림프절 종창, 복수</li>
+</ul>
+
+<h2>진단</h2>
+<ul>
+  <li><strong>ELISA 혈액 검사</strong>: 동물병원에서 15~30분 이내 결과 확인</li>
+  <li>양성 시 2차 확인 검사(IFA 또는 PCR) 권장</li>
+  <li>모든 새끼 고양이 입양 시, 외출 후, 새 고양이 합가 전 검사 권장</li>
+</ul>
+
+<h2>치료 및 관리</h2>
+<p>현재 FIV·FeLV를 완치하는 치료법은 없습니다. 그러나 적절한 관리로 삶의 질을 유지하고 수명을 연장할 수 있습니다.</p>
+<ul>
+  <li><strong>실내 생활 유지</strong>: 외부 감염원 차단, 다른 고양이에의 전파 방지</li>
+  <li><strong>정기 검진</strong>: 6개월~1년마다 혈액 검사, 구강 관리</li>
+  <li><strong>균형 잡힌 영양</strong>: 면역력 지원. 날고기·날달걀 등 원료 식품 금지 (면역 저하 시 식중독 위험)</li>
+  <li><strong>스트레스 최소화</strong>: 안정적 환경</li>
+  <li><strong>2차 감염 치료</strong>: 세균·진균 감염 발생 시 즉시 치료</li>
+</ul>
+
+<h2>다묘 가정의 관리</h2>
+<ul>
+  <li>FIV 양성 고양이: 교상 위험을 줄이면 동거 가능 (물림이 없는 평화로운 가정)</li>
+  <li>FeLV 양성 고양이: 음성 고양이와의 분리 격리 또는 FeLV 음성 고양이 FeLV 예방 접종 강력 권장</li>
+</ul>
+
+<h2>예방</h2>
+<ul>
+  <li><strong>FeLV 백신</strong>: 야외 접촉이 있는 고양이 또는 다묘 가정에 권장</li>
+  <li>중성화 수술: 영역 다툼 감소 → FIV 전파 위험 감소</li>
+  <li>실내 전용 생활: 감염 위험 크게 감소</li>
+</ul>`,
+    disclaimer:
+      "본 정보는 수의학 참고 자료로 제공되며 의학적 진단과 치료를 대체하지 않습니다. FIV·FeLV 양성 판정 시 담당 수의사와 함께 관리 계획을 세우세요.",
+    sources: [
+      "ABCD (Advisory Board on Cat Diseases) FIV·FeLV Guidelines (2023)",
+      "WSAVA Vaccination Guidelines for Small Animal Practitioners (2022)",
+      "대한수의사회 고양이 바이러스성 질환 임상 지침 (2022)",
+    ],
+    ymyl: true,
+    status: "published",
+    publishedAt: "2026-05-22T00:00:00.000Z",
+    createdAt: NOW,
+    updatedAt: NOW,
+  },
+
+  // ── 61. 노령 고양이 케어 가이드 (guide, cat.3, YMYL) ──────────────────
+  {
+    id: "seed-guide-senior-cat-care",
+    slug: "senior-cat-care-guide",
+    type: "guide",
+    category: 3,
+    title: "노령 고양이 케어 가이드 — 7세 이후 건강 관리",
+    metaTitle: "노령 고양이 케어 | 7세 이후 건강검진·식이·증상 체크 | 펫지기",
+    metaDescription:
+      "고양이는 7세 이후 노령기에 접어듭니다. 노령 고양이에서 흔한 질환, 정기 검진 주기, 식이 관리, 환경 개선 방법을 정리했습니다.",
+    body: `<h2>고양이의 노령기 — 언제부터?</h2>
+<p>고양이는 7~10세를 '노령기(Senior)', 11세 이상을 '초노령기(Geriatric)'로 분류합니다. 노령 고양이는 겉으로 건강해 보여도 내부 장기 기능이 서서히 저하될 수 있어 정기적인 건강 모니터링이 중요합니다.</p>
+
+<h2>노령 고양이에서 흔한 질환</h2>
+<ul>
+  <li><strong>만성 신부전(CKD)</strong>: 고양이 노령기 가장 흔한 질환. 조기 발견이 핵심</li>
+  <li><strong>갑상선 기능 항진증(Hyperthyroidism)</strong>: 체중 감소 + 식욕 증가 + 다음·다뇨</li>
+  <li><strong>고혈압</strong>: 종종 신부전·갑상선 기능 항진증과 동반</li>
+  <li><strong>관절염</strong>: 점프 회피, 그루밍 감소</li>
+  <li><strong>당뇨병</strong>: 다음·다뇨·체중 감소</li>
+  <li><strong>치주 질환</strong>: 통증으로 식욕 감소</li>
+  <li><strong>인지 기능 장애(CDS)</strong>: 길 잃음, 밤 울음, 방향감각 이상</li>
+</ul>
+
+<h2>정기 검진 주기</h2>
+<ul>
+  <li><strong>7~10세</strong>: 연 2회 신체 검사 + 혈액·소변 검사</li>
+  <li><strong>11세 이상</strong>: 6개월마다 혈액·소변·혈압 검사</li>
+  <li>신부전 위험 조기 발견을 위해 SDMA 검사(신부전 조기 마커) 포함 권장</li>
+</ul>
+
+<h2>노령 고양이 식이 관리</h2>
+<ul>
+  <li><strong>노령 전용 사료</strong>: 단백질 품질 우수, 신장 부담 낮은 인(P) 함량 관리</li>
+  <li><strong>수분 섭취 증가</strong>: 습식 사료 비중 높이기, 음수대 여러 곳 배치</li>
+  <li><strong>칼로리 모니터링</strong>: 활동량 감소로 비만 위험 증가 — 적정 체중 유지</li>
+  <li><strong>체중 감소 감지</strong>: 매달 체중 측정. 급격한 체중 감소는 즉시 수의사 상담</li>
+</ul>
+
+<h2>환경 개선</h2>
+<ul>
+  <li><strong>화장실 접근성</strong>: 관절염 고양이를 위해 입구가 낮은 화장실 사용</li>
+  <li><strong>침대·쉼터</strong>: 따뜻하고 쉽게 오르내릴 수 있는 낮은 위치 배치</li>
+  <li><strong>계단·경사로</strong>: 높은 곳 접근을 위한 경사로 설치</li>
+  <li><strong>그루밍 지원</strong>: 등·꼬리 주변은 스스로 닦기 어려우므로 보호자가 빗질 보조</li>
+  <li><strong>급격한 변화 최소화</strong>: 낯선 환경·동물 도입은 노령 고양이에게 큰 스트레스</li>
+</ul>
+
+<h2>주의해야 할 증상 변화</h2>
+<ul>
+  <li>물 소비량 갑자기 증가</li>
+  <li>화장실 밖 배변·배뇨</li>
+  <li>식욕 급격히 감소 또는 증가</li>
+  <li>체중 감소 (1~2주 내 10% 이상)</li>
+  <li>밤에 갑자기 큰 소리로 울기</li>
+  <li>털 상태 악화, 그루밍 거부</li>
+</ul>
+<p>위 증상 중 하나라도 발견되면 즉시 수의사 상담을 권장합니다.</p>`,
+    disclaimer:
+      "본 정보는 수의학 참고 자료로 제공되며 의학적 진단과 치료를 대체하지 않습니다. 노령 고양이는 증상이 미약하게 시작되는 경우가 많으므로 정기 검진을 통한 조기 발견이 매우 중요합니다.",
+    sources: [
+      "ISFM (International Society of Feline Medicine) Senior Cat Guidelines (2021)",
+      "AAFP Senior Care Guidelines (2021)",
+      "대한수의사회 고양이 노령 관리 임상 지침 (2023)",
+    ],
+    ymyl: true,
+    status: "published",
+    publishedAt: "2026-05-22T00:00:00.000Z",
+    createdAt: NOW,
+    updatedAt: NOW,
+  },
 ];
 
 async function seedContents() {
