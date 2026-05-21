@@ -1,6 +1,32 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { YmylDisclaimer } from "@/components/content/ymyl-disclaimer";
+import { ShareButtons } from "@/components/content/share-buttons";
+import { breadcrumbSchema, faqSchema, howToSchema } from "@/lib/seo/structured-data";
+
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://petjigi.kr";
+
+const BREADCRUMB = breadcrumbSchema([
+  { name: "홈", url: SITE_URL },
+  { name: "보험·법률", url: `${SITE_URL}/category/insurance` },
+  { name: "펫보험 비교", url: `${SITE_URL}/insurance/compare` },
+]);
+
+const HOW_TO = howToSchema("펫보험 선택 방법", [
+  { name: "보장 범위 확인", text: "입원·통원·수술 여부, 치과·안과·피부 질환 포함 여부, 선천성·유전성 질환 면책 조건을 확인하세요." },
+  { name: "자기부담금 & 보상 한도 비교", text: "방문 1회당 자기부담금(정액/정률), 연간·항목별 보상 한도를 반드시 비교하세요." },
+  { name: "갱신형 vs 비갱신형 선택", text: "갱신형은 보험료가 오를 수 있습니다. 만 3세 이후 보험료 인상 조건과 갱신 거절 사유를 확인하세요." },
+  { name: "면책 기간 파악", text: "가입 후 통상 30일(수술 90일)은 보장이 되지 않습니다. 기존 질환이 있다면 고지의무 위반에 주의하세요." },
+  { name: "청구 절차 비교", text: "앱 간편 청구 여부, 서류 제출 방식, 평균 지급 소요일을 비교하면 실사용 편의성을 파악할 수 있습니다." },
+  { name: "나이 제한 확인", text: "가입 가능 연령(보통 만 8~10세까지)과 갱신 상한 나이를 꼭 체크하세요. 노령견·노령묘일수록 조건이 까다롭습니다." },
+]);
+
+const FAQ = faqSchema([
+  { question: "펫보험은 언제 가입하는 것이 유리한가요?", answer: "어릴 때 건강할수록 보험료가 낮고 면책 조건이 적습니다. 대부분 만 8~10세부터 신규 가입이 제한되므로, 어린 나이에 가입하는 것이 유리합니다.", url: `${SITE_URL}/insurance/compare` },
+  { question: "펫보험 자기부담금이란 무엇인가요?", answer: "자기부담금은 보험금 청구 시 본인이 부담하는 금액입니다. 정액(예: 1만원)과 정률(예: 20%) 방식이 있으며, 낮을수록 보험료는 높아집니다.", url: `${SITE_URL}/insurance/compare` },
+  { question: "선천성·유전성 질환도 보장되나요?", answer: "대부분의 펫보험은 선천성·유전성 질환을 면책 처리합니다. 상품마다 다르므로 약관의 면책 조항을 반드시 확인하세요.", url: `${SITE_URL}/insurance/compare` },
+  { question: "펫보험 보험료는 어떻게 결정되나요?", answer: "품종, 나이, 성별, 보장 범위, 자기부담금 수준에 따라 달라집니다. 대형견·고령·특정 고위험 품종은 보험료가 높거나 가입이 제한될 수 있습니다.", url: `${SITE_URL}/insurance/compare` },
+]);
 
 export const metadata: Metadata = {
   title: "펫보험 비교 — 6대 손보사 체크리스트 | 펫지기",
@@ -51,7 +77,19 @@ const INSURERS = [
 
 export default function InsuranceComparePage() {
   return (
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(BREADCRUMB) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(HOW_TO) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(FAQ) }} />
     <main className="max-w-4xl mx-auto px-4 py-12 bg-[var(--brand-bg)]">
+        {/* 브레드크럼 */}
+        <nav className="text-xs text-[var(--brand-text-secondary)] mb-6 flex items-center gap-1.5 flex-wrap" aria-label="breadcrumb">
+          <Link href="/" className="hover:text-[var(--brand-accent)] transition-colors">홈</Link>
+          <span aria-hidden="true">›</span>
+          <Link href="/category/insurance" className="hover:text-[var(--brand-accent)] transition-colors">보험·법률</Link>
+          <span aria-hidden="true">›</span>
+          <span className="text-[var(--brand-text)]" aria-current="page">펫보험 비교</span>
+        </nav>
       {/* 준비 중 배너 */}
       <div className="mb-10 rounded-[var(--radius-card)] border border-[var(--brand-accent)] bg-[var(--brand-border)] px-6 py-5 text-center">
         <p className="text-lg font-semibold text-[var(--brand-text)] mb-1">
@@ -119,6 +157,11 @@ export default function InsuranceComparePage() {
           ))}
         </div>
       </section>
+
+      <div className="mt-10 pt-6 border-t border-[var(--brand-border)]">
+        <ShareButtons url={`${SITE_URL}/insurance/compare`} title="펫보험 비교 — 6대 손보사 체크리스트 | 펫지기" />
+      </div>
     </main>
+    </>
   );
 }
