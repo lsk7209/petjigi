@@ -110,7 +110,7 @@ export default function OpenGraphImage() {
             opacity: 0.7,
           }}
         >
-          petjigi.com
+          petjigi.kr
         </div>
       </div>
     ),

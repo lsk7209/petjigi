@@ -49,11 +49,11 @@ export default function PrivacyPage() {
       <h2>6. 정보주체의 권리</h2>
       <p>
         열람, 정정, 삭제, 처리 정지를 요구할 수 있습니다.
-        문의: contact@petjigi.com
+        문의: contact@petjigi.kr
       </p>
 
       <h2>7. 개인정보 보호책임자</h2>
-      <p>이메일: contact@petjigi.com</p>
+      <p>이메일: contact@petjigi.kr</p>
     </main>
   );
 }

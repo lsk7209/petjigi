@@ -28,10 +28,10 @@ export default function ContactPage() {
           콘텐츠 제안, 데이터 오류 신고, 제휴 문의는 아래 이메일로 연락해 주세요.
         </p>
         <a
-          href="mailto:contact@petjigi.com"
+          href="mailto:contact@petjigi.kr"
           className="font-medium text-[var(--brand-accent)] hover:underline"
         >
-          contact@petjigi.com
+          contact@petjigi.kr
         </a>
       </section>
     </main>

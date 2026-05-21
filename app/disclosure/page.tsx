@@ -41,7 +41,7 @@ export default function DisclosurePage() {
         <li>HTML rel="sponsored nofollow" 속성</li>
       </ul>
 
-      <p>문의: contact@petjigi.com</p>
+      <p>문의: contact@petjigi.kr</p>
     </main>
   );
 }

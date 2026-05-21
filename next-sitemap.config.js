@@ -1,6 +1,6 @@
 /** @type {import('next-sitemap').IConfig} */
 module.exports = {
-  siteUrl: process.env.NEXT_PUBLIC_SITE_URL || "https://petjigi.com",
+  siteUrl: process.env.NEXT_PUBLIC_SITE_URL || "https://petjigi.kr",
   generateRobotsTxt: true,
   robotsTxtOptions: {
     additionalSitemaps: [],

@@ -13,7 +13,7 @@ import { breadcrumbSchema, faqSchema } from "@/lib/seo/structured-data";
 
 export const revalidate = 3600;
 
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://petjigi.com";
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://petjigi.kr";
 
 export async function generateStaticParams() {
   return Object.values(CATEGORIES).map((c) => ({ slug: c.slug }));

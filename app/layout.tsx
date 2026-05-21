@@ -8,7 +8,7 @@ import { websiteSchema, organizationSchema } from "@/lib/seo/structured-data";
 
 const ADSENSE_ID = process.env.NEXT_PUBLIC_ADSENSE_ID;
 
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://petjigi.com";
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://petjigi.kr";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),

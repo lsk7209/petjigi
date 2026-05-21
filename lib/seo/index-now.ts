@@ -1,6 +1,6 @@
 // IndexNow: Naver + Bing 동시 ping (구글 ping endpoint 2023년 deprecated — 절대 사용 X)
 const INDEXNOW_KEY = process.env.INDEXNOW_KEY!;
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://petjigi.com";
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://petjigi.kr";
 
 const INDEXNOW_HOSTS = [
   "searchadvisor.naver.com",

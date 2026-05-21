@@ -14,7 +14,7 @@ import { Hr } from "@react-email/hr";
 import { Img } from "@react-email/img";
 import React from "react";
 
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://petjigi.com";
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://petjigi.kr";
 const SITE_NAME = "펫지기";
 
 // ─── 공통 스타일 토큰 ───────────────────────────────────────────────────────

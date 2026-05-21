@@ -3,7 +3,7 @@ import { SubscribeForm } from "@/components/forms/subscribe-form";
 import { YmylDisclaimer } from "@/components/content/ymyl-disclaimer";
 import { faqSchema, articleSchema } from "@/lib/seo/structured-data";
 
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://petjigi.com";
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://petjigi.kr";
 const PAGE_URL = `${SITE_URL}/guide/pet-loss-care`;
 
 export const metadata: Metadata = {

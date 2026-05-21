@@ -3,7 +3,7 @@ import { db } from "@/db/client";
 import { emailSubscribers } from "@/db/schema";
 import { and, eq } from "drizzle-orm";
 
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://petjigi.com";
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://petjigi.kr";
 
 // GET /api/unsubscribe?token={subscriberId}&email={email}
 // token = emailSubscribers.id (UUID, 이메일 발송 시 포함)

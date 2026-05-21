@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://petjigi.com";
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://petjigi.kr";
 
 export const metadata: Metadata = {
   title: "펫지기 소개",
@@ -88,10 +88,10 @@ export default function AboutPage() {
           데이터 오류 신고, 콘텐츠 제안, 제휴 문의는 아래 이메일로 연락해 주세요.
         </p>
         <a
-          href="mailto:contact@petjigi.com"
+          href="mailto:contact@petjigi.kr"
           className="text-[var(--brand-accent)] hover:underline font-medium"
         >
-          contact@petjigi.com
+          contact@petjigi.kr
         </a>
       </section>
     </main>

@@ -8,7 +8,7 @@ import { breadcrumbSchema } from "@/lib/seo/structured-data";
 
 export const revalidate = 86400;
 
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://petjigi.com";
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://petjigi.kr";
 
 export async function generateMetadata({
   params,

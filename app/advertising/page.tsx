@@ -25,7 +25,7 @@ export default function AdvertisingPage() {
       <h2>카테고리 6 광고 정책</h2>
       <p>장례·추모 카테고리(카테고리 6)에서는 AdSense 일반 광고가 표시되지 않습니다. 메모리얼 굿즈 어필리에이트만 노출됩니다.</p>
 
-      <p>문의: contact@petjigi.com</p>
+      <p>문의: contact@petjigi.kr</p>
     </main>
   );
 }

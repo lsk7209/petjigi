@@ -40,7 +40,7 @@ User-agent: Bytespider
 Allow: /
 
 # Host
-Host: https://petjigi.com
+Host: https://petjigi.kr
 
 # Sitemaps
-Sitemap: https://petjigi.com/sitemap.xml
+Sitemap: https://petjigi.kr/sitemap.xml

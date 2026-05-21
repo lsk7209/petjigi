@@ -2,7 +2,7 @@ import { db } from "@/db/client";
 import { contents } from "@/db/schema";
 import { eq, desc } from "drizzle-orm";
 
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://petjigi.com";
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://petjigi.kr";
 
 // Naver RSS feed (/feed.xml) — Naver Search Advisor 등록 필수
 export async function GET() {

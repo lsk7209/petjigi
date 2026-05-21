@@ -1,6 +1,6 @@
 import type { Business } from "@/db/schema";
 
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://petjigi.com";
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://petjigi.kr";
 
 export function websiteSchema() {
   return {

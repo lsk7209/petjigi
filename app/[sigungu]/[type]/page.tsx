@@ -8,7 +8,7 @@ import { breadcrumbSchema, faqSchema } from "@/lib/seo/structured-data";
 
 export const revalidate = 86400;
 
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://petjigi.com";
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://petjigi.kr";
 
 const TYPE_META: Record<string, { label: string; emoji: string; categorySlug: string; desc: string }> = {
   vet:       { label: "동물병원",       emoji: "🏥", categorySlug: "health",   desc: "진료·예방접종·응급처치" },

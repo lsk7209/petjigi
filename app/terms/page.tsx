@@ -28,7 +28,7 @@ export default function TermsPage() {
       <h2>제5조 (저작권)</h2>
       <p>본 서비스의 콘텐츠 저작권은 펫지기에 있습니다. 공공데이터는 해당 라이선스에 따릅니다.</p>
 
-      <p>문의: contact@petjigi.com</p>
+      <p>문의: contact@petjigi.kr</p>
     </main>
   );
 }

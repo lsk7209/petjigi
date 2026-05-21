@@ -6,7 +6,7 @@ import { breeds } from "@/db/schema";
 import { and, eq } from "drizzle-orm";
 import { breadcrumbSchema } from "@/lib/seo/structured-data";
 
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://petjigi.com";
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://petjigi.kr";
 
 export const revalidate = 604800;
 
