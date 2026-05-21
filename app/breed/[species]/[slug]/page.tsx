@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
-import { db } from "@/db/client";
+import { client, db } from "@/db/client";
 import { breeds } from "@/db/schema";
 import { and, eq } from "drizzle-orm";
 import { breadcrumbSchema } from "@/lib/seo/structured-data";
@@ -14,6 +14,7 @@ export const revalidate = 604800;
 
 export async function generateStaticParams() {
   try {
+    await client.sync();
     const rows = await db.select({ species: breeds.species, slug: breeds.slug }).from(breeds);
     return rows.map((r) => ({ species: r.species, slug: r.slug }));
   } catch {

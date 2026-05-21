@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
-import { db } from "@/db/client";
+import { client, db } from "@/db/client";
 import { contents } from "@/db/schema";
 import { and, eq, ne, desc } from "drizzle-orm";
 import type { CategoryId } from "@/lib/category";
@@ -68,6 +68,7 @@ async function getRelatedConditions(slug: string, category: number) {
 
 export async function generateStaticParams() {
   try {
+    await client.sync();
     const rows = await db
       .select({ slug: contents.slug })
       .from(contents)

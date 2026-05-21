@@ -40,4 +40,9 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
+# turso embedded replica (빌드 시 자동 생성, 커밋 불필요)
+local.db
+local.db-shm
+local.db-wal
+
 .vercel
