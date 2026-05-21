@@ -67,11 +67,15 @@ async function getRelatedConditions(slug: string, category: number) {
 }
 
 export async function generateStaticParams() {
-  const rows = await db
-    .select({ slug: contents.slug })
-    .from(contents)
-    .where(and(eq(contents.status, "published"), eq(contents.type, "condition")));
-  return rows.map((r) => ({ slug: r.slug }));
+  try {
+    const rows = await db
+      .select({ slug: contents.slug })
+      .from(contents)
+      .where(and(eq(contents.status, "published"), eq(contents.type, "condition")));
+    return rows.map((r) => ({ slug: r.slug }));
+  } catch {
+    return [];
+  }
 }
 
 export async function generateMetadata({

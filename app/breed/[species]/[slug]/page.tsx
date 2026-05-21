@@ -13,8 +13,12 @@ const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://petjigi.kr";
 export const revalidate = 604800;
 
 export async function generateStaticParams() {
-  const rows = await db.select({ species: breeds.species, slug: breeds.slug }).from(breeds);
-  return rows.map((r) => ({ species: r.species, slug: r.slug }));
+  try {
+    const rows = await db.select({ species: breeds.species, slug: breeds.slug }).from(breeds);
+    return rows.map((r) => ({ species: r.species, slug: r.slug }));
+  } catch {
+    return [];
+  }
 }
 
 const SPECIES_LABEL: Record<string, string> = {

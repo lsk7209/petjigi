@@ -1,11 +1,10 @@
 # *
 User-agent: *
 Allow: /
-
-# *
-User-agent: *
 Disallow: /rescue/
 Disallow: /search
+Disallow: /api/
+Disallow: /admin/
 
 # GPTBot
 User-agent: GPTBot

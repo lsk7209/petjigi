@@ -21,11 +21,15 @@ export const revalidate = 604800;
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://petjigi.kr";
 
 export async function generateStaticParams() {
-  const rows = await db
-    .select({ slug: contents.slug })
-    .from(contents)
-    .where(and(eq(contents.status, "published"), eq(contents.type, "guide")));
-  return rows.map((r) => ({ slug: r.slug }));
+  try {
+    const rows = await db
+      .select({ slug: contents.slug })
+      .from(contents)
+      .where(and(eq(contents.status, "published"), eq(contents.type, "guide")));
+    return rows.map((r) => ({ slug: r.slug }));
+  } catch {
+    return [];
+  }
 }
 
 export async function generateMetadata({
