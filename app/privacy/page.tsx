@@ -1,7 +1,10 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "개인정보처리방침",
+  title: "개인정보처리방침 | 펫지기",
+  description: "펫지기 개인정보처리방침 — 수집 항목, 처리 목적, 보유 기간, 정보주체의 권리를 안내합니다.",
+  alternates: { canonical: "/privacy" },
+  robots: { index: true, follow: false },
 };
 
 export default function PrivacyPage() {

@@ -1,8 +1,12 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
+import Link from "next/link";
 import { db } from "@/db/client";
 import { breeds } from "@/db/schema";
 import { and, eq } from "drizzle-orm";
+import { breadcrumbSchema } from "@/lib/seo/structured-data";
+
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://petjigi.com";
 
 export const revalidate = 604800;
 
@@ -28,6 +32,11 @@ export async function generateMetadata({
   return {
     title: `${breed.nameKo} 특징·성격·키우기 | 펫지기`,
     description: `${breed.nameKo} 품종 정보: 특징, 성격, 평균 수명, 흔한 질병, 키우는 방법.`,
+    alternates: { canonical: `/breed/${species}/${slug}` },
+    openGraph: {
+      title: `${breed.nameKo} 특징·성격·키우기 | 펫지기`,
+      description: `${breed.nameKo} 품종 정보: 특징, 성격, 평균 수명, 흔한 질병, 키우는 방법.`,
+    },
   };
 }
 
@@ -45,12 +54,47 @@ export default async function BreedPage({
 
   if (!breed) notFound();
 
+  const speciesLabel = SPECIES_LABEL[species] ?? species;
+  const breadcrumb = breadcrumbSchema([
+    { name: "홈", url: SITE_URL },
+    { name: `${speciesLabel} 품종`, url: `${SITE_URL}/breed/${species}` },
+    { name: breed.nameKo, url: `${SITE_URL}/breed/${species}/${slug}` },
+  ]);
+
+  const thingSchema = {
+    "@context": "https://schema.org",
+    "@type": "Thing",
+    name: breed.nameKo,
+    alternateName: breed.nameEn ?? undefined,
+    description: `${breed.nameKo} 품종 정보: 특징, 성격, 평균 수명, 흔한 질병, 키우는 방법.`,
+    url: `${SITE_URL}/breed/${species}/${slug}`,
+  };
+
   return (
-    <main className="max-w-3xl mx-auto px-4 py-12">
-      <p className="text-sm text-[var(--brand-text-secondary)] mb-2">
-        {SPECIES_LABEL[species] ?? species} 품종
-      </p>
-      <h1 className="text-3xl font-bold mb-2">{breed.nameKo}</h1>
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify([breadcrumb, thingSchema]) }}
+      />
+      <main className="max-w-3xl mx-auto px-4 py-12">
+        {/* 브레드크럼 */}
+        <nav
+          className="text-xs text-[var(--brand-text-secondary)] mb-6 flex items-center gap-1.5"
+          aria-label="breadcrumb"
+        >
+          <Link href="/" className="hover:text-[var(--brand-accent)] transition-colors">홈</Link>
+          <span aria-hidden="true">›</span>
+          <Link href={`/breed/${species}`} className="hover:text-[var(--brand-accent)] transition-colors">
+            {speciesLabel} 품종
+          </Link>
+          <span aria-hidden="true">›</span>
+          <span className="text-[var(--brand-text)]" aria-current="page">{breed.nameKo}</span>
+        </nav>
+
+        <p className="text-sm text-[var(--brand-text-secondary)] mb-2">
+          {speciesLabel} 품종
+        </p>
+        <h1 className="text-3xl font-bold mb-2">{breed.nameKo}</h1>
       {breed.nameEn && (
         <p className="text-[var(--brand-text-secondary)] mb-6">{breed.nameEn}</p>
       )}
@@ -87,5 +131,6 @@ export default async function BreedPage({
         출처: 위키피디아·공공데이터 기반 (CC BY-SA)
       </p>
     </main>
+    </>
   );
 }

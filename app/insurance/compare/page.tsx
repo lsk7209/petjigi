@@ -3,9 +3,14 @@ import Link from "next/link";
 import { YmylDisclaimer } from "@/components/content/ymyl-disclaimer";
 
 export const metadata: Metadata = {
-  title: "펫보험 비교",
+  title: "펫보험 비교 — 6대 손보사 체크리스트 | 펫지기",
   description:
     "현대해상·DB손보·KB손보·삼성화재·한화손보·메리츠화재 주요 펫보험 상품을 한눈에 비교하세요. 보장범위·보험료·자기부담금 핵심 체크리스트를 제공합니다.",
+  alternates: { canonical: "/insurance/compare" },
+  openGraph: {
+    title: "펫보험 비교 — 6대 손보사 체크리스트 | 펫지기",
+    description: "보장범위·보험료·자기부담금을 기준으로 6대 손보사 펫보험을 비교합니다.",
+  },
 };
 
 const CHECK_ITEMS = [

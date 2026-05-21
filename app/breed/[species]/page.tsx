@@ -28,6 +28,7 @@ export async function generateMetadata({
   return {
     title: `${config.label} 목록 | 펫지기`,
     description: config.desc,
+    alternates: { canonical: `/breed/${species}` },
   };
 }
 

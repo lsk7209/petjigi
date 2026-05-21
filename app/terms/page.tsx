@@ -1,6 +1,11 @@
 import type { Metadata } from "next";
 
-export const metadata: Metadata = { title: "이용약관" };
+export const metadata: Metadata = {
+  title: "이용약관 | 펫지기",
+  description: "펫지기 이용약관 — 서비스 이용 조건, 면책 사항, 저작권 정책을 확인하세요.",
+  alternates: { canonical: "/terms" },
+  robots: { index: true, follow: false },
+};
 
 export default function TermsPage() {
   return (

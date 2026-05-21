@@ -1,7 +1,10 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "어필리에이트 고지",
+  title: "어필리에이트 고지 | 펫지기",
+  description: "펫지기 어필리에이트 고지 — 제휴 링크 사실, 참여 프로그램, 추천의 객관성 보장 방침.",
+  alternates: { canonical: "/disclosure" },
+  robots: { index: true, follow: false },
 };
 
 export default function DisclosurePage() {

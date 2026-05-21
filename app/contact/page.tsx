@@ -2,8 +2,9 @@ import type { Metadata } from "next";
 import { SubscribeForm } from "@/components/forms/subscribe-form";
 
 export const metadata: Metadata = {
-  title: "문의 및 구독 — 펫지기",
-  description: "펫지기에 문의하거나 반려동물 정보 뉴스레터를 구독하세요.",
+  title: "문의 및 뉴스레터 구독 | 펫지기",
+  description: "펫지기에 문의하거나 월 2회 전문가 검토 반려동물 정보 뉴스레터를 구독하세요.",
+  alternates: { canonical: "/contact" },
 };
 
 export default function ContactPage() {
