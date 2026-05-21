@@ -31,6 +31,11 @@ const FAQ = faqSchema([
     answer: "펫지기 지역별 동물병원 검색 기능을 이용하세요. 공공데이터 기반으로 전국 동물병원 정보를 제공합니다.",
     url: `${SITE_URL}/sido/seoul`,
   },
+  {
+    question: "처음 반려동물을 키우는데 어떤 동물병원을 선택해야 하나요?",
+    answer: "집에서 가깝고 기본 장비(혈액 검사기·X-ray·초음파)를 갖춘 병원을 주치의로 정하세요. 응급 상황에 대비해 24시간 응급 동물병원 위치도 미리 파악해두는 것이 좋습니다.",
+    url: `${SITE_URL}/guide/animal-hospital-guide`,
+  },
 ]);
 
 async function getAllConditions() {
@@ -63,6 +68,10 @@ const POPULAR_CONDITIONS = [
   { label: "고양이 FLUTD", slug: "cat-flutd", emoji: "🚽" },
   { label: "심장사상충", slug: "dog-heartworm", emoji: "🦟" },
   { label: "켄넬코프", slug: "dog-kennel-cough", emoji: "🫁" },
+  { label: "강아지 구토", slug: "dog-vomiting", emoji: "🤢" },
+  { label: "파보바이러스", slug: "dog-parvovirus", emoji: "⚠️" },
+  { label: "고양이 구내염", slug: "cat-stomatitis", emoji: "🦷" },
+  { label: "강아지 피부알레르기", slug: "dog-skin-allergy", emoji: "🐾" },
 ];
 
 export default async function ConditionIndexPage() {
@@ -173,8 +182,14 @@ export default async function ConditionIndexPage() {
             <Link href="/guide" className="text-sm text-[var(--brand-accent)] hover:underline">
               📚 전체 가이드 보기 →
             </Link>
+            <Link href="/guide/animal-hospital-guide" className="text-sm text-[var(--brand-accent)] hover:underline">
+              🏥 동물병원 선택 가이드 →
+            </Link>
             <Link href="/sido/seoul" className="text-sm text-[var(--brand-accent)] hover:underline">
-              🏥 동물병원 찾기 →
+              📍 지역별 동물병원 찾기 →
+            </Link>
+            <Link href="/insurance/compare" className="text-sm text-[var(--brand-accent)] hover:underline">
+              📋 펫보험 비교 →
             </Link>
           </div>
         </section>
