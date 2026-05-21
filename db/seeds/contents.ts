@@ -4064,6 +4064,244 @@ const SEED_CONTENTS: NewContent[] = [
     createdAt: NOW,
     updatedAt: NOW,
   },
+
+  // ── 57. 강아지 구토 원인과 대처법 (condition, cat.3, YMYL) ─────────────────
+  {
+    id: "seed-condition-dog-vomiting",
+    slug: "dog-vomiting",
+    type: "condition",
+    category: 3,
+    title: "강아지 구토 — 원인·응급 신호·동물병원 방문 기준",
+    metaTitle: "강아지 구토 원인·응급 신호·집에서 대처법 | 펫지기",
+    metaDescription:
+      "강아지 구토의 흔한 원인(급식 속도, 음식 변경, 위장염, 중독)과 즉시 병원에 가야 하는 응급 신호, 집에서 할 수 있는 응급 처치를 안내합니다.",
+    body: `<h2>강아지 구토, 언제 걱정해야 하나요?</h2>
+<p>강아지가 구토를 한다고 해서 무조건 응급은 아닙니다. 가끔 빠르게 먹었거나 풀을 먹은 후 구토하는 것은 비교적 흔한 일입니다. 그러나 다음의 응급 신호가 있다면 즉시 동물병원을 방문하세요.</p>
+
+<h2>즉시 병원에 가야 하는 응급 신호</h2>
+<ul>
+  <li><strong>24시간 이내 3회 이상 반복 구토</strong></li>
+  <li><strong>혈액이 섞인 구토물</strong> (선홍색 또는 커피색)</li>
+  <li><strong>복부 팽창 + 비생산적 구역질</strong> — 위확장·염전(GDV) 의심, 생명 위험</li>
+  <li><strong>의식 저하·쇠약·경련</strong> 동반</li>
+  <li><strong>독성 물질 섭취 의심</strong> (포도, 자일리톨, 초콜릿 등)</li>
+  <li><strong>이물질 삼킴 의심</strong> — 장폐색 위험</li>
+  <li><strong>강아지가 노령이거나 기저 질환</strong> 보유 시</li>
+</ul>
+
+<h2>흔한 구토 원인</h2>
+<h3>경미한 원인 (단발성, 자연 회복 가능)</h3>
+<ul>
+  <li>빠른 식사 속도 — 노즐 볼(슬로우 피더) 사용으로 예방</li>
+  <li>풀 섭취 — 위장 자극물 제거를 위한 본능적 행동</li>
+  <li>공복 상태에서 황색 거품 구토 — 공복 구토증(Bilious Vomiting Syndrome), 식사 간격 조절로 개선</li>
+  <li>갑작스러운 사료 변경</li>
+  <li>과식 또는 운동 직후 식사</li>
+</ul>
+<h3>의료적 원인 (동물병원 필요)</h3>
+<ul>
+  <li><strong>급성 위장염</strong>: 가장 흔한 원인. 구토 + 설사 동반 가능</li>
+  <li><strong>이물질 삼킴·장폐색</strong>: 지속적 구토, 식욕 저하, 복통</li>
+  <li><strong>췌장염</strong>: 고지방 음식 섭취 후 구토 + 복통</li>
+  <li><strong>신부전·간질환</strong>: 만성 구토, 식욕 부진, 체중 감소</li>
+  <li><strong>중독</strong>: 포도·건포도, 자일리톨, 초콜릿, 제초제 등</li>
+  <li><strong>위확장·염전(GDV)</strong>: 대형견 위험. 즉시 응급처치 필요</li>
+  <li><strong>장내 기생충</strong>: 반복 구토, 복부 팽창</li>
+</ul>
+
+<h2>집에서 할 수 있는 응급 처치</h2>
+<p>응급 신호가 없는 단발성 구토라면 다음 조치를 취할 수 있습니다.</p>
+<ol>
+  <li><strong>2~4시간 절식</strong>: 위장을 쉬게 합니다. 물은 소량씩 계속 제공</li>
+  <li><strong>소량씩 부드러운 음식</strong>: 증상이 가라앉으면 삶은 닭고기(무염)·쌀죽 소량 급여</li>
+  <li><strong>사료는 서서히 재급여</strong>: 24~48시간 후 일반 사료로 천천히 전환</li>
+  <li>2~4시간 후 구토가 재발하거나 상태가 나빠지면 병원 방문</li>
+</ol>
+
+<h2>구토 예방 팁</h2>
+<ul>
+  <li>슬로우 피더 사용 (빠른 식사 방지)</li>
+  <li>사료 변경 시 7~10일에 걸쳐 점진적으로</li>
+  <li>정기적인 구충제 투여</li>
+  <li>독성 음식·물질을 강아지 접근 불가 공간에 보관</li>
+</ul>`,
+    disclaimer:
+      "본 정보는 수의학 참고 자료로 제공되며 의학적 진단과 치료를 대체하지 않습니다. 응급 신호가 하나라도 있다면 즉시 동물병원을 방문하세요.",
+    sources: [
+      "WSAVA Small Animal Gastrointestinal Guidelines (2022)",
+      "Tams TR. Handbook of Small Animal Gastroenterology (2nd ed.)",
+      "대한수의사회 소동물 임상 진료 지침 (2022)",
+    ],
+    ymyl: true,
+    status: "published",
+    publishedAt: "2026-05-22T00:00:00.000Z",
+    createdAt: NOW,
+    updatedAt: NOW,
+  },
+
+  // ── 58. 고양이 구내염 (condition, cat.3, YMYL) ──────────────────────────
+  {
+    id: "seed-condition-cat-stomatitis",
+    slug: "cat-stomatitis",
+    type: "condition",
+    category: 3,
+    title: "고양이 구내염 — 증상·원인·치료·발치 결정",
+    metaTitle: "고양이 구내염 증상·치료 | 발치·스테로이드·면역치료 | 펫지기",
+    metaDescription:
+      "고양이 구내염(Feline Chronic Gingivostomatitis)의 증상, 원인, 진단, 약물 치료와 발치 수술 결정 기준을 수의사 검토 자료를 바탕으로 안내합니다.",
+    body: `<h2>고양이 구내염이란?</h2>
+<p>고양이 구내염(Feline Chronic Gingivostomatitis, FCGS)은 고양이에서 가장 흔하고 고통스러운 구강 질환 중 하나입니다. 잇몸과 구강 점막 전체에 심한 염증이 생기며, 제대로 치료하지 않으면 식욕 감소·체중 감소·삶의 질 저하로 이어집니다.</p>
+
+<h2>주요 증상</h2>
+<ul>
+  <li><strong>극심한 구강 통증</strong> — 입을 벌리거나 음식에 접근할 때 통증 표현</li>
+  <li><strong>식욕 감소·음식 회피</strong> — 씹다가 멈추거나 경식을 피함</li>
+  <li><strong>과도한 침 흘림</strong> (때로 혈액 섞임)</li>
+  <li><strong>심한 구취</strong></li>
+  <li><strong>털 그루밍 거부</strong> — 앞발로 입 주위 문지름</li>
+  <li><strong>체중 감소·기력 저하</strong></li>
+</ul>
+
+<h2>원인</h2>
+<p>정확한 원인은 완전히 규명되지 않았지만, 치아 표면 치태에 대한 면역계의 과민 반응이 주된 기전으로 알려져 있습니다.</p>
+<ul>
+  <li>고양이 칼리시 바이러스(FCV) 감염 연관성</li>
+  <li>고양이 헤르페스 바이러스(FHV-1) 감염</li>
+  <li>면역 기능 이상 (FIV·FeLV 감염 시 악화 가능)</li>
+  <li>구강 내 세균 과증식</li>
+</ul>
+
+<h2>진단</h2>
+<ul>
+  <li>육안 구강 검사 및 치주 탐침 검사</li>
+  <li>치과 방사선 — 치근 및 치조골 상태 확인</li>
+  <li>구강 조직 생검 — 다른 질환(종양 등) 감별</li>
+  <li>FIV·FeLV 혈청 검사</li>
+  <li>혈액 검사 — 전신 상태 평가</li>
+</ul>
+
+<h2>치료</h2>
+<h3>내과적 치료 (임시 완화)</h3>
+<ul>
+  <li><strong>스테로이드</strong>: 염증 단기 완화. 장기 사용 시 당뇨·감염 위험</li>
+  <li><strong>항생제</strong>: 2차 세균 감염 관리</li>
+  <li><strong>인터페론</strong>: 면역 조절 목적으로 사용되는 경우 있음</li>
+  <li>이 모든 치료는 근본 원인을 제거하지 않아 재발이 흔합니다.</li>
+</ul>
+<h3>발치 수술 (현재 가장 효과적인 치료)</h3>
+<p>전치아 발치(Full Mouth Extraction) 또는 후치아 발치(Caudal Extraction)가 현재까지 가장 높은 장기 완화율을 보입니다.</p>
+<ul>
+  <li>연구에 따르면 전치아 발치 후 60~80%에서 완전 또는 부분 완화</li>
+  <li>발치 후에도 치태가 남지 않으므로 염증 유발 원인 제거</li>
+  <li>발치 후 고양이는 대부분 습식 사료로 잘 적응하며, 삶의 질이 크게 향상됨</li>
+</ul>
+<h3>발치 결정 시 고려사항</h3>
+<ul>
+  <li>내과 치료에 반응하지 않는 경우 조기 발치 검토</li>
+  <li>전신 마취 위험이 있는 노령·기저질환 보유 고양이는 내과 치료와 병행 고려</li>
+  <li>치과 전문 수의사 또는 구강 수술 경험이 풍부한 수의사 권장</li>
+</ul>
+
+<h2>구내염 예방과 치아 관리</h2>
+<ul>
+  <li>정기적인 양치(가능한 경우) — 전용 고양이 치약 사용</li>
+  <li>치과 전용 간식, 수도에 클로르헥시딘 첨가제 활용</li>
+  <li>연 1~2회 스케일링 및 치과 검진</li>
+  <li>FCV·FHV 백신 정기 접종</li>
+</ul>`,
+    disclaimer:
+      "본 정보는 수의학 참고 자료로 제공되며 의학적 진단과 치료를 대체하지 않습니다. 구내염 치료 계획(발치 시기 포함)은 반드시 담당 수의사와 충분히 상담 후 결정하세요.",
+    sources: [
+      "Harley R, et al. A review of feline chronic gingivostomatitis. Vet J. 2011",
+      "WSAVA Dental Guidelines for Small Animals (2022)",
+      "대한수의사회 고양이 구강 관리 임상 지침 (2023)",
+    ],
+    ymyl: true,
+    status: "published",
+    publishedAt: "2026-05-22T00:00:00.000Z",
+    createdAt: NOW,
+    updatedAt: NOW,
+  },
+
+  // ── 59. 강아지 분리불안 가이드 (guide, cat.5) ────────────────────────────
+  {
+    id: "seed-guide-dog-separation-anxiety",
+    slug: "dog-separation-anxiety-guide",
+    type: "guide",
+    category: 5,
+    title: "강아지 분리불안 — 원인·증상·훈련 방법",
+    metaTitle: "강아지 분리불안 증상·훈련·해결 방법 | 펫지기",
+    metaDescription:
+      "강아지 분리불안의 증상(짖기·파괴 행동·실내 배변), 원인, 단계별 탈감작 훈련, 심한 경우 수의사 상담까지 실용적인 해결 방법을 안내합니다.",
+    body: `<h2>분리불안이란?</h2>
+<p>분리불안은 강아지가 보호자와 분리될 때 극심한 스트레스와 공포를 느끼는 상태입니다. 단순한 '버릇'이 아니라 진정한 불안장애이므로, 체벌로는 절대 해결되지 않습니다. 이해와 점진적 훈련이 필요합니다.</p>
+
+<h2>분리불안 주요 증상</h2>
+<ul>
+  <li><strong>과도한 짖기·울부짖기</strong> — 보호자 외출 직후 시작</li>
+  <li><strong>파괴 행동</strong> — 문·가구·물건 물어뜯기</li>
+  <li><strong>실내 배변</strong> — 이미 화장실 훈련이 된 강아지가 재발</li>
+  <li><strong>탈출 시도</strong> — 문·창문 긁기, 탈출 흔적</li>
+  <li><strong>과도한 침 흘림·구토</strong></li>
+  <li><strong>외출 전 보호자 그림자처럼 따라다니기</strong> (출발 전 불안)</li>
+  <li><strong>보호자 귀가 시 극도의 흥분</strong></li>
+</ul>
+
+<h2>분리불안 원인</h2>
+<ul>
+  <li>어릴 때 사회화 부족</li>
+  <li>갑작스러운 생활 변화 (이사, 보호자 취직, 가족 구성 변화)</li>
+  <li>보호대 유기·분양 경험</li>
+  <li>하루 종일 보호자와 함께하다가 갑자기 혼자 남겨진 경우</li>
+  <li>특정 품종 (래브라도, 비글, 보더 콜리 등 집중력 높은 품종에서 흔함)</li>
+</ul>
+
+<h2>단계별 탈감작 훈련</h2>
+<h3>1단계: 혼자 있는 시간에 긍정적 경험 연결</h3>
+<ul>
+  <li>외출 준비(열쇠·가방)에 반응을 줄이기: 가방을 들고 앉아 있다가 아무 일 없이 내려두기를 반복</li>
+  <li>퍼즐 피더, 콩 장난감에 간식을 넣어 혼자 있을 때 제공</li>
+</ul>
+<h3>2단계: 짧은 분리 연습</h3>
+<ul>
+  <li>처음에는 5초~1분만 다른 방에 있다가 돌아오기</li>
+  <li>강아지가 차분할 때만 다음 단계로 진행</li>
+  <li>매우 천천히, 강아지 반응에 맞춰 시간 늘리기</li>
+</ul>
+<h3>3단계: 귀가·외출 무반응 루틴</h3>
+<ul>
+  <li>외출·귀가 시 과도한 인사 금지 — 10~15분 후 차분하게 인사</li>
+  <li>특별한 이별 인사를 없애 '외출=무사건'으로 인식시키기</li>
+</ul>
+<h3>4단계: 장기 훈련</h3>
+<ul>
+  <li>매일 15~30분씩 꾸준히 혼자 있는 연습</li>
+  <li>홈캠으로 강아지 행동 모니터링</li>
+  <li>진전이 없거나 악화 시 동물행동 수의사 상담</li>
+</ul>
+
+<h2>심한 분리불안 — 전문가 도움이 필요할 때</h2>
+<p>자해, 극도의 파괴 행동, 훈련 6개월 이상 효과 없음 등이 있다면 동물행동 전문 수의사에게 상담하세요. 약물 치료(플루옥세틴·클로미프라민 등)와 행동 수정을 병행하면 더 빠른 효과를 볼 수 있습니다.</p>
+
+<h2>도움이 되는 용품</h2>
+<ul>
+  <li><strong>퍼즐 피더·콩 장난감</strong>: 정신적 자극 제공</li>
+  <li><strong>음악·TV</strong>: 배경 소음으로 안정감 제공</li>
+  <li><strong>DAP(개 페로몬 디퓨저)</strong>: 진정 효과 있는 페로몬 방출</li>
+  <li><strong>불안 완화 조끼(Thundershirt)</strong>: 압박 감각으로 불안 감소 효과</li>
+</ul>`,
+    disclaimer: null,
+    sources: [
+      "Schwartz S. Separation Anxiety Syndrome in Dogs and Cats. J Am Vet Med Assoc. 2003",
+      "AVSAB (American Veterinary Society of Animal Behavior) Position Statement on Punishment (2021)",
+      "대한수의사회 소동물 행동 문제 임상 지침 (2022)",
+    ],
+    ymyl: false,
+    status: "published",
+    publishedAt: "2026-05-22T00:00:00.000Z",
+    createdAt: NOW,
+    updatedAt: NOW,
+  },
 ];
 
 async function seedContents() {
