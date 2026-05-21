@@ -298,6 +298,42 @@ export default async function CategoryPage({
               </section>
             )}
 
+            {/* 건강·의료: 질병·증상 허브 링크 */}
+            {cat.slug === "health" && (
+              <section className="mb-8" aria-label="질병·증상 정보">
+                <h2 className="text-xl font-bold text-[var(--brand-text)] mb-4">질병·증상 정보</h2>
+                <p className="text-sm text-[var(--brand-text-secondary)] mb-4">
+                  강아지·고양이에게 흔한 질환의 증상, 원인, 치료 방법을 수의사 검토를 거쳐 안내합니다.
+                </p>
+                <div className="flex flex-wrap gap-3">
+                  <Link
+                    href="/condition"
+                    className="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-[var(--cat-3)] text-white text-sm font-semibold hover:opacity-90 transition-opacity shadow-sm"
+                  >
+                    💊 질병·증상 정보 보기 →
+                  </Link>
+                  <Link
+                    href="/condition/dog-patellar-luxation"
+                    className="flex items-center gap-1.5 px-4 py-2 rounded-xl border border-[var(--brand-border)] text-sm hover:border-[var(--cat-3)] hover:text-[var(--cat-3)] transition-colors"
+                  >
+                    🦴 슬개골 탈구
+                  </Link>
+                  <Link
+                    href="/condition/cat-flutd"
+                    className="flex items-center gap-1.5 px-4 py-2 rounded-xl border border-[var(--brand-border)] text-sm hover:border-[var(--cat-3)] hover:text-[var(--cat-3)] transition-colors"
+                  >
+                    🚽 고양이 FLUTD
+                  </Link>
+                  <Link
+                    href="/condition/dog-heartworm"
+                    className="flex items-center gap-1.5 px-4 py-2 rounded-xl border border-[var(--brand-border)] text-sm hover:border-[var(--cat-3)] hover:text-[var(--cat-3)] transition-colors"
+                  >
+                    🦟 심장사상충
+                  </Link>
+                </div>
+              </section>
+            )}
+
             {/* 보험·법률: 보험 비교 */}
             {cat.slug === "insurance" && (
               <section className="mb-8" aria-label="펫보험 비교">

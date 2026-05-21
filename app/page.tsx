@@ -287,7 +287,7 @@ export default async function HomePage() {
                   <span className="pj-numeral" style={{ fontSize: 14 }}>03</span>
                   <h2 className="pj-display" style={{ fontSize: 32, marginTop: 4 }}>이번 주 가이드</h2>
                 </div>
-                <Link href="/category/health" style={{ color: "var(--brand-accent-warm)", fontWeight: 600, textDecoration: "none" }}>전체 가이드 →</Link>
+                <Link href="/guide" style={{ color: "var(--brand-accent-warm)", fontWeight: 600, textDecoration: "none" }}>전체 가이드 →</Link>
               </div>
 
               <div className="grid gap-5" style={{ gridTemplateColumns: "repeat(auto-fill,minmax(280px,1fr))" }}>
