@@ -13,6 +13,7 @@ import { articleSchema, breadcrumbSchema, faqSchema } from "@/lib/seo/structured
 import { TableOfContents } from "@/components/content/table-of-contents";
 import { ReadingProgress } from "@/components/content/reading-progress";
 import { ShareButtons } from "@/components/content/share-buttons";
+import { CategoryCta } from "@/components/content/category-cta";
 import type { TocHeading } from "@/components/content/table-of-contents";
 
 export const revalidate = 604800;
@@ -274,6 +275,9 @@ export default async function GuidePage({
         <AdPolicyProvider category={categoryId}>
           <AdSlot adType="adsense" format="rectangle" className="my-6" />
         </AdPolicyProvider>
+
+        {/* 카테고리 맞춤 CTA */}
+        <CategoryCta categoryId={categoryId} className="my-6" />
 
         {/* 공유 버튼 */}
         <div className="mt-6 pt-5 border-t border-[var(--brand-border)]">

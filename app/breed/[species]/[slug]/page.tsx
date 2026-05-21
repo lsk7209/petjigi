@@ -5,10 +5,16 @@ import { db } from "@/db/client";
 import { breeds } from "@/db/schema";
 import { and, eq } from "drizzle-orm";
 import { breadcrumbSchema } from "@/lib/seo/structured-data";
+import { CategoryCta } from "@/components/content/category-cta";
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://petjigi.kr";
 
 export const revalidate = 604800;
+
+export async function generateStaticParams() {
+  const rows = await db.select({ species: breeds.species, slug: breeds.slug }).from(breeds);
+  return rows.map((r) => ({ species: r.species, slug: r.slug }));
+}
 
 const SPECIES_LABEL: Record<string, string> = {
   dog: "강아지",
@@ -124,6 +130,8 @@ export default async function BreedPage({
           dangerouslySetInnerHTML={{ __html: breed.body }}
         />
       )}
+
+      <CategoryCta categoryId={3} className="mt-8" />
 
       <p className="text-xs text-[var(--brand-text-secondary)] mt-8">
         출처: 위키피디아·공공데이터 기반 (CC BY-SA)

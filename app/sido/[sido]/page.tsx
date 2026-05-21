@@ -8,6 +8,16 @@ import { breadcrumbSchema } from "@/lib/seo/structured-data";
 
 export const revalidate = 86400;
 
+export function generateStaticParams() {
+  const SIDO_SLUGS = [
+    "seoul", "gyeonggi", "busan", "incheon", "daegu",
+    "gwangju", "daejeon", "ulsan", "sejong", "gangwon",
+    "chungbuk", "chungnam", "jeonbuk", "jeonnam",
+    "gyeongbuk", "gyeongnam", "jeju",
+  ];
+  return SIDO_SLUGS.map((sido) => ({ sido }));
+}
+
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://petjigi.kr";
 
 export async function generateMetadata({
