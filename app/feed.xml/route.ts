@@ -10,6 +10,7 @@ export async function GET() {
     .select({
       slug: contents.slug,
       title: contents.title,
+      type: contents.type,
       metaDescription: contents.metaDescription,
       publishedAt: contents.publishedAt,
       updatedAt: contents.updatedAt,
@@ -32,8 +33,8 @@ export async function GET() {
         (p) => `
     <item>
       <title><![CDATA[${p.title}]]></title>
-      <link>${SITE_URL}/guide/${p.slug}</link>
-      <guid>${SITE_URL}/guide/${p.slug}</guid>
+      <link>${SITE_URL}/${p.type === "condition" ? "condition" : "guide"}/${p.slug}</link>
+      <guid>${SITE_URL}/${p.type === "condition" ? "condition" : "guide"}/${p.slug}</guid>
       <description><![CDATA[${p.metaDescription ?? ""}]]></description>
       <pubDate>${new Date(p.publishedAt ?? p.updatedAt ?? new Date().toISOString()).toUTCString()}</pubDate>
     </item>`

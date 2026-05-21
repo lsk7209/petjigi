@@ -6,6 +6,7 @@ import { breeds } from "@/db/schema";
 import { and, eq } from "drizzle-orm";
 import { breadcrumbSchema } from "@/lib/seo/structured-data";
 import { CategoryCta } from "@/components/content/category-cta";
+import { ShareButtons } from "@/components/content/share-buttons";
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://petjigi.kr";
 
@@ -133,7 +134,11 @@ export default async function BreedPage({
 
       <CategoryCta categoryId={3} className="mt-8" />
 
-      <p className="text-xs text-[var(--brand-text-secondary)] mt-8">
+      <div className="mt-6 pt-6 border-t border-[var(--brand-border)]">
+        <ShareButtons url={`${SITE_URL}/breed/${breed.species}/${breed.slug}`} title={`${breed.nameKo} 품종 정보 | 펫지기`} />
+      </div>
+
+      <p className="text-xs text-[var(--brand-text-secondary)] mt-6">
         출처: 위키피디아·공공데이터 기반 (CC BY-SA)
       </p>
     </main>
