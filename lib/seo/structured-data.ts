@@ -129,7 +129,18 @@ export function articleSchema({
     ...(description ? { description } : {}),
     url,
     inLanguage: "ko-KR",
+    isAccessibleForFree: true,
     ...(imageUrl ? { image: imageUrl } : {}),
+    ...(isYmyl
+      ? {
+          audience: { "@type": "Patient" },
+          medicalAudience: { "@type": "MedicalAudience", audienceType: "Caregiver" },
+        }
+      : {}),
+    speakable: {
+      "@type": "SpeakableSpecification",
+      cssSelector: ["h1", "h2", "[data-speakable]"],
+    },
     ...(authorName
       ? {
           author: {
@@ -173,14 +184,50 @@ export function articleSchema({
   };
 }
 
-export function faqSchema(items: { question: string; answer: string }[]) {
+export function faqSchema(items: { question: string; answer: string; url?: string }[]) {
   return {
     "@context": "https://schema.org",
     "@type": "FAQPage",
     mainEntity: items.map((item) => ({
       "@type": "Question",
       name: item.question,
-      acceptedAnswer: { "@type": "Answer", text: item.answer },
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: item.answer,
+        ...(item.url ? { url: item.url } : {}),
+      },
+    })),
+  };
+}
+
+/** 카테고리·허브 페이지용 DefinedTermSet (GEO — AI 정의 노출) */
+export function definedTermSetSchema(name: string, terms: { name: string; description: string }[]) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "DefinedTermSet",
+    name,
+    inLanguage: "ko-KR",
+    hasDefinedTerm: terms.map((t) => ({
+      "@type": "DefinedTerm",
+      name: t.name,
+      description: t.description,
+      inDefinedTermSet: name,
+    })),
+  };
+}
+
+/** HowTo 스키마 (단계별 가이드 — AEO) */
+export function howToSchema(name: string, steps: { name: string; text: string }[]) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    name,
+    inLanguage: "ko-KR",
+    step: steps.map((s, i) => ({
+      "@type": "HowToStep",
+      position: i + 1,
+      name: s.name,
+      text: s.text,
     })),
   };
 }

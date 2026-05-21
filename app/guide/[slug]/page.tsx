@@ -153,7 +153,7 @@ export default async function GuidePage({
             )}
           </div>
 
-          <h1 className="text-xl sm:text-2xl md:text-3xl font-extrabold text-[var(--brand-text)] leading-tight mb-3 sm:mb-4 tracking-tight" style={{ wordBreak: "keep-all" }}>
+          <h1 className="text-xl sm:text-2xl md:text-3xl font-extrabold text-[var(--brand-text)] leading-tight mb-3 sm:mb-4 tracking-tight" style={{ wordBreak: "keep-all" }} data-speakable>
             {content.title}
           </h1>
 

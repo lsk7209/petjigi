@@ -4,25 +4,49 @@ import { db } from "@/db/client";
 import { contents, businesses, shelters, rescuedAnimals } from "@/db/schema";
 import { eq, desc, and, sql, count } from "drizzle-orm";
 import { CATEGORIES } from "@/lib/category";
-import { faqSchema } from "@/lib/seo/structured-data";
+import { faqSchema, definedTermSetSchema } from "@/lib/seo/structured-data";
+
+const SITE_URL_CONST = process.env.NEXT_PUBLIC_SITE_URL ?? "https://petjigi.kr";
 
 const HOME_FAQ = faqSchema([
   {
     question: "펫지기는 어떤 서비스인가요?",
     answer: "펫지기는 공공데이터포털(농림축산검역본부·행정안전부)을 기반으로 전국 30,000개 이상의 동물병원·펫미용·펫호텔·장묘업체 정보를 제공하는 무료 반려동물 정보 서비스입니다.",
+    url: SITE_URL_CONST,
   },
   {
     question: "전국 동물병원을 어떻게 찾나요?",
-    answer: "지역별 검색에서 시도를 선택하면 해당 지역 동물병원 목록을 확인할 수 있습니다. 예) 서울 강남구 동물병원, 경기 수원 동물병원 등.",
+    answer: "지역별 검색에서 시도를 선택하면 해당 지역 동물병원 목록을 확인할 수 있습니다. 예) 서울 강남구 동물병원, 경기 수원 동물병원 등. 공공데이터 기준 영업 중인 업체만 표시됩니다.",
+    url: `${SITE_URL_CONST}/sido/seoul`,
   },
   {
     question: "유기동물 입양은 어떻게 하나요?",
     answer: "구조동물 메뉴에서 현재 보호 중인 동물을 확인하고, 가까운 보호센터에 직접 연락하시면 됩니다. 전국 보호센터 정보도 함께 제공됩니다.",
+    url: `${SITE_URL_CONST}/rescue`,
   },
   {
     question: "정보는 얼마나 자주 업데이트되나요?",
     answer: "동물병원·펫미용 등 영업장 정보는 매일, 구조동물 현황은 매일, 보호센터 정보는 매주 공공데이터에서 동기화됩니다.",
+    url: SITE_URL_CONST,
   },
+  {
+    question: "반려동물 보험은 어디서 비교하나요?",
+    answer: "펫지기 보험 비교 페이지에서 주요 펫보험 상품을 한눈에 비교할 수 있습니다. 보장 범위·보험료·특약을 정리해 제공합니다.",
+    url: `${SITE_URL_CONST}/insurance/compare`,
+  },
+  {
+    question: "동물등록은 어디서 할 수 있나요?",
+    answer: "동물등록은 지역 동물병원, 동물보호센터, 등록대행업체에서 가능합니다. 펫지기에서 가까운 동물등록 가능 업체를 찾아보세요.",
+    url: `${SITE_URL_CONST}/category/adoption`,
+  },
+]);
+
+// GEO: AI가 반려동물 용어 정의를 추출할 수 있도록 DefinedTermSet 추가
+const HOME_TERMS = definedTermSetSchema("반려동물 기본 용어", [
+  { name: "동물등록", description: "반려견을 지방자치단체에 등록하는 제도. 분실 시 소유자 확인에 필수. 2개월령 이상 개는 의무 등록 대상." },
+  { name: "유기동물", description: "소유자가 포기하거나 잃어버린 반려동물. 지방자치단체 보호소에서 일정 기간 보호 후 입양·안락사 등 처리." },
+  { name: "펫보험", description: "반려동물의 의료비를 보장하는 보험 상품. 수술비·입원비·통원치료비 등을 보장하며 상품마다 보장 범위가 다름." },
+  { name: "중성화수술", description: "반려동물의 번식 능력을 제거하는 수술. 호르몬 관련 질환 예방 및 개체 수 조절 효과가 있음." },
 ]);
 
 export const revalidate = 3600;
@@ -108,10 +132,8 @@ export default async function HomePage() {
 
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(HOME_FAQ) }}
-      />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(HOME_FAQ) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(HOME_TERMS) }} />
     <main className="min-h-screen bg-[var(--brand-bg)]">
       {/* Hero */}
       <section className="max-w-5xl mx-auto px-4 pt-10 pb-10 sm:pt-16 sm:pb-14 text-center" aria-label="사이트 소개">

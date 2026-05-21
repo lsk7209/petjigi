@@ -128,8 +128,11 @@ html {
   -webkit-text-size-adjust: 100%;
   text-size-adjust: 100%;
   text-rendering: optimizeLegibility;
-  font-feature-settings: "kern" 1;
+  -webkit-font-feature-settings: "kern" 1, "liga" 1;
+  font-feature-settings: "kern" 1, "liga" 1;
   scroll-behavior: smooth;
+  /* 최소 폰트 크기 보장 (모바일 가독성) */
+  font-size: 16px;
 }
 
 body {
@@ -138,9 +141,33 @@ body {
   font-family: inherit;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  line-height: 1.7;
+  /* 한국어 최적 행간: 1.7 (영어 1.5보다 넓어야 가독성 좋음) */
+  line-height: 1.75;
   word-break: keep-all;
   overflow-wrap: break-word;
+  /* 텍스트 크기 일관성 */
+  font-size: 1rem;
+}
+
+/* ─── 제목 계층 타이포그래피 ─── */
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1.35;
+  letter-spacing: -0.01em;
+  word-break: keep-all;
+  font-weight: 700;
+}
+
+h1 { font-weight: 800; letter-spacing: -0.025em; }
+
+/* ─── 링크 기본 스타일 ─── */
+a {
+  text-decoration-skip-ink: auto;
+}
+
+/* ─── 단락 최적화 ─── */
+p {
+  /* 한국어 문단 가독성 위해 line-height 명시 */
+  line-height: 1.75;
 }
 
 /* ─── 선택 텍스트 색상 ─── */
