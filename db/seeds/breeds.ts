@@ -341,6 +341,142 @@ const SEED_BREEDS: NewBreed[] = [
     createdAt: NOW,
     updatedAt: NOW,
   },
+
+  // ════════════════════════════════
+  //  소동물 (small) × 4
+  // ════════════════════════════════
+
+  {
+    id: "seed-breed-dutch-rabbit",
+    species: "small",
+    slug: "dutch-rabbit",
+    nameKo: "더치 토끼",
+    nameEn: "Dutch Rabbit",
+    origin: "네덜란드",
+    sizeCategory: "small",
+    lifespanMin: 8,
+    lifespanMax: 12,
+    commonConditions: ["치아 과성장(말로클루전)", "GI 정체", "호흡기 감염", "비만"],
+    body: `<h2>더치 토끼 기본 정보</h2>
+<p>더치 토끼는 흑백 또는 다양한 색상의 뚜렷한 이색 패턴이 특징입니다. 사교적이고 조용하며 훈련이 가능해 초보 토끼 보호자에게 인기가 높습니다.</p>
+
+<h2>성격·특성</h2>
+<ul>
+  <li>사람을 좋아하고 안기는 것을 거부하지 않는 편</li>
+  <li>영리해 이름 인식 및 간단한 명령 훈련 가능</li>
+  <li>다른 토끼와 함께 생활 가능 (단, 중성화 필수)</li>
+</ul>
+
+<h2>케어 포인트</h2>
+<ul>
+  <li><strong>건초 중심 식단</strong>: 식이섬유 풍부한 건초(티모시 등)가 80% 이상이어야 치아·소화 건강 유지</li>
+  <li><strong>운동 공간</strong>: 하루 3~4시간 자유 활동 공간 필요</li>
+  <li><strong>치아 검진</strong>: 과성장 위험이 높아 정기 구강 검진 권장</li>
+  <li><strong>소동물 전문 병원</strong>: 일반 동물병원과 달리 소동물 진료 가능 병원 사전 확인 필수</li>
+</ul>`,
+    status: "published",
+    createdAt: NOW,
+    updatedAt: NOW,
+  },
+
+  {
+    id: "seed-breed-guinea-pig",
+    species: "small",
+    slug: "guinea-pig",
+    nameKo: "기니피그",
+    nameEn: "Guinea Pig",
+    origin: "남미 안데스 지역",
+    sizeCategory: "small",
+    lifespanMin: 4,
+    lifespanMax: 8,
+    commonConditions: ["비타민 C 결핍(괴혈병)", "이(Lice)·진드기", "호흡기 감염", "난소 낭종(암컷)"],
+    body: `<h2>기니피그 기본 정보</h2>
+<p>기니피그는 사회적 동물로 2마리 이상 함께 키우는 것이 권장됩니다. 울음소리(wheeking)로 배고픔이나 기쁨을 표현하며, 주인을 인식하고 반응합니다.</p>
+
+<h2>성격·특성</h2>
+<ul>
+  <li>사회적 동물 — 단독 사육은 스트레스 원인</li>
+  <li>낮 시간대에 활동적, 야행성이 아님</li>
+  <li>온순해 어린이와 함께하기 적합한 반려동물</li>
+</ul>
+
+<h2>케어 포인트</h2>
+<ul>
+  <li><strong>비타민 C 필수 공급</strong>: 기니피그는 체내에서 비타민 C를 합성하지 못합니다. 피망, 파슬리, 전용 보충제로 매일 공급 필요</li>
+  <li><strong>넓은 사육장</strong>: 최소 0.6㎡ 이상의 바닥 면적 권장</li>
+  <li><strong>건초 중심</strong>: 티모시 건초가 치아·소화 건강의 핵심</li>
+  <li><strong>암컷 합사 주의</strong>: 수컷과 함께 키울 경우 번식 조절 위한 중성화 상담</li>
+</ul>`,
+    status: "published",
+    createdAt: NOW,
+    updatedAt: NOW,
+  },
+
+  {
+    id: "seed-breed-hamster-syrian",
+    species: "small",
+    slug: "syrian-hamster",
+    nameKo: "시리아 햄스터 (골든 햄스터)",
+    nameEn: "Syrian Hamster",
+    origin: "시리아 사막",
+    sizeCategory: "small",
+    lifespanMin: 2,
+    lifespanMax: 3,
+    commonConditions: ["볼 낭종(Cheek Pouch Impaction)", "Wet Tail(설사)", "종양(지방종)", "당뇨"],
+    body: `<h2>시리아 햄스터 기본 정보</h2>
+<p>가장 대표적인 반려 햄스터 품종입니다. 야생에서 단독 생활을 하기 때문에 반드시 단독 사육해야 합니다. 밤에 가장 활발하게 활동합니다.</p>
+
+<h2>성격·특성</h2>
+<ul>
+  <li>단독 생활 필수 — 합사 시 심각한 싸움·사망 위험</li>
+  <li>야행성, 저녁~새벽에 활발</li>
+  <li>처음에는 낯을 가리지만 꾸준한 접촉으로 길들이기 가능</li>
+</ul>
+
+<h2>케어 포인트</h2>
+<ul>
+  <li><strong>쳇바퀴 필수</strong>: 하루 수 킬로미터를 달리는 본능. 직경 20~25cm 이상 솔리드형 쳇바퀴 필요</li>
+  <li><strong>깊은 바닥재</strong>: 굴 파기 본능 충족을 위해 15~20cm 이상 깊이 배치</li>
+  <li><strong>온도 관리</strong>: 적정 온도 18~24°C. 10°C 이하면 가사 상태(Torpor) 위험</li>
+  <li><strong>볼 사용 제한</strong>: 햄스터 볼은 방향 감각 혼란 및 과열 위험. 30분 이내 사용 권장</li>
+</ul>`,
+    status: "published",
+    createdAt: NOW,
+    updatedAt: NOW,
+  },
+
+  {
+    id: "seed-breed-chinchilla",
+    species: "small",
+    slug: "chinchilla",
+    nameKo: "친칠라",
+    nameEn: "Chinchilla",
+    origin: "남미 안데스 산맥",
+    sizeCategory: "small",
+    lifespanMin: 10,
+    lifespanMax: 15,
+    commonConditions: ["치아 과성장(말로클루전)", "열사병", "GI 정체", "털 씹기(Fur Chewing)"],
+    body: `<h2>친칠라 기본 정보</h2>
+<p>세계에서 가장 부드러운 털을 가진 동물로 알려진 친칠라는 수명이 10~15년으로 소동물 중 가장 깁니다. 조용하고 민감한 동물로 스트레스 관리가 매우 중요합니다.</p>
+
+<h2>성격·특성</h2>
+<ul>
+  <li>조용하고 민감해 갑작스러운 소음·자극에 취약</li>
+  <li>야행성 ~ 여명성 (새벽·저녁에 활발)</li>
+  <li>오래 살기 때문에 15년 이상의 장기 책임 의지 필요</li>
+</ul>
+
+<h2>케어 포인트</h2>
+<ul>
+  <li><strong>온도 엄격 관리</strong>: 25°C 이상에서 열사병 위험. 에어컨 필수 환경에서만 사육 권장</li>
+  <li><strong>먼지 목욕</strong>: 물 목욕 절대 금지. 친칠라 전용 화산재(Dust Bath)로 주 2~3회 관리</li>
+  <li><strong>건초 중심</strong>: 티모시 건초가 식이의 80% 이상 (치아·소화 건강)</li>
+  <li><strong>사회화</strong>: 2마리 이상 동성 합사 가능 (이성 합사 시 번식 조절 필수)</li>
+</ul>`,
+    status: "published",
+    createdAt: NOW,
+    updatedAt: NOW,
+  },
 ];
 
 async function seedBreeds() {
