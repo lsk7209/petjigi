@@ -258,6 +258,24 @@ export default async function ConditionPage({
             </ul>
           </aside>
         )}
+
+        <section className="mt-8 pt-6 border-t border-[var(--brand-border)]">
+          <h2 className="text-base font-semibold text-[var(--brand-text)] mb-3">함께 보면 좋은 정보</h2>
+          <div className="flex flex-wrap gap-3">
+            <Link href="/condition" className="text-sm text-[var(--brand-accent)] hover:underline">
+              ← 질환·증상 목록
+            </Link>
+            <Link href="/guide" className="text-sm text-[var(--brand-accent)] hover:underline">
+              📚 반려동물 가이드 →
+            </Link>
+            <Link href="/insurance/compare" className="text-sm text-[var(--brand-accent)] hover:underline">
+              📋 펫보험 비교 →
+            </Link>
+            <Link href="/sido/seoul" className="text-sm text-[var(--brand-accent)] hover:underline">
+              🏥 동물병원 찾기 →
+            </Link>
+          </div>
+        </section>
       </main>
     </>
   );

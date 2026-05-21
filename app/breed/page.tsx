@@ -1,12 +1,35 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { breadcrumbSchema } from "@/lib/seo/structured-data";
+import { breadcrumbSchema, faqSchema } from "@/lib/seo/structured-data";
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://petjigi.kr";
 
 const BREADCRUMB = breadcrumbSchema([
   { name: "홈", url: SITE_URL },
   { name: "견종·묘종 도감", url: `${SITE_URL}/breed` },
+]);
+
+const FAQ = faqSchema([
+  {
+    question: "강아지 품종을 선택할 때 가장 중요한 기준은 무엇인가요?",
+    answer: "생활 공간 크기, 운동량, 털 알레르기 여부, 평균 의료비를 우선 고려하세요. 아파트 거주라면 소형견이나 활동성이 낮은 품종이 적합하며, 운동을 좋아한다면 활발한 중·대형견도 잘 어울립니다.",
+    url: `${SITE_URL}/breed`,
+  },
+  {
+    question: "저알레르기 강아지 품종은 무엇이 있나요?",
+    answer: "털 빠짐이 적은 말티즈, 푸들, 비숑 프리제, 슈나우저 등이 알레르기 반응이 상대적으로 낮은 편입니다. 단, 완전한 '알레르기 없음' 품종은 없으므로 입양 전 직접 접촉 테스트를 권장합니다.",
+    url: `${SITE_URL}/breed/dog`,
+  },
+  {
+    question: "고양이 품종마다 성격 차이가 있나요?",
+    answer: "네, 품종마다 특성이 다릅니다. 랙돌·페르시안은 조용하고 온순한 편이고, 벵갈·아비시니안은 활발하고 에너지가 넘칩니다. 처음 고양이를 키운다면 온순한 품종부터 시작하는 것이 적응이 쉽습니다.",
+    url: `${SITE_URL}/breed/cat`,
+  },
+  {
+    question: "특정 품종에서 자주 나타나는 건강 문제는 어디서 확인하나요?",
+    answer: "각 품종 상세 페이지에서 '주의해야 할 질환'을 확인하세요. 불독·퍼그 등 단두종은 호흡기 문제, 닥스훈트는 척추 디스크, 골든 리트리버는 고관절 이형성증에 주의가 필요합니다.",
+    url: `${SITE_URL}/condition`,
+  },
 ]);
 
 export const metadata: Metadata = {
@@ -60,6 +83,10 @@ export default function BreedIndexPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(BREADCRUMB) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(FAQ) }}
       />
       <main className="max-w-4xl mx-auto px-4 py-12">
         {/* 브레드크럼 */}
@@ -133,18 +160,39 @@ export default function BreedIndexPage() {
           </div>
         </section>
 
+        {/* FAQ */}
+        <section className="mb-10 pt-8 border-t border-[var(--brand-border)]" aria-label="자주 묻는 질문">
+          <h2 className="text-xl font-bold text-[var(--brand-text)] mb-4">견종·묘종 자주 묻는 질문</h2>
+          <dl className="space-y-3">
+            {[
+              { q: "강아지 품종을 선택할 때 가장 중요한 기준은?", a: "생활 공간 크기, 운동량, 털 알레르기 여부, 평균 의료비를 우선 고려하세요. 아파트 거주라면 소형견이나 활동성이 낮은 품종이 적합하며, 운동을 좋아한다면 활발한 중·대형견도 잘 어울립니다." },
+              { q: "저알레르기 강아지 품종은 무엇이 있나요?", a: "말티즈, 푸들, 비숑 프리제, 슈나우저 등이 알레르기 반응이 상대적으로 낮은 편입니다. 단, 완전한 알레르기 없음 품종은 없으므로 입양 전 직접 접촉 테스트를 권장합니다." },
+              { q: "고양이 품종마다 성격 차이가 있나요?", a: "네, 품종마다 특성이 다릅니다. 랙돌·페르시안은 조용하고 온순한 편이고, 벵갈·아비시니안은 활발하고 에너지가 넘칩니다. 처음 고양이를 키운다면 온순한 품종부터 시작하는 것이 적응이 쉽습니다." },
+              { q: "특정 품종의 흔한 질환은 어디서 확인하나요?", a: "각 품종 상세 페이지에서 주의해야 할 질환을 확인하세요. 불독·퍼그 등 단두종은 호흡기 문제, 닥스훈트는 척추 디스크, 골든 리트리버는 고관절 이형성증에 주의가 필요합니다." },
+            ].map((item, i) => (
+              <div key={i} className="rounded-xl border border-[var(--brand-border)] p-4">
+                <dt className="font-semibold text-sm text-[var(--brand-text)] mb-1.5">Q. {item.q}</dt>
+                <dd className="text-sm text-[var(--brand-text-secondary)] leading-relaxed">{item.a}</dd>
+              </div>
+            ))}
+          </dl>
+        </section>
+
         {/* 관련 링크 */}
         <section className="border-t border-[var(--brand-border)] pt-8">
           <h2 className="text-base font-semibold text-[var(--brand-text)] mb-4">함께 보면 좋은 정보</h2>
           <div className="flex flex-wrap gap-3">
             <Link href="/category/adoption" className="text-sm text-[var(--brand-accent)] hover:underline">
-              입양·등록 가이드 →
+              🐾 입양·등록 가이드 →
+            </Link>
+            <Link href="/condition" className="text-sm text-[var(--brand-accent)] hover:underline">
+              💊 질병·증상 정보 →
             </Link>
             <Link href="/category/health" className="text-sm text-[var(--brand-accent)] hover:underline">
-              건강·의료 정보 →
+              🏥 건강·의료 정보 →
             </Link>
             <Link href="/insurance/compare" className="text-sm text-[var(--brand-accent)] hover:underline">
-              펫보험 비교 →
+              📋 펫보험 비교 →
             </Link>
           </div>
         </section>

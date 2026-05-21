@@ -338,15 +338,31 @@ export default async function GuidePage({
                 </Link>
               ))}
             </div>
-            <p className="mt-4 text-center">
+            <div className="mt-4 flex flex-wrap gap-4 justify-center">
               <Link
                 href={`/category/${cat?.slug ?? "health"}`}
                 className="text-sm text-[var(--brand-accent)] font-semibold hover:underline"
               >
                 {cat?.name} 가이드 전체 보기 →
               </Link>
-            </p>
+              <Link href="/guide" className="text-sm text-[var(--brand-accent)] hover:underline">
+                📚 전체 가이드 →
+              </Link>
+            </div>
           </aside>
+        )}
+
+        {relatedGuides.length === 0 && (
+          <div className="mt-10 pt-8 border-t border-[var(--brand-border)]">
+            <div className="flex flex-wrap gap-3">
+              <Link href="/guide" className="text-sm text-[var(--brand-accent)] hover:underline">
+                ← 전체 가이드
+              </Link>
+              <Link href={`/category/${cat?.slug ?? "health"}`} className="text-sm text-[var(--brand-accent)] hover:underline">
+                {cat?.name} 가이드 →
+              </Link>
+            </div>
+          </div>
         )}
       </main>
     </>
