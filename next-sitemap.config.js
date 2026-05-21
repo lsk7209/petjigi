@@ -24,14 +24,11 @@ module.exports = {
   priority: 0.7,
   transform: async (config, path) => {
     // 카테고리 허브·홈 우선순위 높게
-    if (path === "/" || path.startsWith("/category/")) {
+    if (path === "/" || path === "/breed" || path.startsWith("/category/") || path.startsWith("/insurance/")) {
       return { loc: path, changefreq: "hourly", priority: 1.0, lastmod: new Date().toISOString() };
     }
     if (path.startsWith("/sido/") || path.startsWith("/guide/") || path.startsWith("/breed/") || path.startsWith("/condition/")) {
       return { loc: path, changefreq: "weekly", priority: 0.8, lastmod: new Date().toISOString() };
-    }
-    if (path.startsWith("/insurance/")) {
-      return { loc: path, changefreq: "weekly", priority: 0.9, lastmod: new Date().toISOString() };
     }
     return { loc: path, changefreq: config.changefreq, priority: config.priority, lastmod: new Date().toISOString() };
   },
