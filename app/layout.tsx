@@ -87,17 +87,15 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  const schemas = [websiteSchema(), organizationSchema()];
-
   return (
     <html lang="ko" className="h-full scroll-smooth" suppressHydrationWarning>
       <head>
-        {/* Preconnect for performance */}
-        <link rel="preconnect" href="https://www.googletagmanager.com" />
-        <link rel="preconnect" href="https://www.google-analytics.com" />
-        <link rel="preconnect" href="https://pagead2.googlesyndication.com" />
+        {/* Preconnect for third-party performance */}
+        <link rel="preconnect" href="https://www.googletagmanager.com" crossOrigin="anonymous" />
+        <link rel="preconnect" href="https://www.google-analytics.com" crossOrigin="anonymous" />
+        <link rel="preconnect" href="https://pagead2.googlesyndication.com" crossOrigin="anonymous" />
         <link rel="dns-prefetch" href="https://dapi.kakao.com" />
-        {/* GSC verification — set NEXT_PUBLIC_GSC_VERIFICATION in env */}
+        {/* GSC verification */}
         {process.env.NEXT_PUBLIC_GSC_VERIFICATION && (
           <meta
             name="google-site-verification"
@@ -111,9 +109,14 @@ export default function RootLayout({
             content={process.env.NEXT_PUBLIC_NAVER_VERIFICATION}
           />
         )}
+        {/* Structured data — separate tags for valid JSON-LD */}
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(schemas) }}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema()) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema()) }}
         />
       </head>
       <body className="min-h-full flex flex-col antialiased">

@@ -9,6 +9,9 @@ const nextConfig: NextConfig = {
     dangerouslyAllowSVG: false,
   },
   serverExternalPackages: ["@libsql/client"],
+  experimental: {
+    optimizePackageImports: ["drizzle-orm", "@libsql/client"],
+  },
   async rewrites() {
     return [
       {
@@ -45,6 +48,20 @@ const nextConfig: NextConfig = {
         source: "/api/(.*)",
         headers: [
           { key: "Cache-Control", value: "no-store" },
+        ],
+      },
+      {
+        // public/ 정적 자산 (SVG, 이미지 등) — 7일 캐시
+        source: "/(.*\\.(?:svg|png|jpg|jpeg|gif|ico|webp|avif|woff2|woff|ttf))",
+        headers: [
+          { key: "Cache-Control", value: "public, max-age=604800, stale-while-revalidate=86400" },
+        ],
+      },
+      {
+        // robots.txt, ads.txt, sitemap.xml — 하루 캐시
+        source: "/(robots\\.txt|ads\\.txt|sitemap.*\\.xml|feed\\.xml)",
+        headers: [
+          { key: "Cache-Control", value: "public, max-age=86400, stale-while-revalidate=3600" },
         ],
       },
     ];

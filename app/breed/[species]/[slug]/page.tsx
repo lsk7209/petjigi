@@ -72,10 +72,8 @@ export default async function BreedPage({
 
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify([breadcrumb, thingSchema]) }}
-      />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(thingSchema) }} />
       <main className="max-w-3xl mx-auto px-4 py-12">
         {/* 브레드크럼 */}
         <nav

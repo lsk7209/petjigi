@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { db } from "@/db/client";
 import { businesses, contents, regions } from "@/db/schema";
-import { like, or, and, eq } from "drizzle-orm";
+import { like, or, and, eq, inArray } from "drizzle-orm";
 
 // GET /api/search?q=검색어&type=business|guide
 export async function GET(req: NextRequest) {
@@ -53,11 +53,17 @@ export async function GET(req: NextRequest) {
       )
       .limit(type === "business" ? 20 : 10);
 
+    const sigunguNames = [...new Set(bizRows.map((r) => r.addressSigungu).filter(Boolean))] as string[];
+    const regionMap = new Map<string, string>();
+    if (sigunguNames.length > 0) {
+      const regionRows = await db
+        .select({ sigungu: regions.sigungu, sigunguSlug: regions.sigunguSlug })
+        .from(regions)
+        .where(inArray(regions.sigungu, sigunguNames));
+      for (const r of regionRows) regionMap.set(r.sigungu, r.sigunguSlug);
+    }
+
     for (const row of bizRows) {
-      const region = row.addressSigungu
-        ? await db.select({ sigunguSlug: regions.sigunguSlug }).from(regions)
-            .where(eq(regions.sigungu, row.addressSigungu)).get()
-        : null;
       results.push({
         type: "business",
         slug: encodeURIComponent(row.name),
@@ -65,7 +71,7 @@ export async function GET(req: NextRequest) {
         category: row.category,
         address: row.address,
         bizType: row.type,
-        sigunguSlug: region?.sigunguSlug ?? undefined,
+        sigunguSlug: row.addressSigungu ? regionMap.get(row.addressSigungu) : undefined,
       });
     }
   }
