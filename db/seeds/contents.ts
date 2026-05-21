@@ -1958,6 +1958,281 @@ const SEED_CONTENTS: NewContent[] = [
     updatedAt: NOW,
   },
 
+  // ── 29. 고양이 사료 선택 가이드 (guide, cat.2, published) ────────────────────
+  {
+    id: "seed-guide-cat-food-guide",
+    slug: "cat-food-guide",
+    type: "guide",
+    category: 2,
+    title: "고양이 사료 선택 가이드 — 습식·건식·생식 비교와 성분 보는 법",
+    metaTitle: "고양이 사료 선택 가이드 | 습식·건식·원료 성분 분석 | 펫지기",
+    metaDescription:
+      "고양이 사료 종류(습식·건식·생식)별 장단점과 성분 표시 보는 법, 나이별 추천 기준을 정리했습니다. AAFCO·FEDIAF 기준 충족 여부 확인 방법도 안내합니다.",
+    body: `<h2>고양이에게 올바른 영양이 중요한 이유</h2>
+<p>고양이는 육식 동물(Obligate Carnivore)입니다. 개와 달리 타우린·아라키돈산·비타민 A를 음식에서 직접 섭취해야 하며, 단백질 요구량이 매우 높습니다. 영양 불균형은 요로계 질환(FLUTD), 신장 질환, 비만 등 다양한 건강 문제로 이어집니다.</p>
+
+<h2>사료 종류 비교</h2>
+
+<h3>건식 사료 (드라이 키블)</h3>
+<ul>
+  <li><strong>장점</strong>: 보관 편리, 치석 제거 효과(일부 제품), 비용 효율적</li>
+  <li><strong>단점</strong>: 수분 함량 낮음(8~12%) — 수분 섭취량 보충 필요, 탄수화물 함량이 높은 제품 많음</li>
+  <li><strong>주의</strong>: 비뇨기 질환이 있거나 물을 잘 마시지 않는 고양이에게는 습식 혼합 급여 권장</li>
+</ul>
+
+<h3>습식 사료 (캔·파우치)</h3>
+<ul>
+  <li><strong>장점</strong>: 수분 함량 높음(70~80%) — 신장·방광 건강에 유리, 단백질 함량 높고 탄수화물 낮음</li>
+  <li><strong>단점</strong>: 비용 높음, 개봉 후 빠른 소비 필요, 치석 관리 건식보다 불리</li>
+  <li><strong>추천 대상</strong>: FLUTD 이력, 만성신부전 고양이, 물을 잘 마시지 않는 고양이</li>
+</ul>
+
+<h3>생식 / 자연식</h3>
+<ul>
+  <li><strong>장점</strong>: 자연에 가까운 식이, 탄수화물 최소화</li>
+  <li><strong>단점</strong>: 영양 불균형 위험(전문 처방 없이는 어려움), 살모넬라·리스테리아 감염 위험, 비용 높음</li>
+  <li><strong>주의</strong>: 생식을 선택한다면 반드시 수의사·영양사 처방 레시피를 사용하고 사람용 안전 기준으로 취급하세요.</li>
+</ul>
+
+<h2>사료 성분 표시 보는 법</h2>
+<p>원료는 무게 순으로 기재됩니다. 첫 번째 성분이 가장 많이 들어 있습니다.</p>
+<ul>
+  <li><strong>첫 번째 원료가 육류여야 합니다</strong>: "닭고기", "연어", "참치" 등 (명시된 육류 원료 > 육류 분말/부산물 혼합 제품)</li>
+  <li><strong>AAFCO 또는 FEDIAF 기준 충족 표시 확인</strong>: "Complete and Balanced" 또는 "완전 영양"</li>
+  <li><strong>생애주기 표시 확인</strong>: "All Life Stages", "Adult", "Senior" — 나이에 맞는 제품 선택</li>
+  <li><strong>타우린 포함 여부</strong>: 고양이 전용 사료에는 반드시 타우린이 포함돼야 합니다.</li>
+</ul>
+
+<h2>생애주기별 선택 기준</h2>
+<ul>
+  <li><strong>키튼(1세 미만)</strong>: 키튼용 또는 All Life Stages 사료 — 단백질·칼슘·DHA 함량 높은 제품</li>
+  <li><strong>성묘(1~7세)</strong>: Adult 고양이용, 체중에 맞는 급여량 준수</li>
+  <li><strong>노령묘(7세+)</strong>: Senior 또는 신장 지지 포뮬러 — 인 함량 낮고 단백질 소화율 높은 제품. 수의사와 상담 권장</li>
+</ul>
+
+<h2>급여량과 비만 예방</h2>
+<ul>
+  <li>중성화 고양이는 에너지 요구량이 20~30% 감소합니다 — 사료량도 줄여야 합니다.</li>
+  <li>자유 급식(사료를 항상 채워두기)은 비만의 주원인이 됩니다. 정해진 시간에 정해진 양을 급여하세요.</li>
+  <li>이상 체중 기준: 갈비뼈를 손으로 느낄 수 있되 눈에 보이지 않아야 합니다.</li>
+</ul>`,
+    disclaimer: null,
+    sources: [
+      "Association of American Feed Control Officials (AAFCO) — Model Regulations Cat Nutrient Profiles (2024)",
+      "FEDIAF — Nutritional Guidelines for Complete and Complementary Pet Food (2023)",
+      "대한수의사회 반려동물 영양 가이드라인 (2022)",
+    ],
+    ymyl: false,
+    status: "published",
+    publishedAt: "2026-05-18T00:00:00.000Z",
+    createdAt: NOW,
+    updatedAt: NOW,
+  },
+
+  // ── 30. 강아지 영양 기초 가이드 (guide, cat.2, published) ──────────────────────
+  {
+    id: "seed-guide-dog-nutrition-basics",
+    slug: "dog-nutrition-basics",
+    type: "guide",
+    category: 2,
+    title: "강아지 영양 기초 가이드 — 5대 영양소와 올바른 급여 방법",
+    metaTitle: "강아지 영양 기초 | 5대 영양소·급여량·금지 음식 | 펫지기",
+    metaDescription:
+      "강아지에게 필요한 5대 영양소(단백질·지방·탄수화물·비타민·미네랄)와 생애주기별 올바른 급여 방법, 영양제 선택 기준을 정리했습니다.",
+    body: `<h2>강아지에게 필요한 5대 영양소</h2>
+
+<h3>1. 단백질</h3>
+<p>근육 형성, 효소·호르몬 생성, 면역 기능에 핵심 역할을 합니다. 강아지는 성견 기준 건조 중량(DM) 기준 18% 이상의 단백질이 필요합니다. 좋은 단백질 원료: 닭고기, 소고기, 연어, 달걀 등 명시된 동물성 원료.</p>
+
+<h3>2. 지방</h3>
+<p>에너지원, 지용성 비타민(A·D·E·K) 흡수 매개체, 피모 건강에 필요합니다. 오메가-3(EPA·DHA)는 피부·관절·뇌 기능에 도움이 됩니다. 생선 오일이 좋은 오메가-3 공급원입니다.</p>
+
+<h3>3. 탄수화물</h3>
+<p>강아지는 탄수화물 필수 요구량이 없지만, 적당량은 에너지 공급·장 건강에 도움이 됩니다. 쌀, 고구마, 귀리 등 소화 가능한 복합 탄수화물이 좋은 선택입니다.</p>
+
+<h3>4. 비타민</h3>
+<p>완전 영양(Complete and Balanced) 사료를 먹는 강아지는 추가 비타민 보충이 불필요합니다. 과잉 보충(특히 지용성 비타민 A·D)은 독성을 유발할 수 있습니다.</p>
+
+<h3>5. 미네랄</h3>
+<p>칼슘·인의 비율이 특히 중요합니다(1.2:1~2:1). 대형견 퍼피는 칼슘 과잉 섭취 시 골격 이상이 올 수 있으므로 성견용 보조제 추가는 피하세요.</p>
+
+<h2>올바른 사료 선택 방법</h2>
+<ul>
+  <li>AAFCO "Complete and Balanced" 표시 또는 FEDIAF 기준 충족 확인</li>
+  <li>생애주기에 맞는 사료 선택: Puppy / Adult / Senior / Large Breed</li>
+  <li>원료 표시 첫 번째가 육류 원료인 제품 선택</li>
+  <li>부산물(By-product)은 품질이 낮다는 오해가 있지만, 규격화된 부산물은 영양가가 있습니다. 원료 출처를 신뢰할 수 있는 제조사 선택이 더 중요합니다.</li>
+</ul>
+
+<h2>급여량과 급여 횟수</h2>
+<ul>
+  <li><strong>퍼피(6개월 미만)</strong>: 하루 3~4회 분할 급여</li>
+  <li><strong>성견</strong>: 하루 2회 (아침·저녁)</li>
+  <li><strong>노령견</strong>: 소량 자주 (소화 기능 저하 고려)</li>
+  <li>사료 포장의 권장 급여량은 참고값 — 실제 체중·활동량에 맞게 조절하고 이상 체중 유지를 우선시하세요.</li>
+</ul>
+
+<h2>피해야 할 음식</h2>
+<p>포도·건포도, 양파·마늘, 초콜릿, 자일리톨, 아보카도, 마카다미아, 알코올, 카페인은 강아지에게 독성이 있습니다.
+자세한 내용은 <a href="/guide/pet-toxic-foods-complete-guide">반려동물 금지 음식 완전 가이드</a>를 참고하세요.</p>
+
+<h2>영양제 선택 기준</h2>
+<ul>
+  <li>완전 영양 사료를 먹는 건강한 강아지에게 대부분의 영양제는 불필요합니다.</li>
+  <li>관절 보조제(글루코사민·콘드로이틴): 노령견·대형견에서 고려 가능 — 수의사 상담 권장</li>
+  <li>오메가-3(생선 오일): 피부·피모·관절 지원. 적정 용량은 체중 기준으로 계산합니다.</li>
+  <li>프로바이오틱스: 장 건강 이슈가 있는 경우 수의사 처방 제품 사용</li>
+</ul>`,
+    disclaimer: null,
+    sources: [
+      "AAFCO Dog Food Nutrient Profiles (2024)",
+      "National Research Council — Nutrient Requirements of Dogs and Cats (2006)",
+      "대한수의사회 반려동물 영양 가이드라인 (2022)",
+    ],
+    ymyl: false,
+    status: "published",
+    publishedAt: "2026-05-19T00:00:00.000Z",
+    createdAt: NOW,
+    updatedAt: NOW,
+  },
+
+  // ── 31. 강아지 간질·발작 (condition, cat.3, YMYL, published) ──────────────────
+  {
+    id: "seed-condition-dog-epilepsy",
+    slug: "dog-epilepsy",
+    type: "condition",
+    category: 3,
+    title: "강아지 간질·발작 — 증상·원인·응급 대처",
+    metaTitle: "강아지 간질·발작 증상·원인·응급 대처 | 수의사 검토 | 펫지기",
+    metaDescription:
+      "강아지 발작(경련)의 증상, 원인(특발성 간질·뇌종양·저혈당 등), 발작 중 응급 대처 방법을 수의사 검토를 거쳐 안내합니다.",
+    body: `<h2>발작이란?</h2>
+<p>발작(경련)은 뇌 신경세포에서 비정상적인 전기 활동이 발생하면서 일어나는 갑작스러운 신경 이상 반응입니다. 강아지 발작의 원인은 매우 다양하며, 원인에 따라 치료 방향이 달라집니다.</p>
+
+<h2>발작의 종류와 증상</h2>
+
+<h3>대발작 (Grand Mal)</h3>
+<ul>
+  <li>갑자기 쓰러짐</li>
+  <li>몸 전체 경직 후 팔다리를 자전거 타듯 허공에 흔듦</li>
+  <li>의식 소실, 눈 뒤집힘</li>
+  <li>침 흘림, 비자발적 배변·배뇨</li>
+  <li>대부분 1~2분 이내에 자연 종료</li>
+</ul>
+
+<h3>소발작 및 부분 발작</h3>
+<ul>
+  <li>얼굴 씰룩임, 한쪽 다리만 경련</li>
+  <li>갑자기 허공을 무는 "플라이 캐칭" 행동</li>
+  <li>일시적 의식 변화 (멍한 상태)</li>
+</ul>
+
+<h3>발작 후 상태 (Postictal Phase)</h3>
+<p>발작 직후 일시적으로 방향 감각 상실, 눈이 잘 안 보이는 것처럼 행동, 비틀거림, 극도의 피로·배고픔이 나타날 수 있습니다. 수분에서 수 시간 지속될 수 있습니다.</p>
+
+<h2>주요 원인</h2>
+<ul>
+  <li><strong>특발성 간질</strong>: 가장 흔한 원인. 유전적 성향이 강하며 1~5세 사이에 첫 발작이 시작되는 경우 많음 (비글, 보더 콜리, 골든 리트리버 등에서 발생률 높음)</li>
+  <li><strong>구조적/대사성 원인</strong>: 뇌종양, 뇌염, 뇌 외상, 간질환(간성 뇌증), 저혈당, 신부전, 납·독소 중독</li>
+  <li><strong>반응성 발작</strong>: 독소·약물·저혈당·전해질 불균형에 의한 일시적 발작 (기저 원인 제거 시 재발 안 함)</li>
+</ul>
+
+<h2>발작 중 응급 대처 방법</h2>
+<ol>
+  <li><strong>침착하게 시간을 확인합니다</strong> — 발작 시간을 재세요. 5분 이상 지속되면 즉시 응급 병원으로.</li>
+  <li><strong>다치지 않도록 주변 위험 물체를 치웁니다</strong> — 계단, 날카로운 물체, 가구 모서리</li>
+  <li><strong>손을 입 안에 넣지 마세요</strong> — 발작 중 물릴 수 있으며, 개는 발작 중 혀를 삼키지 않습니다.</li>
+  <li><strong>어둡고 조용한 환경을 만들어줍니다</strong> — 빛과 소음 자극을 줄이세요.</li>
+  <li><strong>발작 후 상태를 관찰합니다</strong> — 완전히 회복되기까지 조용히 곁에 있어주세요.</li>
+  <li><strong>영상을 촬영해둡니다</strong> — 수의사 진단에 매우 유용합니다.</li>
+</ol>
+
+<h2>즉시 응급실을 가야 하는 경우</h2>
+<ul>
+  <li>발작이 5분 이상 지속됨 (중적 발작 — Status Epilepticus)</li>
+  <li>24시간 이내에 발작이 2회 이상 발생</li>
+  <li>발작 후 30분 이상 지나도 의식이 돌아오지 않음</li>
+  <li>발작 중 부상이 발생한 경우</li>
+</ul>
+
+<h2>진단 및 치료 방향</h2>
+<p>혈액 검사, 소변 검사, 뇌 MRI·CT, 뇌척수액 검사 등을 통해 원인을 파악합니다. 특발성 간질은 완치보다 발작 빈도·강도 조절이 목표이며, 수의사 처방에 따라 항간질제를 사용합니다. 약물은 수의사의 처방·모니터링 하에서만 조정해야 합니다.</p>`,
+    disclaimer:
+      "본 콘텐츠는 일반적인 교육·참고 목적이며 수의학적 진단이나 치료를 대체하지 않습니다. 발작이 의심되면 반드시 수의사에게 진료를 받으세요. 발작 지속 시 즉시 24시간 응급 동물병원을 방문하세요.",
+    sources: [
+      "Bhatti SFM et al. International Veterinary Epilepsy Task Force Consensus Report. BMC Vet Res (2015)",
+      "Berendt M et al. Idiopathic epilepsy in dogs. JSAP (2015)",
+      "대한수의학회 소동물신경학 진료 가이드라인 (2021)",
+    ],
+    ymyl: true,
+    status: "published",
+    publishedAt: "2026-05-19T00:00:00.000Z",
+    createdAt: NOW,
+    updatedAt: NOW,
+  },
+
+  // ── 32. 고양이 치아 건강 관리 (guide, cat.5, published) ──────────────────────
+  {
+    id: "seed-guide-cat-dental-care",
+    slug: "cat-dental-care-guide",
+    type: "guide",
+    category: 5,
+    title: "고양이 치아 건강 관리 — 양치 방법과 치주 질환 예방",
+    metaTitle: "고양이 치아 건강 관리 | 양치 방법·치주 질환 예방 | 펫지기",
+    metaDescription:
+      "고양이 치주 질환(잇몸 질환)은 3세 이상 고양이의 70%에서 발생합니다. 고양이 양치 방법, 치주 질환 증상, 예방 방법을 안내합니다.",
+    body: `<h2>고양이 치주 질환, 생각보다 흔합니다</h2>
+<p>연구에 따르면 3세 이상 고양이의 약 70%, 5세 이상에서는 거의 대부분이 어느 정도의 치주 질환을 가지고 있습니다. 치주 질환은 구강 문제로 끝나지 않고, 세균이 혈류를 타고 심장·신장·간에 영향을 줄 수 있습니다.</p>
+
+<h2>주요 치주 질환 및 증상</h2>
+
+<h3>치주 질환(Periodontal Disease)</h3>
+<ul>
+  <li>잇몸 붉어짐·출혈</li>
+  <li>구취(입 냄새)</li>
+  <li>밥 먹을 때 한쪽으로만 씹기 또는 음식 흘리기</li>
+  <li>침 과다 분비</li>
+  <li>치아 흔들림 또는 빠짐</li>
+</ul>
+
+<h3>치아 흡수성 병변 (FORL/TR)</h3>
+<p>고양이 특유의 치아 흡수 질환으로, 치아 뿌리부터 구조가 녹아 극심한 통증을 유발합니다. 고양이는 통증을 숨기는 경향이 있어 발견이 늦어지기 쉽습니다. 정기 구강 검진과 X-ray로만 발견 가능합니다.</p>
+
+<h2>고양이 양치 방법</h2>
+<p>이상적인 양치 주기는 매일입니다. 처음 고양이 양치에 도전한다면 인내심을 가지고 단계적으로 진행하세요.</p>
+
+<ol>
+  <li><strong>1단계</strong>: 손가락으로 잇몸을 부드럽게 마사지해 손 접근에 익숙하게 합니다 (1~2주)</li>
+  <li><strong>2단계</strong>: 손가락에 고양이용 치약을 묻혀 잇몸에 바릅니다 — 사람용 치약은 독성이 있으니 반드시 고양이 전용 사용</li>
+  <li><strong>3단계</strong>: 손가락 칫솔 또는 부드러운 어린이 칫솔을 이용해 잇몸 선을 따라 원을 그리며 닦기</li>
+  <li><strong>4단계</strong>: 매일 짧게(30~60초) 꾸준히 — 완벽하지 않아도 매일 시도가 중요</li>
+</ol>
+
+<h2>양치 외 치아 관리 방법</h2>
+<ul>
+  <li><strong>덴탈 간식·덴탈 다이어트 사료</strong>: VOHC(수의구강건강위원회) 인증 제품이 효과 근거가 있습니다.</li>
+  <li><strong>수분이 많은 음식</strong>: 습식 사료는 입 안 찌꺼기가 적게 남는 편이지만, 치석 예방 효과는 건식 사료·덴탈 간식이 더 큽니다.</li>
+  <li><strong>정기 마취 스케일링</strong>: 연 1~2회 수의사 권고에 따라 진행. 고양이는 마취 없이는 제대로 된 스케일링이 어렵습니다.</li>
+</ul>
+
+<h2>가정에서 구강 확인하는 법</h2>
+<ul>
+  <li>월 1회: 입술을 살짝 들어 치아 색(노랑·갈색)과 잇몸 색(분홍색이 정상) 확인</li>
+  <li>입 냄새가 심하거나, 잇몸이 빨갛거나, 밥을 잘 못 먹는다면 수의사 방문 필요</li>
+</ul>`,
+    disclaimer: null,
+    sources: [
+      "Veterinary Oral Health Council (VOHC) — Accepted Products for Cats (2024)",
+      "Niemiec BA. Veterinary Periodontology. Wiley-Blackwell (2013)",
+      "대한수의치과학회 반려묘 구강 관리 가이드라인 (2022)",
+    ],
+    ymyl: false,
+    status: "published",
+    publishedAt: "2026-05-20T00:00:00.000Z",
+    createdAt: NOW,
+    updatedAt: NOW,
+  },
+
   // ── 28. 강아지 운동·산책 가이드 (guide, cat.5, published) ─────────────────────
   {
     id: "seed-guide-dog-exercise-guide",
