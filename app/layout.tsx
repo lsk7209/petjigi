@@ -89,6 +89,25 @@ export default function RootLayout({
   return (
     <html lang="ko" className="h-full scroll-smooth" suppressHydrationWarning>
       <head>
+        {/* Preconnect for performance */}
+        <link rel="preconnect" href="https://www.googletagmanager.com" />
+        <link rel="preconnect" href="https://www.google-analytics.com" />
+        <link rel="preconnect" href="https://pagead2.googlesyndication.com" />
+        <link rel="dns-prefetch" href="https://dapi.kakao.com" />
+        {/* GSC verification — set NEXT_PUBLIC_GSC_VERIFICATION in env */}
+        {process.env.NEXT_PUBLIC_GSC_VERIFICATION && (
+          <meta
+            name="google-site-verification"
+            content={process.env.NEXT_PUBLIC_GSC_VERIFICATION}
+          />
+        )}
+        {/* Naver Search Advisor verification */}
+        {process.env.NEXT_PUBLIC_NAVER_VERIFICATION && (
+          <meta
+            name="naver-site-verification"
+            content={process.env.NEXT_PUBLIC_NAVER_VERIFICATION}
+          />
+        )}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(schemas) }}

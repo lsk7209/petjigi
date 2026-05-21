@@ -9,7 +9,7 @@ import { YmylDisclaimer } from "@/components/content/ymyl-disclaimer";
 import { CategoryProvider } from "@/components/providers/category-provider";
 import { AdPolicyProvider } from "@/components/providers/ad-policy-provider";
 import { ThemeMode } from "@/components/providers/theme-mode";
-import { breadcrumbSchema } from "@/lib/seo/structured-data";
+import { breadcrumbSchema, faqSchema } from "@/lib/seo/structured-data";
 
 export const revalidate = 3600;
 
@@ -127,13 +127,27 @@ export default async function CategoryPage({
     { name: cat.name, url: `${SITE_URL}/category/${slug}` },
   ]);
 
+  const faq = faqSchema([
+    {
+      question: `${cat.name} 정보는 어떻게 제공되나요?`,
+      answer: `펫지기는 농림축산검역본부, 행정안전부 등 공공데이터포털에서 주기적으로 동기화한 데이터와 전문가 검수를 거친 가이드 콘텐츠를 제공합니다.`,
+    },
+    {
+      question: `${cat.name} 관련 업체는 어디서 찾을 수 있나요?`,
+      answer: `지역별 검색 섹션에서 시도를 선택하면 가까운 ${cat.name} 관련 업체를 찾을 수 있습니다. 공공데이터 기반으로 전국 30,000개 이상 업체 정보를 제공합니다.`,
+    },
+    ...(desc?.detail
+      ? [{ question: `${cat.name}에 대해 더 자세히 알고 싶어요.`, answer: desc.detail }]
+      : []),
+  ]);
+
   return (
     <CategoryProvider category={cat.id}>
       <ThemeMode mode={cat.mode}>
         <AdPolicyProvider category={cat.id}>
           <script
             type="application/ld+json"
-            dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb) }}
+            dangerouslySetInnerHTML={{ __html: JSON.stringify([breadcrumb, faq]) }}
           />
           <main className="max-w-5xl mx-auto px-4 py-10">
             {/* 브레드크럼 */}
