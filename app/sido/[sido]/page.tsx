@@ -71,10 +71,10 @@ export default async function SidoPage({
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb) }}
       />
-      <main className="max-w-5xl mx-auto px-4 py-10">
+      <main className="max-w-5xl mx-auto px-4 py-6 sm:py-10">
         {/* 브레드크럼 */}
         <nav
-          className="text-xs text-[var(--brand-text-secondary)] mb-6 flex items-center gap-1.5"
+          className="text-xs text-[var(--brand-text-secondary)] mb-5 sm:mb-6 flex items-center gap-1.5 flex-wrap"
           aria-label="breadcrumb"
         >
           <Link href="/" className="hover:text-[var(--brand-accent)] transition-colors">홈</Link>
@@ -82,24 +82,24 @@ export default async function SidoPage({
           <span className="text-[var(--brand-text)]" aria-current="page">{sidoName}</span>
         </nav>
 
-        <header className="mb-8">
-          <h1 className="text-3xl font-extrabold text-[var(--brand-text)] mb-2 tracking-tight">
+        <header className="mb-6 sm:mb-8">
+          <h1 className="text-2xl sm:text-3xl font-extrabold text-[var(--brand-text)] mb-2 tracking-tight">
             {sidoName} 반려동물 정보
           </h1>
-          <p className="text-[var(--brand-text-secondary)] leading-relaxed">
+          <p className="text-sm sm:text-base text-[var(--brand-text-secondary)] leading-relaxed" style={{ wordBreak: "keep-all" }}>
             {sidoName} 지역 반려동물 관련 업장을 시군구별로 찾아보세요.
             동물병원, 펫미용, 펫호텔, 장묘업체 등 공공데이터 기반으로 제공됩니다.
           </p>
         </header>
 
         {/* 빠른 업종 필터 */}
-        <section className="mb-8" aria-label="업종별 검색">
+        <section className="mb-6 sm:mb-8" aria-label="업종별 검색">
           <div className="flex flex-wrap gap-2">
             {BUSINESS_TYPES.map((bt) => (
               <a
                 key={bt.type}
                 href={`#${bt.type}`}
-                className="flex items-center gap-1.5 px-4 py-2 rounded-full border border-[var(--brand-border)] text-sm font-medium hover:border-[var(--brand-accent)] hover:text-[var(--brand-accent)] transition-colors"
+                className="flex items-center gap-1.5 px-3 py-2 sm:px-4 rounded-full border border-[var(--brand-border)] text-sm font-medium hover:border-[var(--brand-accent)] hover:text-[var(--brand-accent)] transition-colors"
               >
                 {bt.emoji} {bt.label}
               </a>
@@ -109,7 +109,7 @@ export default async function SidoPage({
 
         {/* 시군구 목록 */}
         <section aria-label="시군구 목록">
-          <h2 className="text-xl font-bold text-[var(--brand-text)] mb-4">
+          <h2 className="text-lg sm:text-xl font-bold text-[var(--brand-text)] mb-3 sm:mb-4">
             시군구 ({sigunguList.length}개)
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
@@ -124,7 +124,7 @@ export default async function SidoPage({
                     <Link
                       key={bt.type}
                       href={`/${r.sigunguSlug}/${bt.type}`}
-                      className="flex items-center gap-1 px-2.5 py-1 rounded-lg text-xs border border-[var(--brand-border)] hover:border-[var(--brand-accent)] hover:text-[var(--brand-accent)] transition-colors font-medium"
+                      className="flex items-center gap-1 px-2.5 py-1.5 rounded-lg text-xs border border-[var(--brand-border)] hover:border-[var(--brand-accent)] hover:text-[var(--brand-accent)] transition-colors font-medium"
                     >
                       {bt.emoji} {bt.label}
                     </Link>
