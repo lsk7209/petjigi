@@ -10,7 +10,7 @@ const nextConfig: NextConfig = {
   },
   serverExternalPackages: ["@libsql/client"],
   experimental: {
-    optimizePackageImports: ["drizzle-orm", "@libsql/client"],
+    optimizePackageImports: ["drizzle-orm"],
   },
   async rewrites() {
     return [
