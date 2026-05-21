@@ -4223,80 +4223,68 @@ const SEED_CONTENTS: NewContent[] = [
     updatedAt: NOW,
   },
 
-  // ── 59. 강아지 분리불안 가이드 (guide, cat.5) ────────────────────────────
+  // ── 59. 강아지 요로감염 (condition, cat.3, YMYL) ────────────────────────
   {
-    id: "seed-guide-dog-separation-anxiety",
-    slug: "dog-separation-anxiety-guide",
-    type: "guide",
-    category: 5,
-    title: "강아지 분리불안 — 원인·증상·훈련 방법",
-    metaTitle: "강아지 분리불안 증상·훈련·해결 방법 | 펫지기",
+    id: "seed-condition-dog-urinary-tract-infection",
+    slug: "dog-urinary-tract-infection",
+    type: "condition",
+    category: 3,
+    title: "강아지 요로감염 — 증상·원인·치료·예방",
+    metaTitle: "강아지 요로감염 증상·치료 | 혈뇨·잦은 배뇨 원인 | 펫지기",
     metaDescription:
-      "강아지 분리불안의 증상(짖기·파괴 행동·실내 배변), 원인, 단계별 탈감작 훈련, 심한 경우 수의사 상담까지 실용적인 해결 방법을 안내합니다.",
-    body: `<h2>분리불안이란?</h2>
-<p>분리불안은 강아지가 보호자와 분리될 때 극심한 스트레스와 공포를 느끼는 상태입니다. 단순한 '버릇'이 아니라 진정한 불안장애이므로, 체벌로는 절대 해결되지 않습니다. 이해와 점진적 훈련이 필요합니다.</p>
+      "강아지 요로감염(UTI)의 증상(혈뇨·잦은 배뇨·배뇨 시 통증), 원인, 진단, 항생제 치료, 재발 예방 방법을 안내합니다.",
+    body: `<h2>강아지 요로감염이란?</h2>
+<p>요로감염(Urinary Tract Infection, UTI)은 세균이 방광·요도 등 하부 요로에 침입해 염증을 일으키는 질환입니다. 암컷 강아지에서 더 흔하며, 재발하기 쉬워 적절한 치료와 예방이 중요합니다.</p>
 
-<h2>분리불안 주요 증상</h2>
+<h2>주요 증상</h2>
 <ul>
-  <li><strong>과도한 짖기·울부짖기</strong> — 보호자 외출 직후 시작</li>
-  <li><strong>파괴 행동</strong> — 문·가구·물건 물어뜯기</li>
-  <li><strong>실내 배변</strong> — 이미 화장실 훈련이 된 강아지가 재발</li>
-  <li><strong>탈출 시도</strong> — 문·창문 긁기, 탈출 흔적</li>
-  <li><strong>과도한 침 흘림·구토</strong></li>
-  <li><strong>외출 전 보호자 그림자처럼 따라다니기</strong> (출발 전 불안)</li>
-  <li><strong>보호자 귀가 시 극도의 흥분</strong></li>
+  <li><strong>혈뇨</strong> — 소변에 붉은색 또는 갈색 빛이 섞임</li>
+  <li><strong>잦은 소변 시도</strong> — 조금씩 자주 소변을 보려 함</li>
+  <li><strong>배뇨 시 통증·불편함</strong> — 끙끙거림, 자세 이상</li>
+  <li><strong>실내 배변 실수</strong> — 화장실 훈련이 된 강아지가 집 안에서 실수</li>
+  <li><strong>외음부·음경 주변 과도한 핥기</strong></li>
+  <li><strong>소변 악취 증가</strong></li>
 </ul>
+<p><strong>응급 신호</strong>: 소변을 전혀 보지 못하거나 극심한 복통·쇠약이 있으면 즉시 병원 방문 (방광 결석·파열 위험)</p>
 
-<h2>분리불안 원인</h2>
+<h2>원인</h2>
 <ul>
-  <li>어릴 때 사회화 부족</li>
-  <li>갑작스러운 생활 변화 (이사, 보호자 취직, 가족 구성 변화)</li>
-  <li>보호대 유기·분양 경험</li>
-  <li>하루 종일 보호자와 함께하다가 갑자기 혼자 남겨진 경우</li>
-  <li>특정 품종 (래브라도, 비글, 보더 콜리 등 집중력 높은 품종에서 흔함)</li>
-</ul>
-
-<h2>단계별 탈감작 훈련</h2>
-<h3>1단계: 혼자 있는 시간에 긍정적 경험 연결</h3>
-<ul>
-  <li>외출 준비(열쇠·가방)에 반응을 줄이기: 가방을 들고 앉아 있다가 아무 일 없이 내려두기를 반복</li>
-  <li>퍼즐 피더, 콩 장난감에 간식을 넣어 혼자 있을 때 제공</li>
-</ul>
-<h3>2단계: 짧은 분리 연습</h3>
-<ul>
-  <li>처음에는 5초~1분만 다른 방에 있다가 돌아오기</li>
-  <li>강아지가 차분할 때만 다음 단계로 진행</li>
-  <li>매우 천천히, 강아지 반응에 맞춰 시간 늘리기</li>
-</ul>
-<h3>3단계: 귀가·외출 무반응 루틴</h3>
-<ul>
-  <li>외출·귀가 시 과도한 인사 금지 — 10~15분 후 차분하게 인사</li>
-  <li>특별한 이별 인사를 없애 '외출=무사건'으로 인식시키기</li>
-</ul>
-<h3>4단계: 장기 훈련</h3>
-<ul>
-  <li>매일 15~30분씩 꾸준히 혼자 있는 연습</li>
-  <li>홈캠으로 강아지 행동 모니터링</li>
-  <li>진전이 없거나 악화 시 동물행동 수의사 상담</li>
+  <li><strong>세균 감염</strong>: E. coli, Staphylococcus, Proteus 등 — 가장 흔한 원인</li>
+  <li><strong>방광 결석(요로결석)</strong>: 결석이 요로 점막을 자극하여 2차 감염 유발</li>
+  <li><strong>해부학적 이상</strong>: 암컷은 요도가 짧아 세균 침입이 쉬움</li>
+  <li><strong>면역력 저하</strong>: 당뇨병·쿠싱증후군 등 기저 질환</li>
+  <li><strong>생식기 질환</strong>: 자궁축농증 동반 가능</li>
 </ul>
 
-<h2>심한 분리불안 — 전문가 도움이 필요할 때</h2>
-<p>자해, 극도의 파괴 행동, 훈련 6개월 이상 효과 없음 등이 있다면 동물행동 전문 수의사에게 상담하세요. 약물 치료(플루옥세틴·클로미프라민 등)와 행동 수정을 병행하면 더 빠른 효과를 볼 수 있습니다.</p>
-
-<h2>도움이 되는 용품</h2>
+<h2>진단</h2>
 <ul>
-  <li><strong>퍼즐 피더·콩 장난감</strong>: 정신적 자극 제공</li>
-  <li><strong>음악·TV</strong>: 배경 소음으로 안정감 제공</li>
-  <li><strong>DAP(개 페로몬 디퓨저)</strong>: 진정 효과 있는 페로몬 방출</li>
-  <li><strong>불안 완화 조끼(Thundershirt)</strong>: 압박 감각으로 불안 감소 효과</li>
+  <li><strong>소변 검사</strong>: 세균·백혈구·적혈구 확인. 가장 기본적인 검사</li>
+  <li><strong>소변 배양 및 항생제 감수성 검사</strong>: 적합한 항생제 선택에 필수 (반복 감염 시)</li>
+  <li><strong>방사선·초음파</strong>: 방광 결석, 해부학적 이상, 종양 감별</li>
+</ul>
+
+<h2>치료</h2>
+<h3>항생제 치료</h3>
+<p>단순 UTI는 통상 1~2주 항생제 치료로 회복됩니다. 치료 완료 후 재검을 통해 완치를 확인하는 것이 중요합니다. 증상이 사라져도 임의로 약을 중단하면 내성균 발생 위험이 있습니다.</p>
+<h3>결석 치료</h3>
+<p>방광 결석이 원인이라면 식이 요법 또는 수술적 제거가 필요합니다. 결석 종류에 따라 처방식으로 용해시킬 수 있는 경우도 있습니다.</p>
+
+<h2>재발 예방</h2>
+<ul>
+  <li><strong>충분한 수분 섭취</strong>: 습식 사료 혼합 또는 별도 수분 보충 권장</li>
+  <li><strong>배변 기회 증가</strong>: 소변을 오래 참으면 세균 번식 위험 증가 — 규칙적인 산책</li>
+  <li><strong>생식기 주변 청결</strong>: 목욕 및 위생 관리</li>
+  <li><strong>당뇨·쿠싱 등 기저 질환 관리</strong>: 전신 건강 유지</li>
+  <li><strong>3개월마다 소변 검사</strong>: 재발성 UTI 강아지에게 권장</li>
 </ul>`,
-    disclaimer: null,
+    disclaimer:
+      "본 정보는 수의학 참고 자료로 제공되며 의학적 진단과 치료를 대체하지 않습니다. 소변을 전혀 보지 못하는 경우 즉시 동물병원을 방문하세요. 항생제는 반드시 수의사 처방에 따라 사용하세요.",
     sources: [
-      "Schwartz S. Separation Anxiety Syndrome in Dogs and Cats. J Am Vet Med Assoc. 2003",
-      "AVSAB (American Veterinary Society of Animal Behavior) Position Statement on Punishment (2021)",
-      "대한수의사회 소동물 행동 문제 임상 지침 (2022)",
+      "Weese JS et al. International Society for Companion Animal Infectious Diseases Consensus Guidelines for the Diagnosis and Treatment of Bacterial UTI (2019)",
+      "대한수의사회 소동물 임상 진료 지침 (2022)",
+      "WSAVA Small Animal Urogenital Guidelines (2022)",
     ],
-    ymyl: false,
+    ymyl: true,
     status: "published",
     publishedAt: "2026-05-22T00:00:00.000Z",
     createdAt: NOW,
