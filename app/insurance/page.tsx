@@ -169,6 +169,29 @@ export default function InsurancePage() {
           </dl>
         </section>
 
+        {/* 관련 가이드 */}
+        <section className="mb-8" aria-label="관련 가이드">
+          <h2 className="text-lg font-bold text-[var(--brand-text)] mb-4">보험·법률 가이드</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            {[
+              { href: "/guide/pet-insurance-before-joining", label: "펫보험 가입 전 꼭 알아야 할 7가지" },
+              { href: "/guide/pet-insurance-claim-guide", label: "펫보험 보험금 청구 방법 완전 가이드" },
+              { href: "/guide/pet-insurance-exclusions", label: "펫보험 면책 사항 완전 정복" },
+              { href: "/guide/animal-protection-law-basics", label: "동물보호법 기초 — 보호자가 알아야 할 규정" },
+              { href: "/guide/dog-bite-liability-guide", label: "반려견 사고 손해배상 책임 가이드" },
+              { href: "/guide/animal-hospital-guide", label: "동물병원 선택 가이드" },
+            ].map((item) => (
+              <Link
+                key={item.href}
+                href={item.href}
+                className="group p-3 rounded-xl border border-[var(--brand-border)] hover:border-[var(--brand-accent)] transition-all text-sm text-[var(--brand-text)] group-hover:text-[var(--brand-accent)] font-medium"
+              >
+                {item.label}
+              </Link>
+            ))}
+          </div>
+        </section>
+
         {/* 관련 링크 */}
         <section className="mt-8 pt-6 border-t border-[var(--brand-border)]">
           <h2 className="text-base font-semibold text-[var(--brand-text)] mb-3">함께 보면 좋은 정보</h2>
