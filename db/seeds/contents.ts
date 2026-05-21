@@ -4743,6 +4743,476 @@ const SEED_CONTENTS: NewContent[] = [
     createdAt: NOW,
     updatedAt: NOW,
   },
+
+  // ── 66. 반려견 사고 손해배상 가이드 (guide, cat.4, YMYL) ──────────────────
+  {
+    id: "seed-guide-dog-bite-liability",
+    slug: "dog-bite-liability-guide",
+    type: "guide",
+    category: 4,
+    title: "반려견 사고 손해배상 가이드 — 교상·재산피해 시 보호자 책임과 대처법",
+    metaTitle: "반려견 교상·사고 손해배상 책임 | 동물보호법·민사 책임 | 펫지기",
+    metaDescription:
+      "반려견이 사람을 물거나 다른 동물·재산을 손상시켰을 때 보호자 법적 책임(민사·행정)과 대처 순서, 분쟁 해결 방법을 안내합니다.",
+    body: `<h2>반려견 사고 시 보호자 책임</h2>
+<p>반려견이 사람이나 다른 동물을 다치게 하거나 재산 피해를 발생시키면 보호자는 <strong>민사상 손해배상 책임</strong>을 질 수 있습니다. 동물보호법·민법 제759조(동물의 점유자 책임)에 따라 점유자(사실상 관리자)가 피해를 배상해야 합니다.</p>
+
+<h2>법적 근거</h2>
+<ul>
+  <li><strong>민법 제759조</strong>: 동물 점유자는 동물이 타인에게 가한 손해를 배상해야 함. 단, 동물 관리에 상당한 주의를 기울였거나 그 주의를 다하여도 손해가 발생할 경우 책임 면제 가능</li>
+  <li><strong>동물보호법 제13조</strong>: 소유자 등은 맹견을 동반 외출 시 목줄·입마개 착용 의무 — 위반 시 300만 원 이하 과태료</li>
+  <li><strong>형사 책임</strong>: 과실치상(형법 제266조) 또는 과실치사(제267조) 적용 가능</li>
+</ul>
+
+<h2>사고 발생 즉시 해야 할 일</h2>
+<ol>
+  <li><strong>피해자 응급조치 지원</strong>: 즉시 119 신고, 병원 이송 협조</li>
+  <li><strong>현장 사진 촬영</strong>: 피해 상황, 목줄 착용 여부, 목격자 연락처 확보</li>
+  <li><strong>신상 정보 교환</strong>: 성명·연락처·반려견 동물등록번호 교환</li>
+  <li><strong>수의사 방문</strong>: 반려견 건강 상태 기록, 광견병 예방접종 증명서 준비</li>
+  <li><strong>보험사 통보</strong>: 펫보험 또는 일상생활 배상책임보험 가입 시 즉시 신고</li>
+</ol>
+
+<h2>보상 범위 (일반적)</h2>
+<ul>
+  <li>치료비 (입원·통원·수술비)</li>
+  <li>간병비·휴업 손해</li>
+  <li>정신적 손해배상(위자료)</li>
+  <li>다른 반려동물 피해 시 치료비·상실 손해</li>
+</ul>
+
+<h2>분쟁 해결 방법</h2>
+<ul>
+  <li><strong>당사자 합의</strong>: 가장 빠른 방법 — 합의서 작성 권장</li>
+  <li><strong>한국소비자원 분쟁조정</strong>: ☎ 1372 (무료)</li>
+  <li><strong>법원 소액사건심판</strong>: 3,000만 원 이하 간이 소송 가능</li>
+  <li><strong>지자체 동물보호팀</strong>: 행정 처분(과태료 등) 신고</li>
+</ul>
+
+<h2>예방을 위한 보호자 의무</h2>
+<ul>
+  <li>외출 시 항상 목줄 착용 (맹견은 입마개 필수)</li>
+  <li>반려견 훈련·사회화로 공격성 관리</li>
+  <li>일상생활 배상책임보험 또는 펫보험 가입 (사고 시 경제적 부담 경감)</li>
+  <li>동물등록 최신 정보 유지</li>
+</ul>`,
+    disclaimer:
+      "본 정보는 일반적인 법률 참고 목적으로 제공되며 법률 자문이 아닙니다. 구체적인 사건에 대해서는 변호사 또는 법무사에게 상담하세요. 법령은 개정될 수 있으므로 최신 내용을 확인하세요.",
+    sources: [
+      "민법 제759조 (동물의 점유자 책임)",
+      "동물보호법 제13조 (맹견의 관리) — 농림축산식품부 (2024)",
+      "한국소비자원 반려동물 분쟁 사례집 (2023)",
+    ],
+    ymyl: true,
+    status: "published",
+    publishedAt: "2026-05-22T00:00:00.000Z",
+    createdAt: NOW,
+    updatedAt: NOW,
+  },
+
+  // ── 67. 강아지 미용·목욕 가이드 (guide, cat.5) ────────────────────────────
+  {
+    id: "seed-guide-dog-grooming-guide",
+    slug: "dog-grooming-guide",
+    type: "guide",
+    category: 5,
+    title: "강아지 목욕·미용 가이드 — 주기·방법·집에서 하는 법",
+    metaTitle: "강아지 목욕 주기·방법·홈그루밍 | 품종별 미용 | 펫지기",
+    metaDescription:
+      "강아지 목욕 주기, 올바른 목욕 방법, 귀 청소·발톱 관리 등 집에서 할 수 있는 홈그루밍 가이드와 미용실 이용 팁을 안내합니다.",
+    body: `<h2>강아지 목욕 주기</h2>
+<p>품종·털 길이·활동량에 따라 다르지만 일반적으로:</p>
+<ul>
+  <li><strong>단모종(비글·래브라도 등)</strong>: 월 1~2회</li>
+  <li><strong>장모종(말티즈·요크셔테리어 등)</strong>: 2~3주마다</li>
+  <li><strong>이중모 품종(허스키·웰시코기)</strong>: 월 1회 + 정기 브러싱</li>
+  <li><strong>활동량 많은 강아지</strong>: 더 자주 필요할 수 있음</li>
+</ul>
+<p>너무 잦은 목욕은 피부 보호막(피지층)을 손상시키므로 주의하세요.</p>
+
+<h2>올바른 목욕 순서</h2>
+<ol>
+  <li><strong>브러싱 먼저</strong>: 엉킨 털을 풀어야 샴푸가 고루 스며듦</li>
+  <li><strong>귀에 솜 넣기</strong>: 물이 귓속으로 들어가지 않도록</li>
+  <li><strong>미지근한 물로 적시기</strong>: 강아지 체온(38~39°C)보다 약간 낮은 온도 (약 36~37°C)</li>
+  <li><strong>강아지 전용 샴푸 사용</strong>: 사람용 샴푸는 pH가 달라 피부 자극 유발</li>
+  <li><strong>꼼꼼한 헹굼</strong>: 샴푸 잔여물이 남으면 피부염 유발 — 여러 번 헹굼</li>
+  <li><strong>수건 드라이 후 헤어드라이어</strong>: 저온·멀찍이서 사용, 귀 안쪽까지 건조</li>
+</ol>
+
+<h2>귀 청소</h2>
+<ul>
+  <li>목욕 후 또는 월 1~2회 전용 이어 클리너 사용</li>
+  <li>면봉을 귀 안쪽 깊이 넣지 말 것 — 귀도(외이도) 입구만 닦기</li>
+  <li>귀에서 냄새가 나거나 강아지가 머리를 흔들면 귀 감염 의심 → 수의사 방문</li>
+</ul>
+
+<h2>발톱 관리</h2>
+<ul>
+  <li>실내견은 한 달에 1~2회 손질 필요 (실외 활동 많은 강아지는 자연 마모)</li>
+  <li>강아지 전용 발톱 깎기 사용 — 혈관(퀵, Quick) 위치 확인 후 조금씩 깎기</li>
+  <li>어두운 발톱은 조심스럽게 조금씩 — 밝은 발톱은 핑크색 혈관이 보임</li>
+</ul>
+
+<h2>눈물자국 관리</h2>
+<p>말티즈·시츄 등에서 흔한 눈물자국(적갈색)은 일주일에 2~3회 전용 클리너로 닦아주고, 눈 주변 털을 정기적으로 다듬어 줍니다.</p>
+
+<h2>미용실 방문 주기</h2>
+<ul>
+  <li><strong>클리핑 필요 품종(말티즈·푸들·비숑 등)</strong>: 4~8주마다</li>
+  <li><strong>자연모 품종</strong>: 2~3개월마다</li>
+  <li>발 사이 털, 항문 주변 털은 위생상 정기적으로 정리 필수</li>
+</ul>`,
+    disclaimer: null,
+    sources: [
+      "Gorrel C, Lindqvist A. Veterinary Dentistry for the General Practitioner (2013)",
+      "대한반려동물미용사협회 홈그루밍 가이드라인 (2022)",
+    ],
+    ymyl: false,
+    status: "published",
+    publishedAt: "2026-05-22T00:00:00.000Z",
+    createdAt: NOW,
+    updatedAt: NOW,
+  },
+
+  // ── 68. 고양이 피부사상균증(링웜) (condition, cat.3, YMYL) ──────────────
+  {
+    id: "seed-condition-cat-ringworm",
+    slug: "cat-ringworm",
+    type: "condition",
+    category: 3,
+    title: "고양이 피부사상균증(링웜) — 증상·전염·치료와 사람 전염 예방",
+    metaTitle: "고양이 링웜(피부사상균증) 증상·치료·사람 전염 예방 | 수의사 검토 | 펫지기",
+    metaDescription:
+      "고양이 링웜(피부사상균증)의 증상, 진단, 치료 방법, 그리고 사람과 다른 반려동물로의 전염 예방법을 수의사 검토를 거쳐 안내합니다.",
+    body: `<h2>피부사상균증(링웜)이란?</h2>
+<p>곰팡이(진균)의 일종인 <em>Microsporum canis</em>가 피부·털·발톱을 감염시키는 질환입니다. 흔히 '링웜(Ringworm)'이라 불리지만 벌레(worm)가 아닌 곰팡이 감염입니다. <strong>사람과 다른 반려동물에게도 전파되는 인수공통 전염병</strong>입니다.</p>
+
+<h2>주요 증상</h2>
+<ul>
+  <li>원형 또는 불규칙한 탈모 반점 (얼굴·귀·앞발에 자주 발생)</li>
+  <li>탈모 부위 비듬·딱지·발적</li>
+  <li>가려움증 (경미~중등도)</li>
+  <li>어린 고양이·면역 억제 상태에서 더 심하게 나타남</li>
+  <li>일부 고양이는 증상 없이 보균 상태(Carrier)로 존재</li>
+</ul>
+
+<h2>진단</h2>
+<ul>
+  <li><strong>우드 램프(Wood's Lamp)</strong>: <em>M. canis</em> 감염 시 형광 발색(애플그린) — 단, 위음성 많음</li>
+  <li><strong>DTM(곰팡이 배양)</strong>: 가장 확실한 진단법 — 결과까지 1~3주 소요</li>
+  <li><strong>현미경 검사</strong>: 털·피부 스크래핑으로 곰팡이 포자 확인</li>
+</ul>
+
+<h2>치료</h2>
+<p>치료 방법은 감염 범위와 증상에 따라 수의사가 결정합니다.</p>
+<ul>
+  <li><strong>외용 항진균제</strong>: 크림·로션·샴푸 (국소 감염 시 주로 사용)</li>
+  <li><strong>전신 항진균제 (경구)</strong>: 광범위 감염 또는 보균 고양이 치료에 사용 — 수의사 처방 필수</li>
+  <li>치료 기간은 최소 4~6주 이상, 배양 결과 2회 연속 음성 확인 후 종료</li>
+</ul>
+
+<h2>사람·다른 반려동물 전염 예방</h2>
+<ul>
+  <li>감염 고양이 만진 후 즉시 손 씻기 (30초 이상 비누 세정)</li>
+  <li>감염 고양이 생활 공간 분리 및 자주 사용하는 침구·장난감 소독</li>
+  <li>가족 중 피부 원형 반점이 생기면 피부과 진료 (사람의 링웜도 항진균제로 치료)</li>
+  <li>다묘 가정: 다른 고양이에도 감염 여부 확인</li>
+  <li>가정 내 진공청소 강화 (포자가 환경에 오래 생존)</li>
+</ul>
+
+<h2>예방</h2>
+<ul>
+  <li>신규 고양이 입양 시 2주간 격리 후 합가 — 증상 없는 보균자일 수 있음</li>
+  <li>입양 즉시 수의사 검진 권장</li>
+  <li>면역이 약한 가족(영아·노인·면역억제자)이 있다면 더욱 주의</li>
+</ul>`,
+    disclaimer:
+      "본 정보는 수의학 참고 자료로 제공되며 의학적 진단과 치료를 대체하지 않습니다. 피부 병변이 의심되면 수의사 진찰을 받으세요. 가족 중 피부 증상이 생기면 피부과를 방문하세요.",
+    sources: [
+      "Moriello KA et al. Diagnosis and treatment of dermatophytosis in dogs and cats. Vet Dermatol (2017)",
+      "WSAVA Dermatology Guidelines for Practitioners (2022)",
+      "질병관리청 인수공통감염병 정보 — 피부사상균증",
+    ],
+    ymyl: true,
+    status: "published",
+    publishedAt: "2026-05-22T00:00:00.000Z",
+    createdAt: NOW,
+    updatedAt: NOW,
+  },
+
+  // ── 69. 고양이 변비 (condition, cat.3, YMYL) ──────────────────────────────
+  {
+    id: "seed-condition-cat-constipation",
+    slug: "cat-constipation",
+    type: "condition",
+    category: 3,
+    title: "고양이 변비 — 원인·증상·가정 관리와 병원 방문 기준",
+    metaTitle: "고양이 변비 원인·증상·관리법 | 수의사 검토 | 펫지기",
+    metaDescription:
+      "고양이 변비의 주요 원인(탈수·거대결장·헤어볼)과 증상, 집에서 할 수 있는 관리법, 즉시 병원을 가야 할 위험 신호를 수의사 검토를 거쳐 안내합니다.",
+    body: `<h2>고양이 변비란?</h2>
+<p>배변 횟수가 현저히 줄거나(하루 1회 미만이 2~3일 이상 지속), 배변 시 심한 힘주기·통증·혈변이 동반되는 상태입니다. 방치하면 <strong>거대결장(Megacolon)</strong>으로 진행될 수 있습니다.</p>
+
+<h2>주요 원인</h2>
+<ul>
+  <li><strong>수분 섭취 부족</strong>: 건식 사료만 먹거나 물그릇 위치가 좋지 않을 때</li>
+  <li><strong>헤어볼(모구)</strong>: 장내 헤어볼이 장 운동을 방해</li>
+  <li><strong>비만·운동 부족</strong>: 복부 근육 약화로 장 운동 저하</li>
+  <li><strong>스트레스·환경 변화</strong>: 이사·새 동물 입양 후 발생</li>
+  <li><strong>골반 협착·통증</strong>: 낙상 후 골반 골절 병력이 있는 경우</li>
+  <li><strong>신경계 질환·대장 종양</strong>: 드물지만 만성 변비의 원인</li>
+</ul>
+
+<h2>증상 확인 체크리스트</h2>
+<ul>
+  <li>화장실을 오래 사용하지만 배변량이 거의 없음</li>
+  <li>배변 시 크게 힘을 주고 울음소리를 냄</li>
+  <li>딱딱하고 건조한 소량 변</li>
+  <li>식욕 저하·구토</li>
+  <li>복부가 팽팽하게 느껴짐</li>
+</ul>
+
+<h2>즉시 병원을 가야 할 위험 신호</h2>
+<ul>
+  <li>48시간 이상 배변 없음 + 구토 반복</li>
+  <li>배변 시도 중 울거나 심한 통증 표현</li>
+  <li>혈변 또는 점액성 분비물</li>
+  <li>무기력·식욕 전혀 없음</li>
+  <li>소변도 함께 나오지 않음 (요폐 의심 — 응급)</li>
+</ul>
+
+<h2>가정에서 할 수 있는 관리</h2>
+<ul>
+  <li><strong>수분 증가</strong>: 습식 사료 추가 또는 물그릇을 여러 곳에 배치, 흐르는 물 급수기 활용</li>
+  <li><strong>식이섬유 보충</strong>: 고섬유질 고양이 전용 사료 또는 프리바이오틱스 보조제 (수의사 권장 제품)</li>
+  <li><strong>헤어볼 케어 제품</strong>: 헤어볼 전용 사료 또는 몰트 크림</li>
+  <li><strong>운동 유도</strong>: 자동 장난감·레이저 포인터로 복부 근육 활성화</li>
+  <li><strong>화장실 위생</strong>: 매일 청소해 스트레스 없는 배변 환경 유지</li>
+</ul>
+
+<h2>병원 진단 및 치료</h2>
+<p>수의사는 복부 촉진, X-ray(분변 적체 정도 확인), 혈액 검사로 원인을 파악합니다. 심한 경우 관장(Enema) 또는 수액 처치가 필요하며, 반복성 거대결장은 장기 관리가 필요합니다. 치료 방법은 증상과 원인에 따라 수의사가 결정합니다.</p>`,
+    disclaimer:
+      "본 정보는 수의학 참고 자료로 제공되며 의학적 진단과 치료를 대체하지 않습니다. 48시간 이상 배변이 없거나 통증이 심하면 즉시 동물병원을 방문하세요.",
+    sources: [
+      "Washabau RJ, Day MJ. Canine and Feline Gastroenterology. Saunders (2013)",
+      "Scherk M. AAFP Feline Gastrointestinal Tract Disease Consensus Guidelines (2013)",
+      "대한수의사회 소동물 임상 가이드라인 (2022)",
+    ],
+    ymyl: true,
+    status: "published",
+    publishedAt: "2026-05-22T00:00:00.000Z",
+    createdAt: NOW,
+    updatedAt: NOW,
+  },
+
+  // ── 67. 강아지 전십자인대 파열 (condition, cat.3, YMYL) ──────────────────────
+  {
+    id: "seed-condition-dog-cruciate-ligament",
+    slug: "dog-cruciate-ligament",
+    type: "condition",
+    category: 3,
+    title: "강아지 전십자인대(CCL) 파열 — 증상·수술 방법·재활 가이드",
+    metaTitle: "강아지 전십자인대 파열 증상·수술·재활 | 수의사 검토 | 펫지기",
+    metaDescription:
+      "강아지에게 흔한 전십자인대(CCL) 파열의 원인, 증상, TPLO·TTA 수술 방법, 수술 후 재활 과정을 수의사 검토를 거쳐 안내합니다.",
+    body: `<h2>전십자인대(CCL)란?</h2>
+<p>무릎 관절(슬관절) 안쪽에서 경골(정강이뼈)과 대퇴골(허벅지뼈)을 연결하는 인대입니다. 사람의 ACL(전방십자인대)과 같은 구조로, 강아지에서는 <strong>CCL(Cranial Cruciate Ligament)</strong>이라 부릅니다. 파열 시 관절 불안정과 심한 통증이 발생합니다.</p>
+
+<h2>발생 위험이 높은 경우</h2>
+<ul>
+  <li><strong>대형·중형견</strong>: 래브라도, 골든 리트리버, 로트와일러, 뉴펀들랜드</li>
+  <li><strong>비만 강아지</strong>: 체중 증가로 무릎 부하 증가</li>
+  <li><strong>중성화 수술 이력</strong>: 성호르몬 부재로 인대 취약해질 수 있음</li>
+  <li><strong>갑작스러운 방향 전환</strong>: 격렬한 놀이·운동 중 발생</li>
+</ul>
+
+<h2>증상</h2>
+<ul>
+  <li>갑작스러운 한쪽 뒷다리 절뚝거림 (완전 파열 시 다리를 들고 다님)</li>
+  <li>앉을 때 다리를 옆으로 뻗음 (정상: 다리를 안쪽으로 접음)</li>
+  <li>무릎 관절 부종</li>
+  <li>근육 위축 (만성 파열의 경우)</li>
+  <li>슬관절 촉진 시 "서랍 현상(Drawer Sign)" — 경골이 전방으로 밀림</li>
+</ul>
+
+<h2>진단</h2>
+<p>수의사는 서랍 검사(Drawer Test), 경골 압박 검사(Tibial Compression Test), X-ray(관절액 증가·골관절염 여부 확인)로 진단합니다. 필요 시 MRI·관절경으로 확인합니다.</p>
+
+<h2>치료 방법</h2>
+<h3>수술적 치료 (대형견 권장)</h3>
+<ul>
+  <li><strong>TPLO (경골 고원 평탄화 골절술)</strong>: 경골 각도를 수술로 변경해 인대 없이도 관절 안정성 확보 — 가장 널리 사용</li>
+  <li><strong>TTA (경골 결절 전진술)</strong>: 경골 결절을 이동해 힘의 방향 변경</li>
+  <li><strong>교외측 봉합술(Lateral Suture)</strong>: 소형견·고령견에게 적용 가능, 비용 낮음</li>
+</ul>
+<h3>보존적 치료 (소형견 일부)</h3>
+<p>엄격한 활동 제한, 통증 관리, 체중 조절로 기능 회복을 도모하나, 대형견에서는 예후가 불량합니다.</p>
+
+<h2>수술 후 재활 (일반적 과정)</h2>
+<ol>
+  <li><strong>1~2주차</strong>: 완전 안정, 2~3발짝 이상 걷기 금지, 쿨러 처치</li>
+  <li><strong>3~6주차</strong>: 짧은 리드줄 산책 시작, 재활 운동 (수중 트레드밀 권장)</li>
+  <li><strong>2~3개월</strong>: 점진적 운동량 증가</li>
+  <li><strong>4~6개월</strong>: 완전 회복 확인 후 일반 운동 재개</li>
+</ol>
+<p>반대쪽 다리 파열 예방을 위해 체중 관리와 저충격 운동이 중요합니다.</p>`,
+    disclaimer:
+      "본 정보는 수의학 참고 자료로 제공되며 의학적 진단과 치료를 대체하지 않습니다. 뒷다리 절뚝거림이 지속되면 반드시 수의사 진찰을 받으세요. 수술 방법 결정은 담당 수의사와 충분히 상의하세요.",
+    sources: [
+      "Tobias KM, Johnston SA. Veterinary Surgery: Small Animal. Elsevier (2012)",
+      "Griffon DJ. A Review of the Pathogenesis of Canine Cranial Cruciate Ligament Disease. VCOT (2010)",
+      "대한수의사회 소동물 정형외과 임상 가이드 (2023)",
+    ],
+    ymyl: true,
+    status: "published",
+    publishedAt: "2026-05-22T00:00:00.000Z",
+    createdAt: NOW,
+    updatedAt: NOW,
+  },
+
+  // ── 68. 강아지 항문낭 질환 (condition, cat.3, YMYL) ──────────────────────────
+  {
+    id: "seed-condition-dog-anal-gland",
+    slug: "dog-anal-gland",
+    type: "condition",
+    category: 3,
+    title: "강아지 항문낭 질환 — 분비물 가득 참·감염·파열 예방",
+    metaTitle: "강아지 항문낭 질환 증상·짜기·예방법 | 수의사 검토 | 펫지기",
+    metaDescription:
+      "강아지가 엉덩이를 끌거나 항문을 핥는다면 항문낭 문제일 수 있습니다. 항문낭 구조, 증상, 짜는 방법, 감염·파열 예방법을 안내합니다.",
+    body: `<h2>항문낭(항문선)이란?</h2>
+<p>항문 양쪽 4시·8시 방향에 위치한 두 개의 작은 주머니로, 배변 시 분비물(강한 냄새의 지방성 액체)이 자연 배출됩니다. 이 분비물은 개들이 서로를 인식하는 마킹 물질이기도 합니다. 분비가 잘 안 되면 가득 차거나(꽉 참), 감염·파열로 이어집니다.</p>
+
+<h2>문제가 생기는 이유</h2>
+<ul>
+  <li>배변이 묽거나 무를 때 — 단단한 대변이 항문낭을 압박해 분비</li>
+  <li>비만으로 근육 압력 부족</li>
+  <li>알레르기 — 항문낭 주변 염증 유발</li>
+  <li>항문낭 도관(출구)이 선천적으로 좁은 경우</li>
+</ul>
+
+<h2>증상</h2>
+<ul>
+  <li>바닥에 엉덩이를 끌고 다님 (스쿠팅)</li>
+  <li>항문을 계속 핥거나 씹음</li>
+  <li>항문 주변 붓기·발적 (감염 시)</li>
+  <li>항문 주변에서 생선 비린내 또는 강한 냄새</li>
+  <li>배변 시 통증 표현</li>
+  <li>파열 시: 항문 주변 구멍 또는 농이 배출</li>
+</ul>
+
+<h2>병원 방문 기준</h2>
+<ul>
+  <li>스쿠팅이 이틀 이상 반복될 때</li>
+  <li>항문 주변이 붓고 뜨거우며 발적이 심할 때 (감염 의심)</li>
+  <li>농성 분비물 또는 항문 주변 구멍이 보일 때 (파열 — 즉시 방문)</li>
+</ul>
+
+<h2>항문낭 짜기 (Anal Gland Expression)</h2>
+<p>병원에서 외부 짜기(External Expression) 또는 내부 짜기를 받을 수 있습니다. 집에서 외부 짜기를 하는 경우도 있으나, 잘못된 방법은 과도한 자극을 줄 수 있어 처음에는 수의사에게 방법을 배운 뒤 시행하세요. 자주 짜면 항문낭이 분비물을 더 많이 만들어낼 수 있으므로 증상이 있을 때만 시행합니다.</p>
+
+<h2>예방법</h2>
+<ul>
+  <li><strong>고섬유질 식이</strong>: 단단한 대변 형성을 도와 자연 배출 촉진</li>
+  <li><strong>체중 관리</strong>: 적정 체중 유지로 항문 괄약근 압력 정상화</li>
+  <li><strong>알레르기 관리</strong>: 식이 알레르기가 있다면 알레르기 사료로 전환</li>
+  <li><strong>정기 검진</strong>: 연 1~2회 검진 시 항문낭 상태 함께 확인</li>
+</ul>`,
+    disclaimer:
+      "본 정보는 수의학 참고 자료로 제공되며 의학적 진단과 치료를 대체하지 않습니다. 항문낭 파열이나 심한 감염이 의심되면 즉시 동물병원을 방문하세요.",
+    sources: [
+      "Fossum TW. Small Animal Surgery. 5th ed. Mosby (2018)",
+      "Gross TL et al. Skin Diseases of the Dog and Cat. Blackwell (2005)",
+      "대한수의사회 소동물 외과 임상 가이드라인 (2022)",
+    ],
+    ymyl: true,
+    status: "published",
+    publishedAt: "2026-05-22T00:00:00.000Z",
+    createdAt: NOW,
+    updatedAt: NOW,
+  },
+
+  // ── 69. 강아지 추간판탈출증 (condition, cat.3, YMYL) ───────────────────────
+  {
+    id: "seed-condition-dog-disc-disease",
+    slug: "dog-disc-disease",
+    type: "condition",
+    category: 3,
+    title: "강아지 추간판탈출증(IVDD) — 증상·등급·수술과 보존 치료",
+    metaTitle: "강아지 추간판탈출증 증상·수술·재활 | IVDD | 수의사 검토 | 펫지기",
+    metaDescription:
+      "닥스훈트·웰시코기·비글에서 흔한 강아지 추간판탈출증(IVDD)의 증상, 1~5등급 분류, 수술과 보존 치료의 차이, 예방법을 수의사 검토를 거쳐 안내합니다.",
+    body: `<h2>추간판탈출증(IVDD)이란?</h2>
+<p>척추 뼈 사이에서 완충 역할을 하는 추간판(디스크)이 탈출·파열되어 척수를 압박하는 질환입니다. 통증, 마비, 최악의 경우 사지 완전 마비로 이어질 수 있습니다.</p>
+
+<h2>잘 걸리는 품종</h2>
+<ul>
+  <li><strong>연골이형성증 품종</strong>: 닥스훈트, 웰시 코기, 바셋 하운드, 비글, 시츄, 페키니즈</li>
+  <li>연골이형성증 품종은 3~7세에 발병률이 높음</li>
+  <li>대형견은 만성 퇴행성 디스크(Hansen Type II)가 더 흔함</li>
+</ul>
+
+<h2>증상 (등급별)</h2>
+<table>
+  <thead>
+    <tr><th>등급</th><th>증상</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>1등급</td><td>통증만 있음, 마비 없음 — 등을 구부리거나 안기를 거부</td></tr>
+    <tr><td>2등급</td><td>뒷다리 약화·비틀거림 (보행 가능)</td></tr>
+    <tr><td>3등급</td><td>뒷다리 부분 마비 (일어나려 하지만 힘 없음)</td></tr>
+    <tr><td>4등급</td><td>뒷다리 완전 마비, 통증 감각 있음</td></tr>
+    <tr><td>5등급</td><td>뒷다리 완전 마비, 통증 감각 없음 — 즉시 응급 수술 필요</td></tr>
+  </tbody>
+</table>
+
+<h2>즉시 병원을 가야 할 응급 증상</h2>
+<ul>
+  <li>갑작스러운 뒷다리 마비 또는 걷지 못함</li>
+  <li>소변·대변 실금 또는 배뇨 불가</li>
+  <li>극심한 통증 (끙끙대거나 만지면 비명)</li>
+  <li>뒷발을 꼬집어도 반응 없음 (통각 소실 — 응급)</li>
+</ul>
+
+<h2>진단</h2>
+<p>신체 검사 후 X-ray, CT(가장 정확), MRI로 탈출 부위와 척수 압박 정도를 확인합니다.</p>
+
+<h2>치료 방법</h2>
+<h3>수술적 치료 (3~5등급 또는 재발성)</h3>
+<ul>
+  <li>반추간판절제술(Hemilaminectomy) — 탈출된 디스크 물질 제거</li>
+  <li>5등급 발생 후 48시간 이내 수술 시 예후 더 좋음</li>
+</ul>
+<h3>보존적 치료 (1~2등급)</h3>
+<ul>
+  <li>엄격한 케이지 안정 (4~6주)</li>
+  <li>통증·염증 관리 (수의사 처방 하에 시행)</li>
+  <li>점진적 재활: 수중 트레드밀, 물리치료</li>
+</ul>
+
+<h2>예방 및 관리</h2>
+<ul>
+  <li>소파·침대 오르내림 시 경사로(램프) 사용</li>
+  <li>목줄 대신 하네스 사용 (목 부위 압박 감소)</li>
+  <li>적정 체중 유지 (비만은 척추 부하 증가)</li>
+  <li>격렬한 점프·계단 달리기 자제</li>
+  <li>정기적인 코어 근육 강화 운동</li>
+</ul>`,
+    disclaimer:
+      "본 정보는 수의학 참고 자료로 제공되며 의학적 진단과 치료를 대체하지 않습니다. 뒷다리 마비·보행 이상이 나타나면 즉시 동물병원을 방문하세요. 수술 여부는 담당 수의사와 상의해 결정하세요.",
+    sources: [
+      "Brisson BA. Intervertebral Disc Disease in Dogs. Vet Clin North Am Small Anim Pract. 2010",
+      "Dewey CW, da Costa RC. Practical Guide to Canine and Feline Neurology. Wiley (2015)",
+      "대한수의사회 소동물 신경외과 임상 가이드 (2023)",
+    ],
+    ymyl: true,
+    status: "published",
+    publishedAt: "2026-05-22T00:00:00.000Z",
+    createdAt: NOW,
+    updatedAt: NOW,
+  },
 ];
 
 async function seedContents() {

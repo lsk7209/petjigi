@@ -72,6 +72,8 @@ const POPULAR_CONDITIONS = [
   { label: "파보바이러스", slug: "dog-parvovirus", emoji: "⚠️" },
   { label: "고양이 구내염", slug: "cat-stomatitis", emoji: "🦷" },
   { label: "강아지 피부알레르기", slug: "dog-skin-allergy", emoji: "🐾" },
+  { label: "강아지 디스크", slug: "dog-disc-disease", emoji: "🦴" },
+  { label: "고양이 변비", slug: "cat-constipation", emoji: "🐈" },
 ];
 
 export default async function ConditionIndexPage() {
