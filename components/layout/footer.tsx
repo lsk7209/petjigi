@@ -1,123 +1,90 @@
 import Link from "next/link";
 
-const FOOTER_LINKS = [
-  { label: "소개", href: "/about" },
-  { label: "이용약관", href: "/terms" },
-  { label: "개인정보처리방침", href: "/privacy" },
-  { label: "어필리에이트 고지", href: "/disclosure" },
-  { label: "광고 정책", href: "/advertising" },
-  { label: "문의", href: "/contact" },
-];
-
 const CATEGORY_LINKS = [
-  { label: "입양·등록", href: "/category/adoption" },
-  { label: "사료·영양", href: "/category/nutrition" },
-  { label: "건강·의료", href: "/category/health" },
-  { label: "보험·법률", href: "/category/insurance" },
+  { label: "입양·등록",   href: "/category/adoption" },
+  { label: "사료·영양",   href: "/category/nutrition" },
+  { label: "건강·의료",   href: "/category/health" },
+  { label: "보험·반려동물법", href: "/category/insurance" },
   { label: "케어·라이프", href: "/category/care" },
-  { label: "장례·추모", href: "/category/memorial" },
-];
-
-const SERVICE_LINKS = [
-  { label: "동물병원 찾기", href: "/sido/seoul" },
-  { label: "유기동물 입양", href: "/rescue" },
-  { label: "강아지 품종 정보", href: "/breed/dog" },
-  { label: "고양이 품종 정보", href: "/breed/cat" },
-  { label: "가이드 전체", href: "/category/health" },
-  { label: "펫로스 케어", href: "/guide/pet-loss-care" },
+  { label: "장례·추모",   href: "/category/memorial" },
 ];
 
 const SIDO_LINKS = [
-  { label: "서울", href: "/sido/seoul" },
-  { label: "경기", href: "/sido/gyeonggi" },
-  { label: "부산", href: "/sido/busan" },
-  { label: "인천", href: "/sido/incheon" },
-  { label: "대구", href: "/sido/daegu" },
-  { label: "대전", href: "/sido/daejeon" },
+  { label: "서울특별시", href: "/sido/seoul" },
+  { label: "경기도",     href: "/sido/gyeonggi" },
+  { label: "부산광역시", href: "/sido/busan" },
+  { label: "대구광역시", href: "/sido/daegu" },
+  { label: "전체 17개 시·도", href: "/sido/seoul" },
+];
+
+const COMPANY_LINKS = [
+  { label: "소개",              href: "/about" },
+  { label: "자료 출처·검토 정책", href: "/about" },
+  { label: "광고·제휴 안내",    href: "/advertising" },
+  { label: "개인정보처리방침",   href: "/privacy" },
+  { label: "이용약관",          href: "/terms" },
+  { label: "문의",              href: "/contact" },
 ];
 
 export function Footer() {
   return (
-    <footer className="border-t border-[var(--brand-border)] bg-[var(--brand-bg)] mt-auto">
-      <div className="max-w-6xl mx-auto px-4 py-10">
-        {/* 4단 그리드 링크 */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-8">
+    <footer className="pj-footer">
+      <div className="pj-container-7xl" style={{ padding: "56px 32px 32px" }}>
+        {/* 4열 그리드 */}
+        <div
+          className="grid gap-10 mb-10"
+          style={{ gridTemplateColumns: "1.6fr 1fr 1fr 1fr" }}
+        >
+          {/* 브랜드 소개 */}
           <div>
-            <h3 className="text-xs font-semibold text-[var(--brand-text)] uppercase tracking-widest mb-3">
-              카테고리
-            </h3>
+            <Link href="/" className="pj-logo" style={{ marginBottom: 14, display: "inline-flex" }}>
+              <span className="pj-logo-mark" aria-hidden="true" />
+              펫지기
+            </Link>
+            <p className="pj-tiny" style={{ marginTop: 14, maxWidth: 320, lineHeight: 1.7 }}>
+              공공데이터 기반 전국 30,000+ 동물병원·펫미용·펫호텔·장묘업체와
+              반려동물 가이드를 한 곳에서 만나보세요.
+            </p>
+            <p className="pj-tiny" style={{ marginTop: 12, lineHeight: 1.6 }}>
+              자료 출처: 행정안전부 공공데이터포털 · 농림축산검역본부 · 국가동물보호정보시스템
+            </p>
+          </div>
+
+          {/* 카테고리 */}
+          <div>
+            <h4>카테고리</h4>
             <ul className="space-y-2">
               {CATEGORY_LINKS.map((link) => (
-                <li key={link.href}>
-                  <Link
-                    href={link.href}
-                    className="text-sm text-[var(--brand-text-secondary)] hover:text-[var(--brand-accent)] transition-colors"
-                  >
-                    {link.label}
-                  </Link>
+                <li key={link.href + link.label}>
+                  <Link href={link.href}>{link.label}</Link>
                 </li>
               ))}
             </ul>
           </div>
 
+          {/* 지역별 */}
           <div>
-            <h3 className="text-xs font-semibold text-[var(--brand-text)] uppercase tracking-widest mb-3">
-              서비스
-            </h3>
-            <ul className="space-y-2">
-              {SERVICE_LINKS.map((link) => (
-                <li key={link.href}>
-                  <Link
-                    href={link.href}
-                    className="text-sm text-[var(--brand-text-secondary)] hover:text-[var(--brand-accent)] transition-colors"
-                  >
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          <div>
-            <h3 className="text-xs font-semibold text-[var(--brand-text)] uppercase tracking-widest mb-3">
-              지역별
-            </h3>
+            <h4>지역별</h4>
             <ul className="space-y-2">
               {SIDO_LINKS.map((link) => (
-                <li key={link.href}>
-                  <Link
-                    href={link.href}
-                    className="text-sm text-[var(--brand-text-secondary)] hover:text-[var(--brand-accent)] transition-colors"
-                  >
-                    {link.label} 반려동물 정보
-                  </Link>
+                <li key={link.href + link.label}>
+                  <Link href={link.href}>{link.label}</Link>
                 </li>
               ))}
             </ul>
           </div>
 
+          {/* 회사 정보 */}
           <div>
-            <h3 className="text-xs font-semibold text-[var(--brand-text)] uppercase tracking-widest mb-3">
-              펫지기
-            </h3>
+            <h4>회사 정보</h4>
             <ul className="space-y-2">
-              {FOOTER_LINKS.map((link) => (
-                <li key={link.href}>
-                  <Link
-                    href={link.href}
-                    className="text-sm text-[var(--brand-text-secondary)] hover:text-[var(--brand-accent)] transition-colors"
-                  >
-                    {link.label}
-                  </Link>
+              {COMPANY_LINKS.map((link) => (
+                <li key={link.href + link.label}>
+                  <Link href={link.href}>{link.label}</Link>
                 </li>
               ))}
               <li>
-                <a
-                  href="/feed.xml"
-                  className="text-sm text-[var(--brand-text-secondary)] hover:text-[var(--brand-accent)] transition-colors"
-                  rel="alternate"
-                  type="application/rss+xml"
-                >
+                <a href="/feed.xml" rel="alternate" type="application/rss+xml">
                   RSS 피드
                 </a>
               </li>
@@ -125,25 +92,24 @@ export function Footer() {
           </div>
         </div>
 
-        {/* 구분선 */}
-        <div className="border-t border-[var(--brand-border)] pt-6">
-          <p className="text-xs text-[var(--brand-text-secondary)] leading-relaxed mb-2">
-            펫지기는 공공데이터 기반 반려동물 정보 서비스입니다. 본 사이트의
-            정보는 정보 제공 목적이며 의료·법률·보험 자문을 대체하지 않습니다.
-            반려동물 건강 문제는 반드시 수의사와 상담하세요.
-          </p>
-          <p className="text-xs text-[var(--brand-text-secondary)] leading-relaxed mb-2">
-            <strong>어필리에이트 고지:</strong> 펫지기는 일부 페이지에 제휴(어필리에이트) 링크를 포함합니다.
-            링크를 통해 구매·가입 시 수수료를 받을 수 있으나, 추천의 객관성에는 영향을 주지 않습니다.
-            자세한 내용은{" "}
-            <a href="/disclosure" className="underline hover:text-[var(--brand-accent)] transition-colors">
-              어필리에이트 고지
-            </a>
-            를 확인하세요.
-          </p>
-          <p className="text-xs text-[var(--brand-text-secondary)]">
-            © 2026 펫지기. 지기 시리즈 — 법률지기·금리지기·펫지기
-          </p>
+        <hr className="pj-hr" />
+
+        {/* 법적 고지 + 저작권 */}
+        <div
+          className="flex justify-between items-start flex-wrap gap-6"
+          style={{ paddingTop: 24 }}
+        >
+          <div className="pj-tiny" style={{ maxWidth: 620, lineHeight: 1.7 }}>
+            <strong style={{ color: "var(--brand-text)" }}>(주)펫지기</strong> · 반려동물 정보 서비스
+            <br />
+            본 사이트는 정보 제공을 목적으로 하며, 의료·법률·재정적 결정에 대한 최종 책임은 이용자 본인에게 있습니다.
+            <br />
+            <strong style={{ color: "var(--brand-text)" }}>어필리에이트 고지:</strong> 펫지기는 일부 링크를 통해 수수료를 받을 수 있습니다.{" "}
+            <Link href="/disclosure" style={{ color: "var(--brand-accent-warm)", textDecoration: "underline" }}>
+              자세히 보기
+            </Link>
+          </div>
+          <div className="pj-tiny">© 2026 PetJigi. All rights reserved.</div>
         </div>
       </div>
     </footer>

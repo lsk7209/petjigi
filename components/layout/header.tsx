@@ -2,93 +2,114 @@
 
 import Link from "next/link";
 import { useState } from "react";
-import { CATEGORIES } from "@/lib/category";
 
-const NAV_CATEGORIES = Object.values(CATEGORIES).map((c) => ({
-  name: c.name,
-  href: `/category/${c.slug}`,
-}));
+const NAV_LINKS = [
+  { label: "홈",     href: "/" },
+  { label: "카테고리", href: "/category/health" },
+  { label: "시도별",  href: "/sido/seoul" },
+  { label: "동물병원", href: "/sido/seoul" },
+  { label: "가이드",  href: "/category/health" },
+  { label: "견종도감", href: "/breed/dog" },
+];
 
 export function Header() {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="border-b border-[var(--brand-border)] bg-[var(--brand-bg)] sticky top-0 z-40">
-      <div className="max-w-6xl mx-auto px-4 h-14 flex items-center justify-between">
+    <header className="pj-header">
+      <div className="pj-header-inner">
+        {/* 로고 */}
         <Link
           href="/"
-          className="font-bold text-lg text-[var(--brand-text)] tracking-tight"
+          className="pj-logo"
           onClick={() => setOpen(false)}
         >
-          🐾 펫지기
+          <span className="pj-logo-mark" aria-hidden="true" />
+          펫지기
         </Link>
 
-        {/* 데스크톱 Nav */}
-        <nav className="hidden md:flex items-center gap-1">
-          {NAV_CATEGORIES.map((item) => (
-            <Link
-              key={item.href}
-              href={item.href}
-              className="px-3 py-1.5 text-sm rounded-[var(--radius-button)] text-[var(--brand-text-secondary)] hover:text-[var(--brand-text)] hover:bg-[var(--brand-border)] transition-colors"
-            >
-              {item.name}
+        {/* 데스크탑 Nav */}
+        <nav className="pj-nav hidden md:flex" aria-label="주요 메뉴">
+          {NAV_LINKS.map((item) => (
+            <Link key={item.href + item.label} href={item.href}>
+              {item.label}
             </Link>
           ))}
         </nav>
 
-        <div className="hidden md:flex items-center gap-3">
+        <div className="flex-1" />
+
+        {/* 우측 액션 */}
+        <div className="hidden md:flex items-center gap-2">
           <Link
             href="/search"
-            className="text-[var(--brand-text-secondary)] hover:text-[var(--brand-text)] transition-colors"
+            className="pj-btn pj-btn-ghost pj-btn-sm"
             aria-label="검색"
           >
-            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+              <circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/>
+            </svg>
+            검색
           </Link>
-          <Link
-            href="/guide/pet-loss-care"
-            className="text-sm text-[var(--brand-accent)] hover:underline"
-          >
-            펫로스 케어 →
+          <Link href="/guide/pet-loss-care" className="pj-btn pj-btn-ghost pj-btn-sm">
+            로그인
           </Link>
         </div>
 
         {/* 모바일 햄버거 */}
         <button
           type="button"
-          className="md:hidden p-2 rounded-lg hover:bg-[var(--brand-border)] transition-colors"
+          className="md:hidden pj-btn pj-btn-ghost pj-btn-sm"
+          style={{ padding: 0, width: 40, height: 40, justifyContent: "center" }}
           aria-label={open ? "메뉴 닫기" : "메뉴 열기"}
           aria-expanded={open}
           onClick={() => setOpen((v) => !v)}
         >
-          <span className="block w-5 h-0.5 bg-[var(--brand-text)] mb-1 transition-all" />
-          <span className="block w-5 h-0.5 bg-[var(--brand-text)] mb-1 transition-all" />
-          <span className="block w-5 h-0.5 bg-[var(--brand-text)] transition-all" />
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" aria-hidden="true">
+            <path d="M4 7h16M4 12h16M4 17h16"/>
+          </svg>
         </button>
       </div>
 
-      {/* 모바일 드롭다운 */}
+      {/* 모바일 카테고리 칩 바 */}
       {open && (
-        <nav className="md:hidden border-t border-[var(--brand-border)] bg-[var(--brand-bg)] px-4 py-3 flex flex-col gap-1.5">
-          {NAV_CATEGORIES.map((item) => (
-            <Link
-              key={item.href}
-              href={item.href}
-              onClick={() => setOpen(false)}
-              className="px-3 py-3 text-sm rounded-[var(--radius-button)] text-[var(--brand-text-secondary)] hover:text-[var(--brand-text)] hover:bg-[var(--brand-border)] transition-colors"
-            >
-              {item.name}
-            </Link>
-          ))}
-          <div className="border-t border-[var(--brand-border)] mt-1 pt-2">
-            <Link
-              href="/guide/pet-loss-care"
-              onClick={() => setOpen(false)}
-              className="px-3 py-3 text-sm text-[var(--brand-accent)] hover:bg-[var(--brand-border)] rounded-[var(--radius-button)] transition-colors block"
-            >
-              펫로스 케어 →
-            </Link>
+        <div className="md:hidden border-t border-[var(--brand-border)] bg-[var(--brand-bg)]">
+          {/* 카테고리 칩 스크롤 */}
+          <div className="flex gap-1.5 px-4 py-2 overflow-x-auto">
+            {[
+              { slug: "health",   name: "건강·의료",    color: "var(--cat-3)",   soft: "var(--cat-3-soft)" },
+              { slug: "food",     name: "사료·영양",    color: "var(--cat-2)",   soft: "var(--cat-2-soft)" },
+              { slug: "insurance",name: "보험·법률",    color: "var(--cat-4)",   soft: "var(--cat-4-soft)" },
+              { slug: "care",     name: "케어·라이프",  color: "var(--cat-5)",   soft: "var(--cat-5-soft)" },
+              { slug: "adoption", name: "입양·등록",    color: "var(--cat-1)",   soft: "var(--cat-1-soft)" },
+              { slug: "memorial", name: "장례·추모",    color: "var(--cat-6)",   soft: "var(--cat-6-soft)" },
+            ].map((c) => (
+              <Link
+                key={c.slug}
+                href={`/category/${c.slug}`}
+                onClick={() => setOpen(false)}
+                className="pj-pill shrink-0"
+                style={{ background: c.soft, color: c.color, fontWeight: 600, fontSize: 12 }}
+              >
+                {c.name}
+              </Link>
+            ))}
           </div>
-        </nav>
+
+          {/* 전체 메뉴 */}
+          <nav className="px-4 pb-3 flex flex-col gap-0.5">
+            {NAV_LINKS.map((item) => (
+              <Link
+                key={item.href + item.label}
+                href={item.href}
+                onClick={() => setOpen(false)}
+                className="px-3 py-3 text-sm rounded-xl text-[var(--brand-text-secondary)] hover:text-[var(--brand-text)] hover:bg-[var(--brand-border)] transition-colors"
+              >
+                {item.label}
+              </Link>
+            ))}
+          </nav>
+        </div>
       )}
     </header>
   );

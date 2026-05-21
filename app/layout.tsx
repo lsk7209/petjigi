@@ -90,6 +90,10 @@ export default function RootLayout({
   return (
     <html lang="ko" className="h-full scroll-smooth" suppressHydrationWarning>
       <head>
+        {/* Noto Serif KR — 에디토리얼 디스플레이 폰트 */}
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;500;600;700&display=swap" rel="stylesheet" />
         {/* Preconnect for third-party performance */}
         <link rel="preconnect" href="https://www.googletagmanager.com" crossOrigin="anonymous" />
         <link rel="preconnect" href="https://www.google-analytics.com" crossOrigin="anonymous" />
