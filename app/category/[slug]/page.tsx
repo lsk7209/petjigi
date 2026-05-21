@@ -28,8 +28,16 @@ export async function generateMetadata({
   const cat = getCategoryBySlug(slug);
   if (!cat) return {};
 
+  const CATEGORY_META_DESC: Record<string, string> = {
+    adoption: "강아지·고양이 입양 방법, 동물등록 절차, 품종별 특성 가이드. 유기동물 입양부터 동물등록까지 단계별 안내.",
+    nutrition: "강아지·고양이 사료 비교, 생애주기별 영양 요구량, 금지 음식 목록. 수의사 검토 반려동물 사료·영양 정보.",
+    health: "강아지·고양이 증상 체크, 동물병원 찾기, 예방접종 스케줄. 공공데이터 기반 반려동물 건강·의료 정보.",
+    insurance: "펫보험 비교, 보장범위 설명, 보험금 청구 가이드. 반려동물 보험·법률 전문 정보.",
+    care: "반려동물 미용·훈련·호텔·동반시설 정보. 케어·라이프스타일 실용 가이드.",
+    memorial: "반려동물 장례 절차, 펫로스 회복, 추모 방법. 조용하고 따뜻한 장례·추모 안내.",
+  };
   const title = `${cat.name} 정보 | 펫지기`;
-  const description = `반려동물 ${cat.name} 관련 가이드·정보를 모아보세요. 공공데이터 기반 신뢰할 수 있는 정보.`;
+  const description = CATEGORY_META_DESC[slug] ?? `반려동물 ${cat.name} 관련 가이드·정보를 모아보세요. 공공데이터 기반 신뢰할 수 있는 정보.`;
 
   return {
     title,

@@ -42,7 +42,10 @@ export async function generateMetadata({
   if (!content) return {};
 
   const title = content.metaTitle ?? `${content.title} | 펫지기`;
-  const description = content.metaDescription ?? content.title;
+  const catName = CATEGORIES[content.category as CategoryId]?.name ?? "반려동물";
+  const description =
+    content.metaDescription ??
+    `${content.title} — 반려동물 ${catName} 전문 가이드. 수의사·전문가 검토를 거친 신뢰할 수 있는 정보. | 펫지기`;
 
   return {
     title,

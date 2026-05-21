@@ -5,6 +5,7 @@ import { contents, businesses, shelters, rescuedAnimals } from "@/db/schema";
 import { eq, desc, and, sql, count } from "drizzle-orm";
 import { CATEGORIES } from "@/lib/category";
 import { faqSchema, definedTermSetSchema } from "@/lib/seo/structured-data";
+import { SubscribeForm } from "@/components/forms/subscribe-form";
 
 const SITE_URL_CONST = process.env.NEXT_PUBLIC_SITE_URL ?? "https://petjigi.kr";
 
@@ -324,24 +325,21 @@ export default async function HomePage() {
         </Link>
       </section>
 
-      {/* 이메일 구독 CTA */}
+      {/* 이메일 구독 — 인라인 폼 */}
       <section className="max-w-5xl mx-auto px-4 pb-16 sm:pb-20" aria-label="뉴스레터 구독">
-        <div className="rounded-2xl bg-[var(--brand-accent)] text-white p-6 sm:p-8 text-center">
-          <p className="text-xs font-semibold uppercase tracking-wide opacity-80 mb-2">
-            뉴스레터
-          </p>
-          <h2 className="text-lg sm:text-xl md:text-2xl font-bold mb-2" style={{ wordBreak: "keep-all" }}>
-            반려동물 건강 정보를 이메일로 받아보세요
-          </h2>
-          <p className="text-xs sm:text-sm opacity-80 mb-5 sm:mb-6 max-w-md mx-auto leading-relaxed" style={{ wordBreak: "keep-all" }}>
-            월 2회, 수의사·전문가 검토를 거친 콘텐츠만 엄선해 보내드립니다.
-          </p>
-          <Link
-            href="/contact"
-            className="inline-block px-5 py-2.5 sm:px-6 sm:py-3 rounded-full bg-white text-[var(--brand-accent)] text-sm font-bold hover:opacity-90 transition-opacity shadow-sm"
-          >
-            무료 구독 신청 →
-          </Link>
+        <div className="rounded-2xl bg-[var(--brand-accent)] text-white p-6 sm:p-8">
+          <div className="max-w-lg mx-auto">
+            <p className="text-xs font-semibold uppercase tracking-wide opacity-80 mb-2 text-center">
+              뉴스레터
+            </p>
+            <h2 className="text-lg sm:text-xl md:text-2xl font-bold mb-2 text-center" style={{ wordBreak: "keep-all" }}>
+              반려동물 건강 정보를 이메일로 받아보세요
+            </h2>
+            <p className="text-xs sm:text-sm opacity-80 mb-5 text-center leading-relaxed" style={{ wordBreak: "keep-all" }}>
+              월 2회, 수의사·전문가 검토를 거친 콘텐츠만 엄선해 보내드립니다.
+            </p>
+            <SubscribeForm source="home_newsletter" />
+          </div>
         </div>
       </section>
     </main>

@@ -132,6 +132,15 @@ export function Footer() {
             정보는 정보 제공 목적이며 의료·법률·보험 자문을 대체하지 않습니다.
             반려동물 건강 문제는 반드시 수의사와 상담하세요.
           </p>
+          <p className="text-xs text-[var(--brand-text-secondary)] leading-relaxed mb-2">
+            <strong>어필리에이트 고지:</strong> 펫지기는 일부 페이지에 제휴(어필리에이트) 링크를 포함합니다.
+            링크를 통해 구매·가입 시 수수료를 받을 수 있으나, 추천의 객관성에는 영향을 주지 않습니다.
+            자세한 내용은{" "}
+            <a href="/disclosure" className="underline hover:text-[var(--brand-accent)] transition-colors">
+              어필리에이트 고지
+            </a>
+            를 확인하세요.
+          </p>
           <p className="text-xs text-[var(--brand-text-secondary)]">
             © 2026 펫지기. 지기 시리즈 — 법률지기·금리지기·펫지기
           </p>
