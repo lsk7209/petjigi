@@ -9,6 +9,15 @@ const CATEGORY_LINKS = [
   { label: "장례·추모",   href: "/category/memorial" },
 ];
 
+const CONTENT_LINKS = [
+  { label: "반려동물 가이드", href: "/guide" },
+  { label: "질병·증상 정보",  href: "/condition" },
+  { label: "견종·묘종 도감",  href: "/breed" },
+  { label: "강아지 품종",     href: "/breed/dog" },
+  { label: "고양이 품종",     href: "/breed/cat" },
+  { label: "펫보험 비교",     href: "/insurance/compare" },
+];
+
 const SIDO_LINKS = [
   { label: "서울특별시", href: "/sido/seoul" },
   { label: "경기도",     href: "/sido/gyeonggi" },
@@ -33,7 +42,7 @@ export function Footer() {
         {/* 4열 그리드 */}
         <div
           className="grid gap-10 mb-10"
-          style={{ gridTemplateColumns: "1.6fr 1fr 1fr 1fr" }}
+          style={{ gridTemplateColumns: "1.4fr 1fr 1fr 1fr 1fr" }}
         >
           {/* 브랜드 소개 */}
           <div>
@@ -55,6 +64,18 @@ export function Footer() {
             <h4>카테고리</h4>
             <ul className="space-y-2">
               {CATEGORY_LINKS.map((link) => (
+                <li key={link.href + link.label}>
+                  <Link href={link.href}>{link.label}</Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* 콘텐츠 */}
+          <div>
+            <h4>콘텐츠</h4>
+            <ul className="space-y-2">
+              {CONTENT_LINKS.map((link) => (
                 <li key={link.href + link.label}>
                   <Link href={link.href}>{link.label}</Link>
                 </li>
