@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { trackEvent } from "@/components/analytics/ga4";
 
 interface ShareButtonsProps {
   url: string;
@@ -15,6 +16,7 @@ export function ShareButtons({ url, title }: ShareButtonsProps) {
       await navigator.clipboard.writeText(url);
       setCopied(true);
       setTimeout(() => setCopied(false), 2000);
+      trackEvent("share", { method: "copy_link", content_title: title });
     } catch {
       // fallback for older browsers
     }
@@ -32,6 +34,7 @@ export function ShareButtons({ url, title }: ShareButtonsProps) {
         href={twitterUrl}
         target="_blank"
         rel="noopener noreferrer"
+        onClick={() => trackEvent("share", { method: "twitter", content_title: title })}
         className="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-black text-white text-xs font-medium hover:bg-gray-800 transition-colors"
         aria-label="X(트위터)에 공유"
       >
