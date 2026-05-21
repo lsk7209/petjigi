@@ -4450,6 +4450,151 @@ const SEED_CONTENTS: NewContent[] = [
     createdAt: NOW,
     updatedAt: NOW,
   },
+
+  // ── 62. 강아지 갑상선 기능 저하증 (condition, cat.3, YMYL) ──────────────
+  {
+    id: "seed-condition-dog-hypothyroidism",
+    slug: "dog-hypothyroidism",
+    type: "condition",
+    category: 3,
+    title: "강아지 갑상선 기능 저하증 — 증상·원인·호르몬 치료",
+    metaTitle: "강아지 갑상선 기능 저하증 증상·치료 | 체중증가·무기력·털빠짐 | 펫지기",
+    metaDescription:
+      "강아지 갑상선 기능 저하증(Hypothyroidism)의 주요 증상(체중 증가·무기력·털 빠짐), 원인, 갑상선 호르몬 보충 치료, 예후를 안내합니다.",
+    body: `<h2>강아지 갑상선 기능 저하증이란?</h2>
+<p>갑상선 기능 저하증(Hypothyroidism)은 갑상선이 충분한 호르몬(T3·T4)을 생산하지 못해 전신 대사가 느려지는 질환입니다. 중·대형견에서 비교적 흔하며, 4~10세 중년 강아지에서 가장 많이 발생합니다.</p>
+
+<h2>주요 증상</h2>
+<h3>대사 이상</h3>
+<ul>
+  <li><strong>체중 증가</strong> — 식이 변화 없이 살이 찜</li>
+  <li><strong>무기력·활동량 감소</strong> — 운동을 싫어하고 항상 피곤해 보임</li>
+  <li><strong>추위에 민감</strong> — 따뜻한 곳을 찾는 행동 증가</li>
+</ul>
+<h3>피부·털 변화</h3>
+<ul>
+  <li><strong>털 빠짐·탈모</strong> — 특히 몸통 양쪽 대칭 탈모가 특징</li>
+  <li><strong>건조하고 칙칙한 피부</strong></li>
+  <li><strong>피부 색소 침착</strong></li>
+</ul>
+<h3>기타</h3>
+<ul>
+  <li>서맥(느린 심박수)</li>
+  <li>얼굴 피부 처짐 ('비극적 표정' Tragic Face)</li>
+  <li>신경 기능 이상 (드물게: 전정 장애, 말초 신경 장애)</li>
+</ul>
+
+<h2>원인</h2>
+<ul>
+  <li><strong>자가면역성 갑상선염(림프구성 갑상선염)</strong>: 면역계가 갑상선 조직을 파괴 — 가장 흔한 원인(약 50%)</li>
+  <li><strong>특발성 갑상선 위축</strong>: 원인 불명으로 갑상선 조직이 지방으로 대체</li>
+  <li>갑상선 종양(드묾)</li>
+</ul>
+
+<h2>진단</h2>
+<ul>
+  <li><strong>혈청 T4 측정</strong>: 가장 기본적인 선별 검사</li>
+  <li><strong>Free T4(fT4) 측정</strong>: T4가 경계값일 때 추가 확인</li>
+  <li><strong>TSH 측정</strong>: 뇌하수체 갑상선 자극 호르몬 — 상승 시 진단 확인</li>
+  <li>갑상선 수치는 다른 질병·약물의 영향을 받을 수 있으므로, 전반적 임상 증상과 함께 해석 필요</li>
+</ul>
+
+<h2>치료</h2>
+<h3>호르몬 보충 요법</h3>
+<p>레보티록신(Levothyroxine, T4 합성 제제)을 매일 경구 투여합니다. 대부분 하루 2회 급여하며, 증상 개선에는 수 주~수 개월이 걸립니다.</p>
+<ul>
+  <li>치료 시작 후 4~8주에 혈중 T4 검사로 용량 조절</li>
+  <li>안정화 후 6개월마다 모니터링</li>
+  <li>평생 복용이 필요하지만, 비교적 저렴하고 부작용이 적음</li>
+</ul>
+
+<h2>예후</h2>
+<p>치료에 대한 반응은 매우 좋습니다. 호르몬 보충 치료를 시작하면 수 주 내에 활기가 돌아오고, 2~3개월 내에 털 재성장·체중 정상화가 이루어집니다. 평생 치료가 필요하지만 정상적인 수명을 유지할 수 있습니다.</p>`,
+    disclaimer:
+      "본 정보는 수의학 참고 자료로 제공되며 의학적 진단과 치료를 대체하지 않습니다. 호르몬 제제는 반드시 수의사의 처방과 모니터링 하에 사용해야 합니다.",
+    sources: [
+      "Graham PA, Nachreiner RF et al. Etiology and diagnosis of hypothyroidism in dogs. Vet Clin North Am 2001",
+      "WSAVA Endocrinology Guidelines (2023)",
+      "대한수의사회 소동물 내분비 질환 임상 지침 (2022)",
+    ],
+    ymyl: true,
+    status: "published",
+    publishedAt: "2026-05-22T00:00:00.000Z",
+    createdAt: NOW,
+    updatedAt: NOW,
+  },
+
+  // ── 63. 반려동물 이동장 훈련 가이드 (guide, cat.5) ──────────────────────
+  {
+    id: "seed-guide-carrier-training",
+    slug: "carrier-training-guide",
+    type: "guide",
+    category: 5,
+    title: "반려동물 이동장 훈련 — 고양이·강아지 스트레스 없이 적응시키기",
+    metaTitle: "반려동물 이동장 훈련 | 고양이·강아지 케이지 적응 방법 | 펫지기",
+    metaDescription:
+      "고양이·강아지가 이동장(캐리어·켄넬)을 무서워하지 않도록 적응시키는 단계별 훈련 방법을 안내합니다. 동물병원 방문 스트레스를 크게 줄일 수 있습니다.",
+    body: `<h2>왜 이동장 훈련이 중요한가?</h2>
+<p>대부분의 반려동물은 이동장을 '나쁜 일이 생기기 전 잠깐 갇히는 곳'으로 기억합니다. 평소 이동장을 안전하고 편안한 공간으로 인식시키면, 동물병원 방문·이사·여행 시 스트레스를 크게 줄일 수 있습니다.</p>
+
+<h2>이동장 선택</h2>
+<ul>
+  <li><strong>고양이</strong>: 위가 열리는 상자형(탑 오프닝) 권장 — 검진 시 고양이를 꺼내기 쉬움</li>
+  <li><strong>소형견</strong>: 천 재질 소프트 케리어 또는 하드 케이스 모두 가능</li>
+  <li>크기: 반려동물이 일어서고 돌아설 수 있을 만큼 충분히 커야 함</li>
+</ul>
+
+<h2>단계별 이동장 적응 훈련</h2>
+<h3>1단계: 이동장을 생활 공간에 두기</h3>
+<ul>
+  <li>이동장 문을 열어둔 채 거실 등 편안한 공간에 배치</li>
+  <li>억지로 집어넣지 않고, 자발적으로 탐색하도록 둠</li>
+  <li>이동장 안에 좋아하는 담요·장난감을 넣어 매력적인 공간으로 연출</li>
+</ul>
+<h3>2단계: 간식으로 긍정 연결</h3>
+<ul>
+  <li>이동장 입구에 간식을 놓고, 자발적으로 들어갈 때 칭찬·보상</li>
+  <li>처음에는 입구 근처, 점차 안쪽 깊이 간식 배치</li>
+  <li>절대 강제로 밀어 넣지 않음</li>
+</ul>
+<h3>3단계: 문 닫는 연습</h3>
+<ul>
+  <li>반려동물이 이동장 안에서 편안해지면 문을 잠깐 닫았다가 즉시 열기</li>
+  <li>차분하게 반응하면 칭찬 + 간식</li>
+  <li>점진적으로 문 닫힌 시간 연장 (10초 → 1분 → 5분)</li>
+</ul>
+<h3>4단계: 들어 옮기기 연습</h3>
+<ul>
+  <li>이동장째 짧은 거리를 이동 — 집 안에서 다른 방으로 옮기기</li>
+  <li>차에 잠깐 태웠다가 돌아오기</li>
+  <li>처음에는 짧게, 좋은 경험으로 마무리</li>
+</ul>
+
+<h2>고양이 특별 팁</h2>
+<ul>
+  <li>페리웨이(Feliway) 스프레이를 이동장 안에 뿌리면 안정 효과</li>
+  <li>이동장을 고양이의 쉬는 공간(침대·소파 옆)에 항상 놔두어 '일상의 공간'으로 인식</li>
+  <li>병원 방문 전 이동장에 3~4시간 안정 기간 확보</li>
+</ul>
+
+<h2>강아지 특별 팁</h2>
+<ul>
+  <li>쿨다운 명령('하우스' 또는 '들어가')을 이동장과 연결해 훈련</li>
+  <li>여행 전날 케리어 안에서 자게 하거나 간식을 주면 좋은 연상 강화</li>
+  <li>차멀미가 있는 강아지는 소량 식사 후 1~2시간 뒤 탑승 권장</li>
+</ul>`,
+    disclaimer: null,
+    sources: [
+      "American Association of Feline Practitioners (AAFP) Cat Friendly Practice Guidelines (2021)",
+      "AVSAB Positive Reinforcement Position Statement (2021)",
+      "대한수의사회 반려동물 행동 복지 가이드 (2022)",
+    ],
+    ymyl: false,
+    status: "published",
+    publishedAt: "2026-05-22T00:00:00.000Z",
+    createdAt: NOW,
+    updatedAt: NOW,
+  },
 ];
 
 async function seedContents() {
