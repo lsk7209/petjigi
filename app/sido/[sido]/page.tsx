@@ -164,6 +164,30 @@ export default async function SidoPage({
             ))}
           </div>
         </section>
+
+        {/* FAQ */}
+        <section className="mt-10 pt-8 border-t border-[var(--brand-border)]" aria-label="자주 묻는 질문">
+          <h2 className="text-lg font-bold text-[var(--brand-text)] mb-4">{sidoName} 반려동물 자주 묻는 질문</h2>
+          <dl className="space-y-3">
+            {buildFaq(sidoName).map((item, i) => (
+              <div key={i} className="rounded-xl border border-[var(--brand-border)] p-4">
+                <dt className="font-semibold text-sm text-[var(--brand-text)] mb-1.5">Q. {item.question}</dt>
+                <dd className="text-sm text-[var(--brand-text-secondary)] leading-relaxed">{item.answer}</dd>
+              </div>
+            ))}
+          </dl>
+        </section>
+
+        {/* 관련 정보 */}
+        <section className="mt-8 pt-6 border-t border-[var(--brand-border)]">
+          <h2 className="text-base font-semibold text-[var(--brand-text)] mb-3">함께 보면 좋은 정보</h2>
+          <div className="flex flex-wrap gap-3">
+            <Link href="/guide" className="text-sm text-[var(--brand-accent)] hover:underline">📚 반려동물 가이드 →</Link>
+            <Link href="/condition" className="text-sm text-[var(--brand-accent)] hover:underline">💊 질병·증상 정보 →</Link>
+            <Link href="/insurance/compare" className="text-sm text-[var(--brand-accent)] hover:underline">📋 펫보험 비교 →</Link>
+            <Link href="/breed" className="text-sm text-[var(--brand-accent)] hover:underline">🐾 견종·묘종 도감 →</Link>
+          </div>
+        </section>
       </main>
     </>
   );
