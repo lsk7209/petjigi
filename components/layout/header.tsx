@@ -51,9 +51,6 @@ export function Header() {
             </svg>
             검색
           </Link>
-          <Link href="/guide/pet-loss-care" className="pj-btn pj-btn-ghost pj-btn-sm">
-            로그인
-          </Link>
         </div>
 
         {/* 모바일 햄버거 */}

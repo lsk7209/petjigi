@@ -19,7 +19,7 @@ module.exports = {
     ],
   },
   // 동 단위 페이지, 구조동물, 검색 결과 제외
-  exclude: ["/rescue/*", "/search*", "/*?page=*"],
+  exclude: ["/rescue/*", "/search*", "/admin/*", "/*?page=*"],
   changefreq: "daily",
   priority: 0.7,
   transform: async (config, path) => {
