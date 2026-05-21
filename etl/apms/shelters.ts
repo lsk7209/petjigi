@@ -1,7 +1,7 @@
 /**
  * APMS 전국동물보호센터 동기화 ETL (Cron 2 — 매주 일요일 04:00 KST)
  * 데이터셋: 15025454
- * API: http://apis.data.go.kr/1543061/shelter/shelterInfo_v2
+ * API: https://apis.data.go.kr/1543061/abandonmentPublicService_v2/shelter_v2
  */
 
 import { db } from "../../db/client";
@@ -9,7 +9,7 @@ import { shelters } from "../../db/schema";
 import { geocodeAddress } from "../geocoding/kakao";
 
 const API_KEY = process.env.APMS_API_KEY ?? "";
-const API_URL = "http://apis.data.go.kr/1543061/shelter/shelterInfo_v2";
+const API_URL = "https://apis.data.go.kr/1543061/abandonmentPublicService_v2/shelter_v2";
 
 interface ShelterRow {
   careNm: string;

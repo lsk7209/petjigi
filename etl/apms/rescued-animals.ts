@@ -1,7 +1,7 @@
 /**
  * APMS 구조동물 동기화 ETL (Cron 3 — 매일 05:00 KST)
  * 데이터셋: 15098931 — 페이지 noindex (휘발 정보)
- * API: http://apis.data.go.kr/1543061/abandonmentPublicSrvc/abandonmentPublic
+ * API: https://apis.data.go.kr/1543061/abandonmentPublicService_v2/abandonmentPublic_v2
  */
 
 import { db } from "../../db/client";
@@ -9,7 +9,7 @@ import { rescuedAnimals } from "../../db/schema";
 
 const API_KEY = process.env.APMS_API_KEY ?? "";
 const API_URL =
-  "http://apis.data.go.kr/1543061/abandonmentPublicSrvc/abandonmentPublic";
+  "https://apis.data.go.kr/1543061/abandonmentPublicService_v2/abandonmentPublic_v2";
 
 interface RescuedAnimalRow {
   desertionNo: string;

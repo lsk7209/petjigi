@@ -1,32 +1,34 @@
 /**
  * 검역본부 반려동물 등록대행업체 동기화 ETL (Cron 4 — 매월 1일 06:00 KST)
- * 출처: 농림축산검역본부
+ * API: https://apis.data.go.kr/1543061/recordAgencySrvc_v2/recordAgency_v2
  */
 
 import { db } from "../../db/client";
 import { businesses } from "../../db/schema";
 import { geocodeAddress } from "../geocoding/kakao";
 
-const API_KEY = process.env.MAFRA_API_KEY ?? "";
+const API_KEY = process.env.APMS_API_KEY ?? "";
+const API_URL = "https://apis.data.go.kr/1543061/recordAgencySrvc_v2/recordAgency_v2";
 
 interface RegistrationAgent {
-  entrpsNm: string;   // 업체명
-  roadAddr: string;   // 도로명 주소
-  telNo: string;      // 전화번호
-  ctpvNm: string;     // 시도명
-  signguNm: string;   // 시군구명
+  entrpsNm?: string;  // 업체명
+  roadAddr?: string;  // 도로명 주소
+  telNo?: string;     // 전화번호
+  ctpvNm?: string;    // 시도명
+  signguNm?: string;  // 시군구명
+  [key: string]: string | undefined;
 }
 
 async function fetchAgents(): Promise<RegistrationAgent[]> {
-  // 검역본부 등록대행업체 API (실제 엔드포인트는 data.mafra.go.kr 참조)
-  const url = `https://data.mafra.go.kr/opendata/data/selectApiDataDetail.do?apikey=${API_KEY}&service=registAgentList&type=json`;
+  const url = `${API_URL}?serviceKey=${encodeURIComponent(API_KEY)}&pageNo=1&numOfRows=10000&_type=json`;
   try {
     const res = await fetch(url, { signal: AbortSignal.timeout(30000) });
-    if (!res.ok) throw new Error(`MAFRA API 오류: ${res.status}`);
+    if (!res.ok) throw new Error(`등록대행 API 오류: ${res.status}`);
     const json = await res.json();
-    return json?.items ?? [];
-  } catch {
-    console.warn("[ETL:registration-agents] API 미구성 상태, 스킵");
+    const items = json?.response?.body?.items?.item ?? [];
+    return Array.isArray(items) ? items : [items];
+  } catch (e) {
+    console.warn("[ETL:registration-agents] API 오류, 스킵:", e);
     return [];
   }
 }
