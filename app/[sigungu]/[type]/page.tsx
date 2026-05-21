@@ -5,20 +5,22 @@ import { db } from "@/db/client";
 import { businesses, regions } from "@/db/schema";
 import { and, eq, sql } from "drizzle-orm";
 import { breadcrumbSchema, faqSchema } from "@/lib/seo/structured-data";
+import type { CategoryId } from "@/lib/category";
+import { CategoryCta } from "@/components/content/category-cta";
 
 export const revalidate = 86400;
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://petjigi.kr";
 
-const TYPE_META: Record<string, { label: string; emoji: string; categorySlug: string; desc: string }> = {
-  vet:       { label: "동물병원",       emoji: "🏥", categorySlug: "health",   desc: "진료·예방접종·응급처치" },
-  grooming:  { label: "펫미용",         emoji: "✂️", categorySlug: "care",     desc: "미용·목욕·위생 관리" },
-  boarding:  { label: "펫호텔",         emoji: "🏠", categorySlug: "care",     desc: "호텔링·위탁 돌봄 서비스" },
-  funeral:   { label: "장묘업체",       emoji: "🕊️", categorySlug: "memorial", desc: "반려동물 장례·화장·납골" },
-  sale:      { label: "분양업체",       emoji: "🐾", categorySlug: "adoption", desc: "반려동물 분양·입양" },
-  breeder:   { label: "브리더",         emoji: "🐕", categorySlug: "adoption", desc: "전문 브리더 분양" },
-  transport: { label: "반려동물 운송",  emoji: "🚗", categorySlug: "care",     desc: "펫 이송·운반 서비스" },
-  exhibition:{ label: "체험전시",       emoji: "🎪", categorySlug: "care",     desc: "반려동물 체험·전시 공간" },
+const TYPE_META: Record<string, { label: string; emoji: string; categorySlug: string; desc: string; categoryId: CategoryId }> = {
+  vet:       { label: "동물병원",       emoji: "🏥", categorySlug: "health",   desc: "진료·예방접종·응급처치",       categoryId: 3 },
+  grooming:  { label: "펫미용",         emoji: "✂️", categorySlug: "care",     desc: "미용·목욕·위생 관리",          categoryId: 5 },
+  boarding:  { label: "펫호텔",         emoji: "🏠", categorySlug: "care",     desc: "호텔링·위탁 돌봄 서비스",     categoryId: 5 },
+  funeral:   { label: "장묘업체",       emoji: "🕊️", categorySlug: "memorial", desc: "반려동물 장례·화장·납골",      categoryId: 6 },
+  sale:      { label: "분양업체",       emoji: "🐾", categorySlug: "adoption", desc: "반려동물 분양·입양",           categoryId: 1 },
+  breeder:   { label: "브리더",         emoji: "🐕", categorySlug: "adoption", desc: "전문 브리더 분양",             categoryId: 1 },
+  transport: { label: "반려동물 운송",  emoji: "🚗", categorySlug: "care",     desc: "펫 이송·운반 서비스",          categoryId: 5 },
+  exhibition:{ label: "체험전시",       emoji: "🎪", categorySlug: "care",     desc: "반려동물 체험·전시 공간",      categoryId: 5 },
 };
 
 export async function generateMetadata({
@@ -217,6 +219,8 @@ export default async function SigunguTypePage({
             ))}
           </dl>
         </section>
+
+        <CategoryCta categoryId={meta.categoryId} className="mt-10" />
 
         <p className="mt-8 text-xs text-[var(--brand-text-secondary)]">
           정보 기준: 공공데이터포털 최신 동기화 &nbsp;·&nbsp;

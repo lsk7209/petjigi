@@ -7,6 +7,8 @@ import { and, eq, ne, sql } from "drizzle-orm";
 import { localBusinessSchema, breadcrumbSchema } from "@/lib/seo/structured-data";
 import type { CategoryId } from "@/lib/category";
 import { YmylDisclaimer } from "@/components/content/ymyl-disclaimer";
+import { CategoryCta } from "@/components/content/category-cta";
+import { ShareButtons } from "@/components/content/share-buttons";
 
 export const revalidate = 86400;
 
@@ -130,6 +132,7 @@ export default async function BusinessDetailPage({
   const typeEmoji = TYPE_EMOJI[type] ?? "📍";
   const locationName = region?.sigungu ?? sigungu;
   const sidoName = region?.sido ?? "";
+  const pageUrl = `${SITE_URL}/${type}/${sigungu}/${slug}`;
 
   const schema = localBusinessSchema(business);
   const breadcrumb = breadcrumbSchema([
@@ -305,6 +308,12 @@ export default async function BusinessDetailPage({
             </ul>
           </section>
         )}
+
+        <CategoryCta categoryId={categoryId} className="mb-8" />
+
+        <div className="mb-8 pt-2">
+          <ShareButtons url={pageUrl} title={`${business.name} ${typeLabel} | 펫지기`} />
+        </div>
 
         <p className="text-xs text-[var(--brand-text-secondary)]">
           정보 기준일: {business.lastSyncedAt?.slice(0, 10) ?? "공공데이터 최신 기준"}
