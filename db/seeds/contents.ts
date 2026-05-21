@@ -3441,6 +3441,217 @@ const SEED_CONTENTS: NewContent[] = [
     createdAt: NOW,
     updatedAt: NOW,
   },
+
+  // ── 48. 고양이 체중 관리·비만 (condition, cat.3, YMYL) ────────────────────
+  {
+    id: "seed-condition-cat-obesity",
+    slug: "cat-obesity",
+    type: "condition",
+    category: 3,
+    title: "고양이 비만 — 원인·진단·식이 관리",
+    metaTitle: "고양이 비만 원인·체중 감량 방법 | 수의사 검토 | 펫지기",
+    metaDescription:
+      "고양이 비만의 원인(과식·실내 생활·중성화), 체형 점수(BCS) 자가 진단, 안전한 체중 감량 방법을 수의사 검토로 안내합니다.",
+    body: `<h2>고양이 비만이란?</h2>
+<p>고양이 비만은 이상 체중보다 20% 이상 과체중인 상태를 말합니다. 국내 반려 고양이의 약 30~40%가 과체중 또는 비만으로 추정됩니다. 비만은 당뇨병, 관절염, 간지방증(hepatic lipidosis), 하부 요로 질환(FLUTD) 등 심각한 합병증의 위험을 높입니다.</p>
+
+<h2>주요 원인</h2>
+<ul>
+  <li><strong>과식</strong>: 자유식(free-choice feeding), 고칼로리 간식 과다</li>
+  <li><strong>실내 생활</strong>: 운동 부족</li>
+  <li><strong>중성화 수술</strong>: 기초대사율 20~30% 감소, 식욕 증가</li>
+  <li><strong>나이</strong>: 노령 고양이는 근육량 감소로 지방 축적 용이</li>
+  <li><strong>일부 질환</strong>: 갑상선 기능 저하증(드뭄), 쿠싱증후군</li>
+</ul>
+
+<h2>체형 점수(BCS)로 자가 진단</h2>
+<p>BCS(Body Condition Score) 1~9점 척도에서 4~5점이 이상적입니다.</p>
+<ul>
+  <li><strong>정상 (4~5점)</strong>: 갈비뼈가 살짝 느껴지며, 위에서 봤을 때 허리 잘록함이 보임</li>
+  <li><strong>과체중 (6~7점)</strong>: 갈비뼈에 지방층이 느껴지며, 허리 라인 불분명</li>
+  <li><strong>비만 (8~9점)</strong>: 갈비뼈가 느껴지지 않으며, 복부 지방 과다, 등 지방 두드러짐</li>
+</ul>
+
+<h2>안전한 체중 감량 방법</h2>
+<h3>급격한 다이어트는 위험합니다</h3>
+<p>고양이를 갑자기 굶기거나 식이를 급격히 제한하면 간지방증(hepatic lipidosis)이 발생할 수 있습니다. 수의사 지도 하에 천천히 감량하세요.</p>
+<h3>목표: 월 1~2% 체중 감량</h3>
+<ul>
+  <li>현재 사료량을 10~20% 줄이고 반드시 계량컵 사용</li>
+  <li>처방 체중 감량 사료(저지방·고단백·고섬유)로 교체 고려</li>
+  <li>하루 2~3회 정량 급여 (자유식 금지)</li>
+  <li>간식은 하루 칼로리의 10% 이내로 제한</li>
+</ul>
+<h3>운동 늘리기</h3>
+<ul>
+  <li>하루 2회 10~15분 낚싯대·레이저 포인터 등 적극적 놀이</li>
+  <li>노즈워크 피더, 퍼즐 급식기로 정신 자극 + 느린 식사 유도</li>
+  <li>캣타워, 선반 등 수직 공간 활용으로 자발적 활동 증가</li>
+</ul>
+
+<h2>관련 합병증</h2>
+<ul>
+  <li>제2형 당뇨병 (인슐린 저항성)</li>
+  <li>관절염 (체중 부하)</li>
+  <li>하부 요로 질환 (활동 감소·수분 부족)</li>
+  <li>심폐 기능 저하</li>
+  <li>피부 청결 유지 어려움 (유연성 감소로 그루밍 불가)</li>
+</ul>`,
+    disclaimer:
+      "본 정보는 수의학 참고 자료로 제공되며 의학적 진단과 치료를 대체하지 않습니다. 고양이 다이어트는 수의사 지도 하에 진행하세요. 급격한 식이 제한은 간지방증을 유발할 수 있습니다.",
+    sources: [
+      "WSAVA Global Nutrition Guidelines (2021)",
+      "German AJ, et al. Obesity in the Cat: Epidemiology and Etiology. J Feline Med Surg. 2010",
+      "대한수의사회 영양 관리 임상 지침 (2022)",
+    ],
+    ymyl: true,
+    status: "published",
+    publishedAt: "2026-05-22T00:00:00.000Z",
+    createdAt: NOW,
+    updatedAt: NOW,
+  },
+
+  // ── 49. 강아지 눈물자국 (condition, cat.3) ────────────────────────────────
+  {
+    id: "seed-condition-dog-tear-staining",
+    slug: "dog-tear-staining",
+    type: "condition",
+    category: 3,
+    title: "강아지 눈물자국 — 원인·색깔별 감별·관리법",
+    metaTitle: "강아지 눈물자국 원인·제거 방법 | 붉은 갈색 색소 | 펫지기",
+    metaDescription:
+      "강아지 눈물자국의 원인(포르피린 색소, 역속눈썹, 누관 막힘), 색깔별 감별 포인트, 일상 관리법을 안내합니다.",
+    body: `<h2>강아지 눈물자국이란?</h2>
+<p>강아지 눈물자국(epiphora)은 눈물이 과도하게 흘러 눈 주변과 코 양옆에 갈색·적갈색 자국이 생기는 현상입니다. 말티즈, 시추, 비숑 프리제, 포메라니안, 푸들 등 흰 털 소형견에서 특히 두드러집니다.</p>
+
+<h2>눈물자국의 주요 원인</h2>
+<h3>포르피린 색소</h3>
+<p>눈물에는 철분 함유 포르피린(porphyrin) 색소가 포함되어 있습니다. 피부에 닿아 산화되면 적갈색으로 변하며, 이것이 대부분 눈물자국의 주요 원인입니다.</p>
+<h3>해부학적 원인</h3>
+<ul>
+  <li><strong>역속눈썹(distichia/trichiasis)</strong>: 눈썹이 각막을 자극해 눈물 분비 증가</li>
+  <li><strong>안와(눈구멍) 얕음</strong>: 단두종에서 눈이 돌출되어 눈물이 잘 흘러내림</li>
+  <li><strong>누점·누관 협착</strong>: 눈물이 코로 제대로 배출되지 못하고 눈꺼풀로 넘침</li>
+</ul>
+<h3>환경·식이 원인</h3>
+<ul>
+  <li>음식 알레르기 또는 불내증</li>
+  <li>먼지·연기·향수 등 환경 자극물</li>
+  <li>수질 (철분 함량 높은 물)</li>
+</ul>
+<h3>질환성 원인</h3>
+<ul>
+  <li>결막염, 각막 궤양</li>
+  <li>안압 상승 (녹내장)</li>
+  <li>치아 문제 (누관 주변 치아 뿌리 감염)</li>
+</ul>
+
+<h2>색깔로 감별하기</h2>
+<ul>
+  <li><strong>갈색·적갈색</strong>: 포르피린 산화 (일반적)</li>
+  <li><strong>흰색·노란색 분비물</strong>: 세균 감염 의심 — 병원 방문 권장</li>
+  <li><strong>녹색 분비물</strong>: 세균성 결막염 가능성 높음 — 병원 필요</li>
+  <li><strong>갑자기 증가</strong>: 이물질·알레르기·감염 확인 필요</li>
+</ul>
+
+<h2>일상 관리법</h2>
+<ul>
+  <li><strong>하루 1~2회 닦기</strong>: 무향 생리식염수 또는 전용 눈 세정액으로 면봉이나 거즈를 이용해 닦기</li>
+  <li><strong>털 정리</strong>: 눈 주변 털이 눈에 닿지 않도록 정기 트리밍</li>
+  <li><strong>물 바꾸기</strong>: 정수된 물 제공 (철분 함량 줄이기)</li>
+  <li><strong>식이 점검</strong>: 첨가물이 적은 고품질 사료로 교체 고려</li>
+</ul>
+<h3>병원에서 할 수 있는 치료</h3>
+<ul>
+  <li>역속눈썹 제거 시술</li>
+  <li>누관 세척 (막힌 경우)</li>
+  <li>원인 질환 치료</li>
+</ul>
+
+<h2>시중 눈물자국 제거제 주의사항</h2>
+<p>항생제 성분이 포함된 제품을 수의사 처방 없이 장기 사용하면 내성균 발생 위험이 있습니다. 인터넷에서 판매되는 일부 제품에는 미국 FDA에서 금지된 성분이 포함된 경우도 있으니 주의가 필요합니다.</p>`,
+    disclaimer:
+      "본 정보는 참고용이며 의학적 진단을 대체하지 않습니다. 눈물 분비량이 갑자기 늘거나, 눈을 긁거나, 눈이 충혈·흐릿하다면 동물병원을 방문하세요.",
+    sources: [
+      "Gelatt KN. Veterinary Ophthalmology (5th ed.)",
+      "ACVO (American College of Veterinary Ophthalmologists) — Epiphora in Dogs",
+      "대한수의사회 안과 임상 가이드라인 (2022)",
+    ],
+    ymyl: true,
+    status: "published",
+    publishedAt: "2026-05-22T00:00:00.000Z",
+    createdAt: NOW,
+    updatedAt: NOW,
+  },
+
+  // ── 50. 반려동물 펫시터 이용 가이드 (guide, cat.5) ────────────────────────
+  {
+    id: "seed-guide-pet-sitter",
+    slug: "pet-sitter-guide",
+    type: "guide",
+    category: 5,
+    title: "반려동물 펫시터 이용 가이드 — 선택·준비·주의사항",
+    metaTitle: "반려동물 펫시터 선택 방법·비용·주의사항 | 펫지기",
+    metaDescription:
+      "반려동물 펫시터 서비스 종류, 좋은 펫시터 선택 기준, 이용 전 준비사항, 비용, 주의사항을 안내합니다.",
+    body: `<h2>펫시터란?</h2>
+<p>펫시터는 보호자가 집을 비운 동안 반려동물을 돌봐주는 서비스입니다. 펫호텔과 달리 보호자 집에 방문하거나, 펫시터 집에서 돌봐주는 방식입니다. 환경 변화 스트레스가 적어 예민한 동물에게 적합합니다.</p>
+
+<h2>펫시터 서비스 종류</h2>
+<ul>
+  <li><strong>방문 돌봄 (Drop-in Visit)</strong>: 하루 1~3회 보호자 집 방문, 밥·물·산책·놀이 제공. 가장 저렴하고 환경 변화 없음</li>
+  <li><strong>자택 상주 (House Sitting)</strong>: 펫시터가 보호자 집에 머물며 돌봄. 가장 자연스러운 환경</li>
+  <li><strong>펫시터 자택 돌봄 (Boarding)</strong>: 반려동물이 펫시터 집에서 생활. 다른 동물이 없는지 확인 필요</li>
+  <li><strong>강아지 산책 (Dog Walking)</strong>: 정해진 시간에 산책 대행</li>
+</ul>
+
+<h2>좋은 펫시터 선택 기준</h2>
+<ul>
+  <li><strong>자격·경험 확인</strong>: 반려동물 관련 자격증(동물보건사·훈련사) 또는 케어 경험 보유 여부</li>
+  <li><strong>참고인(레퍼런스)</strong>: 이전 이용자 후기·평점 확인</li>
+  <li><strong>사전 만남(Meet & Greet)</strong>: 정식 예약 전 보호자·동물·펫시터가 함께 만나는 시간</li>
+  <li><strong>보험 가입 여부</strong>: 사고 시 책임 보상 가능 여부</li>
+  <li><strong>응급 대처 능력</strong>: CPR 교육, 근처 동물병원 파악 여부</li>
+</ul>
+
+<h2>이용 전 준비사항</h2>
+<ul>
+  <li>예방접종 증빙서류 준비 (일부 플랫폼 필수)</li>
+  <li>사료·간식·약품 정량 및 복용 방법 메모</li>
+  <li>단골 동물병원 연락처 + 응급병원 주소 전달</li>
+  <li>동물의 특이 사항 (두려워하는 것, 공격 유발 요인, 좋아하는 장난감) 공유</li>
+  <li>집 구조 및 잠금 방법 안내 (방문 서비스의 경우)</li>
+  <li>여행 중 연락 방법 및 비상 연락처(가족·지인) 전달</li>
+</ul>
+
+<h2>예상 비용</h2>
+<ul>
+  <li>방문 돌봄 (1회 30~60분): 1~3만원</li>
+  <li>자택 상주 (1박): 5~12만원</li>
+  <li>펫시터 자택 숙박 (1박): 3~8만원</li>
+  <li>강아지 산책 (30~60분): 1~2만원</li>
+</ul>
+<p>가격은 지역, 동물 수, 플랫폼, 개별 펫시터에 따라 다릅니다. 플랫폼을 통하면 플랫폼 수수료가 추가됩니다.</p>
+
+<h2>주의사항</h2>
+<ul>
+  <li>첫 이용 시 짧은 일정으로 테스트하세요 (1~2일).</li>
+  <li>카메라·위치 공유 앱으로 이용 중에도 상태를 확인하세요.</li>
+  <li>공격성이 있는 동물은 반드시 사전에 고지하세요.</li>
+  <li>이상 징후 발견 시 즉각 연락이 가능한지 확인하세요.</li>
+</ul>`,
+    disclaimer: null,
+    sources: [
+      "Pet Sitters International (PSI) — Standards of Practice (2023)",
+      "NAPPS (National Association of Professional Pet Sitters) — Client Safety Guidelines",
+      "한국펫시터협회 서비스 가이드라인 (2023)",
+    ],
+    ymyl: false,
+    status: "published",
+    publishedAt: "2026-05-22T00:00:00.000Z",
+    createdAt: NOW,
+    updatedAt: NOW,
+  },
 ];
 
 async function seedContents() {
