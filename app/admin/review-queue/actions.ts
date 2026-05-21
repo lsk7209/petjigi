@@ -5,6 +5,7 @@ import { reviewQueue, contents } from "@/db/schema";
 import { eq } from "drizzle-orm";
 import { revalidatePath } from "next/cache";
 import { pingGuide } from "@/lib/seo/index-now";
+import { notifyGoogleIndexing } from "@/lib/seo/google-indexing";
 
 export async function approveContent(id: string): Promise<void> {
   const item = await db
@@ -36,10 +37,16 @@ export async function approveContent(id: string): Promise<void> {
       .set({ status: "published", publishedAt: now, updatedAt: now })
       .where(eq(contents.id, item.contentId));
 
+    const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://petjigi.kr";
+    const contentUrl = `${SITE_URL}/guide/${content.slug}`;
+
     // 3. IndexNow 핑 (Naver + Bing)
     if (content.type === "guide") {
       await pingGuide(content.slug).catch(() => {});
     }
+
+    // 4. Google Indexing API (서비스 계정 설정 시 자동 활성화)
+    await notifyGoogleIndexing(contentUrl).catch(() => {});
 
     // 4. ISR 캐시 무효화
     revalidatePath(`/guide/${content.slug}`);

@@ -3,6 +3,7 @@ import { db } from "@/db/client";
 import { reviewQueue, contents } from "@/db/schema";
 import { eq } from "drizzle-orm";
 import { pingIndexNow } from "@/lib/seo/index-now";
+import { notifyGoogleIndexing } from "@/lib/seo/google-indexing";
 import { revalidatePath } from "next/cache";
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://petjigi.kr";
@@ -102,6 +103,9 @@ export async function PATCH(
 
       // IndexNow (Naver + Bing) 자동 핑
       await pingIndexNow([contentUrl, `${SITE_URL}/`]);
+
+      // Google Indexing API (GOOGLE_SA_JSON 설정 시 활성화)
+      await notifyGoogleIndexing(contentUrl).catch(() => {});
 
       // Next.js ISR 캐시 무효화
       revalidatePath(`/guide/${content.slug}`);
