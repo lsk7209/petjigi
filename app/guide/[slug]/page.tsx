@@ -7,6 +7,8 @@ import { and, eq, ne, desc } from "drizzle-orm";
 import type { CategoryId } from "@/lib/category";
 import { CATEGORIES } from "@/lib/category";
 import { YmylDisclaimer } from "@/components/content/ymyl-disclaimer";
+import { AdSlot } from "@/components/ads/ad-slot";
+import { AdPolicyProvider } from "@/components/providers/ad-policy-provider";
 import { articleSchema, breadcrumbSchema } from "@/lib/seo/structured-data";
 
 export const revalidate = 604800;
@@ -186,12 +188,22 @@ export default async function GuidePage({
 
         <YmylDisclaimer categoryId={categoryId} />
 
+        {/* 본문 상단 광고 (자동 광고 보완용 — AdSense 콘솔에서 슬롯 ID 발급 후 slotId prop 추가) */}
+        <AdPolicyProvider category={categoryId}>
+          <AdSlot adType="adsense" format="horizontal" className="my-4" />
+        </AdPolicyProvider>
+
         {/* 본문 */}
         <article
           id="article-body"
           className="prose prose-sm sm:prose-base max-w-none mt-5 sm:mt-6"
           dangerouslySetInnerHTML={{ __html: content.body }}
         />
+
+        {/* 본문 하단 광고 */}
+        <AdPolicyProvider category={categoryId}>
+          <AdSlot adType="adsense" format="rectangle" className="my-6" />
+        </AdPolicyProvider>
 
         {/* 참고 자료 */}
         {Array.isArray(content.sources) && content.sources.length > 0 && (
