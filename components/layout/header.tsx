@@ -5,10 +5,10 @@ import { useState } from "react";
 
 const NAV_LINKS = [
   { label: "홈",     href: "/" },
-  { label: "카테고리", href: "/category/health" },
+  { label: "가이드",  href: "/guide" },
+  { label: "질환정보", href: "/condition" },
   { label: "동물병원", href: "/sido/seoul" },
   { label: "펫보험",  href: "/insurance/compare" },
-  { label: "가이드",  href: "/category/health" },
   { label: "견종도감", href: "/breed" },
 ];
 
@@ -75,7 +75,7 @@ export function Header() {
           <div className="flex gap-1.5 px-4 py-2 overflow-x-auto">
             {[
               { slug: "health",   name: "건강·의료",    color: "var(--cat-3)",   soft: "var(--cat-3-soft)" },
-              { slug: "food",     name: "사료·영양",    color: "var(--cat-2)",   soft: "var(--cat-2-soft)" },
+              { slug: "nutrition", name: "사료·영양",    color: "var(--cat-2)",   soft: "var(--cat-2-soft)" },
               { slug: "insurance",name: "보험·법률",    color: "var(--cat-4)",   soft: "var(--cat-4-soft)" },
               { slug: "care",     name: "케어·라이프",  color: "var(--cat-5)",   soft: "var(--cat-5-soft)" },
               { slug: "adoption", name: "입양·등록",    color: "var(--cat-1)",   soft: "var(--cat-1-soft)" },

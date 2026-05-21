@@ -154,10 +154,13 @@ export default async function GuideIndexPage() {
           </div>
         )}
 
-        {/* 정적 가이드 링크 */}
+        {/* 관련 섹션 링크 */}
         <section className="mt-12 pt-8 border-t border-[var(--brand-border)]">
-          <h2 className="text-base font-semibold text-[var(--brand-text)] mb-4">추천 가이드</h2>
+          <h2 className="text-base font-semibold text-[var(--brand-text)] mb-4">함께 보면 좋은 정보</h2>
           <div className="flex flex-wrap gap-3">
+            <Link href="/condition" className="text-sm text-[var(--brand-accent)] hover:underline">
+              💊 질병·증상 정보 →
+            </Link>
             <Link href="/guide/pet-loss-care" className="text-sm text-[var(--brand-accent)] hover:underline">
               🕊️ 펫로스 케어 가이드 →
             </Link>
