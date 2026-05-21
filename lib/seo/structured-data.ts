@@ -110,6 +110,7 @@ export function articleSchema({
   reviewerName,
   isYmyl,
   imageUrl,
+  wordCount,
 }: {
   title: string;
   url: string;
@@ -121,6 +122,7 @@ export function articleSchema({
   reviewerName?: string | null;
   isYmyl?: boolean;
   imageUrl?: string | null;
+  wordCount?: number;
 }) {
   return {
     "@context": "https://schema.org",
@@ -130,6 +132,7 @@ export function articleSchema({
     url,
     inLanguage: "ko-KR",
     isAccessibleForFree: true,
+    ...(wordCount ? { wordCount } : {}),
     ...(imageUrl ? { image: imageUrl } : {}),
     ...(isYmyl
       ? {

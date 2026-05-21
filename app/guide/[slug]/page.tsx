@@ -9,7 +9,7 @@ import { CATEGORIES } from "@/lib/category";
 import { YmylDisclaimer } from "@/components/content/ymyl-disclaimer";
 import { AdSlot } from "@/components/ads/ad-slot";
 import { AdPolicyProvider } from "@/components/providers/ad-policy-provider";
-import { articleSchema, breadcrumbSchema } from "@/lib/seo/structured-data";
+import { articleSchema, breadcrumbSchema, faqSchema } from "@/lib/seo/structured-data";
 import { TableOfContents } from "@/components/content/table-of-contents";
 import { ReadingProgress } from "@/components/content/reading-progress";
 import { ShareButtons } from "@/components/content/share-buttons";
@@ -135,6 +135,26 @@ export default async function GuidePage({
   const headings = extractHeadings(content.body ?? "");
   const bodyWithIds = injectHeadingIds(content.body ?? "", headings);
 
+  const plainText = (content.body ?? "").replace(/<[^>]+>/g, "");
+  const wordCount = plainText.trim().length > 0
+    ? Math.max(1, Math.round(plainText.replace(/\s+/g, "").length / 2))
+    : undefined;
+
+  // h3 제목 중 "?"로 끝나는 항목을 FAQ로 자동 추출 (AEO)
+  const faqItems = (() => {
+    const items: { question: string; answer: string }[] = [];
+    const re = /<h3[^>]*>([\s\S]*?)<\/h3>\s*<p[^>]*>([\s\S]*?)<\/p>/gi;
+    let m;
+    while ((m = re.exec(content.body ?? "")) !== null) {
+      const q = m[1].replace(/<[^>]+>/g, "").trim();
+      const a = m[2].replace(/<[^>]+>/g, "").trim();
+      if (q.endsWith("?") && a.length > 20 && q.length < 200) {
+        items.push({ question: q, answer: a.slice(0, 300) });
+      }
+    }
+    return items.slice(0, 8);
+  })();
+
   const article = articleSchema({
     title: content.title,
     description: content.metaDescription ?? undefined,
@@ -145,6 +165,7 @@ export default async function GuidePage({
     reviewedAt: content.reviewedAt,
     reviewerName: content.reviewerName,
     isYmyl: content.ymyl,
+    wordCount,
   });
 
   const breadcrumb = breadcrumbSchema([
@@ -160,6 +181,9 @@ export default async function GuidePage({
       <ReadingProgress />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(article) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb) }} />
+      {faqItems.length > 0 && (
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema(faqItems)) }} />
+      )}
       <main className="max-w-3xl mx-auto px-4 py-6 sm:py-10">
         {/* 브레드크럼 */}
         <nav

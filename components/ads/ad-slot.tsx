@@ -46,13 +46,23 @@ function MemorialAd() {
   );
 }
 
+const FORMAT_MIN_HEIGHT: Record<string, number> = {
+  horizontal: 90,
+  rectangle: 250,
+  vertical: 600,
+  auto: 100,
+};
+
 function AdSenseSlot({ slotId, format }: { slotId?: string; format: string }) {
   const adsenseId = process.env.NEXT_PUBLIC_ADSENSE_ID;
   if (!adsenseId) return null;
   if (!slotId) return null;
 
+  const minHeight = FORMAT_MIN_HEIGHT[format] ?? 100;
+
   return (
-    <>
+    // min-height 예약 → CLS(누적 레이아웃 이동) 방지
+    <div style={{ minHeight }}>
       <Script
         id="adsense-init"
         src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${adsenseId}`}
@@ -61,7 +71,7 @@ function AdSenseSlot({ slotId, format }: { slotId?: string; format: string }) {
       />
       <ins
         className="adsbygoogle"
-        style={{ display: "block" }}
+        style={{ display: "block", minHeight }}
         data-ad-client={adsenseId}
         data-ad-slot={slotId}
         data-ad-format={format}
@@ -70,6 +80,6 @@ function AdSenseSlot({ slotId, format }: { slotId?: string; format: string }) {
       <Script id={`adsense-push-${slotId}`} strategy="lazyOnload">
         {`(adsbygoogle = window.adsbygoogle || []).push({});`}
       </Script>
-    </>
+    </div>
   );
 }
