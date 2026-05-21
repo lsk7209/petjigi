@@ -4595,6 +4595,154 @@ const SEED_CONTENTS: NewContent[] = [
     createdAt: NOW,
     updatedAt: NOW,
   },
+
+  // ── 64. 강아지 파보바이러스 (condition, cat.3, YMYL) ─────────────────────
+  {
+    id: "seed-condition-dog-parvovirus",
+    slug: "dog-parvovirus",
+    type: "condition",
+    category: 3,
+    title: "강아지 파보바이러스 — 증상·감염·치료·예방 접종",
+    metaTitle: "강아지 파보바이러스 증상·치료·예방 | 퍼피 필수 접종 | 펫지기",
+    metaDescription:
+      "강아지 파보바이러스(Parvovirus)의 위험한 증상(혈변·구토·급격한 탈수), 감염 경로, 집중 치료, 예방 접종 스케줄을 안내합니다.",
+    body: `<h2>강아지 파보바이러스란?</h2>
+<p>파보바이러스(Canine Parvovirus, CPV)는 강아지에서 발생하는 가장 치명적인 바이러스성 질환 중 하나입니다. 특히 생후 6~20주 미접종 퍼피에서 치사율이 높습니다. 그러나 예방 접종으로 완전히 예방할 수 있습니다.</p>
+
+<h2>주요 증상</h2>
+<ul>
+  <li><strong>혈변·혈성 설사</strong> — 악취가 매우 심한 혈변이 특징적 증상</li>
+  <li><strong>심한 구토</strong> — 반복적, 빠른 탈수 유발</li>
+  <li><strong>급격한 탈수·쇠약</strong> — 빠르게 악화</li>
+  <li><strong>발열 또는 저체온</strong></li>
+  <li><strong>식욕 완전 소실·무기력</strong></li>
+  <li><strong>복통·배 팽만</strong></li>
+</ul>
+<p><strong>응급 상황</strong>: 퍼피에서 이 증상들이 나타나면 즉시(수 시간 내) 동물병원에 방문해야 합니다. 치료가 늦어지면 24~72시간 내 사망할 수 있습니다.</p>
+
+<h2>감염 경로</h2>
+<ul>
+  <li><strong>분변-구강 경로</strong>: 감염된 강아지의 대변 접촉 — 직접 또는 오염된 토양·물건 통해</li>
+  <li>바이러스는 환경에서 수개월~1년 이상 생존 가능 (일반 세제로는 불활성화 안 됨)</li>
+  <li><strong>사람의 신발·옷·손</strong>: 오염된 환경 접촉 후 집으로 바이러스 전파 가능</li>
+  <li>야외 산책, 강아지 집단 시설(펫숍·브리더) 접촉을 통한 노출 위험</li>
+</ul>
+
+<h2>진단</h2>
+<ul>
+  <li><strong>항원 키트 검사(ELISA)</strong>: 대변으로 15~30분 이내 양성 확인 가능</li>
+  <li>혈액 검사: 백혈구 감소증(면역 세포 파괴)이 특징적</li>
+</ul>
+
+<h2>치료</h2>
+<p>파보바이러스 자체를 죽이는 항바이러스제는 없습니다. 입원 집중 치료로 강아지의 면역계가 바이러스를 이길 수 있도록 지지합니다.</p>
+<ul>
+  <li><strong>정맥 수액</strong>: 탈수·전해질 교정이 가장 중요</li>
+  <li><strong>구토·설사 억제제</strong>: 증상 완화</li>
+  <li><strong>항생제</strong>: 2차 세균 감염 예방 (면역 저하 상태)</li>
+  <li><strong>영양 공급</strong>: 경관 급식 또는 정맥 영양</li>
+  <li>집중 치료 시 생존율 약 80~90%. 입원 치료 없이는 생존율 급격히 감소</li>
+</ul>
+
+<h2>예방 — 접종이 가장 확실한 방법</h2>
+<ul>
+  <li><strong>종합 백신(DHPPL)</strong>에 파보바이러스 예방 성분이 포함되어 있습니다</li>
+  <li>퍼피: 6~8주령부터 2~4주 간격으로 총 3~4회, 16주 완료</li>
+  <li>성견: 1~3년마다 추가 접종</li>
+  <li>접종 완료 전 강아지는 야외 산책·다른 강아지와의 접촉을 최소화</li>
+</ul>
+
+<h2>환경 소독</h2>
+<p>파보바이러스는 일반 세제로 불활성화되지 않습니다. 오염된 환경은 <strong>차아염소산나트륨(bleach) 1:32 희석액</strong> 또는 전용 동물 바이러스 소독제로 소독해야 합니다.</p>`,
+    disclaimer:
+      "본 정보는 수의학 참고 자료로 제공되며 의학적 진단과 치료를 대체하지 않습니다. 파보바이러스 의심 증상은 즉시 동물병원을 방문하세요. 예방 접종 스케줄은 담당 수의사와 상의하세요.",
+    sources: [
+      "WSAVA Vaccination Guidelines for Small Animal Practitioners (2022)",
+      "Decaro N, Buonavoglia C. Canine parvovirus. Vet Clin North Am Small Anim Pract. 2012",
+      "대한수의사회 소동물 예방의학 임상 지침 (2022)",
+    ],
+    ymyl: true,
+    status: "published",
+    publishedAt: "2026-05-22T00:00:00.000Z",
+    createdAt: NOW,
+    updatedAt: NOW,
+  },
+
+  // ── 65. 동물병원 선택 가이드 (guide, cat.3, YMYL) ───────────────────────
+  {
+    id: "seed-guide-animal-hospital-guide",
+    slug: "animal-hospital-guide",
+    type: "guide",
+    category: 3,
+    title: "동물병원 선택 가이드 — 믿을 수 있는 병원 고르는 기준",
+    metaTitle: "동물병원 선택 가이드 | 일반·전문·응급 병원 차이·체크리스트 | 펫지기",
+    metaDescription:
+      "반려동물에게 맞는 동물병원을 선택하는 기준을 안내합니다. 일반·2차 전문·응급 병원의 차이, 방문 전 체크리스트, 전문 진료과 설명을 포함합니다.",
+    body: `<h2>동물병원, 어떻게 선택할까?</h2>
+<p>처음 반려동물을 입양했거나 이사를 했다면 '단골 동물병원'을 정하는 것이 중요합니다. 응급 상황이 생기기 전에 미리 신뢰할 수 있는 병원을 파악해두면 마음이 훨씬 든든합니다.</p>
+
+<h2>동물병원 종류</h2>
+<h3>1차 일반 동물병원 (GP, General Practice)</h3>
+<ul>
+  <li>예방접종, 건강검진, 일반 질병 진료, 중성화 수술 등 기본 서비스 제공</li>
+  <li>집 근처에서 정기적으로 방문하는 주치의 역할</li>
+  <li>전반적 건강 관리와 예방 의학의 핵심</li>
+</ul>
+<h3>2차 전문 동물병원</h3>
+<ul>
+  <li>내과·외과·피부과·안과·치과·신경과·종양학 등 전문과 별도 운영</li>
+  <li>1차 병원 의뢰서를 통해 방문하거나 직접 예약 가능</li>
+  <li>복잡한 진단·수술·전문 치료가 필요할 때 이용</li>
+</ul>
+<h3>24시간 응급 동물병원</h3>
+<ul>
+  <li>야간·주말 응급 처치 전문</li>
+  <li>경련, 호흡 곤란, 외상, 중독 등 응급 상황에 즉시 방문</li>
+  <li>거주지 주변 24시간 응급 병원 위치를 미리 저장해두세요</li>
+</ul>
+
+<h2>좋은 동물병원 고르는 체크리스트</h2>
+<ul>
+  <li>✓ <strong>수의사 자격·경력 공개 여부</strong></li>
+  <li>✓ <strong>기본 검사 장비 보유</strong>: 혈액 분석기, X-ray, 초음파</li>
+  <li>✓ <strong>예약 시스템 운영</strong>: 긴 대기 없이 진료 가능 여부</li>
+  <li>✓ <strong>투명한 진료비 안내</strong>: 사전 비용 설명, 영수증 내역 제공</li>
+  <li>✓ <strong>의사소통 편의성</strong>: 수의사가 충분히 설명해주고 질문을 받아주는지</li>
+  <li>✓ <strong>입원 시설 위생 상태</strong></li>
+  <li>✓ <strong>24시간 응급 연락 가능 여부</strong> (또는 연계 응급병원 안내)</li>
+</ul>
+
+<h2>첫 방문 시 확인할 것들</h2>
+<ol>
+  <li>진료 전 예방접종 이력·병력 정보 공유 → 전 병원 진료 기록 지참</li>
+  <li>진료비 예상 범위 사전 문의</li>
+  <li>수의사의 설명이 이해하기 쉬운지 확인</li>
+  <li>처방전 발급 여부 (약 구매 시 이용)</li>
+</ol>
+
+<h2>품종별 전문 진료 필요 여부</h2>
+<ul>
+  <li><strong>단두종(불독·퍼그·프렌치 불독)</strong>: 호흡기 전문 진료 경험 병원 권장</li>
+  <li><strong>대형 외과 질환</strong>: 십자인대·고관절 수술 → 정형외과 전문의 보유 병원</li>
+  <li><strong>고양이 전문</strong>: 고양이 특화 진료 병원(Cat Friendly Clinic) 인증 여부 확인</li>
+  <li><strong>소동물(이그조틱)</strong>: 토끼·기니피그 등 — 이그조틱 동물 전문 병원 별도 확인 필수</li>
+</ul>
+
+<h2>동물병원 찾기</h2>
+<p>펫지기에서 지역별 동물병원을 검색하거나, 농림축산검역본부 동물병원 찾기 서비스(APMS)를 이용할 수 있습니다.</p>`,
+    disclaimer:
+      "본 정보는 일반적인 안내 목적이며, 특정 병원을 추천하거나 보증하지 않습니다. 방문 전 직접 병원에 연락해 진료 범위와 예약 가능 여부를 확인하세요.",
+    sources: [
+      "농림축산검역본부 동물병원 찾기 서비스 (apms.go.kr)",
+      "WSAVA Guidelines for Small Animal General Practice (2022)",
+      "한국수의사회 동물병원 품질 기준 (2023)",
+    ],
+    ymyl: true,
+    status: "published",
+    publishedAt: "2026-05-22T00:00:00.000Z",
+    createdAt: NOW,
+    updatedAt: NOW,
+  },
 ];
 
 async function seedContents() {
