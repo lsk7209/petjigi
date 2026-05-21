@@ -477,6 +477,381 @@ const SEED_BREEDS: NewBreed[] = [
     createdAt: NOW,
     updatedAt: NOW,
   },
+
+  // ════════════════════════════════
+  //  강아지 추가 5종
+  // ════════════════════════════════
+
+  {
+    id: "seed-breed-french-bulldog",
+    species: "dog",
+    slug: "french-bulldog",
+    nameKo: "프렌치 불독",
+    nameEn: "French Bulldog",
+    origin: "프랑스 (영국 불독 기원)",
+    sizeCategory: "small",
+    lifespanMin: 10,
+    lifespanMax: 12,
+    commonConditions: ["단두증 증후군(BOAS)", "척추 이상(IVDD)", "피부 주름 감염", "알레르기"],
+    body: `<h2>프렌치 불독 기본 정보</h2>
+<p>한국에서 최근 10년간 가장 빠르게 인기가 상승한 견종 중 하나입니다. 납작한 얼굴, 박쥐 귀, 다부진 체형이 특징이며 도시 아파트 생활에 잘 적응합니다. 하지만 해부학적 특성으로 인한 건강 문제가 많아 입양 전 충분한 이해가 필요합니다.</p>
+
+<h2>성격·특성</h2>
+<ul>
+  <li>애교가 많고 사람을 좋아하며 분리불안이 쉽게 생김</li>
+  <li>적당한 운동량으로 소형 주거 환경에 적합</li>
+  <li>어린이·다른 반려동물과의 친화성이 높은 편</li>
+  <li>과도한 운동·더위에 매우 취약</li>
+</ul>
+
+<h2>건강 주의사항</h2>
+<ul>
+  <li><strong>단두증(BOAS)</strong>: 납작한 얼굴 구조로 호흡기 문제가 흔합니다. 더위·습기·과도한 운동 시 호흡 곤란 주의</li>
+  <li><strong>척추 질환(IVDD)</strong>: 디스크 돌출 위험이 높아 점프·계단을 조심해야 합니다</li>
+  <li><strong>피부 주름 관리</strong>: 얼굴·꼬리 주름 사이를 주기적으로 닦아 세균·곰팡이 예방</li>
+</ul>
+
+<h2>케어 포인트</h2>
+<ul>
+  <li>여름철 실내 에어컨 필수 (26°C 이상 외출 자제)</li>
+  <li>하루 20~30분 가벼운 산책 (무리한 운동 금지)</li>
+  <li>주 1~2회 피부 주름 위생 관리</li>
+  <li>입양 전 브리더에게 호흡·척추 건강 검사 이력 확인 권장</li>
+</ul>`,
+    status: "published",
+    createdAt: NOW,
+    updatedAt: NOW,
+  },
+
+  {
+    id: "seed-breed-bichon-frise",
+    species: "dog",
+    slug: "bichon-frise",
+    nameKo: "비숑 프리제",
+    nameEn: "Bichon Frisé",
+    origin: "프랑스 / 벨기에",
+    sizeCategory: "tiny",
+    lifespanMin: 12,
+    lifespanMax: 15,
+    commonConditions: ["슬개골 탈구", "알레르기성 피부염", "눈물 착색", "치주 질환"],
+    body: `<h2>비숑 프리제 기본 정보</h2>
+<p>눈처럼 흰 곱슬거리는 더블코트가 트레이드마크인 소형 견종입니다. 알레르기 유발이 적어(저알레르기) 털 알레르기가 있는 가정에서도 선택하는 경우가 많습니다. 사교적이고 쾌활한 성격으로 어린이와의 친화성도 높습니다.</p>
+
+<h2>성격·특성</h2>
+<ul>
+  <li>쾌활하고 에너지가 넘치며 장난기가 많음</li>
+  <li>낯선 사람에게도 친화적인 편</li>
+  <li>훈련 반응이 좋아 초보 보호자에게 적합</li>
+  <li>분리불안이 생기기 쉬워 충분한 교감 필요</li>
+</ul>
+
+<h2>미용·관리</h2>
+<ul>
+  <li><strong>6~8주 간격</strong> 전문 미용 필요 (털이 계속 자라 엉킴 방지)</li>
+  <li>매일 빗질로 매팅(털 엉킴) 예방</li>
+  <li>눈물 착색 관리: 매일 눈 주변을 따뜻한 물로 닦기</li>
+  <li>알레르기 유발은 적지만 완전히 없는 것은 아님 (개체 반응 차이 있음)</li>
+</ul>
+
+<h2>케어 포인트</h2>
+<ul>
+  <li>하루 30분 이상 산책 또는 실내 놀이</li>
+  <li>치주 질환 예방 위해 주 3회 이상 칫솔질</li>
+  <li>슬개골 검진: 6개월~1년 주기 정형외과 검진 권장</li>
+</ul>`,
+    status: "published",
+    createdAt: NOW,
+    updatedAt: NOW,
+  },
+
+  {
+    id: "seed-breed-yorkshire-terrier",
+    species: "dog",
+    slug: "yorkshire-terrier",
+    nameKo: "요크셔 테리어",
+    nameEn: "Yorkshire Terrier",
+    origin: "영국 요크셔",
+    sizeCategory: "tiny",
+    lifespanMin: 13,
+    lifespanMax: 16,
+    commonConditions: ["슬개골 탈구", "기관 허탈", "치주 질환", "저혈당(자견)"],
+    body: `<h2>요크셔 테리어 기본 정보</h2>
+<p>실키하고 긴 청·탄색 털이 특징인 장모 소형 견종입니다. '요키'로 친근하게 불리며, 체구는 작지만 테리어 특유의 활기차고 당찬 성격을 가집니다.</p>
+
+<h2>성격·특성</h2>
+<ul>
+  <li>호기심이 강하고 용감해 큰 개에게도 주눅 들지 않음</li>
+  <li>보호자에 대한 충성심이 강하고 영리함</li>
+  <li>낯선 사람·소리에 짖는 경향 (훈련으로 교정 가능)</li>
+  <li>혼자 두면 분리불안 발생 가능성 높음</li>
+</ul>
+
+<h2>털 관리</h2>
+<ul>
+  <li>장모 스타일: 매일 빗질 필수. 6~8주 간격 미용 권장</li>
+  <li>단모(펫컷) 스타일: 관리가 훨씬 수월해 일반 가정에서 선호</li>
+  <li>목욕 후 완전 드라이 (피부 질환 예방)</li>
+</ul>
+
+<h2>케어 포인트</h2>
+<ul>
+  <li>기관 허탈 예방 위해 목줄보다 하네스 착용 권장</li>
+  <li>자견 시기 저혈당 주의 (소량씩 자주 급여)</li>
+  <li>치주 질환 취약 — 매일 칫솔질, 연 1~2회 스케일링</li>
+  <li>슬개골: 고위험 품종이므로 정기 검진 필수</li>
+</ul>`,
+    status: "published",
+    createdAt: NOW,
+    updatedAt: NOW,
+  },
+
+  {
+    id: "seed-breed-welsh-corgi-pembroke",
+    species: "dog",
+    slug: "welsh-corgi-pembroke",
+    nameKo: "웰시 코기 펨브룩",
+    nameEn: "Pembroke Welsh Corgi",
+    origin: "영국 웨일스",
+    sizeCategory: "medium",
+    lifespanMin: 12,
+    lifespanMax: 15,
+    commonConditions: ["고관절 이형성증", "진행성 망막 위축(PRA)", "척추 질환(IVDD)", "비만"],
+    body: `<h2>웰시 코기 펨브룩 기본 정보</h2>
+<p>짧은 다리에 긴 몸, 커다란 귀가 특징인 영국 왕실의 견종입니다. 목양견 출신으로 지능이 높고 활동량이 많아 꾸준한 운동과 정신적 자극이 필요합니다.</p>
+
+<h2>성격·특성</h2>
+<ul>
+  <li>지능이 높고 훈련성이 뛰어나 다양한 활동에 적합</li>
+  <li>활발하고 운동량이 상당히 많음 (외형으로 착각하기 쉬움)</li>
+  <li>가족에 대한 애정이 깊고 어린이와 잘 어울림</li>
+  <li>목양견 본능으로 어린이나 다른 동물의 발꿈치를 무는 행동이 나타날 수 있음 (훈련으로 교정 가능)</li>
+</ul>
+
+<h2>운동·활동</h2>
+<ul>
+  <li>하루 1시간 이상 활발한 산책·운동 권장</li>
+  <li>노즈워크·어질리티 등 두뇌 활동과 결합한 운동 효과적</li>
+  <li>비만 취약 → 간식 칼로리 엄격 관리</li>
+</ul>
+
+<h2>케어 포인트</h2>
+<ul>
+  <li>이중모 (더블코트): 환절기 털 빠짐이 매우 심함. 매일 빗질</li>
+  <li>척추가 길어 점프·계단 부상 위험 → 낮은 소파, 램프 사용</li>
+  <li>PRA 유전자 검사 가능한 브리더에서 분양 권장</li>
+</ul>`,
+    status: "published",
+    createdAt: NOW,
+    updatedAt: NOW,
+  },
+
+  {
+    id: "seed-breed-toy-poodle",
+    species: "dog",
+    slug: "toy-poodle",
+    nameKo: "토이 푸들",
+    nameEn: "Toy Poodle",
+    origin: "독일 / 프랑스",
+    sizeCategory: "tiny",
+    lifespanMin: 12,
+    lifespanMax: 15,
+    commonConditions: ["슬개골 탈구", "진행성 망막 위축(PRA)", "애디슨병", "치주 질환"],
+    body: `<h2>토이 푸들 기본 정보</h2>
+<p>스탠다드 푸들의 소형 버전으로, 체고 25cm 이하의 소형 품종입니다. 개 중에서 지능 순위 2위로 알려져 있으며, 저알레르기 품종이기도 합니다. 훈련성이 뛰어나 처음 반려견을 키우는 분께 추천되는 견종입니다.</p>
+
+<h2>성격·특성</h2>
+<ul>
+  <li>개 중 최고 수준의 지능 — 명령어 빠른 습득</li>
+  <li>에너지가 넘치고 장난기가 많음</li>
+  <li>털이 빠지지 않아(저알레르기) 실내 청결 유지에 유리</li>
+  <li>보호자 의존성이 높아 분리불안 발생 가능</li>
+</ul>
+
+<h2>미용</h2>
+<ul>
+  <li>털이 계속 자라므로 4~6주 간격 전문 미용 필수</li>
+  <li>귀 안쪽 털 제거 필요 (귀 염증 예방)</li>
+  <li>다양한 스타일 연출 가능 (테디베어컷·어린양컷 등)</li>
+</ul>
+
+<h2>케어 포인트</h</h2>
+<ul>
+  <li>하루 30~45분 산책·놀이로 에너지 발산</li>
+  <li>두뇌 자극 훈련 병행 권장 (지능이 높아 심심하면 문제 행동)</li>
+  <li>슬개골·PRA 고위험 — 정기 검진 및 브리더 유전 검사 확인</li>
+  <li>연 1~2회 스케일링 (치주 질환 예방)</li>
+</ul>`,
+    status: "published",
+    createdAt: NOW,
+    updatedAt: NOW,
+  },
+
+  // ════════════════════════════════
+  //  고양이 추가 4종
+  // ════════════════════════════════
+
+  {
+    id: "seed-breed-scottish-fold",
+    species: "cat",
+    slug: "scottish-fold",
+    nameKo: "스코티시 폴드",
+    nameEn: "Scottish Fold",
+    origin: "영국 스코틀랜드",
+    sizeCategory: "medium",
+    lifespanMin: 11,
+    lifespanMax: 14,
+    commonConditions: ["골연골이형성증(OCD)", "관절통", "다낭성신장병(PKD)", "비대심근병증(HCM)"],
+    body: `<h2>스코티시 폴드 기본 정보</h2>
+<p>접힌 귀(Folded Ear)가 특징인 품종으로 한국에서 매우 높은 인기를 누리고 있습니다. 그러나 접힌 귀를 만드는 유전자 돌연변이(Fd)가 전신 골연골이형성증을 유발해 국제 수의학계에서 논란의 대상입니다. 일부 국가(영국, 네덜란드 등)에서는 번식이 규제됩니다.</p>
+
+<h2>성격·특성</h2>
+<ul>
+  <li>차분하고 온순하며 사람과의 교감을 즐김</li>
+  <li>독립성이 강하지 않아 집사와 함께 있는 것을 좋아함</li>
+  <li>소리가 작고 부드러운 울음</li>
+  <li>적당한 활동량으로 아파트 생활 적합</li>
+</ul>
+
+<h2>건강 주의사항 (중요)</h2>
+<ul>
+  <li><strong>골연골이형성증</strong>: 관절·연골 이상이 진행하면 극심한 만성 통증이 생깁니다. 정기 방사선·관절 검사 필수</li>
+  <li><strong>통증 신호</strong>: 꼬리 구부리기 거부, 손발 핥기, 점프 회피, 무기력은 관절 통증 신호</li>
+  <li><strong>Fold × Fold 교배 절대 금지</strong>: 접힌 귀 개체끼리 교배하면 심각한 골격 이상 유발</li>
+  <li>PKD, HCM 정기 초음파 검사 권장</li>
+</ul>
+
+<h2>케어 포인트</h2>
+<ul>
+  <li>낮은 가구(캣타워 하단부 포함)로 관절 부담 최소화</li>
+  <li>주기적 귀 청소 (접힌 귀는 통기 불량으로 귀 감염 위험)</li>
+  <li>수의사 정기 검진 (6개월~연 1회): 통증 여부 반드시 확인</li>
+</ul>`,
+    status: "published",
+    createdAt: NOW,
+    updatedAt: NOW,
+  },
+
+  {
+    id: "seed-breed-ragdoll",
+    species: "cat",
+    slug: "ragdoll",
+    nameKo: "랙돌",
+    nameEn: "Ragdoll",
+    origin: "미국 캘리포니아",
+    sizeCategory: "large",
+    lifespanMin: 12,
+    lifespanMax: 17,
+    commonConditions: ["비대심근병증(HCM)", "방광 결석", "다낭성신장병(PKD)", "비만"],
+    body: `<h2>랙돌 기본 정보</h2>
+<p>안겼을 때 몸이 축 늘어지는(Ragdoll, 넝마인형) 특성으로 이름이 붙었습니다. 온순하고 개 같은 성격으로 유명하며, 가족 모두와 잘 어울리는 대형 장모종입니다.</p>
+
+<h2>성격·특성</h2>
+<ul>
+  <li>극도로 온순하고 공격성이 거의 없어 초보 고양이 보호자에게 적합</li>
+  <li>사람을 따라다니고 안기는 것을 즐기는 '개냥이' 성격</li>
+  <li>어린이·개와도 잘 지내는 편</li>
+  <li>통증에 둔감해 부상이나 질병을 숨기는 경향이 있어 정기 검진 중요</li>
+</ul>
+
+<h2>외모·미용</h2>
+<ul>
+  <li>시점·컬러포인트 패턴의 반장모 이중코트</li>
+  <li>주 2~3회 빗질로 엉킴 방지</li>
+  <li>대형 품종이라 어른 체중 5~9kg 도달 (급여량 과다 주의)</li>
+</ul>
+
+<h2>케어 포인트</h2>
+<ul>
+  <li><strong>HCM 유전자 검사</strong>: 랙돌에게 흔한 비대심근병증 예방 위해 브리더의 검사 이력 확인</li>
+  <li>비만 예방 위한 식사량 관리 (느린 대사 특성)</li>
+  <li>실내 생활 권장 (온순한 성격으로 외부 위험에 대응 능력 낮음)</li>
+  <li>통증 신호를 숨기므로 연 1~2회 건강 검진 반드시</li>
+</ul>`,
+    status: "published",
+    createdAt: NOW,
+    updatedAt: NOW,
+  },
+
+  {
+    id: "seed-breed-maine-coon",
+    species: "cat",
+    slug: "maine-coon",
+    nameKo: "메인쿤",
+    nameEn: "Maine Coon",
+    origin: "미국 메인 주",
+    sizeCategory: "large",
+    lifespanMin: 12,
+    lifespanMax: 15,
+    commonConditions: ["비대심근병증(HCM)", "척추근육위축증(SMA)", "고관절 이형성증", "다낭성신장병(PKD)"],
+    body: `<h2>메인쿤 기본 정보</h2>
+<p>미국에서 자연 발생한 가장 오래된 대형 품종 중 하나입니다. '고양이계 개'로 불릴 만큼 사교적이고 놀이를 즐깁니다. 수컷 평균 체중 6~9kg으로 고양이 중 대형에 속합니다.</p>
+
+<h2>성격·특성</h2>
+<ul>
+  <li>사교적이고 장난기가 많아 노는 것을 즐김</li>
+  <li>물을 좋아하는 특이한 습성 (수도꼭지·그릇에서 물장난)</li>
+  <li>개처럼 주인을 따라다니며 집안 일에 참견</li>
+  <li>큰 몸집에 비해 조용하고 차분한 울음소리</li>
+</ul>
+
+<h2>미용</h2>
+<ul>
+  <li>반장모·이중코트: 주 2~3회 빗질 필수</li>
+  <li>겨울철 긴 털 엉킴 방지 정기 미용</li>
+  <li>발가락 사이 털 정리 (뭉침 방지, 미끄럼 예방)</li>
+</ul>
+
+<h2>케어 포인트</h2>
+<ul>
+  <li><strong>HCM 유전자 검사(MyBPC3)</strong>: 메인쿤 HCM은 특정 돌연변이로 발생 — 브리더 검사 이력 필수</li>
+  <li>성장이 느려 3~5세까지 체중 증가 → 과급여 주의</li>
+  <li>튼튼한 캣타워 (대형 체중 지지 가능한 제품 선택)</li>
+  <li>충분한 물 공급 (신장 건강을 위해 습식 사료 혼합 권장)</li>
+</ul>`,
+    status: "published",
+    createdAt: NOW,
+    updatedAt: NOW,
+  },
+
+  {
+    id: "seed-breed-british-shorthair",
+    species: "cat",
+    slug: "british-shorthair",
+    nameKo: "브리티시 숏헤어",
+    nameEn: "British Shorthair",
+    origin: "영국",
+    sizeCategory: "large",
+    lifespanMin: 12,
+    lifespanMax: 17,
+    commonConditions: ["비대심근병증(HCM)", "다낭성신장병(PKD)", "비만", "치주 질환"],
+    body: `<h2>브리티시 숏헤어 기본 정보</h2>
+<p>둥근 얼굴, 통통한 볼, 풍성한 플러시 같은 단모가 특징인 영국 원산 품종입니다. 차분하고 독립적인 성격으로 바쁜 생활 패턴의 보호자에게 인기가 높습니다. '이상한 나라의 앨리스' 체셔 고양이의 모티프로도 알려져 있습니다.</p>
+
+<h2>성격·특성</h2>
+<ul>
+  <li>차분하고 독립적 — 혼자 있는 시간도 잘 견딤</li>
+  <li>안기는 것을 별로 좋아하지 않지만 가까이 있는 것을 즐김</li>
+  <li>조용하고 목소리가 작아 이웃 소음 걱정이 적음</li>
+  <li>어린이·다른 반려동물과 잘 지내는 편 (단, 강요는 금물)</li>
+</ul>
+
+<h2>미용</h2>
+<ul>
+  <li>밀도 높은 이중 단모: 주 2~3회 빗질 (특히 환절기 털 빠짐 심함)</li>
+  <li>목욕 빈도 낮음 (6~8주 간격 또는 필요 시)</li>
+</ul>
+
+<h2>케어 포인트</h2>
+<ul>
+  <li><strong>비만 관리</strong>: 활동량이 적고 먹는 것을 좋아해 비만 위험. 정량 급여 철저히</li>
+  <li><strong>HCM·PKD 검사</strong>: 브리더에게 초음파·유전자 검사 이력 확인</li>
+  <li>관절 건강 위해 낮은 캣타워·계단 제공</li>
+  <li>연 1~2회 혈액 검사: 신장·심장 기능 모니터링</li>
+</ul>`,
+    status: "published",
+    createdAt: NOW,
+    updatedAt: NOW,
+  },
 ];
 
 async function seedBreeds() {
