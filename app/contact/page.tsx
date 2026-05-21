@@ -1,6 +1,22 @@
 import type { Metadata } from "next";
 import { SubscribeForm } from "@/components/forms/subscribe-form";
 
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://petjigi.kr";
+
+const CONTACT_JSON_LD = {
+  "@context": "https://schema.org",
+  "@type": "ContactPage",
+  name: "펫지기 문의",
+  description: "펫지기에 문의하거나 월 2회 전문가 검토 반려동물 정보 뉴스레터를 구독하세요.",
+  url: `${SITE_URL}/contact`,
+  mainEntity: {
+    "@type": "ContactPoint",
+    email: "contact@petjigi.kr",
+    contactType: "customer support",
+    availableLanguage: { "@type": "Language", name: "Korean" },
+  },
+};
+
 export const metadata: Metadata = {
   title: "문의 및 뉴스레터 구독 | 펫지기",
   description: "펫지기에 문의하거나 월 2회 전문가 검토 반려동물 정보 뉴스레터를 구독하세요.",
@@ -9,6 +25,8 @@ export const metadata: Metadata = {
 
 export default function ContactPage() {
   return (
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(CONTACT_JSON_LD) }} />
     <main className="max-w-3xl mx-auto px-4 py-16 space-y-16">
       {/* 이메일 구독 */}
       <section>
@@ -35,5 +53,6 @@ export default function ContactPage() {
         </a>
       </section>
     </main>
+    </>
   );
 }

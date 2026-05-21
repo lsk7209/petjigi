@@ -72,19 +72,23 @@ export default async function BreedPage({
     { name: breed.nameKo, url: `${SITE_URL}/breed/${species}/${slug}` },
   ]);
 
-  const thingSchema = {
+  const animalSchema = {
     "@context": "https://schema.org",
-    "@type": "Thing",
+    "@type": "Animal",
     name: breed.nameKo,
-    alternateName: breed.nameEn ?? undefined,
+    ...(breed.nameEn ? { alternateName: breed.nameEn } : {}),
     description: `${breed.nameKo} 품종 정보: 특징, 성격, 평균 수명, 흔한 질병, 키우는 방법.`,
     url: `${SITE_URL}/breed/${species}/${slug}`,
+    ...(breed.lifespanMin && breed.lifespanMax
+      ? { description: `${breed.nameKo} — 평균 수명 ${breed.lifespanMin}~${breed.lifespanMax}년. 특징·성격·건강·키우기 정보.` }
+      : {}),
+    isPartOf: { "@type": "WebSite", name: "펫지기", url: SITE_URL },
   };
 
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(thingSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(animalSchema) }} />
       <main className="max-w-3xl mx-auto px-4 py-12">
         {/* 브레드크럼 */}
         <nav

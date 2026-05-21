@@ -6,8 +6,8 @@ import { useState } from "react";
 const NAV_LINKS = [
   { label: "홈",     href: "/" },
   { label: "카테고리", href: "/category/health" },
-  { label: "시도별",  href: "/sido/seoul" },
   { label: "동물병원", href: "/sido/seoul" },
+  { label: "펫보험",  href: "/insurance/compare" },
   { label: "가이드",  href: "/category/health" },
   { label: "견종도감", href: "/breed/dog" },
 ];
