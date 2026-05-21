@@ -20,7 +20,7 @@ const GUIDE_LINKS = [
     desc: "화장·납골·수목장 유형별 평균 비용 범위를 정리했습니다.",
   },
   {
-    href: "/guide/petloss-care",
+    href: "/guide/pet-loss-care",
     title: "펫로스 케어 가이드",
     desc: "반려동물을 잃은 슬픔을 회복하는 데 도움이 되는 정보입니다.",
   },

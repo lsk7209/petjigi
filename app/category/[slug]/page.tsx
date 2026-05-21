@@ -271,6 +271,12 @@ export default async function CategoryPage({
                 <h2 className="text-xl font-bold text-[var(--brand-text)] mb-4">품종 정보</h2>
                 <div className="flex flex-wrap gap-3">
                   <Link
+                    href="/breed"
+                    className="flex items-center gap-2 px-5 py-2.5 rounded-xl border border-[var(--brand-border)] text-sm hover:border-[var(--brand-accent)] hover:text-[var(--brand-accent)] transition-colors font-medium"
+                  >
+                    📚 견종·묘종 도감
+                  </Link>
+                  <Link
                     href="/breed/dog"
                     className="flex items-center gap-2 px-5 py-2.5 rounded-xl border border-[var(--brand-border)] text-sm hover:border-[var(--brand-accent)] hover:text-[var(--brand-accent)] transition-colors font-medium"
                   >

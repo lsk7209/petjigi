@@ -9,7 +9,7 @@ const NAV_LINKS = [
   { label: "동물병원", href: "/sido/seoul" },
   { label: "펫보험",  href: "/insurance/compare" },
   { label: "가이드",  href: "/category/health" },
-  { label: "견종도감", href: "/breed/dog" },
+  { label: "견종도감", href: "/breed" },
 ];
 
 export function Header() {
