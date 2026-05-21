@@ -4,7 +4,7 @@ import Link from "next/link";
 import { db } from "@/db/client";
 import { regions } from "@/db/schema";
 import { eq } from "drizzle-orm";
-import { breadcrumbSchema } from "@/lib/seo/structured-data";
+import { breadcrumbSchema, faqSchema } from "@/lib/seo/structured-data";
 
 export const revalidate = 86400;
 
@@ -53,6 +53,23 @@ const BUSINESS_TYPES = [
   { type: "sale", label: "분양", emoji: "🐾" },
 ];
 
+function buildFaq(sidoName: string) {
+  return [
+    {
+      question: `${sidoName}에서 가까운 동물병원을 어떻게 찾나요?`,
+      answer: `아래 시군구를 선택하면 공공데이터 기반 ${sidoName} 지역 동물병원 목록을 확인할 수 있습니다. 방문 전 전화로 영업 여부를 확인하는 것을 권장합니다.`,
+    },
+    {
+      question: `${sidoName} 지역 펫미용·펫호텔 정보를 찾으려면?`,
+      answer: `시군구를 선택한 후 펫미용 또는 펫호텔 탭을 클릭하면 해당 지역 업체 목록을 확인할 수 있습니다. 공공데이터 기준 영업 중인 업체만 표시됩니다.`,
+    },
+    {
+      question: `${sidoName} 반려동물 장묘업체는 어디서 찾나요?`,
+      answer: `시군구별 장묘 탭에서 허가된 반려동물 장묘업체 정보를 확인하실 수 있습니다. 방문 전 반드시 업체에 연락해 세부 서비스와 비용을 문의하세요.`,
+    },
+  ];
+}
+
 export default async function SidoPage({
   params,
 }: {
@@ -75,11 +92,17 @@ export default async function SidoPage({
     { name: `${sidoName} 반려동물`, url: `${SITE_URL}/sido/${sido}` },
   ]);
 
+  const faq = faqSchema(buildFaq(sidoName));
+
   return (
     <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faq) }}
       />
       <main className="max-w-5xl mx-auto px-4 py-6 sm:py-10">
         {/* 브레드크럼 */}
@@ -102,20 +125,17 @@ export default async function SidoPage({
           </p>
         </header>
 
-        {/* 빠른 업종 필터 */}
-        <section className="mb-6 sm:mb-8" aria-label="업종별 검색">
-          <div className="flex flex-wrap gap-2">
-            {BUSINESS_TYPES.map((bt) => (
-              <a
-                key={bt.type}
-                href={`#${bt.type}`}
-                className="flex items-center gap-1.5 px-3 py-2 sm:px-4 rounded-full border border-[var(--brand-border)] text-sm font-medium hover:border-[var(--brand-accent)] hover:text-[var(--brand-accent)] transition-colors"
-              >
-                {bt.emoji} {bt.label}
-              </a>
-            ))}
-          </div>
-        </section>
+        {/* 제공 업종 안내 */}
+        <div className="flex flex-wrap gap-2 mb-6 sm:mb-8">
+          {BUSINESS_TYPES.map((bt) => (
+            <span
+              key={bt.type}
+              className="flex items-center gap-1.5 px-3 py-1.5 rounded-full border border-[var(--brand-border)] text-sm text-[var(--brand-text-secondary)] font-medium"
+            >
+              {bt.emoji} {bt.label}
+            </span>
+          ))}
+        </div>
 
         {/* 시군구 목록 */}
         <section aria-label="시군구 목록">
