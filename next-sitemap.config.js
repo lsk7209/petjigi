@@ -5,15 +5,14 @@ module.exports = {
   robotsTxtOptions: {
     additionalSitemaps: [],
     policies: [
-      { userAgent: "*", allow: "/" },
-      // 구조동물·검색결과·페이지네이션 noindex (URL 레벨 차단)
-      { userAgent: "*", disallow: ["/rescue/", "/search"] },
-      // AI 크롤러 전체 허용 (spec §9)
+      // 단일 User-agent: * 블록 (중복 블록 방지)
+      { userAgent: "*", allow: "/", disallow: ["/rescue/", "/search", "/api/", "/admin/"] },
+      // AI 크롤러 전체 허용
       { userAgent: "GPTBot", allow: "/" },
       { userAgent: "ClaudeBot", allow: "/" },
       { userAgent: "PerplexityBot", allow: "/" },
       { userAgent: "Google-Extended", allow: "/" },
-      { userAgent: "Yeti", allow: "/" }, // Naver
+      { userAgent: "Yeti", allow: "/" },
       { userAgent: "Applebot-Extended", allow: "/" },
       { userAgent: "CCBot", allow: "/" },
       { userAgent: "Bytespider", allow: "/" },
