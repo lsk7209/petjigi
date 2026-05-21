@@ -321,6 +321,61 @@ export default async function HomePage() {
           </section>
         )}
 
+        {/* ── 주요 콘텐츠 허브 ── */}
+        <section style={{ padding: "64px 0", background: "var(--brand-surface-2)" }} aria-label="주요 콘텐츠">
+          <div className="pj-container-7xl" style={{ padding: "0 32px" }}>
+            <div style={{ marginBottom: 32 }}>
+              <span className="pj-numeral" style={{ fontSize: 14 }}>04</span>
+              <h2 className="pj-display" style={{ fontSize: 32, marginTop: 4 }}>꼭 알아야 할 정보</h2>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+              {[
+                {
+                  href: "/condition",
+                  emoji: "💊",
+                  title: "질병·증상 정보",
+                  desc: "슬개골 탈구, 심장사상충, 고양이 FLUTD 등 흔한 질환의 증상·원인·치료를 수의사 검토로 안내합니다.",
+                  cta: "질환 정보 보기",
+                  color: "var(--cat-3)",
+                  soft: "var(--cat-3-soft)",
+                },
+                {
+                  href: "/breed",
+                  emoji: "🐾",
+                  title: "견종·묘종 도감",
+                  desc: "강아지·고양이·소동물 30종 이상의 품종별 특징, 성격, 평균 수명, 흔한 질병 정보를 확인하세요.",
+                  cta: "품종 도감 보기",
+                  color: "var(--cat-1)",
+                  soft: "var(--cat-1-soft)",
+                },
+                {
+                  href: "/insurance",
+                  emoji: "📋",
+                  title: "펫보험 안내",
+                  desc: "현대해상·DB손보·KB손보 등 6대 손보사 펫보험을 보장범위·보험료·자기부담금 기준으로 비교합니다.",
+                  cta: "펫보험 비교",
+                  color: "var(--cat-4)",
+                  soft: "var(--cat-4-soft)",
+                },
+              ].map((hub) => (
+                <Link
+                  key={hub.href}
+                  href={hub.href}
+                  className="pj-card pj-card-hover"
+                  style={{ textDecoration: "none", color: "inherit", padding: 24, display: "flex", flexDirection: "column", gap: 12 }}
+                >
+                  <div style={{ width: 48, height: 48, borderRadius: 12, background: hub.soft, display: "flex", alignItems: "center", justifyContent: "center" }}>
+                    <span style={{ fontSize: 24 }}>{hub.emoji}</span>
+                  </div>
+                  <h3 style={{ fontSize: 18, fontWeight: 700, color: "var(--brand-text)" }}>{hub.title}</h3>
+                  <p style={{ fontSize: 14, color: "var(--brand-text-secondary)", lineHeight: 1.65, flex: 1 }}>{hub.desc}</p>
+                  <span style={{ fontSize: 13, fontWeight: 600, color: hub.color }}>{hub.cta} →</span>
+                </Link>
+              ))}
+            </div>
+          </div>
+        </section>
+
         {/* ── 신뢰 섹션 ── */}
         <section style={{ padding: "56px 0", borderTop: "1px solid var(--brand-border)" }}>
           <div className="pj-container-7xl" style={{ padding: "0 32px" }}>
