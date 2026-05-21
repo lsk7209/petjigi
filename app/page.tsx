@@ -4,6 +4,26 @@ import { db } from "@/db/client";
 import { contents, businesses, shelters, rescuedAnimals } from "@/db/schema";
 import { eq, desc, and, sql, count } from "drizzle-orm";
 import { CATEGORIES } from "@/lib/category";
+import { faqSchema } from "@/lib/seo/structured-data";
+
+const HOME_FAQ = faqSchema([
+  {
+    question: "펫지기는 어떤 서비스인가요?",
+    answer: "펫지기는 공공데이터포털(농림축산검역본부·행정안전부)을 기반으로 전국 30,000개 이상의 동물병원·펫미용·펫호텔·장묘업체 정보를 제공하는 무료 반려동물 정보 서비스입니다.",
+  },
+  {
+    question: "전국 동물병원을 어떻게 찾나요?",
+    answer: "지역별 검색에서 시도를 선택하면 해당 지역 동물병원 목록을 확인할 수 있습니다. 예) 서울 강남구 동물병원, 경기 수원 동물병원 등.",
+  },
+  {
+    question: "유기동물 입양은 어떻게 하나요?",
+    answer: "구조동물 메뉴에서 현재 보호 중인 동물을 확인하고, 가까운 보호센터에 직접 연락하시면 됩니다. 전국 보호센터 정보도 함께 제공됩니다.",
+  },
+  {
+    question: "정보는 얼마나 자주 업데이트되나요?",
+    answer: "동물병원·펫미용 등 영업장 정보는 매일, 구조동물 현황은 매일, 보호센터 정보는 매주 공공데이터에서 동기화됩니다.",
+  },
+]);
 
 export const revalidate = 3600;
 
@@ -87,6 +107,11 @@ export default async function HomePage() {
   ];
 
   return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(HOME_FAQ) }}
+      />
     <main className="min-h-screen bg-[var(--brand-bg)]">
       {/* Hero */}
       <section className="max-w-5xl mx-auto px-4 pt-16 pb-14 text-center" aria-label="사이트 소개">
@@ -294,5 +319,6 @@ export default async function HomePage() {
         </div>
       </section>
     </main>
+    </>
   );
 }

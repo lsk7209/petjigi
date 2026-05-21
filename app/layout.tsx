@@ -1,9 +1,12 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import "./globals.css";
 import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
 import { GA4 } from "@/components/analytics/ga4";
 import { websiteSchema, organizationSchema } from "@/lib/seo/structured-data";
+
+const ADSENSE_ID = process.env.NEXT_PUBLIC_ADSENSE_ID;
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://petjigi.com";
 
@@ -126,6 +129,15 @@ export default function RootLayout({
         </div>
         <Footer />
         <GA4 />
+        {/* AdSense 자동 광고 — NEXT_PUBLIC_ADSENSE_ID 설정 시 활성화 */}
+        {ADSENSE_ID && (
+          <Script
+            id="adsense-auto"
+            src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${ADSENSE_ID}`}
+            strategy="lazyOnload"
+            crossOrigin="anonymous"
+          />
+        )}
       </body>
     </html>
   );
