@@ -147,10 +147,10 @@ export default async function CategoryPage({
         <AdPolicyProvider category={cat.id}>
           <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb) }} />
           <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faq) }} />
-          <main className="max-w-5xl mx-auto px-4 py-10">
+          <main className="max-w-5xl mx-auto px-4 py-6 sm:py-10">
             {/* 브레드크럼 */}
             <nav
-              className="text-xs text-[var(--brand-text-secondary)] mb-6 flex items-center gap-1.5"
+              className="text-xs text-[var(--brand-text-secondary)] mb-5 sm:mb-6 flex items-center gap-1.5 flex-wrap"
               aria-label="breadcrumb"
             >
               <Link href="/" className="hover:text-[var(--brand-accent)] transition-colors">홈</Link>
@@ -161,18 +161,18 @@ export default async function CategoryPage({
             </nav>
 
             {/* 헤더 */}
-            <header className="mb-8">
-              <div className="flex items-center gap-3 mb-3">
-                <span className="text-4xl" role="img" aria-label={cat.name}>{emoji}</span>
-                <h1 className="text-3xl font-extrabold text-[var(--brand-text)] tracking-tight">
+            <header className="mb-6 sm:mb-8">
+              <div className="flex items-center gap-3 mb-2 sm:mb-3">
+                <span className="text-3xl sm:text-4xl" role="img" aria-label={cat.name}>{emoji}</span>
+                <h1 className="text-2xl sm:text-3xl font-extrabold text-[var(--brand-text)] tracking-tight">
                   {cat.name}
                 </h1>
               </div>
-              <p className="text-base text-[var(--brand-text-secondary)] leading-relaxed max-w-2xl word-break-keep">
+              <p className="text-sm sm:text-base text-[var(--brand-text-secondary)] leading-relaxed max-w-2xl" style={{ wordBreak: "keep-all" }}>
                 {desc?.short}
               </p>
               {desc?.detail && (
-                <p className="mt-2 text-sm text-[var(--brand-text-secondary)] leading-relaxed max-w-2xl word-break-keep">
+                <p className="mt-2 text-xs sm:text-sm text-[var(--brand-text-secondary)] leading-relaxed max-w-2xl" style={{ wordBreak: "keep-all" }}>
                   {desc.detail}
                 </p>
               )}

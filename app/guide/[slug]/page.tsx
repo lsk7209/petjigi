@@ -118,10 +118,10 @@ export default async function GuidePage({
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(article) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb) }} />
-      <main className="max-w-3xl mx-auto px-4 py-10">
+      <main className="max-w-3xl mx-auto px-4 py-6 sm:py-10">
         {/* 브레드크럼 */}
         <nav
-          className="text-xs text-[var(--brand-text-secondary)] mb-6 flex items-center gap-1.5 flex-wrap"
+          className="text-xs text-[var(--brand-text-secondary)] mb-5 sm:mb-6 flex items-center gap-1 sm:gap-1.5 flex-wrap"
           aria-label="breadcrumb"
         >
           <Link href="/" className="hover:text-[var(--brand-accent)] transition-colors">홈</Link>
@@ -133,13 +133,13 @@ export default async function GuidePage({
             {CATEGORY_EMOJI[categoryId]} {cat?.name ?? "가이드"}
           </Link>
           <span aria-hidden="true">›</span>
-          <span className="text-[var(--brand-text)] truncate max-w-[200px]" aria-current="page">
+          <span className="text-[var(--brand-text)] truncate max-w-[150px] sm:max-w-[280px]" aria-current="page">
             {content.title}
           </span>
         </nav>
 
         {/* 기사 헤더 */}
-        <header className="mb-8">
+        <header className="mb-6 sm:mb-8">
           <div className="flex items-center gap-2 mb-3">
             <span className="px-2.5 py-0.5 rounded-full bg-[var(--brand-border)] text-xs font-semibold text-[var(--brand-text-secondary)]">
               {cat?.name ?? "가이드"}
@@ -151,11 +151,11 @@ export default async function GuidePage({
             )}
           </div>
 
-          <h1 className="text-2xl sm:text-3xl font-extrabold text-[var(--brand-text)] leading-tight mb-4 word-break-keep tracking-tight">
+          <h1 className="text-xl sm:text-2xl md:text-3xl font-extrabold text-[var(--brand-text)] leading-tight mb-3 sm:mb-4 tracking-tight" style={{ wordBreak: "keep-all" }}>
             {content.title}
           </h1>
 
-          <div className="flex flex-wrap items-center gap-3 text-xs text-[var(--brand-text-secondary)]">
+          <div className="flex flex-col sm:flex-row sm:flex-wrap sm:items-center gap-1.5 sm:gap-3 text-xs text-[var(--brand-text-secondary)]">
             {content.publishedAt && (
               <time dateTime={content.publishedAt} className="flex items-center gap-1">
                 <span aria-hidden="true">📅</span>
@@ -189,20 +189,20 @@ export default async function GuidePage({
         {/* 본문 */}
         <article
           id="article-body"
-          className="prose prose-base max-w-none mt-6"
+          className="prose prose-sm sm:prose-base max-w-none mt-5 sm:mt-6"
           dangerouslySetInnerHTML={{ __html: content.body }}
         />
 
         {/* 참고 자료 */}
         {Array.isArray(content.sources) && content.sources.length > 0 && (
           <section
-            className="mt-10 pt-6 border-t border-[var(--brand-border)]"
+            className="mt-8 sm:mt-10 pt-5 sm:pt-6 border-t border-[var(--brand-border)]"
             aria-label="참고 자료"
           >
             <h2 className="text-sm font-bold text-[var(--brand-text)] mb-3">📚 참고 자료</h2>
             <ul className="space-y-1.5">
               {(content.sources as string[]).map((s, i) => (
-                <li key={i} className="text-xs text-[var(--brand-text-secondary)] flex gap-2">
+                <li key={i} className="text-xs sm:text-sm text-[var(--brand-text-secondary)] flex gap-2">
                   <span className="shrink-0 text-[var(--brand-accent)]">·</span>
                   <span>{s}</span>
                 </li>
@@ -214,7 +214,7 @@ export default async function GuidePage({
         {/* 면책 고지 */}
         {content.disclaimer && (
           <div
-            className="mt-6 p-4 bg-[var(--brand-border)] rounded-xl text-xs text-[var(--brand-text-secondary)] leading-relaxed"
+            className="mt-6 p-4 sm:p-5 bg-[var(--brand-border)] rounded-xl text-xs sm:text-sm text-[var(--brand-text-secondary)] leading-relaxed"
             role="note"
           >
             {content.disclaimer}

@@ -68,24 +68,26 @@ export function Header() {
 
       {/* 모바일 드롭다운 */}
       {open && (
-        <nav className="md:hidden border-t border-[var(--brand-border)] bg-[var(--brand-bg)] px-4 py-3 flex flex-col gap-1">
+        <nav className="md:hidden border-t border-[var(--brand-border)] bg-[var(--brand-bg)] px-4 py-3 flex flex-col gap-1.5">
           {NAV_CATEGORIES.map((item) => (
             <Link
               key={item.href}
               href={item.href}
               onClick={() => setOpen(false)}
-              className="px-3 py-2.5 text-sm rounded-[var(--radius-button)] text-[var(--brand-text-secondary)] hover:text-[var(--brand-text)] hover:bg-[var(--brand-border)] transition-colors"
+              className="px-3 py-3 text-sm rounded-[var(--radius-button)] text-[var(--brand-text-secondary)] hover:text-[var(--brand-text)] hover:bg-[var(--brand-border)] transition-colors"
             >
               {item.name}
             </Link>
           ))}
-          <Link
-            href="/guide/pet-loss-care"
-            onClick={() => setOpen(false)}
-            className="px-3 py-2.5 text-sm text-[var(--brand-accent)] hover:bg-[var(--brand-border)] rounded-[var(--radius-button)] transition-colors"
-          >
-            펫로스 케어 →
-          </Link>
+          <div className="border-t border-[var(--brand-border)] mt-1 pt-2">
+            <Link
+              href="/guide/pet-loss-care"
+              onClick={() => setOpen(false)}
+              className="px-3 py-3 text-sm text-[var(--brand-accent)] hover:bg-[var(--brand-border)] rounded-[var(--radius-button)] transition-colors block"
+            >
+              펫로스 케어 →
+            </Link>
+          </div>
         </nav>
       )}
     </header>

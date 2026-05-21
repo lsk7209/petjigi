@@ -114,32 +114,32 @@ export default async function HomePage() {
       />
     <main className="min-h-screen bg-[var(--brand-bg)]">
       {/* Hero */}
-      <section className="max-w-5xl mx-auto px-4 pt-16 pb-14 text-center" aria-label="사이트 소개">
-        <p className="text-xs font-semibold tracking-widest text-[var(--brand-accent)] uppercase mb-4">
+      <section className="max-w-5xl mx-auto px-4 pt-10 pb-10 sm:pt-16 sm:pb-14 text-center" aria-label="사이트 소개">
+        <p className="text-xs font-semibold tracking-wide text-[var(--brand-accent)] uppercase mb-3 sm:mb-4">
           공공데이터 기반 반려동물 정보
         </p>
-        <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold text-[var(--brand-text)] mb-5 leading-tight tracking-tight">
+        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-[var(--brand-text)] mb-4 sm:mb-5 leading-tight tracking-tight">
           펫지기
         </h1>
-        <p className="text-base sm:text-lg text-[var(--brand-text-secondary)] max-w-2xl mx-auto mb-8 leading-relaxed word-break-keep">
+        <p className="text-sm sm:text-base md:text-lg text-[var(--brand-text-secondary)] max-w-2xl mx-auto mb-6 sm:mb-8 leading-relaxed" style={{ wordBreak: "keep-all" }}>
           입양부터 장례까지 — 반려동물과 함께하는 모든 결정을 공신력 있는 공공데이터로 도와드립니다.
         </p>
-        <div className="flex flex-wrap justify-center gap-3">
+        <div className="flex flex-wrap justify-center gap-2 sm:gap-3">
           <Link
             href="/category/health"
-            className="px-6 py-3 rounded-full bg-[var(--brand-accent)] text-white text-sm font-semibold hover:opacity-90 transition-opacity shadow-sm"
+            className="px-5 py-2.5 sm:px-6 sm:py-3 rounded-full bg-[var(--brand-accent)] text-white text-sm font-semibold hover:opacity-90 transition-opacity shadow-sm"
           >
             건강 정보 보기
           </Link>
           <Link
             href="/sido/seoul"
-            className="px-6 py-3 rounded-full border-2 border-[var(--brand-border)] text-[var(--brand-text)] text-sm font-semibold hover:border-[var(--brand-accent)] transition-colors"
+            className="px-5 py-2.5 sm:px-6 sm:py-3 rounded-full border-2 border-[var(--brand-border)] text-[var(--brand-text)] text-sm font-semibold hover:border-[var(--brand-accent)] transition-colors"
           >
             동물병원 찾기
           </Link>
           <Link
             href="/rescue"
-            className="px-6 py-3 rounded-full border-2 border-[var(--brand-border)] text-[var(--brand-text)] text-sm font-semibold hover:border-[var(--brand-accent)] transition-colors"
+            className="px-5 py-2.5 sm:px-6 sm:py-3 rounded-full border-2 border-[var(--brand-border)] text-[var(--brand-text)] text-sm font-semibold hover:border-[var(--brand-accent)] transition-colors"
           >
             유기동물 입양
           </Link>
@@ -147,15 +147,15 @@ export default async function HomePage() {
       </section>
 
       {/* 통계 배너 */}
-      <section className="bg-[var(--brand-text)] py-8 mb-14" aria-label="서비스 통계">
+      <section className="bg-[var(--brand-text)] py-7 sm:py-8 mb-10 sm:mb-14" aria-label="서비스 통계">
         <div className="max-w-5xl mx-auto px-4">
-          <div className="grid grid-cols-3 gap-4 text-center text-white">
+          <div className="grid grid-cols-3 gap-2 sm:gap-4 text-center text-white">
             {STATS.map((s) => (
               <div key={s.label}>
-                <p className="text-2xl sm:text-3xl font-extrabold text-[var(--brand-accent)] leading-none">
+                <p className="text-xl sm:text-2xl md:text-3xl font-extrabold text-[var(--brand-accent)] leading-none">
                   {s.value}
                 </p>
-                <p className="text-xs sm:text-sm font-semibold mt-1 opacity-90">{s.label}</p>
+                <p className="text-xs sm:text-sm font-semibold mt-1 opacity-90 leading-tight">{s.label}</p>
                 <p className="text-xs opacity-60 hidden sm:block mt-0.5">{s.sublabel}</p>
               </div>
             ))}
@@ -164,38 +164,40 @@ export default async function HomePage() {
       </section>
 
       {/* 6대 카테고리 카드 */}
-      <section className="max-w-5xl mx-auto px-4 pb-16" aria-label="카테고리">
-        <h2 className="text-2xl font-bold text-[var(--brand-text)] mb-2">
+      <section className="max-w-5xl mx-auto px-4 pb-12 sm:pb-16" aria-label="카테고리">
+        <h2 className="text-xl sm:text-2xl font-bold text-[var(--brand-text)] mb-1.5 sm:mb-2">
           어떤 정보가 필요하세요?
         </h2>
-        <p className="text-sm text-[var(--brand-text-secondary)] mb-6">
+        <p className="text-sm text-[var(--brand-text-secondary)] mb-4 sm:mb-6">
           6가지 주제별로 반려동물 정보를 정리했습니다.
         </p>
-        <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 sm:gap-4">
           {categories.map((cat) => {
             const meta = CATEGORY_META[cat.id];
             return (
               <Link
                 key={cat.id}
                 href={`/category/${cat.slug}`}
-                className="group p-5 rounded-2xl border border-[var(--brand-border)] hover:border-[var(--brand-accent)] hover:shadow-md transition-all text-left bg-white/40 hover:bg-white/60"
+                className="group flex sm:block gap-4 p-4 sm:p-5 rounded-2xl border border-[var(--brand-border)] hover:border-[var(--brand-accent)] hover:shadow-md transition-all text-left bg-white/40 hover:bg-white/60"
               >
                 <span
-                  className="text-3xl mb-3 block"
+                  className="text-3xl shrink-0 sm:mb-3 sm:block"
                   role="img"
                   aria-label={cat.name}
                 >
                   {meta.emoji}
                 </span>
-                <h3 className="font-bold text-[var(--brand-text)] mb-1.5 group-hover:text-[var(--brand-accent)] transition-colors text-base">
-                  {cat.name}
-                </h3>
-                <p className="text-xs text-[var(--brand-text-secondary)] leading-relaxed mb-3 word-break-keep">
-                  {meta.desc}
-                </p>
-                <span className="text-xs text-[var(--brand-accent)] font-semibold group-hover:underline">
-                  {meta.cta} →
-                </span>
+                <div className="min-w-0">
+                  <h3 className="font-bold text-[var(--brand-text)] mb-1 sm:mb-1.5 group-hover:text-[var(--brand-accent)] transition-colors text-base">
+                    {cat.name}
+                  </h3>
+                  <p className="text-xs sm:text-sm text-[var(--brand-text-secondary)] leading-relaxed mb-2 sm:mb-3" style={{ wordBreak: "keep-all" }}>
+                    {meta.desc}
+                  </p>
+                  <span className="text-xs text-[var(--brand-accent)] font-semibold group-hover:underline">
+                    {meta.cta} →
+                  </span>
+                </div>
               </Link>
             );
           })}
@@ -204,22 +206,22 @@ export default async function HomePage() {
 
       {/* 최근 가이드 */}
       {recentGuides.length > 0 && (
-        <section className="max-w-5xl mx-auto px-4 pb-16" aria-label="최근 가이드">
-          <div className="flex items-center justify-between mb-4">
+        <section className="max-w-5xl mx-auto px-4 pb-12 sm:pb-16" aria-label="최근 가이드">
+          <div className="flex items-center justify-between mb-3 sm:mb-4">
             <div>
-              <h2 className="text-2xl font-bold text-[var(--brand-text)]">최근 가이드</h2>
-              <p className="text-sm text-[var(--brand-text-secondary)] mt-0.5">
+              <h2 className="text-xl sm:text-2xl font-bold text-[var(--brand-text)]">최근 가이드</h2>
+              <p className="text-xs sm:text-sm text-[var(--brand-text-secondary)] mt-0.5">
                 전문가 검토를 거친 신뢰할 수 있는 정보
               </p>
             </div>
             <Link
               href="/category/health"
-              className="text-sm text-[var(--brand-accent)] font-semibold hover:underline shrink-0"
+              className="text-sm text-[var(--brand-accent)] font-semibold hover:underline shrink-0 ml-3"
             >
               전체 보기 →
             </Link>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 sm:gap-4">
             {recentGuides.map((guide) => {
               const cat = CATEGORIES[guide.category as keyof typeof CATEGORIES];
               const meta = CATEGORY_META[guide.category];
@@ -227,23 +229,25 @@ export default async function HomePage() {
                 <Link
                   key={guide.slug}
                   href={`/guide/${guide.slug}`}
-                  className="group flex flex-col p-4 rounded-2xl border border-[var(--brand-border)] hover:border-[var(--brand-accent)] hover:shadow-sm transition-all bg-white/40"
+                  className="group flex items-start gap-3 sm:flex-col sm:gap-0 p-4 rounded-2xl border border-[var(--brand-border)] hover:border-[var(--brand-accent)] hover:shadow-sm transition-all bg-white/40"
                 >
-                  <span className="text-lg mb-2">{meta?.emoji ?? "📄"}</span>
-                  <p className="text-xs text-[var(--brand-accent)] font-semibold mb-1">
-                    {cat?.name ?? "가이드"}
-                  </p>
-                  <p className="text-sm font-semibold text-[var(--brand-text)] group-hover:text-[var(--brand-accent)] transition-colors leading-snug word-break-keep flex-1">
-                    {guide.title}
-                  </p>
-                  {guide.publishedAt && (
-                    <time
-                      className="mt-2 text-xs text-[var(--brand-text-secondary)]"
-                      dateTime={guide.publishedAt}
-                    >
-                      {guide.publishedAt.slice(0, 10)}
-                    </time>
-                  )}
+                  <span className="text-2xl shrink-0 sm:mb-2">{meta?.emoji ?? "📄"}</span>
+                  <div className="min-w-0">
+                    <p className="text-xs text-[var(--brand-accent)] font-semibold mb-1">
+                      {cat?.name ?? "가이드"}
+                    </p>
+                    <p className="text-sm font-semibold text-[var(--brand-text)] group-hover:text-[var(--brand-accent)] transition-colors leading-snug" style={{ wordBreak: "keep-all" }}>
+                      {guide.title}
+                    </p>
+                    {guide.publishedAt && (
+                      <time
+                        className="mt-1.5 text-xs text-[var(--brand-text-secondary)] block"
+                        dateTime={guide.publishedAt}
+                      >
+                        {guide.publishedAt.slice(0, 10)}
+                      </time>
+                    )}
+                  </div>
                 </Link>
               );
             })}
@@ -252,13 +256,13 @@ export default async function HomePage() {
       )}
 
       {/* 지역별 동물병원 찾기 */}
-      <section className="max-w-5xl mx-auto px-4 pb-16" aria-label="지역별 검색">
-        <div className="rounded-2xl border border-[var(--brand-border)] p-6 bg-white/40">
+      <section className="max-w-5xl mx-auto px-4 pb-12 sm:pb-16" aria-label="지역별 검색">
+        <div className="rounded-2xl border border-[var(--brand-border)] p-4 sm:p-6 bg-white/40">
           <div className="flex items-center gap-2 mb-2">
-            <span className="text-2xl" role="img" aria-label="동물병원">🏥</span>
-            <h2 className="text-xl font-bold text-[var(--brand-text)]">지역별 동물병원 찾기</h2>
+            <span className="text-xl sm:text-2xl" role="img" aria-label="동물병원">🏥</span>
+            <h2 className="text-lg sm:text-xl font-bold text-[var(--brand-text)]">지역별 동물병원 찾기</h2>
           </div>
-          <p className="text-sm text-[var(--brand-text-secondary)] mb-5">
+          <p className="text-xs sm:text-sm text-[var(--brand-text-secondary)] mb-4 sm:mb-5" style={{ wordBreak: "keep-all" }}>
             전국 {formatCount(stats.businesses)}개 업장 정보를 지역별로 검색하세요. 동물병원·펫미용·펫호텔·장묘업체 등
           </p>
           <div className="flex flex-wrap gap-2">
@@ -266,7 +270,7 @@ export default async function HomePage() {
               <Link
                 key={sido.slug}
                 href={`/sido/${sido.slug}`}
-                className="px-3 py-1.5 rounded-full border border-[var(--brand-border)] text-sm text-[var(--brand-text)] hover:border-[var(--brand-accent)] hover:text-[var(--brand-accent)] hover:bg-white/80 transition-all"
+                className="px-3 py-2 rounded-full border border-[var(--brand-border)] text-sm text-[var(--brand-text)] hover:border-[var(--brand-accent)] hover:text-[var(--brand-accent)] hover:bg-white/80 transition-all"
               >
                 {sido.label}
               </Link>
@@ -276,43 +280,43 @@ export default async function HomePage() {
       </section>
 
       {/* 유기동물 입양 CTA */}
-      <section className="max-w-5xl mx-auto px-4 pb-16" aria-label="유기동물 입양">
+      <section className="max-w-5xl mx-auto px-4 pb-12 sm:pb-16" aria-label="유기동물 입양">
         <Link
           href="/rescue"
-          className="group block rounded-2xl border-2 border-[var(--brand-border)] hover:border-[var(--brand-accent)] p-6 bg-white/40 hover:bg-white/60 transition-all"
+          className="group block rounded-2xl border-2 border-[var(--brand-border)] hover:border-[var(--brand-accent)] p-4 sm:p-6 bg-white/40 hover:bg-white/60 transition-all"
         >
-          <div className="flex items-center justify-between">
+          <div className="flex items-center justify-between gap-3">
             <div>
-              <p className="text-xs font-semibold text-[var(--brand-accent)] uppercase tracking-widest mb-1">
+              <p className="text-xs font-semibold text-[var(--brand-accent)] uppercase tracking-wide mb-1">
                 유기동물 입양
               </p>
-              <h2 className="text-xl font-bold text-[var(--brand-text)] group-hover:text-[var(--brand-accent)] transition-colors">
+              <h2 className="text-lg sm:text-xl font-bold text-[var(--brand-text)] group-hover:text-[var(--brand-accent)] transition-colors" style={{ wordBreak: "keep-all" }}>
                 기다리는 아이들을 만나보세요
               </h2>
-              <p className="text-sm text-[var(--brand-text-secondary)] mt-1">
+              <p className="text-xs sm:text-sm text-[var(--brand-text-secondary)] mt-1" style={{ wordBreak: "keep-all" }}>
                 전국 보호센터 {formatCount(stats.rescued)}마리 구조동물 · 공공데이터 실시간 현황
               </p>
             </div>
-            <span className="text-4xl shrink-0 ml-4" role="img" aria-label="강아지">🐕</span>
+            <span className="text-3xl sm:text-4xl shrink-0" role="img" aria-label="강아지">🐕</span>
           </div>
         </Link>
       </section>
 
       {/* 이메일 구독 CTA */}
-      <section className="max-w-5xl mx-auto px-4 pb-20" aria-label="뉴스레터 구독">
-        <div className="rounded-2xl bg-[var(--brand-accent)] text-white p-8 text-center">
-          <p className="text-xs font-semibold uppercase tracking-widest opacity-80 mb-2">
+      <section className="max-w-5xl mx-auto px-4 pb-16 sm:pb-20" aria-label="뉴스레터 구독">
+        <div className="rounded-2xl bg-[var(--brand-accent)] text-white p-6 sm:p-8 text-center">
+          <p className="text-xs font-semibold uppercase tracking-wide opacity-80 mb-2">
             뉴스레터
           </p>
-          <h2 className="text-xl sm:text-2xl font-bold mb-2">
+          <h2 className="text-lg sm:text-xl md:text-2xl font-bold mb-2" style={{ wordBreak: "keep-all" }}>
             반려동물 건강 정보를 이메일로 받아보세요
           </h2>
-          <p className="text-sm opacity-80 mb-6 max-w-md mx-auto leading-relaxed">
+          <p className="text-xs sm:text-sm opacity-80 mb-5 sm:mb-6 max-w-md mx-auto leading-relaxed" style={{ wordBreak: "keep-all" }}>
             월 2회, 수의사·전문가 검토를 거친 콘텐츠만 엄선해 보내드립니다.
           </p>
           <Link
             href="/contact"
-            className="inline-block px-6 py-3 rounded-full bg-white text-[var(--brand-accent)] text-sm font-bold hover:opacity-90 transition-opacity shadow-sm"
+            className="inline-block px-5 py-2.5 sm:px-6 sm:py-3 rounded-full bg-white text-[var(--brand-accent)] text-sm font-bold hover:opacity-90 transition-opacity shadow-sm"
           >
             무료 구독 신청 →
           </Link>

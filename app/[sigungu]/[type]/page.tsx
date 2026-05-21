@@ -134,14 +134,14 @@ export default async function SigunguTypePage({
           </span>
         </nav>
 
-        <header className="mb-8">
-          <div className="flex items-center gap-2 mb-3">
-            <span className="text-3xl" role="img" aria-label={meta.label}>{meta.emoji}</span>
-            <h1 className="text-2xl sm:text-3xl font-extrabold text-[var(--brand-text)] tracking-tight">
+        <header className="mb-6 sm:mb-8">
+          <div className="flex items-center gap-2 mb-2 sm:mb-3">
+            <span className="text-2xl sm:text-3xl" role="img" aria-label={meta.label}>{meta.emoji}</span>
+            <h1 className="text-xl sm:text-2xl md:text-3xl font-extrabold text-[var(--brand-text)] tracking-tight">
               {sigunguName} {meta.label}
             </h1>
           </div>
-          <p className="text-[var(--brand-text-secondary)] text-sm leading-relaxed">
+          <p className="text-[var(--brand-text-secondary)] text-sm leading-relaxed" style={{ wordBreak: "keep-all" }}>
             {sigunguName} 지역 {meta.label} {businessList.length}곳 — {meta.desc}.
             공공데이터 기준 영업 중인 업체만 표시됩니다.
           </p>
@@ -167,16 +167,16 @@ export default async function SigunguTypePage({
             <p className="text-sm mt-1">ETL 동기화 후 업데이트됩니다.</p>
           </div>
         ) : (
-          <ul className="space-y-2" aria-label={`${sigunguName} ${meta.label} 목록`}>
+          <ul className="space-y-2 sm:space-y-3" aria-label={`${sigunguName} ${meta.label} 목록`}>
             {businessList.map((b) => (
               <li key={b.id}>
                 <Link
                   href={`/${b.type}/${sigungu}/${encodeURIComponent(b.name)}`}
-                  className="flex items-start gap-3 p-4 rounded-2xl border border-[var(--brand-border)] hover:border-[var(--brand-accent)] hover:shadow-sm transition-all group"
+                  className="flex items-center gap-3 p-4 sm:p-5 rounded-2xl border border-[var(--brand-border)] hover:border-[var(--brand-accent)] hover:shadow-sm transition-all group"
                 >
-                  <span className="text-lg shrink-0 mt-0.5">{meta.emoji}</span>
+                  <span className="text-xl sm:text-2xl shrink-0">{meta.emoji}</span>
                   <div className="min-w-0 flex-1">
-                    <p className="font-semibold text-[var(--brand-text)] group-hover:text-[var(--brand-accent)] transition-colors leading-snug">
+                    <p className="font-semibold text-[var(--brand-text)] group-hover:text-[var(--brand-accent)] transition-colors leading-snug text-sm sm:text-base">
                       {b.name}
                     </p>
                     {b.address && (
@@ -185,12 +185,12 @@ export default async function SigunguTypePage({
                       </p>
                     )}
                     {b.phone && (
-                      <p className="text-xs text-[var(--brand-accent)] mt-0.5 font-medium">
+                      <p className="text-xs sm:text-sm text-[var(--brand-accent)] mt-0.5 font-medium">
                         {b.phone}
                       </p>
                     )}
                   </div>
-                  <span className="text-xs text-[var(--brand-text-secondary)] shrink-0 self-center">
+                  <span className="text-sm text-[var(--brand-text-secondary)] shrink-0 self-center">
                     →
                   </span>
                 </Link>

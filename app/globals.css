@@ -217,6 +217,12 @@ body {
   }
 }
 
+/* ─── 유틸리티 ─── */
+.word-break-keep {
+  word-break: keep-all;
+  overflow-wrap: break-word;
+}
+
 /* ─── prose (가이드 본문) 브랜드 오버라이드 ─── */
 .prose {
   --tw-prose-body: var(--brand-text);
