@@ -115,36 +115,52 @@ export default async function ConditionIndexPage() {
           </section>
         )}
 
-        {/* 전체 질환 목록 */}
+        {/* 질환 목록 */}
         {conditions.length === 0 ? (
           <div className="p-8 rounded-xl border border-[var(--brand-border)] text-center">
             <p className="text-[var(--brand-text-secondary)] text-sm">질환 정보를 준비 중입니다.</p>
           </div>
         ) : (
-          <section aria-label="전체 질환 목록">
-            <h2 className="text-lg font-bold text-[var(--brand-text)] mb-4">전체 질환·증상 목록</h2>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-              {conditions.map((c) => (
-                <Link
-                  key={c.slug}
-                  href={`/condition/${c.slug}`}
-                  className="group p-4 rounded-[var(--radius-card)] border border-[var(--brand-border)] hover:border-[var(--brand-accent)] hover:shadow-sm transition-all"
-                >
-                  <span className="text-[10px] px-1.5 py-0.5 rounded bg-[var(--cat-3-soft)] text-[var(--cat-3)] font-semibold">
-                    전문가 검토
-                  </span>
-                  <h3 className="font-semibold text-sm text-[var(--brand-text)] group-hover:text-[var(--brand-accent)] transition-colors leading-snug mt-2">
-                    {c.title}
-                  </h3>
-                  {c.metaDescription && (
-                    <p className="text-xs text-[var(--brand-text-secondary)] mt-1.5 leading-relaxed line-clamp-2">
-                      {c.metaDescription}
-                    </p>
-                  )}
-                </Link>
-              ))}
-            </div>
-          </section>
+          <div className="space-y-10">
+            {(
+              [
+                { label: "🐕 강아지 질환·증상", prefix: "dog-" },
+                { label: "🐈 고양이 질환·증상", prefix: "cat-" },
+                { label: "🐾 공통·기타 질환", prefix: "" },
+              ] as { label: string; prefix: string }[]
+            ).map(({ label, prefix }) => {
+              const filtered = prefix
+                ? conditions.filter((c) => c.slug.startsWith(prefix))
+                : conditions.filter((c) => !c.slug.startsWith("dog-") && !c.slug.startsWith("cat-"));
+              if (filtered.length === 0) return null;
+              return (
+                <section key={label} aria-label={label}>
+                  <h2 className="text-lg font-bold text-[var(--brand-text)] mb-4">{label}</h2>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                    {filtered.map((c) => (
+                      <Link
+                        key={c.slug}
+                        href={`/condition/${c.slug}`}
+                        className="group p-4 rounded-[var(--radius-card)] border border-[var(--brand-border)] hover:border-[var(--brand-accent)] hover:shadow-sm transition-all"
+                      >
+                        <span className="text-[10px] px-1.5 py-0.5 rounded bg-[var(--cat-3-soft)] text-[var(--cat-3)] font-semibold">
+                          전문가 검토
+                        </span>
+                        <h3 className="font-semibold text-sm text-[var(--brand-text)] group-hover:text-[var(--brand-accent)] transition-colors leading-snug mt-2">
+                          {c.title}
+                        </h3>
+                        {c.metaDescription && (
+                          <p className="text-xs text-[var(--brand-text-secondary)] mt-1.5 leading-relaxed line-clamp-2">
+                            {c.metaDescription}
+                          </p>
+                        )}
+                      </Link>
+                    ))}
+                  </div>
+                </section>
+              );
+            })}
+          </div>
         )}
 
         {/* 관련 링크 */}

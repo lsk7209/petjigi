@@ -2389,6 +2389,133 @@ const SEED_CONTENTS: NewContent[] = [
     updatedAt: NOW,
   },
 
+  // ── 35. 강아지 췌장염 (condition, cat.3, YMYL, published) ───────────────────────
+  {
+    id: "seed-condition-dog-pancreatitis",
+    slug: "dog-pancreatitis",
+    type: "condition",
+    category: 3,
+    title: "강아지 췌장염 — 증상·원인·식이 관리",
+    metaTitle: "강아지 췌장염 증상·원인·식이 관리 | 수의사 검토 | 펫지기",
+    metaDescription:
+      "강아지 췌장염(급성·만성) 증상, 원인(고지방식·비만·일부 약물), 저지방 식이 관리 방법을 수의사 검토를 거쳐 안내합니다.",
+    body: `<h2>췌장염이란?</h2>
+<p>췌장염(Pancreatitis)은 췌장에서 소화 효소가 비정상적으로 활성화되어 췌장 자체를 손상시키는 염증 상태입니다. 급성(갑작스럽게 발생)과 만성(반복·지속)으로 나뉩니다. 급성 췌장염은 응급 상황일 수 있습니다.</p>
+
+<h2>주요 증상</h2>
+<ul>
+  <li>구토 (가장 흔한 증상)</li>
+  <li>식욕 감소 또는 완전 거부</li>
+  <li>복통 — "기도하는 자세" (앞다리를 뻗고 뒷부분을 들어올리는 자세)</li>
+  <li>무기력·활동 저하</li>
+  <li>설사</li>
+  <li>복부 팽창 또는 복부 촉진 시 통증 반응</li>
+  <li>심한 경우: 탈수, 황달, 발열</li>
+</ul>
+
+<h2>주요 원인 및 위험 요인</h2>
+<ul>
+  <li><strong>고지방 음식</strong>: 삼겹살, 치킨 껍질, 기름진 음식을 먹은 후 발생하는 경우 많음 (명절·연휴 후 내원 증가)</li>
+  <li><strong>비만</strong>: 과체중 강아지에서 발생률이 높음</li>
+  <li><strong>특정 품종</strong>: 미니어처 슈나우저가 유전적으로 가장 높은 위험을 가짐. 코커 스파니얼, 코기, 비글도 주의</li>
+  <li><strong>특정 약물</strong>: 일부 약물이 췌장염을 유발할 수 있음 — 처방 약물 부작용 가능성은 수의사에게 문의</li>
+  <li><strong>지방혈증</strong>: 혈중 중성지방 농도가 높은 상태</li>
+  <li><strong>원인 불명</strong>: 많은 경우 명확한 원인을 특정할 수 없음</li>
+</ul>
+
+<h2>진단</h2>
+<p>혈액 검사(특히 cPLI — 췌장 리파아제 면역반응성 검사), 복부 초음파 검사로 진단합니다. cPLI 수치 상승과 초음파 소견이 진단에 핵심입니다.</p>
+
+<h2>치료 방향</h2>
+<p>급성 췌장염은 입원 치료(수액, 통증 관리, 항구토제)가 필요할 수 있습니다. 회복 후 저지방 식이가 필수적입니다. 치료 방향은 중증도와 원인에 따라 수의사가 결정합니다.</p>
+
+<h2>식이 관리 — 핵심</h2>
+<ul>
+  <li><strong>저지방 식이</strong>: 지방 함량 10% 이하(건조 중량 기준)의 처방식 또는 저지방 사료 사용</li>
+  <li>고지방 음식(삼겹살, 버터, 기름진 간식, 사람 음식 부스러기) 완전 차단</li>
+  <li>회복 초기에는 소량씩 자주(하루 3~4회) 급여</li>
+  <li>만성 췌장염 강아지는 평생 저지방 식이 유지</li>
+</ul>
+
+<h3>즉시 병원에 가야 하는 경우</h3>
+<p>구토가 반복되거나, 강한 복통(기도 자세 유지), 무기력이 심하거나, 식음전폐가 12시간 이상 지속될 경우 즉시 수의사를 방문하세요.</p>`,
+    disclaimer:
+      "본 콘텐츠는 일반적인 교육·참고 목적이며 수의학적 진단이나 치료를 대체하지 않습니다. 증상이 의심되면 수의사에게 진료를 받으세요.",
+    sources: [
+      "Steiner JM. Canine Pancreatitis. In: Textbook of Veterinary Internal Medicine (8th ed.) (2017)",
+      "WSAVA Gastrointestinal Standardization Group — Pancreatitis Guidelines (2019)",
+      "대한수의학회 소동물내과 췌장 질환 가이드라인 (2022)",
+    ],
+    ymyl: true,
+    status: "published",
+    publishedAt: "2026-05-20T00:00:00.000Z",
+    createdAt: NOW,
+    updatedAt: NOW,
+  },
+
+  // ── 36. 고양이 천식 (condition, cat.3, YMYL, published) ────────────────────────
+  {
+    id: "seed-condition-cat-asthma",
+    slug: "cat-asthma",
+    type: "condition",
+    category: 3,
+    title: "고양이 천식·기관지염 — 증상·원인·환경 관리",
+    metaTitle: "고양이 천식 증상·원인·환경 관리 | 수의사 검토 | 펫지기",
+    metaDescription:
+      "고양이 천식(고양이 기관지성 천식)의 증상(기침·쌕쌕거림·호흡 곤란), 알레르기 유발 원인, 환경 관리 방법을 수의사 검토를 거쳐 안내합니다.",
+    body: `<h2>고양이 천식이란?</h2>
+<p>고양이 기관지성 천식(Feline Bronchial Asthma)은 알레르기 유발 항원(알레르겐)에 의한 기도 과민 반응으로 기관지가 좁아지는 만성 호흡기 질환입니다. 모든 연령에서 발생할 수 있으나 젊은 성묘(2~8세)에서 더 자주 나타납니다.</p>
+
+<h2>주요 증상</h2>
+<ul>
+  <li><strong>기침</strong>: 가장 흔한 증상. "헛구역질"과 혼동하기 쉬움 — 고양이가 목을 길게 빼고 낮은 자세로 기침하는 모습</li>
+  <li><strong>쌕쌕거림(천명음)</strong>: 호흡 시 쌕쌕 소리</li>
+  <li><strong>호흡 곤란</strong>: 빠르고 얕은 호흡, 입을 벌리고 숨쉬기</li>
+  <li><strong>운동 불내성</strong>: 평소보다 쉽게 지침</li>
+  <li><strong>청색증</strong>: 잇몸·혀가 파랗게 변하면 응급 상황</li>
+</ul>
+
+<h2>주요 원인 — 알레르겐</h2>
+<ul>
+  <li>고양이 화장실 먼지 (특히 먼지 많은 벤토나이트 모래)</li>
+  <li>향기 제품 (방향제, 향초, 에센셜 오일, 담배 연기)</li>
+  <li>청소 스프레이, 세제 증기</li>
+  <li>꽃가루, 곰팡이 포자</li>
+  <li>집먼지 진드기</li>
+  <li>일부 고양이 사료 알레르기(드뭄)</li>
+</ul>
+
+<h2>진단</h2>
+<p>흉부 X-ray(과팽창된 폐, 기관지 주변 음영 증가), 기관지 세척액 세포 검사, 알레르기 검사 등을 통해 진단합니다. 다른 호흡기 질환(심장 질환, 흉수, 폐렴)과 감별이 중요합니다.</p>
+
+<h2>치료 방향</h2>
+<p>급성 발작 시 기관지 확장제와 스테로이드 응급 처치가 필요합니다. 장기 관리는 흡입형 스테로이드나 기관지 확장제를 수의사 처방에 따라 사용합니다. 고양이용 흡입기(AeroKat 등)가 사용됩니다. 치료 계획은 수의사와 상의하세요.</p>
+
+<h2>환경 관리 — 재발 예방</h2>
+<ul>
+  <li><strong>화장실 모래 교체</strong>: 먼지 적은 모래 (두부·목재·실리카 모래 등)로 바꾸기</li>
+  <li><strong>향기 제품 사용 금지</strong>: 방향제, 향초, 에센셜 오일 디퓨저, 담배 연기 완전 차단</li>
+  <li><strong>청소 중 환기</strong>: 청소 스프레이 사용 시 고양이를 다른 방으로 이동</li>
+  <li><strong>공기청정기</strong>: HEPA 필터 공기청정기로 먼지·꽃가루 감소</li>
+  <li><strong>침구 자주 세탁</strong>: 집먼지 진드기 감소</li>
+</ul>
+
+<h3>즉시 응급실에 가야 하는 경우</h3>
+<p>입을 벌리고 숨쉬기, 잇몸·혀가 파란색, 옆으로 쓰러짐, 극도의 호흡 곤란은 즉시 24시간 응급 동물병원을 방문하세요.</p>`,
+    disclaimer:
+      "본 콘텐츠는 일반적인 교육·참고 목적이며 수의학적 진단이나 치료를 대체하지 않습니다. 호흡 곤란 증상이 있으면 즉시 수의사에게 진료를 받으세요.",
+    sources: [
+      "Reinero CR. Feline allergic bronchitis. Vet Clin North Am Small Anim Pract (2007)",
+      "IRIS — Feline Asthma Management Guidelines (2020)",
+      "대한수의학회 소동물호흡기학 교과서 (2021)",
+    ],
+    ymyl: true,
+    status: "published",
+    publishedAt: "2026-05-21T00:00:00.000Z",
+    createdAt: NOW,
+    updatedAt: NOW,
+  },
+
   // ── 28. 강아지 운동·산책 가이드 (guide, cat.5, published) ─────────────────────
   {
     id: "seed-guide-dog-exercise-guide",
