@@ -16,6 +16,7 @@
     "db:seed:breeds": "tsx --env-file=.env.local db/seeds/breeds.ts",
     "etl:businesses": "tsx --env-file=.env.local etl/localdata/sync.ts",
     "etl:import-csv": "tsx --env-file=.env.local etl/localdata/import-csv.ts",
+    "etl:geocode": "tsx --env-file=.env.local etl/localdata/geocode-batch.ts",
     "etl:vets": "tsx --env-file=.env.local etl/mois/animal-hospitals.ts",
     "etl:shelters": "tsx --env-file=.env.local etl/apms/shelters.ts",
     "etl:rescued": "tsx --env-file=.env.local etl/apms/rescued-animals.ts",

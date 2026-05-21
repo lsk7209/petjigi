@@ -2,6 +2,7 @@
  * 행정안전부 동물병원 동기화 ETL (Cron — 매일 03:30 KST)
  * 데이터셋: 15045050
  * API: https://apis.data.go.kr/1741000/animal_hospitals/info
+ * 실제 필드: ALL_CAPS (BPLC_NM, ROAD_NM_ADDR, TELNO, SALS_STTS_CD, CRD_INFO_X/Y, MNG_NO)
  */
 
 import { createHash } from "crypto";
@@ -11,22 +12,18 @@ import { geocodeAddress } from "../geocoding/kakao";
 
 const API_KEY = process.env.APMS_API_KEY ?? "";
 const API_URL = "https://apis.data.go.kr/1741000/animal_hospitals/info";
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://petjigi.com";
 
 interface HospitalRow {
-  // 공통 행정안전부 API 필드명 (실제 응답 확인 후 조정)
-  bplcNm?: string;       // 업소명
-  rdnWhlAddr?: string;   // 도로명주소
-  siteWhlAddr?: string;  // 지번주소
-  siteTel?: string;      // 전화번호
-  apvPermYmd?: string;   // 허가일자
-  dtlStateGbn?: string;  // 영업상태 (01=영업, 02=폐업)
-  trdStateGbn?: string;  // 영업상태 (alternate field)
-  x?: string;            // 경도
-  y?: string;            // 위도
-  siteLat?: string;
-  siteLng?: string;
-  mgtNo?: string;        // 관리번호
+  BPLC_NM?: string;          // 업소명
+  ROAD_NM_ADDR?: string;     // 도로명주소
+  LOTNO_ADDR?: string;       // 지번주소
+  TELNO?: string;            // 전화번호
+  LCPMT_YMD?: string;        // 허가일자
+  SALS_STTS_CD?: string;     // 영업상태코드 (01=영업중, 02=폐업, 03=휴업)
+  DTL_SALS_STTS_CD?: string; // 상세영업상태코드
+  CRD_INFO_X?: string;       // 경도 (WGS84)
+  CRD_INFO_Y?: string;       // 위도 (WGS84)
+  MNG_NO?: string;           // 관리번호
   [key: string]: string | undefined;
 }
 
@@ -49,10 +46,10 @@ function parseAddress(addr: string): { sido: string; sigungu: string; dong: stri
 
 function hashRow(row: HospitalRow): string {
   const str = JSON.stringify({
-    name: row.bplcNm,
-    addr: row.rdnWhlAddr ?? row.siteWhlAddr,
-    tel: row.siteTel,
-    state: row.dtlStateGbn ?? row.trdStateGbn,
+    name: row.BPLC_NM,
+    addr: row.ROAD_NM_ADDR ?? row.LOTNO_ADDR,
+    tel: row.TELNO,
+    state: row.DTL_SALS_STTS_CD ?? row.SALS_STTS_CD,
   });
   return createHash("sha256").update(str).digest("hex").slice(0, 16);
 }
@@ -63,8 +60,6 @@ async function fetchPage(pageNo: number, numOfRows = 1000): Promise<{ items: Hos
   if (!res.ok) throw new Error(`동물병원 API 오류: ${res.status} ${await res.text()}`);
 
   const json = await res.json();
-
-  // data.go.kr 표준 응답 구조
   const body = json?.response?.body ?? json?.body;
   const rawItems = body?.items?.item ?? body?.items ?? [];
   const items: HospitalRow[] = Array.isArray(rawItems) ? rawItems : rawItems ? [rawItems] : [];
@@ -81,42 +76,36 @@ export async function syncAnimalHospitals(): Promise<void> {
     process.exit(1);
   }
 
-  // 첫 페이지로 전체 건수 파악
   const first = await fetchPage(1, 1000);
   console.log(`[ETL:animal-hospitals] 총 ${first.total}건`);
 
-  if (first.items.length > 0) {
-    console.log("[ETL:animal-hospitals] 샘플 필드:", Object.keys(first.items[0]));
-  }
-
-  let pageNo = 1;
   let processed = 0;
 
   const processPage = async (items: HospitalRow[]) => {
     const now = new Date().toISOString();
 
     for (const row of items) {
-      const name = row.bplcNm ?? "";
-      const addr = row.rdnWhlAddr ?? row.siteWhlAddr ?? "";
+      const name = row.BPLC_NM ?? "";
+      const addr = row.ROAD_NM_ADDR ?? row.LOTNO_ADDR ?? "";
       if (!name || !addr) continue;
 
-      const state = row.dtlStateGbn ?? row.trdStateGbn ?? "01";
-      const status = state === "02" || state === "03" ? "closed" : "active";
+      // SALS_STTS_CD: "01"=영업, "02"=휴업, "03"=폐업
+      const stateCode = row.SALS_STTS_CD ?? "01";
+      const status = stateCode === "02" || stateCode === "03" ? "closed" : "active";
 
       const { sido, sigungu, dong } = parseAddress(addr);
-      const sigunguSlug = slugify(sigungu);
-      const nameSlug = slugify(name);
-      const id = `mois-vet-${row.mgtNo ?? hashRow(row)}`;
+      const id = `mois-vet-${row.MNG_NO ?? hashRow(row)}`;
 
-      let lat = row.y ? parseFloat(row.y) : row.siteLat ? parseFloat(row.siteLat) : null;
-      let lng = row.x ? parseFloat(row.x) : row.siteLng ? parseFloat(row.siteLng) : null;
+      // CRD_INFO_X/Y는 TM좌표 — WGS84 아니므로 사용 불가, 지오코딩으로 대체
+      let lat: number | null = null;
+      let lng: number | null = null;
 
-      if (status === "active" && (!lat || !lng) && addr) {
+      if (status === "active" && addr) {
         const geo = await geocodeAddress(addr);
         if (geo) { lat = geo.lat; lng = geo.lng; }
       }
 
-      const slug = `${nameSlug}-${sigunguSlug}`.slice(0, 120);
+      const slug = `${slugify(name)}-${slugify(sigungu)}`.slice(0, 120);
 
       await db
         .insert(businesses)
@@ -131,8 +120,8 @@ export async function syncAnimalHospitals(): Promise<void> {
           addressDong: dong || null,
           lat,
           lng,
-          phone: row.siteTel || null,
-          licenseDate: row.apvPermYmd || null,
+          phone: row.TELNO || null,
+          licenseDate: row.LCPMT_YMD || null,
           status,
           source: "mois_15045050",
           rawData: row,
@@ -150,7 +139,7 @@ export async function syncAnimalHospitals(): Promise<void> {
             addressDong: dong || null,
             lat,
             lng,
-            phone: row.siteTel || null,
+            phone: row.TELNO || null,
             status,
             lastSyncedAt: now,
             updatedAt: now,
@@ -163,9 +152,8 @@ export async function syncAnimalHospitals(): Promise<void> {
 
   await processPage(first.items);
 
-  // 나머지 페이지
   const totalPages = Math.ceil(first.total / 1000);
-  for (pageNo = 2; pageNo <= totalPages; pageNo++) {
+  for (let pageNo = 2; pageNo <= totalPages; pageNo++) {
     const { items } = await fetchPage(pageNo, 1000);
     if (items.length === 0) break;
     await processPage(items);
