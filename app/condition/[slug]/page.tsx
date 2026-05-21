@@ -1,11 +1,14 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
+import Link from "next/link";
 import { db } from "@/db/client";
 import { contents } from "@/db/schema";
 import { and, eq } from "drizzle-orm";
 import type { CategoryId } from "@/lib/category";
 import { YmylDisclaimer } from "@/components/content/ymyl-disclaimer";
-import { articleSchema } from "@/lib/seo/structured-data";
+import { articleSchema, breadcrumbSchema } from "@/lib/seo/structured-data";
+
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://petjigi.kr";
 
 export const revalidate = 604800;
 
@@ -33,7 +36,13 @@ export async function generateMetadata({
 
   return {
     title: `${content.title} — 증상·원인·치료 | 펫지기`,
-    description: content.metaDescription ?? undefined,
+    description: content.metaDescription ?? `${content.title} 증상·원인·진단·치료 방법을 전문가 검토를 거쳐 안내합니다.`,
+    alternates: { canonical: `/condition/${slug}` },
+    openGraph: {
+      title: `${content.title} — 증상·원인·치료 | 펫지기`,
+      description: content.metaDescription ?? undefined,
+      type: "article",
+    },
   };
 }
 
@@ -67,7 +76,7 @@ export default async function ConditionPage({
 
   const schema = articleSchema({
     title: content.title,
-    url: `${process.env.NEXT_PUBLIC_SITE_URL}/condition/${slug}`,
+    url: `${SITE_URL}/condition/${slug}`,
     authorName: content.authorName,
     authorCredential: content.authorCredential,
     publishedAt: content.publishedAt,
@@ -76,15 +85,37 @@ export default async function ConditionPage({
     isYmyl: content.ymyl,
   });
 
+  const breadcrumb = breadcrumbSchema([
+    { name: "홈", url: SITE_URL },
+    { name: "건강·의료", url: `${SITE_URL}/category/health` },
+    { name: content.title, url: `${SITE_URL}/condition/${slug}` },
+  ]);
+
   const categoryId = (content.category as CategoryId) ?? 3;
 
   return (
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify([schema, breadcrumb]) }}
       />
       <main className="max-w-3xl mx-auto px-4 py-12">
+        {/* 브레드크럼 */}
+        <nav
+          className="text-xs text-[var(--brand-text-secondary)] mb-6 flex items-center gap-1.5 flex-wrap"
+          aria-label="breadcrumb"
+        >
+          <Link href="/" className="hover:text-[var(--brand-accent)] transition-colors">홈</Link>
+          <span aria-hidden="true">›</span>
+          <Link href="/category/health" className="hover:text-[var(--brand-accent)] transition-colors">
+            💊 건강·의료
+          </Link>
+          <span aria-hidden="true">›</span>
+          <span className="text-[var(--brand-text)] truncate max-w-[200px]" aria-current="page">
+            {content.title}
+          </span>
+        </nav>
+
         <p className="text-xs text-[var(--brand-text-secondary)] uppercase tracking-wide mb-2">
           건강·의료
         </p>

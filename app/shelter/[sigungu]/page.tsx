@@ -4,6 +4,9 @@ import Link from "next/link";
 import { db } from "@/db/client";
 import { shelters, regions } from "@/db/schema";
 import { eq } from "drizzle-orm";
+import { breadcrumbSchema } from "@/lib/seo/structured-data";
+
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://petjigi.kr";
 
 export const revalidate = 86400;
 
@@ -43,6 +46,11 @@ export async function generateMetadata({
   return {
     title: `${region.sigungu} 동물보호센터 | 펫지기`,
     description: `${region.sigungu} 지역 동물보호센터 ${shelterCount.length}개소 정보. 유기동물 입양·임시보호 문의처를 확인하세요.`,
+    alternates: { canonical: `/shelter/${sigungu}` },
+    openGraph: {
+      title: `${region.sigungu} 동물보호센터 | 펫지기`,
+      description: `${region.sigungu} 동물보호센터 ${shelterCount.length}개소 — 유기동물 입양 문의처`,
+    },
   };
 }
 
@@ -67,20 +75,31 @@ export default async function ShelterSigunguPage({
     .where(eq(shelters.sigungu, region.sigungu))
     .orderBy(shelters.name);
 
+  const breadcrumb = breadcrumbSchema([
+    { name: "홈", url: SITE_URL },
+    { name: `${region.sido} 반려동물`, url: `${SITE_URL}/sido/${region.sidoSlug}` },
+    { name: `${region.sigungu} 동물보호센터`, url: `${SITE_URL}/shelter/${sigungu}` },
+  ]);
+
   return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb) }}
+      />
     <main className="max-w-5xl mx-auto px-4 py-12">
       {/* 브레드크럼 */}
-      <nav className="text-xs text-[var(--brand-text-secondary)] mb-6">
-        <Link href="/" className="hover:text-[var(--brand-accent)]">홈</Link>
-        {" › "}
+      <nav className="text-xs text-[var(--brand-text-secondary)] mb-6 flex items-center gap-1.5">
+        <Link href="/" className="hover:text-[var(--brand-accent)] transition-colors">홈</Link>
+        <span aria-hidden="true">›</span>
         <Link
           href={`/sido/${region.sidoSlug}`}
-          className="hover:text-[var(--brand-accent)]"
+          className="hover:text-[var(--brand-accent)] transition-colors"
         >
           {region.sido}
         </Link>
-        {" › "}
-        <span>{region.sigungu} 동물보호센터</span>
+        <span aria-hidden="true">›</span>
+        <span className="text-[var(--brand-text)]">{region.sigungu} 동물보호센터</span>
       </nav>
 
       <h1 className="text-3xl font-bold text-[var(--brand-text)] mb-2">
@@ -153,5 +172,6 @@ export default async function ShelterSigunguPage({
         </>
       )}
     </main>
+    </>
   );
 }
