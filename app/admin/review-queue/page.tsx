@@ -1,9 +1,14 @@
+import type { Metadata } from "next";
 import { db } from "@/db/client";
 import { reviewQueue } from "@/db/schema";
 import type { ReviewQueueItem } from "@/db/schema";
 import { asc } from "drizzle-orm";
 import { approveContent, rejectContent } from "./actions";
 import { notFound } from "next/navigation";
+
+export const metadata: Metadata = {
+  robots: { index: false, follow: false },
+};
 
 export const dynamic = "force-dynamic";
 
