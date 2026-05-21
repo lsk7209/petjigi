@@ -60,7 +60,7 @@ export async function syncRegistrationAgents(): Promise<void> {
           type: "sale",
           category: 1,
           name: row.orgNm,
-          address: fullAddr || null,
+          address: fullAddr,
           addressSido: parts[0] ?? null,
           addressSigungu: parts[1] ?? null,
           lat: geo?.lat ?? null,
@@ -77,7 +77,7 @@ export async function syncRegistrationAgents(): Promise<void> {
           target: businesses.id,
           set: {
             name: row.orgNm,
-            address: fullAddr || null,
+            address: fullAddr,
             phone: row.tel || null,
             lastSyncedAt: now,
             updatedAt: now,

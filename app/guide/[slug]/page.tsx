@@ -1,13 +1,17 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
+import Link from "next/link";
 import { db } from "@/db/client";
 import { contents } from "@/db/schema";
-import { and, eq } from "drizzle-orm";
+import { and, eq, ne, desc } from "drizzle-orm";
 import type { CategoryId } from "@/lib/category";
+import { CATEGORIES } from "@/lib/category";
 import { YmylDisclaimer } from "@/components/content/ymyl-disclaimer";
-import { articleSchema } from "@/lib/seo/structured-data";
+import { articleSchema, breadcrumbSchema } from "@/lib/seo/structured-data";
 
 export const revalidate = 604800;
+
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://petjigi.com";
 
 export async function generateMetadata({
   params,
@@ -22,11 +26,55 @@ export async function generateMetadata({
     .get();
 
   if (!content) return {};
+
+  const title = content.metaTitle ?? `${content.title} | 펫지기`;
+  const description = content.metaDescription ?? content.title;
+
   return {
-    title: content.metaTitle ?? `${content.title} | 펫지기`,
-    description: content.metaDescription ?? undefined,
+    title,
+    description,
+    openGraph: {
+      title,
+      description,
+      type: "article",
+      publishedTime: content.publishedAt ?? undefined,
+      modifiedTime: content.reviewedAt ?? undefined,
+      authors: content.authorName ? [content.authorName] : undefined,
+      section: CATEGORIES[content.category as CategoryId]?.name,
+    },
+    twitter: { card: "summary_large_image", title, description },
+    alternates: { canonical: `/guide/${slug}` },
   };
 }
+
+async function getRelatedGuides(slug: string, category: number) {
+  return db
+    .select({
+      slug: contents.slug,
+      title: contents.title,
+      category: contents.category,
+    })
+    .from(contents)
+    .where(
+      and(
+        eq(contents.status, "published"),
+        eq(contents.type, "guide"),
+        eq(contents.category, category),
+        ne(contents.slug, slug)
+      )
+    )
+    .orderBy(desc(contents.publishedAt))
+    .limit(4);
+}
+
+const CATEGORY_EMOJI: Record<number, string> = {
+  1: "🐾",
+  2: "🥗",
+  3: "💊",
+  4: "📋",
+  5: "✂️",
+  6: "🕊️",
+};
 
 export default async function GuidePage({
   params,
@@ -42,9 +90,14 @@ export default async function GuidePage({
 
   if (!content) notFound();
 
-  const schema = articleSchema({
+  const categoryId = content.category as CategoryId;
+  const cat = CATEGORIES[categoryId];
+  const relatedGuides = await getRelatedGuides(slug, content.category);
+
+  const article = articleSchema({
     title: content.title,
-    url: `${process.env.NEXT_PUBLIC_SITE_URL}/guide/${slug}`,
+    description: content.metaDescription ?? undefined,
+    url: `${SITE_URL}/guide/${slug}`,
     authorName: content.authorName,
     authorCredential: content.authorCredential,
     publishedAt: content.publishedAt,
@@ -53,46 +106,154 @@ export default async function GuidePage({
     isYmyl: content.ymyl,
   });
 
-  const categoryId = content.category as CategoryId;
+  const breadcrumb = breadcrumbSchema([
+    { name: "홈", url: SITE_URL },
+    { name: cat?.name ?? "가이드", url: `${SITE_URL}/category/${cat?.slug ?? "health"}` },
+    { name: content.title, url: `${SITE_URL}/guide/${slug}` },
+  ]);
+
+  const readingTime = Math.ceil((content.body?.length ?? 0) / 500);
 
   return (
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify([article, breadcrumb]) }}
       />
-      <main className="max-w-3xl mx-auto px-4 py-12">
-        <h1 className="text-3xl font-bold mb-4">{content.title}</h1>
+      <main className="max-w-3xl mx-auto px-4 py-10">
+        {/* 브레드크럼 */}
+        <nav
+          className="text-xs text-[var(--brand-text-secondary)] mb-6 flex items-center gap-1.5 flex-wrap"
+          aria-label="breadcrumb"
+        >
+          <Link href="/" className="hover:text-[var(--brand-accent)] transition-colors">홈</Link>
+          <span aria-hidden="true">›</span>
+          <Link
+            href={`/category/${cat?.slug ?? "health"}`}
+            className="hover:text-[var(--brand-accent)] transition-colors"
+          >
+            {CATEGORY_EMOJI[categoryId]} {cat?.name ?? "가이드"}
+          </Link>
+          <span aria-hidden="true">›</span>
+          <span className="text-[var(--brand-text)] truncate max-w-[200px]" aria-current="page">
+            {content.title}
+          </span>
+        </nav>
 
-        {content.reviewedAt && (
-          <p className="text-xs text-[var(--brand-text-secondary)] mb-6">
-            검토일: {content.reviewedAt.slice(0, 10)}
-            {content.reviewerName && ` · 검토: ${content.reviewerName}`}
-          </p>
-        )}
+        {/* 기사 헤더 */}
+        <header className="mb-8">
+          <div className="flex items-center gap-2 mb-3">
+            <span className="px-2.5 py-0.5 rounded-full bg-[var(--brand-border)] text-xs font-semibold text-[var(--brand-text-secondary)]">
+              {cat?.name ?? "가이드"}
+            </span>
+            {content.ymyl && (
+              <span className="px-2.5 py-0.5 rounded-full bg-amber-50 text-xs font-semibold text-amber-700 border border-amber-200">
+                전문가 검토
+              </span>
+            )}
+          </div>
+
+          <h1 className="text-2xl sm:text-3xl font-extrabold text-[var(--brand-text)] leading-tight mb-4 word-break-keep tracking-tight">
+            {content.title}
+          </h1>
+
+          <div className="flex flex-wrap items-center gap-3 text-xs text-[var(--brand-text-secondary)]">
+            {content.publishedAt && (
+              <time dateTime={content.publishedAt} className="flex items-center gap-1">
+                <span aria-hidden="true">📅</span>
+                {content.publishedAt.slice(0, 10)} 발행
+              </time>
+            )}
+            {content.reviewedAt && content.reviewerName && (
+              <span className="flex items-center gap-1">
+                <span aria-hidden="true">✅</span>
+                {content.reviewedAt.slice(0, 10)} {content.reviewerName} 검토
+              </span>
+            )}
+            {content.authorName && (
+              <span className="flex items-center gap-1">
+                <span aria-hidden="true">✍️</span>
+                {content.authorName}
+                {content.authorCredential && ` (${content.authorCredential})`}
+              </span>
+            )}
+            {readingTime > 0 && (
+              <span className="flex items-center gap-1">
+                <span aria-hidden="true">⏱</span>
+                약 {readingTime}분 읽기
+              </span>
+            )}
+          </div>
+        </header>
 
         <YmylDisclaimer categoryId={categoryId} />
 
+        {/* 본문 */}
         <article
-          className="prose prose-sm max-w-none mt-6"
+          id="article-body"
+          className="prose prose-base max-w-none mt-6"
           dangerouslySetInnerHTML={{ __html: content.body }}
         />
 
+        {/* 참고 자료 */}
         {Array.isArray(content.sources) && content.sources.length > 0 && (
-          <section className="mt-8 pt-6 border-t border-[var(--brand-border)]">
-            <h2 className="text-sm font-semibold mb-2">참고 자료</h2>
-            <ul className="text-xs text-[var(--brand-text-secondary)] space-y-1">
+          <section
+            className="mt-10 pt-6 border-t border-[var(--brand-border)]"
+            aria-label="참고 자료"
+          >
+            <h2 className="text-sm font-bold text-[var(--brand-text)] mb-3">📚 참고 자료</h2>
+            <ul className="space-y-1.5">
               {(content.sources as string[]).map((s, i) => (
-                <li key={i}>{s}</li>
+                <li key={i} className="text-xs text-[var(--brand-text-secondary)] flex gap-2">
+                  <span className="shrink-0 text-[var(--brand-accent)]">·</span>
+                  <span>{s}</span>
+                </li>
               ))}
             </ul>
           </section>
         )}
 
+        {/* 면책 고지 */}
         {content.disclaimer && (
-          <div className="mt-6 p-4 bg-[var(--brand-border)] rounded-lg text-xs text-[var(--brand-text-secondary)]">
+          <div
+            className="mt-6 p-4 bg-[var(--brand-border)] rounded-xl text-xs text-[var(--brand-text-secondary)] leading-relaxed"
+            role="note"
+          >
             {content.disclaimer}
           </div>
+        )}
+
+        {/* 관련 가이드 */}
+        {relatedGuides.length > 0 && (
+          <aside
+            className="mt-12 pt-8 border-t border-[var(--brand-border)]"
+            aria-label="관련 가이드"
+          >
+            <h2 className="text-base font-bold text-[var(--brand-text)] mb-4">
+              {CATEGORY_EMOJI[categoryId]} 같은 카테고리 가이드
+            </h2>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              {relatedGuides.map((g) => (
+                <Link
+                  key={g.slug}
+                  href={`/guide/${g.slug}`}
+                  className="group p-4 rounded-xl border border-[var(--brand-border)] hover:border-[var(--brand-accent)] transition-all"
+                >
+                  <p className="text-sm font-semibold text-[var(--brand-text)] group-hover:text-[var(--brand-accent)] transition-colors leading-snug word-break-keep">
+                    {g.title}
+                  </p>
+                </Link>
+              ))}
+            </div>
+            <p className="mt-4 text-center">
+              <Link
+                href={`/category/${cat?.slug ?? "health"}`}
+                className="text-sm text-[var(--brand-accent)] font-semibold hover:underline"
+              >
+                {cat?.name} 가이드 전체 보기 →
+              </Link>
+            </p>
+          </aside>
         )}
       </main>
     </>
