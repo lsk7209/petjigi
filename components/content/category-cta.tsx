@@ -12,13 +12,23 @@ interface CtaConfig {
 }
 
 const CTA_MAP: Partial<Record<CategoryId, CtaConfig>> = {
+  1: {
+    emoji: "🐾",
+    heading: "유기동물 입양을 고려해보세요",
+    body: "전국 보호센터 구조동물 현황을 확인하거나, 강아지·고양이 품종 정보를 찾아보세요.",
+    label: "구조동물 보기",
+    href: "/rescue",
+    notice: "",
+    bg: "bg-orange-50 dark:bg-orange-950/20",
+    border: "border-orange-200 dark:border-orange-800",
+  },
   2: {
     emoji: "🍖",
     heading: "우리 아이 맞춤 사료 찾기",
     body: "품종·나이·건강 상태별 최적 사료를 전문가 추천으로 비교해 보세요.",
-    label: "사료 비교하기",
-    href: "#",
-    notice: "이 링크는 제휴(어필리에이트) 링크입니다. 구매 시 소정의 수수료가 펫지기에 지급됩니다.",
+    label: "사료 가이드 보기",
+    href: "/category/nutrition",
+    notice: "",
     bg: "bg-amber-50 dark:bg-amber-950/20",
     border: "border-amber-200 dark:border-amber-800",
   },
