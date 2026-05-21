@@ -27,8 +27,11 @@ module.exports = {
     if (path === "/" || path.startsWith("/category/")) {
       return { loc: path, changefreq: "hourly", priority: 1.0, lastmod: new Date().toISOString() };
     }
-    if (path.startsWith("/sido/") || path.startsWith("/guide/")) {
+    if (path.startsWith("/sido/") || path.startsWith("/guide/") || path.startsWith("/breed/") || path.startsWith("/condition/")) {
       return { loc: path, changefreq: "weekly", priority: 0.8, lastmod: new Date().toISOString() };
+    }
+    if (path.startsWith("/insurance/")) {
+      return { loc: path, changefreq: "weekly", priority: 0.9, lastmod: new Date().toISOString() };
     }
     return { loc: path, changefreq: config.changefreq, priority: config.priority, lastmod: new Date().toISOString() };
   },

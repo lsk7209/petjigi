@@ -2,6 +2,9 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { YmylDisclaimer } from "@/components/content/ymyl-disclaimer";
+import { breadcrumbSchema } from "@/lib/seo/structured-data";
+
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://petjigi.kr";
 
 const INSURERS: Record<
   string,
@@ -52,8 +55,10 @@ export async function generateMetadata({
   const data = INSURERS[insurer];
   if (!data) return {};
   return {
-    title: `${data.name} 펫보험`,
+    title: `${data.name} 펫보험 | 펫지기`,
     description: data.desc,
+    alternates: { canonical: `/insurance/${insurer}` },
+    openGraph: { title: `${data.name} 펫보험 | 펫지기`, description: data.desc },
   };
 }
 
@@ -66,7 +71,16 @@ export default async function InsurerPage({
   const data = INSURERS[insurer];
   if (!data) notFound();
 
+  const breadcrumb = breadcrumbSchema([
+    { name: "홈", url: SITE_URL },
+    { name: "보험·법률", url: `${SITE_URL}/category/insurance` },
+    { name: "펫보험 비교", url: `${SITE_URL}/insurance/compare` },
+    { name: data.name, url: `${SITE_URL}/insurance/${insurer}` },
+  ]);
+
   return (
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb) }} />
     <main className="max-w-3xl mx-auto px-4 py-12 bg-[var(--brand-bg)]">
       {/* 브레드크럼 */}
       <nav className="text-sm text-[var(--brand-text-secondary)] mb-6 flex gap-2 items-center">
@@ -132,5 +146,6 @@ export default async function InsurerPage({
         </div>
       </section>
     </main>
+    </>
   );
 }
