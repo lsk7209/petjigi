@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { db } from "@/db/client";
-import { businesses, regions } from "@/db/schema";
-import { and, eq, ne, sql } from "drizzle-orm";
+import { businesses, regions, contents } from "@/db/schema";
+import { and, eq, ne, sql, desc } from "drizzle-orm";
 import { localBusinessSchema, breadcrumbSchema } from "@/lib/seo/structured-data";
 import type { CategoryId } from "@/lib/category";
 import { YmylDisclaimer } from "@/components/content/ymyl-disclaimer";
@@ -133,6 +133,13 @@ export default async function BusinessDetailPage({
   const locationName = region?.sigungu ?? sigungu;
   const sidoName = region?.sido ?? "";
   const pageUrl = `${SITE_URL}/${type}/${sigungu}/${slug}`;
+
+  const relatedGuides = await db
+    .select({ slug: contents.slug, title: contents.title })
+    .from(contents)
+    .where(and(eq(contents.status, "published"), eq(contents.type, "guide"), eq(contents.category, categoryId)))
+    .orderBy(desc(contents.publishedAt))
+    .limit(3);
 
   const schema = localBusinessSchema(business);
   const breadcrumb = breadcrumbSchema([
@@ -307,6 +314,24 @@ export default async function BusinessDetailPage({
               ))}
             </ul>
           </section>
+        )}
+
+        {relatedGuides.length > 0 && (
+          <aside className="mb-8 pt-6 border-t border-[var(--brand-border)]" aria-label="관련 가이드">
+            <h2 className="text-base font-bold text-[var(--brand-text)] mb-3">📖 관련 가이드</h2>
+            <ul className="space-y-2">
+              {relatedGuides.map((g) => (
+                <li key={g.slug}>
+                  <Link
+                    href={`/guide/${g.slug}`}
+                    className="block p-3 rounded-xl border border-[var(--brand-border)] hover:border-[var(--brand-accent)] hover:text-[var(--brand-accent)] transition-colors text-sm font-medium"
+                  >
+                    {g.title}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </aside>
         )}
 
         <CategoryCta categoryId={categoryId} className="mb-8" />

@@ -5,6 +5,7 @@ import { db } from "@/db/client";
 import { shelters, regions } from "@/db/schema";
 import { eq } from "drizzle-orm";
 import { breadcrumbSchema } from "@/lib/seo/structured-data";
+import { CategoryCta } from "@/components/content/category-cta";
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://petjigi.kr";
 
@@ -165,6 +166,8 @@ export default async function ShelterSigunguPage({
               </div>
             ))}
           </div>
+
+          <CategoryCta categoryId={1} className="mt-10" />
 
           <p className="mt-8 text-xs text-[var(--brand-text-secondary)] text-center">
             데이터는 매주 자동으로 갱신됩니다.
