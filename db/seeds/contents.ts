@@ -1277,6 +1277,325 @@ const SEED_CONTENTS: NewContent[] = [
     createdAt: NOW,
     updatedAt: NOW,
   },
+
+  // ── 19. 강아지 피부 알레르기 (카테고리 3, YMYL, condition) ───────────────────
+  {
+    id: "seed-condition-dog-skin-allergy",
+    slug: "dog-skin-allergy",
+    type: "condition",
+    category: 3,
+    title: "강아지 피부 알레르기 — 원인·증상·치료·식이 관리",
+    metaTitle: "강아지 피부 알레르기 | 원인·긁음·치료·식이 제거법 | 펫지기",
+    metaDescription:
+      "강아지 피부 가려움·발적·탈모의 원인이 되는 알레르기 유형(음식·환경·접촉)과 진단, 치료, 저알레르기 식이 방법을 정리했습니다.",
+    body: `<h2>강아지 피부 알레르기란?</h2>
+<p>알레르기는 면역계가 특정 물질(항원)에 과민 반응하는 상태입니다. 강아지에서 피부 알레르기(아토피 피부염·음식 알레르기·접촉성 알레르기)는 매우 흔한 만성 질환으로, 삶의 질에 큰 영향을 미칩니다.</p>
+
+<h2>알레르기 유형 3가지</h2>
+<h3>1. 환경성 알레르기 (아토피 피부염, 가장 흔함)</h3>
+<ul>
+  <li>원인: 집먼지 진드기, 꽃가루, 곰팡이, 풀 등</li>
+  <li>특징: 계절성 또는 연중 지속. 발바닥 핥기, 귀 긁기, 얼굴·사타구니 발적이 전형적</li>
+  <li>고위험 품종: 불독, 웨스트 하이랜드 테리어, 라브라도, 골든 리트리버, 비글</li>
+</ul>
+<h3>2. 음식 알레르기</h3>
+<ul>
+  <li>원인: 소고기, 닭고기, 유제품, 밀, 달걀이 흔한 원인 단백질</li>
+  <li>특징: 계절 무관 연중 증상. 귀 감염 반복, 소화 장애 동반 가능</li>
+  <li>진단: 8~12주 제거 식이 시험(Novel Protein Diet)이 가장 정확</li>
+</ul>
+<h3>3. 접촉성 알레르기</h3>
+<ul>
+  <li>원인: 특정 샴푸, 세제, 금속, 플라스틱 그릇 등</li>
+  <li>특징: 접촉 부위에 국소적으로 발적·부종</li>
+  <li>원인 제거 후 빠른 호전</li>
+</ul>
+
+<h2>주요 증상</h2>
+<ul>
+  <li>발바닥 핥기·씹기 (갈색 착색이 생기면 만성화 신호)</li>
+  <li>귀 반복 감염 (냄새, 분비물, 머리 흔들기)</li>
+  <li>얼굴·사타구니·겨드랑이 발적·탈모</li>
+  <li>피부 비듬, 기름기, 냄새 증가</li>
+  <li>긁어서 생긴 2차 세균·효모 감염</li>
+</ul>
+
+<h2>진단</h2>
+<ul>
+  <li>피부 소파 검사: 세균·말라세지아(효모) 감염 확인</li>
+  <li>알레르기 혈청 검사(IgE): 환경 알레르기 항원 확인</li>
+  <li>제거 식이 시험 8~12주: 음식 알레르기 확인 금표준</li>
+  <li>피부 단자 검사: 수의 피부과 전문의 시행</li>
+</ul>
+
+<h2>치료</h2>
+<h3>약물 치료</h3>
+<ul>
+  <li><strong>아포퀠(Oclacitinib)</strong>: JAK 억제제. 가려움 빠른 완화. 장기 사용 시 정기 혈액 검사 필요</li>
+  <li><strong>사이토포인트(Cytopoint)</strong>: IL-31 차단 주사. 효과 4~8주 지속</li>
+  <li><strong>스테로이드</strong>: 급성기 증상 조절용. 장기 사용 부작용 주의</li>
+  <li>항생제·항진균제: 2차 감염 치료</li>
+</ul>
+<h3>식이 관리 (음식 알레르기)</h3>
+<ul>
+  <li>제거 식이 기간(8~12주) 중 처방 가수분해 식이 또는 단일 신규 단백질 사료만 급여</li>
+  <li>간식·치약·구충제도 알레르기 성분 제외 제품으로 교체</li>
+  <li>증상 소실 후 원인 단백질 재도전으로 알레르겐 확인</li>
+</ul>
+<h3>환경 관리</h3>
+<ul>
+  <li>집먼지 진드기 감소: HEPA 필터 공기청정기, 침구 주 1회 고온 세탁</li>
+  <li>외출 후 발바닥 닦기 (꽃가루 제거)</li>
+  <li>알레르기 면역치료(탈감작): 원인 항원을 소량씩 노출해 면역 내성 유도</li>
+</ul>`,
+    disclaimer:
+      "본 콘텐츠는 정보 제공 목적으로만 작성되었으며, 의학적 진단·치료를 대체하지 않습니다. 피부 증상의 원인은 매우 다양해 수의사 진료와 정확한 진단 없이 치료를 시작하면 증상이 악화될 수 있습니다. 반드시 수의사와 상담하세요.",
+    sources: [
+      "Olivry T et al. — Treatment of canine atopic dermatitis: 2015 updated guidelines, Vet Dermatol",
+      "WSAVA Dermatology Guidelines (2020)",
+      "대한수의사회 반려동물 피부 질환 관리 지침 (2023)",
+    ],
+    ymyl: true,
+    status: "published",
+    publishedAt: "2026-05-20T00:00:00.000Z",
+    createdAt: NOW,
+    updatedAt: NOW,
+  },
+
+  // ── 20. 고양이 만성 신부전 (카테고리 3, YMYL, condition) ─────────────────────
+  {
+    id: "seed-condition-cat-ckd",
+    slug: "cat-chronic-kidney-disease",
+    type: "condition",
+    category: 3,
+    title: "고양이 만성 신부전(CKD) — 조기 신호·단계·관리",
+    metaTitle: "고양이 만성 신부전(CKD) | 증상·IRIS 단계·식이 관리 | 펫지기",
+    metaDescription:
+      "고양이 만성 신부전은 7세 이상 고양이의 가장 흔한 질환 중 하나입니다. 조기 신호, IRIS 단계별 치료, 식이 관리를 정리했습니다.",
+    body: `<h2>고양이 만성 신부전(CKD)이란?</h2>
+<p>만성 신부전(Chronic Kidney Disease, CKD)은 신장 기능이 서서히 소실되는 진행성 질환입니다. 7세 이상 고양이의 약 30~40%에서 발생하는 가장 흔한 노령 질환 중 하나로, 조기 발견과 관리가 삶의 질과 수명 연장에 결정적입니다.</p>
+
+<h2>조기 신호 — 놓치기 쉬운 증상</h2>
+<ul>
+  <li><strong>물을 많이 마심(다음)</strong>: 건강한 고양이에 비해 음수량이 눈에 띄게 증가</li>
+  <li><strong>소변을 많이 봄(다뇨)</strong>: 화장실 방문 횟수·소변량 증가</li>
+  <li><strong>체중 감소</strong>: 근육량 감소, 등 척추 돌기가 느껴지기 시작</li>
+  <li>식욕 저하, 구토(특히 아침 공복)</li>
+  <li>털 윤기 감소, 잦은 그루밍 감소</li>
+  <li>무기력, 활동량 감소</li>
+</ul>
+
+<h2>IRIS(국제 신장이익학회) 단계 분류</h2>
+<table>
+  <thead>
+    <tr><th>단계</th><th>크레아티닌 (혈중)</th><th>증상</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>1단계</td><td>&lt;1.6 mg/dL</td><td>증상 없음. SDMA 상승으로 조기 발견 가능</td></tr>
+    <tr><td>2단계</td><td>1.6~2.8 mg/dL</td><td>가벼운 증상. 대부분 이 시기에 진단</td></tr>
+    <tr><td>3단계</td><td>2.9~5.0 mg/dL</td><td>뚜렷한 다음·다뇨, 체중 감소, 구토</td></tr>
+    <tr><td>4단계</td><td>&gt;5.0 mg/dL</td><td>심각한 요독증. 집중 치료 필요</td></tr>
+  </tbody>
+</table>
+
+<h2>진단</h2>
+<ul>
+  <li>혈액 검사: BUN, 크레아티닌, SDMA (조기 마커), 전해질</li>
+  <li>소변 검사: 단백뇨, 비중, 세균 유무</li>
+  <li>혈압 측정: CKD와 고혈압 동반 흔함</li>
+  <li>복부 초음파: 신장 크기·에코 확인</li>
+</ul>
+
+<h2>관리·치료</h2>
+<h3>식이 관리 (가장 중요)</h3>
+<ul>
+  <li><strong>신장 처방식</strong>: 인(Phosphorus) 제한, 단백질 조절, 오메가-3 강화 처방 사료 (수의사 처방 필요)</li>
+  <li>충분한 수분 공급: 습식 사료 비중 높이기 또는 흐르는 물 급수기</li>
+  <li>임의로 인 수치를 높이는 간식·어류 가공품 제한</li>
+</ul>
+<h3>약물·보조제</h3>
+<ul>
+  <li>인 결합제: 음식 내 인 흡수 차단 (수의사 처방)</li>
+  <li>고혈압 치료제: 암로디핀 등 (혈압 측정 후 처방)</li>
+  <li>단백뇨 감소: RAAS 억제제 처방</li>
+  <li>빈혈 치료: 조혈 호르몬 주사 (3~4단계)</li>
+</ul>
+<h3>모니터링 주기</h3>
+<ul>
+  <li>1~2단계: 3~6개월마다 혈액·소변·혈압 검사</li>
+  <li>3~4단계: 1~3개월마다 (상태에 따라 조정)</li>
+</ul>
+
+<h2>예방·조기 발견</h2>
+<ul>
+  <li>7세 이상 고양이는 연 1~2회 정기 혈액·소변 검사 필수</li>
+  <li>SDMA 검사 포함 패널 요청 — 기존 크레아티닌보다 30% 먼저 이상 감지</li>
+  <li>음수량 갑자기 증가하면 즉시 수의사 상담</li>
+</ul>`,
+    disclaimer:
+      "본 콘텐츠는 정보 제공 목적으로만 작성되었으며, 의학적 진단·치료를 대체하지 않습니다. 고양이 만성 신부전의 치료 방법과 처방식은 개체의 단계·상태에 따라 다르므로 반드시 수의사와 상담 후 진행하세요.",
+    sources: [
+      "IRIS Staging of CKD — International Renal Interest Society (2019, 최신 개정)",
+      "ISFM Consensus Guidelines on the Diagnosis & Management of Feline CKD (2016)",
+      "대한수의사회 고양이 신장 질환 관리 지침 (2023)",
+    ],
+    ymyl: true,
+    status: "published",
+    publishedAt: "2026-05-20T00:00:00.000Z",
+    createdAt: NOW,
+    updatedAt: NOW,
+  },
+
+  // ── 21. 강아지 분리불안 해결법 (카테고리 5, published) ───────────────────────
+  {
+    id: "seed-guide-dog-separation-anxiety",
+    slug: "dog-separation-anxiety-guide",
+    type: "guide",
+    category: 5,
+    title: "강아지 분리불안 해결법 — 원인부터 단계별 훈련까지",
+    metaTitle: "강아지 분리불안 해결 | 원인·증상·훈련 단계별 방법 | 펫지기",
+    metaDescription:
+      "강아지가 혼자 있을 때 짖기·파괴·배변 실수를 반복한다면 분리불안일 수 있습니다. 원인 분석과 단계별 탈감작 훈련 방법을 정리했습니다.",
+    body: `<h2>분리불안이란?</h2>
+<p>분리불안(Separation Anxiety)은 강아지가 보호자와 분리되거나 혼자 남겨질 때 극도의 스트레스와 공포를 경험하는 행동 장애입니다. 단순한 '보고 싶음'이 아니라 공황 상태에 가까운 반응으로, 강아지에게 실제 고통을 줍니다.</p>
+
+<h2>분리불안 증상</h2>
+<ul>
+  <li><strong>보호자 떠나기 직전</strong>: 침 흘리기, 떨기, 문 앞에서 안 떨어지기</li>
+  <li><strong>혼자 있는 동안</strong>: 지속적 짖기·울기, 파괴 행동(가구·문틀), 화장실 훈련된 개의 배변 실수</li>
+  <li><strong>보호자 귀가 시</strong>: 과도하게 흥분된 반응이 10분 이상 지속</li>
+  <li>CCTV·이웃 민원으로 발견되는 경우도 많음</li>
+</ul>
+
+<h2>분리불안과 훈련 부족의 차이</h2>
+<ul>
+  <li>분리불안: 보호자가 없을 때만 증상 발생, 혼자 있는 시간 5분 이내에도 시작</li>
+  <li>단순 파괴 행동: 심심함·과잉 에너지가 원인, 산책·운동으로 호전됨</li>
+  <li>확인 방법: 외출 후 10분간 CCTV 영상 촬영으로 확인 권장</li>
+</ul>
+
+<h2>단계별 탈감작 훈련 (Desensitization)</h2>
+<h3>1단계: 출발 신호 중립화</h3>
+<ul>
+  <li>외출과 연관된 행동(열쇠 집기, 코트 입기)을 외출 없이도 반복해 자극을 중립화</li>
+  <li>하루 여러 차례 열쇠를 집었다 내려놓기만 함</li>
+</ul>
+<h3>2단계: 짧은 분리 연습</h3>
+<ul>
+  <li>문 너머로 나갔다 즉시 돌아오기(2초) → 3초 → 5초 → 1분 → 5분 순으로 점진적 연장</li>
+  <li>성공 기준: 짖음·긁기 없이 기다렸을 때만 시간 연장</li>
+  <li>실패 시 이전 단계로 되돌아가기</li>
+</ul>
+<h3>3단계: 안전 공간 만들기</h3>
+<ul>
+  <li>켄넬(이동장) 훈련: 켄넬을 좋은 경험과 연결 (그 안에서 간식·밥 주기)</li>
+  <li>강요 없이 자발적으로 들어가게 유도</li>
+  <li>켄넬은 처벌 도구가 아닌 안전 피난처로 인식시키기</li>
+</ul>
+<h3>4단계: 출발·귀가 루틴 무감동화</h3>
+<ul>
+  <li>출발 전 10~15분, 귀가 후 10분은 강아지에게 관심 주지 않기</li>
+  <li>조용히 안정된 후에 인사하기 — 과도한 이별·귀가 인사는 분리불안을 강화함</li>
+</ul>
+
+<h2>보조 도구 활용</h2>
+<ul>
+  <li><strong>퍼즐 피더·콩 장난감</strong>: 출발 직전에만 제공 → 외출을 기대하는 경험으로 전환</li>
+  <li><strong>칼밍 음악·백색 소음</strong>: 시각 자극 차단, 안정 효과</li>
+  <li><strong>페로몬 제품(Adaptil)</strong>: 엄마 개 페로몬 모방. 스트레스 완화 보조</li>
+</ul>
+
+<h2>중증 분리불안 시 수의사 상담</h2>
+<ul>
+  <li>탈감작 훈련에도 진전이 없으면 수의행동학 전문의 상담 권장</li>
+  <li>필요 시 항불안 약물 처방 (행동 수정 훈련과 병행)</li>
+  <li>훈련 전 갑상선·통증 등 기질적 원인 배제를 위한 신체 검진 권장</li>
+</ul>`,
+    disclaimer: null,
+    sources: [
+      "Overall KL — Clinical Behavioral Medicine for Small Animals (2013)",
+      "American Veterinary Society of Animal Behavior — Position Statement on Separation Anxiety (2023)",
+      "Landsberg GM et al. — Behavior Problems of the Dog and Cat, 3rd Ed. (2013)",
+    ],
+    ymyl: false,
+    status: "published",
+    publishedAt: "2026-05-20T00:00:00.000Z",
+    createdAt: NOW,
+    updatedAt: NOW,
+  },
+
+  // ── 22. 고양이 중성화 수술 가이드 (카테고리 1, published) ────────────────────
+  {
+    id: "seed-guide-cat-neutering-guide",
+    slug: "cat-neutering-spaying-guide",
+    type: "guide",
+    category: 1,
+    title: "고양이 중성화 수술 완전 가이드 — 시기·비용·회복",
+    metaTitle: "고양이 중성화 수술 | 시기·비용·회복 기간·장단점 | 펫지기",
+    metaDescription:
+      "고양이 중성화(암컷 난소·자궁 제거, 수컷 고환 제거) 수술의 권장 시기, 수술 전후 주의사항, 비용, 건강상 이점을 정리했습니다.",
+    body: `<h2>고양이 중성화 수술이란?</h2>
+<p>수컷은 고환 제거(Castration), 암컷은 난소·자궁 제거(Ovariohysterectomy, OHE)를 통해 번식 능력을 없애는 수술입니다. 고양이 개체 수 조절, 건강상 이점, 문제 행동 완화 등 다양한 목적으로 권장됩니다.</p>
+
+<h2>권장 수술 시기</h2>
+<ul>
+  <li><strong>일반적 권장</strong>: 생후 4~6개월 (첫 발정 전)</li>
+  <li><strong>수컷</strong>: 고환이 음낭 내로 완전히 하강한 후. 대부분 4~5개월</li>
+  <li><strong>암컷</strong>: 첫 발정 전(4~5개월) 수술이 유방 종양 예방 효과 가장 높음</li>
+  <li>성묘도 수술 가능하지만 건강 이점은 어릴수록 큼</li>
+</ul>
+
+<h2>수술의 건강상 이점</h2>
+<h3>암컷</h3>
+<ul>
+  <li>유방 종양 발생 위험 크게 감소 (첫 발정 전 수술 시 위험 0.5%로 감소)</li>
+  <li>자궁 축농증(Pyometra) 예방 — 중성화하지 않은 암컷의 생명을 위협하는 응급 질환</li>
+  <li>발정 스트레스·수컷 유인 행동 제거</li>
+</ul>
+<h3>수컷</h3>
+<ul>
+  <li>고환 종양 완전 예방</li>
+  <li>전립선 비대·전립선염 위험 감소</li>
+  <li>영역 표시(스프레이), 무단 탈출, 공격 행동 크게 감소</li>
+</ul>
+
+<h2>수술 전 준비</h2>
+<ul>
+  <li><strong>금식</strong>: 전신마취 전 8~12시간 금식 (물도 6시간 전 중단, 수의사 지시 따를 것)</li>
+  <li>건강 상태 확인: 기침·설사·발열 등 이상 시 수술 연기</li>
+  <li>이동장 준비: 수술 후 이동 시 흔들림 최소화</li>
+</ul>
+
+<h2>수술 후 회복</h2>
+<ul>
+  <li><strong>당일</strong>: 마취 깨는 중 비틀거림·구토 가능. 따뜻하고 조용한 공간에서 관찰</li>
+  <li><strong>1~3일</strong>: 활동량 감소, 식욕 저하 가능. 억지로 먹이지 않아도 됨</li>
+  <li><strong>상처 관리</strong>: 핥지 않도록 넥칼라 착용 (7~10일)</li>
+  <li><strong>실밥 제거</strong>: 10~14일 후 병원 재방문 (흡수성 실이면 생략)</li>
+  <li>2주간 목욕·점프 제한</li>
+</ul>
+
+<h2>비용 및 지자체 지원</h2>
+<ul>
+  <li>수컷 수술비: 5~15만 원 내외</li>
+  <li>암컷 수술비: 15~30만 원 내외 (복부 개복 여부에 따라 차이)</li>
+  <li><strong>지자체 지원</strong>: 많은 지자체에서 중성화 수술 비용 일부 지원. 거주지 시·군·구청 동물보호팀에 신청 방법 문의</li>
+</ul>
+
+<h2>중성화 후 주의사항 — 체중 관리</h2>
+<p>중성화 후 기초대사량이 감소하고 식욕이 증가해 비만 위험이 높아집니다. 수술 후 약 6개월 내 사료량을 10~20% 줄이고 정기적으로 체중을 확인하세요.</p>`,
+    disclaimer: null,
+    sources: [
+      "American Veterinary Medical Association — Spay/Neuter Guidelines (2023)",
+      "농림축산식품부 반려동물 중성화 수술 지원 사업 안내 (2024)",
+      "Korean Journal of Veterinary Clinical Sciences — 반려묘 중성화 현황 (2022)",
+    ],
+    ymyl: false,
+    status: "published",
+    publishedAt: "2026-05-20T00:00:00.000Z",
+    createdAt: NOW,
+    updatedAt: NOW,
+  },
 ];
 
 async function seedContents() {

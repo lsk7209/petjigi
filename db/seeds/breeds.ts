@@ -852,6 +852,298 @@ const SEED_BREEDS: NewBreed[] = [
     createdAt: NOW,
     updatedAt: NOW,
   },
+
+  // ════════════════════════════════
+  //  강아지 추가 5종 (batch 3)
+  // ════════════════════════════════
+
+  {
+    id: "seed-breed-shih-tzu",
+    species: "dog",
+    slug: "shih-tzu",
+    nameKo: "시추",
+    nameEn: "Shih Tzu",
+    origin: "중국 (티베트 기원)",
+    sizeCategory: "tiny",
+    lifespanMin: 10,
+    lifespanMax: 16,
+    commonConditions: ["단두증(BOAS)", "슬개골 탈구", "눈 질환(각막 궤양)", "치주 질환"],
+    body: `<h2>시추 기본 정보</h2>
+<p>황실의 개(Lion Dog)로 불리며 수천 년의 역사를 가진 중국 원산 소형 견종입니다. 납작한 얼굴, 풍성한 장모, 당당한 걸음걸이가 특징입니다. 적당한 운동량과 친화적인 성격으로 아파트 가정에서 꾸준히 인기를 유지하고 있습니다.</p>
+
+<h2>성격·특성</h2>
+<ul>
+  <li>친화적이고 애교가 많으며 분리불안이 생기기 쉬움</li>
+  <li>다른 반려동물·어린이와도 잘 지냄</li>
+  <li>훈련 반응은 보통 수준 (고집이 있어 일관성 필요)</li>
+  <li>짖음이 적은 편</li>
+</ul>
+
+<h2>미용·관리</h2>
+<ul>
+  <li>장모 스타일: 매일 빗질 + 4~6주 간격 미용</li>
+  <li>단모(펫컷): 관리 부담 크게 감소</li>
+  <li>눈 주변 매일 닦기 (눈물 착색, 각막 자극 예방)</li>
+</ul>
+
+<h2>케어 포인트</h2>
+<ul>
+  <li>더위에 취약 (단두증) — 여름철 에어컨 필수, 과도한 외출 자제</li>
+  <li>눈이 돌출되어 각막 손상 위험 — 풀밭·낮은 가구 근처 주의</li>
+  <li>하루 20~30분 가벼운 산책으로 충분</li>
+</ul>`,
+    status: "published",
+    createdAt: NOW,
+    updatedAt: NOW,
+  },
+
+  {
+    id: "seed-breed-dachshund",
+    species: "dog",
+    slug: "dachshund",
+    nameKo: "닥스훈트",
+    nameEn: "Dachshund",
+    origin: "독일",
+    sizeCategory: "small",
+    lifespanMin: 12,
+    lifespanMax: 16,
+    commonConditions: ["추간판 탈출증(IVDD)", "비만", "치주 질환", "패턴 대머리증(색소 희석성 탈모)"],
+    body: `<h2>닥스훈트 기본 정보</h2>
+<p>긴 몸통과 짧은 다리로 유명한 독일 원산 사냥견입니다. 원래 땅속 오소리를 쫓기 위해 개발된 품종으로, 땅 파기와 짖는 것을 좋아합니다. 미니어처(5~6kg)·스탠다드(7~15kg) 두 가지 크기, 단모·장모·와이어헤어 세 가지 모질이 있습니다.</p>
+
+<h2>성격·특성</h2>
+<ul>
+  <li>용감하고 당차며 고집이 센 편</li>
+  <li>보호자에 대한 충성심이 강하고 애정 표현이 풍부함</li>
+  <li>짖는 경향이 강해 훈련으로 관리 필요</li>
+  <li>냄새 추적 본능이 강해 리드줄 이탈 주의</li>
+</ul>
+
+<h2>건강 주의사항</h2>
+<ul>
+  <li><strong>IVDD(추간판 탈출증)</strong>: 닥스훈트의 가장 흔한 질환. 긴 척추로 인한 구조적 취약성. 계단·점프·고소에서의 낙하 엄격 제한</li>
+  <li>소파·침대 오르내리기 위한 계단형 램프 필수</li>
+  <li>비만은 척추 부담을 크게 가중 → 체중 관리 매우 중요</li>
+</ul>
+
+<h2>케어 포인트</h2>
+<ul>
+  <li>하루 30~45분 산책 (점프·계단 없이)</li>
+  <li>단모: 주 1~2회 빗질 / 장모: 매일 빗질</li>
+  <li>귀 처짐으로 귀 감염 위험 — 주기적 귀 청소</li>
+</ul>`,
+    status: "published",
+    createdAt: NOW,
+    updatedAt: NOW,
+  },
+
+  {
+    id: "seed-breed-labrador-retriever",
+    species: "dog",
+    slug: "labrador-retriever",
+    nameKo: "라브라도 리트리버",
+    nameEn: "Labrador Retriever",
+    origin: "캐나다 뉴펀들랜드",
+    sizeCategory: "large",
+    lifespanMin: 10,
+    lifespanMax: 14,
+    commonConditions: ["고관절 이형성증", "비만", "팔꿈치 이형성증", "운동 유발성 허탈(EIC)"],
+    body: `<h2>라브라도 리트리버 기본 정보</h2>
+<p>전 세계에서 가장 인기 있는 대형견 중 하나입니다. 안내견·탐지견·치료견 등 다양한 역할을 수행할 만큼 지능이 높고 훈련성이 뛰어납니다. 블랙·초콜릿·옐로우 세 가지 색상이 있습니다.</p>
+
+<h2>성격·특성</h2>
+<ul>
+  <li>친화적이고 온순해 가족 모두에게 잘 적응</li>
+  <li>어린이·다른 반려동물과 매우 잘 어울림</li>
+  <li>에너지가 넘쳐 충분한 운동이 필수</li>
+  <li>훈련 반응 최우수 — 초보 보호자에게도 적합</li>
+</ul>
+
+<h2>운동·활동</h2>
+<ul>
+  <li>하루 1~2시간 이상의 활발한 운동 필요</li>
+  <li>수영·공 물어오기·달리기 등 적극적 활동 즐김</li>
+  <li>운동 부족 시 파괴적 행동 발생 가능</li>
+</ul>
+
+<h2>케어 포인트</h2>
+<ul>
+  <li><strong>비만 고위험</strong>: 먹는 것을 매우 좋아해 과급여 주의. 정량 급여 엄수</li>
+  <li>단모 이중코트 — 환절기 털 빠짐 심함. 주 3~4회 빗질</li>
+  <li>고관절 검진: 생후 1~2년 내 방사선 검사 권장</li>
+  <li>대형견으로 충분한 공간과 정기 관절 관리 필요</li>
+</ul>`,
+    status: "published",
+    createdAt: NOW,
+    updatedAt: NOW,
+  },
+
+  {
+    id: "seed-breed-golden-retriever-extra",
+    species: "dog",
+    slug: "border-collie",
+    nameKo: "보더 콜리",
+    nameEn: "Border Collie",
+    origin: "영국·스코틀랜드 국경 지대",
+    sizeCategory: "medium",
+    lifespanMin: 12,
+    lifespanMax: 15,
+    commonConditions: ["고관절 이형성증", "진행성 망막 위축(PRA)", "간질", "콜리 안구 이상(CEA)"],
+    body: `<h2>보더 콜리 기본 정보</h2>
+<p>개 중 가장 지능이 높은 품종으로 알려진 목양견입니다. 아직도 실제 양 떼를 몰 수 있을 만큼의 본능과 에너지를 가지고 있어, 충분한 신체·정신적 자극 없이는 문제 행동이 빈번합니다. 충분한 경험이 있는 보호자를 위한 견종입니다.</p>
+
+<h2>성격·특성</h2>
+<ul>
+  <li>개 중 최고 수준의 지능 — 빠른 학습 능력</li>
+  <li>에너지가 극도로 넘쳐 하루 2~3시간 이상의 강도 높은 운동 필수</li>
+  <li>목양 본능으로 어린이·자전거를 몰려는 행동 보임 (훈련 필수)</li>
+  <li>훈련·어질리티·플라이볼 등 스포츠에 최적화</li>
+</ul>
+
+<h2>운동·자극</h2>
+<ul>
+  <li>하루 최소 2시간 이상 활발한 운동 필요</li>
+  <li>두뇌 자극(퍼즐·어질리티) 병행 필수</li>
+  <li>운동 부족 시 파괴적 행동, 강박 행동 발생</li>
+</ul>
+
+<h2>케어 포인트</h2>
+<ul>
+  <li>넓은 공간(마당 또는 대형 공원 접근성) 필수</li>
+  <li>이중코트: 주 2~3회 빗질, 환절기 매일</li>
+  <li>초보 보호자보다 활동적 라이프스타일의 보호자에게 적합</li>
+  <li>PRA·CEA 유전자 검사 이력 있는 브리더 선택 권장</li>
+</ul>`,
+    status: "published",
+    createdAt: NOW,
+    updatedAt: NOW,
+  },
+
+  {
+    id: "seed-breed-chihuahua",
+    species: "dog",
+    slug: "chihuahua",
+    nameKo: "치와와",
+    nameEn: "Chihuahua",
+    origin: "멕시코",
+    sizeCategory: "tiny",
+    lifespanMin: 14,
+    lifespanMax: 17,
+    commonConditions: ["슬개골 탈구", "수두증(물뇌증)", "저혈당", "기관 허탈"],
+    body: `<h2>치와와 기본 정보</h2>
+<p>세계에서 가장 작은 견종으로 알려진 멕시코 원산 소형견입니다. 체중 1.5~3kg의 극소형이지만 담대하고 자신감 넘치는 성격을 가집니다. 수명이 14~17년으로 소형견 중 가장 긴 편입니다.</p>
+
+<h2>성격·특성</h2>
+<ul>
+  <li>자신보다 큰 개에게도 주눅 들지 않는 대담함</li>
+  <li>특정 보호자에게 매우 강한 애착 형성 (한 명을 특히 따름)</li>
+  <li>낯선 사람에게 경계심이 강하고 짖는 경향 있음</li>
+  <li>훈련 가능하지만 고집이 있어 일관성 필요</li>
+</ul>
+
+<h2>건강 주의사항</h2>
+<ul>
+  <li><strong>수두증(물뇌증)</strong>: 머리 위의 천문(숨구멍)이 완전히 닫히지 않은 경우 뇌에 액체가 차는 질환. 자견 시 신경 증상 주의</li>
+  <li><strong>저혈당</strong>: 자견 시기 소량씩 자주 급여. 급격한 기력 저하 시 응급</li>
+  <li>기관 허탈 예방 위해 목줄보다 하네스 권장</li>
+</ul>
+
+<h2>케어 포인트</h2>
+<ul>
+  <li>추위에 매우 취약 — 겨울철 의복·실내 온도 관리</li>
+  <li>하루 20~30분 가벼운 산책으로 충분</li>
+  <li>치주 질환 취약 — 주 3회 이상 칫솔질, 연 1~2회 스케일링</li>
+  <li>어린 자녀 가정에서는 취급 주의 (체구가 작아 낙하 부상 위험)</li>
+</ul>`,
+    status: "published",
+    createdAt: NOW,
+    updatedAt: NOW,
+  },
+
+  // ════════════════════════════════
+  //  고양이 추가 2종 (batch 3)
+  // ════════════════════════════════
+
+  {
+    id: "seed-breed-turkish-angora",
+    species: "cat",
+    slug: "turkish-angora",
+    nameKo: "터키쉬 앙고라",
+    nameEn: "Turkish Angora",
+    origin: "튀르키예 앙카라",
+    sizeCategory: "medium",
+    lifespanMin: 12,
+    lifespanMax: 18,
+    commonConditions: ["비대심근병증(HCM)", "청각 장애 (흰색 개체)", "이석증"],
+    body: `<h2>터키쉬 앙고라 기본 정보</h2>
+<p>튀르키예 앙카라에서 자연 발생한 가장 오래된 장모 품종 중 하나입니다. 날씬하고 우아한 체형, 실크 같은 부드러운 단층 장모가 특징입니다. 활발하고 지능이 높으며 사람과의 교감을 즐깁니다.</p>
+
+<h2>성격·특성</h2>
+<ul>
+  <li>호기심이 강하고 장난기가 많은 활동적 품종</li>
+  <li>지능이 높아 문 열기·장난감 조작 등을 학습</li>
+  <li>물을 좋아하는 특이한 성향 (수영하는 경우도 있음)</li>
+  <li>가족 모두와 잘 어울리며 혼자 있는 것을 싫어함</li>
+</ul>
+
+<h2>털 관리</h2>
+<ul>
+  <li>단층 장모라 이중코트 품종보다 엉킴이 적음</li>
+  <li>주 2~3회 빗질로 관리 가능</li>
+  <li>털 빠짐은 중간 수준 (봄철 집중 빠짐)</li>
+</ul>
+
+<h2>케어 포인트</h2>
+<ul>
+  <li>흰색 개체 중 파란 눈·오드아이 개체는 청각 장애 비율이 높음 (브리더에게 청각 검사 확인)</li>
+  <li>충분한 놀이·자극 제공 (지루함이 심한 품종)</li>
+  <li>연 1회 심장 초음파 검진 권장</li>
+</ul>`,
+    status: "published",
+    createdAt: NOW,
+    updatedAt: NOW,
+  },
+
+  {
+    id: "seed-breed-norwegian-forest-cat",
+    species: "cat",
+    slug: "norwegian-forest-cat",
+    nameKo: "노르웨이 숲 고양이",
+    nameEn: "Norwegian Forest Cat",
+    origin: "노르웨이",
+    sizeCategory: "large",
+    lifespanMin: 12,
+    lifespanMax: 16,
+    commonConditions: ["비대심근병증(HCM)", "글리코겐 축적병(GSD IV)", "고관절 이형성증"],
+    body: `<h2>노르웨이 숲 고양이 기본 정보</h2>
+<p>노르웨이의 혹독한 기후에 적응한 자연 발생 대형 장모 품종입니다. 두꺼운 이중코트와 방수성 겉털이 특징이며, 나무 오르기와 사냥을 즐기는 야생미 넘치는 품종입니다.</p>
+
+<h2>성격·특성</h2>
+<ul>
+  <li>독립적이면서도 가족과의 교감을 즐기는 균형 잡힌 성격</li>
+  <li>강요 없이 자신의 페이스로 애정 표현</li>
+  <li>활동적이고 나무(캣타워) 오르기를 매우 즐김</li>
+  <li>아이·다른 반려동물과 대체로 잘 지냄</li>
+</ul>
+
+<h2>털 관리</h2>
+<ul>
+  <li>이중 장모: 여름엔 털이 상당히 빠져 주 3~4회 빗질 필요</li>
+  <li>겨울 언더코트 발달 — 환절기 집중 빗질</li>
+  <li>목욕 시 겉털의 방수성으로 완전히 적시기 어려움</li>
+</ul>
+
+<h2>케어 포인트</h2>
+<ul>
+  <li>높고 튼튼한 캣타워 필수 (대형 체중 + 등반 욕구)</li>
+  <li>GSD IV 유전자 검사 이력 확인 (치명적 유전 질환)</li>
+  <li>HCM 정기 심장 초음파 검진 (연 1~2회)</li>
+  <li>실내에서도 충분한 활동 공간 필요</li>
+</ul>`,
+    status: "published",
+    createdAt: NOW,
+    updatedAt: NOW,
+  },
 ];
 
 async function seedBreeds() {

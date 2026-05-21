@@ -24,7 +24,7 @@ module.exports = {
   priority: 0.7,
   transform: async (config, path) => {
     // 카테고리 허브·홈 우선순위 높게
-    if (path === "/" || path === "/breed" || path.startsWith("/category/") || path.startsWith("/insurance/")) {
+    if (path === "/" || path === "/breed" || path === "/guide" || path === "/condition" || path.startsWith("/category/") || path.startsWith("/insurance/")) {
       return { loc: path, changefreq: "hourly", priority: 1.0, lastmod: new Date().toISOString() };
     }
     if (path.startsWith("/sido/") || path.startsWith("/guide/") || path.startsWith("/breed/") || path.startsWith("/condition/")) {
