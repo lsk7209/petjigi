@@ -823,6 +823,7 @@ p {
   font-weight: 500;
   color: var(--brand-text);
   text-decoration: none;
+  white-space: nowrap;
   transition: background .12s;
 }
 .pj-nav a:hover { background: var(--brand-surface); }

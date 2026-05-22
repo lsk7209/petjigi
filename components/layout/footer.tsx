@@ -10,6 +10,7 @@ const CATEGORY_LINKS = [
 ];
 
 const CONTENT_LINKS = [
+  { label: "블로그",          href: "/blog" },
   { label: "반려동물 가이드", href: "/guide" },
   { label: "질병·증상 정보",  href: "/condition" },
   { label: "견종·묘종 도감",  href: "/breed" },

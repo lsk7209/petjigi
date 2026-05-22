@@ -4,7 +4,7 @@ import Link from "next/link";
 import { useState } from "react";
 
 const NAV_LINKS = [
-  { label: "홈",     href: "/" },
+  { label: "블로그",  href: "/blog" },
   { label: "가이드",  href: "/guide" },
   { label: "질환정보", href: "/condition" },
   { label: "동물병원", href: "/sido/seoul" },
@@ -23,6 +23,7 @@ export function Header() {
           href="/"
           className="pj-logo"
           onClick={() => setOpen(false)}
+          style={{ flexShrink: 0 }}
         >
           <span className="pj-logo-mark" aria-hidden="true" />
           펫지기
