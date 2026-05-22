@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { db } from "@/db/client";
 import { contents } from "@/db/schema";
-import { eq, and, desc } from "drizzle-orm";
+import { eq, and, desc, lte } from "drizzle-orm";
 import { CATEGORIES } from "@/lib/category";
 import type { CategoryId } from "@/lib/category";
 import { breadcrumbSchema } from "@/lib/seo/structured-data";
@@ -48,7 +48,11 @@ async function getAllPosts() {
       authorName: contents.authorName,
     })
     .from(contents)
-    .where(and(eq(contents.status, "published"), eq(contents.type, "blog")))
+    .where(and(
+      eq(contents.status, "published"),
+      eq(contents.type, "blog"),
+      lte(contents.publishedAt, new Date().toISOString())
+    ))
     .orderBy(desc(contents.publishedAt));
 }
 
