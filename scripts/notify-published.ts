@@ -57,7 +57,7 @@ async function run() {
   // GSC 사이트맵 제출 (두 사이트맵 모두 — GSC가 최신 사이트맵 인식)
   await Promise.allSettled([
     submitSitemapToGSC(`${SITE_URL}/`, `${SITE_URL}/sitemap.xml`),
-    submitSitemapToGSC(`${SITE_URL}/`, `${SITE_URL}/api/sitemap-content`),
+    submitSitemapToGSC(`${SITE_URL}/`, `${SITE_URL}/sitemap-content.xml`),
   ]);
   console.log("[notify] GSC 사이트맵 제출 완료");
 

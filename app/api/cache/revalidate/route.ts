@@ -25,7 +25,7 @@ export async function POST(req: NextRequest) {
   if (toInvalidate.length > 0) {
     await Promise.allSettled([
       submitSitemapToGSC(SITE_URL, `${SITE_URL}/sitemap.xml`),
-      submitSitemapToGSC(SITE_URL, `${SITE_URL}/api/sitemap-content`),
+      submitSitemapToGSC(SITE_URL, `${SITE_URL}/sitemap-content.xml`),
     ]);
   }
 

@@ -5,11 +5,10 @@ module.exports = {
   robotsTxtOptions: {
     // /api/sitemap-content는 실제 DB publishedAt/updatedAt 날짜를 사용하는 콘텐츠 사이트맵
     additionalSitemaps: [
-      `${process.env.NEXT_PUBLIC_SITE_URL || "https://petjigi.kr"}/api/sitemap-content`,
+      `${process.env.NEXT_PUBLIC_SITE_URL || "https://petjigi.kr"}/sitemap-content.xml`,
     ],
     policies: [
-      // /api/sitemap-content는 명시적 Allow (Disallow: /api/ 보다 더 구체적이므로 우선적용)
-      { userAgent: "*", allow: ["/", "/api/sitemap-content"], disallow: ["/rescue/", "/search", "/api/", "/admin/"] },
+      { userAgent: "*", allow: "/", disallow: ["/rescue/", "/search", "/api/", "/admin/"] },
       // AI 크롤러 전체 허용
       { userAgent: "GPTBot", allow: "/" },
       { userAgent: "ClaudeBot", allow: "/" },
