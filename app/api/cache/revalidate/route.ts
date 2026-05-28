@@ -24,8 +24,8 @@ export async function POST(req: NextRequest) {
   // GOOGLE_SA_JSON 설정 시 GSC에 사이트맵 자동 재제출 (graceful skip if not set)
   if (toInvalidate.length > 0) {
     await Promise.allSettled([
-      submitSitemapToGSC(SITE_URL, `${SITE_URL}/sitemap.xml`),
-      submitSitemapToGSC(SITE_URL, `${SITE_URL}/sitemap-content.xml`),
+      submitSitemapToGSC(`${SITE_URL}/`, `${SITE_URL}/sitemap.xml`),
+      submitSitemapToGSC(`${SITE_URL}/`, `${SITE_URL}/sitemap-content.xml`),
     ]);
   }
 

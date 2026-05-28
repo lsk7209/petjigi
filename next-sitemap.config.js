@@ -3,7 +3,7 @@ module.exports = {
   siteUrl: process.env.NEXT_PUBLIC_SITE_URL || "https://petjigi.kr",
   generateRobotsTxt: true,
   robotsTxtOptions: {
-    // /api/sitemap-content는 실제 DB publishedAt/updatedAt 날짜를 사용하는 콘텐츠 사이트맵
+    // /sitemap-content.xml — 실제 DB publishedAt/updatedAt 날짜를 사용하는 콘텐츠 사이트맵
     additionalSitemaps: [
       `${process.env.NEXT_PUBLIC_SITE_URL || "https://petjigi.kr"}/sitemap-content.xml`,
     ],
@@ -20,7 +20,7 @@ module.exports = {
       { userAgent: "Bytespider", allow: "/" },
     ],
   },
-  // 콘텐츠 상세 페이지는 /api/sitemap-content에서 실제 DB 날짜로 처리 (중복 방지)
+  // 콘텐츠 상세 페이지는 /sitemap-content.xml에서 실제 DB 날짜로 처리 (중복 방지)
   exclude: [
     "/rescue/*", "/search*", "/admin/*", "/*?page=*", "/*?cat=*",
     "/guide/*", "/blog/*", "/condition/*", "/breed/*/*",

@@ -52,7 +52,7 @@ export async function approveContent(id: string): Promise<void> {
 
     // 4. Google Indexing API + 사이트맵 재제출 (서비스 계정 설정 시 자동 활성화)
     await notifyGoogleIndexing(contentUrl).catch(() => {});
-    await submitSitemapToGSC(SITE_URL, `${SITE_URL}/api/sitemap-content`).catch(() => {});
+    await submitSitemapToGSC(`${SITE_URL}/`, `${SITE_URL}/sitemap-content.xml`).catch(() => {});
 
     // 5. ISR 캐시 무효화
     revalidateTag("guides", { expire: 0 });
