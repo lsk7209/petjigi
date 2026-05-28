@@ -7,7 +7,7 @@ import { contents } from "@/db/schema";
 import { and, eq, ne, desc } from "drizzle-orm";
 import type { CategoryId } from "@/lib/category";
 import { YmylDisclaimer } from "@/components/content/ymyl-disclaimer";
-import { articleSchema, breadcrumbSchema, faqSchema } from "@/lib/seo/structured-data";
+import { articleSchema, breadcrumbSchema, faqSchema, medicalConditionSchema } from "@/lib/seo/structured-data";
 import { TableOfContents, type TocHeading } from "@/components/content/table-of-contents";
 import { ReadingProgress } from "@/components/content/reading-progress";
 import { ShareButtons } from "@/components/content/share-buttons";
@@ -160,6 +160,12 @@ export default async function ConditionPage({
     isYmyl: content.ymyl,
   });
 
+  const conditionEntity = medicalConditionSchema({
+    name: content.title,
+    url: `${SITE_URL}/condition/${slug}`,
+    description: content.metaDescription,
+  });
+
   const breadcrumb = breadcrumbSchema([
     { name: "홈", url: SITE_URL },
     { name: "건강·의료", url: `${SITE_URL}/category/health` },
@@ -175,6 +181,7 @@ export default async function ConditionPage({
       <ScrollDepthTracker />
       <ConditionViewTracker slug={slug} title={content.title} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(conditionEntity) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb) }} />
       {faqItems.length > 0 && (
         <script

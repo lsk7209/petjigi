@@ -266,6 +266,40 @@ export function itemListSchema(
   };
 }
 
+/** MedicalCondition 엔티티 스키마 — 질환 페이지 AI 추출 최적화 (AEO/GEO) */
+export function medicalConditionSchema({
+  name,
+  url,
+  description,
+}: {
+  name: string;
+  url: string;
+  description?: string | null;
+}) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "MedicalCondition",
+    name,
+    url,
+    inLanguage: "ko-KR",
+    ...(description ? { description } : {}),
+    recognizingAuthority: {
+      "@type": "Organization",
+      name: "펫지기",
+      url: SITE_URL,
+    },
+    legalStatus: "정보 제공 목적 — 진단·치료는 수의사에게 문의하세요",
+    medicineSystem: {
+      "@type": "MedicineSystem",
+      name: "수의학",
+    },
+    speakable: {
+      "@type": "SpeakableSpecification",
+      cssSelector: ["h1", "h2:first-of-type", "[data-speakable]"],
+    },
+  };
+}
+
 /** CollectionPage — 카테고리·허브 페이지 타입 명시 */
 export function collectionPageSchema(
   name: string,
