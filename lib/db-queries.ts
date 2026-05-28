@@ -1,7 +1,7 @@
 import { unstable_cache } from "next/cache";
 import { db } from "@/db/client";
 import { businesses, contents, shelters, rescuedAnimals, regions } from "@/db/schema";
-import { eq, and, desc, count, ne } from "drizzle-orm";
+import { eq, and, desc, count, ne, lte } from "drizzle-orm";
 import { sql } from "drizzle-orm";
 
 // ── 홈 통계 카운트 ──────────────────────────────────────────────────────────
@@ -33,7 +33,7 @@ export const getCachedRecentGuides = unstable_cache(
         publishedAt: contents.publishedAt,
       })
       .from(contents)
-      .where(and(eq(contents.status, "published"), eq(contents.type, "guide")))
+      .where(and(eq(contents.status, "published"), eq(contents.type, "guide"), lte(contents.publishedAt, new Date().toISOString())))
       .orderBy(desc(contents.publishedAt))
       .limit(6),
   ["guides", "recent"],
@@ -53,7 +53,7 @@ export const getCachedAllGuides = unstable_cache(
         ymyl: contents.ymyl,
       })
       .from(contents)
-      .where(and(eq(contents.status, "published"), eq(contents.type, "guide")))
+      .where(and(eq(contents.status, "published"), eq(contents.type, "guide"), lte(contents.publishedAt, new Date().toISOString())))
       .orderBy(desc(contents.publishedAt)),
   ["guides", "all"],
   { revalidate: 3600, tags: ["guides"] }
@@ -139,7 +139,7 @@ export const getCachedCategoryGuides = unstable_cache(
     db
       .select({ slug: contents.slug, title: contents.title, publishedAt: contents.publishedAt })
       .from(contents)
-      .where(and(eq(contents.status, "published"), eq(contents.type, "guide"), eq(contents.category, categoryId)))
+      .where(and(eq(contents.status, "published"), eq(contents.type, "guide"), eq(contents.category, categoryId), lte(contents.publishedAt, new Date().toISOString())))
       .orderBy(desc(contents.publishedAt))
       .limit(6),
   ["category-guides"],
@@ -160,7 +160,7 @@ export const getCachedAllBlogPosts = unstable_cache(
         authorName: contents.authorName,
       })
       .from(contents)
-      .where(and(eq(contents.status, "published"), eq(contents.type, "blog")))
+      .where(and(eq(contents.status, "published"), eq(contents.type, "blog"), lte(contents.publishedAt, new Date().toISOString())))
       .orderBy(desc(contents.publishedAt)),
   ["blog", "all-posts"],
   { revalidate: 3600, tags: ["guides"] }
@@ -190,7 +190,7 @@ export const getCachedAllConditions = unstable_cache(
         metaDescription: contents.metaDescription,
       })
       .from(contents)
-      .where(and(eq(contents.status, "published"), eq(contents.type, "condition")))
+      .where(and(eq(contents.status, "published"), eq(contents.type, "condition"), lte(contents.publishedAt, new Date().toISOString())))
       .orderBy(desc(contents.publishedAt)),
   ["conditions", "all"],
   { revalidate: 3600, tags: ["guides"] }

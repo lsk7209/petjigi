@@ -1,6 +1,6 @@
 import { db } from "@/db/client";
 import { contents } from "@/db/schema";
-import { eq, and, desc, or } from "drizzle-orm";
+import { eq, and, desc, or, lte } from "drizzle-orm";
 
 export const revalidate = 3600;
 
@@ -28,6 +28,7 @@ export async function GET() {
     .where(
       and(
         eq(contents.status, "published"),
+        lte(contents.publishedAt, new Date().toISOString()),
         or(
           eq(contents.type, "blog"),
           eq(contents.type, "guide"),

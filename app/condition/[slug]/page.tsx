@@ -4,7 +4,7 @@ import Link from "next/link";
 import { cache } from "react";
 import { db } from "@/db/client";
 import { contents } from "@/db/schema";
-import { and, eq, ne, desc } from "drizzle-orm";
+import { and, eq, ne, desc, lte } from "drizzle-orm";
 import type { CategoryId } from "@/lib/category";
 import { YmylDisclaimer } from "@/components/content/ymyl-disclaimer";
 import { articleSchema, breadcrumbSchema, faqSchema, medicalConditionSchema } from "@/lib/seo/structured-data";
@@ -65,6 +65,7 @@ const getConditionContent = cache(async (slug: string) =>
         eq(contents.slug, slug),
         eq(contents.status, "published"),
         eq(contents.type, "condition"),
+        lte(contents.publishedAt, new Date().toISOString()),
       ),
     )
     .get()
@@ -91,7 +92,7 @@ export async function generateStaticParams() {
     const rows = await db
       .select({ slug: contents.slug })
       .from(contents)
-      .where(and(eq(contents.status, "published"), eq(contents.type, "condition")));
+      .where(and(eq(contents.status, "published"), eq(contents.type, "condition"), lte(contents.publishedAt, new Date().toISOString())));
     return rows.map((r) => ({ slug: r.slug }));
   } catch {
     return [];
