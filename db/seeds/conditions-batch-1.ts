@@ -8,7 +8,7 @@ const CONDITIONS: NewContent[] = [
   // ── 1. 강아지 슬개골 탈구 ────────────────────────────────────────────────
   {
     id: "cond-dog-patellar-luxation",
-    slug: "dog-patellar-luxation",
+    slug: "dog-patellar-luxation-stages",
     type: "condition",
     category: 3,
     title: "강아지 슬개골 탈구 — 증상·단계·치료·예방",
@@ -91,7 +91,7 @@ const CONDITIONS: NewContent[] = [
   // ── 2. 강아지 심장사상충 ─────────────────────────────────────────────────
   {
     id: "cond-dog-heartworm-prevention",
-    slug: "dog-heartworm-prevention",
+    slug: "dog-heartworm-disease",
     type: "condition",
     category: 3,
     title: "강아지 심장사상충 — 증상·예방약·주기",
@@ -396,7 +396,7 @@ const CONDITIONS: NewContent[] = [
   // ── 6. 강아지 분리불안 ──────────────────────────────────────────────────
   {
     id: "cond-dog-separation-anxiety",
-    slug: "dog-separation-anxiety",
+    slug: "dog-separation-anxiety-disorder",
     type: "condition",
     category: 3,
     title: "강아지 분리불안 — 증상·행동 교정법",
