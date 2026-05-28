@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { breadcrumbSchema, faqSchema } from "@/lib/seo/structured-data";
+import { breadcrumbSchema, faqSchema, definedTermSetSchema } from "@/lib/seo/structured-data";
 import { YmylDisclaimer } from "@/components/content/ymyl-disclaimer";
+import { AdSlot } from "@/components/ads/ad-slot";
+import { AdPolicyProvider } from "@/components/providers/ad-policy-provider";
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://petjigi.kr";
 
@@ -11,6 +13,13 @@ const BREADCRUMB = breadcrumbSchema([
   { name: "홈", url: SITE_URL },
   { name: "보험·법률", url: `${SITE_URL}/category/insurance` },
   { name: "펫보험", url: `${SITE_URL}/insurance` },
+]);
+
+const INSURANCE_TERMS = definedTermSetSchema("펫보험 용어", [
+  { name: "자기부담금", description: "보험 사고 발생 시 보험계약자가 직접 부담하는 금액. 정액(예: 1만원)과 정률(예: 20%) 방식이 있습니다." },
+  { name: "면책 기간", description: "보험 가입 후 일정 기간 보장이 제외되는 기간. 통상 가입 후 30일(수술은 90일)이며 이 기간 중 발병한 질환은 보상하지 않습니다." },
+  { name: "연간 보상 한도", description: "1년간 지급받을 수 있는 최대 보험금 총액. 한도 초과분은 자비 부담이므로 반드시 확인이 필요합니다." },
+  { name: "선천성·유전성 질환 면책", description: "태어날 때부터 갖고 있거나 유전적으로 발생하는 질환은 대부분의 펫보험에서 보장하지 않습니다." },
 ]);
 
 const FAQ = faqSchema([
@@ -72,12 +81,13 @@ const CHECKLIST = [
 
 export default function InsurancePage() {
   return (
-    <>
+    <AdPolicyProvider category={4}>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(BREADCRUMB) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(FAQ) }} />
-      <main className="max-w-4xl mx-auto px-4 py-12">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(INSURANCE_TERMS) }} />
+      <main className="max-w-4xl mx-auto px-4 py-8 sm:py-12">
         {/* 브레드크럼 */}
-        <nav className="text-xs text-[var(--brand-text-secondary)] mb-6 flex items-center gap-1.5 flex-wrap" aria-label="breadcrumb">
+        <nav className="text-xs text-[var(--brand-text-secondary)] mb-5 sm:mb-6 flex items-center gap-1.5 flex-wrap" aria-label="breadcrumb">
           <Link href="/" className="hover:text-[var(--brand-accent)] transition-colors">홈</Link>
           <span aria-hidden="true">›</span>
           <Link href="/category/insurance" className="hover:text-[var(--brand-accent)] transition-colors">보험·법률</Link>
@@ -85,9 +95,9 @@ export default function InsurancePage() {
           <span className="text-[var(--brand-text)]" aria-current="page">펫보험</span>
         </nav>
 
-        <div className="mb-8">
-          <h1 className="text-3xl font-bold text-[var(--brand-text)] mb-3">펫보험 안내</h1>
-          <p className="text-[var(--brand-text-secondary)] leading-relaxed max-w-2xl">
+        <div className="mb-6 sm:mb-8">
+          <h1 className="text-2xl sm:text-3xl font-bold text-[var(--brand-text)] mb-2 sm:mb-3 tracking-tight" style={{ wordBreak: "keep-all" }} data-speakable>펫보험 안내</h1>
+          <p className="text-sm sm:text-base text-[var(--brand-text-secondary)] leading-relaxed max-w-2xl" style={{ wordBreak: "keep-all" }}>
             국내 6대 손보사 펫보험을 비교하고, 반려동물에게 맞는 보험을 선택하는 데 필요한 핵심 정보를 안내합니다.
           </p>
         </div>
@@ -169,6 +179,8 @@ export default function InsurancePage() {
           </dl>
         </section>
 
+        <AdSlot adType="adsense" format="horizontal" className="mb-10" />
+
         {/* 관련 가이드 */}
         <section className="mb-8" aria-label="관련 가이드">
           <h2 className="text-lg font-bold text-[var(--brand-text)] mb-4">보험·법률 가이드</h2>
@@ -203,6 +215,6 @@ export default function InsurancePage() {
           </div>
         </section>
       </main>
-    </>
+    </AdPolicyProvider>
   );
 }

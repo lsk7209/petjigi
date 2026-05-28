@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
+import { cache } from "react";
 import { db } from "@/db/client";
 import { contents } from "@/db/schema";
 import { and, eq, ne, desc } from "drizzle-orm";
@@ -11,6 +12,11 @@ import { TableOfContents, type TocHeading } from "@/components/content/table-of-
 import { ReadingProgress } from "@/components/content/reading-progress";
 import { ShareButtons } from "@/components/content/share-buttons";
 import { CategoryCta } from "@/components/content/category-cta";
+import { ScrollDepthTracker } from "@/components/analytics/scroll-depth-tracker";
+import { OutboundLinkTracker } from "@/components/analytics/outbound-link-tracker";
+import { AdSlot } from "@/components/ads/ad-slot";
+import { AdPolicyProvider } from "@/components/providers/ad-policy-provider";
+import { ConditionViewTracker } from "@/components/analytics/condition-view-tracker";
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://petjigi.kr";
 
@@ -50,6 +56,20 @@ function extractFaq(html: string) {
   return items;
 }
 
+const getConditionContent = cache(async (slug: string) =>
+  db
+    .select()
+    .from(contents)
+    .where(
+      and(
+        eq(contents.slug, slug),
+        eq(contents.status, "published"),
+        eq(contents.type, "condition"),
+      ),
+    )
+    .get()
+);
+
 async function getRelatedConditions(slug: string, category: number) {
   return db
     .select({ slug: contents.slug, title: contents.title })
@@ -84,17 +104,7 @@ export async function generateMetadata({
   params: Promise<{ slug: string }>;
 }): Promise<Metadata> {
   const { slug } = await params;
-  const content = await db
-    .select()
-    .from(contents)
-    .where(
-      and(
-        eq(contents.slug, slug),
-        eq(contents.status, "published"),
-        eq(contents.type, "condition"),
-      ),
-    )
-    .get();
+  const content = await getConditionContent(slug);
 
   if (!content) {
     return { robots: { index: false, follow: false } };
@@ -118,17 +128,7 @@ export default async function ConditionPage({
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
-  const content = await db
-    .select()
-    .from(contents)
-    .where(
-      and(
-        eq(contents.slug, slug),
-        eq(contents.status, "published"),
-        eq(contents.type, "condition"),
-      ),
-    )
-    .get();
+  const content = await getConditionContent(slug);
 
   if (!content) {
     return (
@@ -170,8 +170,10 @@ export default async function ConditionPage({
   const pageUrl = `${SITE_URL}/condition/${slug}`;
 
   return (
-    <>
+    <AdPolicyProvider category={categoryId}>
       <ReadingProgress />
+      <ScrollDepthTracker />
+      <ConditionViewTracker slug={slug} title={content.title} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb) }} />
       {faqItems.length > 0 && (
@@ -180,10 +182,10 @@ export default async function ConditionPage({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema(faqItems.map((f) => ({ ...f, url: pageUrl })))) }}
         />
       )}
-      <main className="max-w-3xl mx-auto px-4 py-12">
+      <main className="max-w-3xl mx-auto px-4 py-6 sm:py-10">
         {/* 브레드크럼 */}
         <nav
-          className="text-xs text-[var(--brand-text-secondary)] mb-6 flex items-center gap-1.5 flex-wrap"
+          className="text-xs text-[var(--brand-text-secondary)] mb-5 sm:mb-6 flex items-center gap-1 sm:gap-1.5 flex-wrap"
           aria-label="breadcrumb"
         >
           <Link href="/" className="hover:text-[var(--brand-accent)] transition-colors">홈</Link>
@@ -192,50 +194,91 @@ export default async function ConditionPage({
             💊 건강·의료
           </Link>
           <span aria-hidden="true">›</span>
-          <span className="text-[var(--brand-text)] truncate max-w-[200px]" aria-current="page">
+          <span className="text-[var(--brand-text)] truncate max-w-[150px] sm:max-w-[280px]" aria-current="page">
             {content.title}
           </span>
         </nav>
 
-        <p className="text-xs text-[var(--brand-text-secondary)] uppercase tracking-wide mb-2">
-          건강·의료
-        </p>
-        <h1 className="text-3xl font-bold mb-4">{content.title}</h1>
+        <header className="mb-6 sm:mb-8">
+          <div className="flex items-center gap-2 mb-3">
+            <span className="px-2.5 py-0.5 rounded-full bg-[var(--brand-border)] text-xs font-semibold text-[var(--brand-text-secondary)]">
+              💊 건강·의료
+            </span>
+            {content.ymyl && (
+              <span className="px-2.5 py-0.5 rounded-full bg-amber-50 text-xs font-semibold text-amber-700 border border-amber-200">
+                전문가 검토
+              </span>
+            )}
+          </div>
 
-        <div className="flex flex-wrap items-center gap-3 text-xs text-[var(--brand-text-secondary)] mb-6">
-          {content.reviewedAt && (
-            <span>검토일: {content.reviewedAt.slice(0, 10)}{content.reviewerName && ` · ${content.reviewerName}`}</span>
-          )}
-          <span>⏱ 약 {readingTime}분 읽기</span>
-        </div>
+          <h1
+            className="text-xl sm:text-2xl md:text-3xl font-extrabold text-[var(--brand-text)] leading-tight mb-3 sm:mb-4 tracking-tight"
+            style={{ wordBreak: "keep-all" }}
+            data-speakable
+          >
+            {content.title}
+          </h1>
+
+          <div className="flex flex-col sm:flex-row sm:flex-wrap sm:items-center gap-1.5 sm:gap-3 text-xs text-[var(--brand-text-secondary)]">
+            {content.publishedAt && (
+              <time dateTime={content.publishedAt} className="flex items-center gap-1">
+                <span aria-hidden="true">📅</span>
+                {content.publishedAt.slice(0, 10)} 발행
+              </time>
+            )}
+            {content.reviewedAt && (
+              <span className="flex items-center gap-1">
+                <span aria-hidden="true">✅</span>
+                {content.reviewedAt.slice(0, 10)}{content.reviewerName && ` · ${content.reviewerName}`} 검토
+              </span>
+            )}
+            {content.authorName && (
+              <span className="flex items-center gap-1">
+                <span aria-hidden="true">✍️</span>
+                {content.authorName}
+                {content.authorCredential && ` (${content.authorCredential})`}
+              </span>
+            )}
+            <span className="flex items-center gap-1">
+              <span aria-hidden="true">⏱</span>
+              약 {readingTime}분 읽기
+            </span>
+          </div>
+        </header>
 
         <YmylDisclaimer categoryId={categoryId} />
 
-        {headings.length >= 3 && <TableOfContents headings={headings} />}
+        {headings.length >= 3 && <TableOfContents headings={headings} slug={slug} />}
 
         <article
-          className="prose prose-sm max-w-none mt-6"
+          id="article-body"
+          className="prose prose-sm sm:prose-base max-w-none mt-5 sm:mt-6"
           dangerouslySetInnerHTML={{ __html: bodyWithIds }}
         />
+        <OutboundLinkTracker />
 
         {Array.isArray(content.sources) && content.sources.length > 0 && (
-          <section className="mt-8 pt-6 border-t border-[var(--brand-border)]">
-            <h2 className="text-sm font-semibold mb-2">참고 자료</h2>
-            <ul className="text-xs text-[var(--brand-text-secondary)] space-y-1">
+          <section className="mt-8 sm:mt-10 pt-5 sm:pt-6 border-t border-[var(--brand-border)]" aria-label="참고 자료">
+            <h2 className="text-sm font-bold text-[var(--brand-text)] mb-3">📚 참고 자료</h2>
+            <ul className="space-y-1.5">
               {(content.sources as string[]).map((s, i) => (
-                <li key={i}>{s}</li>
+                <li key={i} className="text-xs sm:text-sm text-[var(--brand-text-secondary)] flex gap-2">
+                  <span className="shrink-0 text-[var(--brand-accent)]">·</span>
+                  <span>{s}</span>
+                </li>
               ))}
             </ul>
           </section>
         )}
 
         {content.disclaimer && (
-          <div className="mt-6 p-4 bg-[var(--brand-border)] rounded-lg text-xs text-[var(--brand-text-secondary)]">
+          <div className="mt-6 p-4 bg-[var(--brand-border)] rounded-xl text-xs text-[var(--brand-text-secondary)] leading-relaxed">
             {content.disclaimer}
           </div>
         )}
 
-        <CategoryCta categoryId={categoryId} className="mt-8" />
+        <AdSlot adType="adsense" format="rectangle" className="my-6" />
+        <CategoryCta categoryId={categoryId} className="my-6" />
 
         <div className="mt-6 pt-6 border-t border-[var(--brand-border)]">
           <ShareButtons url={pageUrl} title={content.title} />
@@ -277,6 +320,6 @@ export default async function ConditionPage({
           </div>
         </section>
       </main>
-    </>
+    </AdPolicyProvider>
   );
 }

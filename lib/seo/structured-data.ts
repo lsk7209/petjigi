@@ -94,8 +94,10 @@ export function localBusinessSchema(business: Business) {
           hasMap: `https://map.kakao.com/?q=${encodeURIComponent(business.name + " " + (business.address ?? ""))}`,
         }
       : {}),
-    openingHoursSpecification: undefined,
-    priceRange: undefined,
+    speakable: {
+      "@type": "SpeakableSpecification",
+      cssSelector: ["h1", "[data-speakable]"],
+    },
   };
 }
 
@@ -243,5 +245,50 @@ export function speakableSchema(cssSelectors: string[]) {
       "@type": "SpeakableSpecification",
       cssSelector: cssSelectors,
     },
+  };
+}
+
+/** ItemList — 목록 페이지(가이드·블로그·견종 등)의 AI 추출 최적화 (AEO/GEO) */
+export function itemListSchema(
+  items: { position: number; name: string; url: string; description?: string }[]
+) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    numberOfItems: items.length,
+    itemListElement: items.map((item) => ({
+      "@type": "ListItem",
+      position: item.position,
+      name: item.name,
+      url: item.url,
+      ...(item.description ? { description: item.description } : {}),
+    })),
+  };
+}
+
+/** CollectionPage — 카테고리·허브 페이지 타입 명시 */
+export function collectionPageSchema(
+  name: string,
+  url: string,
+  description?: string
+) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    name,
+    url,
+    inLanguage: "ko-KR",
+    ...(description ? { description } : {}),
+    speakable: {
+      "@type": "SpeakableSpecification",
+      cssSelector: ["h1", "h2", "[data-speakable]"],
+    },
+    publisher: {
+      "@type": "Organization",
+      name: "펫지기",
+      url: SITE_URL,
+      logo: { "@type": "ImageObject", url: `${SITE_URL}/icon.png` },
+    },
+    isPartOf: { "@type": "WebSite", name: "펫지기", url: SITE_URL },
   };
 }

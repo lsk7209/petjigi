@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { cache } from "react";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { db } from "@/db/client";
@@ -14,11 +15,22 @@ import { TableOfContents } from "@/components/content/table-of-contents";
 import { ReadingProgress } from "@/components/content/reading-progress";
 import { ShareButtons } from "@/components/content/share-buttons";
 import { CategoryCta } from "@/components/content/category-cta";
+import { ScrollDepthTracker } from "@/components/analytics/scroll-depth-tracker";
+import { OutboundLinkTracker } from "@/components/analytics/outbound-link-tracker";
+import { GuideViewTracker } from "@/components/analytics/guide-view-tracker";
 import type { TocHeading } from "@/components/content/table-of-contents";
 
 export const revalidate = 604800;
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://petjigi.kr";
+
+const getBlogContent = cache(async (slug: string) =>
+  db
+    .select()
+    .from(contents)
+    .where(and(eq(contents.slug, slug), eq(contents.status, "published")))
+    .get()
+);
 
 export async function generateStaticParams() {
   try {
@@ -38,11 +50,7 @@ export async function generateMetadata({
   params: Promise<{ slug: string }>;
 }): Promise<Metadata> {
   const { slug } = await params;
-  const content = await db
-    .select()
-    .from(contents)
-    .where(and(eq(contents.slug, slug), eq(contents.status, "published")))
-    .get();
+  const content = await getBlogContent(slug);
 
   if (!content) return {};
 
@@ -124,11 +132,7 @@ export default async function BlogPostPage({
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
-  const content = await db
-    .select()
-    .from(contents)
-    .where(and(eq(contents.slug, slug), eq(contents.status, "published")))
-    .get();
+  const content = await getBlogContent(slug);
 
   if (!content) notFound();
 
@@ -183,6 +187,8 @@ export default async function BlogPostPage({
   return (
     <>
       <ReadingProgress />
+      <ScrollDepthTracker />
+      <GuideViewTracker slug={slug} title={content.title} category={content.category} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(article) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb) }} />
       {faqItems.length > 0 && (
@@ -255,7 +261,7 @@ export default async function BlogPostPage({
         </header>
 
         <YmylDisclaimer categoryId={categoryId} />
-        <TableOfContents headings={headings} />
+        <TableOfContents headings={headings} slug={slug} />
 
         <AdPolicyProvider category={categoryId}>
           <AdSlot adType="adsense" format="horizontal" className="my-4" />
@@ -266,6 +272,7 @@ export default async function BlogPostPage({
           className="prose prose-sm sm:prose-base max-w-none mt-5 sm:mt-6"
           dangerouslySetInnerHTML={{ __html: bodyWithIds }}
         />
+        <OutboundLinkTracker />
 
         <AdPolicyProvider category={categoryId}>
           <AdSlot adType="adsense" format="rectangle" className="my-6" />

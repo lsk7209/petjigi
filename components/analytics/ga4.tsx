@@ -3,6 +3,7 @@
 import Script from "next/script";
 import { useEffect, useRef } from "react";
 import { usePathname } from "next/navigation";
+import { useReportWebVitals } from "next/web-vitals";
 
 const GA_ID = process.env.NEXT_PUBLIC_GA_ID;
 
@@ -48,9 +49,22 @@ function useEngagementTime() {
   }, [pathname]);
 }
 
+function useWebVitals() {
+  useReportWebVitals((metric) => {
+    if (typeof window === "undefined" || !window.gtag) return;
+    window.gtag("event", metric.name, {
+      value: Math.round(metric.name === "CLS" ? metric.value * 1000 : metric.value),
+      event_category: "Web Vitals",
+      event_label: metric.id,
+      non_interaction: true,
+    });
+  });
+}
+
 function GA4Tracker() {
   useScrollDepth();
   useEngagementTime();
+  useWebVitals();
   return null;
 }
 
@@ -71,7 +85,15 @@ export function GA4() {
           gtag('config', '${GA_ID}', {
             send_page_view: true,
             cookie_flags: 'SameSite=None;Secure',
+            allow_google_signals: true,
+            allow_ad_personalization_signals: true,
+            custom_map: {
+              dimension1: 'content_type',
+              dimension2: 'category_id',
+              metric1: 'reading_progress',
+            },
           });
+          gtag('set', 'content_type', 'web');
         `}
       </Script>
       <GA4Tracker />

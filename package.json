@@ -34,7 +34,9 @@
     "etl:vets": "tsx --env-file=.env.local etl/mois/animal-hospitals.ts",
     "etl:shelters": "tsx --env-file=.env.local etl/apms/shelters.ts",
     "etl:rescued": "tsx --env-file=.env.local etl/apms/rescued-animals.ts",
-    "etl:registration": "tsx --env-file=.env.local etl/mafra/registration-agents.ts"
+    "etl:registration": "tsx --env-file=.env.local etl/mafra/registration-agents.ts",
+    "verify": "tsx --env-file=.env.local scripts/verify-setup.ts",
+    "notify": "tsx --env-file=.env.local scripts/notify-published.ts"
   },
   "dependencies": {
     "@base-ui/react": "^1.4.1",

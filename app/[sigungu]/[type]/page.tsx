@@ -1,14 +1,30 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
-import { db } from "@/db/client";
-import { businesses, regions } from "@/db/schema";
-import { and, eq, sql } from "drizzle-orm";
-import { breadcrumbSchema, faqSchema } from "@/lib/seo/structured-data";
+import { getCachedBusinessListing, getCachedRegionBySlug } from "@/lib/db-queries";
+import { breadcrumbSchema, faqSchema, itemListSchema, collectionPageSchema } from "@/lib/seo/structured-data";
 import type { CategoryId } from "@/lib/category";
 import { CategoryCta } from "@/components/content/category-cta";
+import { AdSlot } from "@/components/ads/ad-slot";
+import { AdPolicyProvider } from "@/components/providers/ad-policy-provider";
+import { RegionViewTracker } from "@/components/analytics/region-view-tracker";
+import { db } from "@/db/client";
+import { businesses, regions } from "@/db/schema";
+import { eq } from "drizzle-orm";
 
 export const revalidate = 86400;
+
+// 빌드 시 활성 업장이 있는 (sigungu, type) 조합 모두 사전 렌더링
+export async function generateStaticParams() {
+  const rows = await db
+    .select({ sigunguSlug: regions.sigunguSlug, type: businesses.type })
+    .from(businesses)
+    .innerJoin(regions, eq(businesses.addressSigungu, regions.sigungu))
+    .where(eq(businesses.status, "active"))
+    .groupBy(regions.sigunguSlug, businesses.type)
+    .all();
+  return rows.map((r) => ({ sigungu: r.sigunguSlug, type: r.type }));
+}
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://petjigi.kr";
 
@@ -32,12 +48,7 @@ export async function generateMetadata({
   const meta = TYPE_META[type];
   if (!meta) return {};
 
-  const region = await db
-    .select({ sigungu: regions.sigungu, sido: regions.sido })
-    .from(regions)
-    .where(eq(regions.sigunguSlug, sigungu))
-    .get();
-
+  const region = await getCachedRegionBySlug(sigungu);
   const location = region?.sigungu ?? decodeURIComponent(sigungu);
   const title = `${location} ${meta.label} | 펫지기`;
   const description = `${location} ${meta.label} 전체 목록. ${meta.desc} — 공공데이터 기반 정확한 업체 정보.`;
@@ -76,27 +87,11 @@ export default async function SigunguTypePage({
   const meta = TYPE_META[type];
   if (!meta) notFound();
 
-  const region = await db
-    .select()
-    .from(regions)
-    .where(eq(regions.sigunguSlug, sigungu))
-    .get();
-
+  const region = await getCachedRegionBySlug(sigungu);
   const sigunguName = region?.sigungu ?? decodeURIComponent(sigungu);
   const sidoName = region?.sido ?? "";
 
-  const businessList = await db
-    .select()
-    .from(businesses)
-    .where(
-      and(
-        eq(businesses.type, type),
-        eq(businesses.addressSigungu, sigunguName),
-        eq(businesses.status, "active")
-      )
-    )
-    .orderBy(sql`CASE WHEN lat IS NOT NULL THEN 0 ELSE 1 END`)
-    .limit(50);
+  const businessList = await getCachedBusinessListing(sigunguName, type);
 
   const breadcrumb = breadcrumbSchema([
     { name: "홈", url: SITE_URL },
@@ -108,10 +103,28 @@ export default async function SigunguTypePage({
 
   const faq = faqSchema(buildFaq(sigunguName, meta.label, businessList.length));
 
+  const itemList = itemListSchema(
+    businessList.map((b, i) => ({
+      position: i + 1,
+      name: b.name,
+      url: `${SITE_URL}/${b.type}/${sigungu}/${encodeURIComponent(b.name)}`,
+      description: b.address ?? undefined,
+    }))
+  );
+
+  const collectionPage = collectionPageSchema(
+    `${sigunguName} ${meta.label}`,
+    `${SITE_URL}/${sigungu}/${type}`,
+    `${sigunguName} ${meta.label} ${businessList.length}곳 — ${meta.desc}. 공공데이터 기반 정확한 업체 정보.`
+  );
+
   return (
-    <>
+    <AdPolicyProvider category={meta.categoryId as CategoryId}>
+      <RegionViewTracker sido={sidoName || undefined} sigungu={sigunguName} type={type} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faq) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(itemList) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(collectionPage) }} />
       <main className="max-w-5xl mx-auto px-4 py-10">
         {/* 브레드크럼 */}
         <nav
@@ -139,7 +152,7 @@ export default async function SigunguTypePage({
         <header className="mb-6 sm:mb-8">
           <div className="flex items-center gap-2 mb-2 sm:mb-3">
             <span className="text-2xl sm:text-3xl" role="img" aria-label={meta.label}>{meta.emoji}</span>
-            <h1 className="text-xl sm:text-2xl md:text-3xl font-extrabold text-[var(--brand-text)] tracking-tight">
+            <h1 className="text-xl sm:text-2xl md:text-3xl font-extrabold text-[var(--brand-text)] tracking-tight" data-speakable>
               {sigunguName} {meta.label}
             </h1>
           </div>
@@ -161,6 +174,8 @@ export default async function SigunguTypePage({
             </p>
           </div>
         </div>
+
+        <AdSlot adType="adsense" format="horizontal" className="mb-6" />
 
         {businessList.length === 0 ? (
           <div className="text-center py-16 text-[var(--brand-text-secondary)]">
@@ -222,6 +237,8 @@ export default async function SigunguTypePage({
 
         <CategoryCta categoryId={meta.categoryId} className="mt-10" />
 
+        <AdSlot adType="adsense" format="rectangle" className="mt-8" />
+
         <p className="mt-8 text-xs text-[var(--brand-text-secondary)]">
           정보 기준: 공공데이터포털 최신 동기화 &nbsp;·&nbsp;
           <Link href={`/sido/${region?.sidoSlug ?? ""}`} className="hover:text-[var(--brand-accent)]">
@@ -229,6 +246,6 @@ export default async function SigunguTypePage({
           </Link>
         </p>
       </main>
-    </>
+    </AdPolicyProvider>
   );
 }

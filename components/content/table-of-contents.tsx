@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { track } from "@/lib/analytics/events";
 
 export interface TocHeading {
   id: string;
@@ -8,7 +9,7 @@ export interface TocHeading {
   level: 2 | 3;
 }
 
-export function TableOfContents({ headings }: { headings: TocHeading[] }) {
+export function TableOfContents({ headings, slug = "" }: { headings: TocHeading[]; slug?: string }) {
   const [activeId, setActiveId] = useState<string>("");
   const [isOpen, setIsOpen] = useState(true);
   const initialized = useRef(false);
@@ -74,6 +75,7 @@ export function TableOfContents({ headings }: { headings: TocHeading[] }) {
             <li key={h.id} className={h.level === 3 ? "ml-4" : ""}>
               <a
                 href={`#${h.id}`}
+                onClick={() => track.tocClick({ headingText: h.text, guideSlug: slug })}
                 className={[
                   "flex items-start gap-1.5 text-sm py-0.5 transition-colors leading-snug",
                   activeId === h.id

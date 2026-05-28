@@ -1,15 +1,13 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
-import { db } from "@/db/client";
-import { contents } from "@/db/schema";
-import { eq, and, desc } from "drizzle-orm";
 import { getCategoryBySlug, CATEGORIES } from "@/lib/category";
+import { getCachedCategoryGuides } from "@/lib/db-queries";
 import { YmylDisclaimer } from "@/components/content/ymyl-disclaimer";
 import { CategoryProvider } from "@/components/providers/category-provider";
 import { AdPolicyProvider } from "@/components/providers/ad-policy-provider";
 import { ThemeMode } from "@/components/providers/theme-mode";
-import { breadcrumbSchema, faqSchema, definedTermSetSchema } from "@/lib/seo/structured-data";
+import { breadcrumbSchema, faqSchema, definedTermSetSchema, itemListSchema, collectionPageSchema } from "@/lib/seo/structured-data";
 
 export const revalidate = 3600;
 
@@ -98,24 +96,6 @@ const SIDO_LIST = [
   { label: "전남", slug: "jeonnam" },
 ];
 
-async function getCategoryGuides(categoryId: number) {
-  return db
-    .select({
-      slug: contents.slug,
-      title: contents.title,
-      publishedAt: contents.publishedAt,
-    })
-    .from(contents)
-    .where(
-      and(
-        eq(contents.status, "published"),
-        eq(contents.type, "guide"),
-        eq(contents.category, categoryId)
-      )
-    )
-    .orderBy(desc(contents.publishedAt))
-    .limit(6);
-}
 
 export default async function CategoryPage({
   params,
@@ -126,7 +106,7 @@ export default async function CategoryPage({
   const cat = getCategoryBySlug(slug);
   if (!cat) notFound();
 
-  const guides = await getCategoryGuides(cat.id);
+  const guides = await getCachedCategoryGuides(cat.id);
   const desc = CATEGORY_DESCRIPTIONS[slug];
   const emoji = CATEGORY_EMOJI[slug] ?? "📌";
 
@@ -174,12 +154,31 @@ export default async function CategoryPage({
 
   const faq = faqSchema(faqItems);
 
+  const categoryDesc = CATEGORY_DESCRIPTIONS[slug];
+  const collectionPage = collectionPageSchema(
+    `${cat.name} | 펫지기`,
+    `${SITE_URL}/category/${slug}`,
+    categoryDesc?.short
+  );
+
+  const guideItemList = guides.length > 0
+    ? itemListSchema(guides.map((g, i) => ({
+        position: i + 1,
+        name: g.title,
+        url: `${SITE_URL}/guide/${g.slug}`,
+      })))
+    : null;
+
   return (
     <CategoryProvider category={cat.id}>
       <ThemeMode mode={cat.mode}>
         <AdPolicyProvider category={cat.id}>
           <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb) }} />
           <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faq) }} />
+          <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(collectionPage) }} />
+          {guideItemList && (
+            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(guideItemList) }} />
+          )}
           <main className="max-w-5xl mx-auto px-4 py-6 sm:py-10">
             {/* 브레드크럼 */}
             <nav
@@ -197,7 +196,7 @@ export default async function CategoryPage({
             <header className="mb-6 sm:mb-8">
               <div className="flex items-center gap-3 mb-2 sm:mb-3">
                 <span className="text-3xl sm:text-4xl" role="img" aria-label={cat.name}>{emoji}</span>
-                <h1 className="text-2xl sm:text-3xl font-extrabold text-[var(--brand-text)] tracking-tight">
+                <h1 className="text-2xl sm:text-3xl font-extrabold text-[var(--brand-text)] tracking-tight" data-speakable>
                   {cat.name}
                 </h1>
               </div>
@@ -228,7 +227,7 @@ export default async function CategoryPage({
                     >
                       <span className="text-lg shrink-0 mt-0.5">{emoji}</span>
                       <div className="min-w-0">
-                        <p className="text-sm font-semibold text-[var(--brand-text)] group-hover:text-[var(--brand-accent)] transition-colors leading-snug word-break-keep">
+                        <p className="text-sm sm:text-base font-semibold text-[var(--brand-text)] group-hover:text-[var(--brand-accent)] transition-colors leading-snug word-break-keep">
                           {g.title}
                         </p>
                         {g.publishedAt && (

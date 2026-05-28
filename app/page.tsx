@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { db } from "@/db/client";
-import { contents, businesses, shelters, rescuedAnimals } from "@/db/schema";
-import { eq, desc, and, sql, count } from "drizzle-orm";
+import { getCachedStats, getCachedRecentGuides } from "@/lib/db-queries";
 import { CATEGORIES } from "@/lib/category";
 import { faqSchema, definedTermSetSchema } from "@/lib/seo/structured-data";
 import { SubscribeForm } from "@/components/forms/subscribe-form";
+import { AdSlot } from "@/components/ads/ad-slot";
+import { AdPolicyProvider } from "@/components/providers/ad-policy-provider";
 
 const SITE_URL_CONST = process.env.NEXT_PUBLIC_SITE_URL ?? "https://petjigi.kr";
 
@@ -88,32 +88,6 @@ const SIDO_LIST = [
   { label: "제주", slug: "jeju" },
 ];
 
-async function getStats() {
-  const [bizCount, shelterCount, rescuedCount] = await Promise.all([
-    db.select({ count: count() }).from(businesses).where(eq(businesses.status, "active")).get(),
-    db.select({ count: count() }).from(shelters).get(),
-    db.select({ count: count() }).from(rescuedAnimals).get(),
-  ]);
-  return {
-    businesses: bizCount?.count ?? 0,
-    shelters: shelterCount?.count ?? 0,
-    rescued: rescuedCount?.count ?? 0,
-  };
-}
-
-async function getRecentGuides() {
-  return db
-    .select({
-      slug: contents.slug,
-      title: contents.title,
-      category: contents.category,
-      publishedAt: contents.publishedAt,
-    })
-    .from(contents)
-    .where(and(eq(contents.status, "published"), eq(contents.type, "guide")))
-    .orderBy(desc(contents.publishedAt))
-    .limit(6);
-}
 
 function formatCount(n: number) {
   if (n >= 10000) return `${Math.floor(n / 1000)}천+`;
@@ -123,7 +97,7 @@ function formatCount(n: number) {
 
 export default async function HomePage() {
   const categories = Object.values(CATEGORIES);
-  const [recentGuides, stats] = await Promise.all([getRecentGuides(), getStats()]);
+  const [recentGuides, stats] = await Promise.all([getCachedRecentGuides(), getCachedStats()]);
 
   const STATS = [
     { label: "전국 업장 정보", value: formatCount(stats.businesses), sublabel: "동물병원·미용·장묘 등" },
@@ -141,17 +115,17 @@ export default async function HomePage() {
   };
 
   return (
-    <>
+    <AdPolicyProvider category={5}>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(HOME_FAQ) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(HOME_TERMS) }} />
       <main>
         {/* ── HERO ── */}
-        <section style={{ padding: "80px 0 56px" }} aria-label="사이트 소개">
-          <div className="pj-container-7xl" style={{ padding: "0 32px" }}>
-            <div className="grid gap-14 items-center" style={{ gridTemplateColumns: "1.25fr 1fr" }}>
+        <section className="py-12 sm:py-16 md:py-20" aria-label="사이트 소개">
+          <div className="pj-container-7xl">
+            <div className="grid gap-8 md:gap-14 items-center grid-cols-1 md:grid-cols-[1.25fr_1fr]">
               <div>
                 <span className="pj-eyebrow">반려가족을 위한 안내서</span>
-                <h1 className="pj-display" style={{ fontSize: "clamp(40px,5vw,58px)", marginTop: 16, marginBottom: 24, lineHeight: 1.15 }}>
+                <h1 className="pj-display" style={{ fontSize: "clamp(40px,5vw,58px)", marginTop: 16, marginBottom: 24, lineHeight: 1.15 }} data-speakable>
                   동물병원부터<br/>
                   마지막 인사까지<br/>
                   <span style={{ color: "var(--brand-accent-warm)" }}>한 곳에서</span>
@@ -183,8 +157,8 @@ export default async function HomePage() {
         </section>
 
         {/* ── 6대 카테고리 ── */}
-        <section style={{ padding: "64px 0", background: "var(--brand-surface-2)" }} aria-label="카테고리">
-          <div className="pj-container-7xl" style={{ padding: "0 32px" }}>
+        <section className="py-12 sm:py-16" style={{ background: "var(--brand-surface-2)" }} aria-label="카테고리">
+          <div className="pj-container-7xl">
             <div style={{ display: "flex", alignItems: "baseline", justifyContent: "space-between", marginBottom: 32 }}>
               <div>
                 <span className="pj-numeral" style={{ fontSize: 14 }}>01</span>
@@ -240,10 +214,10 @@ export default async function HomePage() {
         </section>
 
         {/* ── 지역 빠른 검색 ── */}
-        <section style={{ padding: "72px 0" }} aria-label="지역별 검색">
-          <div className="pj-container-7xl" style={{ padding: "0 32px" }}>
-            <div className="grid gap-14 items-start" style={{ gridTemplateColumns: "1fr 2fr" }}>
-              <div style={{ position: "sticky", top: 24 }}>
+        <section className="py-12 sm:py-16 md:py-20" aria-label="지역별 검색">
+          <div className="pj-container-7xl">
+            <div className="grid gap-8 md:gap-14 items-start grid-cols-1 md:grid-cols-[1fr_2fr]">
+              <div className="md:sticky md:top-6">
                 <span className="pj-numeral" style={{ fontSize: 14 }}>02</span>
                 <h2 className="pj-display" style={{ fontSize: 32, marginTop: 4, marginBottom: 12 }}>우리 동네부터<br/>살펴보세요</h2>
                 <p style={{ color: "var(--brand-text-secondary)", fontSize: 15, lineHeight: 1.7 }}>
@@ -267,8 +241,8 @@ export default async function HomePage() {
         </section>
 
         {/* ── 에디토리얼 브레이크 ── */}
-        <section style={{ padding: "48px 0", background: "var(--brand-text)", color: "var(--brand-bg)" }}>
-          <div className="pj-container-5xl" style={{ padding: "32px 24px", textAlign: "center" }}>
+        <section className="py-10 sm:py-14" style={{ background: "var(--brand-text)", color: "var(--brand-bg)" }}>
+          <div className="pj-container-5xl" style={{ textAlign: "center" }}>
             <span className="pj-eyebrow" style={{ color: "var(--brand-accent)" }}>왜 펫지기인가</span>
             <p className="pj-display" style={{ fontSize: "clamp(22px,3vw,30px)", marginTop: 14, lineHeight: 1.5, color: "var(--brand-bg)", maxWidth: 720, marginLeft: "auto", marginRight: "auto" }}>
               "검색 한 번이면 우리 동네 동물병원,<br/>
@@ -278,10 +252,14 @@ export default async function HomePage() {
           </div>
         </section>
 
+        <div className="pj-container-7xl py-6">
+          <AdSlot adType="adsense" format="horizontal" />
+        </div>
+
         {/* ── 최근 가이드 ── */}
         {recentGuides.length > 0 && (
-          <section style={{ padding: "72px 0" }} aria-label="최근 가이드">
-            <div className="pj-container-7xl" style={{ padding: "0 32px" }}>
+          <section className="py-12 sm:py-16 md:py-20" aria-label="최근 가이드">
+            <div className="pj-container-7xl">
               <div style={{ display: "flex", alignItems: "baseline", justifyContent: "space-between", marginBottom: 32 }}>
                 <div>
                   <span className="pj-numeral" style={{ fontSize: 14 }}>03</span>
@@ -322,8 +300,8 @@ export default async function HomePage() {
         )}
 
         {/* ── 주요 콘텐츠 허브 ── */}
-        <section style={{ padding: "64px 0", background: "var(--brand-surface-2)" }} aria-label="주요 콘텐츠">
-          <div className="pj-container-7xl" style={{ padding: "0 32px" }}>
+        <section className="py-12 sm:py-16" style={{ background: "var(--brand-surface-2)" }} aria-label="주요 콘텐츠">
+          <div className="pj-container-7xl">
             <div style={{ marginBottom: 32 }}>
               <span className="pj-numeral" style={{ fontSize: 14 }}>04</span>
               <h2 className="pj-display" style={{ fontSize: 32, marginTop: 4 }}>꼭 알아야 할 정보</h2>
@@ -377,8 +355,8 @@ export default async function HomePage() {
         </section>
 
         {/* ── 신뢰 섹션 ── */}
-        <section style={{ padding: "56px 0", borderTop: "1px solid var(--brand-border)" }}>
-          <div className="pj-container-7xl" style={{ padding: "0 32px" }}>
+        <section className="py-10 sm:py-14" style={{ borderTop: "1px solid var(--brand-border)" }}>
+          <div className="pj-container-7xl">
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-8">
               {[
                 { icon: "🛡️", title: "수의사·변호사 검토", desc: "의료·법률 카테고리는 자격을 가진 전문가가 검토한 콘텐츠만 게재합니다." },
@@ -396,8 +374,8 @@ export default async function HomePage() {
         </section>
 
         {/* ── 뉴스레터 ── */}
-        <section style={{ padding: "56px 0 72px" }} aria-label="뉴스레터 구독">
-          <div className="pj-container-5xl" style={{ padding: "0 24px" }}>
+        <section className="py-10 sm:py-14 pb-16 sm:pb-20" aria-label="뉴스레터 구독">
+          <div className="pj-container-5xl">
             <div style={{ background: "var(--brand-accent)", borderRadius: "var(--r-card)", padding: "40px 48px", textAlign: "center" }}>
               <span className="pj-eyebrow" style={{ color: "#1a1f15", marginBottom: 10 }}>뉴스레터</span>
               <h2 className="pj-display" style={{ fontSize: 28, marginTop: 10, marginBottom: 12, color: "#1a1f15" }}>
@@ -413,6 +391,6 @@ export default async function HomePage() {
           </div>
         </section>
       </main>
-    </>
+    </AdPolicyProvider>
   );
 }

@@ -3,10 +3,13 @@ module.exports = {
   siteUrl: process.env.NEXT_PUBLIC_SITE_URL || "https://petjigi.kr",
   generateRobotsTxt: true,
   robotsTxtOptions: {
-    additionalSitemaps: [],
+    // /api/sitemap-content는 실제 DB publishedAt/updatedAt 날짜를 사용하는 콘텐츠 사이트맵
+    additionalSitemaps: [
+      `${process.env.NEXT_PUBLIC_SITE_URL || "https://petjigi.kr"}/api/sitemap-content`,
+    ],
     policies: [
-      // 단일 User-agent: * 블록 (중복 블록 방지)
-      { userAgent: "*", allow: "/", disallow: ["/rescue/", "/search", "/api/", "/admin/"] },
+      // /api/sitemap-content는 명시적 Allow (Disallow: /api/ 보다 더 구체적이므로 우선적용)
+      { userAgent: "*", allow: ["/", "/api/sitemap-content"], disallow: ["/rescue/", "/search", "/api/", "/admin/"] },
       // AI 크롤러 전체 허용
       { userAgent: "GPTBot", allow: "/" },
       { userAgent: "ClaudeBot", allow: "/" },
@@ -18,17 +21,44 @@ module.exports = {
       { userAgent: "Bytespider", allow: "/" },
     ],
   },
-  // 동 단위 페이지, 구조동물, 검색 결과 제외
-  exclude: ["/rescue/*", "/search*", "/admin/*", "/*?page=*"],
+  // 콘텐츠 상세 페이지는 /api/sitemap-content에서 실제 DB 날짜로 처리 (중복 방지)
+  exclude: [
+    "/rescue/*", "/search*", "/admin/*", "/*?page=*", "/*?cat=*",
+    "/guide/*", "/blog/*", "/condition/*", "/breed/*/*",
+  ],
   changefreq: "daily",
   priority: 0.7,
   transform: async (config, path) => {
-    // 카테고리 허브·홈 우선순위 높게
-    if (path === "/" || path === "/breed" || path === "/guide" || path === "/condition" || path === "/insurance" || path.startsWith("/category/") || path.startsWith("/insurance/")) {
+    // 최상위 허브 — 홈·카테고리·블로그·가이드·질병·보험·품종 인덱스
+    if (
+      path === "/" ||
+      path === "/blog" ||
+      path === "/guide" ||
+      path === "/condition" ||
+      path === "/breed" ||
+      path === "/insurance" ||
+      path.startsWith("/category/") ||
+      path.startsWith("/insurance/")
+    ) {
       return { loc: path, changefreq: "hourly", priority: 1.0, lastmod: new Date().toISOString() };
     }
-    if (path.startsWith("/sido/") || path.startsWith("/guide/") || path.startsWith("/breed/") || path.startsWith("/condition/")) {
+    // 콘텐츠 상세 + 지역 허브
+    if (
+      path.startsWith("/sido/") ||
+      path.startsWith("/guide/") ||
+      path.startsWith("/blog/") ||
+      path.startsWith("/breed/") ||
+      path.startsWith("/condition/")
+    ) {
       return { loc: path, changefreq: "weekly", priority: 0.8, lastmod: new Date().toISOString() };
+    }
+    // 보호센터 지역 목록
+    if (path.startsWith("/shelter/")) {
+      return { loc: path, changefreq: "weekly", priority: 0.7, lastmod: new Date().toISOString() };
+    }
+    // 지역×업종 목록 + 업체 상세
+    if (path.match(/^\/[a-z]+-[a-z]+\//) || path.match(/^\/(vet|grooming|boarding|funeral|sale|breeder|transport|exhibition)\//)) {
+      return { loc: path, changefreq: "daily", priority: 0.6, lastmod: new Date().toISOString() };
     }
     return { loc: path, changefreq: config.changefreq, priority: config.priority, lastmod: new Date().toISOString() };
   },

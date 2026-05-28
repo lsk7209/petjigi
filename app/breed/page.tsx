@@ -1,12 +1,27 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { breadcrumbSchema, faqSchema } from "@/lib/seo/structured-data";
+import { breadcrumbSchema, faqSchema, collectionPageSchema, definedTermSetSchema } from "@/lib/seo/structured-data";
+import { AdSlot } from "@/components/ads/ad-slot";
+import { AdPolicyProvider } from "@/components/providers/ad-policy-provider";
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://petjigi.kr";
 
 const BREADCRUMB = breadcrumbSchema([
   { name: "홈", url: SITE_URL },
   { name: "견종·묘종 도감", url: `${SITE_URL}/breed` },
+]);
+
+const COLLECTION_PAGE = collectionPageSchema(
+  "견종·묘종 도감",
+  `${SITE_URL}/breed`,
+  "강아지·고양이·소동물 품종별 특징, 성격, 평균 수명, 흔한 질병 정보를 확인하세요."
+);
+
+const BREED_TERMS = definedTermSetSchema("반려동물 품종 용어", [
+  { name: "순종", description: "특정 품종 기준에 맞는 혈통을 가진 반려동물로, 혈통서가 발급됩니다." },
+  { name: "믹스견", description: "두 가지 이상의 품종이 혼합된 강아지. 일반적으로 유전 질환 발생률이 낮고 건강한 편입니다." },
+  { name: "단두종", description: "주둥이가 짧고 납작한 견종·묘종(불독, 퍼그, 페르시안 등). 호흡기 문제에 주의가 필요합니다." },
+  { name: "유전 질환", description: "특정 품종에서 높은 빈도로 나타나는 유전적 소인의 질환. 입양 전 해당 품종의 주요 유전 질환을 확인하세요." },
 ]);
 
 const FAQ = faqSchema([
@@ -79,33 +94,43 @@ const HOW_TO_CHOOSE = [
 
 export default function BreedIndexPage() {
   return (
-    <>
+    <AdPolicyProvider category={1}>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(BREADCRUMB) }}
       />
       <script
         type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(COLLECTION_PAGE) }}
+      />
+      <script
+        type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(FAQ) }}
       />
-      <main className="max-w-4xl mx-auto px-4 py-12">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(BREED_TERMS) }}
+      />
+      <main className="max-w-4xl mx-auto px-4 py-8 sm:py-12">
         {/* 브레드크럼 */}
-        <nav className="text-xs text-[var(--brand-text-secondary)] mb-6 flex items-center gap-1.5" aria-label="breadcrumb">
+        <nav className="text-xs text-[var(--brand-text-secondary)] mb-5 sm:mb-6 flex items-center gap-1.5 flex-wrap" aria-label="breadcrumb">
           <Link href="/" className="hover:text-[var(--brand-accent)] transition-colors">홈</Link>
           <span aria-hidden="true">›</span>
           <span className="text-[var(--brand-text)]" aria-current="page">견종·묘종 도감</span>
         </nav>
 
         {/* 헤더 */}
-        <div className="mb-10">
-          <h1 className="text-3xl font-bold text-[var(--brand-text)] mb-3">
+        <div className="mb-8 sm:mb-10">
+          <h1 className="text-2xl sm:text-3xl font-bold text-[var(--brand-text)] mb-2 sm:mb-3 tracking-tight" style={{ wordBreak: "keep-all" }} data-speakable>
             견종·묘종 도감
           </h1>
-          <p className="text-[var(--brand-text-secondary)] leading-relaxed max-w-2xl">
+          <p className="text-sm sm:text-base text-[var(--brand-text-secondary)] leading-relaxed max-w-2xl" style={{ wordBreak: "keep-all" }}>
             강아지·고양이·소동물 품종별 특징, 성격, 평균 수명, 흔한 질병 정보를 확인하세요.
             입양 전 품종의 특성을 파악하면 더 행복한 반려 생활을 시작할 수 있습니다.
           </p>
         </div>
+
+        <AdSlot adType="adsense" format="horizontal" className="mb-8" />
 
         {/* 품종 카드 */}
         <section className="grid grid-cols-1 md:grid-cols-3 gap-5 mb-12">
@@ -197,6 +222,6 @@ export default function BreedIndexPage() {
           </div>
         </section>
       </main>
-    </>
+    </AdPolicyProvider>
   );
 }

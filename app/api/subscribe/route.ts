@@ -5,6 +5,7 @@ import { emailSubscribers } from "@/db/schema";
 import { eq } from "drizzle-orm";
 import { Resend } from "resend";
 import { renderWelcomeEmail } from "@/lib/email/templates";
+import { trackSubscribe } from "@/lib/analytics/ga4-server";
 
 const bodySchema = z.object({
   email: z.string().email("올바른 이메일 형식이 아닙니다."),
@@ -87,6 +88,7 @@ export async function POST(req: NextRequest) {
       .where(eq(emailSubscribers.email, email));
 
     await sendWelcomeEmail(existing.id, existing.id, consentMarketing, source);
+    void trackSubscribe(source ?? "unknown", false);
     return NextResponse.json({ message: "구독이 재활성화되었습니다. 환영합니다!" }, { status: 200 });
   }
 
@@ -100,5 +102,6 @@ export async function POST(req: NextRequest) {
   });
 
   await sendWelcomeEmail(email, id, consentMarketing, source);
+  void trackSubscribe(source ?? "unknown", true);
   return NextResponse.json({ message: "구독이 완료되었습니다. 환영합니다!" }, { status: 201 });
 }

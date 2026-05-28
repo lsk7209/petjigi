@@ -5,6 +5,7 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { cn } from "@/lib/utils";
+import { track } from "@/lib/analytics/events";
 
 const subscribeSchema = z.object({
   email: z
@@ -73,6 +74,7 @@ export function SubscribeForm({
       if (res.ok) {
         setStatus("success");
         setServerMessage(json.message ?? "구독이 완료되었습니다. 환영합니다!");
+        track.subscribe({ source: source ?? "newsletter" });
         reset();
       } else {
         setStatus("error");

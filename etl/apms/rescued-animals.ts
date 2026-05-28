@@ -8,6 +8,7 @@ import { db } from "../../db/client";
 import { rescuedAnimals } from "../../db/schema";
 
 const API_KEY = process.env.APMS_API_KEY ?? "";
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://petjigi.kr";
 const API_URL =
   "https://apis.data.go.kr/1543061/abandonmentPublicService_v2/abandonmentPublic_v2";
 
@@ -135,6 +136,19 @@ export async function syncRescuedAnimals(): Promise<void> {
   }
 
   console.log(`[ETL:rescued-animals] 완료 — ${upserted}건 upsert`);
+
+  // Next.js 캐시 무효화 (rescue + stats 태그)
+  const cronSecret = process.env.CRON_SECRET;
+  if (cronSecret) {
+    await fetch(`${SITE_URL}/api/cache/revalidate`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${cronSecret}`,
+      },
+      body: JSON.stringify({ tags: ["rescue", "stats"] }),
+    }).catch((e) => console.error("[ETL:rescued-animals] 캐시 무효화 실패:", e));
+  }
 }
 
 syncRescuedAnimals().catch((err) => {

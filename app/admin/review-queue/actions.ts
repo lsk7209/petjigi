@@ -3,9 +3,9 @@
 import { db } from "@/db/client";
 import { reviewQueue, contents } from "@/db/schema";
 import { eq } from "drizzle-orm";
-import { revalidatePath } from "next/cache";
-import { pingGuide } from "@/lib/seo/index-now";
-import { notifyGoogleIndexing } from "@/lib/seo/google-indexing";
+import { revalidatePath, revalidateTag } from "next/cache";
+import { pingIndexNow } from "@/lib/seo/index-now";
+import { notifyGoogleIndexing, submitSitemapToGSC } from "@/lib/seo/google-indexing";
 
 export async function approveContent(id: string): Promise<void> {
   const item = await db
@@ -38,18 +38,25 @@ export async function approveContent(id: string): Promise<void> {
       .where(eq(contents.id, item.contentId));
 
     const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://petjigi.kr";
-    const contentUrl = `${SITE_URL}/guide/${content.slug}`;
 
-    // 3. IndexNow 핑 (Naver + Bing)
-    if (content.type === "guide") {
-      await pingGuide(content.slug).catch(() => {});
-    }
+    const TYPE_PATH: Record<string, string> = {
+      guide: "guide",
+      blog: "blog",
+      condition: "condition",
+    };
+    const pathPrefix = TYPE_PATH[content.type] ?? "guide";
+    const contentUrl = `${SITE_URL}/${pathPrefix}/${content.slug}`;
 
-    // 4. Google Indexing API (서비스 계정 설정 시 자동 활성화)
+    // 3. IndexNow 핑 (Naver + Bing) — 모든 발행 타입 대상
+    await pingIndexNow([contentUrl, SITE_URL]).catch(() => {});
+
+    // 4. Google Indexing API + 사이트맵 재제출 (서비스 계정 설정 시 자동 활성화)
     await notifyGoogleIndexing(contentUrl).catch(() => {});
+    await submitSitemapToGSC(SITE_URL, `${SITE_URL}/api/sitemap-content`).catch(() => {});
 
-    // 4. ISR 캐시 무효화
-    revalidatePath(`/guide/${content.slug}`);
+    // 5. ISR 캐시 무효화
+    revalidateTag("guides", { expire: 0 });
+    revalidatePath(`/${pathPrefix}/${content.slug}`);
     revalidatePath("/");
     revalidatePath("/category/[slug]", "page");
   }

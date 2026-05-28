@@ -1,6 +1,7 @@
 # *
 User-agent: *
 Allow: /
+Allow: /api/sitemap-content
 Disallow: /rescue/
 Disallow: /search
 Disallow: /api/
@@ -43,3 +44,4 @@ Host: https://petjigi.kr
 
 # Sitemaps
 Sitemap: https://petjigi.kr/sitemap.xml
+Sitemap: https://petjigi.kr/api/sitemap-content

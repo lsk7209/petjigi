@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { db } from "@/db/client";
-import { contents } from "@/db/schema";
-import { eq, and, desc } from "drizzle-orm";
-import { breadcrumbSchema, faqSchema } from "@/lib/seo/structured-data";
+import { getCachedAllConditions } from "@/lib/db-queries";
+import { breadcrumbSchema, faqSchema, itemListSchema, collectionPageSchema, definedTermSetSchema } from "@/lib/seo/structured-data";
+import { AdSlot } from "@/components/ads/ad-slot";
+import { AdPolicyProvider } from "@/components/providers/ad-policy-provider";
 
 export const revalidate = 3600;
 
@@ -38,20 +38,6 @@ const FAQ = faqSchema([
   },
 ]);
 
-async function getAllConditions() {
-  return db
-    .select({
-      slug: contents.slug,
-      title: contents.title,
-      category: contents.category,
-      publishedAt: contents.publishedAt,
-      metaDescription: contents.metaDescription,
-    })
-    .from(contents)
-    .where(and(eq(contents.status, "published"), eq(contents.type, "condition")))
-    .orderBy(desc(contents.publishedAt));
-}
-
 export const metadata: Metadata = {
   title: "반려동물 질병·증상 정보 — 수의사 검토 | 펫지기",
   description:
@@ -77,15 +63,42 @@ const POPULAR_CONDITIONS = [
 ];
 
 export default async function ConditionIndexPage() {
-  const conditions = await getAllConditions();
+  const conditions = await getCachedAllConditions();
+
+  const COLLECTION_PAGE = collectionPageSchema(
+    "반려동물 질병·증상 정보",
+    `${SITE_URL}/condition`,
+    "강아지·고양이에게 흔한 질환의 증상, 원인, 치료 방법을 수의사 검토를 거쳐 안내합니다."
+  );
+
+  const MEDICAL_TERMS = definedTermSetSchema("반려동물 의료 용어", [
+    { name: "YMYL 콘텐츠", description: "건강·의료 정보와 같이 생명이나 재정에 영향을 미칠 수 있는 콘텐츠. 펫지기의 건강 정보는 수의사 검토를 거쳐 제공됩니다." },
+    { name: "예방 접종", description: "전염병 예방을 위해 항원을 접종하는 처치. 강아지는 DHPPL·코로나·켄넬코프, 고양이는 CVRP·FeLV 등이 필수입니다." },
+    { name: "중성화 수술", description: "생식기관을 제거해 번식 능력을 차단하는 수술. 호르몬 관련 질환 예방 효과가 있으며, 통상 생후 6개월~1세 사이에 권장됩니다." },
+    { name: "내과적 치료 vs 외과적 치료", description: "내과적 치료는 약물·식이요법 등 비수술적 접근, 외과적 치료는 수술을 통한 처치를 의미합니다." },
+  ]);
+
+  const CONDITION_LIST = itemListSchema(
+    conditions.slice(0, 100).map((c, i) => ({
+      position: i + 1,
+      name: c.title,
+      url: `${SITE_URL}/condition/${c.slug}`,
+      description: c.metaDescription ?? undefined,
+    }))
+  );
 
   return (
-    <>
+    <AdPolicyProvider category={3}>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(BREADCRUMB) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(FAQ) }} />
-      <main className="max-w-4xl mx-auto px-4 py-12">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(COLLECTION_PAGE) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(MEDICAL_TERMS) }} />
+      {conditions.length > 0 && (
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(CONDITION_LIST) }} />
+      )}
+      <main className="max-w-4xl mx-auto px-4 py-8 sm:py-12">
         {/* 브레드크럼 */}
-        <nav className="text-xs text-[var(--brand-text-secondary)] mb-6 flex items-center gap-1.5 flex-wrap" aria-label="breadcrumb">
+        <nav className="text-xs text-[var(--brand-text-secondary)] mb-5 sm:mb-6 flex items-center gap-1.5 flex-wrap" aria-label="breadcrumb">
           <Link href="/" className="hover:text-[var(--brand-accent)] transition-colors">홈</Link>
           <span aria-hidden="true">›</span>
           <Link href="/category/health" className="hover:text-[var(--brand-accent)] transition-colors">건강·의료</Link>
@@ -93,20 +106,22 @@ export default async function ConditionIndexPage() {
           <span className="text-[var(--brand-text)]" aria-current="page">질병·증상 정보</span>
         </nav>
 
-        <div className="mb-8">
-          <h1 className="text-3xl font-bold text-[var(--brand-text)] mb-3">반려동물 질병·증상 정보</h1>
-          <p className="text-[var(--brand-text-secondary)] leading-relaxed max-w-2xl">
+        <div className="mb-6 sm:mb-8">
+          <h1 className="text-2xl sm:text-3xl font-bold text-[var(--brand-text)] mb-2 sm:mb-3 tracking-tight" style={{ wordBreak: "keep-all" }} data-speakable>반려동물 질병·증상 정보</h1>
+          <p className="text-sm sm:text-base text-[var(--brand-text-secondary)] leading-relaxed max-w-2xl" style={{ wordBreak: "keep-all" }}>
             강아지·고양이에게 흔한 질환의 증상, 원인, 치료 방법을 수의사 검토를 거쳐 안내합니다.
             본 정보는 참고용이며 의학적 진단을 대체하지 않습니다.
           </p>
         </div>
 
         {/* 주의 배너 */}
-        <div className="mb-8 p-4 rounded-xl border border-[var(--cat-3-soft)] bg-[var(--cat-3-soft)]">
+        <div className="mb-6 p-4 rounded-xl border border-[var(--cat-3-soft)] bg-[var(--cat-3-soft)]">
           <p className="text-sm text-[var(--cat-3)] font-medium">
             💊 응급 증상(호흡 곤란·경련·실신·12시간 이상 소변 없음)은 즉시 24시간 응급 동물병원을 방문하세요.
           </p>
         </div>
+
+        <AdSlot adType="adsense" format="horizontal" className="mb-8" />
 
         {/* 인기 질환 바로가기 */}
         {POPULAR_CONDITIONS.length > 0 && (
@@ -196,6 +211,6 @@ export default async function ConditionIndexPage() {
           </div>
         </section>
       </main>
-    </>
+    </AdPolicyProvider>
   );
 }

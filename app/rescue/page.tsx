@@ -1,10 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { db } from "@/db/client";
-import { rescuedAnimals } from "@/db/schema";
-import { desc } from "drizzle-orm";
+import { getCachedRescuedAnimals } from "@/lib/db-queries";
 
-export const dynamic = "force-dynamic";
+export const revalidate = 3600;
 
 export const metadata: Metadata = {
   title: "구조동물 현황 | 펫지기",
@@ -30,11 +28,7 @@ function processStateColor(state: string | null | undefined): string {
 }
 
 export default async function RescuePage() {
-  const animals = await db
-    .select()
-    .from(rescuedAnimals)
-    .orderBy(desc(rescuedAnimals.noticeSdt))
-    .limit(50);
+  const animals = await getCachedRescuedAnimals();
 
   return (
     <main className="max-w-5xl mx-auto px-4 py-10">

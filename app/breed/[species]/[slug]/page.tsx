@@ -7,6 +7,11 @@ import { and, eq } from "drizzle-orm";
 import { breadcrumbSchema, faqSchema } from "@/lib/seo/structured-data";
 import { CategoryCta } from "@/components/content/category-cta";
 import { ShareButtons } from "@/components/content/share-buttons";
+import { AdSlot } from "@/components/ads/ad-slot";
+import { AdPolicyProvider } from "@/components/providers/ad-policy-provider";
+import { ScrollDepthTracker } from "@/components/analytics/scroll-depth-tracker";
+import { OutboundLinkTracker } from "@/components/analytics/outbound-link-tracker";
+import { BreedViewTracker } from "@/components/analytics/breed-view-tracker";
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://petjigi.kr";
 
@@ -143,11 +148,15 @@ export default async function BreedPage({
       ? `${breed.nameKo} — 평균 수명 ${breed.lifespanMin}~${breed.lifespanMax}년. 특징·성격·건강·키우기 정보.`
       : `${breed.nameKo} 품종 정보: 특징, 성격, 흔한 질병, 키우는 방법.`,
     url: pageUrl,
+    speakable: { "@type": "SpeakableSpecification", cssSelector: ["h1", "h2", "[data-speakable]"] },
     isPartOf: { "@type": "WebSite", name: "펫지기", url: SITE_URL },
   };
 
   return (
-    <>
+    <AdPolicyProvider category={1}>
+      <ScrollDepthTracker />
+      <OutboundLinkTracker />
+      <BreedViewTracker slug={slug} nameKo={breed.nameKo} species={species} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(animalSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }} />
@@ -164,7 +173,7 @@ export default async function BreedPage({
         </nav>
 
         <p className="text-sm text-[var(--brand-text-secondary)] mb-2">{speciesLabel} 품종</p>
-        <h1 className="text-3xl font-bold text-[var(--brand-text)] mb-2">{breed.nameKo}</h1>
+        <h1 className="text-2xl sm:text-3xl font-bold text-[var(--brand-text)] mb-2" style={{ wordBreak: "keep-all" }} data-speakable>{breed.nameKo}</h1>
         {breed.nameEn && (
           <p className="text-[var(--brand-text-secondary)] mb-6">{breed.nameEn}</p>
         )}
@@ -194,7 +203,7 @@ export default async function BreedPage({
         {/* 본문 */}
         {breed.body && (
           <article
-            className="prose prose-sm max-w-none mb-8"
+            className="prose prose-sm sm:prose-base max-w-none mb-8"
             dangerouslySetInnerHTML={{ __html: breed.body }}
           />
         )}
@@ -235,6 +244,7 @@ export default async function BreedPage({
           </dl>
         </section>
 
+        <AdSlot adType="adsense" format="rectangle" className="mb-6" />
         <CategoryCta categoryId={3} className="mt-4 mb-8" />
 
         {/* 관련 링크 */}
@@ -260,6 +270,6 @@ export default async function BreedPage({
           출처: 위키피디아·공공데이터 기반 (CC BY-SA)
         </p>
       </main>
-    </>
+    </AdPolicyProvider>
   );
 }

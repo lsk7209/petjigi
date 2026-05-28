@@ -1,4 +1,14 @@
 import type { Metadata } from "next";
+import { breadcrumbSchema } from "@/lib/seo/structured-data";
+
+export const revalidate = 86400;
+
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://petjigi.kr";
+
+const BREADCRUMB = breadcrumbSchema([
+  { name: "홈", url: SITE_URL },
+  { name: "광고 게재 정책", url: `${SITE_URL}/advertising` },
+]);
 
 export const metadata: Metadata = {
   title: "광고 게재 정책 | 펫지기",
@@ -9,7 +19,9 @@ export const metadata: Metadata = {
 
 export default function AdvertisingPage() {
   return (
-    <main className="max-w-3xl mx-auto px-4 py-16 prose prose-sm">
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(BREADCRUMB) }} />
+      <main className="max-w-3xl mx-auto px-4 py-16 prose prose-sm">
       <h1>광고 게재 정책</h1>
       <p className="text-sm text-[var(--brand-text-secondary)]">최종 업데이트: 2026-05-18</p>
 
@@ -27,5 +39,6 @@ export default function AdvertisingPage() {
 
       <p>문의: contact@petjigi.kr</p>
     </main>
+    </>
   );
 }

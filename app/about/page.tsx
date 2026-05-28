@@ -3,10 +3,48 @@ import { breadcrumbSchema } from "@/lib/seo/structured-data";
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://petjigi.kr";
 
+export const revalidate = 86400;
+
 const BREADCRUMB = breadcrumbSchema([
   { name: "홈", url: SITE_URL },
   { name: "소개", url: `${SITE_URL}/about` },
 ]);
+
+const ABOUT_SCHEMA = {
+  "@context": "https://schema.org",
+  "@type": "AboutPage",
+  name: "펫지기 소개",
+  url: `${SITE_URL}/about`,
+  description: "펫지기는 공공데이터 기반 반려동물 종합 정보 서비스입니다. 편집 기준, 데이터 출처, 콘텐츠 검수 프로세스를 안내합니다.",
+  inLanguage: "ko",
+  speakable: {
+    "@type": "SpeakableSpecification",
+    cssSelector: ["h1", "h2", "p"],
+  },
+  mainEntity: {
+    "@type": "Organization",
+    name: "펫지기",
+    url: SITE_URL,
+    description: "반려동물과 함께하는 모든 결정 — 입양부터 장례까지. 공공데이터 기반 신뢰할 수 있는 반려동물 정보 서비스.",
+    foundingDate: "2026",
+    contactPoint: {
+      "@type": "ContactPoint",
+      email: "contact@petjigi.kr",
+      contactType: "customer support",
+      availableLanguage: "Korean",
+    },
+    sameAs: [SITE_URL],
+    knowsAbout: [
+      "반려동물",
+      "동물병원",
+      "펫보험",
+      "반려견",
+      "반려묘",
+      "유기동물",
+      "반려동물 장례",
+    ],
+  },
+};
 
 export const metadata: Metadata = {
   title: "펫지기 소개",
@@ -19,10 +57,11 @@ export default function AboutPage() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(BREADCRUMB) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(ABOUT_SCHEMA) }} />
       <main className="max-w-3xl mx-auto px-4 py-16 space-y-12">
         {/* 소개 */}
         <section>
-          <h1 className="text-3xl font-bold text-[var(--brand-text)] mb-4">펫지기 소개</h1>
+          <h1 className="text-3xl font-bold text-[var(--brand-text)] mb-4" data-speakable>펫지기 소개</h1>
           <p className="text-[var(--brand-text-secondary)] leading-relaxed mb-3">
             펫지기는 반려동물 보호자가 <strong>입양부터 장례까지</strong> 올바른 결정을 내릴 수 있도록
             공공데이터 기반의 신뢰할 수 있는 정보를 제공하는 서비스입니다.

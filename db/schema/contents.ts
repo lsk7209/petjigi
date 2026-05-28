@@ -1,4 +1,4 @@
-import { integer, sqliteTable, text } from "drizzle-orm/sqlite-core";
+import { integer, sqliteTable, text, index } from "drizzle-orm/sqlite-core";
 
 export const contents = sqliteTable("contents", {
   id: text("id").primaryKey(),
@@ -20,7 +20,11 @@ export const contents = sqliteTable("contents", {
   publishedAt: text("published_at"),
   createdAt: text("created_at").notNull(),
   updatedAt: text("updated_at").notNull(),
-});
+}, (table) => ({
+  // WHERE status='published' AND type=? ORDER BY publishedAt DESC — 가이드/컨디션 목록, 최근글
+  statusTypePublishedIdx: index("contents_status_type_published_idx")
+    .on(table.status, table.type, table.publishedAt),
+}));
 
 export type Content = typeof contents.$inferSelect;
 export type NewContent = typeof contents.$inferInsert;

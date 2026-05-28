@@ -37,7 +37,7 @@
 
   /* 폰트 */
   --font-sans: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Pretendard Variable", "Pretendard", "Noto Sans KR", "Segoe UI", sans-serif;
-  --font-serif: "Noto Serif KR", "Apple SD Gothic Neo", serif;
+  --font-serif: var(--font-noto-serif-kr, "Noto Serif KR"), "Apple SD Gothic Neo", serif;
   --font-mono: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
 
   --radius-card: 16px;
@@ -337,6 +337,7 @@ p {
   border-bottom: 2px solid var(--brand-border);
   padding-bottom: 0.5rem;
   letter-spacing: -0.01em;
+  scroll-margin-top: 84px;
 }
 
 .prose h3 {
@@ -345,6 +346,7 @@ p {
   font-size: 1.075rem;
   font-weight: 700;
   line-height: 1.5;
+  scroll-margin-top: 84px;
 }
 
 .prose h4 {
@@ -380,10 +382,17 @@ p {
   font-size: 0.95rem;
 }
 
+/* 모바일 테이블 가로 스크롤 */
+.prose :where(table) {
+  display: block;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
 .prose table {
   font-size: 0.875rem;
   border-collapse: collapse;
-  width: 100%;
+  min-width: 100%;
   border-radius: 8px;
   overflow: hidden;
   border: 1px solid var(--brand-border);
@@ -500,9 +509,14 @@ p {
 .pj-root p { margin: 0; }
 
 /* 컨테이너 */
-.pj-container-3xl { max-width: 800px;  margin: 0 auto; padding: 0 24px; }
-.pj-container-5xl { max-width: 1024px; margin: 0 auto; padding: 0 24px; }
-.pj-container-7xl { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+.pj-container-3xl { max-width: 800px;  margin: 0 auto; padding: 0 16px; }
+.pj-container-5xl { max-width: 1024px; margin: 0 auto; padding: 0 16px; }
+.pj-container-7xl { max-width: 1200px; margin: 0 auto; padding: 0 16px; }
+@media (min-width: 640px) {
+  .pj-container-3xl { padding: 0 24px; }
+  .pj-container-5xl { padding: 0 24px; }
+  .pj-container-7xl { padding: 0 32px; }
+}
 
 /* 에디토리얼 디스플레이 / 아이브로우 / 넘버 */
 .pj-display {
@@ -782,10 +796,13 @@ p {
   display: flex;
   align-items: center;
   gap: 24px;
-  height: 68px;
-  padding: 0 32px;
+  height: 60px;
+  padding: 0 16px;
   max-width: 1200px;
   margin: 0 auto;
+}
+@media (min-width: 640px) {
+  .pj-header-inner { height: 68px; padding: 0 32px; }
 }
 .pj-logo {
   font-family: var(--font-serif);

@@ -1,5 +1,6 @@
 // IndexNow: Naver + Bing 동시 ping (구글 ping endpoint 2023년 deprecated — 절대 사용 X)
-const INDEXNOW_KEY = process.env.INDEXNOW_KEY!;
+// 키 파일은 public/6e5c7ca8b3db3d40d56c959549c1c7e0.txt에 이미 배포됨 (공개값, 비밀 아님)
+const INDEXNOW_KEY = process.env.INDEXNOW_KEY ?? "6e5c7ca8b3db3d40d56c959549c1c7e0";
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://petjigi.kr";
 
 const INDEXNOW_HOSTS = [

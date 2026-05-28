@@ -2,7 +2,7 @@ name: ETL — Businesses (LOCALDATA 18종)
 
 on:
   schedule:
-    - cron: "0 18 * * *"  # 매일 03:00 KST (UTC+9 기준 18:00 UTC)
+    - cron: "0 18 1,15 * *"  # 매월 1일·15일 03:00 KST (공공데이터 변경 주기 2주)
   workflow_dispatch:
 
 jobs:
@@ -33,6 +33,7 @@ jobs:
           NEXT_PUBLIC_SITE_URL: ${{ secrets.NEXT_PUBLIC_SITE_URL }}
           INDEXNOW_KEY: ${{ secrets.INDEXNOW_KEY }}
           CRON_SECRET: ${{ secrets.CRON_SECRET }}
+          GOOGLE_SA_JSON: ${{ secrets.GOOGLE_SA_JSON }}
 
       - name: Alert on failure
         if: failure()

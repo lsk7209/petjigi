@@ -4,7 +4,9 @@ import Link from "next/link";
 import { db } from "@/db/client";
 import { breeds } from "@/db/schema";
 import { eq } from "drizzle-orm";
-import { breadcrumbSchema, faqSchema } from "@/lib/seo/structured-data";
+import { AdSlot } from "@/components/ads/ad-slot";
+import { AdPolicyProvider } from "@/components/providers/ad-policy-provider";
+import { breadcrumbSchema, faqSchema, itemListSchema, collectionPageSchema } from "@/lib/seo/structured-data";
 
 export const revalidate = 604800;
 
@@ -91,24 +93,42 @@ export default async function BreedSpeciesPage({
     { name: config.label, url: `${SITE_URL}/breed/${species}` },
   ]);
   const faq = faqSchema(config.faq);
+  const breedItemList = itemListSchema(
+    breedList.map((b, i) => ({
+      position: i + 1,
+      name: b.nameKo,
+      url: `${SITE_URL}/breed/${species}/${b.slug}`,
+      description: [b.origin ? `원산지: ${b.origin}` : "", b.lifespanMin && b.lifespanMax ? `수명: ${b.lifespanMin}~${b.lifespanMax}년` : ""].filter(Boolean).join(" · ") || undefined,
+    }))
+  );
+  const collection = collectionPageSchema(
+    config.label,
+    `${SITE_URL}/breed/${species}`,
+    config.desc
+  );
 
   return (
-    <>
+    <AdPolicyProvider category={1}>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faq) }} />
-    <main className="max-w-5xl mx-auto px-4 py-12">
-      <nav className="text-xs text-[var(--brand-text-secondary)] mb-6">
-        <Link href="/" className="hover:text-[var(--brand-accent)]">홈</Link>
-        {" › "}
-        <Link href="/category/adoption" className="hover:text-[var(--brand-accent)]">입양·등록</Link>
-        {" › "}
-        <span>{config.label}</span>
+      {breedList.length > 0 && (
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breedItemList) }} />
+      )}
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(collection) }} />
+    <main className="max-w-5xl mx-auto px-4 py-8 sm:py-12">
+      <nav className="text-xs text-[var(--brand-text-secondary)] mb-5 sm:mb-6 flex items-center gap-1.5 flex-wrap" aria-label="breadcrumb">
+        <Link href="/" className="hover:text-[var(--brand-accent)] transition-colors">홈</Link>
+        <span aria-hidden="true">›</span>
+        <Link href="/category/adoption" className="hover:text-[var(--brand-accent)] transition-colors">입양·등록</Link>
+        <span aria-hidden="true">›</span>
+        <span className="text-[var(--brand-text)]" aria-current="page">{config.label}</span>
       </nav>
 
-      <div className="mb-8">
-        <p className="text-3xl mb-2">{config.emoji}</p>
-        <h1 className="text-3xl font-bold text-[var(--brand-text)] mb-2">{config.label}</h1>
-        <p className="text-[var(--brand-text-secondary)]">{config.desc}</p>
+      <div className="mb-6 sm:mb-8">
+        <h1 className="text-2xl sm:text-3xl font-bold text-[var(--brand-text)] mb-2 tracking-tight" style={{ wordBreak: "keep-all" }} data-speakable>
+          {config.emoji} {config.label}
+        </h1>
+        <p className="text-sm sm:text-base text-[var(--brand-text-secondary)] leading-relaxed" style={{ wordBreak: "keep-all" }}>{config.desc}</p>
       </div>
 
       {breedList.length === 0 ? (
@@ -151,6 +171,8 @@ export default async function BreedSpeciesPage({
         </div>
       )}
 
+      <AdSlot adType="adsense" format="horizontal" className="my-8" />
+
       {/* FAQ */}
       <section className="mt-12 pt-8 border-t border-[var(--brand-border)]" aria-label="자주 묻는 질문">
         <h2 className="text-lg font-bold text-[var(--brand-text)] mb-4">{config.label} 자주 묻는 질문</h2>
@@ -183,6 +205,6 @@ export default async function BreedSpeciesPage({
         </div>
       </section>
     </main>
-    </>
+    </AdPolicyProvider>
   );
 }

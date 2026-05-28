@@ -7,9 +7,11 @@
 import { db } from "../../db/client";
 import { shelters } from "../../db/schema";
 import { geocodeAddress } from "../geocoding/kakao";
+import { pingIndexNow } from "../../lib/seo/index-now";
 
 const API_KEY = process.env.APMS_API_KEY ?? "";
 const API_URL = "https://apis.data.go.kr/1543061/abandonmentPublicService_v2/abandonmentPublic_v2";
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://petjigi.kr";
 
 interface AnimalRow {
   careRegNo: string;
@@ -103,6 +105,19 @@ export async function syncShelters(): Promise<void> {
   }
 
   console.log(`[ETL:shelters] 완료 — ${total2}건 처리`);
+
+  if (total2 > 0) {
+    await pingIndexNow([`${SITE_URL}/sido/seoul`, SITE_URL]).catch(() => {});
+
+    const cronSecret = process.env.CRON_SECRET;
+    if (cronSecret) {
+      await fetch(`${SITE_URL}/api/cache/revalidate`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Authorization: `Bearer ${cronSecret}` },
+        body: JSON.stringify({ tags: ["stats"] }),
+      }).catch((e) => console.error("[ETL:shelters] 캐시 무효화 실패:", e));
+    }
+  }
 }
 
 syncShelters().catch((err) => {

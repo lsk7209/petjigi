@@ -3,6 +3,7 @@
 import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
+import { track } from "@/lib/analytics/events";
 
 interface SearchResult {
   type: "business" | "guide";
@@ -42,7 +43,9 @@ export default function SearchClient() {
       try {
         const res = await fetch(`/api/search?q=${encodeURIComponent(query)}`);
         if (!res.ok) throw new Error();
-        setData(await res.json());
+        const json: SearchResponse = await res.json();
+        setData(json);
+        track.search({ query, resultsCount: json.total });
       } catch {
         setError("검색 중 오류가 발생했습니다.");
       } finally {

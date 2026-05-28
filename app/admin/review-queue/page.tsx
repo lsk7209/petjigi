@@ -148,11 +148,19 @@ export default async function ReviewQueuePage({ searchParams }: PageProps) {
 
   return (
     <main className="max-w-6xl mx-auto px-4 py-10">
-      <div className="mb-8">
-        <h1 className="text-2xl font-bold mb-1">YMYL 검수 큐</h1>
-        <p className="text-sm text-gray-500">
-          YMYL 카테고리(건강·의료, 보험·법률, 장례·추모) 콘텐츠 검수 현황
-        </p>
+      <div className="mb-8 flex items-start justify-between flex-wrap gap-3">
+        <div>
+          <h1 className="text-2xl font-bold mb-1">YMYL 검수 큐</h1>
+          <p className="text-sm text-gray-500">
+            YMYL 카테고리(건강·의료, 보험·법률, 장례·추모) 콘텐츠 검수 현황
+          </p>
+        </div>
+        <a
+          href="/admin/analytics"
+          className="text-sm px-4 py-2 rounded-lg border border-gray-200 hover:border-blue-400 hover:text-blue-600 transition-colors font-medium"
+        >
+          📊 Analytics 대시보드
+        </a>
       </div>
 
       {/* 요약 카드 */}

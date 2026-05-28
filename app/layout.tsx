@@ -1,10 +1,19 @@
 import type { Metadata } from "next";
 import Script from "next/script";
+import { Noto_Serif_KR } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
 import { GA4 } from "@/components/analytics/ga4";
 import { websiteSchema, organizationSchema } from "@/lib/seo/structured-data";
+
+const notoSerifKR = Noto_Serif_KR({
+  weight: ["400", "600", "700"],
+  subsets: ["latin"],
+  variable: "--font-noto-serif-kr",
+  display: "swap",
+  preload: true,
+});
 
 const ADSENSE_ID = process.env.NEXT_PUBLIC_ADSENSE_ID;
 
@@ -73,6 +82,15 @@ export const metadata: Metadata = {
   },
   other: {
     "google-extended": "allow",
+    "mobile-web-app-capable": "yes",
+  },
+  appleWebApp: {
+    capable: true,
+    title: "펫지기",
+    statusBarStyle: "default",
+  },
+  formatDetection: {
+    telephone: false,
   },
   alternates: {
     canonical: SITE_URL,
@@ -88,12 +106,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="ko" className="h-full scroll-smooth" suppressHydrationWarning>
+    <html lang="ko" className={`h-full scroll-smooth ${notoSerifKR.variable}`} suppressHydrationWarning>
       <head>
-        {/* Noto Serif KR — 에디토리얼 디스플레이 폰트 */}
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;500;600;700&display=swap" rel="stylesheet" />
         {/* Preconnect for third-party performance */}
         <link rel="preconnect" href="https://www.googletagmanager.com" crossOrigin="anonymous" />
         <link rel="preconnect" href="https://www.google-analytics.com" crossOrigin="anonymous" />

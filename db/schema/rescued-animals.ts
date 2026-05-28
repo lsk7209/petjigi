@@ -1,4 +1,4 @@
-import { sqliteTable, text } from "drizzle-orm/sqlite-core";
+import { sqliteTable, text, index } from "drizzle-orm/sqlite-core";
 
 export const rescuedAnimals = sqliteTable("rescued_animals", {
   id: text("id").primaryKey(), // desertionNo
@@ -24,7 +24,10 @@ export const rescuedAnimals = sqliteTable("rescued_animals", {
   lastSyncedAt: text("last_synced_at").notNull(),
   createdAt: text("created_at").notNull(),
   updatedAt: text("updated_at").notNull(),
-});
+}, (table) => ({
+  // ORDER BY noticeSdt DESC LIMIT 50 — 인덱스 순서 스캔으로 정렬 불필요 (YYYYMMDD 텍스트 = 정렬순 동일)
+  noticeSdtIdx: index("rescued_animals_notice_sdt_idx").on(table.noticeSdt),
+}));
 
 export type RescuedAnimal = typeof rescuedAnimals.$inferSelect;
 export type NewRescuedAnimal = typeof rescuedAnimals.$inferInsert;

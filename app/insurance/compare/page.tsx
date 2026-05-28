@@ -3,6 +3,11 @@ import Link from "next/link";
 import { YmylDisclaimer } from "@/components/content/ymyl-disclaimer";
 import { ShareButtons } from "@/components/content/share-buttons";
 import { breadcrumbSchema, faqSchema, howToSchema } from "@/lib/seo/structured-data";
+import { InsuranceCompareTracker } from "@/components/analytics/insurance-compare-tracker";
+import { AdSlot } from "@/components/ads/ad-slot";
+import { AdPolicyProvider } from "@/components/providers/ad-policy-provider";
+
+export const revalidate = 86400;
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://petjigi.kr";
 
@@ -120,14 +125,15 @@ const CHECK_ITEMS = [
 
 export default function InsuranceComparePage() {
   return (
-    <>
+    <AdPolicyProvider category={4}>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(BREADCRUMB) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(HOW_TO) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(FAQ) }} />
+      <InsuranceCompareTracker />
 
-      <main className="max-w-4xl mx-auto px-4 py-12 bg-[var(--brand-bg)]">
+      <main className="max-w-4xl mx-auto px-4 py-8 sm:py-12 bg-[var(--brand-bg)]">
         {/* 브레드크럼 */}
-        <nav className="text-xs text-[var(--brand-text-secondary)] mb-6 flex items-center gap-1.5 flex-wrap" aria-label="breadcrumb">
+        <nav className="text-xs text-[var(--brand-text-secondary)] mb-5 sm:mb-6 flex items-center gap-1.5 flex-wrap" aria-label="breadcrumb">
           <Link href="/" className="hover:text-[var(--brand-accent)] transition-colors">홈</Link>
           <span aria-hidden="true">›</span>
           <Link href="/category/insurance" className="hover:text-[var(--brand-accent)] transition-colors">보험·법률</Link>
@@ -135,12 +141,12 @@ export default function InsuranceComparePage() {
           <span className="text-[var(--brand-text)]" aria-current="page">펫보험 비교</span>
         </nav>
 
-        <header className="mb-8">
+        <header className="mb-6 sm:mb-8">
           <p className="text-xs font-semibold tracking-widest text-[var(--cat-4)] uppercase mb-2">
             보험·법률 · 펫보험
           </p>
-          <h1 className="text-3xl font-bold text-[var(--brand-text)] mb-2">펫보험 비교</h1>
-          <p className="text-[var(--brand-text-secondary)]">
+          <h1 className="text-2xl sm:text-3xl font-bold text-[var(--brand-text)] mb-2 tracking-tight" style={{ wordBreak: "keep-all" }} data-speakable>펫보험 비교</h1>
+          <p className="text-sm sm:text-base text-[var(--brand-text-secondary)] leading-relaxed" style={{ wordBreak: "keep-all" }}>
             6대 손보사 주요 펫보험 상품의 특징을 한눈에 비교하고, 우리 아이에게 맞는 상품을 선택하세요.
           </p>
         </header>
@@ -271,10 +277,12 @@ export default function InsuranceComparePage() {
           </div>
         </section>
 
+        <AdSlot adType="adsense" format="horizontal" className="my-8" />
+
         <div className="pt-6 border-t border-[var(--brand-border)]">
           <ShareButtons url={`${SITE_URL}/insurance/compare`} title="펫보험 비교 — 6대 손보사 한눈에 비교 | 펫지기" />
         </div>
       </main>
-    </>
+    </AdPolicyProvider>
   );
 }

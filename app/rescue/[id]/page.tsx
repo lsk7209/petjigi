@@ -1,11 +1,10 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { db } from "@/db/client";
-import { rescuedAnimals } from "@/db/schema";
-import { eq } from "drizzle-orm";
+import { getCachedRescuedAnimal } from "@/lib/db-queries";
+import { RescueViewTracker } from "@/components/analytics/rescue-view-tracker";
 
-export const dynamic = "force-dynamic";
+export const revalidate = 3600;
 
 export const metadata: Metadata = {
   robots: { index: false, follow: false },
@@ -55,11 +54,7 @@ export default async function RescueDetailPage({
   params: Promise<{ id: string }>;
 }) {
   const { id } = await params;
-  const animal = await db
-    .select()
-    .from(rescuedAnimals)
-    .where(eq(rescuedAnimals.id, id))
-    .get();
+  const animal = await getCachedRescuedAnimal(id);
 
   if (!animal) notFound();
 
@@ -70,6 +65,7 @@ export default async function RescueDetailPage({
 
   return (
     <main className="max-w-2xl mx-auto px-4 py-10">
+      <RescueViewTracker animalId={id} />
       {/* back link */}
       <Link
         href="/rescue"

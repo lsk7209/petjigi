@@ -39,12 +39,9 @@ const COMPANY_LINKS = [
 export function Footer() {
   return (
     <footer className="pj-footer">
-      <div className="pj-container-7xl" style={{ padding: "56px 32px 32px" }}>
-        {/* 4열 그리드 */}
-        <div
-          className="grid gap-10 mb-10"
-          style={{ gridTemplateColumns: "1.4fr 1fr 1fr 1fr 1fr" }}
-        >
+      <div className="pj-container-7xl" style={{ paddingTop: "48px", paddingBottom: "32px" }}>
+        {/* 반응형 그리드 — 모바일: 2열, 태블릿: 3열, 데스크탑: 5열 */}
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-[1.4fr_1fr_1fr_1fr_1fr] gap-8 sm:gap-10 mb-10">
           {/* 브랜드 소개 */}
           <div>
             <Link href="/" className="pj-logo" style={{ marginBottom: 14, display: "inline-flex" }}>

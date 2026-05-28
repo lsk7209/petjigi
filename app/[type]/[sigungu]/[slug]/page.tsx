@@ -2,13 +2,18 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { db } from "@/db/client";
-import { businesses, regions, contents } from "@/db/schema";
+import { businesses, contents } from "@/db/schema";
 import { and, eq, ne, sql, desc } from "drizzle-orm";
+import { getCachedRegionBySlug } from "@/lib/db-queries";
 import { localBusinessSchema, breadcrumbSchema } from "@/lib/seo/structured-data";
 import type { CategoryId } from "@/lib/category";
 import { YmylDisclaimer } from "@/components/content/ymyl-disclaimer";
 import { CategoryCta } from "@/components/content/category-cta";
 import { ShareButtons } from "@/components/content/share-buttons";
+import { AdSlot } from "@/components/ads/ad-slot";
+import { AdPolicyProvider } from "@/components/providers/ad-policy-provider";
+import { BusinessViewTracker } from "@/components/analytics/business-view-tracker";
+import { BusinessContactLinks } from "@/components/analytics/business-contact-links";
 
 export const revalidate = 86400;
 
@@ -56,12 +61,7 @@ export async function generateMetadata({
   const name = decodeURIComponent(slug);
   const typeLabel = TYPE_LABEL[type] ?? type;
 
-  const region = await db
-    .select({ sigungu: regions.sigungu, sido: regions.sido })
-    .from(regions)
-    .where(eq(regions.sigunguSlug, sigungu))
-    .get();
-
+  const region = await getCachedRegionBySlug(sigungu);
   const location = region?.sigungu ?? sigungu;
   const title = `${name} ${typeLabel} | ${location} | 펫지기`;
   const description = `${location} ${name} ${typeLabel} — 위치, 연락처, 주변 시설 정보. 공공데이터 기반.`;
@@ -97,11 +97,7 @@ export default async function BusinessDetailPage({
 
   if (!business) notFound();
 
-  const region = await db
-    .select()
-    .from(regions)
-    .where(eq(regions.sigunguSlug, sigungu))
-    .get();
+  const region = await getCachedRegionBySlug(sigungu);
 
   const nearby = await db
     .select()
@@ -153,7 +149,8 @@ export default async function BusinessDetailPage({
   const naverMapUrl = `https://map.naver.com/p/search/${encodeURIComponent(business.name + " " + (business.addressSigungu ?? ""))}`;
 
   return (
-    <>
+    <AdPolicyProvider category={categoryId}>
+      <BusinessViewTracker type={type} name={business.name} sigungu={locationName} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb) }} />
       <main className="max-w-3xl mx-auto px-4 py-10">
@@ -190,7 +187,7 @@ export default async function BusinessDetailPage({
               {typeLabel}
             </span>
           </div>
-          <h1 className="text-2xl sm:text-3xl font-extrabold text-[var(--brand-text)] mb-1 tracking-tight">
+          <h1 className="text-2xl sm:text-3xl font-extrabold text-[var(--brand-text)] mb-1 tracking-tight" data-speakable>
             {business.name}
           </h1>
           <p className="text-sm text-[var(--brand-text-secondary)]">
@@ -217,19 +214,14 @@ export default async function BusinessDetailPage({
                 </dd>
               </div>
             )}
-            {business.phone && (
-              <div className="flex gap-3">
-                <dt className="text-[var(--brand-text-secondary)] w-16 shrink-0 font-medium">전화</dt>
-                <dd>
-                  <a
-                    href={`tel:${business.phone}`}
-                    className="text-[var(--brand-accent)] font-semibold hover:underline"
-                  >
-                    {business.phone}
-                  </a>
-                </dd>
-              </div>
-            )}
+            <BusinessContactLinks
+              businessName={business.name}
+              businessType={type}
+              phone={business.phone}
+              kakaoMapUrl={kakaoMapUrl}
+              naverMapUrl={naverMapUrl}
+              hasAddress={!!business.address}
+            />
             {business.licenseDate && (
               <div className="flex gap-3">
                 <dt className="text-[var(--brand-text-secondary)] w-16 shrink-0 font-medium">허가일</dt>
@@ -242,29 +234,6 @@ export default async function BusinessDetailPage({
             </div>
           </dl>
 
-          {/* 지도 링크 */}
-          {business.address && (
-            <div className="flex gap-2 mt-5 pt-4 border-t border-[var(--brand-border)]">
-              <a
-                href={kakaoMapUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex-1 text-center py-2 rounded-xl text-xs font-semibold bg-yellow-400 text-yellow-900 hover:bg-yellow-300 transition-colors"
-                aria-label="카카오맵에서 보기"
-              >
-                카카오맵
-              </a>
-              <a
-                href={naverMapUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex-1 text-center py-2 rounded-xl text-xs font-semibold bg-green-500 text-white hover:bg-green-400 transition-colors"
-                aria-label="네이버지도에서 보기"
-              >
-                네이버지도
-              </a>
-            </div>
-          )}
         </section>
 
         {/* 지역 현황 */}
@@ -336,6 +305,8 @@ export default async function BusinessDetailPage({
 
         <CategoryCta categoryId={categoryId} className="mb-8" />
 
+        <AdSlot adType="adsense" format="rectangle" className="mb-8" />
+
         <div className="mb-8 pt-2">
           <ShareButtons url={pageUrl} title={`${business.name} ${typeLabel} | 펫지기`} />
         </div>
@@ -348,6 +319,6 @@ export default async function BusinessDetailPage({
           </Link>
         </p>
       </main>
-    </>
+    </AdPolicyProvider>
   );
 }

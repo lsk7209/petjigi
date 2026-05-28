@@ -52,12 +52,12 @@ async function signJwt(payload: Record<string, unknown>, privateKeyPem: string):
   return `${signingInput}.${Buffer.from(signature).toString("base64url")}`;
 }
 
-async function getAccessToken(sa: ServiceAccount): Promise<string> {
+async function getAccessToken(sa: ServiceAccount, scope = "https://www.googleapis.com/auth/indexing"): Promise<string> {
   const now = Math.floor(Date.now() / 1000);
   const jwt = await signJwt(
     {
       iss: sa.client_email,
-      scope: "https://www.googleapis.com/auth/indexing",
+      scope,
       aud: "https://oauth2.googleapis.com/token",
       exp: now + 3600,
       iat: now,
@@ -106,9 +106,85 @@ export async function notifyGoogleIndexing(url: string, type: "URL_UPDATED" | "U
   }
 }
 
-/** 여러 URL 배치 전송 (순차 — API 초당 200건 제한) */
-export async function notifyGoogleBatch(urls: string[]): Promise<void> {
-  for (const url of urls) {
-    await notifyGoogleIndexing(url);
+/**
+ * 여러 URL 배치 전송 (순차, 150ms 간격)
+ * - Google Indexing API 일일 한도: 200건
+ * - 토큰 1회 발급 후 재사용
+ * - 초과분은 잘라냄 (가장 최근 URL 우선 — 호출자가 최신순 정렬할 것)
+ */
+export async function notifyGoogleBatch(
+  urls: string[],
+  maxPerDay = 200,
+): Promise<{ sent: number; skipped: number }> {
+  const saJson = process.env.GOOGLE_SA_JSON;
+  if (!saJson) return { sent: 0, skipped: urls.length };
+
+  const batch = urls.slice(0, maxPerDay);
+  const skipped = urls.length - batch.length;
+
+  let token: string;
+  try {
+    const sa = JSON.parse(saJson) as ServiceAccount;
+    token = await getAccessToken(sa);
+  } catch (err) {
+    console.warn("[Google Indexing] 토큰 발급 실패:", err);
+    return { sent: 0, skipped: urls.length };
+  }
+
+  let sent = 0;
+  for (const url of batch) {
+    try {
+      const res = await fetch(INDEXING_API, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`,
+        },
+        body: JSON.stringify({ url, type: "URL_UPDATED" }),
+        signal: AbortSignal.timeout(15000),
+      });
+      console.log(`[Google Indexing] ${url} → ${res.status}`);
+      sent++;
+    } catch (err) {
+      console.warn(`[Google Indexing] 실패 (${url}):`, err);
+    }
+    // 150ms 간격 — API 초당 200건 제한 준수
+    await new Promise((r) => setTimeout(r, 150));
+  }
+
+  if (skipped > 0) console.log(`[Google Indexing] ${skipped}건 한도 초과로 생략 (오늘 재실행 시 전송)`);
+  return { sent, skipped };
+}
+
+/**
+ * Google Search Console에 사이트맵 제출
+ * GOOGLE_SA_JSON 없으면 skip. siteUrl은 GSC에 등록된 정확한 값.
+ */
+export async function submitSitemapToGSC(
+  siteUrl: string,
+  sitemapUrl: string,
+): Promise<void> {
+  const saJson = process.env.GOOGLE_SA_JSON;
+  if (!saJson) return;
+
+  try {
+    const sa = JSON.parse(saJson) as ServiceAccount;
+    const token = await getAccessToken(sa, "https://www.googleapis.com/auth/webmasters");
+
+    const encodedSite = encodeURIComponent(siteUrl);
+    const encodedSitemap = encodeURIComponent(sitemapUrl);
+    const res = await fetch(
+      `https://searchconsole.googleapis.com/webmasters/v3/sites/${encodedSite}/sitemaps/${encodedSitemap}`,
+      {
+        method: "PUT",
+        headers: { Authorization: `Bearer ${token}` },
+        signal: AbortSignal.timeout(15000),
+      },
+    );
+
+    console.log(`[GSC Sitemap] ${sitemapUrl} → ${res.status}`);
+  } catch (err) {
+    console.warn("[GSC Sitemap] 제출 실패 (비치명적):", err);
   }
 }
+

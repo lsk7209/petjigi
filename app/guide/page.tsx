@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { db } from "@/db/client";
-import { contents } from "@/db/schema";
-import { eq, and, desc } from "drizzle-orm";
+import { getCachedAllGuides } from "@/lib/db-queries";
 import { CATEGORIES } from "@/lib/category";
 import type { CategoryId } from "@/lib/category";
-import { breadcrumbSchema, faqSchema } from "@/lib/seo/structured-data";
+import { breadcrumbSchema, faqSchema, itemListSchema, collectionPageSchema, definedTermSetSchema } from "@/lib/seo/structured-data";
+import { AdSlot } from "@/components/ads/ad-slot";
+import { AdPolicyProvider } from "@/components/providers/ad-policy-provider";
 
 export const revalidate = 3600;
 
@@ -38,21 +38,6 @@ const CATEGORY_EMOJI: Record<number, string> = {
   1: "🐾", 2: "🥗", 3: "💊", 4: "📋", 5: "✂️", 6: "🕊️",
 };
 
-async function getAllGuides() {
-  return db
-    .select({
-      slug: contents.slug,
-      title: contents.title,
-      category: contents.category,
-      publishedAt: contents.publishedAt,
-      metaDescription: contents.metaDescription,
-      ymyl: contents.ymyl,
-    })
-    .from(contents)
-    .where(and(eq(contents.status, "published"), eq(contents.type, "guide")))
-    .orderBy(desc(contents.publishedAt));
-}
-
 export const metadata: Metadata = {
   title: "반려동물 가이드 — 수의사 검토 정보 모음 | 펫지기",
   description:
@@ -65,7 +50,29 @@ export const metadata: Metadata = {
 };
 
 export default async function GuideIndexPage() {
-  const guides = await getAllGuides();
+  const guides = await getCachedAllGuides();
+
+  const COLLECTION_PAGE = collectionPageSchema(
+    "반려동물 가이드",
+    `${SITE_URL}/guide`,
+    "수의사·전문가 검토를 거친 반려동물 가이드. 입양·건강·사료·보험·케어·장례 6개 카테고리."
+  );
+
+  const GUIDE_TERMS = definedTermSetSchema("반려동물 케어 용어", [
+    { name: "동물등록제", description: "생후 2개월 이상 반려견을 지방자치단체에 등록하는 의무 제도. 미등록 시 과태료가 부과됩니다." },
+    { name: "YMYL 콘텐츠", description: "건강·의료·금융 등 생명과 재산에 영향을 미칠 수 있는 콘텐츠. 펫지기의 해당 가이드는 수의사 검토를 거쳐 제공됩니다." },
+    { name: "중성화 수술", description: "생식기를 제거하여 번식을 막는 수술. 생후 6개월~1세 사이에 권장하며 호르몬 관련 질환 예방 효과가 있습니다." },
+    { name: "기초 예방 접종", description: "강아지는 DHPPL, 고양이는 CVRP 등 종별 필수 백신을 정기적으로 접종하여 전염병을 예방합니다." },
+  ]);
+
+  const GUIDE_LIST = itemListSchema(
+    guides.slice(0, 100).map((g, i) => ({
+      position: i + 1,
+      name: g.title,
+      url: `${SITE_URL}/guide/${g.slug}`,
+      description: g.metaDescription ?? undefined,
+    }))
+  );
 
   const byCategory = guides.reduce<Record<number, typeof guides>>((acc, g) => {
     const cat = g.category ?? 1;
@@ -77,24 +84,31 @@ export default async function GuideIndexPage() {
   const catOrder = [1, 2, 3, 4, 5, 6];
 
   return (
-    <>
+    <AdPolicyProvider category={5}>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(BREADCRUMB) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(FAQ) }} />
-      <main className="max-w-4xl mx-auto px-4 py-12">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(COLLECTION_PAGE) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(GUIDE_TERMS) }} />
+      {guides.length > 0 && (
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(GUIDE_LIST) }} />
+      )}
+      <main className="max-w-4xl mx-auto px-4 py-8 sm:py-12">
         {/* 브레드크럼 */}
-        <nav className="text-xs text-[var(--brand-text-secondary)] mb-6 flex items-center gap-1.5" aria-label="breadcrumb">
+        <nav className="text-xs text-[var(--brand-text-secondary)] mb-5 sm:mb-6 flex items-center gap-1.5 flex-wrap" aria-label="breadcrumb">
           <Link href="/" className="hover:text-[var(--brand-accent)] transition-colors">홈</Link>
           <span aria-hidden="true">›</span>
           <span className="text-[var(--brand-text)]" aria-current="page">가이드</span>
         </nav>
 
-        <div className="mb-10">
-          <h1 className="text-3xl font-bold text-[var(--brand-text)] mb-3">반려동물 가이드</h1>
-          <p className="text-[var(--brand-text-secondary)] leading-relaxed max-w-2xl">
+        <div className="mb-6 sm:mb-8">
+          <h1 className="text-2xl sm:text-3xl font-bold text-[var(--brand-text)] mb-2 sm:mb-3 tracking-tight" style={{ wordBreak: "keep-all" }} data-speakable>반려동물 가이드</h1>
+          <p className="text-sm sm:text-base text-[var(--brand-text-secondary)] leading-relaxed max-w-2xl" style={{ wordBreak: "keep-all" }}>
             수의사·전문가 검토를 거친 반려동물 가이드를 카테고리별로 모아봤습니다.
             입양부터 장례까지 필요한 정보를 찾아보세요.
           </p>
         </div>
+
+        <AdSlot adType="adsense" format="horizontal" className="mb-8" />
 
         {guides.length === 0 ? (
           <p className="text-[var(--brand-text-secondary)] text-sm">가이드를 준비 중입니다.</p>
@@ -125,14 +139,12 @@ export default async function GuideIndexPage() {
                         href={`/guide/${g.slug}`}
                         className="group p-4 rounded-[var(--radius-card)] border border-[var(--brand-border)] hover:border-[var(--brand-accent)] hover:shadow-sm transition-all"
                       >
-                        <div className="flex items-start gap-2">
-                          {g.ymyl && (
-                            <span className="shrink-0 text-[10px] px-1.5 py-0.5 rounded bg-[var(--cat-3-soft)] text-[var(--cat-3)] font-semibold mt-0.5">
-                              전문가 검토
-                            </span>
-                          )}
-                        </div>
-                        <h3 className="font-semibold text-sm text-[var(--brand-text)] group-hover:text-[var(--brand-accent)] transition-colors leading-snug mt-1">
+                        {g.ymyl && (
+                          <span className="inline-block text-[10px] px-1.5 py-0.5 rounded bg-[var(--cat-3-soft)] text-[var(--cat-3)] font-semibold mb-1.5">
+                            전문가 검토
+                          </span>
+                        )}
+                        <h3 className="font-semibold text-sm sm:text-base text-[var(--brand-text)] group-hover:text-[var(--brand-accent)] transition-colors leading-snug" style={{ wordBreak: "keep-all" }}>
                           {g.title}
                         </h3>
                         {g.metaDescription && (
@@ -190,6 +202,6 @@ export default async function GuideIndexPage() {
           </div>
         </section>
       </main>
-    </>
+    </AdPolicyProvider>
   );
 }

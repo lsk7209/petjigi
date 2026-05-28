@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
-import { db } from "@/db/client";
-import { regions } from "@/db/schema";
-import { eq } from "drizzle-orm";
-import { breadcrumbSchema, faqSchema } from "@/lib/seo/structured-data";
+import { getCachedRegionsBySido } from "@/lib/db-queries";
+import { breadcrumbSchema, faqSchema, collectionPageSchema } from "@/lib/seo/structured-data";
+import { AdSlot } from "@/components/ads/ad-slot";
+import { AdPolicyProvider } from "@/components/providers/ad-policy-provider";
+import { RegionViewTracker } from "@/components/analytics/region-view-tracker";
 
 export const revalidate = 86400;
 
@@ -26,11 +27,8 @@ export async function generateMetadata({
   params: Promise<{ sido: string }>;
 }): Promise<Metadata> {
   const { sido } = await params;
-  const first = await db
-    .select({ sido: regions.sido })
-    .from(regions)
-    .where(eq(regions.sidoSlug, sido))
-    .get();
+  const rows = await getCachedRegionsBySido(sido);
+  const first = rows[0];
 
   if (!first) return {};
 
@@ -77,11 +75,9 @@ export default async function SidoPage({
 }) {
   const { sido } = await params;
 
-  const sigunguList = await db
-    .select()
-    .from(regions)
-    .where(eq(regions.sidoSlug, sido))
-    .orderBy(regions.sigungu);
+  const sigunguList = (await getCachedRegionsBySido(sido))
+    .slice()
+    .sort((a, b) => a.sigungu.localeCompare(b.sigungu));
 
   if (sigunguList.length === 0) notFound();
 
@@ -94,8 +90,15 @@ export default async function SidoPage({
 
   const faq = faqSchema(buildFaq(sidoName));
 
+  const collectionPage = collectionPageSchema(
+    `${sidoName} 반려동물 정보`,
+    `${SITE_URL}/sido/${sido}`,
+    `${sidoName} 지역 동물병원·펫미용·펫호텔·장묘업체를 시군구별로 찾아보세요. 공공데이터 기반.`
+  );
+
   return (
-    <>
+    <AdPolicyProvider category={5}>
+      <RegionViewTracker sido={sidoName} />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb) }}
@@ -103,6 +106,10 @@ export default async function SidoPage({
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faq) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(collectionPage) }}
       />
       <main className="max-w-5xl mx-auto px-4 py-6 sm:py-10">
         {/* 브레드크럼 */}
@@ -116,7 +123,7 @@ export default async function SidoPage({
         </nav>
 
         <header className="mb-6 sm:mb-8">
-          <h1 className="text-2xl sm:text-3xl font-extrabold text-[var(--brand-text)] mb-2 tracking-tight">
+          <h1 className="text-2xl sm:text-3xl font-extrabold text-[var(--brand-text)] mb-2 tracking-tight" data-speakable>
             {sidoName} 반려동물 정보
           </h1>
           <p className="text-sm sm:text-base text-[var(--brand-text-secondary)] leading-relaxed" style={{ wordBreak: "keep-all" }}>
@@ -124,6 +131,8 @@ export default async function SidoPage({
             동물병원, 펫미용, 펫호텔, 장묘업체 등 공공데이터 기반으로 제공됩니다.
           </p>
         </header>
+
+        <AdSlot adType="adsense" format="horizontal" className="mb-6" />
 
         {/* 제공 업종 안내 */}
         <div className="flex flex-wrap gap-2 mb-6 sm:mb-8">
@@ -189,6 +198,6 @@ export default async function SidoPage({
           </div>
         </section>
       </main>
-    </>
+    </AdPolicyProvider>
   );
 }

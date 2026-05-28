@@ -1,7 +1,15 @@
 import type { Metadata } from "next";
 import { SubscribeForm } from "@/components/forms/subscribe-form";
+import { breadcrumbSchema } from "@/lib/seo/structured-data";
+
+export const revalidate = 86400;
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://petjigi.kr";
+
+const BREADCRUMB = breadcrumbSchema([
+  { name: "홈", url: SITE_URL },
+  { name: "문의 및 뉴스레터", url: `${SITE_URL}/contact` },
+]);
 
 const CONTACT_JSON_LD = {
   "@context": "https://schema.org",
@@ -26,6 +34,7 @@ export const metadata: Metadata = {
 export default function ContactPage() {
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(BREADCRUMB) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(CONTACT_JSON_LD) }} />
     <main className="max-w-3xl mx-auto px-4 py-16 space-y-16">
       {/* 이메일 구독 */}

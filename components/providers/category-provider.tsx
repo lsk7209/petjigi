@@ -1,8 +1,9 @@
 "use client";
 
-import { createContext, useContext } from "react";
+import { createContext, useContext, useEffect } from "react";
 import type { CategoryId, CategoryConfig } from "@/lib/category";
 import { getCategoryById } from "@/lib/category";
+import { track } from "@/lib/analytics/events";
 
 const CategoryContext = createContext<CategoryConfig | null>(null);
 
@@ -14,6 +15,13 @@ export function CategoryProvider({
   children: React.ReactNode;
 }) {
   const config = getCategoryById(category);
+
+  useEffect(() => {
+    if (config) {
+      track.categoryView({ categorySlug: config.slug, categoryName: config.name });
+    }
+  }, [config]);
+
   return (
     <CategoryContext.Provider value={config}>
       {children}

@@ -2,7 +2,12 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { YmylDisclaimer } from "@/components/content/ymyl-disclaimer";
+import { AdSlot } from "@/components/ads/ad-slot";
+import { AdPolicyProvider } from "@/components/providers/ad-policy-provider";
+import { ShareButtons } from "@/components/content/share-buttons";
 import { breadcrumbSchema, faqSchema } from "@/lib/seo/structured-data";
+
+export const revalidate = 86400;
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://petjigi.kr";
 
@@ -334,19 +339,25 @@ export default async function InsurerPage({
       url: `${SITE_URL}/insurance/compare`,
       name: "펫보험 비교",
     },
+    speakable: {
+      "@type": "SpeakableSpecification",
+      cssSelector: ["h1", "h2", "[data-speakable]"],
+    },
   };
 
   const otherInsurers = Object.entries(INSURERS).filter(([slug]) => slug !== insurer);
 
+  const pageUrl = `${SITE_URL}/insurance/${insurer}`;
+
   return (
-    <>
+    <AdPolicyProvider category={4}>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(productJsonLd) }} />
 
-      <main className="max-w-3xl mx-auto px-4 py-12 bg-[var(--brand-bg)]">
+      <main className="max-w-3xl mx-auto px-4 py-8 sm:py-12 bg-[var(--brand-bg)]">
         {/* 브레드크럼 */}
-        <nav className="text-xs text-[var(--brand-text-secondary)] mb-6 flex items-center gap-1.5 flex-wrap" aria-label="breadcrumb">
+        <nav className="text-xs text-[var(--brand-text-secondary)] mb-5 sm:mb-6 flex items-center gap-1.5 flex-wrap" aria-label="breadcrumb">
           <Link href="/" className="hover:text-[var(--brand-accent)] transition-colors">홈</Link>
           <span aria-hidden="true">›</span>
           <Link href="/category/insurance" className="hover:text-[var(--brand-accent)] transition-colors">보험·법률</Link>
@@ -357,17 +368,17 @@ export default async function InsurerPage({
         </nav>
 
         {/* 헤더 */}
-        <header className="mb-8">
+        <header className="mb-6 sm:mb-8">
           <p className="text-xs font-semibold tracking-widest text-[var(--cat-4)] uppercase mb-2">
             펫보험 · {data.fullName}
           </p>
-          <h1 className="text-3xl font-bold text-[var(--brand-text)] leading-tight mb-3">
+          <h1 className="text-2xl sm:text-3xl font-bold text-[var(--brand-text)] leading-tight mb-2 sm:mb-3 tracking-tight" style={{ wordBreak: "keep-all" }} data-speakable>
             {data.product}
-            <span className="block text-xl font-medium text-[var(--brand-text-secondary)] mt-1">
+            <span className="block text-lg sm:text-xl font-medium text-[var(--brand-text-secondary)] mt-1" style={{ wordBreak: "keep-all" }}>
               {data.tagline}
             </span>
           </h1>
-          <p className="text-[var(--brand-text-secondary)] leading-relaxed text-sm">{data.desc}</p>
+          <p className="text-sm text-[var(--brand-text-secondary)] leading-relaxed">{data.desc}</p>
         </header>
 
         <YmylDisclaimer categoryId={4} />
@@ -468,6 +479,8 @@ export default async function InsurerPage({
           </div>
         </section>
 
+        <AdSlot adType="adsense" format="horizontal" className="mb-8" />
+
         {/* 비교 CTA */}
         <div className="mb-10 p-5 rounded-[var(--r-card)] border border-[var(--brand-border)] bg-[var(--brand-surface-2)] text-center">
           <p className="text-sm font-semibold text-[var(--brand-text)] mb-2">다른 보험사와 비교해보세요</p>
@@ -483,7 +496,7 @@ export default async function InsurerPage({
         </div>
 
         {/* 다른 보험사 */}
-        <section>
+        <section className="mb-8">
           <h2 className="text-lg font-semibold text-[var(--brand-text)] mb-4">다른 보험사 상품 보기</h2>
           <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
             {otherInsurers.map(([slug, info]) => (
@@ -498,7 +511,11 @@ export default async function InsurerPage({
             ))}
           </div>
         </section>
+
+        <div className="mb-4">
+          <ShareButtons url={pageUrl} title={`${data.fullName} ${data.product} | 펫지기`} />
+        </div>
       </main>
-    </>
+    </AdPolicyProvider>
   );
 }

@@ -15,7 +15,7 @@
 import { createHash } from "crypto";
 import { db } from "../../db/client";
 import { businesses } from "../../db/schema";
-import { eq } from "drizzle-orm";
+import { eq, inArray } from "drizzle-orm";
 import { geocodeAddress } from "../geocoding/kakao";
 import { pingIndexNow } from "../../lib/seo/index-now";
 
@@ -100,6 +100,19 @@ export async function syncLocaldata(): Promise<void> {
 
       if (rows.length === 0) { hasMore = false; break; }
 
+      // 배치 SELECT: N+1 방지 — 페이지 단위 단일 쿼리로 기존 레코드 일괄 조회
+      const pageIds = rows.map((row) => `${bsshCode}-${row.mgtNo}`);
+      const CHUNK = 900; // SQLite 바인딩 변수 한도 999 이하 유지
+      const existingRows: { id: string; rawData: unknown; lat: number | null; lng: number | null; createdAt: string }[] = [];
+      for (let i = 0; i < pageIds.length; i += CHUNK) {
+        const batch = await db
+          .select({ id: businesses.id, rawData: businesses.rawData, lat: businesses.lat, lng: businesses.lng, createdAt: businesses.createdAt })
+          .from(businesses)
+          .where(inArray(businesses.id, pageIds.slice(i, i + CHUNK)));
+        existingRows.push(...batch);
+      }
+      const existingMap = new Map(existingRows.map((r) => [r.id, r]));
+
       for (const row of rows) {
         const hash = hashRow(row);
         const id = `${bsshCode}-${row.mgtNo}`;
@@ -107,7 +120,7 @@ export async function syncLocaldata(): Promise<void> {
         const status = row.dtlStateGbn === "01" ? "active"
           : row.dtlStateGbn === "02" ? "closed" : "paused";
 
-        const existing = await db.select().from(businesses).where(eq(businesses.id, id)).get();
+        const existing = existingMap.get(id) ?? null;
 
         // 해시 같으면 스킵 (diff 기반 upsert)
         const existingHash = (existing?.rawData as { hash?: string } | null)?.hash;
@@ -188,6 +201,19 @@ export async function syncLocaldata(): Promise<void> {
   }
 
   console.log(`[ETL:businesses] 완료 — ${totalProcessed}건 처리, ${changedUrls.length}건 IndexNow ping`);
+
+  // Next.js 캐시 무효화 (businesses + stats 태그)
+  const cronSecret = process.env.CRON_SECRET;
+  if (cronSecret) {
+    await fetch(`${SITE_URL}/api/cache/revalidate`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${cronSecret}`,
+      },
+      body: JSON.stringify({ tags: ["businesses", "stats"] }),
+    }).catch((e) => console.error("[ETL:businesses] 캐시 무효화 실패:", e));
+  }
 }
 
 syncLocaldata().catch((err) => {

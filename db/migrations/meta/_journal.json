@@ -15,6 +15,20 @@
       "when": 1779232247135,
       "tag": "0001_pale_luckman",
       "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "6",
+      "when": 1779924660618,
+      "tag": "0002_fluffy_nehzno",
+      "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "6",
+      "when": 1779924735800,
+      "tag": "0003_left_thing",
+      "breakpoints": true
     }
   ]
 }

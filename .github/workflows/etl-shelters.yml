@@ -2,7 +2,7 @@ name: ETL — Shelters (전국동물보호센터)
 
 on:
   schedule:
-    - cron: "0 19 * * 0"  # 매주 일요일 04:00 KST
+    - cron: "0 19 1 * *"  # 매월 1일 04:00 KST (보호센터 데이터 변경 드묾)
   workflow_dispatch:
 
 jobs:
