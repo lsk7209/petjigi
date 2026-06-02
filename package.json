@@ -35,6 +35,7 @@
     "db:seed:blog-30": "tsx --env-file=.env.local db/seeds/blog-posts-30.ts",
     "db:update:subtitles": "tsx --env-file=.env.local scripts/update-subtitles.ts",
     "notify:published": "tsx --env-file=.env.local scripts/notify-published.ts",
+    "db:fix:subtitles": "tsx --env-file=.env.local scripts/fix-subtitles-batch1-24.ts",
     "db:seed:breeds": "tsx --env-file=.env.local db/seeds/breeds.ts",
     "etl:businesses": "tsx --env-file=.env.local etl/localdata/sync.ts",
     "etl:import-csv": "tsx --env-file=.env.local etl/localdata/import-csv.ts",

@@ -56,8 +56,14 @@ export async function generateMetadata({
 
   const title = content.metaTitle ?? `${content.title} | 펫지기`;
   const catName = CATEGORIES[content.category as CategoryId]?.name ?? "반려동물";
+  // subtitle을 OG description으로 쓰는 조건:
+  // 1) 존재하고 30자 이상 (단편 제목 조각 제외)
+  // 2) 제목 본체에 subtitle이 포함되지 않음 (제목 suffix 중복 제외)
+  const subtitleUsable = content.subtitle &&
+    content.subtitle.length >= 30 &&
+    !content.title.includes(content.subtitle);
   const description =
-    content.subtitle ??
+    (subtitleUsable ? content.subtitle : null) ??
     content.metaDescription ??
     `${content.title} — 반려동물 ${catName} 정보. 집사 에디터가 직접 경험하고 조사한 블로그. | 펫지기`;
 
