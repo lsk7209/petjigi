@@ -188,7 +188,7 @@ export default async function BlogPostPage({
 
   return (
     <>
-      <ReadingProgress />
+      <ReadingProgress color={`var(--cat-${categoryId})`} />
       <ScrollDepthTracker />
       <GuideViewTracker slug={slug} title={content.title} category={content.category} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(article) }} />

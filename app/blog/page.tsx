@@ -267,20 +267,34 @@ export default async function BlogIndexPage({
               </Link>
             )}
             <div className="flex items-center gap-1">
-              {Array.from({ length: totalPages }, (_, i) => i + 1).map((p) => (
-                <Link
-                  key={p}
-                  href={buildHref(catId, p)}
-                  aria-current={p === currentPage ? "page" : undefined}
-                  className={`min-w-[44px] min-h-[44px] flex items-center justify-center rounded-lg text-sm font-medium transition-colors ${
-                    p === currentPage
-                      ? "bg-[var(--brand-accent)] text-white"
-                      : "border border-[var(--brand-border)] text-[var(--brand-text-secondary)] hover:border-[var(--brand-accent)] hover:text-[var(--brand-accent)]"
-                  }`}
-                >
-                  {p}
-                </Link>
-              ))}
+              {(() => {
+                const pages: (number | "...")[] = [];
+                for (let p = 1; p <= totalPages; p++) {
+                  if (p === 1 || p === totalPages || (p >= currentPage - 2 && p <= currentPage + 2)) {
+                    pages.push(p);
+                  } else if (pages[pages.length - 1] !== "...") {
+                    pages.push("...");
+                  }
+                }
+                return pages.map((p, i) =>
+                  p === "..." ? (
+                    <span key={`ellipsis-${i}`} className="px-1 text-[var(--brand-text-secondary)] text-sm">…</span>
+                  ) : (
+                    <Link
+                      key={p}
+                      href={buildHref(catId, p)}
+                      aria-current={p === currentPage ? "page" : undefined}
+                      className={`min-w-[44px] min-h-[44px] flex items-center justify-center rounded-lg text-sm font-medium transition-colors ${
+                        p === currentPage
+                          ? "bg-[var(--brand-accent)] text-white"
+                          : "border border-[var(--brand-border)] text-[var(--brand-text-secondary)] hover:border-[var(--brand-accent)] hover:text-[var(--brand-accent)]"
+                      }`}
+                    >
+                      {p}
+                    </Link>
+                  )
+                );
+              })()}
             </div>
             {currentPage < totalPages && (
               <Link

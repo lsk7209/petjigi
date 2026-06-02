@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 
-export function ReadingProgress() {
+export function ReadingProgress({ color }: { color?: string }) {
   const [progress, setProgress] = useState(0);
 
   useEffect(() => {
@@ -19,7 +19,7 @@ export function ReadingProgress() {
   return (
     <div
       className="reading-progress"
-      style={{ width: `${progress}%` }}
+      style={{ width: `${progress}%`, ...(color ? { background: color } : {}) }}
       aria-hidden="true"
     />
   );

@@ -31,6 +31,7 @@ export default async function OgImage({
   const content = await db
     .select({
       title: contents.title,
+      subtitle: contents.subtitle,
       category: contents.category,
       authorName: contents.authorName,
     })
@@ -58,6 +59,9 @@ export default async function OgImage({
   const title = content.title.length > 40
     ? content.title.slice(0, 40) + "…"
     : content.title;
+  const subtitle = content.subtitle
+    ? (content.subtitle.length > 55 ? content.subtitle.slice(0, 55) + "…" : content.subtitle)
+    : null;
 
   return new ImageResponse(
     (
@@ -94,19 +98,23 @@ export default async function OgImage({
           </div>
         </div>
 
-        <div
-          style={{
-            fontSize: title.length > 25 ? 52 : 64,
-            fontWeight: 800,
-            color: textColor,
-            lineHeight: 1.3,
-            letterSpacing: "-1.5px",
-            flex: 1,
-            display: "flex",
-            alignItems: "center",
-          }}
-        >
-          {title}
+        <div style={{ flex: 1, display: "flex", flexDirection: "column", justifyContent: "center", gap: 16 }}>
+          <div
+            style={{
+              fontSize: title.length > 25 ? 50 : 60,
+              fontWeight: 800,
+              color: textColor,
+              lineHeight: 1.3,
+              letterSpacing: "-1.5px",
+            }}
+          >
+            {title}
+          </div>
+          {subtitle && (
+            <div style={{ fontSize: 26, color: subColor, lineHeight: 1.5, fontWeight: 400 }}>
+              {subtitle}
+            </div>
+          )}
         </div>
 
         <div
