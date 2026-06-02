@@ -19,6 +19,7 @@ export async function GET() {
     .select({
       slug: contents.slug,
       title: contents.title,
+      subtitle: contents.subtitle,
       type: contents.type,
       metaDescription: contents.metaDescription,
       publishedAt: contents.publishedAt,
@@ -62,7 +63,7 @@ export async function GET() {
       <title><![CDATA[${p.title}]]></title>
       <link>${url}</link>
       <guid isPermaLink="true">${url}</guid>
-      <description><![CDATA[${p.metaDescription ?? ""}]]></description>
+      <description><![CDATA[${p.subtitle ?? p.metaDescription ?? ""}]]></description>
       <pubDate>${pub}</pubDate>
     </item>`;
       })
