@@ -4,7 +4,7 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import { db } from "@/db/client";
 import { contents } from "@/db/schema";
-import { and, eq, ne, desc, lte } from "drizzle-orm";
+import { and, eq, ne, desc, lte, gt, lt } from "drizzle-orm";
 import type { CategoryId } from "@/lib/category";
 import { CATEGORIES } from "@/lib/category";
 import { YmylDisclaimer } from "@/components/content/ymyl-disclaimer";
@@ -78,6 +78,25 @@ export async function generateMetadata({
   };
 }
 
+async function getAdjacentPosts(publishedAt: string | null) {
+  if (!publishedAt) return { prev: null, next: null };
+  const [prev, next] = await Promise.all([
+    db.select({ slug: contents.slug, title: contents.title })
+      .from(contents)
+      .where(and(eq(contents.status, "published"), eq(contents.type, "blog"), lt(contents.publishedAt, publishedAt)))
+      .orderBy(desc(contents.publishedAt))
+      .limit(1)
+      .then(r => r[0] ?? null),
+    db.select({ slug: contents.slug, title: contents.title })
+      .from(contents)
+      .where(and(eq(contents.status, "published"), eq(contents.type, "blog"), gt(contents.publishedAt, publishedAt)))
+      .orderBy(contents.publishedAt)
+      .limit(1)
+      .then(r => r[0] ?? null),
+  ]);
+  return { prev, next };
+}
+
 async function getRelatedPosts(slug: string, category: number) {
   return db
     .select({
@@ -139,7 +158,10 @@ export default async function BlogPostPage({
 
   const categoryId = content.category as CategoryId;
   const cat = CATEGORIES[categoryId];
-  const relatedPosts = await getRelatedPosts(slug, content.category);
+  const [relatedPosts, adjacent] = await Promise.all([
+    getRelatedPosts(slug, content.category),
+    getAdjacentPosts(content.publishedAt),
+  ]);
 
   const headings = extractHeadings(content.body ?? "");
   const bodyWithIds = injectHeadingIds(content.body ?? "", headings);
@@ -361,6 +383,37 @@ export default async function BlogPostPage({
             <Link href="/blog" className="text-sm text-[var(--brand-accent)] hover:underline">← 블로그</Link>
             <Link href="/guide" className="text-sm text-[var(--brand-accent)] hover:underline">📚 전문 가이드 →</Link>
           </div>
+        )}
+
+        {/* 이전/다음 글 네비게이션 */}
+        {(adjacent.prev || adjacent.next) && (
+          <nav
+            className="mt-8 pt-6 border-t border-[var(--brand-border)] grid grid-cols-1 sm:grid-cols-2 gap-3"
+            aria-label="이전 다음 글"
+          >
+            {adjacent.prev ? (
+              <Link
+                href={`/blog/${adjacent.prev.slug}`}
+                className="group flex flex-col gap-1 p-4 rounded-xl border border-[var(--brand-border)] hover:border-[var(--cat-active,var(--brand-accent))] transition-all"
+              >
+                <span className="text-xs text-[var(--brand-text-secondary)]">← 이전 글</span>
+                <span className="text-sm font-semibold text-[var(--brand-text)] group-hover:text-[var(--cat-active,var(--brand-accent))] transition-colors line-clamp-2" style={{ wordBreak: "keep-all" }}>
+                  {adjacent.prev.title}
+                </span>
+              </Link>
+            ) : <div />}
+            {adjacent.next && (
+              <Link
+                href={`/blog/${adjacent.next.slug}`}
+                className="group flex flex-col gap-1 p-4 rounded-xl border border-[var(--brand-border)] hover:border-[var(--cat-active,var(--brand-accent))] transition-all text-right sm:text-right"
+              >
+                <span className="text-xs text-[var(--brand-text-secondary)]">다음 글 →</span>
+                <span className="text-sm font-semibold text-[var(--brand-text)] group-hover:text-[var(--cat-active,var(--brand-accent))] transition-colors line-clamp-2" style={{ wordBreak: "keep-all" }}>
+                  {adjacent.next.title}
+                </span>
+              </Link>
+            )}
+          </nav>
         )}
       </main>
     </>

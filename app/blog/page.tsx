@@ -158,21 +158,24 @@ export default async function BlogIndexPage({
           >
             전체 {!catId && `(${allPosts.length})`}
           </Link>
-          {([1, 2, 3, 4, 5, 6] as const).map((id) => (
-            <Link
-              key={id}
-              href={buildHref(id, 1)}
-              aria-current={catId === id ? "page" : undefined}
-              className={`px-3 py-1.5 rounded-full text-xs font-semibold transition-colors ${
-                catId === id
-                  ? "bg-[var(--brand-accent)] text-white"
-                  : "border border-[var(--brand-border)] text-[var(--brand-text-secondary)] hover:border-[var(--brand-accent)] hover:text-[var(--brand-accent)]"
-              }`}
-            >
-              {CATEGORY_EMOJI[id]} {CATEGORY_LABEL[id]}
-              {catId === id && ` (${filtered.length})`}
-            </Link>
-          ))}
+          {([1, 2, 3, 4, 5, 6] as const).map((id) => {
+            const isActive = catId === id;
+            return (
+              <Link
+                key={id}
+                href={buildHref(id, 1)}
+                aria-current={isActive ? "page" : undefined}
+                className="px-3 py-1.5 rounded-full text-xs font-semibold transition-all border"
+                style={isActive
+                  ? { background: `var(--cat-${id})`, color: "white", borderColor: `var(--cat-${id})` }
+                  : { borderColor: "var(--brand-border)", color: "var(--brand-text-secondary)" }
+                }
+              >
+                {CATEGORY_EMOJI[id]} {CATEGORY_LABEL[id]}
+                {isActive && ` (${filtered.length})`}
+              </Link>
+            );
+          })}
         </div>
 
         <AdSlot adType="adsense" format="horizontal" className="mb-6" />
@@ -235,9 +238,9 @@ export default async function BlogIndexPage({
                         {post.title}
                       </span>
                     </h2>
-                    {post.metaDescription && (
+                    {(post.subtitle || post.metaDescription) && (
                       <p className="text-xs text-[var(--brand-text-secondary)] leading-relaxed line-clamp-2 flex-1 mb-3">
-                        {post.metaDescription}
+                        {post.subtitle || post.metaDescription}
                       </p>
                     )}
                     <div className="flex items-center gap-2 mt-auto text-xs text-[var(--brand-text-secondary)] flex-wrap">
