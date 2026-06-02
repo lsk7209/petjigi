@@ -146,6 +146,19 @@ export const getCachedCategoryGuides = unstable_cache(
   { revalidate: 3600, tags: ["guides"] }
 );
 
+// ── 카테고리별 블로그 (카테고리 허브용, 4건) ─────────────────────────────────
+export const getCachedCategoryBlogPosts = unstable_cache(
+  async (categoryId: number) =>
+    db
+      .select({ slug: contents.slug, title: contents.title, subtitle: contents.subtitle, publishedAt: contents.publishedAt })
+      .from(contents)
+      .where(and(eq(contents.status, "published"), eq(contents.type, "blog"), eq(contents.category, categoryId), lte(contents.publishedAt, new Date().toISOString())))
+      .orderBy(desc(contents.publishedAt))
+      .limit(4),
+  ["category-blog"],
+  { revalidate: 3600, tags: ["guides"] }
+);
+
 // ── 최근 블로그 (홈용, 6건) ───────────────────────────────────────────────────
 export const getCachedRecentBlogPosts = unstable_cache(
   async () =>

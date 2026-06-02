@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { getCategoryBySlug, CATEGORIES } from "@/lib/category";
-import { getCachedCategoryGuides } from "@/lib/db-queries";
+import { getCachedCategoryGuides, getCachedCategoryBlogPosts } from "@/lib/db-queries";
 import { YmylDisclaimer } from "@/components/content/ymyl-disclaimer";
 import { CategoryProvider } from "@/components/providers/category-provider";
 import { AdPolicyProvider } from "@/components/providers/ad-policy-provider";
@@ -106,7 +106,10 @@ export default async function CategoryPage({
   const cat = getCategoryBySlug(slug);
   if (!cat) notFound();
 
-  const guides = await getCachedCategoryGuides(cat.id);
+  const [guides, recentBlogPosts] = await Promise.all([
+    getCachedCategoryGuides(cat.id),
+    getCachedCategoryBlogPosts(cat.id),
+  ]);
   const desc = CATEGORY_DESCRIPTIONS[slug];
   const emoji = CATEGORY_EMOJI[slug] ?? "📌";
 
@@ -356,6 +359,36 @@ export default async function CategoryPage({
                 >
                   🕊️ 펫로스 케어 가이드 읽기 →
                 </Link>
+              </section>
+            )}
+
+            {/* 카테고리 블로그 포스트 */}
+            {recentBlogPosts.length > 0 && (
+              <section className="mb-8" aria-label={`${cat.name} 블로그`}>
+                <div className="flex items-baseline justify-between mb-4">
+                  <h2 className="text-xl font-bold text-[var(--brand-text)]">
+                    ✍️ {cat.name} 블로그
+                  </h2>
+                  <Link href={`/blog?category=${cat.id}`} className="text-sm text-[var(--brand-accent)] hover:underline font-semibold">
+                    전체 보기 →
+                  </Link>
+                </div>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                  {recentBlogPosts.map((post) => (
+                    <Link
+                      key={post.slug}
+                      href={`/blog/${post.slug}`}
+                      className="group p-4 rounded-xl border border-[var(--brand-border)] hover:border-[var(--brand-accent)] transition-all"
+                    >
+                      <p className="text-sm font-semibold text-[var(--brand-text)] group-hover:text-[var(--brand-accent)] transition-colors leading-snug" style={{ wordBreak: "keep-all" }}>
+                        {post.title}
+                      </p>
+                      {post.subtitle && (
+                        <p className="text-xs text-[var(--brand-text-secondary)] mt-1 line-clamp-2">{post.subtitle}</p>
+                      )}
+                    </Link>
+                  ))}
+                </div>
               </section>
             )}
 
