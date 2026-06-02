@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { getCachedStats, getCachedRecentGuides } from "@/lib/db-queries";
+import { getCachedStats, getCachedRecentGuides, getCachedRecentBlogPosts } from "@/lib/db-queries";
 import { CATEGORIES } from "@/lib/category";
 import { faqSchema, definedTermSetSchema } from "@/lib/seo/structured-data";
 import { SubscribeForm } from "@/components/forms/subscribe-form";
@@ -97,7 +97,7 @@ function formatCount(n: number) {
 
 export default async function HomePage() {
   const categories = Object.values(CATEGORIES);
-  const [recentGuides, stats] = await Promise.all([getCachedRecentGuides(), getCachedStats()]);
+  const [recentGuides, stats, recentBlogPosts] = await Promise.all([getCachedRecentGuides(), getCachedStats(), getCachedRecentBlogPosts()]);
 
   const STATS = [
     { label: "전국 업장 정보", value: formatCount(stats.businesses), sublabel: "동물병원·미용·장묘 등" },
@@ -299,11 +299,54 @@ export default async function HomePage() {
           </section>
         )}
 
+        {/* ── 최근 블로그 ── */}
+        {recentBlogPosts.length > 0 && (
+          <section className="py-12 sm:py-16" aria-label="최근 블로그">
+            <div className="pj-container-7xl">
+              <div style={{ display: "flex", alignItems: "baseline", justifyContent: "space-between", marginBottom: 32 }}>
+                <div>
+                  <span className="pj-numeral" style={{ fontSize: 14 }}>04</span>
+                  <h2 className="pj-display" style={{ fontSize: 32, marginTop: 4 }}>집사 에디터 블로그</h2>
+                </div>
+                <Link href="/blog" style={{ color: "var(--brand-accent-warm)", fontWeight: 600, textDecoration: "none" }}>전체 글 보기 →</Link>
+              </div>
+              <div className="grid gap-4" style={{ gridTemplateColumns: "repeat(auto-fill,minmax(260px,1fr))" }}>
+                {recentBlogPosts.map((post) => {
+                  const cc = CAT_COLORS[post.category ?? 5] ?? { color: "var(--brand-accent)", soft: "var(--brand-accent-soft)" };
+                  const cat = CATEGORIES[post.category as keyof typeof CATEGORIES];
+                  return (
+                    <Link
+                      key={post.slug}
+                      href={`/blog/${post.slug}`}
+                      className="pj-card pj-card-hover"
+                      style={{ textDecoration: "none", color: "inherit", padding: 20, display: "flex", flexDirection: "column", gap: 10 }}
+                    >
+                      <span
+                        style={{ fontSize: 11, fontWeight: 700, padding: "2px 10px", borderRadius: 99, background: cc.soft, color: cc.color, alignSelf: "flex-start" }}
+                      >
+                        {cat?.name ?? "케어·라이프"}
+                      </span>
+                      <p style={{ fontSize: 15, fontWeight: 700, color: "var(--brand-text)", lineHeight: 1.5, wordBreak: "keep-all" }}>
+                        {post.title}
+                      </p>
+                      {post.subtitle && (
+                        <p style={{ fontSize: 13, color: "var(--brand-text-secondary)", lineHeight: 1.55, wordBreak: "keep-all" }} className="line-clamp-2">
+                          {post.subtitle}
+                        </p>
+                      )}
+                    </Link>
+                  );
+                })}
+              </div>
+            </div>
+          </section>
+        )}
+
         {/* ── 주요 콘텐츠 허브 ── */}
         <section className="py-12 sm:py-16" style={{ background: "var(--brand-surface-2)" }} aria-label="주요 콘텐츠">
           <div className="pj-container-7xl">
             <div style={{ marginBottom: 32 }}>
-              <span className="pj-numeral" style={{ fontSize: 14 }}>04</span>
+              <span className="pj-numeral" style={{ fontSize: 14 }}>05</span>
               <h2 className="pj-display" style={{ fontSize: 32, marginTop: 4 }}>꼭 알아야 할 정보</h2>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
