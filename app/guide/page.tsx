@@ -187,6 +187,9 @@ export default async function GuideIndexPage() {
         <section className="mt-8 pt-6 border-t border-[var(--brand-border)]">
           <h2 className="text-base font-semibold text-[var(--brand-text)] mb-4">함께 보면 좋은 정보</h2>
           <div className="flex flex-wrap gap-3">
+            <Link href="/blog" className="text-sm text-[var(--brand-accent)] hover:underline">
+              ✍️ 집사 블로그 →
+            </Link>
             <Link href="/condition" className="text-sm text-[var(--brand-accent)] hover:underline">
               💊 질병·증상 정보 →
             </Link>
