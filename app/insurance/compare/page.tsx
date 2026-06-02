@@ -3,6 +3,7 @@ import Link from "next/link";
 import { YmylDisclaimer } from "@/components/content/ymyl-disclaimer";
 import { ShareButtons } from "@/components/content/share-buttons";
 import { breadcrumbSchema, faqSchema, howToSchema } from "@/lib/seo/structured-data";
+import { getCachedCategoryGuides, getCachedCategoryBlogPosts } from "@/lib/db-queries";
 import { InsuranceCompareTracker } from "@/components/analytics/insurance-compare-tracker";
 import { AdSlot } from "@/components/ads/ad-slot";
 import { AdPolicyProvider } from "@/components/providers/ad-policy-provider";
@@ -123,7 +124,12 @@ const CHECK_ITEMS = [
   { title: "나이 제한", desc: "가입 가능 연령(보통 만 8~10세까지)과 갱신 상한 나이를 꼭 체크하세요. 노령견·노령묘일수록 조건이 까다롭습니다." },
 ];
 
-export default function InsuranceComparePage() {
+export default async function InsuranceComparePage() {
+  const [insuranceGuides, insuranceBlogs] = await Promise.all([
+    getCachedCategoryGuides(4),
+    getCachedCategoryBlogPosts(4),
+  ]);
+
   return (
     <AdPolicyProvider category={4}>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(BREADCRUMB) }} />
@@ -278,6 +284,48 @@ export default function InsuranceComparePage() {
         </section>
 
         <AdSlot adType="adsense" format="horizontal" className="my-8" />
+
+        {/* 보험·법률 가이드 */}
+        {insuranceGuides.length > 0 && (
+          <aside className="mb-8 pt-6 border-t border-[var(--brand-border)]" aria-label="보험·법률 가이드">
+            <h2 className="text-base font-bold text-[var(--brand-text)] mb-3">📚 보험·법률 가이드</h2>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+              {insuranceGuides.slice(0, 4).map((g) => (
+                <Link
+                  key={g.slug}
+                  href={`/guide/${g.slug}`}
+                  className="group flex items-center gap-2 p-3 rounded-lg border border-[var(--brand-border)] hover:border-[var(--cat-4)] transition-colors"
+                >
+                  <span className="text-[var(--cat-4)] shrink-0">📖</span>
+                  <p className="text-sm font-medium text-[var(--brand-text)] group-hover:text-[var(--cat-4)] transition-colors leading-snug" style={{ wordBreak: "keep-all" }}>
+                    {g.title}
+                  </p>
+                </Link>
+              ))}
+            </div>
+          </aside>
+        )}
+
+        {/* 보험·법률 블로그 */}
+        {insuranceBlogs.length > 0 && (
+          <aside className="mb-8" aria-label="보험·법률 블로그">
+            <h2 className="text-base font-bold text-[var(--brand-text)] mb-3">✍️ 관련 블로그</h2>
+            <div className="flex flex-col gap-2">
+              {insuranceBlogs.slice(0, 3).map((p) => (
+                <Link
+                  key={p.slug}
+                  href={`/blog/${p.slug}`}
+                  className="group flex items-start gap-2 p-3 rounded-lg hover:bg-[var(--brand-surface-2)] transition-colors"
+                >
+                  <span className="mt-0.5 text-[var(--cat-4)] shrink-0">→</span>
+                  <p className="text-sm font-medium text-[var(--brand-text)] group-hover:text-[var(--cat-4)] transition-colors leading-snug" style={{ wordBreak: "keep-all" }}>
+                    {p.title}
+                  </p>
+                </Link>
+              ))}
+            </div>
+          </aside>
+        )}
 
         <div className="pt-6 border-t border-[var(--brand-border)]">
           <ShareButtons url={`${SITE_URL}/insurance/compare`} title="펫보험 비교 — 6대 손보사 한눈에 비교 | 펫지기" />

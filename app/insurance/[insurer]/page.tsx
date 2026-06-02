@@ -6,6 +6,7 @@ import { AdSlot } from "@/components/ads/ad-slot";
 import { AdPolicyProvider } from "@/components/providers/ad-policy-provider";
 import { ShareButtons } from "@/components/content/share-buttons";
 import { breadcrumbSchema, faqSchema } from "@/lib/seo/structured-data";
+import { getCachedCategoryGuides, getCachedCategoryBlogPosts } from "@/lib/db-queries";
 
 export const revalidate = 86400;
 
@@ -346,6 +347,10 @@ export default async function InsurerPage({
   };
 
   const otherInsurers = Object.entries(INSURERS).filter(([slug]) => slug !== insurer);
+  const [insuranceGuides, insuranceBlogs] = await Promise.all([
+    getCachedCategoryGuides(4), // cat4 = 보험·법률
+    getCachedCategoryBlogPosts(4),
+  ]);
 
   const pageUrl = `${SITE_URL}/insurance/${insurer}`;
 
@@ -494,6 +499,53 @@ export default async function InsurerPage({
             펫보험 비교하기 →
           </Link>
         </div>
+
+        {/* 보험·법률 가이드 */}
+        {insuranceGuides.length > 0 && (
+          <aside className="mb-8 pt-6 border-t border-[var(--brand-border)]" aria-label="보험·법률 가이드">
+            <h2 className="text-base font-bold text-[var(--brand-text)] mb-3">📚 보험·법률 가이드</h2>
+            <div className="flex flex-col gap-2">
+              {insuranceGuides.slice(0, 3).map((g) => (
+                <Link
+                  key={g.slug}
+                  href={`/guide/${g.slug}`}
+                  className="group flex items-center gap-2 p-3 rounded-lg hover:bg-[var(--brand-surface-2)] transition-colors"
+                >
+                  <span className="text-[var(--cat-4)] shrink-0">📖</span>
+                  <p className="text-sm font-medium text-[var(--brand-text)] group-hover:text-[var(--cat-4)] transition-colors leading-snug" style={{ wordBreak: "keep-all" }}>
+                    {g.title}
+                  </p>
+                </Link>
+              ))}
+            </div>
+          </aside>
+        )}
+
+        {/* 보험·법률 블로그 */}
+        {insuranceBlogs.length > 0 && (
+          <aside className="mb-8 pt-4" aria-label="보험·법률 블로그">
+            <h2 className="text-base font-bold text-[var(--brand-text)] mb-3">✍️ 관련 블로그</h2>
+            <div className="flex flex-col gap-2">
+              {insuranceBlogs.slice(0, 3).map((p) => (
+                <Link
+                  key={p.slug}
+                  href={`/blog/${p.slug}`}
+                  className="group flex items-start gap-2 p-3 rounded-lg hover:bg-[var(--brand-surface-2)] transition-colors"
+                >
+                  <span className="mt-0.5 text-[var(--cat-4)] shrink-0">→</span>
+                  <div>
+                    <p className="text-sm font-medium text-[var(--brand-text)] group-hover:text-[var(--cat-4)] transition-colors leading-snug" style={{ wordBreak: "keep-all" }}>
+                      {p.title}
+                    </p>
+                    {p.subtitle && (
+                      <p className="text-xs text-[var(--brand-text-secondary)] mt-0.5 line-clamp-1">{p.subtitle}</p>
+                    )}
+                  </div>
+                </Link>
+              ))}
+            </div>
+          </aside>
+        )}
 
         {/* 다른 보험사 */}
         <section className="mb-8">

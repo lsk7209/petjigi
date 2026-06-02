@@ -369,7 +369,7 @@ export default async function CategoryPage({
                   <h2 className="text-xl font-bold text-[var(--brand-text)]">
                     ✍️ {cat.name} 블로그
                   </h2>
-                  <Link href={`/blog?category=${cat.id}`} className="text-sm text-[var(--brand-accent)] hover:underline font-semibold">
+                  <Link href={`/blog?cat=${cat.id}`} className="text-sm text-[var(--brand-accent)] hover:underline font-semibold">
                     전체 보기 →
                   </Link>
                 </div>
