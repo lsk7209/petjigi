@@ -5,6 +5,7 @@ import { db } from "@/db/client";
 import { breeds } from "@/db/schema";
 import { and, eq } from "drizzle-orm";
 import { breadcrumbSchema, faqSchema } from "@/lib/seo/structured-data";
+import { getCachedCategoryGuides, getCachedCategoryBlogPosts } from "@/lib/db-queries";
 import { CategoryCta } from "@/components/content/category-cta";
 import { ShareButtons } from "@/components/content/share-buttons";
 import { AdSlot } from "@/components/ads/ad-slot";
@@ -118,11 +119,11 @@ export default async function BreedPage({
   params: Promise<{ species: string; slug: string }>;
 }) {
   const { species, slug } = await params;
-  const breed = await db
-    .select()
-    .from(breeds)
-    .where(and(eq(breeds.slug, slug), eq(breeds.species, species)))
-    .get();
+  const [breed, relatedGuides, relatedBlogs] = await Promise.all([
+    db.select().from(breeds).where(and(eq(breeds.slug, slug), eq(breeds.species, species))).get(),
+    getCachedCategoryGuides(1), // cat1 = 입양·등록
+    getCachedCategoryBlogPosts(1),
+  ]);
 
   if (!breed) notFound();
 
@@ -247,8 +248,50 @@ export default async function BreedPage({
         <AdSlot adType="adsense" format="rectangle" className="mb-6" />
         <CategoryCta categoryId={3} className="mt-4 mb-8" />
 
+        {/* 관련 가이드 */}
+        {relatedGuides.length > 0 && (
+          <aside className="mb-6 pt-6 border-t border-[var(--brand-border)]" aria-label="입양·등록 가이드">
+            <h2 className="text-base font-bold text-[var(--brand-text)] mb-3">📚 입양·등록 가이드</h2>
+            <div className="flex flex-col gap-2">
+              {relatedGuides.slice(0, 3).map((g) => (
+                <Link
+                  key={g.slug}
+                  href={`/guide/${g.slug}`}
+                  className="group flex items-center gap-2 p-3 rounded-lg hover:bg-[var(--brand-surface-2)] transition-colors"
+                >
+                  <span className="text-[var(--brand-accent)] shrink-0">📖</span>
+                  <p className="text-sm font-medium text-[var(--brand-text)] group-hover:text-[var(--brand-accent)] transition-colors leading-snug" style={{ wordBreak: "keep-all" }}>
+                    {g.title}
+                  </p>
+                </Link>
+              ))}
+            </div>
+          </aside>
+        )}
+
+        {/* 관련 블로그 */}
+        {relatedBlogs.length > 0 && (
+          <aside className="mb-6 pt-4" aria-label="입양·등록 블로그">
+            <h2 className="text-base font-bold text-[var(--brand-text)] mb-3">✍️ 집사 블로그</h2>
+            <div className="flex flex-col gap-2">
+              {relatedBlogs.slice(0, 3).map((p) => (
+                <Link
+                  key={p.slug}
+                  href={`/blog/${p.slug}`}
+                  className="group flex items-start gap-2 p-3 rounded-lg hover:bg-[var(--brand-surface-2)] transition-colors"
+                >
+                  <span className="mt-0.5 text-[var(--brand-accent)] shrink-0">→</span>
+                  <p className="text-sm font-medium text-[var(--brand-text)] group-hover:text-[var(--brand-accent)] transition-colors leading-snug" style={{ wordBreak: "keep-all" }}>
+                    {p.title}
+                  </p>
+                </Link>
+              ))}
+            </div>
+          </aside>
+        )}
+
         {/* 관련 링크 */}
-        <section className="mb-6">
+        <section className="mb-6 pt-4 border-t border-[var(--brand-border)]">
           <div className="flex flex-wrap gap-3">
             <Link href={`/breed/${species}`} className="text-sm text-[var(--brand-accent)] hover:underline">
               ← {speciesLabel} 품종 목록
