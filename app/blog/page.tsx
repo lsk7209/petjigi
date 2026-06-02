@@ -24,12 +24,13 @@ const CATEGORY_LABEL: Record<number, string> = {
 export async function generateMetadata({
   searchParams,
 }: {
-  searchParams: Promise<{ cat?: string; page?: string }>;
+  searchParams: Promise<{ cat?: string; page?: string; q?: string }>;
 }): Promise<Metadata> {
-  const { cat, page } = await searchParams;
+  const { cat, page, q } = await searchParams;
   const catId = cat ? parseInt(cat, 10) : null;
   const currentPage = page ? Math.max(1, parseInt(page, 10)) : 1;
   const catName = catId && CATEGORY_LABEL[catId] ? ` · ${CATEGORY_LABEL[catId]}` : "";
+  const searchLabel = q ? ` · "${q}" 검색` : "";
 
   function buildCanonical(c: number | null, p: number) {
     const params = new URLSearchParams();
@@ -42,12 +43,11 @@ export async function generateMetadata({
   const canonical = buildCanonical(catId, currentPage);
 
   return {
-    title: `반려동물 블로그${catName}${currentPage > 1 ? ` — ${currentPage}페이지` : " — 집사 생활의 모든 것"} | 펫지기`,
+    title: `반려동물 블로그${catName}${searchLabel}${currentPage > 1 ? ` — ${currentPage}페이지` : " — 집사 생활의 모든 것"} | 펫지기`,
     description:
       "강아지·고양이와 함께하는 일상 팁부터 건강·사료·보험까지. 펫지기 집사 에디터가 직접 경험하고 조사한 반려동물 정보를 공유합니다.",
-    alternates: {
-      canonical,
-    },
+    alternates: { canonical },
+    ...(q ? { robots: { index: false } } : {}),
     openGraph: {
       title: "반려동물 블로그 | 펫지기",
       description: "집사 에디터가 쓰는 반려동물 생활 정보 블로그.",
@@ -58,16 +58,23 @@ export async function generateMetadata({
 export default async function BlogIndexPage({
   searchParams,
 }: {
-  searchParams: Promise<{ cat?: string; page?: string }>;
+  searchParams: Promise<{ cat?: string; page?: string; q?: string }>;
 }) {
-  const { cat, page: pageParam } = await searchParams;
+  const { cat, page: pageParam, q } = await searchParams;
   const catId = cat ? parseInt(cat, 10) : null;
   const currentPage = pageParam ? Math.max(1, parseInt(pageParam, 10)) : 1;
+  const searchQuery = q?.trim().toLowerCase() ?? "";
 
   const allPosts = await getCachedAllBlogPosts();
-  const filtered = catId && !isNaN(catId) && CATEGORY_LABEL[catId]
+  const catFiltered = catId && !isNaN(catId) && CATEGORY_LABEL[catId]
     ? allPosts.filter((p) => p.category === catId)
     : allPosts;
+  const filtered = searchQuery
+    ? catFiltered.filter((p) =>
+        p.title.toLowerCase().includes(searchQuery) ||
+        (p.subtitle ?? "").toLowerCase().includes(searchQuery)
+      )
+    : catFiltered;
 
   const totalPages = Math.ceil(filtered.length / PAGE_SIZE);
   const posts = filtered.slice((currentPage - 1) * PAGE_SIZE, currentPage * PAGE_SIZE);
@@ -107,6 +114,8 @@ export default async function BlogIndexPage({
     return `/blog${qs ? `?${qs}` : ""}`;
   }
 
+  const hasSearch = Boolean(searchQuery);
+
   return (
     <AdPolicyProvider category={(catId as CategoryId) ?? 1}>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(BREADCRUMB) }} />
@@ -144,6 +153,33 @@ export default async function BlogIndexPage({
             입양·건강·사료·보험·케어까지, 직접 경험하고 조사한 정보를 나눕니다.
           </p>
         </div>
+
+        {/* 검색 */}
+        <form method="GET" action="/blog" className="mb-4 flex gap-2">
+          <input
+            type="search"
+            name="q"
+            defaultValue={searchQuery}
+            placeholder="글 제목 검색..."
+            className="flex-1 h-10 px-3 rounded-lg border border-[var(--brand-border)] bg-[var(--brand-surface)] text-sm text-[var(--brand-text)] placeholder:text-[var(--brand-text-secondary)] focus:outline-none focus:border-[var(--brand-accent)] transition-colors"
+            aria-label="블로그 글 검색"
+          />
+          <button
+            type="submit"
+            className="h-10 px-4 rounded-lg bg-[var(--brand-accent)] text-white text-sm font-medium hover:opacity-90 transition-opacity"
+          >
+            검색
+          </button>
+          {hasSearch && (
+            <a
+              href="/blog"
+              className="h-10 px-3 flex items-center rounded-lg border border-[var(--brand-border)] text-sm text-[var(--brand-text-secondary)] hover:border-[var(--brand-accent)] transition-colors"
+              aria-label="검색 초기화"
+            >
+              ✕
+            </a>
+          )}
+        </form>
 
         {/* 카테고리 필터 칩 */}
         <div className="flex flex-wrap gap-2 mb-6" role="group" aria-label="카테고리 필터">
@@ -183,7 +219,10 @@ export default async function BlogIndexPage({
         {/* 결과 수 */}
         {filtered.length > 0 && (
           <p className="text-xs text-[var(--brand-text-secondary)] mb-4">
-            {catId && CATEGORY_LABEL[catId] ? `${CATEGORY_LABEL[catId]} ` : "전체 "}
+            {hasSearch
+              ? `"${searchQuery}" 검색 결과 `
+              : catId && CATEGORY_LABEL[catId] ? `${CATEGORY_LABEL[catId]} ` : "전체 "
+            }
             {filtered.length}개 글
             {totalPages > 1 && ` · ${currentPage}/${totalPages} 페이지`}
           </p>
@@ -193,9 +232,9 @@ export default async function BlogIndexPage({
           <div className="py-16 text-center">
             <p className="text-4xl mb-4">🐾</p>
             <p className="text-[var(--brand-text-secondary)] text-sm">
-              {catId ? "해당 카테고리에 글이 없습니다." : "첫 번째 글을 준비 중입니다."}
+              {hasSearch ? `"${searchQuery}"에 대한 검색 결과가 없습니다.` : catId ? "해당 카테고리에 글이 없습니다." : "첫 번째 글을 준비 중입니다."}
             </p>
-            {catId && (
+            {(catId || hasSearch) && (
               <Link href="/blog" className="mt-4 inline-block text-sm text-[var(--brand-accent)] hover:underline">
                 전체 글 보기 →
               </Link>
