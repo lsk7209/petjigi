@@ -3,30 +3,32 @@
 const INDEXNOW_KEY = process.env.INDEXNOW_KEY ?? "6e5c7ca8b3db3d40d56c959549c1c7e0";
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://petjigi.kr";
 
-const INDEXNOW_HOSTS = [
-  "searchadvisor.naver.com",
-  "www.bing.com",
+// Naver IndexNow: 최대 1,000 URLs / Bing: 최대 10,000 URLs
+const INDEXNOW_HOSTS: { host: string; limit: number }[] = [
+  { host: "searchadvisor.naver.com", limit: 1000 },
+  { host: "www.bing.com", limit: 10000 },
 ];
 
 export async function pingIndexNow(urls: string[]): Promise<{ ok: boolean; results: string[] }> {
   if (!INDEXNOW_KEY || urls.length === 0) return { ok: false, results: [] };
 
-  const body = {
-    host: new URL(SITE_URL).hostname,
-    key: INDEXNOW_KEY,
-    keyLocation: `${SITE_URL}/${INDEXNOW_KEY}.txt`,
-    urlList: urls.slice(0, 10000), // IndexNow 최대 10,000 URLs
-  };
+  const hostname = new URL(SITE_URL).hostname;
 
   const results = await Promise.allSettled(
-    INDEXNOW_HOSTS.map((host) =>
-      fetch(`https://${host}/IndexNow`, {
+    INDEXNOW_HOSTS.map(({ host, limit }) => {
+      const body = {
+        host: hostname,
+        key: INDEXNOW_KEY,
+        keyLocation: `${SITE_URL}/${INDEXNOW_KEY}.txt`,
+        urlList: urls.slice(0, limit),
+      };
+      return fetch(`https://${host}/IndexNow`, {
         method: "POST",
         headers: { "Content-Type": "application/json; charset=utf-8" },
         body: JSON.stringify(body),
         signal: AbortSignal.timeout(10000),
-      }).then((r) => `${host}: ${r.status}`)
-    )
+      }).then((r) => `${host}: ${r.status}`);
+    })
   );
 
   const logs = results.map((r) =>

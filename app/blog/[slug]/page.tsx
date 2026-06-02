@@ -124,6 +124,21 @@ async function getRelatedPosts(slug: string, category: number) {
     .limit(3);
 }
 
+async function getRelatedGuides(category: number) {
+  return db
+    .select({ slug: contents.slug, title: contents.title })
+    .from(contents)
+    .where(
+      and(
+        eq(contents.status, "published"),
+        eq(contents.type, "guide"),
+        eq(contents.category, category)
+      )
+    )
+    .orderBy(desc(contents.publishedAt))
+    .limit(3);
+}
+
 function extractHeadings(html: string): TocHeading[] {
   const headings: TocHeading[] = [];
   const re = /<h([23])([^>]*)>([\s\S]*?)<\/h\1>/gi;
@@ -164,9 +179,10 @@ export default async function BlogPostPage({
 
   const categoryId = content.category as CategoryId;
   const cat = CATEGORIES[categoryId];
-  const [relatedPosts, adjacent] = await Promise.all([
+  const [relatedPosts, adjacent, relatedGuides] = await Promise.all([
     getRelatedPosts(slug, content.category),
     getAdjacentPosts(content.publishedAt),
+    getRelatedGuides(content.category),
   ]);
 
   const headings = extractHeadings(content.body ?? "");
@@ -352,6 +368,32 @@ export default async function BlogPostPage({
           >
             {content.disclaimer}
           </div>
+        )}
+
+        {/* 전문 가이드 교차링크 */}
+        {relatedGuides.length > 0 && (
+          <aside className="mt-8 pt-6 border-t border-[var(--brand-border)]" aria-label="관련 전문 가이드">
+            <h2 className="text-base font-bold text-[var(--brand-text)] mb-3">
+              📚 전문 가이드
+            </h2>
+            <div className="flex flex-col gap-2">
+              {relatedGuides.map((g) => (
+                <Link
+                  key={g.slug}
+                  href={`/guide/${g.slug}`}
+                  className="group flex items-center gap-2 p-3 rounded-lg hover:bg-[var(--brand-surface-2)] transition-colors"
+                >
+                  <span className="text-[var(--brand-accent)] shrink-0">📖</span>
+                  <p className="text-sm font-medium text-[var(--brand-text)] group-hover:text-[var(--brand-accent)] transition-colors leading-snug" style={{ wordBreak: "keep-all" }}>
+                    {g.title}
+                  </p>
+                </Link>
+              ))}
+            </div>
+            <Link href="/guide" className="block mt-3 text-sm text-[var(--brand-accent)] hover:underline">
+              전체 가이드 보기 →
+            </Link>
+          </aside>
         )}
 
         {/* 관련 포스트 */}

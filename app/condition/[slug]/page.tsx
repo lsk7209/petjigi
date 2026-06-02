@@ -87,6 +87,24 @@ async function getRelatedConditions(slug: string, category: number) {
     .limit(4);
 }
 
+async function getRelatedGuides(category: number) {
+  return db
+    .select({ slug: contents.slug, title: contents.title })
+    .from(contents)
+    .where(and(eq(contents.status, "published"), eq(contents.type, "guide"), eq(contents.category, category)))
+    .orderBy(desc(contents.publishedAt))
+    .limit(3);
+}
+
+async function getRelatedBlogPosts(category: number) {
+  return db
+    .select({ slug: contents.slug, title: contents.title, subtitle: contents.subtitle })
+    .from(contents)
+    .where(and(eq(contents.status, "published"), eq(contents.type, "blog"), eq(contents.category, category)))
+    .orderBy(desc(contents.publishedAt))
+    .limit(3);
+}
+
 export async function generateStaticParams() {
   try {
     const rows = await db
@@ -144,7 +162,11 @@ export default async function ConditionPage({
   const headings = extractHeadings(content.body);
   const bodyWithIds = injectHeadingIds(content.body, headings);
   const faqItems = extractFaq(content.body);
-  const relatedConditions = await getRelatedConditions(slug, content.category ?? 3);
+  const [relatedConditions, relatedGuides, relatedBlogs] = await Promise.all([
+    getRelatedConditions(slug, content.category ?? 3),
+    getRelatedGuides(content.category ?? 3),
+    getRelatedBlogPosts(content.category ?? 3),
+  ]);
 
   const plainText = content.body.replace(/<[^>]+>/g, "");
   const wordCount = Math.max(1, Math.round(plainText.replace(/\s+/g, "").length / 2));
@@ -307,6 +329,53 @@ export default async function ConditionPage({
                 </li>
               ))}
             </ul>
+          </aside>
+        )}
+
+        {/* 관련 가이드 */}
+        {relatedGuides.length > 0 && (
+          <aside className="mt-8 pt-6 border-t border-[var(--brand-border)]" aria-label="관련 전문 가이드">
+            <h2 className="text-base font-bold text-[var(--brand-text)] mb-3">📚 전문 가이드</h2>
+            <div className="flex flex-col gap-2">
+              {relatedGuides.map((g) => (
+                <Link
+                  key={g.slug}
+                  href={`/guide/${g.slug}`}
+                  className="group flex items-center gap-2 p-3 rounded-lg hover:bg-[var(--brand-surface-2)] transition-colors"
+                >
+                  <span className="text-[var(--brand-accent)] shrink-0">📖</span>
+                  <p className="text-sm font-medium text-[var(--brand-text)] group-hover:text-[var(--brand-accent)] transition-colors leading-snug" style={{ wordBreak: "keep-all" }}>
+                    {g.title}
+                  </p>
+                </Link>
+              ))}
+            </div>
+          </aside>
+        )}
+
+        {/* 관련 블로그 */}
+        {relatedBlogs.length > 0 && (
+          <aside className="mt-6 pt-6 border-t border-[var(--brand-border)]" aria-label="관련 블로그">
+            <h2 className="text-base font-bold text-[var(--brand-text)] mb-3">✍️ 관련 블로그</h2>
+            <div className="flex flex-col gap-2">
+              {relatedBlogs.map((p) => (
+                <Link
+                  key={p.slug}
+                  href={`/blog/${p.slug}`}
+                  className="group flex items-start gap-2 p-3 rounded-lg hover:bg-[var(--brand-surface-2)] transition-colors"
+                >
+                  <span className="mt-0.5 text-[var(--brand-accent)] shrink-0">→</span>
+                  <div>
+                    <p className="text-sm font-medium text-[var(--brand-text)] group-hover:text-[var(--brand-accent)] transition-colors leading-snug" style={{ wordBreak: "keep-all" }}>
+                      {p.title}
+                    </p>
+                    {p.subtitle && (
+                      <p className="text-xs text-[var(--brand-text-secondary)] mt-0.5 line-clamp-1">{p.subtitle}</p>
+                    )}
+                  </div>
+                </Link>
+              ))}
+            </div>
           </aside>
         )}
 
