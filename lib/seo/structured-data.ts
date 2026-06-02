@@ -103,6 +103,7 @@ export function localBusinessSchema(business: Business) {
 
 export function articleSchema({
   title,
+  subtitle,
   url,
   description,
   authorName,
@@ -115,6 +116,7 @@ export function articleSchema({
   wordCount,
 }: {
   title: string;
+  subtitle?: string | null;
   url: string;
   description?: string | null;
   authorName?: string | null;
@@ -126,11 +128,13 @@ export function articleSchema({
   imageUrl?: string | null;
   wordCount?: number;
 }) {
+  const effectiveDescription = subtitle ?? description;
   return {
     "@context": "https://schema.org",
     "@type": isYmyl ? "MedicalWebPage" : "Article",
     headline: title,
-    ...(description ? { description } : {}),
+    ...(subtitle ? { alternativeHeadline: subtitle } : {}),
+    ...(effectiveDescription ? { description: effectiveDescription } : {}),
     url,
     inLanguage: "ko-KR",
     isAccessibleForFree: true,

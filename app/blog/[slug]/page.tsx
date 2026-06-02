@@ -57,6 +57,7 @@ export async function generateMetadata({
   const title = content.metaTitle ?? `${content.title} | 펫지기`;
   const catName = CATEGORIES[content.category as CategoryId]?.name ?? "반려동물";
   const description =
+    content.subtitle ??
     content.metaDescription ??
     `${content.title} — 반려동물 ${catName} 정보. 집사 에디터가 직접 경험하고 조사한 블로그. | 펫지기`;
 
@@ -164,6 +165,7 @@ export default async function BlogPostPage({
 
   const article = articleSchema({
     title: content.title,
+    subtitle: content.subtitle ?? undefined,
     description: content.metaDescription ?? undefined,
     url: `${SITE_URL}/blog/${slug}`,
     authorName: content.authorName,
@@ -292,6 +294,10 @@ export default async function BlogPostPage({
         </AdPolicyProvider>
 
         <CategoryCta categoryId={categoryId} className="my-6" />
+
+        <AdPolicyProvider category={categoryId}>
+          <AdSlot adType="adsense" format="auto" className="my-4" />
+        </AdPolicyProvider>
 
         <div className="mt-6 pt-5 border-t border-[var(--brand-border)]">
           <ShareButtons url={`${SITE_URL}/blog/${slug}`} title={content.title} />
