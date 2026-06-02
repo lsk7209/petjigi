@@ -92,3 +92,11 @@ export function isYmyl(categoryId: CategoryId): boolean {
 export function isMemorialMode(categoryId: CategoryId): boolean {
   return CATEGORIES[categoryId].mode === "memorial";
 }
+
+export function getCatColorVar(categoryId: number): string {
+  return `var(--cat-${categoryId})`;
+}
+
+export function getCatSoftVar(categoryId: number): string {
+  return `var(--cat-${categoryId}-soft)`;
+}

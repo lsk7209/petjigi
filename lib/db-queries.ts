@@ -153,6 +153,7 @@ export const getCachedAllBlogPosts = unstable_cache(
       .select({
         slug: contents.slug,
         title: contents.title,
+        subtitle: contents.subtitle,
         category: contents.category,
         publishedAt: contents.publishedAt,
         metaDescription: contents.metaDescription,

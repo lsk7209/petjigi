@@ -199,39 +199,58 @@ export default async function BlogIndexPage({
             )}
           </div>
         ) : (
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-            {posts.map((post) => (
-              <Link
-                key={post.slug}
-                href={`/blog/${post.slug}`}
-                className="group flex flex-col p-5 rounded-[var(--radius-card)] border border-[var(--brand-border)] hover:border-[var(--brand-accent)] hover:shadow-sm transition-all"
-              >
-                <div className="flex items-center gap-2 mb-2">
-                  <span className="text-xs px-2 py-0.5 rounded-full bg-[var(--brand-border)] text-[var(--brand-text-secondary)] font-medium">
-                    {CATEGORY_EMOJI[post.category ?? 1]} {CATEGORY_LABEL[post.category ?? 1]}
-                  </span>
-                  {post.ymyl && (
-                    <span className="text-[10px] px-1.5 py-0.5 rounded bg-[var(--cat-3-soft)] text-[var(--cat-3)] font-semibold">
-                      전문가 검토
-                    </span>
-                  )}
-                </div>
-                <h2 className="font-bold text-sm sm:text-base text-[var(--brand-text)] group-hover:text-[var(--brand-accent)] transition-colors leading-snug mb-2" style={{ wordBreak: "keep-all" }}>
-                  {post.title}
-                </h2>
-                {post.metaDescription && (
-                  <p className="text-xs text-[var(--brand-text-secondary)] leading-relaxed line-clamp-2 flex-1">
-                    {post.metaDescription}
-                  </p>
-                )}
-                <div className="flex items-center gap-3 mt-3 text-xs text-[var(--brand-text-secondary)]">
-                  {post.publishedAt && (
-                    <time dateTime={post.publishedAt}>{post.publishedAt.slice(0, 10)}</time>
-                  )}
-                  {post.authorName && <span>{post.authorName}</span>}
-                </div>
-              </Link>
-            ))}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+            {posts.map((post) => {
+              const catId = post.category ?? 1;
+              // metaDescription 기준 추정 (본문은 통상 설명의 15~20배)
+              const readingTime = Math.max(3, Math.ceil(((post.metaDescription?.length ?? 80) * 18) / 500));
+              return (
+                <Link
+                  key={post.slug}
+                  href={`/blog/${post.slug}`}
+                  className="group flex flex-col rounded-[var(--radius-card)] border border-[var(--brand-border)] hover:shadow-md transition-all overflow-hidden"
+                  style={{ '--card-cat': `var(--cat-${catId})`, '--card-cat-soft': `var(--cat-${catId}-soft)` } as React.CSSProperties}
+                >
+                  {/* 카테고리 색 상단 바 */}
+                  <div className="h-1.5 transition-opacity" style={{ background: `var(--cat-${catId})` }} />
+                  <div className="flex flex-col p-5 flex-1">
+                    <div className="flex items-center gap-2 mb-3 flex-wrap">
+                      <span
+                        className="text-xs px-2.5 py-1 rounded-full font-semibold"
+                        style={{ background: `var(--cat-${catId}-soft)`, color: `var(--cat-${catId})` }}
+                      >
+                        {CATEGORY_EMOJI[catId]} {CATEGORY_LABEL[catId]}
+                      </span>
+                      {post.ymyl && (
+                        <span className="text-[10px] px-1.5 py-0.5 rounded bg-amber-50 text-amber-700 border border-amber-200 font-semibold">
+                          전문가 검토
+                        </span>
+                      )}
+                    </div>
+                    <h2
+                      className="font-bold text-sm sm:text-base text-[var(--brand-text)] transition-colors leading-snug mb-2 line-clamp-2"
+                      style={{ wordBreak: "keep-all", ['--tw-prose-headings' as string]: `var(--cat-${catId})` }}
+                    >
+                      <span className="group-hover:text-[var(--card-cat,var(--brand-accent))] transition-colors">
+                        {post.title}
+                      </span>
+                    </h2>
+                    {post.metaDescription && (
+                      <p className="text-xs text-[var(--brand-text-secondary)] leading-relaxed line-clamp-2 flex-1 mb-3">
+                        {post.metaDescription}
+                      </p>
+                    )}
+                    <div className="flex items-center gap-2 mt-auto text-xs text-[var(--brand-text-secondary)] flex-wrap">
+                      {post.publishedAt && (
+                        <time dateTime={post.publishedAt}>{post.publishedAt.slice(0, 10)}</time>
+                      )}
+                      <span aria-hidden="true">·</span>
+                      <span>⏱ {readingTime}분</span>
+                    </div>
+                  </div>
+                </Link>
+              );
+            })}
           </div>
         )}
 
@@ -241,7 +260,7 @@ export default async function BlogIndexPage({
             {currentPage > 1 && (
               <Link
                 href={buildHref(catId, currentPage - 1)}
-                className="px-4 py-2 rounded-lg border border-[var(--brand-border)] text-sm hover:border-[var(--brand-accent)] hover:text-[var(--brand-accent)] transition-colors"
+                className="px-4 min-h-[44px] rounded-lg border border-[var(--brand-border)] text-sm hover:border-[var(--brand-accent)] hover:text-[var(--brand-accent)] transition-colors flex items-center"
                 aria-label="이전 페이지"
               >
                 ← 이전
@@ -253,7 +272,7 @@ export default async function BlogIndexPage({
                   key={p}
                   href={buildHref(catId, p)}
                   aria-current={p === currentPage ? "page" : undefined}
-                  className={`w-9 h-9 flex items-center justify-center rounded-lg text-sm font-medium transition-colors ${
+                  className={`min-w-[44px] min-h-[44px] flex items-center justify-center rounded-lg text-sm font-medium transition-colors ${
                     p === currentPage
                       ? "bg-[var(--brand-accent)] text-white"
                       : "border border-[var(--brand-border)] text-[var(--brand-text-secondary)] hover:border-[var(--brand-accent)] hover:text-[var(--brand-accent)]"
@@ -266,7 +285,7 @@ export default async function BlogIndexPage({
             {currentPage < totalPages && (
               <Link
                 href={buildHref(catId, currentPage + 1)}
-                className="px-4 py-2 rounded-lg border border-[var(--brand-border)] text-sm hover:border-[var(--brand-accent)] hover:text-[var(--brand-accent)] transition-colors"
+                className="px-4 min-h-[44px] rounded-lg border border-[var(--brand-border)] text-sm hover:border-[var(--brand-accent)] hover:text-[var(--brand-accent)] transition-colors flex items-center"
                 aria-label="다음 페이지"
               >
                 다음 →

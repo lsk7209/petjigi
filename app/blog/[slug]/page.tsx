@@ -95,7 +95,7 @@ async function getRelatedPosts(slug: string, category: number) {
       )
     )
     .orderBy(desc(contents.publishedAt))
-    .limit(4);
+    .limit(3);
 }
 
 function extractHeadings(html: string): TocHeading[] {
@@ -219,7 +219,10 @@ export default async function BlogPostPage({
         {/* 포스트 헤더 */}
         <header className="mb-6 sm:mb-8">
           <div className="flex items-center gap-2 mb-3">
-            <span className="px-2.5 py-0.5 rounded-full bg-[var(--brand-border)] text-xs font-semibold text-[var(--brand-text-secondary)]">
+            <span
+              className="px-2.5 py-1 rounded-full text-xs font-semibold"
+              style={{ background: `var(--cat-${categoryId}-soft)`, color: `var(--cat-${categoryId})` }}
+            >
               {CATEGORY_EMOJI[categoryId]} {cat?.name ?? "케어·라이프"}
             </span>
             {content.ymyl && (
@@ -230,12 +233,21 @@ export default async function BlogPostPage({
           </div>
 
           <h1
-            className="text-xl sm:text-2xl md:text-3xl font-extrabold text-[var(--brand-text)] leading-tight mb-3 sm:mb-4 tracking-tight"
+            className="text-xl sm:text-2xl md:text-3xl font-extrabold text-[var(--brand-text)] leading-tight mb-2 tracking-tight"
             style={{ wordBreak: "keep-all" }}
             data-speakable
           >
             {content.title}
           </h1>
+
+          {content.subtitle && (
+            <p
+              className="text-sm sm:text-base text-[var(--brand-text-secondary)] mb-3 leading-snug"
+              style={{ wordBreak: "keep-all" }}
+            >
+              {content.subtitle}
+            </p>
+          )}
 
           <div className="flex flex-col sm:flex-row sm:flex-wrap sm:items-center gap-1.5 sm:gap-3 text-xs text-[var(--brand-text-secondary)]">
             {content.publishedAt && (
@@ -270,6 +282,7 @@ export default async function BlogPostPage({
         <article
           id="article-body"
           className="prose prose-sm sm:prose-base max-w-none mt-5 sm:mt-6"
+          style={{ '--cat-active': `var(--cat-${categoryId})` } as React.CSSProperties}
           dangerouslySetInnerHTML={{ __html: bodyWithIds }}
         />
         <OutboundLinkTracker />
@@ -313,7 +326,7 @@ export default async function BlogPostPage({
             <h2 className="text-base font-bold text-[var(--brand-text)] mb-4">
               {CATEGORY_EMOJI[categoryId]} 같은 주제 글
             </h2>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
               {relatedPosts.map((p) => (
                 <Link
                   key={p.slug}

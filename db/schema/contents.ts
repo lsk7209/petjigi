@@ -6,6 +6,7 @@ export const contents = sqliteTable("contents", {
   type: text("type").notNull(), // 'guide'|'business_overlay'|'breed'|'condition'|'comparison'
   category: integer("category").notNull(), // 1~6
   title: text("title").notNull(),
+  subtitle: text("subtitle"),
   metaTitle: text("meta_title"),
   metaDescription: text("meta_description"),
   body: text("body").notNull(), // markdown/MDX
