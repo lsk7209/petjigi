@@ -1,6 +1,6 @@
 import { db } from "../client";
 import { contents } from "../schema";
-import type { NewContent } from "../Content } from "../schema";
+import type { NewContent } from "../schema";
 
 // Blog batch 67 — cat1×2 + cat3×1 + cat5×1 + cat4×1 = 5편 (IDs 456-460)
 // Macros: F, B, E, A, F
