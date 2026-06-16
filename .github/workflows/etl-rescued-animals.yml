@@ -21,11 +21,33 @@ jobs:
           cache: pnpm
       - run: pnpm install --frozen-lockfile
 
+      - name: Check ETL secrets
+        id: secrets
+        run: |
+          missing=0
+          for k in TURSO_DATABASE_URL TURSO_AUTH_TOKEN APMS_API_KEY; do
+            if [ -z "${!k}" ]; then
+              echo "::notice title=Missing optional ETL secret::GitHub secret ${k} is empty; rescued animals ETL will be skipped."
+              missing=1
+            fi
+          done
+          if [ "${missing}" -eq 0 ]; then
+            echo "can_run=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "can_run=false" >> "$GITHUB_OUTPUT"
+          fi
+        env:
+          TURSO_DATABASE_URL: ${{ secrets.TURSO_DATABASE_URL }}
+          TURSO_AUTH_TOKEN: ${{ secrets.TURSO_AUTH_TOKEN }}
+          APMS_API_KEY: ${{ secrets.APMS_API_KEY }}
+
       - name: Run APMS rescued animals ETL
+        if: steps.secrets.outputs.can_run == 'true'
         run: pnpm tsx etl/apms/rescued-animals.ts
         env:
           TURSO_DATABASE_URL: ${{ secrets.TURSO_DATABASE_URL }}
           TURSO_AUTH_TOKEN: ${{ secrets.TURSO_AUTH_TOKEN }}
+          APMS_API_KEY: ${{ secrets.APMS_API_KEY }}
           NEXT_PUBLIC_SITE_URL: ${{ secrets.NEXT_PUBLIC_SITE_URL }}
           CRON_SECRET: ${{ secrets.CRON_SECRET }}
 
