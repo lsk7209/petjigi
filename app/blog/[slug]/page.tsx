@@ -20,7 +20,7 @@ import { OutboundLinkTracker } from "@/components/analytics/outbound-link-tracke
 import { GuideViewTracker } from "@/components/analytics/guide-view-tracker";
 import type { TocHeading } from "@/components/content/table-of-contents";
 
-export const revalidate = 604800;
+export const dynamic = "force-dynamic";
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://petjigi.kr";
 

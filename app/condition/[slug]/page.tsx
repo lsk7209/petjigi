@@ -20,7 +20,7 @@ import { ConditionViewTracker } from "@/components/analytics/condition-view-trac
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://petjigi.kr";
 
-export const revalidate = 604800;
+export const dynamic = "force-dynamic";
 
 function extractHeadings(html: string): TocHeading[] {
   const re = /<h([23])([^>]*)>([\s\S]*?)<\/h\1>/gi;
