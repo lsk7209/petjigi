@@ -24,6 +24,8 @@ module.exports = {
   exclude: [
     "/rescue/*", "/search*", "/admin/*", "/*?page=*", "/*?cat=*",
     "/guide/*", "/blog/*", "/condition/*", "/breed/*/*",
+    "/sido/chungbuk", "/sido/chungnam", "/sido/gangwon", "/sido/gyeongbuk",
+    "/sido/gyeongnam", "/sido/jeju", "/sido/jeonbuk", "/sido/jeonnam",
   ],
   changefreq: "daily",
   priority: 0.7,
