@@ -1,17 +1,14 @@
 import { NextRequest, NextResponse } from "next/server";
 import { db } from "@/db/client";
-import { reviewQueue, contents } from "@/db/schema";
+import { reviewQueue } from "@/db/schema";
 import { eq } from "drizzle-orm";
 import { pingIndexNow } from "@/lib/seo/index-now";
 import { notifyGoogleIndexing } from "@/lib/seo/google-indexing";
-import { revalidatePath } from "next/cache";
+import { revalidatePath, revalidateTag } from "next/cache";
+import { isReviewRequestAuthorized } from "@/lib/admin-auth";
+import { approveReviewQueueItem, ReviewApprovalError } from "@/lib/review-queue";
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://petjigi.kr";
-
-function isAuthorized(req: NextRequest): boolean {
-  const authHeader = req.headers.get("authorization");
-  return authHeader === `Bearer ${process.env.CRON_SECRET}`;
-}
 
 type ValidStatus = "pending" | "in_review" | "approved" | "rejected";
 const VALID_STATUSES: ValidStatus[] = ["pending", "in_review", "approved", "rejected"];
@@ -22,7 +19,7 @@ export async function PATCH(
   req: NextRequest,
   { params }: { params: Promise<{ id: string }> },
 ) {
-  if (!isAuthorized(req)) {
+  if (!isReviewRequestAuthorized(req.headers)) {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   }
 
@@ -35,18 +32,59 @@ export async function PATCH(
     return NextResponse.json({ error: "Invalid JSON" }, { status: 400 });
   }
 
-  const { status, notes, assignedTo, reviewerName } = body as {
+  if (!body || typeof body !== "object" || Array.isArray(body)) {
+    return NextResponse.json({ error: "Expected a JSON object" }, { status: 400 });
+  }
+  const fields = body as Record<string, unknown>;
+  for (const field of ["status", "notes", "assignedTo", "reviewerName"]) {
+    if (fields[field] !== undefined && typeof fields[field] !== "string") {
+      return NextResponse.json({ error: `${field} must be a string` }, { status: 400 });
+    }
+  }
+  const { status, notes, assignedTo, reviewerName } = fields as {
     status?: string;
     notes?: string;
     assignedTo?: string;
     reviewerName?: string;
   };
 
-  if (status && !VALID_STATUSES.includes(status as ValidStatus)) {
+  if (status !== undefined && !VALID_STATUSES.includes(status as ValidStatus)) {
     return NextResponse.json(
       { error: `Invalid status. Must be one of: ${VALID_STATUSES.join(", ")}` },
       { status: 400 },
     );
+  }
+
+  if (status === "approved") {
+    let result;
+    try {
+      result = await approveReviewQueueItem(id, { notes, assignedTo, reviewerName });
+    } catch (error) {
+      if (error instanceof ReviewApprovalError) {
+        return NextResponse.json({ error: error.message }, { status: error.status });
+      }
+      throw error;
+    }
+    const contentUrl = `${SITE_URL}${result.path}`;
+    // A failed notification does not undo an already committed approval.
+    const indexNow = await pingIndexNow([contentUrl, `${SITE_URL}/`])
+      .then(() => "pinged" as const).catch(() => "failed" as const);
+    await notifyGoogleIndexing(contentUrl).catch(() => {});
+    let cache: "revalidated" | "failed" = "revalidated";
+    try {
+      revalidateTag("guides", { expire: 0 });
+      revalidatePath(result.path);
+      revalidatePath(`/${result.content.type}`);
+      revalidatePath("/");
+      revalidatePath("/category/[slug]", "page");
+      revalidatePath("/admin/review-queue");
+    } catch {
+      cache = "failed";
+    }
+    return NextResponse.json({
+      ok: true, item: result.item,
+      published: { slug: result.content.slug, url: contentUrl }, indexNow, cache,
+    });
   }
 
   const existing = await db
@@ -59,7 +97,7 @@ export async function PATCH(
     return NextResponse.json({ error: "Review queue item not found" }, { status: 404 });
   }
 
-  const isResolved = status === "approved" || status === "rejected";
+  const isResolved = status === "rejected";
   const resolvedAt = isResolved ? new Date().toISOString() : undefined;
 
   const updateData: Record<string, string | undefined> = {};
@@ -73,53 +111,6 @@ export async function PATCH(
   }
 
   await db.update(reviewQueue).set(updateData).where(eq(reviewQueue.id, id));
-
-  // approved 시: 콘텐츠 발행 + IndexNow + 캐시 무효화
-  if (status === "approved") {
-    const content = await db
-      .select({ id: contents.id, slug: contents.slug, type: contents.type })
-      .from(contents)
-      .where(eq(contents.id, existing.contentId))
-      .get();
-
-    if (content) {
-      const now = new Date().toISOString();
-
-      await db
-        .update(contents)
-        .set({
-          status: "published",
-          publishedAt: now,
-          updatedAt: now,
-          ...(reviewerName ? { reviewerName, reviewedAt: now } : {}),
-        })
-        .where(eq(contents.id, content.id));
-
-      // 콘텐츠 타입별 URL 구성
-      const contentUrl =
-        content.type === "guide"
-          ? `${SITE_URL}/guide/${content.slug}`
-          : `${SITE_URL}/guide/${content.slug}`;
-
-      // IndexNow (Naver + Bing) 자동 핑
-      await pingIndexNow([contentUrl, `${SITE_URL}/`]);
-
-      // Google Indexing API (GOOGLE_SA_JSON 설정 시 활성화)
-      await notifyGoogleIndexing(contentUrl).catch(() => {});
-
-      // Next.js ISR 캐시 무효화
-      revalidatePath(`/guide/${content.slug}`);
-      revalidatePath("/");
-
-      const updated = await db.select().from(reviewQueue).where(eq(reviewQueue.id, id)).get();
-      return NextResponse.json({
-        ok: true,
-        item: updated,
-        published: { slug: content.slug, url: contentUrl },
-        indexNow: "pinged",
-      });
-    }
-  }
 
   const updated = await db.select().from(reviewQueue).where(eq(reviewQueue.id, id)).get();
   return NextResponse.json({ ok: true, item: updated });

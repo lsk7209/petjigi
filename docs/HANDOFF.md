@@ -1,4 +1,22 @@
-# Current navigation repair LOCAL — 2026-09-08 11:05 KST
+# Current review publication boundary LOCAL — 2026-09-08 11:50 KST
+
+Usergoal: improve exactofficialnon-READY sites by currentDAU, fullfleet67active. Petjigi currentaccount02:24GETTING_READY; refreshedsnapshot02:35DAU23/allrelevantconnectorsok. Baseline main7b4b02f freshly0/0; primarydirtysite untouched.
+
+Confirmed approvalsource/auth gaps repaired across bothUIaction andPATCH throughsharedtransaction inlib/review-queue.ts andsmallserver-onlyadmin-auth. Existingkey independentlyverified beforequeries; YMYLcategoryorflag guards normalizedsixfields/twocitations/reviewhelper andexistingkeywordscan, state/type/category/slug checks beforewrites. Atomiccontent+queue updates; periodicpublishedAtpreserved; correcttypeURLs/cache andpostcommitfailurehandling. APIbodytype checks, pagekeyURLencoding/exacthiddenkey; no newlogin/credentials orbody/DBschema/adchanges.
+
+63focusedtests(58Node+5TS/actualOG),9filescopedlint,unchangedtsc,compile-only5.8sPASS; NOTfullbuild/productionadminproof. IndependentTerra test/actualdiffreview andindependentpolicy/security+deltareview GO. RealinstalledlibSQL memoryfixture SQLtrigger provesrollback; private-memorydetachmentfixture issue corrected tosharedcache+keeper, norealDB. SamehrefadminanalyticsLinkfixpassedSSR. Publicbefore4GETs02:46all200/H1/canonical. No adminendpoints,localserver/browser/productionwrites launched.
+
+Exact10fileallowlist/rollback7b4b02f/initialREDandfixturecorrections in E:/web/multi-dashboard/.goal-harness/adsense-top10-improvement-20260907/petjigi/ADMIN-RELEASE-EVIDENCE.md. Gitsecret namesstilllackORG/PROJECT; no directCLI/Vercel/searchnotify authority. Next scopedordinaryGitpush, exactProduction/publicGETproof, finalhandoff. CurrentselectedrepairLOCAL only, notyetLIVE; revieweridentity/sourceauthority/20DBclaims/staticpetloss/insurance/CMP/dependencies/querykeyexposure/otherauthandnonapprovaltransitionsremainexplicit. No dashboardpush/DB/account/resubmission/ETL/indexing/newworktree.
+
+# Previous navigation repair LIVE — 2026-09-08 11:15 KST
+
+Exact five-file release 7b4b02f50a2496bc2d1e2b3eed73e706036d0642 is pushed and LIVE. Git-connected Production6319253494 success02:08:06Z; cost34178912299 success. Legacy34178912258 job101913772486 Build/CLI/pull/deploy/search-notify all skipped; no directVercel mutation.45focusedtests/scopedlint/unchangedtsc/compile-only4.5s passed, notfullbuild. Independent Terra actualdiffGO. Public02:09:02.840Z:31cards unchanged,9availablepopularlinks,4header breakpoints390/767/768/1280,40px mobile button, menu opens/guide navigation closes it,10destinations200/oneH1/exactcanonical. Main viewed corrected closed/open mobile screenshots.
+
+Six-page02:12:08.671Z stricttemplate check passes,20stored descriptions and dog-food-allergy bodySHA256 preserved; no pageErrors. Separate02:10 FAQclick check disproves older "5 invisibleFAQ" inference: allfive answers expand, one question has only a subject-prefix difference. No schema/content removal; currentGoogleFAQrich-result retirement is Search-only, notAdSense requirement. See dashboard harness petjigi/FAQ-ACCESS-CORRECTION.md. Known missing route itself not repaired; only incoming chip removed.
+
+Account01:54:46GETTING_READY; same-run snapshot00:58:59.413Z DAU23/connectorsok. Full67eligible fleet goal ACTIVE, no readiness/approval/submission claim. Owned browser petjigi-nav closed/PID69620 absent; no server/collector launched. Source0/0clean before this intentionallylocal postrelease handoff; primary dirtysite and shared dashboard preserved. Exact allowlist/rollback/tests/live evidence/reporttrio in dashboard ownedharness petjigi/NAVIGATION-RELEASE-EVIDENCE.md. No DB/account/reviewer/insurance-fact/ETL/indexing/dependency/directVercel/newworktree changes. Next: classify remaining material Petjigi content-value/admin/source findings, then continue current eligible DAUqueue; do not spend a site release on the disproven FAQ-invisibility premise. PreviousLOCALparagraphs below historical.
+
+# Previous navigation repair LOCAL — 2026-09-08 11:05 KST
 
 11:05 local verification complete:45focusedtests(40SSR/CSS plus3helper+2realOGrenderer), fourfile scopedESLint and unchangedtsc before/aftercompile pass. Compile-only4.5spass, notfullbuild; no server. Newfixture initiallintdisplay-name corrected with namedFixtureLink, no source/test waiver. Independent Terra actualdiff reviewGO and separately12regressionspass; compiledCSSfixture alone is not publiccascade/interaction proof. Freshfetch0/0; fiveexistingsecret names still omitORG/PROJECT, so legacyCLI/deploy/searchnotification is gated off. Next exact5filecommit/push then exactProductionSHA/publicbeforeafter gate. Existing primary and dashboard dirtywork untouched.
 

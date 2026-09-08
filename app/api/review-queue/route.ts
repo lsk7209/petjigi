@@ -4,15 +4,11 @@ import { reviewQueue } from "@/db/schema";
 import { eq, asc } from "drizzle-orm";
 import { addToReviewQueue } from "@/lib/review-queue";
 import type { ReviewReason } from "@/lib/review-queue";
-
-function isAuthorized(req: NextRequest): boolean {
-  const authHeader = req.headers.get("authorization");
-  return authHeader === `Bearer ${process.env.CRON_SECRET}`;
-}
+import { isReviewRequestAuthorized } from "@/lib/admin-auth";
 
 // GET /api/review-queue?status=pending
 export async function GET(req: NextRequest) {
-  if (!isAuthorized(req)) {
+  if (!isReviewRequestAuthorized(req.headers)) {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   }
 
@@ -36,7 +32,7 @@ export async function GET(req: NextRequest) {
 // POST /api/review-queue
 // Body: { contentId, contentType, reason?, priority? }
 export async function POST(req: NextRequest) {
-  if (!isAuthorized(req)) {
+  if (!isReviewRequestAuthorized(req.headers)) {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   }
 
@@ -47,6 +43,9 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ error: "Invalid JSON" }, { status: 400 });
   }
 
+  if (!body || typeof body !== "object" || Array.isArray(body)) {
+    return NextResponse.json({ error: "Expected a JSON object" }, { status: 400 });
+  }
   const { contentId, contentType, reason, priority } = body as {
     contentId?: string;
     contentType?: string;
@@ -54,17 +53,22 @@ export async function POST(req: NextRequest) {
     priority?: number;
   };
 
-  if (!contentId || typeof contentId !== "string") {
+  if (typeof contentId !== "string" || !contentId.trim()) {
     return NextResponse.json(
       { error: "contentId is required" },
       { status: 400 },
     );
   }
-  if (!contentType || typeof contentType !== "string") {
+  if (typeof contentType !== "string" || !contentType.trim()) {
     return NextResponse.json(
       { error: "contentType is required" },
       { status: 400 },
     );
+  }
+
+  if ((reason !== undefined && typeof reason !== "string")
+      || (priority !== undefined && (typeof priority !== "number" || !Number.isFinite(priority)))) {
+    return NextResponse.json({ error: "Invalid reason or priority type" }, { status: 400 });
   }
 
   const validReasons: ReviewReason[] = [

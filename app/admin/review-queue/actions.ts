@@ -1,71 +1,40 @@
 "use server";
 
 import { db } from "@/db/client";
-import { reviewQueue, contents } from "@/db/schema";
+import { reviewQueue } from "@/db/schema";
 import { eq } from "drizzle-orm";
 import { revalidatePath, revalidateTag } from "next/cache";
 import { pingIndexNow } from "@/lib/seo/index-now";
 import { notifyGoogleIndexing, submitSitemapToGSC } from "@/lib/seo/google-indexing";
+import { requireReviewFormKey } from "@/lib/admin-auth";
+import { approveReviewQueueItem } from "@/lib/review-queue";
 
-export async function approveContent(id: string): Promise<void> {
-  const item = await db
-    .select()
-    .from(reviewQueue)
-    .where(eq(reviewQueue.id, id))
-    .get();
+export async function approveContent(id: string, formData: FormData): Promise<void> {
+  requireReviewFormKey(formData);
+  const result = await approveReviewQueueItem(id);
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://petjigi.kr";
+  const contentUrl = `${siteUrl}${result.path}`;
 
-  if (!item) return;
-
-  const now = new Date().toISOString();
-
-  // 1. 리뷰큐 상태 업데이트
-  await db
-    .update(reviewQueue)
-    .set({ status: "approved", resolvedAt: now })
-    .where(eq(reviewQueue.id, id));
-
-  // 2. 콘텐츠 발행
-  const content = await db
-    .select({ slug: contents.slug, type: contents.type })
-    .from(contents)
-    .where(eq(contents.id, item.contentId))
-    .get();
-
-  if (content) {
-    await db
-      .update(contents)
-      .set({ status: "published", publishedAt: now, updatedAt: now })
-      .where(eq(contents.id, item.contentId));
-
-    const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://petjigi.kr";
-
-    const TYPE_PATH: Record<string, string> = {
-      guide: "guide",
-      blog: "blog",
-      condition: "condition",
-    };
-    const pathPrefix = TYPE_PATH[content.type] ?? "guide";
-    const contentUrl = `${SITE_URL}/${pathPrefix}/${content.slug}`;
-
-    // 3. IndexNow 핑 (Naver + Bing) — 모든 발행 타입 대상
-    await pingIndexNow([contentUrl, SITE_URL]).catch(() => {});
-
-    // 4. Google Indexing API + 사이트맵 재제출 (서비스 계정 설정 시 자동 활성화)
-    await notifyGoogleIndexing(contentUrl).catch(() => {});
-    await submitSitemapToGSC(`${SITE_URL}/`, `${SITE_URL}/sitemap-content.xml`).catch(() => {});
-
-    // 5. ISR 캐시 무효화
+  // Validation and both writes have committed before any external effect.
+  await pingIndexNow([contentUrl, siteUrl]).catch(() => {});
+  await notifyGoogleIndexing(contentUrl).catch(() => {});
+  await submitSitemapToGSC(`${siteUrl}/`, `${siteUrl}/sitemap-content.xml`).catch(() => {});
+  try {
     revalidateTag("guides", { expire: 0 });
-    revalidatePath(`/${pathPrefix}/${content.slug}`);
+    revalidatePath(result.path);
+    revalidatePath(`/${result.content.type}`);
     revalidatePath("/");
     revalidatePath("/category/[slug]", "page");
+    revalidatePath("/admin/review-queue");
+  } catch {
+    console.warn("Review approved; cache revalidation requires retry");
   }
-
-  revalidatePath("/admin/review-queue");
 }
 
 export async function rejectContent(id: string, formData: FormData): Promise<void> {
-  const notes = (formData.get("notes") as string | null) ?? "검수 거부";
+  requireReviewFormKey(formData);
+  const value = formData.get("notes");
+  const notes = typeof value === "string" ? value : "검수 거부";
 
   await db
     .update(reviewQueue)
