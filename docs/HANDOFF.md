@@ -1,4 +1,12 @@
-# Current template-claim follow-up LOCAL — 2026-09-08 10:15 KST
+# Current OG / promo follow-up — 2026-09-08 10:30 KST
+
+Previous13file template patch81cdee0c8e26176b54d50a74b419045c9a6dda36 pushed/live, exactProduction6318785699 success01:19:33Z. Sixpages200/3901280/canonical/H1/no document overflow and conditionbodyhash preserved; guideFAQ parity/conditionhidden-schema fixes visible. Public broadreviewtermvalidator still fails:20 stored-description assertions intentionally retained, plus newlylocated common house-promo. Screenshot showed pre-existing crowdedmobileheader; not hidden by nooverflow metric.
+
+Next selectedsource repair: insurerOG params Promise regression and asyncawaitfix (Terra twofiles), common house-promo exact3copystrings (main new actualSSR policy tests). No storedcontent/DB/policy/slots/loaders/insuranceproductdata changes. Baseline81cdee0 rollback inGit; main final integration/verification and scoped Gitconnected release only. Detailed plan/evidence in dashboard harness petjigi/OG-PROMO-FOLLOWUP-PLAN.md and TEMPLATE-RELEASE-EVIDENCE.md. Existing releaseclone clean before this slice, primary dirtycheckout untouched. One ownedpublic browserpetjigi-claims, no server/collector/directVercel/account/jobdispatch. Prior localnotes below historical, not pendingrelease status.
+
+10:33KST localcomplete:39tests (36actualSSR+3helper) pass. NewAdSlotregression2REDthen7GREEN; OGPromise6pass1REDthen7GREEN, sixknown insurers+unknown covered. ScopedfourfileESLint passed after namedfixturefunctions correction; unchangedtsc before/aftercompile pass, compile-only4.9spass (NOTfullbuild), costguard0critical2knownwarnings/diffcheckpass. Independent reviewer final conditionalGO, no material scopedblocker. Sourcefetch0/0 at10:32; fiveexistingsecretnames still noorg/project so legacy deploy gatedoff. Current publicOG01:32:51Z fourPNG200 andhyundai404 reconfirmed. Exact5fileallowlist includes newad-slot-test; next scopedcommit/push then exactProductionSHA/publicPNG+templateproof. Broadvalidator refined to distinguish exact20preservedstored descriptions, not waive unseen claims; commonpromo must be absent. No whole-site approval or readiness claim.
+
+# Previous template-claim follow-up LOCAL — 2026-09-08 10:15 KST
 
 Goal: repair selected unsupported guide/blog/condition/insurance template review claims on exact non-READY petjigi.kr, while preserving stored content and reviewer records. Fresh dashboard2026-09-08T00:58:59.413Z/DAU23/rank4/all relevant connectorsok; complete official account84 at00:49GETTING_READY. Source HEAD=origin/main404ddd5697530e9581d856170af1a12d5a3f2d51 and existing Production6318333836 success rechecked. Primary dirty checkout untouched.
 

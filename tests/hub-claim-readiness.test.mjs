@@ -113,10 +113,10 @@ test('insurance metadata is neutral and existing page/navigation remain availabl
   assert.ok(schemas(html).some(s => s['@type'] === 'FAQPage'));
 });
 
-for (const relative of ['app/insurance/opengraph-image.tsx', 'app/insurance/compare/opengraph-image.tsx', 'app/insurance/[insurer]/opengraph-image.tsx']) {
+for (const relative of ['app/insurance/opengraph-image.tsx', 'app/insurance/compare/opengraph-image.tsx']) {
   test(`actual OG element tree has neutral copy and unchanged image contract: ${relative}`, () => {
     const og = load(relative);
-    const response = og.default({ params: { insurer: 'hyundai' } });
+    const response = og.default();
     const html = renderToStaticMarkup(response.element);
     assert.doesNotMatch(html, unsupported);
     assert.match(html, /보험·법률 정보/);
@@ -125,9 +125,20 @@ for (const relative of ['app/insurance/opengraph-image.tsx', 'app/insurance/comp
     assert.equal(og.contentType, 'image/png');
     assert.equal(response.options.width, 1200);
     assert.equal(response.options.height, 630);
-    if (relative.includes('[insurer]')) {
-      assert.ok(html.includes('현대해상'));
-      assert.throws(() => og.default({ params: { insurer: 'unknown-fixture' } }), /NOT_FOUND/);
-    }
   });
 }
+
+test('insurer OG awaits Next 16 Promise params for every known insurer and rejects unknown insurers', async () => {
+  const og = load('app/insurance/[insurer]/opengraph-image.tsx');
+  for (const [insurer, name] of Object.entries({ hyundai: '현대해상', db: 'DB손보', kb: 'KB손보', samsung: '삼성화재', hanwha: '한화손보', meritz: '메리츠화재' })) {
+    const response = await og.default({ params: Promise.resolve({ insurer }) });
+    const html = renderToStaticMarkup(response.element);
+    assert.ok(html.includes(name), insurer);
+    assert.doesNotMatch(html, unsupported);
+    assert.equal(response.options.width, 1200);
+    assert.equal(response.options.height, 630);
+  }
+  assert.equal(og.runtime, 'edge');
+  assert.equal(og.contentType, 'image/png');
+  await assert.rejects(() => og.default({ params: Promise.resolve({ insurer: 'unknown-fixture' }) }), /NOT_FOUND/);
+});

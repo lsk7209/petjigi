@@ -18,8 +18,9 @@ const INSURERS: Record<string, { name: string; product: string }> = {
   meritz: { name: "메리츠화재", product: "퍼펫보험" },
 };
 
-export default function OgImage({ params }: { params: { insurer: string } }) {
-  const data = INSURERS[params.insurer];
+export default async function OgImage({ params }: { params: Promise<{ insurer: string }> }) {
+  const { insurer } = await params;
+  const data = INSURERS[insurer];
   if (!data) notFound();
 
   return new ImageResponse(
