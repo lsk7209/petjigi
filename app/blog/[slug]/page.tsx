@@ -18,6 +18,7 @@ import { CategoryCta } from "@/components/content/category-cta";
 import { ScrollDepthTracker } from "@/components/analytics/scroll-depth-tracker";
 import { OutboundLinkTracker } from "@/components/analytics/outbound-link-tracker";
 import { GuideViewTracker } from "@/components/analytics/guide-view-tracker";
+import { getReviewEvidence } from "@/lib/ymyl";
 import type { TocHeading } from "@/components/content/table-of-contents";
 
 export const dynamic = "force-dynamic";
@@ -229,6 +230,7 @@ export default async function BlogPostPage({
   ]);
 
   const readingTime = Math.ceil((content.body?.length ?? 0) / 500);
+  const reviewEvidence = getReviewEvidence(content);
 
   return (
     <>
@@ -273,7 +275,7 @@ export default async function BlogPostPage({
             </span>
             {content.ymyl && (
               <span className="px-2.5 py-0.5 rounded-full bg-amber-50 text-xs font-semibold text-amber-700 border border-amber-200">
-                전문가 검토
+                주의가 필요한 정보
               </span>
             )}
           </div>
@@ -301,6 +303,12 @@ export default async function BlogPostPage({
                 <span aria-hidden="true">📅</span>
                 {content.publishedAt.slice(0, 10)} 발행
               </time>
+            )}
+            {reviewEvidence && (
+              <span className="flex items-center gap-1">
+                <span aria-hidden="true">✅</span>
+                {reviewEvidence.reviewedAt.slice(0, 10)} {reviewEvidence.reviewerName} 검토 정보
+              </span>
             )}
             {content.authorName && (
               <span className="flex items-center gap-1">

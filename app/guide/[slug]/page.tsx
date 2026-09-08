@@ -19,6 +19,7 @@ import { ScrollDepthTracker } from "@/components/analytics/scroll-depth-tracker"
 import { OutboundLinkTracker } from "@/components/analytics/outbound-link-tracker";
 import { GuideViewTracker } from "@/components/analytics/guide-view-tracker";
 import type { TocHeading } from "@/components/content/table-of-contents";
+import { getReviewEvidence } from "@/lib/ymyl";
 
 export const dynamic = "force-dynamic";
 
@@ -58,7 +59,7 @@ export async function generateMetadata({
   const catName = CATEGORIES[content.category as CategoryId]?.name ?? "반려동물";
   const description =
     content.metaDescription ??
-    `${content.title} — 반려동물 ${catName} 전문 가이드. 수의사·전문가 검토를 거친 신뢰할 수 있는 정보. | 펫지기`;
+    `${content.title} — 반려동물 ${catName} 가이드. 참고 자료와 제공된 검토 정보를 확인하세요. | 펫지기`;
 
   return {
     title,
@@ -206,6 +207,7 @@ export default async function GuidePage({
   ]);
 
   const readingTime = Math.ceil((content.body?.length ?? 0) / 500);
+  const reviewEvidence = getReviewEvidence(content);
 
   return (
     <>
@@ -245,7 +247,7 @@ export default async function GuidePage({
             </span>
             {content.ymyl && (
               <span className="px-2.5 py-0.5 rounded-full bg-amber-50 text-xs font-semibold text-amber-700 border border-amber-200">
-                전문가 검토
+                주의가 필요한 정보
               </span>
             )}
           </div>
@@ -261,10 +263,10 @@ export default async function GuidePage({
                 {content.publishedAt.slice(0, 10)} 발행
               </time>
             )}
-            {content.reviewedAt && content.reviewerName && (
+            {reviewEvidence && (
               <span className="flex items-center gap-1">
                 <span aria-hidden="true">✅</span>
-                {content.reviewedAt.slice(0, 10)} {content.reviewerName} 검토
+                {reviewEvidence.reviewedAt.slice(0, 10)} {reviewEvidence.reviewerName} 검토 정보
               </span>
             )}
             {content.authorName && (

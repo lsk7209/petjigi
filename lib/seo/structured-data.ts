@@ -1,4 +1,5 @@
 import type { Business } from "@/db/schema";
+import { getReviewEvidence, hasValidReviewDate } from "@/lib/ymyl";
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://petjigi.kr";
 
@@ -129,6 +130,8 @@ export function articleSchema({
   wordCount?: number;
 }) {
   const effectiveDescription = subtitle ?? description;
+  const reviewEvidence = getReviewEvidence({ reviewedAt, reviewerName });
+  const hasReviewDate = hasValidReviewDate(reviewedAt);
   return {
     "@context": "https://schema.org",
     "@type": isYmyl ? "MedicalWebPage" : "Article",
@@ -166,11 +169,11 @@ export function articleSchema({
           },
         }),
     ...(publishedAt ? { datePublished: publishedAt } : {}),
-    ...(reviewedAt
+    ...(hasReviewDate
       ? {
           dateModified: reviewedAt,
-          ...(reviewerName
-            ? { reviewedBy: { "@type": "Person", name: reviewerName } }
+          ...(reviewEvidence
+            ? { reviewedBy: { "@type": "Person", name: reviewEvidence.reviewerName } }
             : {}),
         }
       : publishedAt

@@ -101,7 +101,8 @@ export default function AboutPage() {
             ))}
           </div>
           <p className="text-xs text-[var(--brand-text-secondary)] mt-3">
-            * 공공데이터는 자동화된 ETL 파이프라인을 통해 매일~매월 갱신됩니다.
+            * 영업장은 월 2회, 구조동물은 매일, 보호센터는 월 1회 수집을 예약합니다.
+            원본 제공과 수집 성공 여부에 따라 실제 반영이 지연될 수 있습니다.
           </p>
         </section>
 
@@ -115,7 +116,7 @@ export default function AboutPage() {
             </div>
             <div>
               <p className="font-semibold text-[var(--brand-text)] mb-1">YMYL 콘텐츠 검수</p>
-              <p>건강·의료, 보험·법률, 장례·추모 카테고리(YMYL)의 콘텐츠는 전문가 검토를 거친 후 발행합니다. 검토자 정보는 각 콘텐츠 상단에 표시됩니다.</p>
+              <p>건강·의료, 보험·법률, 장례·추모 정보는 개인별 판단을 대신하지 않습니다. 검토자와 검토일이 기록된 콘텐츠는 블로그·가이드 본문 상단에 해당 정보를 표시합니다. 이 기록만으로 검토자의 자격이나 개별 상황에 대한 정보의 적합성을 보증하지 않습니다.</p>
             </div>
             <div>
               <p className="font-semibold text-[var(--brand-text)] mb-1">광고·어필리에이트 투명성</p>
