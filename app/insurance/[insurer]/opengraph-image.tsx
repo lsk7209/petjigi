@@ -49,7 +49,7 @@ export default async function OgImage({ params }: { params: Promise<{ insurer: s
         </div>
 
         <div style={{ fontSize: 52, fontWeight: 800, color: TEXT, letterSpacing: "-1px", marginBottom: 12 }}>
-          {data.name} 펫보험
+          {`${data.name} 펫보험`}
         </div>
         <div style={{ fontSize: 32, color: ACCENT, fontWeight: 600, marginBottom: 20 }}>
           {data.product}
