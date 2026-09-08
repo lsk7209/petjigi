@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import { notFound } from "next/navigation";
 import Link from "next/link";
 import { cache } from "react";
 import { db } from "@/db/client";
@@ -17,6 +16,7 @@ import { OutboundLinkTracker } from "@/components/analytics/outbound-link-tracke
 import { AdSlot } from "@/components/ads/ad-slot";
 import { AdPolicyProvider } from "@/components/providers/ad-policy-provider";
 import { ConditionViewTracker } from "@/components/analytics/condition-view-tracker";
+import { getReviewEvidence } from "@/lib/ymyl";
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://petjigi.kr";
 
@@ -131,7 +131,7 @@ export async function generateMetadata({
 
   return {
     title: `${content.title} — 증상·원인·치료 | 펫지기`,
-    description: content.metaDescription ?? `${content.title} 증상·원인·진단·치료 방법을 전문가 검토를 거쳐 안내합니다.`,
+    description: content.metaDescription ?? `${content.title} 증상·원인·진단·치료 관련 정보를 안내합니다.`,
     alternates: { canonical: `/condition/${slug}` },
     openGraph: {
       title: `${content.title} — 증상·원인·치료 | 펫지기`,
@@ -182,6 +182,7 @@ export default async function ConditionPage({
     reviewerName: content.reviewerName,
     isYmyl: content.ymyl,
   });
+  const reviewEvidence = getReviewEvidence(content);
 
   const conditionEntity = medicalConditionSchema({
     name: content.title,
@@ -236,7 +237,7 @@ export default async function ConditionPage({
             </span>
             {content.ymyl && (
               <span className="px-2.5 py-0.5 rounded-full bg-amber-50 text-xs font-semibold text-amber-700 border border-amber-200">
-                전문가 검토
+                주의가 필요한 정보
               </span>
             )}
           </div>
@@ -256,10 +257,10 @@ export default async function ConditionPage({
                 {content.publishedAt.slice(0, 10)} 발행
               </time>
             )}
-            {content.reviewedAt && (
+            {reviewEvidence && (
               <span className="flex items-center gap-1">
                 <span aria-hidden="true">✅</span>
-                {content.reviewedAt.slice(0, 10)}{content.reviewerName && ` · ${content.reviewerName}`} 검토
+                {reviewEvidence.reviewedAt.slice(0, 10)} {reviewEvidence.reviewerName} 검토 정보
               </span>
             )}
             {content.authorName && (

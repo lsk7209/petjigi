@@ -78,7 +78,7 @@ export default async function OgImage({
               fontWeight: 600,
             }}
           >
-            전문가 검토
+            주의가 필요한 정보
           </div>
         </div>
 

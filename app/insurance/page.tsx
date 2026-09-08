@@ -53,7 +53,7 @@ const FAQ = faqSchema([
 export const metadata: Metadata = {
   title: "펫보험 안내 — 비교·선택 가이드 | 펫지기",
   description:
-    "국내 주요 6대 손보사 펫보험 비교, 보장범위·보험료·자기부담금 안내. 반려동물 보험 선택 전 꼭 알아야 할 핵심 정보를 수의사·금융 전문가 검토를 거쳐 제공합니다.",
+    "국내 주요 6대 손보사 펫보험 비교, 보장범위·보험료·자기부담금 안내. 반려동물 보험 선택 전 확인할 정보를 제공합니다.",
   alternates: { canonical: "/insurance" },
   openGraph: {
     title: "펫보험 안내 — 비교·선택 가이드 | 펫지기",

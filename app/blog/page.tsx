@@ -171,13 +171,13 @@ export default async function BlogIndexPage({
             검색
           </button>
           {hasSearch && (
-            <a
+            <Link
               href="/blog"
               className="h-10 px-3 flex items-center rounded-lg border border-[var(--brand-border)] text-sm text-[var(--brand-text-secondary)] hover:border-[var(--brand-accent)] transition-colors"
               aria-label="검색 초기화"
             >
               ✕
-            </a>
+            </Link>
           )}
         </form>
 
@@ -265,7 +265,7 @@ export default async function BlogIndexPage({
                       </span>
                       {post.ymyl && (
                         <span className="text-[10px] px-1.5 py-0.5 rounded bg-amber-50 text-amber-700 border border-amber-200 font-semibold">
-                          전문가 검토
+                          주의가 필요한 정보
                         </span>
                       )}
                     </div>
@@ -352,10 +352,10 @@ export default async function BlogIndexPage({
 
         {/* 가이드 연결 섹션 */}
         <section className="mt-12 pt-8 border-t border-[var(--brand-border)]">
-          <h2 className="text-base font-semibold text-[var(--brand-text)] mb-4">전문가 검토 가이드도 읽어보세요</h2>
+          <h2 className="text-base font-semibold text-[var(--brand-text)] mb-4">주제별 가이드도 읽어보세요</h2>
           <div className="flex flex-wrap gap-3">
             <Link href="/guide" className="text-sm text-[var(--brand-accent)] hover:underline">
-              📚 수의사 검토 가이드 →
+              📚 반려동물 가이드 →
             </Link>
             <Link href="/condition" className="text-sm text-[var(--brand-accent)] hover:underline">
               💊 질병·증상 정보 →
