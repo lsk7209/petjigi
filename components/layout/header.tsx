@@ -30,7 +30,7 @@ export function Header() {
         </Link>
 
         {/* 데스크탑 Nav */}
-        <nav className="pj-nav hidden md:flex" aria-label="주요 메뉴">
+        <nav className="pj-nav hidden! md:flex!" aria-label="주요 메뉴">
           {NAV_LINKS.map((item) => (
             <Link key={item.href + item.label} href={item.href}>
               {item.label}
@@ -57,7 +57,7 @@ export function Header() {
         {/* 모바일 햄버거 */}
         <button
           type="button"
-          className="md:hidden pj-btn pj-btn-ghost pj-btn-sm"
+          className="md:hidden! pj-btn pj-btn-ghost pj-btn-sm"
           style={{ padding: 0, width: 40, height: 40, justifyContent: "center" }}
           aria-label={open ? "메뉴 닫기" : "메뉴 열기"}
           aria-expanded={open}

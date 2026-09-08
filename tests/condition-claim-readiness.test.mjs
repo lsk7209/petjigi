@@ -106,6 +106,36 @@ function collectText(node, output = []) {
   return output.join('');
 }
 
+test('condition popular links only include available records without changing cards or schema', async () => {
+  const conditions = [
+    { slug: 'cat-flutd', title: '고양이 FLUTD', metaDescription: '현재 발행된 항목' },
+    { slug: 'dog-heartworm', title: '심장사상충', metaDescription: '발행된 항목' },
+    { slug: 'other-published-condition', title: '기록 기반 카드', metaDescription: '설명' },
+  ];
+  const page = fixtureLoader(baseContent, conditions)('app/condition/page.tsx');
+  const html = renderToStaticMarkup(await page.default());
+  const popular = html.match(/<section[^>]+aria-label="인기 질환"[^>]*>([\s\S]*?)<\/section>/)?.[1];
+  assert.ok(popular);
+  assert.deepEqual([...popular.matchAll(/href="([^"]+)"/g)].map(match => match[1]), ['/condition/cat-flutd', '/condition/dog-heartworm']);
+  assert.match(popular, /🚽 고양이 FLUTD/);
+  assert.match(popular, /🦟 심장사상충/);
+  assert.doesNotMatch(html, /href="\/condition\/dog-patellar-luxation"/);
+  for (const condition of conditions) assert.ok(html.includes(`href="/condition/${condition.slug}"`));
+  assert.equal((html.match(/<h1[ >]/g) ?? []).length, 1);
+  assert.equal(page.metadata.alternates.canonical, '/condition');
+  const schemas = [...html.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)].map(match => JSON.parse(match[1]));
+  const items = schemas.find(schema => schema['@type'] === 'ItemList').itemListElement;
+  assert.deepEqual(items.map(item => item.url), conditions.map(condition => `https://petjigi.kr/condition/${condition.slug}`));
+});
+
+test('condition empty list keeps preparation message without dangling popular navigation', async () => {
+  const page = fixtureLoader(baseContent, [])('app/condition/page.tsx');
+  const html = renderToStaticMarkup(await page.default());
+  assert.match(html, /질환 정보를 준비 중입니다\./);
+  assert.doesNotMatch(html, /aria-label="인기 질환"|href="\/condition\/|"@type":"ItemList"/);
+  assert.equal((html.match(/<h1[ >]/g) ?? []).length, 1);
+});
+
 test('condition OG routes use neutral labels with unchanged PNG dimensions', async () => {
   const hub = fixtureLoader()('app/condition/opengraph-image.tsx');
   const detail = fixtureLoader(baseContent)('app/condition/[slug]/opengraph-image.tsx');

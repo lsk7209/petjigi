@@ -41,6 +41,8 @@ const POPULAR_CONDITIONS = [
 
 export default async function ConditionIndexPage() {
   const conditions = await getCachedAllConditions();
+  const publishedSlugs = new Set(conditions.map((condition) => condition.slug));
+  const popularConditions = POPULAR_CONDITIONS.filter(({ slug }) => publishedSlugs.has(slug));
 
   const COLLECTION_PAGE = collectionPageSchema(
     "반려동물 질병·증상 정보",
@@ -92,11 +94,11 @@ export default async function ConditionIndexPage() {
         <AdSlot adType="adsense" format="horizontal" className="mb-8" />
 
         {/* 인기 질환 바로가기 */}
-        {POPULAR_CONDITIONS.length > 0 && (
+        {popularConditions.length > 0 && (
           <section className="mb-10" aria-label="인기 질환">
             <h2 className="text-lg font-bold text-[var(--brand-text)] mb-3">자주 찾는 질환</h2>
             <div className="flex flex-wrap gap-2">
-              {POPULAR_CONDITIONS.map((c) => (
+              {popularConditions.map((c) => (
                 <Link
                   key={c.slug}
                   href={`/condition/${c.slug}`}
