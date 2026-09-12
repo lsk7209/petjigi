@@ -10,6 +10,17 @@ if (!url || !authToken) {
 const client = createClient({ url, authToken });
 
 try {
+  if (process.argv.includes("--apply")) {
+    await client.execute(`
+      CREATE TABLE IF NOT EXISTS etl_sync_state (
+        job_name text PRIMARY KEY NOT NULL,
+        last_attempt_at text NOT NULL,
+        last_successful_at text,
+        updated_at text NOT NULL
+      )
+    `);
+  }
+
   const table = await client.execute(
     "select name from sqlite_master where type = 'table' and name = 'etl_sync_state'",
   );
@@ -27,7 +38,14 @@ try {
     throw new Error(`etl_sync_state verification failed; missing: ${missing.join(", ")}`);
   }
 
-  console.log(JSON.stringify({ table: "etl_sync_state", verified: true, columns: required }));
+  console.log(
+    JSON.stringify({
+      table: "etl_sync_state",
+      applied: process.argv.includes("--apply"),
+      verified: true,
+      columns: required,
+    }),
+  );
 } finally {
   client.close();
 }
