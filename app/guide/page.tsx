@@ -6,6 +6,7 @@ import type { CategoryId } from "@/lib/category";
 import { breadcrumbSchema, faqSchema, itemListSchema, collectionPageSchema } from "@/lib/seo/structured-data";
 import { AdSlot } from "@/components/ads/ad-slot";
 import { AdPolicyProvider } from "@/components/providers/ad-policy-provider";
+import { withoutUnverifiedReviewClaim } from "@/lib/content-review";
 
 export const revalidate = 3600;
 
@@ -40,9 +41,9 @@ const CATEGORY_EMOJI: Record<number, string> = {
 };
 
 export const metadata: Metadata = {
-  title: "반려동물 가이드 — 주제별 정보 모음 | 펫지기",
+  title: "반려동물 가이드 정보 모음",
   description:
-    "강아지·고양이 입양·건강·사료·보험·케어·장례까지. 반려동물 가이드를 카테고리별로 모아봤습니다.",
+    "강아지·고양이 입양·건강·사료·보험·케어·장례 정보를 카테고리별로 모았습니다.",
   alternates: { canonical: "/guide" },
   openGraph: {
     title: "반려동물 가이드 | 펫지기",
@@ -58,13 +59,12 @@ export default async function GuideIndexPage() {
     `${SITE_URL}/guide`,
     "반려동물 가이드. 입양·건강·사료·보험·케어·장례 6개 카테고리."
   );
-
   const GUIDE_LIST = itemListSchema(
     guides.slice(0, 100).map((g, i) => ({
       position: i + 1,
       name: g.title,
       url: `${SITE_URL}/guide/${g.slug}`,
-      description: g.metaDescription ?? undefined,
+      description: withoutUnverifiedReviewClaim(g.metaDescription),
     }))
   );
 
@@ -96,7 +96,7 @@ export default async function GuideIndexPage() {
         <div className="mb-6 sm:mb-8">
           <h1 className="text-2xl sm:text-3xl font-bold text-[var(--brand-text)] mb-2 sm:mb-3 tracking-tight" style={{ wordBreak: "keep-all" }} data-speakable>반려동물 가이드</h1>
           <p className="text-sm sm:text-base text-[var(--brand-text-secondary)] leading-relaxed max-w-2xl" style={{ wordBreak: "keep-all" }}>
-            반려동물 가이드를 카테고리별로 모아봤습니다.
+            반려동물 가이드를 카테고리별로 모았습니다.
             입양부터 장례까지 필요한 정보를 찾아보세요.
           </p>
         </div>
@@ -140,9 +140,9 @@ export default async function GuideIndexPage() {
                         <h3 className="font-semibold text-sm sm:text-base text-[var(--brand-text)] group-hover:text-[var(--brand-accent)] transition-colors leading-snug" style={{ wordBreak: "keep-all" }}>
                           {g.title}
                         </h3>
-                        {g.metaDescription && (
+                        {withoutUnverifiedReviewClaim(g.metaDescription) && (
                           <p className="text-xs text-[var(--brand-text-secondary)] mt-1.5 leading-relaxed line-clamp-2">
-                            {g.metaDescription}
+                            {withoutUnverifiedReviewClaim(g.metaDescription)}
                           </p>
                         )}
                         {g.publishedAt && (

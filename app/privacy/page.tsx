@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { SITE_IDENTITY } from "@/lib/site-identity";
 import { breadcrumbSchema } from "@/lib/seo/structured-data";
 
 export const revalidate = 86400;
@@ -11,7 +12,7 @@ const BREADCRUMB = breadcrumbSchema([
 ]);
 
 export const metadata: Metadata = {
-  title: "개인정보처리방침 | 펫지기",
+  title: { absolute: "개인정보처리방침 | 펫지기" },
   description: "펫지기 개인정보처리방침 — 수집 항목, 처리 목적, 보유 기간, 정보주체의 권리를 안내합니다.",
   alternates: { canonical: "/privacy" },
   robots: { index: true, follow: false },
@@ -35,13 +36,13 @@ export default function PrivacyPage() {
 
       <h2>2. 처리 목적</h2>
       <ul>
-        <li>가이드 발송 및 서비스 안내</li>
+        <li>뉴스레터 및 서비스 안내 발송</li>
         <li>서비스 운영 및 개선</li>
         <li>광고성 정보 발송 (별도 동의 시)</li>
       </ul>
 
       <h2>3. 처리 및 보유 기간</h2>
-      <p>회원 탈퇴 또는 발송 동의 철회 시까지 보관합니다.</p>
+      <p>뉴스레터 구독 취소 또는 발송 동의 철회 시까지 보관합니다.</p>
 
       <h2>4. 처리 위탁 (제3자)</h2>
       <ul>
@@ -61,11 +62,11 @@ export default function PrivacyPage() {
       <h2>6. 정보주체의 권리</h2>
       <p>
         열람, 정정, 삭제, 처리 정지를 요구할 수 있습니다.
-        문의: contact@petjigi.kr
+        문의: {SITE_IDENTITY.contactEmail}
       </p>
 
       <h2>7. 개인정보 보호책임자</h2>
-      <p>이메일: contact@petjigi.kr</p>
+      <p>이메일: {SITE_IDENTITY.contactEmail}</p>
     </main>
     </>
   );

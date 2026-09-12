@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import { track } from "@/lib/analytics/events";
 
 export interface TocHeading {
@@ -12,14 +12,11 @@ export interface TocHeading {
 export function TableOfContents({ headings, slug = "" }: { headings: TocHeading[]; slug?: string }) {
   const [activeId, setActiveId] = useState<string>("");
   const [isOpen, setIsOpen] = useState(true);
-  const initialized = useRef(false);
-
   useEffect(() => {
-    // 모바일에서 기본 닫힘 (touch device 감지)
-    if (!initialized.current) {
-      initialized.current = true;
+    const frame = requestAnimationFrame(() => {
       if (window.innerWidth < 640) setIsOpen(false);
-    }
+    });
+    return () => cancelAnimationFrame(frame);
   }, []);
 
   useEffect(() => {

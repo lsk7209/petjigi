@@ -7,6 +7,8 @@ import { and, eq, ne, desc, lte } from "drizzle-orm";
 import type { CategoryId } from "@/lib/category";
 import { YmylDisclaimer } from "@/components/content/ymyl-disclaimer";
 import { articleSchema, breadcrumbSchema, faqSchema, medicalConditionSchema } from "@/lib/seo/structured-data";
+import { withoutUnverifiedReviewClaim } from "@/lib/content-review";
+import { socialTitle } from "@/lib/seo/title";
 import { TableOfContents, type TocHeading } from "@/components/content/table-of-contents";
 import { ReadingProgress } from "@/components/content/reading-progress";
 import { ShareButtons } from "@/components/content/share-buttons";
@@ -130,12 +132,12 @@ export async function generateMetadata({
   }
 
   return {
-    title: `${content.title} — 증상·원인·치료 | 펫지기`,
-    description: content.metaDescription ?? `${content.title} 증상·원인·진단·치료 관련 정보를 안내합니다.`,
+    title: `${content.title} — 증상·원인·치료`,
+    description: withoutUnverifiedReviewClaim(content.metaDescription) ?? `${content.title} 관련 증상·원인·진단·치료 정보를 출처와 함께 안내합니다.`,
     alternates: { canonical: `/condition/${slug}` },
     openGraph: {
-      title: `${content.title} — 증상·원인·치료 | 펫지기`,
-      description: content.metaDescription ?? undefined,
+      title: socialTitle(`${content.title} — 증상·원인·치료`),
+      description: withoutUnverifiedReviewClaim(content.metaDescription),
       type: "article",
     },
   };
@@ -187,7 +189,7 @@ export default async function ConditionPage({
   const conditionEntity = medicalConditionSchema({
     name: content.title,
     url: `${SITE_URL}/condition/${slug}`,
-    description: content.metaDescription,
+    description: withoutUnverifiedReviewClaim(content.metaDescription),
   });
 
   const breadcrumb = breadcrumbSchema([

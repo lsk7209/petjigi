@@ -1,6 +1,5 @@
 import { ImageResponse } from "next/og";
 
-export const runtime = "edge";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -23,7 +22,7 @@ export default function OgImage() {
         <div style={{ position: "absolute", bottom: -80, left: -80, width: 360, height: 360, borderRadius: "50%", backgroundColor: "#9B7EA8", opacity: 0.08 }} />
 
         <div style={{ display: "flex", alignItems: "center", gap: 8, backgroundColor: "#F3E8FF", borderRadius: 24, paddingLeft: 20, paddingRight: 20, paddingTop: 8, paddingBottom: 8, marginBottom: 32 }}>
-          <span style={{ fontSize: 20, color: "#6B21A8", fontWeight: 700 }}>📋 보험·법률 정보</span>
+          <span style={{ fontSize: 20, color: "#6B21A8", fontWeight: 700 }}>📎 📋 보험·법률 정보 · 공식 정보 확인</span>
         </div>
 
         <div style={{ display: "flex", alignItems: "center", justifyContent: "center", width: 120, height: 120, borderRadius: "50%", backgroundColor: "#9B7EA8", marginBottom: 32 }}>
@@ -35,7 +34,7 @@ export default function OgImage() {
         </div>
         <div style={{ width: 80, height: 4, borderRadius: 2, backgroundColor: "#9B7EA8", marginBottom: 24 }} />
         <div style={{ fontSize: 28, color: "#7C5E8A", fontWeight: 400 }}>
-          현대해상 · DB손보 · KB손보 등 6대 손보사 비교
+          상품공시와 약관을 확인하는 방법
         </div>
 
         <div style={{ position: "absolute", bottom: 36, right: 48, fontSize: 20, color: "#7C5E8A", opacity: 0.7 }}>

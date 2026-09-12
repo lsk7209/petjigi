@@ -19,6 +19,7 @@ const subscribeSchema = z.object({
   ageConfirmed: z.boolean().refine((v) => v === true, {
     message: "14세 이상 확인이 필요합니다.",
   }),
+  website: z.string().max(0),
 });
 
 type SubscribeFormValues = z.infer<typeof subscribeSchema>;
@@ -50,6 +51,7 @@ export function SubscribeForm({
       consentRequired: false,
       consentMarketing: false,
       ageConfirmed: false,
+      website: "",
     },
   });
 
@@ -66,6 +68,7 @@ export function SubscribeForm({
           consentMarketing: data.consentMarketing,
           ageConfirmed: data.ageConfirmed,
           source,
+          website: data.website,
         }),
       });
 
@@ -121,6 +124,16 @@ export function SubscribeForm({
         className,
       )}
     >
+      <div className="absolute -left-[10000px] h-px w-px overflow-hidden" aria-hidden="true">
+        <label htmlFor="subscribe-website">웹사이트</label>
+        <input
+          id="subscribe-website"
+          type="text"
+          tabIndex={-1}
+          autoComplete="off"
+          {...register("website")}
+        />
+      </div>
       {/* 이메일 입력 */}
       <div className="space-y-1.5">
         <label
@@ -268,7 +281,7 @@ export function SubscribeForm({
           "disabled:opacity-60 disabled:cursor-not-allowed",
         )}
       >
-        {status === "loading" ? "처리 중…" : "무료 PDF 받기"}
+        {status === "loading" ? "처리 중…" : "뉴스레터 구독하기"}
       </button>
 
       <p className="text-[10px] text-center text-[var(--brand-text-secondary)]">

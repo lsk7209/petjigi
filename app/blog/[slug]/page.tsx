@@ -11,6 +11,8 @@ import { YmylDisclaimer } from "@/components/content/ymyl-disclaimer";
 import { AdSlot } from "@/components/ads/ad-slot";
 import { AdPolicyProvider } from "@/components/providers/ad-policy-provider";
 import { articleSchema, breadcrumbSchema, faqSchema } from "@/lib/seo/structured-data";
+import { withoutUnverifiedReviewClaim } from "@/lib/content-review";
+import { documentTitle, socialTitle } from "@/lib/seo/title";
 import { TableOfContents } from "@/components/content/table-of-contents";
 import { ReadingProgress } from "@/components/content/reading-progress";
 import { ShareButtons } from "@/components/content/share-buttons";
@@ -29,7 +31,12 @@ const getBlogContent = cache(async (slug: string) =>
   db
     .select()
     .from(contents)
-    .where(and(eq(contents.slug, slug), eq(contents.status, "published"), lte(contents.publishedAt, new Date().toISOString())))
+    .where(and(
+      eq(contents.slug, slug),
+      eq(contents.type, "blog"),
+      eq(contents.status, "published"),
+      lte(contents.publishedAt, new Date().toISOString()),
+    ))
     .get()
 );
 
@@ -55,7 +62,8 @@ export async function generateMetadata({
 
   if (!content) return {};
 
-  const title = content.metaTitle ?? `${content.title} | 펫지기`;
+  const title = documentTitle(withoutUnverifiedReviewClaim(content.metaTitle) ?? content.title);
+  const shareTitle = socialTitle(title);
   const catName = CATEGORIES[content.category as CategoryId]?.name ?? "반려동물";
   // subtitle을 OG description으로 쓰는 조건:
   // 1) 존재하고 30자 이상 (단편 제목 조각 제외)
@@ -65,14 +73,14 @@ export async function generateMetadata({
     !content.title.includes(content.subtitle);
   const description =
     (subtitleUsable ? content.subtitle : null) ??
-    content.metaDescription ??
-    `${content.title} — 반려동물 ${catName} 정보. 집사 에디터가 직접 경험하고 조사한 블로그. | 펫지기`;
+    withoutUnverifiedReviewClaim(content.metaDescription) ??
+    `${content.title} — 반려동물 ${catName} 정보를 주제별로 정리한 펫지기 블로그입니다. | 펫지기`;
 
   return {
     title,
     description,
     openGraph: {
-      title,
+      title: shareTitle,
       description,
       type: "article",
       publishedTime: content.publishedAt ?? undefined,
@@ -80,7 +88,7 @@ export async function generateMetadata({
       authors: content.authorName ? [content.authorName] : undefined,
       section: CATEGORIES[content.category as CategoryId]?.name,
     },
-    twitter: { card: "summary_large_image", title, description },
+    twitter: { card: "summary_large_image", title: shareTitle, description },
     alternates: { canonical: `/blog/${slug}` },
   };
 }
@@ -211,7 +219,7 @@ export default async function BlogPostPage({
   const article = articleSchema({
     title: content.title,
     subtitle: content.subtitle ?? undefined,
-    description: content.metaDescription ?? undefined,
+    description: withoutUnverifiedReviewClaim(content.metaDescription),
     url: `${SITE_URL}/blog/${slug}`,
     authorName: content.authorName,
     authorCredential: content.authorCredential,
@@ -420,8 +428,8 @@ export default async function BlogPostPage({
                   <p className="text-sm font-semibold text-[var(--brand-text)] group-hover:text-[var(--brand-accent)] transition-colors leading-snug" style={{ wordBreak: "keep-all" }}>
                     {p.title}
                   </p>
-                  {p.metaDescription && (
-                    <p className="text-xs text-[var(--brand-text-secondary)] mt-1 line-clamp-2">{p.metaDescription}</p>
+                  {withoutUnverifiedReviewClaim(p.metaDescription) && (
+                    <p className="text-xs text-[var(--brand-text-secondary)] mt-1 line-clamp-2">{withoutUnverifiedReviewClaim(p.metaDescription)}</p>
                   )}
                 </Link>
               ))}

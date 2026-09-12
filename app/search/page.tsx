@@ -3,7 +3,7 @@ import { Suspense } from "react";
 import SearchClient from "./search-client";
 
 export const metadata: Metadata = {
-  title: "검색 | 펫지기",
+  title: { absolute: "검색 | 펫지기" },
   robots: { index: false, follow: false },
 };
 

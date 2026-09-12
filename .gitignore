@@ -12,7 +12,10 @@
 
 # testing
 /coverage
+/.tmp-validation-next/
+/.tmp-*-build.log
 /.seo-cache/
+/.omc/
 
 # next.js
 /.next/

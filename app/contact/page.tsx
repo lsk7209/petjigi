@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { SITE_CONTACT_MAILTO, SITE_IDENTITY } from "@/lib/site-identity";
 import { SubscribeForm } from "@/components/forms/subscribe-form";
 import { breadcrumbSchema } from "@/lib/seo/structured-data";
 
@@ -19,14 +20,14 @@ const CONTACT_JSON_LD = {
   url: `${SITE_URL}/contact`,
   mainEntity: {
     "@type": "ContactPoint",
-    email: "contact@petjigi.kr",
+    email: SITE_IDENTITY.contactEmail,
     contactType: "customer support",
     availableLanguage: { "@type": "Language", name: "Korean" },
   },
 };
 
 export const metadata: Metadata = {
-  title: "문의 및 뉴스레터 구독 | 펫지기",
+  title: { absolute: "문의 및 뉴스레터 구독 | 펫지기" },
   description: "펫지기에 문의하거나 반려동물 생활 정보와 사이트 소식 수신을 신청하세요.",
   alternates: { canonical: "/contact" },
 };
@@ -55,10 +56,10 @@ export default function ContactPage() {
           콘텐츠 제안, 데이터 오류 신고, 제휴 문의는 아래 이메일로 연락해 주세요.
         </p>
         <a
-          href="mailto:contact@petjigi.kr"
+          href={SITE_CONTACT_MAILTO}
           className="font-medium text-[var(--brand-accent)] hover:underline"
         >
-          contact@petjigi.kr
+          {SITE_IDENTITY.contactEmail}
         </a>
       </section>
     </main>

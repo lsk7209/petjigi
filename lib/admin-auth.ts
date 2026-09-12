@@ -1,11 +1,13 @@
 import "server-only";
 
 // Reuse the configured key; a missing deployment secret never grants access.
-export function isReviewKeyAuthorized(key: unknown): key is string {
+export function isValidAdminSecret(key: unknown): key is string {
   const secret = process.env.CRON_SECRET;
   return typeof secret === "string" && secret.trim().length > 0
     && typeof key === "string" && key === secret;
 }
+
+export const isReviewKeyAuthorized = isValidAdminSecret;
 
 export function isReviewRequestAuthorized(headers: Pick<Headers, "get">): boolean {
   const value = headers.get("authorization");

@@ -5,7 +5,8 @@
  */
 
 import { db } from "../../db/client";
-import { rescuedAnimals } from "../../db/schema";
+import { etlSyncState, rescuedAnimals } from "../../db/schema";
+import { eq } from "drizzle-orm";
 
 const API_KEY = process.env.APMS_API_KEY ?? "";
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://petjigi.kr";
@@ -56,12 +57,26 @@ async function fetchPage(
 export async function syncRescuedAnimals(): Promise<void> {
   console.log("[ETL:rescued-animals] 시작 (noindex 데이터)");
 
+  const attemptAt = new Date().toISOString();
+  await db
+    .insert(etlSyncState)
+    .values({
+      jobName: "rescued-animals",
+      lastAttemptAt: attemptAt,
+      updatedAt: attemptAt,
+    })
+    .onConflictDoUpdate({
+      target: etlSyncState.jobName,
+      set: { lastAttemptAt: attemptAt, updatedAt: attemptAt },
+    });
+
   const { total } = await fetchPage(1, 1);
   const totalPages = Math.ceil(total / 1000);
   console.log(`[ETL:rescued-animals] 총 ${total}건 (${totalPages}페이지)`);
 
   if (total === 0) {
-    console.log("[ETL:rescued-animals] 데이터 없음 — 종료");
+    await recordSuccessfulRun(attemptAt);
+    console.log("[ETL:rescued-animals] 데이터 없음 — 정상 완료");
     return;
   }
 
@@ -144,6 +159,8 @@ export async function syncRescuedAnimals(): Promise<void> {
     }
   }
 
+  await recordSuccessfulRun(now);
+
   console.log(`[ETL:rescued-animals] 완료 — ${upserted}건 upsert`);
 
   // Next.js 캐시 무효화 (rescue + stats 태그)
@@ -160,6 +177,13 @@ export async function syncRescuedAnimals(): Promise<void> {
       console.error("[ETL:rescued-animals] 캐시 무효화 실패:", e),
     );
   }
+}
+
+async function recordSuccessfulRun(successfulAt: string): Promise<void> {
+  await db
+    .update(etlSyncState)
+    .set({ lastSuccessfulAt: successfulAt, updatedAt: successfulAt })
+    .where(eq(etlSyncState.jobName, "rescued-animals"));
 }
 
 syncRescuedAnimals().catch((err) => {

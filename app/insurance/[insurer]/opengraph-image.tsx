@@ -1,7 +1,6 @@
 import { ImageResponse } from "next/og";
 import { notFound } from "next/navigation";
 
-export const runtime = "edge";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -10,12 +9,12 @@ const ACCENT = "#9B7EA8";
 const TEXT = "#2A2520";
 
 const INSURERS: Record<string, { name: string; product: string }> = {
-  hyundai: { name: "현대해상", product: "하이펫보험" },
-  db: { name: "DB손보", product: "다이렉트 펫보험" },
-  kb: { name: "KB손보", product: "펫코노미보험" },
-  samsung: { name: "삼성화재", product: "애니펫보험" },
-  hanwha: { name: "한화손보", product: "레저펫보험" },
-  meritz: { name: "메리츠화재", product: "퍼펫보험" },
+  hyundai: { name: "현대해상", product: "공식 펫보험 정보 확인" },
+  db: { name: "DB손해보험", product: "공식 펫보험 정보 확인" },
+  kb: { name: "KB손해보험", product: "공식 펫보험 정보 확인" },
+  samsung: { name: "삼성화재", product: "공식 펫보험 정보 확인" },
+  hanwha: { name: "한화손해보험", product: "판매 상태 확인 필요" },
+  meritz: { name: "메리츠화재", product: "공식 펫보험 정보 확인" },
 };
 
 export default async function OgImage({ params }: { params: Promise<{ insurer: string }> }) {
@@ -41,7 +40,7 @@ export default async function OgImage({ params }: { params: Promise<{ insurer: s
         <div style={{ position: "absolute", bottom: -80, left: -80, width: 360, height: 360, borderRadius: "50%", backgroundColor: ACCENT, opacity: 0.08 }} />
 
         <div style={{ display: "flex", alignItems: "center", gap: 8, backgroundColor: "#F3E8FF", borderRadius: 24, paddingLeft: 20, paddingRight: 20, paddingTop: 8, paddingBottom: 8, marginBottom: 28 }}>
-          <span style={{ fontSize: 20, color: "#6B21A8", fontWeight: 700 }}>📋 보험·법률 정보</span>
+          <span style={{ fontSize: 20, color: "#6B21A8", fontWeight: 700 }}>📋 보험·법률 정보 · 공식 정보 확인 가이드</span>
         </div>
 
         <div style={{ display: "flex", alignItems: "center", justifyContent: "center", width: 110, height: 110, borderRadius: "50%", backgroundColor: ACCENT, marginBottom: 28 }}>

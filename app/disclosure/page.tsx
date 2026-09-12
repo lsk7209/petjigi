@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { SITE_IDENTITY } from "@/lib/site-identity";
 import { breadcrumbSchema } from "@/lib/seo/structured-data";
 
 export const revalidate = 86400;
@@ -11,7 +12,7 @@ const BREADCRUMB = breadcrumbSchema([
 ]);
 
 export const metadata: Metadata = {
-  title: "어필리에이트 고지 | 펫지기",
+  title: { absolute: "어필리에이트 고지 | 펫지기" },
   description: "펫지기 어필리에이트 고지 — 제휴 링크 사실, 참여 프로그램, 추천의 객관성 보장 방침.",
   alternates: { canonical: "/disclosure" },
   robots: { index: true, follow: false },
@@ -49,11 +50,11 @@ export default function DisclosurePage() {
       <h2>어필리에이트 링크 표시</h2>
       <ul>
         <li>페이지 상단 고지</li>
-        <li>링크 근처 "제휴 링크" 라벨</li>
-        <li>HTML rel="sponsored nofollow" 속성</li>
+        <li>링크 근처 &quot;제휴 링크&quot; 라벨</li>
+        <li>HTML rel=&quot;sponsored nofollow&quot; 속성</li>
       </ul>
 
-      <p>문의: contact@petjigi.kr</p>
+      <p>문의: {SITE_IDENTITY.contactEmail}</p>
     </main>
     </>
   );

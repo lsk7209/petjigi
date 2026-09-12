@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { SITE_IDENTITY } from "@/lib/site-identity";
 
 const CATEGORY_LINKS = [
   { label: "입양·등록",   href: "/category/adoption" },
@@ -119,7 +120,7 @@ export function Footer() {
           style={{ paddingTop: 24 }}
         >
           <div className="pj-tiny" style={{ maxWidth: 620, lineHeight: 1.7 }}>
-            <strong style={{ color: "var(--brand-text)" }}>(주)펫지기</strong> · 반려동물 정보 서비스
+            <strong style={{ color: "var(--brand-text)" }}>{SITE_IDENTITY.legalEntityLabel}</strong> · 반려동물 정보 서비스
             <br />
             본 사이트는 정보 제공을 목적으로 하며, 의료·법률·재정적 결정에 대한 최종 책임은 이용자 본인에게 있습니다.
             <br />

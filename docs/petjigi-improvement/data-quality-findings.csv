@@ -1,0 +1,8 @@
+issue_id,status,affected_urls,affected_files,evidence,notes
+DATA-COUNT-FILTER-PARITY,FIXED,/{sigungu}/{type},lib/db-queries.ts,true,Shared predicate is used for COUNT and SELECT
+DATA-STABLE-ORDER,FIXED,/{sigungu}/{type},lib/db-queries.ts,true,Stable name and ID tie-breakers
+DATA-DISPLAYED-RANGE,FIXED,/{sigungu}/{type},app/[sigungu]/[type]/page.tsx,true,Total and displayed range are separate
+DATA-REGION-MISMATCH,PARTIALLY_CONFIRMED,/bucheon/sale,production data and ETL,"public samples: Paju, Suwon, Hwaseong, Gimpo","Visible address and listing region disagree; licensing jurisdiction, relocation history, and raw source remain unknown"
+DATA-REGION-MISMATCH-DISCLOSURE,FIXED,/{sigungu}/{type} and detail,lib/business-listing.ts and route pages,true,"Clear address-region conflicts are disclosed without deleting, moving, or guessing source records"
+DATA-REFRESH-FAILURE,NOT_REPRODUCED,ETL,etl/localdata/sync.ts,true,Fetch failure retains existing records; static regression test guards against bulk deletion
+DATA-RESCUE-FRESHNESS,FIXED,/rescue,"db/schema/etl-sync-state.ts, etl/apms/rescued-animals.ts, lib/db-queries.ts and app/rescue/page.tsx",true,Run-level attempt and success timestamps are stored separately; success advances only after the paged import completes

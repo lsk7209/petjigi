@@ -15,9 +15,12 @@ const CONDITIONS: NewContent[] = [
     metaTitle: "강아지 슬개골 탈구 증상·단계·치료 | 펫지기",
     metaDescription:
       "강아지 슬개골 탈구의 4단계 분류, 주요 증상, 수술 vs 보존 치료 기준, 예방 운동법을 정리했습니다. 소형견 보호자 필독.",
+    sources: [
+      "https://www.acvs.org/small-animal/patellar-luxations/ — American College of Veterinary Surgeons, Patellar Luxation (accessed 2026-09-12)",
+    ],
     body: `<h2>슬개골 탈구란?</h2>
-<p>슬개골 탈구(Patellar Luxation)는 무릎 관절의 슬개골(무릎뼈)이 정상 위치에서 안쪽 또는 바깥쪽으로 빠지는 질환입니다. 포메라니안·치와와·말티즈·토이푸들 같은 소형견에서 특히 흔하며, 국내 소형견의 상당수에서 발견됩니다. 선천적 요인이 크지만 과격한 운동이나 비만이 증상을 악화시킬 수 있습니다.</p>
-<p>슬개골이 제자리를 벗어나면 주변 근육과 인대에 과부하가 걸리고, 장기간 방치하면 전방십자인대 파열로 이어질 수 있어 조기 발견이 중요합니다.</p>
+<p>슬개골 탈구(Patellar Luxation)는 무릎 관절의 슬개골(무릎뼈)이 정상 위치에서 안쪽 또는 바깥쪽으로 빠지는 질환입니다. 소형견에서 흔하며 선천적 구조와 외상 등 여러 요인이 관련될 수 있습니다.</p>
+<p>슬개골이 제자리를 벗어나면 보행 이상과 관절 변화가 생길 수 있고 다른 무릎 손상이 함께 나타날 수 있어 수의사의 평가가 중요합니다.</p>
 
 <h2>4단계 분류와 증상</h2>
 <p>슬개골 탈구는 심각도에 따라 1~4단계로 분류됩니다. 단계가 높을수록 일상생활 영향이 크고 수술적 치료가 필요할 가능성이 높아집니다.</p>
@@ -50,7 +53,7 @@ const CONDITIONS: NewContent[] = [
 <p>슬개골 탈구는 수의사의 신체검사(손으로 슬개골 촉진)만으로도 진단이 가능합니다. 단계 확인과 동반 손상 여부를 확인하기 위해 다음 검사를 추가로 진행하기도 합니다.</p>
 <ul>
   <li><strong>X-ray(방사선 촬영)</strong>: 뼈 변형·관절 간격 확인, 골격 구조 평가</li>
-  <li><strong>관절경 또는 CT</strong>: 3단계 이상 또는 복합 손상 의심 시 시행</li>
+  <li><strong>CT 등 추가 영상검사</strong>: 복합 변형이나 수술 계획에 필요하다고 수의사가 판단할 때 시행</li>
 </ul>
 <p>자가 진단은 정확하지 않으므로 증상이 의심되면 반드시 동물병원을 방문하세요.</p>
 
@@ -76,7 +79,7 @@ const CONDITIONS: NewContent[] = [
   <li><strong>미끄러운 바닥 방지</strong>: 거실 바닥에 미끄럼 방지 매트 설치</li>
   <li><strong>소파·침대 점프 제한</strong>: 경사로(램프) 설치로 무릎 충격 감소</li>
   <li><strong>적정 체중 유지</strong>: 과체중은 슬개골 탈구 심화의 주요 위험 요인</li>
-  <li><strong>정기 검진</strong>: 소형견은 연 1회 이상 슬개골 검사 권장</li>
+  <li><strong>정기 검진</strong>: 견종·나이·증상에 맞춰 슬개골 상태 확인</li>
   <li><strong>산책 환경</strong>: 계단 아닌 평지 산책, 급격한 방향 전환 동작 최소화</li>
 </ul>`,
     disclaimer:
@@ -98,8 +101,11 @@ const CONDITIONS: NewContent[] = [
     metaTitle: "강아지 심장사상충 증상·예방약·주기 | 펫지기",
     metaDescription:
       "강아지 심장사상충 감염 경로, 초기·중기·말기 증상, 예방약 종류와 복용 주기를 정리했습니다. 연중 예방이 기본입니다.",
+    sources: [
+      "https://www.heartwormsociety.org/veterinary-resources/american-heartworm-society-guidelines/canine — American Heartworm Society, Canine Guidelines (revised 2024)",
+    ],
     body: `<h2>심장사상충이란?</h2>
-<p>심장사상충(Dirofilaria immitis)은 모기를 매개로 전파되는 기생충으로, 감염된 유충이 개의 심장과 폐동맥에 정착해 서식합니다. 성충은 길이 15~30cm에 달하며, 수십 마리가 심장과 폐혈관을 막으면 심부전으로 이어질 수 있습니다.</p>
+<p>심장사상충(Dirofilaria immitis)은 모기를 매개로 전파되는 기생충으로, 성충은 주로 폐동맥과 심장에 영향을 주어 심폐 질환을 일으킬 수 있습니다.</p>
 <p>국내에서는 여름철 모기가 활발한 시기에 감염 위험이 높지만, 최근 기후 변화로 모기 활동 기간이 길어지고 있어 연중 예방이 권장됩니다.</p>
 
 <h2>감염 경로와 발병 과정</h2>
@@ -134,7 +140,7 @@ const CONDITIONS: NewContent[] = [
 
 <h2>진단 방법</h2>
 <ul>
-  <li><strong>항원 검사(혈액)</strong>: 성충 항원을 검출하는 가장 일반적인 방법. 15~20분 내 결과</li>
+  <li><strong>항원 검사(혈액)</strong>: 성충 항원을 확인하는 검사로, 결과 시간과 해석은 검사법과 감염 단계에 따라 달라짐</li>
   <li><strong>마이크로필라리아 검사</strong>: 혈액 내 유충 확인</li>
   <li><strong>흉부 X-ray·심장초음파</strong>: 감염 정도와 심장 손상 평가</li>
 </ul>
@@ -145,7 +151,7 @@ const CONDITIONS: NewContent[] = [
 <ul>
   <li><strong>먹는 약(경구제)</strong>: 월 1회 복용이 일반적. 심장사상충 외 다른 기생충을 함께 예방하는 복합 제품도 있음</li>
   <li><strong>바르는 약(외용제)</strong>: 피부에 바르는 방식, 월 1회 적용</li>
-  <li><strong>주사형</strong>: 6개월~1년 효과 지속, 동물병원에서 시술</li>
+  <li><strong>주사형</strong>: 허가된 제품의 투여 간격과 대상에 따라 동물병원에서 시행</li>
 </ul>
 <p>예방약은 반드시 수의사의 처방·지도하에 사용해야 합니다. 특히 콜리 계열 견종은 일부 성분에 민감할 수 있으므로 처방 전 견종을 반드시 알려야 합니다.</p>
 
@@ -170,6 +176,9 @@ const CONDITIONS: NewContent[] = [
     metaTitle: "고양이 구토 원인 급성 만성 구분법 | 펫지기",
     metaDescription:
       "고양이 구토의 급성·만성 원인, 위험 신호, 병원에 가야 할 상황을 정리했습니다. 헤어볼과 질환성 구토의 차이도 안내합니다.",
+    sources: [
+      "https://www.merckvetmanual.com/cat-owners/digestive-disorders-of-cats/vomiting-in-cats — Merck Veterinary Manual, Vomiting in Cats (updated 2024-09)",
+    ],
     body: `<h2>고양이 구토, 언제 걱정해야 할까?</h2>
 <p>고양이는 개보다 구토를 자주 합니다. 헤어볼(hairball)을 뱉기 위한 구토는 생리적 현상에 가깝지만, 구토 빈도·양상·동반 증상에 따라 심각한 질환의 신호일 수 있습니다. 무작정 "고양이니까 구토하겠지"라고 넘기지 않도록, 상황을 정확히 파악하는 것이 중요합니다.</p>
 
@@ -179,7 +188,7 @@ const CONDITIONS: NewContent[] = [
 <ul>
   <li><strong>주요 원인</strong>: 헤어볼 배출, 과식·급하게 먹기, 낯선 음식·독성 물질 섭취, 이물질 삼킴, 급성 위장염</li>
   <li><strong>특징</strong>: 구토 후 식욕·활동량이 정상으로 돌아오면 경과 관찰 가능</li>
-  <li><strong>주의 신호</strong>: 하루에 3회 이상, 혈액 섞임, 완전 식욕 부진, 무기력</li>
+  <li><strong>주의 신호</strong>: 반복되는 구토, 혈액 섞임, 식욕 부진, 무기력 또는 탈수 징후</li>
 </ul>
 <h3>만성 구토</h3>
 <p>3주 이상 반복되거나 규칙적으로 재발하는 구토입니다.</p>
@@ -200,12 +209,12 @@ const CONDITIONS: NewContent[] = [
 <h2>즉시 동물병원에 가야 할 위험 신호</h2>
 <ul>
   <li>구토물에 혈액이 섞인 경우</li>
-  <li>하루 5회 이상 구토가 반복될 때</li>
-  <li>24시간 이상 물·음식을 전혀 먹지 않을 때</li>
+  <li>짧은 시간에 구토가 반복되거나 물도 유지하지 못할 때</li>
+  <li>먹거나 마시지 못하면서 무기력·탈수 징후가 나타날 때</li>
   <li>배가 딱딱하게 굳거나 팽창된 느낌</li>
   <li>극도로 무기력하거나 반응이 없을 때</li>
   <li>이물질을 삼킨 것이 확실할 때 (끈·바늘·장난감 등)</li>
-  <li>소변이 12시간 이상 나오지 않을 때</li>
+  <li>소변이 나오지 않거나 배뇨를 힘들어할 때</li>
 </ul>
 
 <h2>집에서 할 수 있는 관찰과 기록</h2>
@@ -239,6 +248,9 @@ const CONDITIONS: NewContent[] = [
   {
     id: "cond-dog-skin-allergy-guide",
     slug: "dog-skin-allergy-guide",
+    sources: [
+      "https://www.merckvetmanual.com/dog-owners/skin-disorders-of-dogs/atopic-dermatitis-in-dogs — Merck Veterinary Manual, Atopic Dermatitis in Dogs (accessed 2026-09-12)",
+    ],
     type: "condition",
     category: 3,
     title: "강아지 피부 알레르기 — 증상·원인·관리",
@@ -282,14 +294,14 @@ const CONDITIONS: NewContent[] = [
 <h2>가정 관리법</h2>
 <h3>환경 개선</h3>
 <ul>
-  <li>집먼지진드기 차단: 침구 주 1회 이상 뜨거운 물 세탁(60℃ 이상), HEPA 필터 청소기 활용</li>
+  <li>집먼지진드기 등 환경 요인은 수의사와 확인한 뒤 침구 세탁·청소 등 현실적인 노출 저감 방법을 선택</li>
   <li>공기청정기 사용: 꽃가루·곰팡이 포자 감소</li>
   <li>반려견 잠자리를 카펫보다 세탁 가능한 매트로 교체</li>
 </ul>
 <h3>식이 관리</h3>
 <ul>
   <li>식이 알레르기 의심 시: 수의사 지도 아래 단백질 제한식 또는 가수분해 단백질 사료로 교체</li>
-  <li>배제식이(Elimination Diet): 새로운 단일 단백질원으로 8~12주간 급여 후 반응 관찰 — 반드시 수의사와 함께 진행</li>
+  <li>배제식이(Elimination Diet): 식이 구성·기간·재도전 절차를 수의사가 설계하고 반응을 평가</li>
 </ul>
 <h3>피부 관리</h3>
 <ul>
@@ -313,6 +325,10 @@ const CONDITIONS: NewContent[] = [
   {
     id: "cond-cat-kidney-disease-guide",
     slug: "cat-kidney-disease-guide",
+    sources: [
+      "https://www.iris-kidney.com/iris-staging-system — International Renal Interest Society, IRIS Staging System (accessed 2026-09-12)",
+      "https://www.iris-kidney.com/iris-guidelines-1 — International Renal Interest Society, IRIS Guidelines (accessed 2026-09-12)",
+    ],
     type: "condition",
     category: 3,
     title: "고양이 만성 신장 질환 — 초기 증상·식이 관리",
@@ -320,7 +336,7 @@ const CONDITIONS: NewContent[] = [
     metaDescription:
       "고양이 만성 신장 질환(CKD)의 IRIS 단계별 증상, 초기 발견법, 저인식이 관리 전략을 정리했습니다.",
     body: `<h2>고양이 만성 신장 질환(CKD)이란?</h2>
-<p>만성 신장 질환(Chronic Kidney Disease, CKD)은 신장 기능이 서서히 저하되는 질환으로, 고양이에서 매우 흔합니다. 특히 10세 이상 노령묘의 30~40%에서 발견된다는 통계가 있습니다. 신장은 노폐물 여과·수분 균형·혈압 조절 등 다양한 기능을 담당하므로, 기능이 저하되면 몸 전체에 영향을 미칩니다.</p>
+<p>만성 신장 질환(Chronic Kidney Disease, CKD)은 신장 기능이 지속적으로 저하되는 질환으로 노령묘에서 흔합니다. 신장은 노폐물 여과·수분 균형·혈압 조절 등 다양한 기능을 담당하므로, 기능이 저하되면 몸 전체에 영향을 미칩니다.</p>
 <p>신장 세포는 한번 손상되면 재생이 어렵습니다. 따라서 조기 발견과 진행 속도 관리가 핵심입니다.</p>
 
 <h2>IRIS 단계별 증상</h2>
@@ -351,7 +367,7 @@ const CONDITIONS: NewContent[] = [
 </ul>
 
 <h2>초기 발견을 위한 정기 검진</h2>
-<p>CKD는 증상이 나타날 때 이미 상당히 진행된 경우가 많습니다. 7세 이상 고양이는 연 2회 이상 혈액·소변 검사를 받는 것이 권장됩니다. 집에서 관찰할 수 있는 조기 신호는 다음과 같습니다.</p>
+<p>CKD는 초기 변화가 뚜렷하지 않을 수 있습니다. 검사 주기는 나이·기저질환·이전 결과에 따라 수의사와 정하고, 집에서는 다음 변화를 관찰합니다.</p>
 <ul>
   <li>물그릇을 평소보다 자주 찾거나 화장실 물을 마심</li>
   <li>화장실 방문 횟수 증가, 소변량 증가</li>
@@ -373,13 +389,13 @@ const CONDITIONS: NewContent[] = [
 <ul>
   <li>소량씩 자주 급여 (하루 3~4회)</li>
   <li>음식을 약간 데워 향을 살려주면 기호성 향상</li>
-  <li>처방식 거부 시 서서히 혼합하며 전환 (10~14일 이상)</li>
+  <li>처방식 전환 속도와 방법은 섭취량과 상태를 보며 수의사와 조정</li>
 </ul>
 
 <h2>생활 관리와 모니터링</h2>
 <ul>
   <li>정기 혈액·소변 검사: 수의사 권고 주기 준수</li>
-  <li>체중 측정: 주 1~2회 집에서 측정하여 변화 기록</li>
+  <li>체중 측정: 일정한 조건에서 정기적으로 측정하여 변화 기록</li>
   <li>음수량 파악: 물그릇 물의 양을 매일 체크</li>
   <li>스트레스 최소화: 이사·외부 자극은 신장 기능에 부정적 영향 가능</li>
   <li>구강 위생: 신장 기능 저하 시 구내염이 흔하므로 정기 치과 검진</li>
@@ -397,6 +413,9 @@ const CONDITIONS: NewContent[] = [
   {
     id: "cond-dog-separation-anxiety",
     slug: "dog-separation-anxiety-disorder",
+    sources: [
+      "https://www.merckvetmanual.com/dog-owners/behavior-of-dogs/separation-anxiety-in-dogs — Merck Veterinary Manual, Separation Anxiety in Dogs (accessed 2026-09-12)",
+    ],
     type: "condition",
     category: 3,
     title: "강아지 분리불안 — 증상·행동 교정법",
@@ -425,8 +444,8 @@ const CONDITIONS: NewContent[] = [
 <p>열쇠 소리·가방 들기·신발 신기 등 외출 신호에 무감각해지도록 연습합니다. 외출하지 않고 이 행동만 반복해 연결을 끊어주세요.</p>
 <h3>2단계: 짧은 분리 훈련</h3>
 <ol>
-  <li>방문을 닫고 몇 초 후 다시 들어옵니다 (불안 반응 없을 때 기준).</li>
-  <li>불안 없이 성공하면 시간을 10초 → 30초 → 1분으로 늘립니다.</li>
+  <li>불안 반응이 시작되기 전의 짧은 시간부터 연습합니다.</li>
+  <li>영상으로 반응을 확인하며 성공한 범위 안에서 아주 조금씩 시간을 늘립니다.</li>
   <li>이 과정을 하루 여러 번 반복합니다. 절대 강아지가 불안한 상태에서 나가지 마세요.</li>
 </ol>
 <h3>3단계: 집 바깥으로 나가기</h3>
@@ -461,6 +480,9 @@ const CONDITIONS: NewContent[] = [
   {
     id: "cond-cat-urinary-tract-disease",
     slug: "cat-urinary-tract-disease",
+    sources: [
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC11816079/ — International Cat Care, 2025 consensus guidelines on lower urinary tract diseases in cats",
+    ],
     type: "condition",
     category: 3,
     title: "고양이 하부 요로 질환(FLUTD) — 증상·응급처치",
@@ -483,9 +505,9 @@ const CONDITIONS: NewContent[] = [
 </ul>
 
 <h2>요도 폐색 — 즉시 응급 처치가 필요한 상황</h2>
-<p>수컷 고양이에서 요도 폐색(완전 막힘)이 발생하면 24~48시간 내 사망에 이를 수 있는 응급 상황입니다. 아래 신호가 보이면 즉시 동물병원 응급실로 이동하세요.</p>
+<p>수컷 고양이의 요도 폐색은 생명을 위협할 수 있는 응급 상황입니다. 아래 신호가 보이면 시간을 재며 기다리지 말고 즉시 동물병원으로 이동하세요.</p>
 <ul>
-  <li>12시간 이상 소변이 전혀 나오지 않음</li>
+  <li>소변이 나오지 않거나 소량만 나오면서 반복적으로 힘을 줌</li>
   <li>배를 만지면 극도로 아파함</li>
   <li>반응이 둔해지거나 의식이 저하됨</li>
   <li>구토를 반복하며 음식·물을 거부함</li>
@@ -501,11 +523,11 @@ const CONDITIONS: NewContent[] = [
 </ul>
 
 <h2>예방을 위한 수분 섭취 전략</h2>
-<p>FLUTD 예방에서 수분 섭취 증가는 가장 효과적인 방법 중 하나입니다. 고양이는 원래 사막 동물로 갈증 신호에 둔감하므로 적극적인 환경 조성이 필요합니다.</p>
+<p>수분 섭취와 환경 관리는 일부 하부 요로 질환의 관리에 도움이 될 수 있지만, 원인과 개체 상태에 따라 계획이 달라집니다.</p>
 <ul>
   <li><strong>흐르는 물 급수기</strong>: 흐르는 물을 선호하는 고양이 특성 활용. 다양한 전동 급수기 활용</li>
   <li><strong>물그릇 여러 개</strong>: 집 안 여러 곳에 배치, 사료 옆에는 두지 않는 것이 좋음</li>
-  <li><strong>습식사료 비율 증가</strong>: 건사료 대비 수분 함량이 70~80%로 높아 방광 건강에 유리</li>
+  <li><strong>습식사료 활용 검토</strong>: 전체 영양과 질환 원인을 고려해 수의사와 급여 방식을 결정</li>
   <li><strong>물그릇 재질</strong>: 스테인리스·도자기 재질. 플라스틱은 냄새 흡수로 기피 가능</li>
 </ul>
 <h3>생활 환경 개선</h3>
@@ -513,7 +535,7 @@ const CONDITIONS: NewContent[] = [
   <li>화장실 청결 유지: 매일 청소, 고양이 수 + 1개 이상 배치</li>
   <li>스트레스 최소화: 급격한 환경 변화, 동거 동물과의 갈등 관리</li>
   <li>적정 체중 유지: 비만은 FLUTD 위험 요인</li>
-  <li>규칙적인 운동·놀이: 하루 15~20분 이상 상호작용 놀이</li>
+  <li>규칙적인 운동·놀이: 고양이의 선호와 건강 상태에 맞춰 상호작용 제공</li>
 </ul>`,
     disclaimer:
       "이 정보는 교육 목적이며 수의사의 진단·처방을 대체하지 않습니다. 증상이 의심되면 가까운 동물병원을 방문하세요.",
@@ -528,6 +550,9 @@ const CONDITIONS: NewContent[] = [
   {
     id: "cond-dog-obesity-management",
     slug: "dog-obesity-management",
+    sources: [
+      "https://www.aaha.org/resources/2021-aaha-nutrition-and-weight-management-guidelines/home/ — AAHA, 2021 Nutrition and Weight Management Guidelines",
+    ],
     type: "condition",
     category: 3,
     title: "강아지 비만 관리 — 체중 체크·식이 조절",
@@ -535,7 +560,7 @@ const CONDITIONS: NewContent[] = [
     metaDescription:
       "강아지 비만 판별법(BCS), 비만이 유발하는 합병증, 안전한 체중 감량 식이 전략과 운동 방법을 안내합니다.",
     body: `<h2>강아지 비만의 심각성</h2>
-<p>국내 반려견의 약 30~40%가 과체중 또는 비만 상태라는 보고가 있습니다. 비만은 단순히 미용 문제가 아니라, 관절염·당뇨·심장 질환·호흡 문제·암 발생 위험을 높이고 평균 수명을 단축시키는 건강 위기입니다. 보호자가 사랑으로 주는 간식이 오히려 강아지의 건강을 위협할 수 있습니다.</p>
+<p>비만은 단순한 외형 문제가 아니라 관절·호흡·대사 건강과 삶의 질에 영향을 줄 수 있습니다. 체중만으로 판단하지 말고 수의사가 체형과 근육 상태를 함께 평가해야 합니다.</p>
 
 <h2>비만도 판별법 — BCS 체크</h2>
 <p>BCS(Body Condition Score)는 1~9점 척도로 강아지의 체형을 평가하는 방법입니다. 집에서 직접 확인할 수 있습니다.</p>
@@ -572,7 +597,7 @@ const CONDITIONS: NewContent[] = [
 </ul>
 
 <h2>안전한 체중 감량 식이 전략</h2>
-<p>갑작스러운 칼로리 감량은 영양 결핍·지방간을 유발할 수 있습니다. 월 1~2% 감량 속도가 안전합니다. 정확한 목표 체중과 식이 계획은 수의사와 함께 수립하세요.</p>
+<p>갑작스럽거나 과도한 칼로리 제한은 피해야 합니다. 정확한 목표 체중, 감량 속도와 식이 계획은 현재 건강 상태를 확인한 수의사와 함께 수립하세요.</p>
 <h3>급여량 정확히 계산하기</h3>
 <ul>
   <li>사료 포장의 급여 기준은 '현재 체중'이 아닌 '목표 체중' 기준으로 설정</li>
@@ -594,7 +619,7 @@ const CONDITIONS: NewContent[] = [
 <h2>운동을 통한 체중 관리</h2>
 <ul>
   <li>관절 부담이 적은 수영·수중 보행이 비만견에 이상적</li>
-  <li>산책은 짧게 나누어 여러 번 — 처음에는 10~15분씩 하루 3회</li>
+  <li>산책은 현재 관절·심폐 상태에 맞춰 짧게 시작하고 반응을 보며 조정</li>
   <li>실내 노즈워크·퍼즐 장난감: 운동과 동시에 정신적 자극 제공</li>
   <li>무리한 운동은 관절 손상 위험 — 강아지 상태에 맞게 서서히 강도 증가</li>
 </ul>`,
@@ -611,6 +636,9 @@ const CONDITIONS: NewContent[] = [
   {
     id: "cond-dog-joint-arthritis",
     slug: "dog-joint-arthritis",
+    sources: [
+      "https://www.acvs.org/small-animal/osteoarthritis-in-dogs/ — American College of Veterinary Surgeons, Osteoarthritis in Dogs (accessed 2026-09-12)",
+    ],
     type: "condition",
     category: 3,
     title: "강아지 관절염 — 증상·노령견 관리법",
@@ -618,7 +646,7 @@ const CONDITIONS: NewContent[] = [
     metaDescription:
       "강아지 관절염(퇴행성 관절 질환)의 초기 증상, 노령견 생활 환경 개선법, 통증 관리 전략을 안내합니다.",
     body: `<h2>강아지 관절염이란?</h2>
-<p>관절염(Osteoarthritis, 퇴행성 관절 질환)은 관절 연골이 닳고 손상되어 염증과 통증을 유발하는 만성 질환입니다. 노령견에서 매우 흔하지만, 슬개골 탈구·고관절 이형성증 등 관절 문제를 가진 젊은 개에서도 발생할 수 있습니다. 5세 이상 강아지의 상당수에서 관절 변화가 시작된다는 보고가 있습니다.</p>
+<p>관절염(Osteoarthritis, 퇴행성 관절 질환)은 관절 구조가 점차 손상되며 통증과 움직임 저하를 유발할 수 있는 만성 질환입니다. 노령견뿐 아니라 슬개골 탈구·고관절 이형성증 등 관절 문제가 있는 젊은 개에서도 발생할 수 있습니다.</p>
 <p>관절염은 완치가 어려운 진행성 질환이지만, 조기 관리를 통해 진행을 늦추고 삶의 질을 크게 개선할 수 있습니다.</p>
 
 <h2>초기 증상 — 놓치기 쉬운 신호들</h2>
@@ -663,7 +691,7 @@ const CONDITIONS: NewContent[] = [
 <h2>운동 — 덜 하는 것이 아니라 맞게 하기</h2>
 <p>운동을 완전히 멈추면 근육이 빠져 관절을 더 지지하지 못하게 됩니다. 부드럽고 규칙적인 운동이 중요합니다.</p>
 <ul>
-  <li><strong>수중 보행(수중 재활)</strong>: 부력으로 체중 부하를 줄이면서 근육 운동 — 관절염 관리에 가장 효과적인 방법 중 하나</li>
+  <li><strong>수중 보행(수중 재활)</strong>: 일부 환자에서 체중 부하를 줄인 운동 방법으로 활용하며 적합성은 재활 담당자와 판단</li>
   <li><strong>짧은 평지 산책</strong>: 딱딱한 아스팔트보다 흙·잔디 환경, 짧게 자주</li>
   <li><strong>경사·점프 제한</strong>: 관절 충격이 큰 동작은 최소화</li>
 </ul>
@@ -683,6 +711,10 @@ const CONDITIONS: NewContent[] = [
   {
     id: "cond-cat-dental-disease",
     slug: "cat-dental-disease",
+    sources: [
+      "https://wsava.org/global-guidelines/dental-guidelines/ — WSAVA, Global Dental Guidelines (2020)",
+      "https://vohc.org/accepted-products/ — Veterinary Oral Health Council, Accepted Products (accessed 2026-09-12)",
+    ],
     type: "condition",
     category: 3,
     title: "고양이 치주 질환 — 예방과 홈케어",
@@ -690,7 +722,7 @@ const CONDITIONS: NewContent[] = [
     metaDescription:
       "고양이 치주 질환의 진행 단계, 치태·치석이 전신에 미치는 영향, 칫솔질·치아 간식 등 홈케어 방법을 정리했습니다.",
     body: `<h2>고양이 치주 질환이란?</h2>
-<p>치주 질환(Periodontal Disease)은 잇몸·치아 지지 구조(치주인대·치조골)에 발생하는 염증성 질환입니다. 치료받지 않는 고양이의 70~80%에서 3세 이전에 치주 질환이 시작된다는 통계가 있습니다. 구강 문제로 그치는 것이 아니라 세균이 혈류를 통해 심장·신장·간에 영향을 줄 수 있어 전신 건강과 직결됩니다.</p>
+<p>치주 질환(Periodontal Disease)은 잇몸·치아 지지 구조(치주인대·치조골)에 발생하는 염증성 질환입니다. 구강 통증과 치아 지지 조직 손상을 일으킬 수 있으므로 정기적인 구강 평가가 중요합니다.</p>
 <p>고양이는 치통을 숨기는 경향이 강해, 심한 통증이 생겨도 식욕이 유지되는 경우가 있습니다. 정기 구강 검진이 중요한 이유입니다.</p>
 
 <h2>치주 질환 진행 단계</h2>
@@ -724,18 +756,18 @@ const CONDITIONS: NewContent[] = [
 </ul>
 
 <h2>홈케어 — 고양이 칫솔질 시작하기</h2>
-<p>칫솔질은 치주 질환 예방의 가장 효과적인 방법입니다. 어릴 때 시작할수록 적응이 쉽고, 성묘도 인내심을 갖고 단계적으로 도전할 수 있습니다.</p>
+<p>규칙적인 칫솔질은 치태 관리에 도움이 됩니다. 어릴 때 시작하면 적응이 쉬울 수 있지만, 성묘도 스트레스를 최소화하며 단계적으로 연습할 수 있습니다.</p>
 <h3>준비물</h3>
 <ul>
   <li>고양이 전용 칫솔 (손가락 칫솔 또는 소두 칫솔)</li>
-  <li>고양이 전용 치약 — 사람용 치약은 불소 성분이 독성, 절대 사용 금지</li>
+  <li>고양이 전용 치약 — 사람용 치약은 삼킴을 전제로 만들어지지 않았으므로 사용하지 않음</li>
 </ul>
 <h3>단계별 적응 훈련</h3>
 <ol>
-  <li><strong>1단계</strong>: 고양이가 좋아하는 맛의 치약을 손가락에 묻혀 핥게 함 (1~2주)</li>
-  <li><strong>2단계</strong>: 손가락으로 잇몸·치아 바깥쪽을 살짝 문지름 (1~2주)</li>
-  <li><strong>3단계</strong>: 손가락 칫솔로 교체, 짧게(10~15초) 닦기 연습</li>
-  <li><strong>4단계</strong>: 일반 칫솔로 전환, 하루 1회 이상 루틴화</li>
+  <li><strong>1단계</strong>: 고양이가 전용 치약의 맛과 냄새에 익숙해지게 함</li>
+  <li><strong>2단계</strong>: 입 주변과 치아 바깥쪽을 짧게 만지는 연습</li>
+  <li><strong>3단계</strong>: 전용 칫솔로 짧게 닦고 거부 반응이 생기기 전에 종료</li>
+  <li><strong>4단계</strong>: 고양이가 받아들이는 범위에서 규칙적인 루틴으로 정착</li>
 </ol>
 <p>각 단계에서 끝나면 칭찬과 좋아하는 간식으로 보상하세요. 억지로 입을 벌리거나 강제하면 거부감이 생겨 역효과가 납니다.</p>
 
@@ -744,7 +776,7 @@ const CONDITIONS: NewContent[] = [
   <li><strong>치아 건강 간식·껌</strong>: VOHC(수의구강위생위원회) 인증 제품이 효과 검증됨</li>
   <li><strong>치아 건강 사료</strong>: 알갱이 크기·질감이 치태 제거에 최적화된 처방식</li>
   <li><strong>구강 세정 젤·스프레이</strong>: 칫솔질이 어려운 경우 보조 용도로 활용</li>
-  <li><strong>음수량 증가</strong>: 구강 내 세균 억제에 도움</li>
+  <li><strong>정기 구강 평가</strong>: 보조 제품을 쓰더라도 통증·치주 손상 여부는 수의사가 확인</li>
 </ul>
 
 <h2>동물병원 스케일링 주기</h2>

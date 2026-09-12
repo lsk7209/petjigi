@@ -14,6 +14,7 @@ import { AdSlot } from "@/components/ads/ad-slot";
 import { AdPolicyProvider } from "@/components/providers/ad-policy-provider";
 import { BusinessViewTracker } from "@/components/analytics/business-view-tracker";
 import { BusinessContactLinks } from "@/components/analytics/business-contact-links";
+import { getAddressRegionConsistency } from "@/lib/business-listing";
 
 export const revalidate = 86400;
 
@@ -55,9 +56,10 @@ const TYPE_CATEGORY: Record<string, CategoryId> = {
 export async function generateMetadata({
   params,
 }: {
-  params: Promise<{ type: string; sigungu: string; slug: string }>;
+  params: Promise<{ sigungu: string; type: string; slug: string }>;
 }): Promise<Metadata> {
-  const { type, sigungu, slug } = await params;
+  // The shared route tree keeps the legacy public URL /:type/:sigungu/:slug.
+  const { sigungu: type, type: sigungu, slug } = await params;
   const name = decodeURIComponent(slug);
   const typeLabel = TYPE_LABEL[type] ?? type;
 
@@ -78,9 +80,9 @@ export async function generateMetadata({
 export default async function BusinessDetailPage({
   params,
 }: {
-  params: Promise<{ type: string; sigungu: string; slug: string }>;
+  params: Promise<{ sigungu: string; type: string; slug: string }>;
 }) {
-  const { type, sigungu, slug } = await params;
+  const { sigungu: type, type: sigungu, slug } = await params;
   const name = decodeURIComponent(slug);
 
   const business = await db
@@ -211,6 +213,11 @@ export default async function BusinessDetailPage({
                 <dt className="text-[var(--brand-text-secondary)] w-16 shrink-0 font-medium">주소</dt>
                 <dd className="text-[var(--brand-text)] word-break-keep leading-relaxed">
                   {business.address}
+                  {getAddressRegionConsistency(business.address, locationName) === "mismatch" && (
+                    <span className="block text-xs text-amber-700 mt-1">
+                      표시 주소가 이 지역 분류와 달라 공공데이터 원본 확인이 필요합니다.
+                    </span>
+                  )}
                 </dd>
               </div>
             )}

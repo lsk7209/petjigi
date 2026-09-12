@@ -121,7 +121,7 @@ for (const relative of ['app/insurance/opengraph-image.tsx', 'app/insurance/comp
     assert.doesNotMatch(html, unsupported);
     assert.match(html, /보험·법률 정보/);
     assert.ok(html.includes('petjigi.kr'));
-    assert.equal(og.runtime, 'edge');
+    assert.notEqual(og.runtime, 'edge');
     assert.equal(og.contentType, 'image/png');
     assert.equal(response.options.width, 1200);
     assert.equal(response.options.height, 630);
@@ -130,7 +130,7 @@ for (const relative of ['app/insurance/opengraph-image.tsx', 'app/insurance/comp
 
 test('insurer OG awaits Next 16 Promise params for every known insurer and rejects unknown insurers', async () => {
   const og = load('app/insurance/[insurer]/opengraph-image.tsx');
-  for (const [insurer, name] of Object.entries({ hyundai: '현대해상', db: 'DB손보', kb: 'KB손보', samsung: '삼성화재', hanwha: '한화손보', meritz: '메리츠화재' })) {
+  for (const [insurer, name] of Object.entries({ hyundai: '현대해상', db: 'DB손해보험', kb: 'KB손해보험', samsung: '삼성화재', hanwha: '한화손해보험', meritz: '메리츠화재' })) {
     const response = await og.default({ params: Promise.resolve({ insurer }) });
     const html = renderToStaticMarkup(response.element);
     assert.ok(html.includes(name), insurer);
@@ -138,7 +138,7 @@ test('insurer OG awaits Next 16 Promise params for every known insurer and rejec
     assert.equal(response.options.width, 1200);
     assert.equal(response.options.height, 630);
   }
-  assert.equal(og.runtime, 'edge');
+  assert.notEqual(og.runtime, 'edge');
   assert.equal(og.contentType, 'image/png');
   await assert.rejects(() => og.default({ params: Promise.resolve({ insurer: 'unknown-fixture' }) }), /NOT_FOUND/);
 });

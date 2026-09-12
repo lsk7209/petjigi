@@ -5,6 +5,7 @@ import { breadcrumbSchema, itemListSchema, collectionPageSchema, definedTermSetS
 import { AdSlot } from "@/components/ads/ad-slot";
 import { AdPolicyProvider } from "@/components/providers/ad-policy-provider";
 import type { CategoryId } from "@/lib/category";
+import { withoutUnverifiedReviewClaim } from "@/lib/content-review";
 
 export const revalidate = 3600;
 
@@ -43,9 +44,9 @@ export async function generateMetadata({
   const canonical = buildCanonical(catId, currentPage);
 
   return {
-    title: `반려동물 블로그${catName}${searchLabel}${currentPage > 1 ? ` — ${currentPage}페이지` : " — 집사 생활의 모든 것"} | 펫지기`,
+    title: { absolute: `반려동물 블로그${catName}${searchLabel}${currentPage > 1 ? ` — ${currentPage}페이지` : " — 집사 생활의 모든 것"} | 펫지기` },
     description:
-      "강아지·고양이와 함께하는 일상 팁부터 건강·사료·보험까지. 펫지기 집사 에디터가 직접 경험하고 조사한 반려동물 정보를 공유합니다.",
+      "강아지·고양이와 함께하는 일상 팁부터 건강·사료·보험까지, 주제별 반려동물 정보를 정리합니다.",
     alternates: { canonical },
     ...(q ? { robots: { index: false } } : {}),
     openGraph: {
@@ -95,7 +96,7 @@ export default async function BlogIndexPage({
       position: i + 1,
       name: p.title,
       url: `${SITE_URL}/blog/${p.slug}`,
-      description: p.metaDescription ?? undefined,
+      description: withoutUnverifiedReviewClaim(p.metaDescription),
     }))
   );
 
@@ -150,7 +151,7 @@ export default async function BlogIndexPage({
           </h1>
           <p className="text-[var(--brand-text-secondary)] leading-relaxed max-w-2xl text-sm sm:text-base">
             강아지·고양이와 함께하는 집사 생활의 모든 것.<br />
-            입양·건강·사료·보험·케어까지, 직접 경험하고 조사한 정보를 나눕니다.
+            입양·건강·사료·보험·케어 정보를 주제별로 확인하세요.
           </p>
         </div>
 
@@ -246,6 +247,7 @@ export default async function BlogIndexPage({
               const catId = post.category ?? 1;
               // metaDescription 기준 추정 (본문은 통상 설명의 15~20배)
               const readingTime = Math.max(3, Math.ceil(((post.metaDescription?.length ?? 80) * 18) / 500));
+              const summary = withoutUnverifiedReviewClaim(post.subtitle ?? post.metaDescription);
               return (
                 <Link
                   key={post.slug}
@@ -277,9 +279,9 @@ export default async function BlogIndexPage({
                         {post.title}
                       </span>
                     </h2>
-                    {(post.subtitle || post.metaDescription) && (
+                    {summary && (
                       <p className="text-xs text-[var(--brand-text-secondary)] leading-relaxed line-clamp-2 flex-1 mb-3">
-                        {post.subtitle || post.metaDescription}
+                        {summary}
                       </p>
                     )}
                     <div className="flex items-center gap-2 mt-auto text-xs text-[var(--brand-text-secondary)] flex-wrap">

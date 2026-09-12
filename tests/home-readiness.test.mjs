@@ -23,6 +23,7 @@ const stubs = {
   '@/components/forms/subscribe-form': { SubscribeForm: emptyComponent },
   '@/components/ads/ad-slot': { AdSlot: emptyComponent },
   '@/components/providers/ad-policy-provider': { AdPolicyProvider: ({ children }) => children },
+  '@/components/content/adsense-trust-section': { AdsenseTrustSection: emptyComponent },
 };
 
 function load(relative) {

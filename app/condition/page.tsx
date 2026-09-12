@@ -4,6 +4,7 @@ import { getCachedAllConditions } from "@/lib/db-queries";
 import { breadcrumbSchema, itemListSchema, collectionPageSchema } from "@/lib/seo/structured-data";
 import { AdSlot } from "@/components/ads/ad-slot";
 import { AdPolicyProvider } from "@/components/providers/ad-policy-provider";
+import { withoutUnverifiedReviewClaim } from "@/lib/content-review";
 
 export const revalidate = 3600;
 
@@ -16,7 +17,7 @@ const BREADCRUMB = breadcrumbSchema([
 ]);
 
 export const metadata: Metadata = {
-  title: "반려동물 질병·증상 정보 | 펫지기",
+  title: "반려동물 질병·증상 정보",
   description:
     "강아지·고양이의 흔한 질병과 증상 관련 정보를 안내합니다. 슬개골 탈구, FLUTD, 심장사상충, 켄넬코프 등.",
   alternates: { canonical: "/condition" },
@@ -49,13 +50,12 @@ export default async function ConditionIndexPage() {
     `${SITE_URL}/condition`,
     "강아지·고양이에게 흔한 질환의 증상, 원인, 치료 관련 정보를 안내합니다."
   );
-
   const CONDITION_LIST = itemListSchema(
     conditions.slice(0, 100).map((c, i) => ({
       position: i + 1,
       name: c.title,
       url: `${SITE_URL}/condition/${c.slug}`,
-      description: c.metaDescription ?? undefined,
+      description: withoutUnverifiedReviewClaim(c.metaDescription),
     }))
   );
 
@@ -145,9 +145,9 @@ export default async function ConditionIndexPage() {
                         <h3 className="font-semibold text-sm text-[var(--brand-text)] group-hover:text-[var(--brand-accent)] transition-colors leading-snug mt-2">
                           {c.title}
                         </h3>
-                        {c.metaDescription && (
+                        {withoutUnverifiedReviewClaim(c.metaDescription) && (
                           <p className="text-xs text-[var(--brand-text-secondary)] mt-1.5 leading-relaxed line-clamp-2">
-                            {c.metaDescription}
+                            {withoutUnverifiedReviewClaim(c.metaDescription)}
                           </p>
                         )}
                       </Link>

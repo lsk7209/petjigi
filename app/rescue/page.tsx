@@ -5,7 +5,7 @@ import { getCachedRescuedAnimals } from "@/lib/db-queries";
 export const revalidate = 3600;
 
 export const metadata: Metadata = {
-  title: "구조동물 현황 | 펫지기",
+  title: { absolute: "구조동물 현황 | 펫지기" },
   robots: { index: false, follow: false },
 };
 
@@ -15,6 +15,17 @@ function formatDate(s: string | null | undefined): string {
     return `${s.slice(0, 4)}.${s.slice(4, 6)}.${s.slice(6, 8)}`;
   }
   return s.slice(0, 10);
+}
+
+function formatSuccessfulSync(value: string | null): string {
+  if (!value) return "확인 불가";
+  const date = new Date(value);
+  if (Number.isNaN(date.getTime())) return "확인 불가";
+  return new Intl.DateTimeFormat("ko-KR", {
+    timeZone: "Asia/Seoul",
+    dateStyle: "medium",
+    timeStyle: "short",
+  }).format(date);
 }
 
 function processStateColor(state: string | null | undefined): string {
@@ -28,7 +39,7 @@ function processStateColor(state: string | null | undefined): string {
 }
 
 export default async function RescuePage() {
-  const animals = await getCachedRescuedAnimals();
+  const { items: animals, lastAttemptAt, lastSuccessfulAt } = await getCachedRescuedAnimals();
 
   return (
     <main className="max-w-5xl mx-auto px-4 py-10">
@@ -44,9 +55,12 @@ export default async function RescuePage() {
       <h1 className="text-2xl font-bold mb-1 text-[var(--brand-text)]">
         구조동물 현황
       </h1>
-      <p className="text-sm text-[var(--brand-text-secondary)] mb-8">
-        공공데이터포털 APMS 기준 최근 50건 · 매일 05:00 갱신
-      </p>
+      <div className="text-sm text-[var(--brand-text-secondary)] mb-8 space-y-1">
+        <p>공공데이터포털 APMS 기준 최근 공고 최대 50건</p>
+        <p>수집 예정: 매일 05:00 KST · 마지막 수집 시도: {formatSuccessfulSync(lastAttemptAt)}</p>
+        <p>마지막 성공 수집: {formatSuccessfulSync(lastSuccessfulAt)}</p>
+        <p className="text-xs">원본 기준일은 각 공고의 공고일을 확인하세요.</p>
+      </div>
 
       {animals.length === 0 ? (
         <div className="rounded-xl border border-[var(--brand-border)] bg-[var(--brand-surface,#f9f9f9)] p-12 text-center">

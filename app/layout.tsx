@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
-import Script from "next/script";
 import { Noto_Serif_KR } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
 import { GA4 } from "@/components/analytics/ga4";
+import { AdsenseLoader } from "@/components/ads/adsense-loader";
 import { websiteSchema, organizationSchema } from "@/lib/seo/structured-data";
 
 const notoSerifKR = Noto_Serif_KR({
@@ -111,7 +111,6 @@ export default function RootLayout({
         {/* Preconnect for third-party performance */}
         <link rel="preconnect" href="https://www.googletagmanager.com" crossOrigin="anonymous" />
         <link rel="preconnect" href="https://www.google-analytics.com" crossOrigin="anonymous" />
-        <link rel="preconnect" href="https://pagead2.googlesyndication.com" crossOrigin="anonymous" />
         <link rel="dns-prefetch" href="https://dapi.kakao.com" />
         {/* GSC verification */}
         {process.env.NEXT_PUBLIC_GSC_VERIFICATION && (
@@ -150,15 +149,8 @@ export default function RootLayout({
         </div>
         <Footer />
         <GA4 />
-        {/* AdSense 자동 광고 — NEXT_PUBLIC_ADSENSE_ID 설정 시 활성화 */}
-        {ADSENSE_ID && (
-          <Script
-            id="adsense-auto"
-            src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${ADSENSE_ID}`}
-            strategy="lazyOnload"
-            crossOrigin="anonymous"
-          />
-        )}
+        {/* 페이지 정책을 통과한 경로에서만 Auto ads 로더 활성화 */}
+        {ADSENSE_ID && <AdsenseLoader publisherId={ADSENSE_ID} />}
       </body>
     </html>
   );

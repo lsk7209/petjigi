@@ -15,7 +15,7 @@
 import { createHash } from "crypto";
 import { db } from "../../db/client";
 import { businesses } from "../../db/schema";
-import { eq, inArray } from "drizzle-orm";
+import { inArray } from "drizzle-orm";
 import { geocodeAddress } from "../geocoding/kakao";
 import { pingIndexNow } from "../../lib/seo/index-now";
 

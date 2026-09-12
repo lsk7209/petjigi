@@ -36,7 +36,7 @@ export async function generateMetadata({
 
   if (!region) {
     return {
-      title: "동물보호센터 | 펫지기",
+      title: { absolute: "동물보호센터 | 펫지기" },
       robots: { index: false },
     };
   }
@@ -45,13 +45,13 @@ export async function generateMetadata({
 
   if (shelterList.length === 0) {
     return {
-      title: `${region.sigungu} 동물보호센터 | 펫지기`,
+      title: { absolute: `${region.sigungu} 동물보호센터 | 펫지기` },
       robots: { index: false },
     };
   }
 
   return {
-    title: `${region.sigungu} 동물보호센터 | 펫지기`,
+    title: { absolute: `${region.sigungu} 동물보호센터 | 펫지기` },
     description: `${region.sigungu} 지역 동물보호센터 ${shelterList.length}개소 정보. 유기동물 입양·임시보호 문의처를 확인하세요.`,
     alternates: { canonical: `/shelter/${sigungu}` },
     openGraph: {

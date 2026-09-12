@@ -15,7 +15,10 @@ export default function NotFound() {
   const categories = Object.values(CATEGORIES);
 
   return (
-    <main className="min-h-screen bg-[var(--brand-bg)] flex flex-col items-center justify-center px-4 py-16">
+    <main
+      data-ads-policy="block"
+      className="min-h-screen bg-[var(--brand-bg)] flex flex-col items-center justify-center px-4 py-16"
+    >
       <NotFoundTracker />
       <div className="max-w-2xl w-full text-center">
         {/* 상징 */}

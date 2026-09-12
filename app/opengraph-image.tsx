@@ -1,6 +1,5 @@
 import { ImageResponse } from "next/og";
 
-export const runtime = "edge";
 
 export const alt = "펫지기 — 반려동물 보호자를 위한 정보";
 export const size = { width: 1200, height: 630 };

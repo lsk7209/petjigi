@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { notFound } from "next/navigation";
+import { notFound, redirect } from "next/navigation";
 import Link from "next/link";
 import { getCachedBusinessListing, getCachedRegionBySlug } from "@/lib/db-queries";
 import { breadcrumbSchema, faqSchema, itemListSchema, collectionPageSchema } from "@/lib/seo/structured-data";
@@ -7,12 +7,14 @@ import type { CategoryId } from "@/lib/category";
 import { CategoryCta } from "@/components/content/category-cta";
 import { AdSlot } from "@/components/ads/ad-slot";
 import { AdPolicyProvider } from "@/components/providers/ad-policy-provider";
+import { AdsenseTrustSection } from "@/components/content/adsense-trust-section";
 import { RegionViewTracker } from "@/components/analytics/region-view-tracker";
 import { db } from "@/db/client";
 import { businesses, regions } from "@/db/schema";
 import { eq } from "drizzle-orm";
+import { businessListingPath, getAddressRegionConsistency, parsePageParam } from "@/lib/business-listing";
 
-export const revalidate = 86400;
+export const dynamic = "force-dynamic";
 
 // 빌드 시 활성 업장이 있는 (sigungu, type) 조합 모두 사전 렌더링
 export async function generateStaticParams() {
@@ -41,23 +43,27 @@ const TYPE_META: Record<string, { label: string; emoji: string; categorySlug: st
 
 export async function generateMetadata({
   params,
+  searchParams,
 }: {
   params: Promise<{ sigungu: string; type: string }>;
+  searchParams: Promise<{ page?: string | string[] }>;
 }): Promise<Metadata> {
   const { sigungu, type } = await params;
+  const page = parsePageParam((await searchParams).page);
   const meta = TYPE_META[type];
   if (!meta) return {};
 
   const region = await getCachedRegionBySlug(sigungu);
   const location = region?.sigungu ?? decodeURIComponent(sigungu);
-  const title = `${location} ${meta.label} | 펫지기`;
+  const title = `${location} ${meta.label}${page > 1 ? ` ${page}페이지` : ""}`;
   const description = `${location} ${meta.label} 전체 목록. ${meta.desc} — 공공데이터 기반 정확한 업체 정보.`;
+  const canonical = businessListingPath(sigungu, type, page);
 
   return {
     title,
     description,
-    alternates: { canonical: `/${sigungu}/${type}` },
-    openGraph: { title, description },
+    alternates: { canonical },
+    openGraph: { title: `${title} | 펫지기`, description, url: canonical },
   };
 }
 
@@ -73,17 +79,20 @@ function buildFaq(location: string, typeLabel: string, count: number) {
     },
     {
       question: `${typeLabel} 정보가 최신이 아닐 수 있나요?`,
-      answer: `공공데이터는 매일 동기화되지만 실제 영업 여부와 차이가 있을 수 있으므로, 방문 전 전화로 확인하시길 권장합니다.`,
+      answer: `공공데이터는 원본별 수집 일정에 따라 갱신되며 실제 영업 여부와 차이가 있을 수 있으므로, 방문 전 전화로 확인하시길 권장합니다.`,
     },
   ];
 }
 
 export default async function SigunguTypePage({
   params,
+  searchParams,
 }: {
   params: Promise<{ sigungu: string; type: string }>;
+  searchParams: Promise<{ page?: string | string[] }>;
 }) {
   const { sigungu, type } = await params;
+  const requestedPage = parsePageParam((await searchParams).page);
   const meta = TYPE_META[type];
   if (!meta) notFound();
 
@@ -91,7 +100,10 @@ export default async function SigunguTypePage({
   const sigunguName = region?.sigungu ?? decodeURIComponent(sigungu);
   const sidoName = region?.sido ?? "";
 
-  const businessList = await getCachedBusinessListing(sigunguName, type);
+  const listing = await getCachedBusinessListing(sigunguName, type, requestedPage);
+  const businessList = listing.items;
+  const canonicalPath = businessListingPath(sigungu, type, listing.page);
+  if (listing.page !== requestedPage) redirect(canonicalPath);
 
   const breadcrumb = breadcrumbSchema([
     { name: "홈", url: SITE_URL },
@@ -101,11 +113,11 @@ export default async function SigunguTypePage({
     { name: `${sigunguName} ${meta.label}`, url: `${SITE_URL}/${sigungu}/${type}` },
   ]);
 
-  const faq = faqSchema(buildFaq(sigunguName, meta.label, businessList.length));
+  const faq = faqSchema(buildFaq(sigunguName, meta.label, listing.totalCount));
 
   const itemList = itemListSchema(
     businessList.map((b, i) => ({
-      position: i + 1,
+      position: listing.offset + i + 1,
       name: b.name,
       url: `${SITE_URL}/${b.type}/${sigungu}/${encodeURIComponent(b.name)}`,
       description: b.address ?? undefined,
@@ -114,8 +126,8 @@ export default async function SigunguTypePage({
 
   const collectionPage = collectionPageSchema(
     `${sigunguName} ${meta.label}`,
-    `${SITE_URL}/${sigungu}/${type}`,
-    `${sigunguName} ${meta.label} ${businessList.length}곳 — ${meta.desc}. 공공데이터 기반 정확한 업체 정보.`
+    `${SITE_URL}${canonicalPath}`,
+    `${sigunguName} ${meta.label} 총 ${listing.totalCount}곳 — ${meta.desc}. 공공데이터 기반 업체 정보.`
   );
 
   return (
@@ -157,7 +169,9 @@ export default async function SigunguTypePage({
             </h1>
           </div>
           <p className="text-[var(--brand-text-secondary)] text-sm leading-relaxed" style={{ wordBreak: "keep-all" }}>
-            {sigunguName} 지역 {meta.label} {businessList.length}곳 — {meta.desc}.
+            {listing.totalCount === 0
+              ? "현재 조건에 맞는 업체가 없습니다."
+              : `총 ${listing.totalCount}곳 중 ${listing.start}~${listing.end}곳을 표시합니다.`} {meta.desc}.
             공공데이터 기준 영업 중인 업체만 표시됩니다.
           </p>
         </header>
@@ -168,9 +182,8 @@ export default async function SigunguTypePage({
           <div>
             <p className="font-semibold text-[var(--brand-text)] mb-0.5">지역 현황</p>
             <p className="text-[var(--brand-text-secondary)]">
-              {sigunguName} 지역에 등록된 {meta.label}는 총{" "}
-              <strong className="text-[var(--brand-text)]">{businessList.length}곳</strong>입니다.
-              (공공데이터 기준, 영업 중인 업체만)
+              공공데이터의 지역·업종·영업 상태 조건을 동일하게 적용한 결과는 총{" "}
+              <strong className="text-[var(--brand-text)]">{listing.totalCount}곳</strong>입니다.
             </p>
           </div>
         </div>
@@ -197,9 +210,16 @@ export default async function SigunguTypePage({
                       {b.name}
                     </p>
                     {b.address && (
-                      <p className="text-xs text-[var(--brand-text-secondary)] mt-1 truncate">
-                        {b.address}
-                      </p>
+                      <>
+                        <p className="text-xs text-[var(--brand-text-secondary)] mt-1 truncate">
+                          {b.address}
+                        </p>
+                        {getAddressRegionConsistency(b.address, sigunguName) === "mismatch" && (
+                          <p className="text-xs text-amber-700 mt-1">
+                            표시 주소가 선택한 지역과 달라 원본 확인이 필요합니다.
+                          </p>
+                        )}
+                      </>
                     )}
                     {b.phone && (
                       <p className="text-xs sm:text-sm text-[var(--brand-accent)] mt-0.5 font-medium">
@@ -216,13 +236,39 @@ export default async function SigunguTypePage({
           </ul>
         )}
 
+        {listing.totalPages > 1 && (
+          <nav className="mt-8 flex items-center justify-between gap-4" aria-label="목록 페이지 이동">
+            {listing.hasPrevious ? (
+              <Link
+                rel="prev"
+                href={businessListingPath(sigungu, type, listing.page - 1)}
+                className="text-sm font-semibold text-[var(--brand-accent)] hover:underline"
+              >
+                ← 이전 페이지
+              </Link>
+            ) : <span />}
+            <span className="text-xs text-[var(--brand-text-secondary)]">
+              {listing.page} / {listing.totalPages} 페이지
+            </span>
+            {listing.hasNext ? (
+              <Link
+                rel="next"
+                href={businessListingPath(sigungu, type, listing.page + 1)}
+                className="text-sm font-semibold text-[var(--brand-accent)] hover:underline"
+              >
+                다음 페이지 →
+              </Link>
+            ) : <span />}
+          </nav>
+        )}
+
         {/* FAQ (AEO용) */}
         <section className="mt-12 pt-8 border-t border-[var(--brand-border)]" aria-label="자주 묻는 질문">
           <h2 className="text-base font-bold text-[var(--brand-text)] mb-4">
             자주 묻는 질문
           </h2>
           <dl className="space-y-4">
-            {buildFaq(sigunguName, meta.label, businessList.length).map((item, i) => (
+            {buildFaq(sigunguName, meta.label, listing.totalCount).map((item, i) => (
               <div key={i} className="rounded-xl border border-[var(--brand-border)] p-4">
                 <dt className="font-semibold text-sm text-[var(--brand-text)] mb-1.5">
                   Q. {item.question}
@@ -237,10 +283,12 @@ export default async function SigunguTypePage({
 
         <CategoryCta categoryId={meta.categoryId} className="mt-10" />
 
+        <AdsenseTrustSection compact />
+
         <AdSlot adType="adsense" format="rectangle" className="mt-8" />
 
         <p className="mt-8 text-xs text-[var(--brand-text-secondary)]">
-          정보 기준: 공공데이터포털 최신 동기화 &nbsp;·&nbsp;
+          정보 기준: 공공데이터포털 · 마지막 성공 동기화 {listing.sourceAsOf ? listing.sourceAsOf.slice(0, 10) : "확인 필요"} &nbsp;·&nbsp;
           <Link href={`/sido/${region?.sidoSlug ?? ""}`} className="hover:text-[var(--brand-accent)]">
             {sidoName} 지역 전체 보기
           </Link>

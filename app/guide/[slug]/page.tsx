@@ -11,6 +11,8 @@ import { YmylDisclaimer } from "@/components/content/ymyl-disclaimer";
 import { AdSlot } from "@/components/ads/ad-slot";
 import { AdPolicyProvider } from "@/components/providers/ad-policy-provider";
 import { articleSchema, breadcrumbSchema, faqSchema } from "@/lib/seo/structured-data";
+import { withoutUnverifiedReviewClaim } from "@/lib/content-review";
+import { documentTitle, socialTitle } from "@/lib/seo/title";
 import { TableOfContents } from "@/components/content/table-of-contents";
 import { ReadingProgress } from "@/components/content/reading-progress";
 import { ShareButtons } from "@/components/content/share-buttons";
@@ -29,7 +31,12 @@ const getContent = cache(async (slug: string) =>
   db
     .select()
     .from(contents)
-    .where(and(eq(contents.slug, slug), eq(contents.status, "published"), lte(contents.publishedAt, new Date().toISOString())))
+    .where(and(
+      eq(contents.slug, slug),
+      eq(contents.type, "guide"),
+      eq(contents.status, "published"),
+      lte(contents.publishedAt, new Date().toISOString()),
+    ))
     .get()
 );
 
@@ -55,17 +62,18 @@ export async function generateMetadata({
 
   if (!content) return {};
 
-  const title = content.metaTitle ?? `${content.title} | 펫지기`;
+  const title = documentTitle(withoutUnverifiedReviewClaim(content.metaTitle) ?? content.title);
+  const shareTitle = socialTitle(title);
   const catName = CATEGORIES[content.category as CategoryId]?.name ?? "반려동물";
   const description =
-    content.metaDescription ??
+    withoutUnverifiedReviewClaim(content.metaDescription) ??
     `${content.title} — 반려동물 ${catName} 가이드. 참고 자료와 제공된 검토 정보를 확인하세요. | 펫지기`;
 
   return {
     title,
     description,
     openGraph: {
-      title,
+      title: shareTitle,
       description,
       type: "article",
       publishedTime: content.publishedAt ?? undefined,
@@ -73,7 +81,7 @@ export async function generateMetadata({
       authors: content.authorName ? [content.authorName] : undefined,
       section: CATEGORIES[content.category as CategoryId]?.name,
     },
-    twitter: { card: "summary_large_image", title, description },
+    twitter: { card: "summary_large_image", title: shareTitle, description },
     alternates: { canonical: `/guide/${slug}` },
   };
 }
@@ -189,7 +197,7 @@ export default async function GuidePage({
 
   const article = articleSchema({
     title: content.title,
-    description: content.metaDescription ?? undefined,
+    description: withoutUnverifiedReviewClaim(content.metaDescription),
     url: `${SITE_URL}/guide/${slug}`,
     authorName: content.authorName,
     authorCredential: content.authorCredential,

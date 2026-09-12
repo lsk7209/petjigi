@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { SITE_CONTACT_MAILTO, SITE_IDENTITY } from "@/lib/site-identity";
 import { breadcrumbSchema } from "@/lib/seo/structured-data";
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://petjigi.kr";
@@ -29,7 +30,7 @@ const ABOUT_SCHEMA = {
     foundingDate: "2026",
     contactPoint: {
       "@type": "ContactPoint",
-      email: "contact@petjigi.kr",
+      email: SITE_IDENTITY.contactEmail,
       contactType: "customer support",
       availableLanguage: "Korean",
     },
@@ -87,7 +88,7 @@ export default function AboutPage() {
               },
               {
                 source: "통계청 행정구역 코드",
-                detail: "시도·시군구 지역 구분 (17개 시도, 250개 시군구)",
+                detail: "17개 시도와 서비스에 등록된 시군구의 지역 구분",
               },
               {
                 source: "농림축산식품부 (MAFRA)",
@@ -139,10 +140,10 @@ export default function AboutPage() {
             데이터 오류 신고, 콘텐츠 제안, 제휴 문의는 아래 이메일로 연락해 주세요.
           </p>
           <a
-            href="mailto:contact@petjigi.kr"
+            href={SITE_CONTACT_MAILTO}
             className="text-[var(--brand-accent)] hover:underline font-medium"
           >
-            contact@petjigi.kr
+            {SITE_IDENTITY.contactEmail}
           </a>
         </section>
       </main>

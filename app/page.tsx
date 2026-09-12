@@ -5,6 +5,7 @@ import { CATEGORIES } from "@/lib/category";
 import { SubscribeForm } from "@/components/forms/subscribe-form";
 import { AdSlot } from "@/components/ads/ad-slot";
 import { AdPolicyProvider } from "@/components/providers/ad-policy-provider";
+import { AdsenseTrustSection } from "@/components/content/adsense-trust-section";
 
 export const revalidate = 3600;
 
@@ -85,8 +86,8 @@ export default async function HomePage() {
                   <span style={{ color: "var(--brand-accent-warm)" }}>한 곳에서</span>
                 </h1>
                 <p style={{ fontSize: 18, color: "var(--brand-text-secondary)", maxWidth: 480, lineHeight: 1.65 }}>
-                  공공데이터 기반 전국 {formatCount(stats.businesses)}개 이상의 동물병원·펫미용·펫호텔·장묘업체 정보와
-                  반려동물 생활 가이드를 안내합니다.
+                  공공데이터 기반 전국 {formatCount(stats.businesses)}개 이상의 동물병원·펫미용·펫호텔·장묘업체와
+                  출처와 주의사항을 함께 제시한 가이드를 안내합니다.
                 </p>
 
                 <div style={{ marginTop: 32, display: "flex", gap: 10 }}>
@@ -175,7 +176,7 @@ export default async function HomePage() {
                 <span className="pj-numeral" style={{ fontSize: 14 }}>02</span>
                 <h2 className="pj-display" style={{ fontSize: 32, marginTop: 4, marginBottom: 12 }}>우리 동네부터<br/>살펴보세요</h2>
                 <p style={{ color: "var(--brand-text-secondary)", fontSize: 15, lineHeight: 1.7 }}>
-                  전국 17개 시·도, 226개 시·군·구 단위로 정리했습니다. 행정안전부 공공데이터를 정기적으로 수집하며, 실제 운영 정보와 다를 수 있습니다.
+                  전국 17개 시·도와 서비스에 등록된 시·군·구 단위로 정리했습니다. 데이터 종류별 일정에 따라 공공데이터를 갱신합니다.
                 </p>
               </div>
               <div className="grid grid-cols-4 gap-2 sm:grid-cols-4">
@@ -199,10 +200,16 @@ export default async function HomePage() {
           <div className="pj-container-5xl" style={{ textAlign: "center" }}>
             <span className="pj-eyebrow" style={{ color: "var(--brand-accent)" }}>왜 펫지기인가</span>
             <p className="pj-display" style={{ fontSize: "clamp(22px,3vw,30px)", marginTop: 14, lineHeight: 1.5, color: "var(--brand-bg)", maxWidth: 720, marginLeft: "auto", marginRight: "auto" }}>
-              &quot;검색 한 번이면 우리 동네 동물병원,<br/>
+              &ldquo;검색 한 번이면 우리 동네 동물병원,<br/>
               우리 강아지 견종 정보, 그리고 마지막 인사까지<br/>
-              <span style={{ color: "var(--brand-accent)" }}>제대로 정리된 안내</span>를 받을 수 있어야 한다고 믿습니다.&quot;
+              <span style={{ color: "var(--brand-accent)" }}>제대로 정리된 안내</span>를 받을 수 있어야 한다고 믿습니다.&rdquo;
             </p>
+          </div>
+        </section>
+
+        <section className="py-12 sm:py-16" aria-label="정보 검증 기준">
+          <div className="pj-container-7xl">
+            <AdsenseTrustSection />
           </div>
         </section>
 
@@ -217,7 +224,7 @@ export default async function HomePage() {
               <div style={{ display: "flex", alignItems: "baseline", justifyContent: "space-between", marginBottom: 32 }}>
                 <div>
                   <span className="pj-numeral" style={{ fontSize: 14 }}>03</span>
-                  <h2 className="pj-display" style={{ fontSize: 32, marginTop: 4 }}>이번 주 가이드</h2>
+                  <h2 className="pj-display" style={{ fontSize: 32, marginTop: 4 }}>최근 가이드</h2>
                 </div>
                 <Link href="/guide" style={{ color: "var(--brand-accent-warm)", fontWeight: 600, textDecoration: "none" }}>전체 가이드 →</Link>
               </div>

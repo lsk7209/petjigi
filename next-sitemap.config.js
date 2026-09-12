@@ -8,7 +8,9 @@ module.exports = {
       `${process.env.NEXT_PUBLIC_SITE_URL || "https://petjigi.kr"}/sitemap-content.xml`,
     ],
     policies: [
-      { userAgent: "*", allow: "/", disallow: ["/rescue/", "/search", "/api/", "/admin/"] },
+      // /rescue pages expose an HTML noindex directive, so crawlers must be able
+      // to fetch them. Keep them out of the sitemap below without blocking crawl.
+      { userAgent: "*", allow: "/", disallow: ["/search", "/api/", "/admin/"] },
       // AI 크롤러 전체 허용
       { userAgent: "GPTBot", allow: "/" },
       { userAgent: "ClaudeBot", allow: "/" },
@@ -22,7 +24,8 @@ module.exports = {
   },
   // 콘텐츠 상세 페이지는 /sitemap-content.xml에서 실제 DB 날짜로 처리 (중복 방지)
   exclude: [
-    "/rescue/*", "/search*", "/admin/*", "/*?page=*", "/*?cat=*",
+    "/rescue", "/rescue/*", "/search*", "/admin/*", "/*?page=*", "/*?cat=*",
+    "/opengraph-image", "/**/opengraph-image", "/icon", "/apple-icon", "/manifest.webmanifest",
     "/guide/*", "/blog/*", "/condition/*", "/breed/*/*",
     "/sido/chungbuk", "/sido/chungnam", "/sido/gangwon", "/sido/gyeongbuk",
     "/sido/gyeongnam", "/sido/jeju", "/sido/jeonbuk", "/sido/jeonnam",
@@ -41,7 +44,7 @@ module.exports = {
       path.startsWith("/category/") ||
       path.startsWith("/insurance/")
     ) {
-      return { loc: path, changefreq: "hourly", priority: 1.0, lastmod: new Date().toISOString() };
+      return { loc: path, changefreq: "hourly", priority: 1.0 };
     }
     // 콘텐츠 상세 + 지역 허브
     if (
@@ -51,16 +54,16 @@ module.exports = {
       path.startsWith("/breed/") ||
       path.startsWith("/condition/")
     ) {
-      return { loc: path, changefreq: "weekly", priority: 0.8, lastmod: new Date().toISOString() };
+      return { loc: path, changefreq: "weekly", priority: 0.8 };
     }
     // 보호센터 지역 목록
     if (path.startsWith("/shelter/")) {
-      return { loc: path, changefreq: "weekly", priority: 0.7, lastmod: new Date().toISOString() };
+      return { loc: path, changefreq: "weekly", priority: 0.7 };
     }
     // 지역×업종 목록 + 업체 상세
     if (path.match(/^\/[a-z]+-[a-z]+\//) || path.match(/^\/(vet|grooming|boarding|funeral|sale|breeder|transport|exhibition)\//)) {
-      return { loc: path, changefreq: "daily", priority: 0.6, lastmod: new Date().toISOString() };
+      return { loc: path, changefreq: "daily", priority: 0.6 };
     }
-    return { loc: path, changefreq: config.changefreq, priority: config.priority, lastmod: new Date().toISOString() };
+    return { loc: path, changefreq: config.changefreq, priority: config.priority };
   },
 };

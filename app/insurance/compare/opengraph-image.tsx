@@ -1,6 +1,5 @@
 import { ImageResponse } from "next/og";
 
-export const runtime = "edge";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -29,8 +28,8 @@ export default function OgImage() {
 
         {/* YMYL 뱃지 */}
         <div style={{ display: "flex", alignItems: "center", gap: 8, backgroundColor: "#F3E8FF", borderRadius: 24, paddingLeft: 20, paddingRight: 20, paddingTop: 8, paddingBottom: 8, marginBottom: 28 }}>
-          <span style={{ fontSize: 20 }}>📋</span>
-          <span style={{ fontSize: 20, color: "#6B21A8", fontWeight: 700 }}>보험·법률 정보</span>
+          <span style={{ fontSize: 20 }}>📎 📋</span>
+          <span style={{ fontSize: 20, color: "#6B21A8", fontWeight: 700 }}>보험·법률 정보 · 공식 채널 확인</span>
         </div>
 
         {/* 이모지 원 */}
@@ -40,7 +39,7 @@ export default function OgImage() {
 
         {/* 제목 */}
         <div style={{ fontSize: 72, fontWeight: 800, color: TEXT, letterSpacing: "-2px", marginBottom: 16 }}>
-          펫보험 비교
+          펫보험 확인 가이드
         </div>
 
         {/* 구분선 */}
@@ -48,7 +47,7 @@ export default function OgImage() {
 
         {/* 설명 */}
         <div style={{ fontSize: 28, color: "#7C5E8A", fontWeight: 400 }}>
-          현대해상 · DB손보 · KB손보 등 6대 손보사 비교
+          상품공시 · 약관 · 동일 조건 확인
         </div>
 
         {/* 도메인 */}

@@ -58,7 +58,7 @@ export async function generateMetadata({
   const config = SPECIES_CONFIG[species];
   if (!config) return {};
   return {
-    title: `${config.label} 목록 | 펫지기`,
+    title: { absolute: `${config.label} 목록 | 펫지기` },
     description: config.desc,
     alternates: { canonical: `/breed/${species}` },
   };

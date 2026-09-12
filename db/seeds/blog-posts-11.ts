@@ -1,7 +1,6 @@
 import { db } from "../client";
 import { contents } from "../schema";
 import type { NewContent } from "../schema";
-import { sql } from "drizzle-orm";
 
 const NOW = new Date().toISOString();
 

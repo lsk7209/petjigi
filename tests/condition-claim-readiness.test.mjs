@@ -147,6 +147,6 @@ test('condition OG routes use neutral labels with unchanged PNG dimensions', asy
     assert.ok(text.trim().length > 0);
     assert.doesNotMatch(text, /수의사 검토|전문가 검토/);
   }
-  assert.equal(hub.runtime, 'edge'); assert.equal(detail.runtime, 'edge');
+  assert.notEqual(hub.runtime, 'edge'); assert.notEqual(detail.runtime, 'edge');
   assert.equal(hub.contentType, 'image/png'); assert.equal(detail.contentType, 'image/png');
 });
