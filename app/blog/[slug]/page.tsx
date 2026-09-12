@@ -11,7 +11,7 @@ import { YmylDisclaimer } from "@/components/content/ymyl-disclaimer";
 import { AdSlot } from "@/components/ads/ad-slot";
 import { AdPolicyProvider } from "@/components/providers/ad-policy-provider";
 import { articleSchema, breadcrumbSchema, faqSchema } from "@/lib/seo/structured-data";
-import { hasDisplayableEditorialReview, withoutUnverifiedReviewClaim } from "@/lib/content-review";
+import { withoutUnverifiedReviewClaim } from "@/lib/content-review";
 import { documentTitle, socialTitle } from "@/lib/seo/title";
 import { TableOfContents } from "@/components/content/table-of-contents";
 import { ReadingProgress } from "@/components/content/reading-progress";
@@ -20,9 +20,10 @@ import { CategoryCta } from "@/components/content/category-cta";
 import { ScrollDepthTracker } from "@/components/analytics/scroll-depth-tracker";
 import { OutboundLinkTracker } from "@/components/analytics/outbound-link-tracker";
 import { GuideViewTracker } from "@/components/analytics/guide-view-tracker";
+import { getReviewEvidence } from "@/lib/ymyl";
 import type { TocHeading } from "@/components/content/table-of-contents";
 
-export const revalidate = 604800;
+export const dynamic = "force-dynamic";
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://petjigi.kr";
 
@@ -237,6 +238,7 @@ export default async function BlogPostPage({
   ]);
 
   const readingTime = Math.ceil((content.body?.length ?? 0) / 500);
+  const reviewEvidence = getReviewEvidence(content);
 
   return (
     <>
@@ -279,9 +281,9 @@ export default async function BlogPostPage({
             >
               {CATEGORY_EMOJI[categoryId]} {cat?.name ?? "케어·라이프"}
             </span>
-            {hasDisplayableEditorialReview(content) && (
+            {content.ymyl && (
               <span className="px-2.5 py-0.5 rounded-full bg-amber-50 text-xs font-semibold text-amber-700 border border-amber-200">
-                편집 검토 기록
+                주의가 필요한 정보
               </span>
             )}
           </div>
@@ -309,6 +311,12 @@ export default async function BlogPostPage({
                 <span aria-hidden="true">📅</span>
                 {content.publishedAt.slice(0, 10)} 발행
               </time>
+            )}
+            {reviewEvidence && (
+              <span className="flex items-center gap-1">
+                <span aria-hidden="true">✅</span>
+                {reviewEvidence.reviewedAt.slice(0, 10)} {reviewEvidence.reviewerName} 검토 정보
+              </span>
             )}
             {content.authorName && (
               <span className="flex items-center gap-1">

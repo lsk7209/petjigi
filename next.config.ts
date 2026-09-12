@@ -52,8 +52,8 @@ const nextConfig: NextConfig = {
         ],
       },
       {
-        // robots.txt, ads.txt, sitemap.xml — 하루 캐시
-        source: "/(robots\\.txt|ads\\.txt|sitemap.*\\.xml|feed\\.xml)",
+        // ads.txt와 feed.xml은 Next.js에서 캐시하고, robots/sitemap은 vercel.json에서 관리한다.
+        source: "/(ads\\.txt|feed\\.xml)",
         headers: [
           { key: "Cache-Control", value: "public, max-age=86400, stale-while-revalidate=3600" },
         ],

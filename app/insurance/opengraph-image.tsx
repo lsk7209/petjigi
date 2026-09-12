@@ -22,7 +22,7 @@ export default function OgImage() {
         <div style={{ position: "absolute", bottom: -80, left: -80, width: 360, height: 360, borderRadius: "50%", backgroundColor: "#9B7EA8", opacity: 0.08 }} />
 
         <div style={{ display: "flex", alignItems: "center", gap: 8, backgroundColor: "#F3E8FF", borderRadius: 24, paddingLeft: 20, paddingRight: 20, paddingTop: 8, paddingBottom: 8, marginBottom: 32 }}>
-          <span style={{ fontSize: 20, color: "#6B21A8", fontWeight: 700 }}>📎 보험·법률 · 공식 정보 확인</span>
+          <span style={{ fontSize: 20, color: "#6B21A8", fontWeight: 700 }}>📎 📋 보험·법률 정보 · 공식 정보 확인</span>
         </div>
 
         <div style={{ display: "flex", alignItems: "center", justifyContent: "center", width: 120, height: 120, borderRadius: "50%", backgroundColor: "#9B7EA8", marginBottom: 32 }}>

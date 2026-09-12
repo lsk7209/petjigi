@@ -16,7 +16,7 @@ const CONTACT_JSON_LD = {
   "@context": "https://schema.org",
   "@type": "ContactPage",
   name: "펫지기 문의",
-  description: "펫지기에 문의하거나 월 2회 반려동물 정보 뉴스레터를 구독하세요.",
+  description: "펫지기에 문의하거나 반려동물 생활 정보와 사이트 소식 수신을 신청하세요.",
   url: `${SITE_URL}/contact`,
   mainEntity: {
     "@type": "ContactPoint",
@@ -28,7 +28,7 @@ const CONTACT_JSON_LD = {
 
 export const metadata: Metadata = {
   title: { absolute: "문의 및 뉴스레터 구독 | 펫지기" },
-  description: "펫지기에 문의하거나 월 2회 반려동물 정보 뉴스레터를 구독하세요.",
+  description: "펫지기에 문의하거나 반려동물 생활 정보와 사이트 소식 수신을 신청하세요.",
   alternates: { canonical: "/contact" },
 };
 
@@ -44,7 +44,7 @@ export default function ContactPage() {
           뉴스레터 구독
         </h1>
         <p className="text-[var(--brand-text-secondary)] mb-8">
-          월 2회, 새로 정리한 반려동물 정보와 서비스 소식을 이메일로 받아보세요.
+          반려동물 생활 정보와 사이트 소식 수신을 신청할 수 있습니다.
         </p>
         <SubscribeForm source="contact_page" />
       </section>

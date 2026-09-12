@@ -1,10 +1,10 @@
 # Current progress
 
-- Timestamp: 2026-09-12 Asia/Seoul
+- Timestamp: 2026-09-13 Asia/Seoul
 - Goal: implement and verify safe AdSense-readiness quality improvements for `petjigi.kr`.
 - Branch: `codex/petjigi-adsense-quality`
 - Baseline commit: `023ded6`
-- Current state: LOCAL_IMPLEMENTATION_VERIFIED_WITH_GAPS
+- Current state: RECONCILED_LOCAL_IMPLEMENTATION_VERIFIED_WITH_PRODUCTION_GATES
 
 ## Completed
 
@@ -50,6 +50,8 @@
 
 ## In progress
 
+- Production release preparation: the reconciled `origin/main` tree passes 103/103 package tests, 58/58 and 5/5 additional regression suites, typecheck, lint, five audits, schema check, production dependency audit, diff checks, and a 72-page disposable-schema build.
+- Claude-assisted SEO/AdSense review identified an Auto ads gap on regional funeral business routes and duplicate robots/sitemap cache ownership. Both were fixed with regression coverage; account-level Auto ads, publisher binding, CMP, and AdSense status remain `UNKNOWN`.
 - Qualified semantic review of the 11 sourced review-queue medical drafts. They are not published; machine source presence is not treated as expert approval.
 
 ## Blocked or approval-gated
@@ -71,4 +73,4 @@
 
 ## Single next step
 
-With separate deployment authority, rerun the already-green build against authorized configuration, deploy, and smoke-test real listing counts/details and the memorial ad exclusion. Until then, review the unresolved Bucheon source records and high-risk content evidence locally.
+Prepare a scoped, atomic, rollback-backed production migration and 26-record published-content update. Do not run the 12 broad seed files; keep the 11 review-queue records unpublished. After database verification, allow the existing Vercel Git integration to deploy the exact merge SHA and run post-deploy SEO/ad/data smoke tests.

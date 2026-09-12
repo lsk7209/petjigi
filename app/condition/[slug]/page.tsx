@@ -7,7 +7,7 @@ import { and, eq, ne, desc, lte } from "drizzle-orm";
 import type { CategoryId } from "@/lib/category";
 import { YmylDisclaimer } from "@/components/content/ymyl-disclaimer";
 import { articleSchema, breadcrumbSchema, faqSchema, medicalConditionSchema } from "@/lib/seo/structured-data";
-import { hasDisplayableEditorialReview, withoutUnverifiedReviewClaim } from "@/lib/content-review";
+import { withoutUnverifiedReviewClaim } from "@/lib/content-review";
 import { socialTitle } from "@/lib/seo/title";
 import { TableOfContents, type TocHeading } from "@/components/content/table-of-contents";
 import { ReadingProgress } from "@/components/content/reading-progress";
@@ -18,10 +18,11 @@ import { OutboundLinkTracker } from "@/components/analytics/outbound-link-tracke
 import { AdSlot } from "@/components/ads/ad-slot";
 import { AdPolicyProvider } from "@/components/providers/ad-policy-provider";
 import { ConditionViewTracker } from "@/components/analytics/condition-view-tracker";
+import { getReviewEvidence } from "@/lib/ymyl";
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://petjigi.kr";
 
-export const revalidate = 604800;
+export const dynamic = "force-dynamic";
 
 function extractHeadings(html: string): TocHeading[] {
   const re = /<h([23])([^>]*)>([\s\S]*?)<\/h\1>/gi;
@@ -183,6 +184,7 @@ export default async function ConditionPage({
     reviewerName: content.reviewerName,
     isYmyl: content.ymyl,
   });
+  const reviewEvidence = getReviewEvidence(content);
 
   const conditionEntity = medicalConditionSchema({
     name: content.title,
@@ -235,9 +237,9 @@ export default async function ConditionPage({
             <span className="px-2.5 py-0.5 rounded-full bg-[var(--brand-border)] text-xs font-semibold text-[var(--brand-text-secondary)]">
               💊 건강·의료
             </span>
-            {hasDisplayableEditorialReview(content) && content.reviewedAt && (
+            {content.ymyl && (
               <span className="px-2.5 py-0.5 rounded-full bg-amber-50 text-xs font-semibold text-amber-700 border border-amber-200">
-                편집 검토 기록
+                주의가 필요한 정보
               </span>
             )}
           </div>
@@ -257,10 +259,10 @@ export default async function ConditionPage({
                 {content.publishedAt.slice(0, 10)} 발행
               </time>
             )}
-            {hasDisplayableEditorialReview(content) && content.reviewedAt !== null && (
+            {reviewEvidence && (
               <span className="flex items-center gap-1">
                 <span aria-hidden="true">✅</span>
-                {content.reviewedAt.slice(0, 10)}{content.reviewerName && ` · ${content.reviewerName}`} 검토
+                {reviewEvidence.reviewedAt.slice(0, 10)} {reviewEvidence.reviewerName} 검토 정보
               </span>
             )}
             {content.authorName && (

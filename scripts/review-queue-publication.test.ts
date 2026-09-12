@@ -23,36 +23,36 @@ test("public condition surfaces require published status", () => {
 test("both review approval paths apply the runtime content quality gate", () => {
   const action = read("app/admin/review-queue/actions.ts");
   const api = read("app/api/review-queue/[id]/route.ts");
-  assert.match(action, /evaluatePublicationCandidate\(content\)/);
-  assert.match(api, /evaluatePublicationCandidate\(approvedContent\)/);
-  assert.match(api, /status: 409/);
+  const helper = read("lib/review-queue.ts");
+  assert.match(action, /approveReviewQueueItem\(id\)/);
+  assert.match(api, /approveReviewQueueItem\(id,/);
+  assert.match(helper, /validateEeat\(/);
+  assert.match(helper, /scanProhibitedKeywords\(/);
+  assert.match(helper, /ReviewApprovalError\("Review queue item is already resolved", 409\)/);
 });
 
 test("review mutations authenticate at the mutation boundary and reject invalid transitions", () => {
   const action = read("app/admin/review-queue/actions.ts");
   const page = read("app/admin/review-queue/page.tsx");
   const api = read("app/api/review-queue/[id]/route.ts");
-  assert.match(action, /assertAuthorized\(key\)/);
-  assert.match(action, /canResolveReview\(item\.status\)/);
-  assert.match(page, /approveContent\.bind\(null, id, adminKey\)/);
-  assert.match(page, /rejectContent\.bind\(null, id, adminKey\)/);
-  assert.match(api, /isValidAdminSecret/);
-  assert.match(api, /canTransitionReview\(existing\.status/);
+  assert.match(action, /requireReviewFormKey\(formData\)/);
+  assert.match(page, /approveContent\.bind\(null, id\)/);
+  assert.match(page, /rejectContent\.bind\(null, id\)/);
+  assert.match(api, /isReviewRequestAuthorized\(req\.headers\)/);
+  assert.match(read("lib/review-queue.ts"), /\["pending", "in_review"\]\.includes\(item\.status\)/);
 });
 
 test("admin review and analytics pages both fail closed behind the configured secret", () => {
   const reviewPage = read("app/admin/review-queue/page.tsx");
   const analyticsPage = read("app/admin/analytics/page.tsx");
-  assert.match(reviewPage, /isValidAdminSecret\(key\)/);
+  assert.match(reviewPage, /isReviewKeyAuthorized\(key\)/);
   assert.match(analyticsPage, /isValidAdminSecret\(key\)/);
-  assert.match(reviewPage, /\/admin\/analytics\?key=/);
+  assert.match(reviewPage, /href="\/admin\/analytics"/);
   assert.match(analyticsPage, /\/admin\/review-queue\?key=/);
 });
 
 test("review API builds the published URL from the actual content type", () => {
-  const api = read("app/api/review-queue/[id]/route.ts");
-  assert.match(api, /content\.type === "blog"/);
-  assert.match(api, /content\.type === "condition"/);
-  assert.match(api, /\${pathPrefix}\/\${content\.slug}/);
-  assert.doesNotMatch(api, /content\.type === "guide"[\s\S]{0,120}: `\${SITE_URL}\/guide\/\${content\.slug}`/);
+  const helper = read("lib/review-queue.ts");
+  assert.match(helper, /path: `\/\${content\.type}\/\${encodeURIComponent\(content\.slug\)}`/);
+  assert.match(helper, /\["guide", "blog", "condition"\]\.includes\(content\.type\)/);
 });

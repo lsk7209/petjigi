@@ -6,7 +6,6 @@
 
 import { db } from "../../db/client";
 import { etlSyncState, rescuedAnimals } from "../../db/schema";
-import { runPagedImport } from "../../lib/etl/paged-import";
 import { eq } from "drizzle-orm";
 
 const API_KEY = process.env.APMS_API_KEY ?? "";
@@ -50,8 +49,8 @@ async function fetchPage(
   const items: RescuedAnimalRow[] = !rawItems
     ? []
     : Array.isArray(rawItems)
-    ? rawItems
-    : [rawItems];
+      ? rawItems
+      : [rawItems];
   return { items, total: body?.totalCount ?? 0 };
 }
 
@@ -82,40 +81,20 @@ export async function syncRescuedAnimals(): Promise<void> {
   }
 
   const now = new Date().toISOString();
-  const upserted = await runPagedImport({
-    totalPages,
-    fetchPage: async (page) => (await fetchPage(page, 1000)).items,
-    writeItem: async (row) => {
-      await db
-        .insert(rescuedAnimals)
-        .values({
-          id: row.desertionNo,
-          happenDate: row.happenDt || null,
-          happenPlace: row.happenPlace || null,
-          kindCd: row.kindCd || null,
-          colorCd: row.colorCd || null,
-          age: row.age || null,
-          weight: row.weight || null,
-          noticeNo: row.noticeNo || null,
-          noticeSdt: row.noticeSdt || null,
-          noticeEdt: row.noticeEdt || null,
-          imageUrl: row.popfile || null,
-          processState: row.processState || null,
-          sexCd: row.sexCd || null,
-          neuterYn: row.neuterYn || null,
-          careNm: row.careNm || null,
-          careTel: row.careTel || null,
-          careAddr: row.careAddr || null,
-          chargeNm: row.chargeNm || null,
-          orgNm: row.orgNm || null,
-          noticeComment: row.noticeComment || null,
-          lastSyncedAt: now,
-          createdAt: now,
-          updatedAt: now,
-        })
-        .onConflictDoUpdate({
-          target: rescuedAnimals.id,
-          set: {
+  let upserted = 0;
+  const BATCH_SIZE = 200;
+
+  for (let page = 1; page <= totalPages; page++) {
+    const { items } = await fetchPage(page, 1000);
+    if (items.length === 0) break;
+
+    for (let i = 0; i < items.length; i += BATCH_SIZE) {
+      const chunk = items.slice(i, i + BATCH_SIZE);
+      const statements = chunk.map((row) =>
+        db
+          .insert(rescuedAnimals)
+          .values({
+            id: row.desertionNo,
             happenDate: row.happenDt || null,
             happenPlace: row.happenPlace || null,
             kindCd: row.kindCd || null,
@@ -136,17 +115,49 @@ export async function syncRescuedAnimals(): Promise<void> {
             orgNm: row.orgNm || null,
             noticeComment: row.noticeComment || null,
             lastSyncedAt: now,
+            createdAt: now,
             updatedAt: now,
-          },
-        });
+          })
+          .onConflictDoUpdate({
+            target: rescuedAnimals.id,
+            set: {
+              happenDate: row.happenDt || null,
+              happenPlace: row.happenPlace || null,
+              kindCd: row.kindCd || null,
+              colorCd: row.colorCd || null,
+              age: row.age || null,
+              weight: row.weight || null,
+              noticeNo: row.noticeNo || null,
+              noticeSdt: row.noticeSdt || null,
+              noticeEdt: row.noticeEdt || null,
+              imageUrl: row.popfile || null,
+              processState: row.processState || null,
+              sexCd: row.sexCd || null,
+              neuterYn: row.neuterYn || null,
+              careNm: row.careNm || null,
+              careTel: row.careTel || null,
+              careAddr: row.careAddr || null,
+              chargeNm: row.chargeNm || null,
+              orgNm: row.orgNm || null,
+              noticeComment: row.noticeComment || null,
+              lastSyncedAt: now,
+              updatedAt: now,
+            },
+          }),
+      );
 
-    },
-    onPageComplete: (page, written) => {
-      if (page % 3 === 0 || page === totalPages) {
-        console.log(`[ETL:rescued-animals] ${page}/${totalPages} 페이지 완료 (${written}건)`);
-      }
-    },
-  });
+      await db.batch(
+        statements as [(typeof statements)[number], ...typeof statements],
+      );
+      upserted += chunk.length;
+    }
+
+    if (page % 3 === 0 || page === totalPages) {
+      console.log(
+        `[ETL:rescued-animals] ${page}/${totalPages} 페이지 완료 (${upserted}건)`,
+      );
+    }
+  }
 
   await recordSuccessfulRun(now);
 
@@ -162,7 +173,9 @@ export async function syncRescuedAnimals(): Promise<void> {
         Authorization: `Bearer ${cronSecret}`,
       },
       body: JSON.stringify({ tags: ["rescue", "stats"] }),
-    }).catch((e) => console.error("[ETL:rescued-animals] 캐시 무효화 실패:", e));
+    }).catch((e) =>
+      console.error("[ETL:rescued-animals] 캐시 무효화 실패:", e),
+    );
   }
 }
 

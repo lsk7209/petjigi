@@ -1,12 +1,12 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { db } from "@/db/client";
 import { reviewQueue } from "@/db/schema";
 import type { ReviewQueueItem } from "@/db/schema";
 import { asc } from "drizzle-orm";
 import { approveContent, rejectContent } from "./actions";
 import { notFound } from "next/navigation";
-import Link from "next/link";
-import { isValidAdminSecret } from "@/lib/admin-auth";
+import { isReviewKeyAuthorized } from "@/lib/admin-auth";
 
 export const metadata: Metadata = {
   robots: { index: false, follow: false },
@@ -76,10 +76,11 @@ function ReasonLabel({ reason }: { reason: string | null }) {
 }
 
 // 승인 폼
-function ApproveForm({ id, adminKey }: { id: string; adminKey: string }) {
-  const approve = approveContent.bind(null, id, adminKey);
+function ApproveForm({ id, accessKey }: { id: string; accessKey: string }) {
+  const approve = approveContent.bind(null, id);
   return (
     <form action={approve}>
+      <input type="hidden" name="key" value={accessKey} />
       <button
         type="submit"
         className="px-3 py-1 text-xs font-medium rounded bg-green-600 text-white hover:bg-green-700 transition-colors"
@@ -91,10 +92,11 @@ function ApproveForm({ id, adminKey }: { id: string; adminKey: string }) {
 }
 
 // 거부 폼
-function RejectForm({ id, adminKey }: { id: string; adminKey: string }) {
-  const reject = rejectContent.bind(null, id, adminKey);
+function RejectForm({ id, accessKey }: { id: string; accessKey: string }) {
+  const reject = rejectContent.bind(null, id);
   return (
     <form action={reject} className="flex items-center gap-1">
+      <input type="hidden" name="key" value={accessKey} />
       <input
         type="text"
         name="notes"
@@ -130,10 +132,10 @@ export default async function ReviewQueuePage({ searchParams }: PageProps) {
   const { key, status } = await searchParams;
 
   // 간단한 쿼리 파라미터 키 인증
-  if (!isValidAdminSecret(key)) {
+  if (!isReviewKeyAuthorized(key)) {
     notFound();
   }
-  const adminKey = key as string;
+  const encodedKey = encodeURIComponent(key);
 
   const items: ReviewQueueItem[] = await db
     .select()
@@ -159,7 +161,7 @@ export default async function ReviewQueuePage({ searchParams }: PageProps) {
           </p>
         </div>
         <Link
-          href={`/admin/analytics?key=${encodeURIComponent(adminKey)}`}
+          href="/admin/analytics"
           className="text-sm px-4 py-2 rounded-lg border border-gray-200 hover:border-blue-400 hover:text-blue-600 transition-colors font-medium"
         >
           📊 Analytics 대시보드
@@ -169,23 +171,23 @@ export default async function ReviewQueuePage({ searchParams }: PageProps) {
       {/* 요약 카드 */}
       <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-8">
         {[
-          { label: "전체", value: items.length, href: `?key=${key}` },
+          { label: "전체", value: items.length, href: `?key=${encodedKey}` },
           {
             label: "대기",
             value: pendingCount,
-            href: `?key=${key}&status=pending`,
+            href: `?key=${encodedKey}&status=pending`,
           },
           {
             label: "검수 중",
             value: inReviewCount,
-            href: `?key=${key}&status=in_review`,
+            href: `?key=${encodedKey}&status=in_review`,
           },
           {
             label: "완료",
             value: items.filter(
               (i) => i.status === "approved" || i.status === "rejected",
             ).length,
-            href: `?key=${key}&status=approved`,
+            href: `?key=${encodedKey}&status=approved`,
           },
         ].map(({ label, value, href }) => (
           <a
@@ -212,7 +214,7 @@ export default async function ReviewQueuePage({ searchParams }: PageProps) {
           return (
             <a
               key={value}
-              href={value ? `?key=${key}&status=${value}` : `?key=${key}`}
+              href={value ? `?key=${encodedKey}&status=${value}` : `?key=${encodedKey}`}
               className={`px-3 py-1 rounded-full text-sm transition-colors ${
                 isActive
                   ? "bg-gray-900 text-white"
@@ -296,8 +298,8 @@ export default async function ReviewQueuePage({ searchParams }: PageProps) {
                       {(item.status === "pending" ||
                         item.status === "in_review") && (
                         <div className="flex items-center gap-2 flex-wrap">
-                          <ApproveForm id={item.id} adminKey={adminKey} />
-                          <RejectForm id={item.id} adminKey={adminKey} />
+                          <ApproveForm id={item.id} accessKey={key} />
+                          <RejectForm id={item.id} accessKey={key} />
                         </div>
                       )}
                       {(item.status === "approved" ||

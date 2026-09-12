@@ -1,6 +1,6 @@
 # Validation report
 
-Checked: 2026-09-12 Asia/Seoul. This report distinguishes local code proof from production/account proof.
+Checked: 2026-09-13 Asia/Seoul. This report distinguishes local code proof from production/account proof.
 
 | Check | Result | Evidence |
 | --- | --- | --- |
@@ -9,7 +9,7 @@ Checked: 2026-09-12 Asia/Seoul. This report distinguishes local code proof from 
 | Public sample routes | PASS | `/hwaseong/boarding` and `/bucheon/sale` returned 200 before local changes |
 | Redirect host/path sample | PASS | HTTP and www samples reached HTTPS apex with the path preserved and no sampled loop |
 | robots/sitemaps/ads.txt response | PASS | Direct curl returned 200 for `robots.txt`, `sitemap.xml`, `sitemap-content.xml`, and `ads.txt` |
-| Unit/regression tests | PASS | `pnpm test`: 102 passed, 0 failed; includes Vercel robots/cache header boundaries, crawler-policy separation, metadata-route sitemap exclusions, and blog/RSS subtitle review-claim sanitization plus the existing contracts |
+| Unit/regression tests | PASS | `pnpm test`: 103/103; additional Node suites: 58/58 and 5/5. Coverage includes regional funeral Auto ads exclusions, single-owner robots/sitemap caching, review publication integrity, crawler-policy separation, and content claims. |
 | Rescue freshness tracking | PASS_LOCAL | migration `0005_fat_ken_ellis.sql` adds separate run-level attempt/success state; success advances only after every fetched page is processed, and the page displays both timestamps separately |
 | Metadata title audit | PASS | `pnpm audit:seo` reports 0 unsafe child document-title suffixes; suffix-bearing child titles use `title.absolute` |
 | Incremental high-risk gate | PASS | `pnpm audit:content:gate`: 37 changed records, 0 blockers; unchanged legacy gaps remain audit-only |
@@ -23,7 +23,7 @@ Checked: 2026-09-12 Asia/Seoul. This report distinguishes local code proof from 
 | Sitemap outage behavior | PASS_LOCAL | DB failure helper returns HTTP 503, `Cache-Control: no-store`, and `Retry-After: 300`; it does not emit an empty successful `<urlset>` |
 | Package content seed boundary | PASS_LOCAL | More than 100 `db:seed:contents`, `db:seed:blog*`, and `db:seed:breeds` package commands run `audit:content:gate` before the DB-writing command |
 | Audit commands | PASS | `audit:content`, `audit:sources`, `audit:data`, `audit:seo`, `audit:ads` completed in read-only/dry-run mode |
-| Auto ads route policy | PASS_LOCAL | `audit:ads` reports all 51 published category-6 inventory paths plus 2 static memorial paths covered, 0 uncovered; admin/search/contact/trust-policy routes excluded |
+| Auto ads route policy | PASS_LOCAL | `audit:ads` reports all 51 published category-6 inventory paths, 2 static memorial paths, and `/{sigungu}/funeral` listing/detail route families covered with 0 uncovered; admin/search/contact/trust-policy routes excluded. Account-level exclusions remain `UNKNOWN`. |
 | Source audit contract | PASS | 130 rows, exactly 19 fields per row, 130 unique claim IDs; semantic and source-presence rows separated; 11 `NEEDS_EXPERT_REVIEW` |
 | Content inventory contract | PASS | 864 rows, 864 deterministic SHA-256 content hashes, 0 fabricated GSC zero values; machine-only classifications require human approval |
 | Duplicate inventory | PASS_AUDIT_ONLY | 24 duplicate public-URL groups, 0 cross-URL normalized-title groups, 0 exact-content-hash groups; no automatic merge/index/redirect action |

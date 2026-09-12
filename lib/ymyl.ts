@@ -48,6 +48,46 @@ export interface EeatFields {
   disclaimer?: string | null;
 }
 
+export interface ReviewEvidence {
+  reviewedAt: string;
+  reviewerName: string;
+}
+
+const REVIEWER_PLACEHOLDERS = new Set(["검수대기", "검토대기", "pending", "rejected"]);
+
+export function hasValidReviewDate(value?: string | null): value is string {
+  if (!value?.trim()) return false;
+
+  const normalized = value.trim();
+  const match = /^(\d{4})-(\d{2})-(\d{2})(?:T.*)?$/.exec(normalized);
+  if (!match || Number.isNaN(Date.parse(normalized))) return false;
+
+  const year = Number(match[1]);
+  const month = Number(match[2]);
+  const day = Number(match[3]);
+  const calendarDate = new Date(Date.UTC(year, month - 1, day));
+  return (
+    calendarDate.getUTCFullYear() === year &&
+    calendarDate.getUTCMonth() + 1 === month &&
+    calendarDate.getUTCDate() === day
+  );
+}
+
+export function getReviewEvidence({
+  reviewedAt,
+  reviewerName,
+}: Pick<EeatFields, "reviewedAt" | "reviewerName">): ReviewEvidence | null {
+  const normalizedReviewerName = reviewerName?.replace(/\s+/g, " ").trim();
+  const placeholderKey = normalizedReviewerName?.replace(/\s/g, "").toLowerCase();
+  if (!normalizedReviewerName || (placeholderKey && REVIEWER_PLACEHOLDERS.has(placeholderKey))) {
+    return null;
+  }
+
+  if (!hasValidReviewDate(reviewedAt)) return null;
+
+  return { reviewedAt: reviewedAt.trim(), reviewerName: normalizedReviewerName };
+}
+
 export function validateEeat(fields: EeatFields): string[] {
   const missing: string[] = [];
   if (!fields.authorName) missing.push("authorName");

@@ -83,7 +83,7 @@ export default async function OgImage({
               fontWeight: 600,
             }}
           >
-            건강·의료 정보
+            건강·의료 정보 · 주의가 필요한 정보
           </div>
         </div>
 

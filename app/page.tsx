@@ -2,54 +2,10 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { getCachedStats, getCachedRecentGuides, getCachedRecentBlogPosts } from "@/lib/db-queries";
 import { CATEGORIES } from "@/lib/category";
-import { faqSchema, definedTermSetSchema } from "@/lib/seo/structured-data";
 import { SubscribeForm } from "@/components/forms/subscribe-form";
 import { AdSlot } from "@/components/ads/ad-slot";
 import { AdPolicyProvider } from "@/components/providers/ad-policy-provider";
 import { AdsenseTrustSection } from "@/components/content/adsense-trust-section";
-
-const SITE_URL_CONST = process.env.NEXT_PUBLIC_SITE_URL ?? "https://petjigi.kr";
-
-const HOME_FAQ = faqSchema([
-  {
-    question: "펫지기는 어떤 서비스인가요?",
-    answer: "펫지기는 공공데이터포털(농림축산검역본부·행정안전부)을 기반으로 전국 30,000개 이상의 동물병원·펫미용·펫호텔·장묘업체 정보를 제공하는 무료 반려동물 정보 서비스입니다.",
-    url: SITE_URL_CONST,
-  },
-  {
-    question: "전국 동물병원을 어떻게 찾나요?",
-    answer: "지역별 검색에서 시도를 선택하면 해당 지역 동물병원 목록을 확인할 수 있습니다. 예) 서울 강남구 동물병원, 경기 수원 동물병원 등. 공공데이터 기준 영업 중인 업체만 표시됩니다.",
-    url: `${SITE_URL_CONST}/sido/seoul`,
-  },
-  {
-    question: "유기동물 입양은 어떻게 하나요?",
-    answer: "구조동물 메뉴에서 현재 보호 중인 동물을 확인하고, 가까운 보호센터에 직접 연락하시면 됩니다. 전국 보호센터 정보도 함께 제공됩니다.",
-    url: `${SITE_URL_CONST}/rescue`,
-  },
-  {
-    question: "정보는 얼마나 자주 업데이트되나요?",
-    answer: "데이터 종류마다 수집 일정이 다릅니다. 각 목록에 표시된 마지막 정상 수집 시점을 확인하고, 방문 전에는 해당 기관이나 업체에 최신 정보를 확인해 주세요.",
-    url: SITE_URL_CONST,
-  },
-  {
-    question: "반려동물 보험은 어디서 비교하나요?",
-    answer: "펫지기 보험 비교 페이지에서 주요 펫보험 상품을 한눈에 비교할 수 있습니다. 보장 범위·보험료·특약을 정리해 제공합니다.",
-    url: `${SITE_URL_CONST}/insurance/compare`,
-  },
-  {
-    question: "동물등록은 어디서 할 수 있나요?",
-    answer: "동물등록은 지역 동물병원, 동물보호센터, 등록대행업체에서 가능합니다. 펫지기에서 가까운 동물등록 가능 업체를 찾아보세요.",
-    url: `${SITE_URL_CONST}/category/adoption`,
-  },
-]);
-
-// GEO: AI가 반려동물 용어 정의를 추출할 수 있도록 DefinedTermSet 추가
-const HOME_TERMS = definedTermSetSchema("반려동물 기본 용어", [
-  { name: "동물등록", description: "반려견을 지방자치단체에 등록하는 제도. 분실 시 소유자 확인에 필수. 2개월령 이상 개는 의무 등록 대상." },
-  { name: "유기동물", description: "소유자가 포기하거나 잃어버린 반려동물. 지방자치단체 보호소에서 일정 기간 보호 후 입양·안락사 등 처리." },
-  { name: "펫보험", description: "반려동물의 의료비를 보장하는 보험 상품. 수술비·입원비·통원치료비 등을 보장하며 상품마다 보장 범위가 다름." },
-  { name: "중성화수술", description: "반려동물의 번식 능력을 제거하는 수술. 호르몬 관련 질환 예방 및 개체 수 조절 효과가 있음." },
-]);
 
 export const revalidate = 3600;
 
@@ -117,8 +73,6 @@ export default async function HomePage() {
 
   return (
     <AdPolicyProvider category={5}>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(HOME_FAQ) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(HOME_TERMS) }} />
       <main>
         {/* ── HERO ── */}
         <section className="py-12 sm:py-16 md:py-20" aria-label="사이트 소개">
@@ -361,7 +315,7 @@ export default async function HomePage() {
                   href: "/condition",
                   emoji: "💊",
                   title: "질병·증상 정보",
-                  desc: "슬개골 탈구, 심장사상충, 고양이 FLUTD 등 흔한 질환의 증상·원인과 진료가 필요한 신호를 안내합니다.",
+                  desc: "슬개골 탈구, 심장사상충, 고양이 FLUTD 등 질환 관련 정보를 정리합니다. 출처와 검토 정보는 개별 콘텐츠에서 확인하세요.",
                   cta: "질환 정보 보기",
                   color: "var(--cat-3)",
                   soft: "var(--cat-3-soft)",
@@ -408,8 +362,8 @@ export default async function HomePage() {
           <div className="pj-container-7xl">
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-8">
               {[
-                { icon: "🛡️", title: "근거와 검토 기록", desc: "출처와 위험 표현을 점검하고, 확인 가능한 검토 기록이 있는 경우에만 검토 정보를 표시합니다." },
-                { icon: "📊", title: "공공데이터 갱신", desc: "원본별 수집 일정과 마지막 정상 수집 시점을 구분해 안내합니다." },
+                { icon: "🛡️", title: "출처와 검토 정보", desc: "건강·의료와 보험·법률 정보는 개인별 판단을 대신하지 않습니다. 참고 자료와 제공된 검토 정보를 확인해 주세요." },
+                { icon: "📊", title: "자료별 주기로 수집", desc: "영업장은 월 2회, 구조동물은 매일, 보호센터는 월 1회 수집을 예약합니다. 원본 제공과 수집 성공 여부에 따라 반영이 지연될 수 있습니다." },
                 { icon: "🔍", title: "광고와 정보의 분리", desc: "광고·제휴 링크는 본문과 명확히 구분 표시합니다. 추모 페이지에는 광고를 게재하지 않습니다." },
               ].map(b => (
                 <div key={b.title}>
@@ -431,7 +385,7 @@ export default async function HomePage() {
                 반려동물 건강 정보를 이메일로 받아보세요
               </h2>
               <p style={{ fontSize: 15, opacity: 0.8, marginBottom: 24, color: "#1a1f15" }}>
-                월 2회, 새로 정리한 반려동물 정보와 서비스 소식을 보내드립니다.
+                반려동물 생활 정보와 사이트 소식 수신을 신청할 수 있습니다.
               </p>
               <div style={{ maxWidth: 480, margin: "0 auto" }}>
                 <SubscribeForm source="home_newsletter" />

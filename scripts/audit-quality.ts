@@ -11,6 +11,7 @@ import {
 } from "../lib/content-risk-gate";
 import { sourceValues } from "../lib/content-seed-parser";
 import { MEMORIAL_AUTO_ADS_EXCLUDED_PATHS } from "../lib/memorial-auto-ads-paths";
+import { isAutoAdsEligiblePath } from "../lib/ads-policy";
 import { findUnsafeMetadataTitleSuffixes } from "../lib/seo/metadata-audit";
 import { SITE_IDENTITY } from "../lib/site-identity";
 
@@ -477,6 +478,10 @@ function adsAudit(records: ContentRecord[]) {
     memorialStaticPathsCovered: ["/category/memorial", "/guide/pet-loss-care"].every(
       (pathname) => MEMORIAL_AUTO_ADS_EXCLUDED_PATHS.has(pathname),
     ),
+    memorialBusinessRouteFamiliesCovered: [
+      "/hwaseong/funeral",
+      "/hwaseong/funeral/example-business",
+    ].every((pathname) => !isAutoAdsEligiblePath(pathname)),
     operationalAndTrustPathsExcluded: [
       "/admin", "/search", "/contact", "/privacy", "/terms", "/disclosure", "/advertising",
     ].every((pathname) => autoAdsPolicy.includes(`"${pathname}"`)),

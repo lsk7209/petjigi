@@ -28,8 +28,8 @@ export default function OgImage() {
 
         {/* YMYL 뱃지 */}
         <div style={{ display: "flex", alignItems: "center", gap: 8, backgroundColor: "#F3E8FF", borderRadius: 24, paddingLeft: 20, paddingRight: 20, paddingTop: 8, paddingBottom: 8, marginBottom: 28 }}>
-          <span style={{ fontSize: 20 }}>📎</span>
-          <span style={{ fontSize: 20, color: "#6B21A8", fontWeight: 700 }}>공식 채널 확인 · 보험·법률 정보</span>
+          <span style={{ fontSize: 20 }}>📎 📋</span>
+          <span style={{ fontSize: 20, color: "#6B21A8", fontWeight: 700 }}>보험·법률 정보 · 공식 채널 확인</span>
         </div>
 
         {/* 이모지 원 */}

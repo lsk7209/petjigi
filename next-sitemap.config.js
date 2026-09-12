@@ -27,6 +27,8 @@ module.exports = {
     "/rescue", "/rescue/*", "/search*", "/admin/*", "/*?page=*", "/*?cat=*",
     "/opengraph-image", "/**/opengraph-image", "/icon", "/apple-icon", "/manifest.webmanifest",
     "/guide/*", "/blog/*", "/condition/*", "/breed/*/*",
+    "/sido/chungbuk", "/sido/chungnam", "/sido/gangwon", "/sido/gyeongbuk",
+    "/sido/gyeongnam", "/sido/jeju", "/sido/jeonbuk", "/sido/jeonnam",
   ],
   changefreq: "daily",
   priority: 0.7,
