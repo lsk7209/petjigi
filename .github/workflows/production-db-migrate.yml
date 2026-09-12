@@ -38,8 +38,5 @@ jobs:
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
 
-      - name: Apply additive migrations
-        run: pnpm db:migrate
-
-      - name: Verify release schema
-        run: node scripts/verify-production-schema.mjs
+      - name: Apply and verify the scoped additive schema
+        run: node scripts/verify-production-schema.mjs --apply
