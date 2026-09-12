@@ -1,9 +1,8 @@
 import { ImageResponse } from "next/og";
-import { db } from "@/db/client";
 import { breeds } from "@/db/schema";
 import { and, eq } from "drizzle-orm";
 
-export const runtime = "edge";
+export const dynamic = "force-dynamic";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -28,6 +27,7 @@ export default async function OgImage({
   params: Promise<{ species: string; slug: string }>;
 }) {
   const { species, slug } = await params;
+  const { db } = await import("@/db/client");
   const breed = await db
     .select({ nameKo: breeds.nameKo, nameEn: breeds.nameEn, origin: breeds.origin })
     .from(breeds)

@@ -1,9 +1,8 @@
 import { ImageResponse } from "next/og";
-import { db } from "@/db/client";
 import { regions } from "@/db/schema";
 import { eq } from "drizzle-orm";
 
-export const runtime = "edge";
+export const dynamic = "force-dynamic";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -31,6 +30,7 @@ export default async function OgImage({
 
   let locationName = decodeURIComponent(sigungu);
   try {
+    const { db } = await import("@/db/client");
     const row = await db.select({ sigungu: regions.sigungu }).from(regions).where(eq(regions.sigunguSlug, sigungu)).get();
     if (row?.sigungu) locationName = row.sigungu;
   } catch {

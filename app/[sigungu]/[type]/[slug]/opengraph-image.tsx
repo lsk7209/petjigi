@@ -1,9 +1,8 @@
 import { ImageResponse } from "next/og";
-import { db } from "@/db/client";
 import { businesses, regions } from "@/db/schema";
 import { and, eq, ne } from "drizzle-orm";
 
-export const runtime = "edge";
+export const dynamic = "force-dynamic";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -21,9 +20,9 @@ const TYPE_CONFIG: Record<string, { label: string; emoji: string; bg: string; ac
 export default async function OgImage({
   params,
 }: {
-  params: Promise<{ type: string; sigungu: string; slug: string }>;
+  params: Promise<{ sigungu: string; type: string; slug: string }>;
 }) {
-  const { type, sigungu, slug } = await params;
+  const { sigungu: type, type: sigungu, slug } = await params;
   const cfg = TYPE_CONFIG[type] ?? TYPE_CONFIG.vet;
   const isDark = type === "funeral";
   const textColor = isDark ? "#F5F1EA" : "#2A2520";
@@ -33,6 +32,7 @@ export default async function OgImage({
   let locationName = decodeURIComponent(sigungu);
   let address: string | null = null;
   try {
+    const { db } = await import("@/db/client");
     const [region, biz] = await Promise.all([
       db.select({ sigungu: regions.sigungu }).from(regions).where(eq(regions.sigunguSlug, sigungu)).get(),
       db.select({ address: businesses.address, addressSigungu: businesses.addressSigungu })

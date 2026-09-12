@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { SITE_CONTACT_MAILTO, SITE_IDENTITY } from "@/lib/site-identity";
 import { breadcrumbSchema } from "@/lib/seo/structured-data";
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://petjigi.kr";
@@ -29,7 +30,7 @@ const ABOUT_SCHEMA = {
     foundingDate: "2026",
     contactPoint: {
       "@type": "ContactPoint",
-      email: "contact@petjigi.kr",
+      email: SITE_IDENTITY.contactEmail,
       contactType: "customer support",
       availableLanguage: "Korean",
     },
@@ -87,7 +88,7 @@ export default function AboutPage() {
               },
               {
                 source: "통계청 행정구역 코드",
-                detail: "시도·시군구 지역 구분 (17개 시도, 250개 시군구)",
+                detail: "17개 시도와 서비스에 등록된 시군구의 지역 구분",
               },
               {
                 source: "농림축산식품부 (MAFRA)",
@@ -101,7 +102,7 @@ export default function AboutPage() {
             ))}
           </div>
           <p className="text-xs text-[var(--brand-text-secondary)] mt-3">
-            * 공공데이터는 자동화된 ETL 파이프라인을 통해 매일~매월 갱신됩니다.
+            * 공공데이터는 원본별 수집 일정에 따라 갱신되며, 실패 시 마지막 정상 데이터를 유지합니다.
           </p>
         </section>
 
@@ -115,7 +116,7 @@ export default function AboutPage() {
             </div>
             <div>
               <p className="font-semibold text-[var(--brand-text)] mb-1">YMYL 콘텐츠 검수</p>
-              <p>건강·의료, 보험·법률, 장례·추모 카테고리(YMYL)의 콘텐츠는 전문가 검토를 거친 후 발행합니다. 검토자 정보는 각 콘텐츠 상단에 표시됩니다.</p>
+              <p>건강·의료, 보험·법률, 장례·추모 콘텐츠는 출처와 위험 표현을 우선 점검합니다. 확인 가능한 검토 기록이 있는 경우에만 콘텐츠 상단에 검토 정보를 표시합니다.</p>
             </div>
             <div>
               <p className="font-semibold text-[var(--brand-text)] mb-1">광고·어필리에이트 투명성</p>
@@ -138,10 +139,10 @@ export default function AboutPage() {
             데이터 오류 신고, 콘텐츠 제안, 제휴 문의는 아래 이메일로 연락해 주세요.
           </p>
           <a
-            href="mailto:contact@petjigi.kr"
+            href={SITE_CONTACT_MAILTO}
             className="text-[var(--brand-accent)] hover:underline font-medium"
           >
-            contact@petjigi.kr
+            {SITE_IDENTITY.contactEmail}
           </a>
         </section>
       </main>

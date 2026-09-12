@@ -58,8 +58,8 @@ export async function generateMetadata({
     ? ` 평균 수명 ${breed.lifespanMin}~${breed.lifespanMax}년.`
     : "";
   return {
-    title: `${breed.nameKo} 특징·성격·키우기 | 펫지기`,
-    description: `${breed.nameKo} 품종 정보: 특징, 성격,${lifespanText} 흔한 질병, 키우는 방법. 수의사 검토 정보.`,
+    title: { absolute: `${breed.nameKo} 특징·성격·키우기 | 펫지기` },
+    description: `${breed.nameKo} 품종 정보: 특징, 성격,${lifespanText} 흔한 질병, 키우는 방법과 주의사항.`,
     alternates: { canonical: `/breed/${species}/${slug}` },
     openGraph: {
       title: `${breed.nameKo} 특징·성격·키우기 | 펫지기`,

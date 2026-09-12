@@ -1,0 +1,2 @@
+old_url,new_url,reason,unique_content_preserved,evidence,approval_status,rollback
+,,"TEMPLATE_ONLY: 승인된 병합 또는 폐기 URL 없음",unknown,"본문·GSC·대표 URL에 대한 사람 검토 미완료",NEEDS_APPROVAL,"미적용 상태이므로 롤백 없음"

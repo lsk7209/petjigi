@@ -2322,9 +2322,9 @@ const SEED_CONTENTS: NewContent[] = [
 <h2>즉시 병원에 가야 하는 응급 신호</h2>
 <ul>
   <li>호흡 곤란 또는 파란 잇몸·혀</li>
-  <li>경련·발작 (5분 이상 지속 또는 2회 이상)</li>
+  <li>지속되거나 반복되는 경련·발작</li>
   <li>실신·의식 저하</li>
-  <li>12시간 이상 소변이 전혀 없음 (고양이: FLUTD 의심)</li>
+  <li>소변을 보지 못하거나 반복해서 힘을 주며 통증을 보임</li>
   <li>심한 출혈 (압박으로 멈추지 않는 경우)</li>
   <li>복부 팽창·극심한 통증</li>
   <li>독성 물질 섭취 의심</li>
@@ -2335,7 +2335,7 @@ const SEED_CONTENTS: NewContent[] = [
   <li>깨끗한 천(거즈, 수건)으로 상처 부위를 직접 압박합니다.</li>
   <li>5~10분간 지속 압박 — 중간에 들여다보면 혈병이 떨어집니다.</li>
   <li>천이 흠뻑 젖으면 위에 새 천을 더합니다 (제거하지 않음).</li>
-  <li>압박으로 5분 내 멈추지 않으면 즉시 병원으로.</li>
+  <li>압박해도 출혈이 계속되면 즉시 병원으로 이동합니다.</li>
 </ol>
 
 <h2>이물질 삼킴·독소 섭취</h2>
@@ -2372,15 +2372,14 @@ const SEED_CONTENTS: NewContent[] = [
 <h2>평소 준비사항</h2>
 <ul>
   <li>가까운 24시간 응급 동물병원 번호를 저장해두기</li>
-  <li>반려동물 응급 키트: 붕대·거즈·의료용 테이프·지혈대·생리식염수·체온계 준비</li>
+  <li>반려동물 응급 키트: 붕대·거즈·의료용 테이프·생리식염수·체온계 준비</li>
   <li>반려동물 체중·혈액형·알레르기 이력·현재 복용 약물 기록 보관</li>
 </ul>`,
     disclaimer:
       "본 콘텐츠는 일반적인 교육·참고 목적이며 전문 수의학적 처치를 대체하지 않습니다. 응급 상황에서는 즉시 24시간 응급 동물병원을 방문하세요.",
     sources: [
-      "American Red Cross — Pet First Aid Manual (2023)",
-      "BSAVA Manual of Practical Animal Care, 3rd ed. (2022)",
-      "대한수의사회 반려동물 응급 대응 가이드 (2023)",
+      "https://www.redcross.org/take-a-class/resources/learn-pet-first-aid — American Red Cross, Learn Pet First Aid for Emergencies",
+      "https://www.bsava.com/wp-content/uploads/2026/01/21289-Publications-Catalogue-2026-A5-Landscape.pdf — BSAVA Manual of Practical Animal Care, 1st ed. (2007; reprinted with updates)",
     ],
     ymyl: true,
     status: "published",
@@ -5141,9 +5140,9 @@ const SEED_CONTENTS: NewContent[] = [
     type: "condition",
     category: 3,
     title: "강아지 추간판탈출증(IVDD) — 증상·등급·수술과 보존 치료",
-    metaTitle: "강아지 추간판탈출증 증상·수술·재활 | IVDD | 수의사 검토 | 펫지기",
+    metaTitle: "강아지 추간판탈출증 증상·수술·재활 | IVDD | 펫지기",
     metaDescription:
-      "닥스훈트·웰시코기·비글에서 흔한 강아지 추간판탈출증(IVDD)의 증상, 1~5등급 분류, 수술과 보존 치료의 차이, 예방법을 수의사 검토를 거쳐 안내합니다.",
+      "닥스훈트·웰시코기·비글에서 흔한 강아지 추간판탈출증(IVDD)의 증상, 1~5등급 분류, 수술과 보존 치료의 차이, 예방법을 안내합니다.",
     body: `<h2>추간판탈출증(IVDD)이란?</h2>
 <p>척추 뼈 사이에서 완충 역할을 하는 추간판(디스크)이 탈출·파열되어 척수를 압박하는 질환입니다. 통증, 마비, 최악의 경우 사지 완전 마비로 이어질 수 있습니다.</p>
 
@@ -5177,7 +5176,7 @@ const SEED_CONTENTS: NewContent[] = [
 </ul>
 
 <h2>진단</h2>
-<p>신체 검사 후 X-ray, CT(가장 정확), MRI로 탈출 부위와 척수 압박 정도를 확인합니다.</p>
+<p>수의사가 신경학적 검사 결과와 환자 상태를 바탕으로 X-ray, CT, MRI 등 필요한 영상 검사를 선택해 탈출 부위와 척수 압박 정도를 평가합니다.</p>
 
 <h2>치료 방법</h2>
 <h3>수술적 치료 (3~5등급 또는 재발성)</h3>

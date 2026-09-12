@@ -37,7 +37,7 @@ const HOUSE_ADS: Record<string, { href: string; title: string; desc: string; cta
   },
   rectangle: {
     href: "/guide",
-    title: "수의사 검토 반려동물 가이드",
+    title: "반려동물 정보 가이드",
     desc: "건강·영양·법률·케어까지 200+ 가이드",
     cta: "가이드 보기 →",
   },
@@ -50,7 +50,7 @@ const HOUSE_ADS: Record<string, { href: string; title: string; desc: string; cta
   auto: {
     href: "/guide",
     title: "반려동물 가이드",
-    desc: "수의사 검토 건강 정보",
+    desc: "출처와 주의사항을 함께 확인하는 건강 정보",
     cta: "더 보기 →",
   },
 };

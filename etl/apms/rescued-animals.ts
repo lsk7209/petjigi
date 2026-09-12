@@ -5,7 +5,9 @@
  */
 
 import { db } from "../../db/client";
-import { rescuedAnimals } from "../../db/schema";
+import { etlSyncState, rescuedAnimals } from "../../db/schema";
+import { runPagedImport } from "../../lib/etl/paged-import";
+import { eq } from "drizzle-orm";
 
 const API_KEY = process.env.APMS_API_KEY ?? "";
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://petjigi.kr";
@@ -56,23 +58,34 @@ async function fetchPage(
 export async function syncRescuedAnimals(): Promise<void> {
   console.log("[ETL:rescued-animals] 시작 (noindex 데이터)");
 
+  const attemptAt = new Date().toISOString();
+  await db
+    .insert(etlSyncState)
+    .values({
+      jobName: "rescued-animals",
+      lastAttemptAt: attemptAt,
+      updatedAt: attemptAt,
+    })
+    .onConflictDoUpdate({
+      target: etlSyncState.jobName,
+      set: { lastAttemptAt: attemptAt, updatedAt: attemptAt },
+    });
+
   const { total } = await fetchPage(1, 1);
   const totalPages = Math.ceil(total / 1000);
   console.log(`[ETL:rescued-animals] 총 ${total}건 (${totalPages}페이지)`);
 
   if (total === 0) {
-    console.log("[ETL:rescued-animals] 데이터 없음 — 종료");
+    await recordSuccessfulRun(attemptAt);
+    console.log("[ETL:rescued-animals] 데이터 없음 — 정상 완료");
     return;
   }
 
   const now = new Date().toISOString();
-  let upserted = 0;
-
-  for (let page = 1; page <= totalPages; page++) {
-    const { items } = await fetchPage(page, 1000);
-    if (items.length === 0) break;
-
-    for (const row of items) {
+  const upserted = await runPagedImport({
+    totalPages,
+    fetchPage: async (page) => (await fetchPage(page, 1000)).items,
+    writeItem: async (row) => {
       await db
         .insert(rescuedAnimals)
         .values({
@@ -127,13 +140,15 @@ export async function syncRescuedAnimals(): Promise<void> {
           },
         });
 
-      upserted++;
-    }
+    },
+    onPageComplete: (page, written) => {
+      if (page % 3 === 0 || page === totalPages) {
+        console.log(`[ETL:rescued-animals] ${page}/${totalPages} 페이지 완료 (${written}건)`);
+      }
+    },
+  });
 
-    if (page % 3 === 0 || page === totalPages) {
-      console.log(`[ETL:rescued-animals] ${page}/${totalPages} 페이지 완료 (${upserted}건)`);
-    }
-  }
+  await recordSuccessfulRun(now);
 
   console.log(`[ETL:rescued-animals] 완료 — ${upserted}건 upsert`);
 
@@ -149,6 +164,13 @@ export async function syncRescuedAnimals(): Promise<void> {
       body: JSON.stringify({ tags: ["rescue", "stats"] }),
     }).catch((e) => console.error("[ETL:rescued-animals] 캐시 무효화 실패:", e));
   }
+}
+
+async function recordSuccessfulRun(successfulAt: string): Promise<void> {
+  await db
+    .update(etlSyncState)
+    .set({ lastSuccessfulAt: successfulAt, updatedAt: successfulAt })
+    .where(eq(etlSyncState.jobName, "rescued-animals"));
 }
 
 syncRescuedAnimals().catch((err) => {

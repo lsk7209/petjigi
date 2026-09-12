@@ -3,6 +3,8 @@ import Link from "next/link";
 import { db } from "@/db/client";
 import { contents, businesses } from "@/db/schema";
 import { eq, and, count, desc } from "drizzle-orm";
+import { notFound } from "next/navigation";
+import { isValidAdminSecret } from "@/lib/admin-auth";
 
 export const metadata: Metadata = {
   title: "Analytics — 펫지기 어드민",
@@ -48,7 +50,15 @@ async function getRecentContent() {
     .limit(10);
 }
 
-export default async function AdminAnalyticsPage() {
+interface PageProps {
+  searchParams: Promise<{ key?: string }>;
+}
+
+export default async function AdminAnalyticsPage({ searchParams }: PageProps) {
+  const { key } = await searchParams;
+  if (!isValidAdminSecret(key)) notFound();
+  const adminKey = key as string;
+
   const [stats, recent] = await Promise.all([getSiteStats(), getRecentContent()]);
 
   const ga4Ok = Boolean(GA4_MEASUREMENT_ID);
@@ -74,7 +84,7 @@ export default async function AdminAnalyticsPage() {
   return (
     <main className="max-w-4xl mx-auto px-4 py-10">
       <div className="mb-8">
-        <Link href="/admin/review-queue" className="text-sm text-[var(--brand-accent)] hover:underline">
+        <Link href={`/admin/review-queue?key=${encodeURIComponent(adminKey)}`} className="text-sm text-[var(--brand-accent)] hover:underline">
           ← 검수 큐
         </Link>
         <h1 className="text-2xl font-bold text-[var(--brand-text)] mt-3 mb-1">Analytics & SEO 대시보드</h1>
@@ -290,7 +300,7 @@ export default async function AdminAnalyticsPage() {
             <span>
               <strong className="text-[var(--brand-text)]">GA4 전환 이벤트 설정</strong> —{" "}
               <a href="https://analytics.google.com" target="_blank" rel="noopener noreferrer" className="text-[var(--brand-accent)] hover:underline">GA4</a>{" "}
-              → 관리 → 전환 이벤트 → 위 표의 "전환 추천" 이벤트 5개 전환으로 표시
+              → 관리 → 전환 이벤트 → 위 표의 &quot;전환 추천&quot; 이벤트 5개 전환으로 표시
             </span>
           </li>
         </ol>

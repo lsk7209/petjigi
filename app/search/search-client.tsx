@@ -35,7 +35,7 @@ export default function SearchClient() {
   const timer = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   useEffect(() => {
-    if (query.trim().length < 2) { setData(null); return; }
+    if (query.trim().length < 2) return;
     if (timer.current) clearTimeout(timer.current);
     timer.current = setTimeout(async () => {
       setLoading(true);
@@ -59,25 +59,32 @@ export default function SearchClient() {
       <h1 className="text-2xl font-bold text-[var(--brand-text)] mb-6">검색</h1>
 
       <div className="relative mb-8">
+        <label htmlFor="site-search" className="sr-only">사이트 검색어</label>
         <input
+          id="site-search"
           type="search"
           value={query}
-          onChange={(e) => setQuery(e.target.value)}
+          onChange={(e) => {
+            const nextQuery = e.target.value;
+            setQuery(nextQuery);
+            if (nextQuery.trim().length < 2) setData(null);
+          }}
           placeholder="동물병원, 가이드 검색…"
+          aria-describedby="site-search-help"
           autoFocus
           className="w-full border border-[var(--brand-border)] rounded-[var(--radius-card)] px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-[var(--brand-accent)] bg-[var(--brand-bg)] text-[var(--brand-text)]"
         />
         {loading && (
-          <span className="absolute right-4 top-1/2 -translate-y-1/2 text-xs text-[var(--brand-text-secondary)]">
+          <span role="status" className="absolute right-4 top-1/2 -translate-y-1/2 text-xs text-[var(--brand-text-secondary)]">
             검색 중…
           </span>
         )}
       </div>
 
-      {error && <p className="text-sm text-red-500 mb-4">{error}</p>}
+      {error && <p role="alert" className="text-sm text-red-500 mb-4">{error}</p>}
 
       {!query.trim() && (
-        <p className="text-sm text-[var(--brand-text-secondary)]">
+        <p id="site-search-help" className="text-sm text-[var(--brand-text-secondary)]">
           2글자 이상 입력하면 자동으로 검색됩니다.
         </p>
       )}

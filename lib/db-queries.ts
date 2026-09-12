@@ -1,8 +1,9 @@
 import { unstable_cache } from "next/cache";
 import { db } from "@/db/client";
-import { businesses, contents, shelters, rescuedAnimals, regions } from "@/db/schema";
-import { eq, and, desc, count, ne, lte } from "drizzle-orm";
+import { businesses, contents, shelters, rescuedAnimals, regions, etlSyncState } from "@/db/schema";
+import { eq, and, asc, desc, count, ne, lte } from "drizzle-orm";
 import { sql } from "drizzle-orm";
+import { DEFAULT_BUSINESS_PAGE_SIZE, getPageWindow } from "@/lib/business-listing";
 
 // ── 홈 통계 카운트 ──────────────────────────────────────────────────────────
 export const getCachedStats = unstable_cache(
@@ -51,6 +52,8 @@ export const getCachedAllGuides = unstable_cache(
         publishedAt: contents.publishedAt,
         metaDescription: contents.metaDescription,
         ymyl: contents.ymyl,
+        reviewerName: contents.reviewerName,
+        reviewedAt: contents.reviewedAt,
       })
       .from(contents)
       .where(and(eq(contents.status, "published"), eq(contents.type, "guide"), lte(contents.publishedAt, new Date().toISOString())))
@@ -62,19 +65,36 @@ export const getCachedAllGuides = unstable_cache(
 // ── 지역×업종 영업장 목록 ──────────────────────────────────────────────────────
 // unstable_cache는 args를 자동으로 키에 포함시킴
 export const getCachedBusinessListing = unstable_cache(
-  async (sigunguName: string, type: string) =>
-    db
+  async (sigunguName: string, type: string, requestedPage = 1) => {
+    const where = and(
+      eq(businesses.type, type),
+      eq(businesses.addressSigungu, sigunguName),
+      eq(businesses.status, "active")
+    );
+    const totalRow = await db
+      .select({
+        count: count(),
+        sourceAsOf: sql<string | null>`max(${businesses.lastSyncedAt})`,
+      })
+      .from(businesses)
+      .where(where)
+      .get();
+    const totalCount = totalRow?.count ?? 0;
+    const pageWindow = getPageWindow(totalCount, requestedPage, DEFAULT_BUSINESS_PAGE_SIZE);
+    const items = await db
       .select()
       .from(businesses)
-      .where(
-        and(
-          eq(businesses.type, type),
-          eq(businesses.addressSigungu, sigunguName),
-          eq(businesses.status, "active")
-        )
+      .where(where)
+      .orderBy(
+        sql`CASE WHEN ${businesses.lat} IS NOT NULL THEN 0 ELSE 1 END`,
+        asc(businesses.name),
+        asc(businesses.id)
       )
-      .orderBy(sql`CASE WHEN lat IS NOT NULL THEN 0 ELSE 1 END`)
-      .limit(50),
+      .limit(pageWindow.pageSize)
+      .offset(pageWindow.offset);
+
+    return { items, totalCount, sourceAsOf: totalRow?.sourceAsOf ?? null, ...pageWindow };
+  },
   ["businesses", "listing"],
   { revalidate: 86400, tags: ["businesses"] }
 );
@@ -115,12 +135,28 @@ export const getCachedRegionsBySido = unstable_cache(
 
 // ── 구조동물 목록 (최근 50건) ─────────────────────────────────────────────────
 export const getCachedRescuedAnimals = unstable_cache(
-  async () =>
-    db
+  async () => {
+    const [items, freshness] = await Promise.all([
+      db
       .select()
       .from(rescuedAnimals)
       .orderBy(desc(rescuedAnimals.noticeSdt))
       .limit(50),
+      db
+        .select({
+          lastAttemptAt: etlSyncState.lastAttemptAt,
+          lastSuccessfulAt: etlSyncState.lastSuccessfulAt,
+        })
+        .from(etlSyncState)
+        .where(eq(etlSyncState.jobName, "rescued-animals"))
+        .get(),
+    ]);
+    return {
+      items,
+      lastAttemptAt: freshness?.lastAttemptAt ?? null,
+      lastSuccessfulAt: freshness?.lastSuccessfulAt ?? null,
+    };
+  },
   ["rescue", "recent-list"],
   { revalidate: 3600, tags: ["rescue"] }
 );
@@ -189,6 +225,8 @@ export const getCachedAllBlogPosts = unstable_cache(
         category: contents.category,
         publishedAt: contents.publishedAt,
         metaDescription: contents.metaDescription,
+        reviewerName: contents.reviewerName,
+        reviewedAt: contents.reviewedAt,
         ymyl: contents.ymyl,
         authorName: contents.authorName,
       })
@@ -221,6 +259,8 @@ export const getCachedAllConditions = unstable_cache(
         category: contents.category,
         publishedAt: contents.publishedAt,
         metaDescription: contents.metaDescription,
+        reviewerName: contents.reviewerName,
+        reviewedAt: contents.reviewedAt,
       })
       .from(contents)
       .where(and(eq(contents.status, "published"), eq(contents.type, "condition"), lte(contents.publishedAt, new Date().toISOString())))

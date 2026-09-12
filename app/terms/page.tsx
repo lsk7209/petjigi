@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { SITE_IDENTITY } from "@/lib/site-identity";
 import { breadcrumbSchema } from "@/lib/seo/structured-data";
 
 export const revalidate = 86400;
@@ -11,7 +12,7 @@ const BREADCRUMB = breadcrumbSchema([
 ]);
 
 export const metadata: Metadata = {
-  title: "이용약관 | 펫지기",
+  title: { absolute: "이용약관 | 펫지기" },
   description: "펫지기 이용약관 — 서비스 이용 조건, 면책 사항, 저작권 정책을 확인하세요.",
   alternates: { canonical: "/terms" },
   robots: { index: true, follow: false },
@@ -26,7 +27,7 @@ export default function TermsPage() {
       <p className="text-sm text-[var(--brand-text-secondary)]">최종 업데이트: 2026-05-18</p>
 
       <h2>제1조 (목적)</h2>
-      <p>이 약관은 펫지기(이하 "서비스")의 이용 조건 및 절차, 이용자와 운영자의 권리·의무를 규정합니다.</p>
+      <p>이 약관은 펫지기(이하 &quot;서비스&quot;)의 이용 조건 및 절차, 이용자와 운영자의 권리·의무를 규정합니다.</p>
 
       <h2>제2조 (서비스 내용)</h2>
       <p>펫지기는 공공데이터 기반 반려동물 정보를 제공하는 무료 정보 서비스입니다. 의료·법률·보험 자문 서비스가 아닙니다.</p>
@@ -40,7 +41,7 @@ export default function TermsPage() {
       <h2>제5조 (저작권)</h2>
       <p>본 서비스의 콘텐츠 저작권은 펫지기에 있습니다. 공공데이터는 해당 라이선스에 따릅니다.</p>
 
-      <p>문의: contact@petjigi.kr</p>
+      <p>문의: {SITE_IDENTITY.contactEmail}</p>
     </main>
     </>
   );

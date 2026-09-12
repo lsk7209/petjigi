@@ -7,3 +7,4 @@ export * from "./review-queue";
 export * from "./ad-policies";
 export * from "./email-subscribers";
 export * from "./rescued-animals";
+export * from "./etl-sync-state";

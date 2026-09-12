@@ -23,8 +23,6 @@ export function ShareButtons({ url, title }: ShareButtonsProps) {
   };
 
   const twitterUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(title)}&url=${encodeURIComponent(url)}`;
-  const kakaoShareUrl = `https://sharer.kakao.com/talk/friends/picker/link?app_key=none&validation_action=default&validation_params=${encodeURIComponent(JSON.stringify({ title, link: { mobileWebUrl: url, webUrl: url } }))}`;
-
   return (
     <div className="flex items-center gap-2 flex-wrap">
       <span className="text-xs text-[var(--brand-text-secondary)] font-medium">공유</span>

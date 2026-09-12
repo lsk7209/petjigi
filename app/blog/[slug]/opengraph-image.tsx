@@ -1,11 +1,10 @@
 import { ImageResponse } from "next/og";
-import { db } from "@/db/client";
 import { contents } from "@/db/schema";
-import { and, eq } from "drizzle-orm";
+import { and, eq, lte } from "drizzle-orm";
 import { CATEGORIES } from "@/lib/category";
 import type { CategoryId } from "@/lib/category";
 
-export const runtime = "edge";
+export const dynamic = "force-dynamic";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -28,6 +27,7 @@ export default async function OgImage({
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
+  const { db } = await import("@/db/client");
   const content = await db
     .select({
       title: contents.title,
@@ -36,7 +36,12 @@ export default async function OgImage({
       authorName: contents.authorName,
     })
     .from(contents)
-    .where(and(eq(contents.slug, slug), eq(contents.status, "published")))
+    .where(and(
+      eq(contents.slug, slug),
+      eq(contents.type, "blog"),
+      eq(contents.status, "published"),
+      lte(contents.publishedAt, new Date().toISOString()),
+    ))
     .get();
 
   if (!content) {

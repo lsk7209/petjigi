@@ -116,7 +116,7 @@ const BLOG_POSTS: NewContent[] = [
     id: "blog-453",
     slug: "pet-emergency-vet-preparation",
     type: "blog",
-    category: 4,
+    category: 3,
     title: "응급 동물병원 준비 — 위기 순간에 당황하지 않는 방법",
     subtitle: "24시간 응급 동물병원 미리 파악, 응급 정보 카드 만들기, 이동 중 응급처치",
     metaTitle: "응급 동물병원 사전 준비 — 위기 대응 완전 가이드 | 펫지기",
@@ -126,11 +126,12 @@ const BLOG_POSTS: NewContent[] = [
 <h2>지금 당장 해야 할 준비</h2>
 <h3>24시간 응급 동물병원 파악</h3>
 <ul>
-<li>집에서 30분 이내 24시간 응급 동물병원 최소 2곳 파악</li>
+<li>가까운 야간·응급 진료 가능 동물병원과 대체 병원을 미리 파악</li>
 <li>전화번호를 스마트폰 즐겨찾기에 저장</li>
 <li>운전 경로 미리 확인 (밤에도 찾을 수 있게)</li>
 <li>주치 동물병원의 야간 응급 연계 병원 확인</li>
 </ul>
+<p>병원 명칭만 보고 24시간 진료를 단정하지 말고, 진료 시간·대상 동물·야간 접수 방법을 공식 채널이나 전화로 확인한다.</p>
 
 <h3>응급 정보 카드 만들기</h3>
 <div class="callout-dog">
@@ -140,7 +141,7 @@ const BLOG_POSTS: NewContent[] = [
 • 기저 질환·알레르기<br>
 • 혈액형 (확인된 경우)<br>
 • 주치 수의사 연락처<br>
-• 24시간 응급 병원 2곳 연락처<br>
+• 응급 진료 가능 병원과 대체 병원 연락처<br>
 • 보호자 긴급 연락처
 </div>
 
@@ -154,23 +155,23 @@ const BLOG_POSTS: NewContent[] = [
 
 <h2>응급 상황별 즉시 연락 기준</h2>
 <ul>
-<li>구토·설사에 피 → 즉시 병원</li>
-<li>소변·배변을 전혀 못 함 → 즉시 병원</li>
-<li>발작이 5분 이상 지속 → 즉시 병원</li>
-<li>의식 저하·쓰러짐 → 즉시 병원</li>
-<li>독성 물질 섭취 → 동물 중독 상담 후 즉시 병원</li>
+<li>짧은 시간에 구토·설사가 반복되거나 피가 보임 → 신속히 동물병원에 연락</li>
+<li>소변을 보려고 반복해서 시도하지만 나오지 않음 → 응급 진료 문의</li>
+<li>발작이 시작됨 → 주변을 안전하게 치우고 시간을 잰 뒤, 안전해지는 즉시 수의사에게 연락</li>
+<li>의식 저하·쓰러짐·호흡 곤란 → 가까운 응급 동물병원으로 이동</li>
+<li>독성 물질 섭취 의심 → 제품 용기와 섭취 정보를 확보하고 즉시 수의사에게 연락. 지시 없이 구토를 유도하거나 약을 주지 않음</li>
 </ul>
 
 <h2>마지막으로</h2>
-<p>응급 준비는 지금 당장 할 수 있다. 오늘 밤 24시간 응급 동물병원 번호를 저장해두는 것 하나가 훗날 큰 차이를 만든다.</p>`,
+<p>응급 준비는 평소에 해둘 수 있다. 야간 접수 방법과 이동 경로는 바뀔 수 있으므로 정기적으로 다시 확인한다.</p>`,
     authorName: "펫지기 에디터",
-    authorCredential: "반려동물 법률·제도 정보 큐레이터",
+    authorCredential: "반려동물 정보 편집팀",
     ymyl: true,
     sources: JSON.stringify([
-      "American Animal Hospital Association — Pet Emergency Preparedness",
-      "한국수의사회 응급 동물의료 안내",
+      "American Animal Hospital Association — Help! Is This a Pet Emergency? (2024-09-05) https://www.aaha.org/resources/help-is-this-a-pet-emergency/",
+      "American Veterinary Medical Association — Pet First Aid (2025) https://ebusiness.avma.org/files/ProductDownloads/mcm-client-brochures-pet-first-aid-2025.pdf",
     ]),
-    disclaimer: "이 글은 정보 제공을 목적으로 하며 응급 상황에서는 즉시 수의사에게 연락하세요.",
+    disclaimer: "이 글은 일반적인 준비 정보이며 수의학적 진단·처치를 대체하지 않습니다. 응급 징후가 있거나 판단이 어렵다면 즉시 가까운 동물병원에 연락하고 수의사의 지시를 따르세요.",
     status: "published",
     publishedAt: "2026-08-29T11:00:00.000Z",
     createdAt: NOW,

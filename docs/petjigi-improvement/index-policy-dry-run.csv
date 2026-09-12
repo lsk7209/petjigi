@@ -1,0 +1,4 @@
+url,current_index_policy,current_ads_policy,candidate_index_policy,candidate_ads_policy,status,rationale,approval_required
+/category/memorial,index,block,index,block,KEEP,"유용한 추모 콘텐츠는 색인을 유지하되 광고는 제외",no
+/search,index,allow,noindex,block,NOINDEX_CANDIDATE,"검색 결과·빈 상태의 색인 및 광고 적합성 별도 검토 필요",yes
+,,unknown,unknown,unknown,unknown,TEMPLATE_ONLY,"GSC 및 실제 URL별 품질 신호 없이 대량 정책을 적용하지 않음",yes

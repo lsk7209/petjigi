@@ -7,7 +7,7 @@ import { YmylDisclaimer } from "@/components/content/ymyl-disclaimer";
 import { CategoryProvider } from "@/components/providers/category-provider";
 import { AdPolicyProvider } from "@/components/providers/ad-policy-provider";
 import { ThemeMode } from "@/components/providers/theme-mode";
-import { breadcrumbSchema, faqSchema, definedTermSetSchema, itemListSchema, collectionPageSchema } from "@/lib/seo/structured-data";
+import { breadcrumbSchema, faqSchema, itemListSchema, collectionPageSchema } from "@/lib/seo/structured-data";
 
 export const revalidate = 3600;
 
@@ -28,7 +28,7 @@ export async function generateMetadata({
 
   const CATEGORY_META_DESC: Record<string, string> = {
     adoption: "강아지·고양이 입양 방법, 동물등록 절차, 품종별 특성 가이드. 유기동물 입양부터 동물등록까지 단계별 안내.",
-    nutrition: "강아지·고양이 사료 비교, 생애주기별 영양 요구량, 금지 음식 목록. 수의사 검토 반려동물 사료·영양 정보.",
+    nutrition: "강아지·고양이 사료 비교, 생애주기별 영양 요구량, 금지 음식 목록과 출처를 확인하는 반려동물 사료·영양 정보.",
     health: "강아지·고양이 증상 체크, 동물병원 찾기, 예방접종 스케줄. 공공데이터 기반 반려동물 건강·의료 정보.",
     insurance: "펫보험 비교, 보장범위 설명, 보험금 청구 가이드. 반려동물 보험·법률 전문 정보.",
     care: "반려동물 미용·훈련·호텔·동반시설 정보. 케어·라이프스타일 실용 가이드.",
@@ -38,7 +38,7 @@ export async function generateMetadata({
   const description = CATEGORY_META_DESC[slug] ?? `반려동물 ${cat.name} 관련 가이드·정보를 모아보세요. 공공데이터 기반 신뢰할 수 있는 정보.`;
 
   return {
-    title,
+    title: { absolute: title },
     description,
     alternates: { canonical: `/category/${slug}` },
     openGraph: { title, description },
@@ -305,7 +305,7 @@ export default async function CategoryPage({
               <section className="mb-8" aria-label="질병·증상 정보">
                 <h2 className="text-xl font-bold text-[var(--brand-text)] mb-4">질병·증상 정보</h2>
                 <p className="text-sm text-[var(--brand-text-secondary)] mb-4">
-                  강아지·고양이에게 흔한 질환의 증상, 원인, 치료 방법을 수의사 검토를 거쳐 안내합니다.
+                  강아지·고양이에게 흔한 질환의 증상과 진료가 필요한 신호를 일반 정보로 안내합니다.
                 </p>
                 <div className="flex flex-wrap gap-3">
                   <Link

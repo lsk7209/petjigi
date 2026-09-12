@@ -11,7 +11,6 @@ import { Heading } from "@react-email/heading";
 import { Text } from "@react-email/text";
 import { Button } from "@react-email/button";
 import { Hr } from "@react-email/hr";
-import { Img } from "@react-email/img";
 import React from "react";
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://petjigi.kr";
@@ -112,24 +111,6 @@ const styles = {
     padding: "2px 6px",
     marginBottom: "8px",
   } as React.CSSProperties,
-  pdfBox: {
-    backgroundColor: "#f5f1ea",
-    border: "1px solid #e8dfd0",
-    borderRadius: "12px",
-    padding: "20px 24px",
-    margin: "20px 0",
-  } as React.CSSProperties,
-  pdfTitle: {
-    fontSize: "15px",
-    fontWeight: "600",
-    color: "#2a2520",
-    margin: "0 0 6px 0",
-  } as React.CSSProperties,
-  pdfDesc: {
-    fontSize: "13px",
-    color: "#8c6a4f",
-    margin: "0 0 12px 0",
-  } as React.CSSProperties,
 };
 
 // ─── 공통 이메일 푸터 ────────────────────────────────────────────────────────
@@ -173,30 +154,22 @@ export interface WelcomeEmailProps {
   email: string;
   /** 구독 unsubscribe 토큰 (서버에서 생성) */
   unsubscribeToken: string;
-  /** 무료 PDF 다운로드 URL (플레이스홀더: 실제 파일 업로드 후 교체) */
-  pdfUrl?: string;
   /** 광고성 정보 수신 동의 여부 */
   hasMarketingConsent?: boolean;
-  /** 구독 출처 */
-  source?: string;
 }
 
 export function WelcomeEmail({
   email,
   unsubscribeToken,
-  pdfUrl = `${SITE_URL}/downloads/pet-loss-care-guide.pdf`,
   hasMarketingConsent = false,
-  source,
 }: WelcomeEmailProps) {
   const unsubscribeUrl = `${SITE_URL}/api/unsubscribe?token=${unsubscribeToken}&email=${encodeURIComponent(email)}`;
-  const isPetLossGuide = source === "pet_loss_care";
-
-  const subject = isPetLossGuide
-    ? "[펫지기] 펫로스 케어 가이드 PDF가 도착했습니다"
-    : "[펫지기] 구독을 환영합니다";
+  const subject = "[펫지기] 구독을 환영합니다";
 
   return (
     <Html lang="ko">
+      {/* React Email needs a literal email-document head; this is not a Next.js page. */}
+      {/* eslint-disable-next-line @next/next/no-head-element */}
       <head>
         <meta charSet="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -213,45 +186,19 @@ export function WelcomeEmail({
             {/* 본문 */}
             <div style={styles.content}>
               <Heading as="h1" style={styles.h1}>
-                {isPetLossGuide
-                  ? "펫로스 케어 가이드를 보내드립니다"
-                  : "펫지기 구독을 환영합니다!"}
+                펫지기 구독을 환영합니다!
               </Heading>
 
               <Text style={styles.paragraph}>
                 안녕하세요. 반려동물 보호자를 위한 정보 서비스 <strong>펫지기</strong>입니다.
-                {isPetLossGuide
-                  ? " 힘든 시간을 보내고 계신 분께 도움이 되길 바라는 마음으로 가이드를 준비했습니다."
-                  : " 구독해 주셔서 감사합니다."}
+                {" 구독해 주셔서 감사합니다."}
               </Text>
 
-              {/* PDF 다운로드 박스 */}
-              {isPetLossGuide && (
-                <div style={styles.pdfBox}>
-                  <p style={styles.pdfTitle}>
-                    📄 펫로스 케어 가이드 (무료 PDF)
-                  </p>
-                  <p style={styles.pdfDesc}>
-                    펫로스 증후군의 이해부터 슬픔 극복 방법, 전문 기관 연락처까지 담았습니다.
-                  </p>
-                  <div style={styles.ctaWrapper}>
-                    <Button href={pdfUrl} style={styles.ctaButton}>
-                      PDF 다운로드
-                    </Button>
-                  </div>
-                  <p style={{ ...styles.pdfDesc, fontSize: "11px", marginBottom: "0" }}>
-                    링크는 30일간 유효합니다.
-                  </p>
-                </div>
-              )}
-
-              {!isPetLossGuide && (
-                <div style={styles.ctaWrapper}>
-                  <Button href={SITE_URL} style={styles.ctaButton}>
-                    펫지기 둘러보기
-                  </Button>
-                </div>
-              )}
+              <div style={styles.ctaWrapper}>
+                <Button href={SITE_URL} style={styles.ctaButton}>
+                  펫지기 둘러보기
+                </Button>
+              </div>
 
               <Hr style={styles.hr} />
 

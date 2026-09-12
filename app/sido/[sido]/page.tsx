@@ -36,7 +36,7 @@ export async function generateMetadata({
   const description = `${first.sido} 지역 동물병원·펫미용·펫호텔·장묘업체를 시군구별로 찾아보세요. 공공데이터 기반.`;
 
   return {
-    title,
+    title: { absolute: title },
     description,
     alternates: { canonical: `/sido/${sido}` },
     openGraph: { title, description },

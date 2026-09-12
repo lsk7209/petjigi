@@ -12,6 +12,8 @@
 
 # testing
 /coverage
+/.tmp-validation-next/
+/.tmp-*-build.log
 
 # next.js
 /.next/

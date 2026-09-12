@@ -48,7 +48,7 @@ const FAQ = faqSchema([
 ]);
 
 export const metadata: Metadata = {
-  title: "견종·묘종 도감 — 강아지·고양이·소동물 품종 정보 | 펫지기",
+  title: { absolute: "견종·묘종 도감 — 강아지·고양이·소동물 품종 정보 | 펫지기" },
   description:
     "강아지·고양이·소동물 품종별 특징, 성격, 평균 수명, 건강 정보를 한눈에 확인하세요. 공공데이터 기반 펫지기 견종·묘종 도감입니다.",
   alternates: { canonical: "/breed" },

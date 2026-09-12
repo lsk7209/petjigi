@@ -5,6 +5,7 @@ import { breadcrumbSchema, itemListSchema, collectionPageSchema, definedTermSetS
 import { AdSlot } from "@/components/ads/ad-slot";
 import { AdPolicyProvider } from "@/components/providers/ad-policy-provider";
 import type { CategoryId } from "@/lib/category";
+import { hasDisplayableEditorialReview, withoutUnverifiedReviewClaim } from "@/lib/content-review";
 
 export const revalidate = 3600;
 
@@ -43,9 +44,9 @@ export async function generateMetadata({
   const canonical = buildCanonical(catId, currentPage);
 
   return {
-    title: `반려동물 블로그${catName}${searchLabel}${currentPage > 1 ? ` — ${currentPage}페이지` : " — 집사 생활의 모든 것"} | 펫지기`,
+    title: { absolute: `반려동물 블로그${catName}${searchLabel}${currentPage > 1 ? ` — ${currentPage}페이지` : " — 집사 생활의 모든 것"} | 펫지기` },
     description:
-      "강아지·고양이와 함께하는 일상 팁부터 건강·사료·보험까지. 펫지기 집사 에디터가 직접 경험하고 조사한 반려동물 정보를 공유합니다.",
+      "강아지·고양이와 함께하는 일상 팁부터 건강·사료·보험까지, 주제별 반려동물 정보를 정리합니다.",
     alternates: { canonical },
     ...(q ? { robots: { index: false } } : {}),
     openGraph: {
@@ -95,7 +96,7 @@ export default async function BlogIndexPage({
       position: i + 1,
       name: p.title,
       url: `${SITE_URL}/blog/${p.slug}`,
-      description: p.metaDescription ?? undefined,
+      description: withoutUnverifiedReviewClaim(p.metaDescription),
     }))
   );
 
@@ -150,7 +151,7 @@ export default async function BlogIndexPage({
           </h1>
           <p className="text-[var(--brand-text-secondary)] leading-relaxed max-w-2xl text-sm sm:text-base">
             강아지·고양이와 함께하는 집사 생활의 모든 것.<br />
-            입양·건강·사료·보험·케어까지, 직접 경험하고 조사한 정보를 나눕니다.
+            입양·건강·사료·보험·케어 정보를 주제별로 확인하세요.
           </p>
         </div>
 
@@ -171,13 +172,13 @@ export default async function BlogIndexPage({
             검색
           </button>
           {hasSearch && (
-            <a
+            <Link
               href="/blog"
               className="h-10 px-3 flex items-center rounded-lg border border-[var(--brand-border)] text-sm text-[var(--brand-text-secondary)] hover:border-[var(--brand-accent)] transition-colors"
               aria-label="검색 초기화"
             >
               ✕
-            </a>
+            </Link>
           )}
         </form>
 
@@ -246,6 +247,7 @@ export default async function BlogIndexPage({
               const catId = post.category ?? 1;
               // metaDescription 기준 추정 (본문은 통상 설명의 15~20배)
               const readingTime = Math.max(3, Math.ceil(((post.metaDescription?.length ?? 80) * 18) / 500));
+              const summary = withoutUnverifiedReviewClaim(post.subtitle ?? post.metaDescription);
               return (
                 <Link
                   key={post.slug}
@@ -263,9 +265,9 @@ export default async function BlogIndexPage({
                       >
                         {CATEGORY_EMOJI[catId]} {CATEGORY_LABEL[catId]}
                       </span>
-                      {post.ymyl && (
+                      {hasDisplayableEditorialReview(post) && (
                         <span className="text-[10px] px-1.5 py-0.5 rounded bg-amber-50 text-amber-700 border border-amber-200 font-semibold">
-                          전문가 검토
+                          편집 검토 기록
                         </span>
                       )}
                     </div>
@@ -277,9 +279,9 @@ export default async function BlogIndexPage({
                         {post.title}
                       </span>
                     </h2>
-                    {(post.subtitle || post.metaDescription) && (
+                    {summary && (
                       <p className="text-xs text-[var(--brand-text-secondary)] leading-relaxed line-clamp-2 flex-1 mb-3">
-                        {post.subtitle || post.metaDescription}
+                        {summary}
                       </p>
                     )}
                     <div className="flex items-center gap-2 mt-auto text-xs text-[var(--brand-text-secondary)] flex-wrap">
@@ -352,10 +354,10 @@ export default async function BlogIndexPage({
 
         {/* 가이드 연결 섹션 */}
         <section className="mt-12 pt-8 border-t border-[var(--brand-border)]">
-          <h2 className="text-base font-semibold text-[var(--brand-text)] mb-4">전문가 검토 가이드도 읽어보세요</h2>
+          <h2 className="text-base font-semibold text-[var(--brand-text)] mb-4">관련 가이드도 읽어보세요</h2>
           <div className="flex flex-wrap gap-3">
             <Link href="/guide" className="text-sm text-[var(--brand-accent)] hover:underline">
-              📚 수의사 검토 가이드 →
+              📚 반려동물 가이드 →
             </Link>
             <Link href="/condition" className="text-sm text-[var(--brand-accent)] hover:underline">
               💊 질병·증상 정보 →

@@ -6,6 +6,7 @@ import type { CategoryId } from "@/lib/category";
 import { breadcrumbSchema, faqSchema, itemListSchema, collectionPageSchema, definedTermSetSchema } from "@/lib/seo/structured-data";
 import { AdSlot } from "@/components/ads/ad-slot";
 import { AdPolicyProvider } from "@/components/providers/ad-policy-provider";
+import { hasDisplayableEditorialReview, withoutUnverifiedReviewClaim } from "@/lib/content-review";
 
 export const revalidate = 3600;
 
@@ -19,7 +20,7 @@ const BREADCRUMB = breadcrumbSchema([
 const FAQ = faqSchema([
   {
     question: "펫지기 가이드는 누가 작성하나요?",
-    answer: "수의사·전문가 검토를 거친 가이드만 게재합니다. YMYL(건강·의료·보험·장례) 카테고리 콘텐츠는 자격을 갖춘 전문가 검수 후 발행됩니다.",
+    answer: "펫지기 편집팀이 출처와 위험 표현을 점검합니다. 확인 가능한 검토 기록이 있는 문서는 검토자와 검토일을 별도로 표시합니다.",
     url: `${SITE_URL}/guide`,
   },
   {
@@ -39,13 +40,13 @@ const CATEGORY_EMOJI: Record<number, string> = {
 };
 
 export const metadata: Metadata = {
-  title: "반려동물 가이드 — 수의사 검토 정보 모음 | 펫지기",
+  title: "반려동물 가이드 정보 모음",
   description:
-    "강아지·고양이 입양·건강·사료·보험·케어·장례까지. 수의사·전문가 검토를 거친 반려동물 가이드를 카테고리별로 모아봤습니다.",
+    "강아지·고양이 입양·건강·사료·보험·케어·장례 정보를 카테고리별로 모았습니다.",
   alternates: { canonical: "/guide" },
   openGraph: {
     title: "반려동물 가이드 | 펫지기",
-    description: "수의사 검토 반려동물 가이드 — 입양부터 장례까지 6개 카테고리.",
+    description: "반려동물 가이드 — 입양부터 장례까지 6개 카테고리.",
   },
 };
 
@@ -55,12 +56,12 @@ export default async function GuideIndexPage() {
   const COLLECTION_PAGE = collectionPageSchema(
     "반려동물 가이드",
     `${SITE_URL}/guide`,
-    "수의사·전문가 검토를 거친 반려동물 가이드. 입양·건강·사료·보험·케어·장례 6개 카테고리."
+    "입양·건강·사료·보험·케어·장례 정보를 정리한 반려동물 가이드."
   );
 
   const GUIDE_TERMS = definedTermSetSchema("반려동물 케어 용어", [
     { name: "동물등록제", description: "생후 2개월 이상 반려견을 지방자치단체에 등록하는 의무 제도. 미등록 시 과태료가 부과됩니다." },
-    { name: "YMYL 콘텐츠", description: "건강·의료·금융 등 생명과 재산에 영향을 미칠 수 있는 콘텐츠. 펫지기의 해당 가이드는 수의사 검토를 거쳐 제공됩니다." },
+    { name: "YMYL 콘텐츠", description: "건강·의료·금융 등 생명과 재산에 영향을 미칠 수 있어 출처와 전문 검토 여부를 주의 깊게 확인해야 하는 콘텐츠." },
     { name: "중성화 수술", description: "생식기를 제거하여 번식을 막는 수술. 생후 6개월~1세 사이에 권장하며 호르몬 관련 질환 예방 효과가 있습니다." },
     { name: "기초 예방 접종", description: "강아지는 DHPPL, 고양이는 CVRP 등 종별 필수 백신을 정기적으로 접종하여 전염병을 예방합니다." },
   ]);
@@ -70,7 +71,7 @@ export default async function GuideIndexPage() {
       position: i + 1,
       name: g.title,
       url: `${SITE_URL}/guide/${g.slug}`,
-      description: g.metaDescription ?? undefined,
+      description: withoutUnverifiedReviewClaim(g.metaDescription),
     }))
   );
 
@@ -103,7 +104,7 @@ export default async function GuideIndexPage() {
         <div className="mb-6 sm:mb-8">
           <h1 className="text-2xl sm:text-3xl font-bold text-[var(--brand-text)] mb-2 sm:mb-3 tracking-tight" style={{ wordBreak: "keep-all" }} data-speakable>반려동물 가이드</h1>
           <p className="text-sm sm:text-base text-[var(--brand-text-secondary)] leading-relaxed max-w-2xl" style={{ wordBreak: "keep-all" }}>
-            수의사·전문가 검토를 거친 반려동물 가이드를 카테고리별로 모아봤습니다.
+            반려동물 가이드를 카테고리별로 모았습니다.
             입양부터 장례까지 필요한 정보를 찾아보세요.
           </p>
         </div>
@@ -139,17 +140,17 @@ export default async function GuideIndexPage() {
                         href={`/guide/${g.slug}`}
                         className="group p-4 rounded-[var(--radius-card)] border border-[var(--brand-border)] hover:border-[var(--brand-accent)] hover:shadow-sm transition-all"
                       >
-                        {g.ymyl && (
+                        {hasDisplayableEditorialReview(g) && (
                           <span className="inline-block text-[10px] px-1.5 py-0.5 rounded bg-[var(--cat-3-soft)] text-[var(--cat-3)] font-semibold mb-1.5">
-                            전문가 검토
+                            편집 검토 기록
                           </span>
                         )}
                         <h3 className="font-semibold text-sm sm:text-base text-[var(--brand-text)] group-hover:text-[var(--brand-accent)] transition-colors leading-snug" style={{ wordBreak: "keep-all" }}>
                           {g.title}
                         </h3>
-                        {g.metaDescription && (
+                        {withoutUnverifiedReviewClaim(g.metaDescription) && (
                           <p className="text-xs text-[var(--brand-text-secondary)] mt-1.5 leading-relaxed line-clamp-2">
-                            {g.metaDescription}
+                            {withoutUnverifiedReviewClaim(g.metaDescription)}
                           </p>
                         )}
                         {g.publishedAt && (
@@ -171,7 +172,7 @@ export default async function GuideIndexPage() {
           <h2 className="text-xl font-bold text-[var(--brand-text)] mb-4">가이드 자주 묻는 질문</h2>
           <dl className="space-y-3">
             {[
-              { q: "펫지기 가이드는 누가 작성하나요?", a: "수의사·전문가 검토를 거친 가이드만 게재합니다. YMYL(건강·의료·보험·장례) 카테고리 콘텐츠는 자격을 갖춘 전문가 검수 후 발행됩니다." },
+              { q: "펫지기 가이드는 누가 작성하나요?", a: "펫지기 편집팀이 출처와 위험 표현을 점검합니다. 확인 가능한 검토 기록이 있는 문서는 검토자와 검토일을 표시합니다." },
               { q: "가이드 정보는 얼마나 자주 업데이트되나요?", a: "수의학 가이드라인, 법령 개정, 최신 연구 결과를 반영해 정기적으로 검토합니다. 각 가이드 하단의 출처와 업데이트 날짜를 확인하세요." },
               { q: "특정 질병이나 증상 정보는 어디서 찾나요?", a: "건강·의료 카테고리 가이드 또는 질병·증상 상세 페이지에서 확인하세요. 응급 상황이면 즉시 가까운 동물병원을 방문하세요." },
             ].map((item, i) => (

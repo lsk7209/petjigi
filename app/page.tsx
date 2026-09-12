@@ -6,6 +6,7 @@ import { faqSchema, definedTermSetSchema } from "@/lib/seo/structured-data";
 import { SubscribeForm } from "@/components/forms/subscribe-form";
 import { AdSlot } from "@/components/ads/ad-slot";
 import { AdPolicyProvider } from "@/components/providers/ad-policy-provider";
+import { AdsenseTrustSection } from "@/components/content/adsense-trust-section";
 
 const SITE_URL_CONST = process.env.NEXT_PUBLIC_SITE_URL ?? "https://petjigi.kr";
 
@@ -27,7 +28,7 @@ const HOME_FAQ = faqSchema([
   },
   {
     question: "정보는 얼마나 자주 업데이트되나요?",
-    answer: "동물병원·펫미용 등 영업장 정보는 매일, 구조동물 현황은 매일, 보호센터 정보는 매주 공공데이터에서 동기화됩니다.",
+    answer: "데이터 종류마다 수집 일정이 다릅니다. 각 목록에 표시된 마지막 정상 수집 시점을 확인하고, 방문 전에는 해당 기관이나 업체에 최신 정보를 확인해 주세요.",
     url: SITE_URL_CONST,
   },
   {
@@ -132,7 +133,7 @@ export default async function HomePage() {
                 </h1>
                 <p style={{ fontSize: 18, color: "var(--brand-text-secondary)", maxWidth: 480, lineHeight: 1.65 }}>
                   공공데이터 기반 전국 {formatCount(stats.businesses)}개 이상의 동물병원·펫미용·펫호텔·장묘업체와
-                  수의사 검토를 거친 가이드를 안내합니다.
+                  출처와 주의사항을 함께 제시한 가이드를 안내합니다.
                 </p>
 
                 <div style={{ marginTop: 32, display: "flex", gap: 10 }}>
@@ -221,7 +222,7 @@ export default async function HomePage() {
                 <span className="pj-numeral" style={{ fontSize: 14 }}>02</span>
                 <h2 className="pj-display" style={{ fontSize: 32, marginTop: 4, marginBottom: 12 }}>우리 동네부터<br/>살펴보세요</h2>
                 <p style={{ color: "var(--brand-text-secondary)", fontSize: 15, lineHeight: 1.7 }}>
-                  전국 17개 시·도, 226개 시·군·구 단위로 정리했습니다. 행정안전부 공공데이터를 매일 동기화합니다.
+                  전국 17개 시·도와 서비스에 등록된 시·군·구 단위로 정리했습니다. 데이터 종류별 일정에 따라 공공데이터를 갱신합니다.
                 </p>
               </div>
               <div className="grid grid-cols-4 gap-2 sm:grid-cols-4">
@@ -245,10 +246,16 @@ export default async function HomePage() {
           <div className="pj-container-5xl" style={{ textAlign: "center" }}>
             <span className="pj-eyebrow" style={{ color: "var(--brand-accent)" }}>왜 펫지기인가</span>
             <p className="pj-display" style={{ fontSize: "clamp(22px,3vw,30px)", marginTop: 14, lineHeight: 1.5, color: "var(--brand-bg)", maxWidth: 720, marginLeft: "auto", marginRight: "auto" }}>
-              "검색 한 번이면 우리 동네 동물병원,<br/>
+              &ldquo;검색 한 번이면 우리 동네 동물병원,<br/>
               우리 강아지 견종 정보, 그리고 마지막 인사까지<br/>
-              <span style={{ color: "var(--brand-accent)" }}>제대로 정리된 안내</span>를 받을 수 있어야 한다고 믿습니다."
+              <span style={{ color: "var(--brand-accent)" }}>제대로 정리된 안내</span>를 받을 수 있어야 한다고 믿습니다.&rdquo;
             </p>
+          </div>
+        </section>
+
+        <section className="py-12 sm:py-16" aria-label="정보 검증 기준">
+          <div className="pj-container-7xl">
+            <AdsenseTrustSection />
           </div>
         </section>
 
@@ -263,7 +270,7 @@ export default async function HomePage() {
               <div style={{ display: "flex", alignItems: "baseline", justifyContent: "space-between", marginBottom: 32 }}>
                 <div>
                   <span className="pj-numeral" style={{ fontSize: 14 }}>03</span>
-                  <h2 className="pj-display" style={{ fontSize: 32, marginTop: 4 }}>이번 주 가이드</h2>
+                  <h2 className="pj-display" style={{ fontSize: 32, marginTop: 4 }}>최근 가이드</h2>
                 </div>
                 <Link href="/guide" style={{ color: "var(--brand-accent-warm)", fontWeight: 600, textDecoration: "none" }}>전체 가이드 →</Link>
               </div>
@@ -271,7 +278,6 @@ export default async function HomePage() {
               <div className="grid gap-5" style={{ gridTemplateColumns: "repeat(auto-fill,minmax(280px,1fr))" }}>
                 {recentGuides.map((guide) => {
                   const cat = CATEGORIES[guide.category as keyof typeof CATEGORIES];
-                  const meta = CATEGORY_META[guide.category];
                   const cc = CAT_COLORS[guide.category] ?? { color: "var(--brand-accent)", soft: "var(--brand-accent-soft)" };
                   return (
                     <Link
@@ -355,7 +361,7 @@ export default async function HomePage() {
                   href: "/condition",
                   emoji: "💊",
                   title: "질병·증상 정보",
-                  desc: "슬개골 탈구, 심장사상충, 고양이 FLUTD 등 흔한 질환의 증상·원인·치료를 수의사 검토로 안내합니다.",
+                  desc: "슬개골 탈구, 심장사상충, 고양이 FLUTD 등 흔한 질환의 증상·원인과 진료가 필요한 신호를 안내합니다.",
                   cta: "질환 정보 보기",
                   color: "var(--cat-3)",
                   soft: "var(--cat-3-soft)",
@@ -402,8 +408,8 @@ export default async function HomePage() {
           <div className="pj-container-7xl">
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-8">
               {[
-                { icon: "🛡️", title: "수의사·변호사 검토", desc: "의료·법률 카테고리는 자격을 가진 전문가가 검토한 콘텐츠만 게재합니다." },
-                { icon: "📊", title: "공공데이터 매일 동기화", desc: "행정안전부 데이터포털·국가동물보호정보시스템 자료를 매일 갱신합니다." },
+                { icon: "🛡️", title: "근거와 검토 기록", desc: "출처와 위험 표현을 점검하고, 확인 가능한 검토 기록이 있는 경우에만 검토 정보를 표시합니다." },
+                { icon: "📊", title: "공공데이터 갱신", desc: "원본별 수집 일정과 마지막 정상 수집 시점을 구분해 안내합니다." },
                 { icon: "🔍", title: "광고와 정보의 분리", desc: "광고·제휴 링크는 본문과 명확히 구분 표시합니다. 추모 페이지에는 광고를 게재하지 않습니다." },
               ].map(b => (
                 <div key={b.title}>
@@ -425,7 +431,7 @@ export default async function HomePage() {
                 반려동물 건강 정보를 이메일로 받아보세요
               </h2>
               <p style={{ fontSize: 15, opacity: 0.8, marginBottom: 24, color: "#1a1f15" }}>
-                월 2회, 수의사·전문가 검토를 거친 콘텐츠만 엄선해 보내드립니다.
+                월 2회, 새로 정리한 반려동물 정보와 서비스 소식을 보내드립니다.
               </p>
               <div style={{ maxWidth: 480, margin: "0 auto" }}>
                 <SubscribeForm source="home_newsletter" />

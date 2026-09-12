@@ -1,6 +1,7 @@
 import { db } from "@/db/client";
 import { contents } from "@/db/schema";
 import { eq, and, desc, or, lte } from "drizzle-orm";
+import { withoutUnverifiedReviewClaim } from "@/lib/content-review";
 
 export const revalidate = 3600;
 
@@ -50,7 +51,7 @@ export async function GET() {
   <channel>
     <title>펫지기 — 반려동물 보호자를 위한 정보</title>
     <link>${SITE_URL}</link>
-    <description>반려동물과 함께하는 모든 결정 — 입양부터 장례까지. 수의사 검토 가이드, 블로그, 질병·증상 정보.</description>
+    <description>반려동물과 함께하는 모든 결정 — 입양부터 장례까지. 가이드, 블로그, 질병·증상 정보.</description>
     <language>ko</language>
     <lastBuildDate>${lastBuildDate}</lastBuildDate>
     <atom:link href="${SITE_URL}/feed.xml" rel="self" type="application/rss+xml"/>
@@ -58,12 +59,13 @@ export async function GET() {
       .map((p) => {
         const url = contentUrl(p.type, p.slug);
         const pub = new Date(p.publishedAt ?? p.updatedAt ?? new Date().toISOString()).toUTCString();
+        const description = withoutUnverifiedReviewClaim(p.subtitle ?? p.metaDescription) ?? "";
         return `
     <item>
       <title><![CDATA[${p.title}]]></title>
       <link>${url}</link>
       <guid isPermaLink="true">${url}</guid>
-      <description><![CDATA[${p.subtitle ?? p.metaDescription ?? ""}]]></description>
+      <description><![CDATA[${description}]]></description>
       <pubDate>${pub}</pubDate>
     </item>`;
       })

@@ -9,7 +9,7 @@ const PAGE_URL = `${SITE_URL}/guide/pet-loss-care`;
 export const metadata: Metadata = {
   title: "펫로스 증후군 극복 가이드 — 반려동물을 떠나보낸 보호자를 위해",
   description:
-    "반려동물과의 이별 후 찾아오는 펫로스 증후군의 증상과 슬픔을 건강하게 극복하는 방법을 안내합니다. 전문가 검토 콘텐츠 + 무료 케어 가이드 PDF 제공.",
+    "반려동물과의 이별 후 찾아오는 펫로스 증후군의 증상과 슬픔을 건강하게 극복하는 방법을 안내합니다.",
   openGraph: {
     type: "article",
     url: PAGE_URL,
@@ -193,26 +193,25 @@ export default function PetLossCarePage() {
             </section>
           </article>
 
-          {/* ── 이메일 게이트: 무료 PDF 받기 ── */}
+          {/* ── 이메일 뉴스레터 ── */}
           <section aria-labelledby="pdf-gate-heading" className="border-t border-[var(--brand-border)] pt-10">
             <div className="text-center mb-6">
               <p className="text-xs font-semibold tracking-widest text-[var(--brand-accent)] uppercase mb-2">
-                무료 리소스
+                뉴스레터
               </p>
               <h2
                 id="pdf-gate-heading"
                 className="text-2xl font-bold text-[var(--brand-text)] mb-2"
               >
-                펫로스 케어 가이드 PDF 받기
+                펫지기 소식 받아보기
               </h2>
               <p className="text-sm text-[var(--brand-text-secondary)] max-w-md mx-auto">
-                슬픔 극복 단계별 실천법, 전문 기관 연락처, 추모 의식 아이디어를 담은
-                14페이지 가이드를 무료로 보내드립니다.
+                반려동물 돌봄 정보와 새로 정리한 가이드를 월 2회 이메일로 보내드립니다.
               </p>
             </div>
 
             <SubscribeForm
-              source="pet_loss_care"
+              source="pet_loss_newsletter"
               showMarketingConsent={true}
               className="max-w-md mx-auto"
             />

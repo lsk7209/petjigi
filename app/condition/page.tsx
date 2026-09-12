@@ -4,6 +4,7 @@ import { getCachedAllConditions } from "@/lib/db-queries";
 import { breadcrumbSchema, faqSchema, itemListSchema, collectionPageSchema, definedTermSetSchema } from "@/lib/seo/structured-data";
 import { AdSlot } from "@/components/ads/ad-slot";
 import { AdPolicyProvider } from "@/components/providers/ad-policy-provider";
+import { hasDisplayableEditorialReview, withoutUnverifiedReviewClaim } from "@/lib/content-review";
 
 export const revalidate = 3600;
 
@@ -18,7 +19,7 @@ const BREADCRUMB = breadcrumbSchema([
 const FAQ = faqSchema([
   {
     question: "반려동물 질병 정보는 어떤 기준으로 작성되나요?",
-    answer: "WSAVA(세계소동물수의사회), 대한수의사회 가이드라인 및 수의학 교재를 참고해 작성하고, 수의사 검토를 거쳐 발행합니다.",
+    answer: "각 문서에 표시된 출처와 업데이트 날짜를 확인할 수 있습니다. 확인 가능한 검토 기록이 있는 문서는 검토자와 검토일을 별도로 표시합니다.",
     url: `${SITE_URL}/condition`,
   },
   {
@@ -39,13 +40,13 @@ const FAQ = faqSchema([
 ]);
 
 export const metadata: Metadata = {
-  title: "반려동물 질병·증상 정보 — 수의사 검토 | 펫지기",
+  title: "반려동물 질병·증상 정보",
   description:
-    "강아지·고양이 흔한 질병의 증상, 원인, 치료 방법을 수의사 검토를 거쳐 안내합니다. 슬개골 탈구, FLUTD, 심장사상충, 켄넬코프 등.",
+    "강아지·고양이에게 흔한 질병의 증상과 진료가 필요한 신호를 정리합니다. 슬개골 탈구, FLUTD, 심장사상충, 켄넬코프 등.",
   alternates: { canonical: "/condition" },
   openGraph: {
     title: "반려동물 질병·증상 정보 | 펫지기",
-    description: "수의사 검토 질병·증상 가이드 — 강아지·고양이 흔한 질환 정보.",
+    description: "강아지·고양이 질병·증상 정보와 진료가 필요한 신호.",
   },
 };
 
@@ -68,11 +69,11 @@ export default async function ConditionIndexPage() {
   const COLLECTION_PAGE = collectionPageSchema(
     "반려동물 질병·증상 정보",
     `${SITE_URL}/condition`,
-    "강아지·고양이에게 흔한 질환의 증상, 원인, 치료 방법을 수의사 검토를 거쳐 안내합니다."
+    "강아지·고양이에게 흔한 질환의 증상과 진료가 필요한 신호를 정리합니다."
   );
 
   const MEDICAL_TERMS = definedTermSetSchema("반려동물 의료 용어", [
-    { name: "YMYL 콘텐츠", description: "건강·의료 정보와 같이 생명이나 재정에 영향을 미칠 수 있는 콘텐츠. 펫지기의 건강 정보는 수의사 검토를 거쳐 제공됩니다." },
+    { name: "YMYL 콘텐츠", description: "건강·의료 정보처럼 생명에 영향을 미칠 수 있어 출처와 전문 검토 여부를 주의 깊게 확인해야 하는 콘텐츠." },
     { name: "예방 접종", description: "전염병 예방을 위해 항원을 접종하는 처치. 강아지는 DHPPL·코로나·켄넬코프, 고양이는 CVRP·FeLV 등이 필수입니다." },
     { name: "중성화 수술", description: "생식기관을 제거해 번식 능력을 차단하는 수술. 호르몬 관련 질환 예방 효과가 있으며, 통상 생후 6개월~1세 사이에 권장됩니다." },
     { name: "내과적 치료 vs 외과적 치료", description: "내과적 치료는 약물·식이요법 등 비수술적 접근, 외과적 치료는 수술을 통한 처치를 의미합니다." },
@@ -83,7 +84,7 @@ export default async function ConditionIndexPage() {
       position: i + 1,
       name: c.title,
       url: `${SITE_URL}/condition/${c.slug}`,
-      description: c.metaDescription ?? undefined,
+      description: withoutUnverifiedReviewClaim(c.metaDescription),
     }))
   );
 
@@ -109,7 +110,7 @@ export default async function ConditionIndexPage() {
         <div className="mb-6 sm:mb-8">
           <h1 className="text-2xl sm:text-3xl font-bold text-[var(--brand-text)] mb-2 sm:mb-3 tracking-tight" style={{ wordBreak: "keep-all" }} data-speakable>반려동물 질병·증상 정보</h1>
           <p className="text-sm sm:text-base text-[var(--brand-text-secondary)] leading-relaxed max-w-2xl" style={{ wordBreak: "keep-all" }}>
-            강아지·고양이에게 흔한 질환의 증상, 원인, 치료 방법을 수의사 검토를 거쳐 안내합니다.
+            강아지·고양이에게 흔한 질환의 증상과 진료가 필요한 신호를 정리합니다.
             본 정보는 참고용이며 의학적 진단을 대체하지 않습니다.
           </p>
         </div>
@@ -169,15 +170,17 @@ export default async function ConditionIndexPage() {
                         href={`/condition/${c.slug}`}
                         className="group p-4 rounded-[var(--radius-card)] border border-[var(--brand-border)] hover:border-[var(--brand-accent)] hover:shadow-sm transition-all"
                       >
-                        <span className="text-[10px] px-1.5 py-0.5 rounded bg-[var(--cat-3-soft)] text-[var(--cat-3)] font-semibold">
-                          전문가 검토
-                        </span>
+                        {hasDisplayableEditorialReview(c) && (
+                          <span className="text-[10px] px-1.5 py-0.5 rounded bg-[var(--cat-3-soft)] text-[var(--cat-3)] font-semibold">
+                            편집 검토 기록
+                          </span>
+                        )}
                         <h3 className="font-semibold text-sm text-[var(--brand-text)] group-hover:text-[var(--brand-accent)] transition-colors leading-snug mt-2">
                           {c.title}
                         </h3>
-                        {c.metaDescription && (
+                        {withoutUnverifiedReviewClaim(c.metaDescription) && (
                           <p className="text-xs text-[var(--brand-text-secondary)] mt-1.5 leading-relaxed line-clamp-2">
-                            {c.metaDescription}
+                            {withoutUnverifiedReviewClaim(c.metaDescription)}
                           </p>
                         )}
                       </Link>

@@ -56,14 +56,6 @@ function parseAddress(addr: string): { sido: string; sigungu: string; dong: stri
   return { sido: parts[0] ?? "", sigungu: parts[1] ?? "", dong: parts[2] ?? "" };
 }
 
-function slugify(str: string): string {
-  return str
-    .toLowerCase()
-    .replace(/\s+/g, "-")
-    .replace(/[^\w가-힣-]/g, "")
-    .slice(0, 80);
-}
-
 async function importFile(filename: string, typeInfo: { type: string; category: number }) {
   const path = `${CSV_DIR}/${filename}`;
   const buf = readFileSync(path);

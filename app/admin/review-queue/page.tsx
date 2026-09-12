@@ -5,6 +5,8 @@ import type { ReviewQueueItem } from "@/db/schema";
 import { asc } from "drizzle-orm";
 import { approveContent, rejectContent } from "./actions";
 import { notFound } from "next/navigation";
+import Link from "next/link";
+import { isValidAdminSecret } from "@/lib/admin-auth";
 
 export const metadata: Metadata = {
   robots: { index: false, follow: false },
@@ -74,8 +76,8 @@ function ReasonLabel({ reason }: { reason: string | null }) {
 }
 
 // 승인 폼
-function ApproveForm({ id }: { id: string }) {
-  const approve = approveContent.bind(null, id);
+function ApproveForm({ id, adminKey }: { id: string; adminKey: string }) {
+  const approve = approveContent.bind(null, id, adminKey);
   return (
     <form action={approve}>
       <button
@@ -89,8 +91,8 @@ function ApproveForm({ id }: { id: string }) {
 }
 
 // 거부 폼
-function RejectForm({ id }: { id: string }) {
-  const reject = rejectContent.bind(null, id);
+function RejectForm({ id, adminKey }: { id: string; adminKey: string }) {
+  const reject = rejectContent.bind(null, id, adminKey);
   return (
     <form action={reject} className="flex items-center gap-1">
       <input
@@ -128,9 +130,10 @@ export default async function ReviewQueuePage({ searchParams }: PageProps) {
   const { key, status } = await searchParams;
 
   // 간단한 쿼리 파라미터 키 인증
-  if (!key || key !== process.env.CRON_SECRET) {
+  if (!isValidAdminSecret(key)) {
     notFound();
   }
+  const adminKey = key as string;
 
   const items: ReviewQueueItem[] = await db
     .select()
@@ -155,12 +158,12 @@ export default async function ReviewQueuePage({ searchParams }: PageProps) {
             YMYL 카테고리(건강·의료, 보험·법률, 장례·추모) 콘텐츠 검수 현황
           </p>
         </div>
-        <a
-          href="/admin/analytics"
+        <Link
+          href={`/admin/analytics?key=${encodeURIComponent(adminKey)}`}
           className="text-sm px-4 py-2 rounded-lg border border-gray-200 hover:border-blue-400 hover:text-blue-600 transition-colors font-medium"
         >
           📊 Analytics 대시보드
-        </a>
+        </Link>
       </div>
 
       {/* 요약 카드 */}
@@ -293,8 +296,8 @@ export default async function ReviewQueuePage({ searchParams }: PageProps) {
                       {(item.status === "pending" ||
                         item.status === "in_review") && (
                         <div className="flex items-center gap-2 flex-wrap">
-                          <ApproveForm id={item.id} />
-                          <RejectForm id={item.id} />
+                          <ApproveForm id={item.id} adminKey={adminKey} />
+                          <RejectForm id={item.id} adminKey={adminKey} />
                         </div>
                       )}
                       {(item.status === "approved" ||

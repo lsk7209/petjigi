@@ -1,6 +1,7 @@
 import { db } from "@/db/client";
 import { contents, breeds } from "@/db/schema";
 import { eq, and, desc, or, lte } from "drizzle-orm";
+import { sitemapUnavailableResponse } from "@/lib/seo/sitemap-response";
 
 export const revalidate = 3600;
 
@@ -22,10 +23,10 @@ function changefreq(type: string): string {
   return "monthly";
 }
 
-function urlEntry(loc: string, lastmod: string, freq: string, pri: string): string {
+function urlEntry(loc: string, lastmod: string | null, freq: string, pri: string): string {
   return `  <url>
     <loc>${loc}</loc>
-    <lastmod>${lastmod}</lastmod>
+    ${lastmod ? `<lastmod>${lastmod}</lastmod>` : ""}
     <changefreq>${freq}</changefreq>
     <priority>${pri}</priority>
   </url>`;
@@ -54,17 +55,15 @@ export async function GET() {
         .from(breeds),
     ]);
 
-    const today = new Date().toISOString().split("T")[0];
-
     const contentUrls = contentRows.map((r) => {
       const loc = contentUrl(r.type, r.slug);
-      const lastmod = (r.updatedAt ?? r.publishedAt ?? today).split("T")[0];
+      const lastmod = (r.updatedAt ?? r.publishedAt)?.split("T")[0] ?? null;
       return urlEntry(loc, lastmod, changefreq(r.type), priority(r.type));
     });
 
     const breedUrls = breedRows.map((r) => {
       const loc = `${SITE_URL}/breed/${r.species}/${r.slug}`;
-      const lastmod = (r.updatedAt ?? today).split("T")[0];
+      const lastmod = r.updatedAt?.split("T")[0] ?? null;
       return urlEntry(loc, lastmod, "monthly", "0.7");
     });
 
@@ -81,9 +80,6 @@ ${[...contentUrls, ...breedUrls].join("\n")}
     });
   } catch (err) {
     console.error("[sitemap-content] DB 오류:", err);
-    return new Response(
-      `<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"></urlset>`,
-      { headers: { "Content-Type": "application/xml; charset=utf-8" } }
-    );
+    return sitemapUnavailableResponse();
   }
 }

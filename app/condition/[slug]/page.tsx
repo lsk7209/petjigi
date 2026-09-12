@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import { notFound } from "next/navigation";
 import Link from "next/link";
 import { cache } from "react";
 import { db } from "@/db/client";
@@ -8,6 +7,8 @@ import { and, eq, ne, desc, lte } from "drizzle-orm";
 import type { CategoryId } from "@/lib/category";
 import { YmylDisclaimer } from "@/components/content/ymyl-disclaimer";
 import { articleSchema, breadcrumbSchema, faqSchema, medicalConditionSchema } from "@/lib/seo/structured-data";
+import { hasDisplayableEditorialReview, withoutUnverifiedReviewClaim } from "@/lib/content-review";
+import { socialTitle } from "@/lib/seo/title";
 import { TableOfContents, type TocHeading } from "@/components/content/table-of-contents";
 import { ReadingProgress } from "@/components/content/reading-progress";
 import { ShareButtons } from "@/components/content/share-buttons";
@@ -130,12 +131,12 @@ export async function generateMetadata({
   }
 
   return {
-    title: `${content.title} — 증상·원인·치료 | 펫지기`,
-    description: content.metaDescription ?? `${content.title} 증상·원인·진단·치료 방법을 전문가 검토를 거쳐 안내합니다.`,
+    title: `${content.title} — 증상·원인·치료`,
+    description: withoutUnverifiedReviewClaim(content.metaDescription) ?? `${content.title} 관련 증상·원인·진단·치료 정보를 출처와 함께 안내합니다.`,
     alternates: { canonical: `/condition/${slug}` },
     openGraph: {
-      title: `${content.title} — 증상·원인·치료 | 펫지기`,
-      description: content.metaDescription ?? undefined,
+      title: socialTitle(`${content.title} — 증상·원인·치료`),
+      description: withoutUnverifiedReviewClaim(content.metaDescription),
       type: "article",
     },
   };
@@ -186,7 +187,7 @@ export default async function ConditionPage({
   const conditionEntity = medicalConditionSchema({
     name: content.title,
     url: `${SITE_URL}/condition/${slug}`,
-    description: content.metaDescription,
+    description: withoutUnverifiedReviewClaim(content.metaDescription),
   });
 
   const breadcrumb = breadcrumbSchema([
@@ -234,9 +235,9 @@ export default async function ConditionPage({
             <span className="px-2.5 py-0.5 rounded-full bg-[var(--brand-border)] text-xs font-semibold text-[var(--brand-text-secondary)]">
               💊 건강·의료
             </span>
-            {content.ymyl && (
+            {hasDisplayableEditorialReview(content) && content.reviewedAt && (
               <span className="px-2.5 py-0.5 rounded-full bg-amber-50 text-xs font-semibold text-amber-700 border border-amber-200">
-                전문가 검토
+                편집 검토 기록
               </span>
             )}
           </div>
@@ -256,7 +257,7 @@ export default async function ConditionPage({
                 {content.publishedAt.slice(0, 10)} 발행
               </time>
             )}
-            {content.reviewedAt && (
+            {hasDisplayableEditorialReview(content) && content.reviewedAt !== null && (
               <span className="flex items-center gap-1">
                 <span aria-hidden="true">✅</span>
                 {content.reviewedAt.slice(0, 10)}{content.reviewerName && ` · ${content.reviewerName}`} 검토
