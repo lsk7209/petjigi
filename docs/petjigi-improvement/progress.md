@@ -51,6 +51,7 @@
 ## In progress
 
 - Production release preparation: the reconciled `origin/main` tree passes 103/103 package tests, 58/58 and 5/5 additional regression suites, typecheck, lint, five audits, schema check, production dependency audit, diff checks, and a 72-page disposable-schema build.
+- Merge commit `0851e2f` is pushed to `origin/codex/petjigi-adsense-quality`; draft PR #1 records the release gates and does not trigger the production deployment path.
 - Claude-assisted SEO/AdSense review identified an Auto ads gap on regional funeral business routes and duplicate robots/sitemap cache ownership. Both were fixed with regression coverage; account-level Auto ads, publisher binding, CMP, and AdSense status remain `UNKNOWN`.
 - Qualified semantic review of the 11 sourced review-queue medical drafts. They are not published; machine source presence is not treated as expert approval.
 
