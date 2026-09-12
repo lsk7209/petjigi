@@ -2,12 +2,15 @@
 
 - Timestamp: 2026-09-13 Asia/Seoul
 - Goal: implement and verify safe AdSense-readiness quality improvements for `petjigi.kr`.
-- Branch: `codex/petjigi-adsense-quality`
+- Branch: `main`
 - Baseline commit: `023ded6`
-- Current state: RECONCILED_LOCAL_IMPLEMENTATION_VERIFIED_WITH_PRODUCTION_GATES
+- Current state: PRODUCTION_DEPLOYED_WITH_CONTENT_PROMOTION_GAP
 
 ## Completed
 
+- PR #1 merged as `9b09ac8`; Vercel production deployment `dpl_8HQzzBkS3iSBzsYNvWhwoZLmH9tV` is Ready and serves `petjigi.kr`.
+- GitHub Actions run `34705612529` applied and verified only the additive `etl_sync_state` production table before the application release.
+- Post-deploy HTTP checks returned 200 for home, page-2 listing, memorial category, regional funeral listing, rescue, robots, sitemap, and ads.txt. Page 2 and memorial now have self-canonicals; funeral pages contain no Auto ads loader in the returned HTML.
 - Located and read the supplied master specification (`D:\다운로드\petjigi_codex_improvement_master.md`, SHA-256 `29EE9E04BA4AA05896E8322C3F12F350EBECBC1DDDB3CE8EF97D36D641ECF0C8`).
 - Confirmed repository remote, stack, working tree, and representative Vercel/public-domain behavior.
 - Preserved four pre-existing dirty paths and moved work onto a dedicated local branch.
