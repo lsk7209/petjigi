@@ -9,7 +9,7 @@ Checked: 2026-09-12 Asia/Seoul. This report distinguishes local code proof from 
 | Public sample routes | PASS | `/hwaseong/boarding` and `/bucheon/sale` returned 200 before local changes |
 | Redirect host/path sample | PASS | HTTP and www samples reached HTTPS apex with the path preserved and no sampled loop |
 | robots/sitemaps/ads.txt response | PASS | Direct curl returned 200 for `robots.txt`, `sitemap.xml`, `sitemap-content.xml`, and `ads.txt` |
-| Unit/regression tests | PASS | `pnpm test`: 101 passed, 0 failed; includes crawler-policy separation, metadata-route sitemap exclusions, and blog/RSS subtitle review-claim sanitization plus the newsletter, data, content, SEO, ad, accessibility, and artifact contracts |
+| Unit/regression tests | PASS | `pnpm test`: 102 passed, 0 failed; includes Vercel robots/cache header boundaries, crawler-policy separation, metadata-route sitemap exclusions, and blog/RSS subtitle review-claim sanitization plus the existing contracts |
 | Rescue freshness tracking | PASS_LOCAL | migration `0005_fat_ken_ellis.sql` adds separate run-level attempt/success state; success advances only after every fetched page is processed, and the page displays both timestamps separately |
 | Metadata title audit | PASS | `pnpm audit:seo` reports 0 unsafe child document-title suffixes; suffix-bearing child titles use `title.absolute` |
 | Incremental high-risk gate | PASS | `pnpm audit:content:gate`: 37 changed records, 0 blockers; unchanged legacy gaps remain audit-only |

@@ -121,6 +121,20 @@ Allowed states: `CONFIRMED`, `PARTIALLY_CONFIRMED`, `NOT_REPRODUCED`, `UNKNOWN`,
 - regression_test: bounded public HTTP/canonical matrix, `scripts/sitemap-policy.test.ts`, regenerated sitemap inspection, and SEO audit.
 - approval_needed: production deployment and any DNS/Vercel mutations are not authorized. Post-deploy canonical/robots/sitemap smoke is required.
 
+## SEO-10 — deployment headers overrode page-level indexing intent
+
+- priority: P0
+- status: FIXED
+- affected_urls: all pages, especially `/rescue` and `/rescue/*`
+- affected_files: `vercel.json`, `scripts/next-config-cache.test.ts`
+- observation: the deployment config applied `X-Robots-Tag: index, follow` globally, while rescue pages declare `noindex`; its rescue-specific pattern did not unambiguously cover the root page. The same config also retained a custom immutable cache header for `/_next/static` after framework ownership was restored elsewhere.
+- reproduction_steps: inspect the ordered header rules in `vercel.json` and compare them with route metadata and the Next.js cache contract.
+- root_cause: deployment-level defaults duplicated and could override route/framework-level policies.
+- evidence: the global robots header and custom static cache rule were present in the committed deployment config.
+- proposed_fix: keep global security headers only, cover `/rescue` and descendants with one noindex rule, and let Next.js own hashed-static caching.
+- regression_test: `scripts/next-config-cache.test.ts` parses the Vercel config and asserts these boundaries.
+- approval_needed: no for local configuration; deployment and response-header smoke remain approval-gated.
+
 ## CONTENT-01 — review badges without a verifiable review record
 
 - priority: P0

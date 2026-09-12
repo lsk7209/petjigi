@@ -9,7 +9,7 @@ Level: 2 (local tests/type/lint plus production compile; runtime/account proof i
 | Command | Result | Notes |
 |---|---|---|
 | harness-init.py | PASS | size=large, domain=adsense-audit, created=2026-09-12T17:17:10+09:00 |
-| pnpm test | PASS | 101 passed, 0 failed; includes crawler-readable rescue noindex policy, metadata-route sitemap exclusions, and blog/RSS subtitle review-claim sanitization plus the existing newsletter, data, content, SEO, ad, accessibility, artifact, review, and publication-boundary checks |
+| pnpm test | PASS | 102 passed, 0 failed; includes Vercel robots/cache header boundaries, crawler-readable rescue noindex policy, metadata-route sitemap exclusions, and blog/RSS subtitle review-claim sanitization plus the existing contracts |
 | pnpm audit --prod --json | PASS | Next.js 16.2.6 baseline: 2 critical, 28 high, 32 moderate, 4 low. After Next.js 16.3.5, development-only classification for the unused-at-runtime `shadcn` CLI, and same-major patched transitive overrides: 0 critical, 0 high, 0 moderate, 0 low. |
 | pnpm build | PASS | Next.js 16.3.5, disposable schema-complete local database, 72 generated pages, no deprecated Edge runtime or custom hashed-static-cache warning, next-sitemap complete; no deployment. |
 | pnpm audit:seo | PASS | 0 unsafe child document-title suffixes; sitemap build-time lastmod disabled |
