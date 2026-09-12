@@ -1,9 +1,9 @@
 # Current handoff
 
-- Timestamp: 2026-09-12 Asia/Seoul
+- Timestamp: 2026-09-13 Asia/Seoul
 - User goal: improve `petjigi.kr` quality for an AdSense review using the supplied master specification, with real local implementation and verification.
-- Branch/base: `codex/petjigi-adsense-quality` from `023ded6`.
-- Exact state: safe local implementation and verification are complete for the current code scope; production and account state are unchanged. Next.js is patched from 16.2.6 to 16.3.5. Fresh public checks still show stale page-2 and `/category/memorial` canonical output until deployment.
+- Branch/base: `codex/petjigi-adsense-quality` from `023ded6`; local commits `e837ee9` and `3ef58c0`.
+- Exact state: safe local implementation and verification are complete for the current code scope; production and account state are unchanged. Next.js is patched from 16.2.6 to 16.3.5. Fresh 2026-09-13 public HTTP checks returned 200 but still showed page-2 canonicals pointing to page 1 and `/category/memorial` pointing to the home page, proving the local fixes are not deployed.
 - Completed: shared listing COUNT/pagination/freshness behavior; self-canonical pagination; review-evidence and publication gates; title/common-copy repair; evidence-based sitemap dates; crawler-readable rescue `noindex`; metadata-route sitemap exclusions; Auto ads exclusions; newsletter contract repair and request hardening; five read-only audit commands; all required reports and dry-runs; scoped high-risk claim corrections.
 - Pre-existing dirty paths at task start: `app/[sigungu]/[type]/page.tsx`, `app/advertising/page.tsx`, `app/page.tsx`, `components/content/adsense-trust-section.tsx`. They were preserved; this task intentionally also edited the listing and home files.
 - Fresh validation: `pnpm test` 102/102 PASS; `pnpm exec tsc --noEmit`, `pnpm lint`, `pnpm audit:seo`, `pnpm audit:ads`, `pnpm audit --prod`, and `git diff --check` PASS. Vercel headers no longer force global indexing or duplicate Next.js static caching, and the rescue root/details share explicit noindex. The schema-complete build generated 72 pages. Local production HTTP returned 200 for `/feed.xml` and `/blog`, with no unsupported expert-review phrase; the test server was stopped.
