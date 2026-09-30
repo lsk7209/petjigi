@@ -11,6 +11,8 @@
  *       Indexing API는 공식 OAuth2 API이므로 허용
  */
 
+import { classifyIndexingResponses } from "./indexing-outcome";
+
 const INDEXING_API = "https://indexing.googleapis.com/v3/urlNotifications:publish";
 
 interface ServiceAccount {
@@ -111,6 +113,10 @@ export async function notifyGoogleIndexing(url: string, type: "URL_UPDATED" | "U
  * - Google Indexing API 일일 한도: 200건
  * - 토큰 1회 발급 후 재사용
  * - 초과분은 잘라냄 (가장 최근 URL 우선 — 호출자가 최신순 정렬할 것)
+ *
+ * 주의: Google 공식 문서는 이 API를 JobPosting/BroadcastEvent 포함 VideoObject
+ * 페이지로 제한한다. 일반 가이드·블로그·질환 글은 이 함수의 대상이 아니다 —
+ * 호출자가 eligibility를 먼저 걸러야 한다(F12).
  */
 export async function notifyGoogleBatch(
   urls: string[],
@@ -131,7 +137,7 @@ export async function notifyGoogleBatch(
     return { sent: 0, skipped: urls.length };
   }
 
-  let sent = 0;
+  const responses: { url: string; status: number | null; error?: string }[] = [];
   for (const url of batch) {
     try {
       const res = await fetch(INDEXING_API, {
@@ -144,16 +150,23 @@ export async function notifyGoogleBatch(
         signal: AbortSignal.timeout(15000),
       });
       console.log(`[Google Indexing] ${url} → ${res.status}`);
-      sent++;
+      responses.push({ url, status: res.status });
     } catch (err) {
       console.warn(`[Google Indexing] 실패 (${url}):`, err);
+      responses.push({ url, status: null, error: String(err) });
     }
     // 150ms 간격 — API 초당 200건 제한 준수
     await new Promise((r) => setTimeout(r, 150));
   }
 
+  // HTTP 성공(2xx)만 accepted로 센다 — 401/429/500 등은 fetch가 예외 없이
+  // resolve되어도 실패로 집계한다(F13).
+  const { accepted, failed, failedUrls } = classifyIndexingResponses(responses);
+  if (failed > 0) {
+    console.warn(`[Google Indexing] ${failed}건 실패:`, failedUrls.join(", "));
+  }
   if (skipped > 0) console.log(`[Google Indexing] ${skipped}건 한도 초과로 생략 (오늘 재실행 시 전송)`);
-  return { sent, skipped };
+  return { sent: accepted, skipped: skipped + failed };
 }
 
 /**

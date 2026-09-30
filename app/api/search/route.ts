@@ -1,7 +1,17 @@
 import { NextRequest, NextResponse } from "next/server";
 import { db } from "@/db/client";
 import { businesses, contents, regions } from "@/db/schema";
-import { like, or, and, eq, inArray } from "drizzle-orm";
+import { like, or, and, eq, inArray, lte } from "drizzle-orm";
+import { isPublicContentType } from "@/lib/content-publication";
+import { buildContentHref, buildBusinessHref } from "@/lib/search-contract";
+import {
+  enforceSearchCacheCap,
+  isSupportedSearchType,
+  isValidSearchQueryLength,
+  likeLiteralPattern,
+  SEARCH_MAX_QUERY_LENGTH,
+  SEARCH_RESULT_LIMIT,
+} from "@/lib/search-query";
 
 // 모듈 레벨 인메모리 캐시 (동일 쿼리 60초 내 중복 스캔 방지)
 interface CacheEntry { data: unknown; expires: number }
@@ -14,13 +24,17 @@ export async function GET(req: NextRequest) {
   const q = (searchParams.get("q") ?? "").trim();
   const type = searchParams.get("type"); // 'business' | 'guide' | null (전체)
 
-  if (!q || q.length < 2) {
+  if (!isSupportedSearchType(type)) {
     return NextResponse.json(
-      { error: "검색어는 2자 이상 입력해주세요." },
-      {
-        status: 400,
-        headers: { "X-Robots-Tag": "noindex" },
-      }
+      { error: "지원하지 않는 type 파라미터입니다." },
+      { status: 400, headers: { "X-Robots-Tag": "noindex" } }
+    );
+  }
+
+  if (!isValidSearchQueryLength(q)) {
+    return NextResponse.json(
+      { error: `검색어는 2자 이상 ${SEARCH_MAX_QUERY_LENGTH}자 이하로 입력해주세요.` },
+      { status: 400, headers: { "X-Robots-Tag": "noindex" } }
     );
   }
 
@@ -34,101 +48,131 @@ export async function GET(req: NextRequest) {
     });
   }
 
-  const pattern = `%${q}%`;
+  const pattern = likeLiteralPattern(q);
+  const now = new Date().toISOString();
+
   const results: {
-    type: "business" | "guide";
+    type: "business" | "guide" | "blog" | "condition";
     slug: string | null;
     name: string;
     category: number | null;
+    href: string;
     address?: string;
-    bizType?: string;
-    sigunguSlug?: string;
   }[] = [];
 
-  // ── 사업장(businesses) 검색 ──────────────────────────────────────────────
-  if (!type || type === "business") {
-    const bizRows = await db
-      .select({
-        id: businesses.id,
-        name: businesses.name,
-        address: businesses.address,
-        addressSigungu: businesses.addressSigungu,
-        category: businesses.category,
-        type: businesses.type,
-      })
-      .from(businesses)
-      .where(
-        and(
-          eq(businesses.status, "active"),
-          or(
-            like(businesses.name, pattern),
-            like(businesses.address, pattern)
+  let responseData: { q: string; returnedCount: number; hasMore: boolean; results: typeof results };
+
+  try {
+    // ── 사업장(businesses) 검색 ────────────────────────────────────────────
+    let bizHasMore = false;
+    if (!type || type === "business") {
+      const bizLimit = type === "business" ? SEARCH_RESULT_LIMIT : Math.ceil(SEARCH_RESULT_LIMIT / 2);
+      const bizRows = await db
+        .select({
+          id: businesses.id,
+          name: businesses.name,
+          address: businesses.address,
+          addressSigungu: businesses.addressSigungu,
+          category: businesses.category,
+          type: businesses.type,
+        })
+        .from(businesses)
+        .where(
+          and(
+            eq(businesses.status, "active"),
+            or(like(businesses.name, pattern), like(businesses.address, pattern))
           )
         )
-      )
-      .limit(type === "business" ? 20 : 10);
+        .orderBy(businesses.name, businesses.id)
+        .limit(bizLimit + 1);
 
-    const sigunguNames = [...new Set(bizRows.map((r) => r.addressSigungu).filter(Boolean))] as string[];
-    const regionMap = new Map<string, string>();
-    if (sigunguNames.length > 0) {
-      const regionRows = await db
-        .select({ sigungu: regions.sigungu, sigunguSlug: regions.sigunguSlug })
-        .from(regions)
-        .where(inArray(regions.sigungu, sigunguNames));
-      for (const r of regionRows) regionMap.set(r.sigungu, r.sigunguSlug);
+      bizHasMore = bizRows.length > bizLimit;
+      const bizPage = bizRows.slice(0, bizLimit);
+
+      const sigunguNames = [...new Set(bizPage.map((r) => r.addressSigungu).filter(Boolean))] as string[];
+      const regionMap = new Map<string, string>();
+      if (sigunguNames.length > 0) {
+        const regionRows = await db
+          .select({ sigungu: regions.sigungu, sigunguSlug: regions.sigunguSlug })
+          .from(regions)
+          .where(inArray(regions.sigungu, sigunguNames));
+        for (const r of regionRows) regionMap.set(r.sigungu, r.sigunguSlug);
+      }
+
+      for (const row of bizPage) {
+        const sigunguSlug = row.addressSigungu ? regionMap.get(row.addressSigungu) : undefined;
+        const href = buildBusinessHref({ bizType: row.type, sigunguSlug, name: row.name });
+        // 지역이 모호하거나 미해결이면 잘못된 상세 URL이나 "#" 링크를 만들지 않고 결과에서 제외한다.
+        if (!href) continue;
+        results.push({
+          type: "business",
+          slug: encodeURIComponent(row.name),
+          name: row.name,
+          category: row.category,
+          href,
+          address: row.address,
+        });
+      }
     }
 
-    for (const row of bizRows) {
-      results.push({
-        type: "business",
-        slug: encodeURIComponent(row.name),
-        name: row.name,
-        category: row.category,
-        address: row.address,
-        bizType: row.type,
-        sigunguSlug: row.addressSigungu ? regionMap.get(row.addressSigungu) : undefined,
-      });
-    }
-  }
-
-  // ── 가이드(contents) 검색 ─────────────────────────────────────────────────
-  if (!type || type === "guide") {
-    const guideRows = await db
-      .select({
-        slug: contents.slug,
-        title: contents.title,
-        category: contents.category,
-      })
-      .from(contents)
-      .where(
-        and(
-          eq(contents.status, "published"),
-          like(contents.title, pattern)
+    // ── 콘텐츠(contents: guide/blog/condition) 검색 ───────────────────────
+    let contentHasMore = false;
+    if (!type || type === "guide") {
+      const contentLimit = type === "guide" ? SEARCH_RESULT_LIMIT : Math.ceil(SEARCH_RESULT_LIMIT / 2);
+      const contentRows = await db
+        .select({
+          slug: contents.slug,
+          title: contents.title,
+          category: contents.category,
+          type: contents.type,
+          publishedAt: contents.publishedAt,
+        })
+        .from(contents)
+        .where(
+          and(
+            eq(contents.status, "published"),
+            lte(contents.publishedAt, now),
+            like(contents.title, pattern)
+          )
         )
-      )
-      .limit(type === "guide" ? 20 : 10);
+        .orderBy(contents.publishedAt, contents.id)
+        .limit(contentLimit + 1);
 
-    for (const row of guideRows) {
-      results.push({
-        type: "guide",
-        slug: row.slug,
-        name: row.title,
-        category: row.category,
-      });
+      contentHasMore = contentRows.length > contentLimit;
+      const contentPage = contentRows.slice(0, contentLimit);
+
+      for (const row of contentPage) {
+        // 알려지지 않은 타입은 guide로 임의 연결하지 않고 결과에서 제외한다.
+        if (!isPublicContentType(row.type)) continue;
+        const href = buildContentHref(row.type, row.slug);
+        if (!href) continue;
+        results.push({
+          type: row.type,
+          slug: row.slug,
+          name: row.title,
+          category: row.category,
+          href,
+        });
+      }
     }
+
+    const trimmed = results.slice(0, SEARCH_RESULT_LIMIT);
+    responseData = {
+      q,
+      returnedCount: trimmed.length,
+      hasMore: bizHasMore || contentHasMore || results.length > SEARCH_RESULT_LIMIT,
+      results: trimmed,
+    };
+  } catch (err) {
+    console.error("[search] DB 조회 오류:", err);
+    return NextResponse.json(
+      { error: "검색 처리 중 오류가 발생했습니다." },
+      { status: 503, headers: { "X-Robots-Tag": "noindex", "Cache-Control": "no-store" } }
+    );
   }
 
-  // 총 최대 20개 트리밍
-  const trimmed = results.slice(0, 20);
-  const responseData = { q, total: trimmed.length, results: trimmed };
-
-  // 캐시 저장 (오래된 엔트리 주기적 정리)
-  if (SEARCH_CACHE.size > 500) {
-    const now = Date.now();
-    for (const [k, v] of SEARCH_CACHE) {
-      if (v.expires < now) SEARCH_CACHE.delete(k);
-    }
-  }
+  // 캐시 저장 — hard cap 500개를 초과하면 가장 오래된 항목부터 제거한다.
+  enforceSearchCacheCap(SEARCH_CACHE, Date.now());
   SEARCH_CACHE.set(cacheKey, { data: responseData, expires: Date.now() + CACHE_TTL_MS });
 
   return NextResponse.json(responseData, {

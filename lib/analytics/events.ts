@@ -1,3 +1,5 @@
+import { buildSearchEventPayload } from "./search-telemetry";
+
 export type GtagFn = (...args: unknown[]) => void;
 
 declare global {
@@ -42,9 +44,13 @@ export const track = {
   ctaClick(params: { label: string; destination: string; location: string }) {
     gtag("event", "cta_click", { cta_label: params.label, cta_destination: params.destination, cta_location: params.location });
   },
-  /** 검색 실행 */
+  /**
+   * 검색 실행 — 검색창에는 이메일·전화번호 등 개인정보가 입력될 수 있으므로
+   * 원문 검색어는 전송하지 않는다. 결과 수와 길이 구간만 기록한다.
+   */
   search(params: { query: string; resultsCount?: number }) {
-    gtag("event", "search", { search_term: params.query, results_count: params.resultsCount });
+    const payload = buildSearchEventPayload({ query: params.query, resultsCount: params.resultsCount ?? 0 });
+    gtag("event", "search", payload);
   },
   /** 목차(ToC) 클릭 */
   tocClick(params: { headingText: string; guideSlug: string }) {

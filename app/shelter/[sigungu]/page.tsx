@@ -4,7 +4,7 @@ import Link from "next/link";
 import { db } from "@/db/client";
 import { shelters, regions } from "@/db/schema";
 import { eq } from "drizzle-orm";
-import { getCachedRegionBySlug, getCachedSheltersBySigungu } from "@/lib/db-queries";
+import { getCachedResolvedRegion, getCachedSheltersBySigungu } from "@/lib/db-queries";
 import { breadcrumbSchema, faqSchema, collectionPageSchema } from "@/lib/seo/structured-data";
 import { CategoryCta } from "@/components/content/category-cta";
 import { AdSlot } from "@/components/ads/ad-slot";
@@ -32,7 +32,7 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { sigungu } = await params;
 
-  const region = await getCachedRegionBySlug(sigungu);
+  const region = await getCachedResolvedRegion(sigungu);
 
   if (!region) {
     return {
@@ -68,7 +68,7 @@ export default async function ShelterSigunguPage({
 }) {
   const { sigungu } = await params;
 
-  const region = await getCachedRegionBySlug(sigungu);
+  const region = await getCachedResolvedRegion(sigungu);
   if (!region) notFound();
 
   const shelterList = await getCachedSheltersBySigungu(region.sigungu);

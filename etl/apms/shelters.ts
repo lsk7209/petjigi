@@ -8,6 +8,8 @@ import { db } from "../../db/client";
 import { shelters } from "../../db/schema";
 import { geocodeAddress } from "../geocoding/kakao";
 import { pingIndexNow } from "../../lib/seo/index-now";
+import { buildShelterUpsertValues } from "../../lib/etl/shelter-upsert";
+import { parseApmsResponse } from "../../lib/etl/apms-response";
 
 const API_KEY = process.env.APMS_API_KEY ?? "";
 const API_URL = "https://apis.data.go.kr/1543061/abandonmentPublicService_v2/abandonmentPublic_v2";
@@ -21,35 +23,47 @@ interface AnimalRow {
   orgNm: string;
 }
 
-async function fetchPage(pageNo: number, numOfRows = 1000): Promise<{ items: AnimalRow[]; total: number }> {
+async function fetchPage(pageNo: number, numOfRows = 1000) {
   const url = `${API_URL}?serviceKey=${encodeURIComponent(API_KEY)}&pageNo=${pageNo}&numOfRows=${numOfRows}&_type=json`;
   const res = await fetch(url, { signal: AbortSignal.timeout(30000) });
-  if (!res.ok) throw new Error(`APMS API 오류: ${res.status}`);
-  const json = await res.json();
-  const body = json?.response?.body;
-  const rawItems = body?.items?.item ?? [];
-  const items: AnimalRow[] = Array.isArray(rawItems) ? rawItems : [rawItems];
-  return { items, total: body?.totalCount ?? 0 };
+  let json: unknown = null;
+  try {
+    json = await res.json();
+  } catch {
+    json = null;
+  }
+  return parseApmsResponse<AnimalRow>({ httpOk: res.ok, httpStatus: res.status, json });
 }
 
 export async function syncShelters(): Promise<void> {
   console.log("[ETL:shelters] 시작 (abandonmentPublic_v2에서 보호센터 추출)");
 
   // 전체 페이지 수집 + careRegNo 기준 dedup
-  const { total } = await fetchPage(1, 1);
-  const totalPages = Math.ceil(total / 1000);
+  const firstPage = await fetchPage(1, 1);
+  if (firstPage.kind === "failed") {
+    console.error(`[ETL:shelters] 첫 페이지 조회 실패 — ${firstPage.reason}. 중단`);
+    return;
+  }
+  const total = firstPage.totalCount;
+  const totalPages = Math.max(1, Math.ceil(total / 1000));
   console.log(`[ETL:shelters] 구조동물 ${total}건 → 최대 ${totalPages}페이지`);
 
   const seen = new Map<string, AnimalRow>();
+  let sawFailedPage = false;
 
   for (let page = 1; page <= totalPages; page++) {
-    const { items } = await fetchPage(page, 1000);
-    for (const item of items) {
+    const result = await fetchPage(page, 1000);
+    if (result.kind === "failed") {
+      console.error(`[ETL:shelters] ${page}페이지 조회 실패 — ${result.reason}. 지금까지 수집된 ${seen.size}건만 반영`);
+      sawFailedPage = true;
+      break;
+    }
+    for (const item of result.items) {
       if (item.careRegNo && !seen.has(item.careRegNo)) {
         seen.set(item.careRegNo, item);
       }
     }
-    if (items.length < 1000) break;
+    if (result.items.length < 1000) break;
   }
 
   console.log(`[ETL:shelters] 고유 보호센터 ${seen.size}개 처리 중...`);
@@ -59,7 +73,6 @@ export async function syncShelters(): Promise<void> {
 
   for (const [regNo, row] of seen) {
     const addr = (row.careAddr ?? "").trim();
-    const parts = addr.split(/\s+/);
 
     let lat: number | null = null;
     let lng: number | null = null;
@@ -70,41 +83,31 @@ export async function syncShelters(): Promise<void> {
     }
 
     const id = `apms-shelter-${regNo}`;
+    const { insert, updateOnConflict } = buildShelterUpsertValues({
+      id,
+      name: row.careNm,
+      address: addr,
+      phone: row.careTel,
+      lat,
+      lng,
+      now,
+    });
 
     await db
       .insert(shelters)
-      .values({
-        id,
-        name: row.careNm,
-        sido: parts[0] ?? null,
-        sigungu: parts[1] ?? null,
-        address: addr || null,
-        lat,
-        lng,
-        phone: row.careTel || null,
-        capacity: null,
-        source: "apms_15025454",
-        lastSyncedAt: now,
-        createdAt: now,
-        updatedAt: now,
-      })
+      .values(insert)
       .onConflictDoUpdate({
         target: shelters.id,
-        set: {
-          name: row.careNm,
-          address: addr || null,
-          lat,
-          lng,
-          phone: row.careTel || null,
-          lastSyncedAt: now,
-          updatedAt: now,
-        },
+        // sido/sigungu도 함께 갱신한다 — 센터가 이전해도 예전 지역이 남지 않게 한다(F10).
+        set: updateOnConflict,
       });
 
     total2++;
   }
 
-  console.log(`[ETL:shelters] 완료 — ${total2}건 처리`);
+  console.log(
+    `[ETL:shelters] 완료 — ${total2}건 처리${sawFailedPage ? " (일부 페이지 조회 실패로 부분 수집)" : ""}`
+  );
 
   if (total2 > 0) {
     await pingIndexNow([`${SITE_URL}/sido/seoul`, SITE_URL]).catch(() => {});
@@ -114,7 +117,9 @@ export async function syncShelters(): Promise<void> {
       await fetch(`${SITE_URL}/api/cache/revalidate`, {
         method: "POST",
         headers: { "Content-Type": "application/json", Authorization: `Bearer ${cronSecret}` },
-        body: JSON.stringify({ tags: ["stats"] }),
+        // shelters 목록 캐시 태그가 'shelters'인데 기존에는 'stats'만 무효화해
+        // 새 데이터가 반영돼도 목록이 갱신되지 않았다(F10).
+        body: JSON.stringify({ tags: ["shelters", "stats"] }),
       }).catch((e) => console.error("[ETL:shelters] 캐시 무효화 실패:", e));
     }
   }

@@ -7,6 +7,8 @@
 import { db } from "../../db/client";
 import { etlSyncState, rescuedAnimals } from "../../db/schema";
 import { eq } from "drizzle-orm";
+import { parseApmsResponse } from "../../lib/etl/apms-response";
+import { classifyEtlRun, type PageOutcome } from "../../lib/etl/run-outcome";
 
 const API_KEY = process.env.APMS_API_KEY ?? "";
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://petjigi.kr";
@@ -36,22 +38,16 @@ interface RescuedAnimalRow {
   noticeComment: string;
 }
 
-async function fetchPage(
-  pageNo: number,
-  numOfRows = 1000,
-): Promise<{ items: RescuedAnimalRow[]; total: number }> {
+async function fetchPage(pageNo: number, numOfRows = 1000) {
   const url = `${API_URL}?serviceKey=${encodeURIComponent(API_KEY)}&pageNo=${pageNo}&numOfRows=${numOfRows}&_type=json`;
   const res = await fetch(url, { signal: AbortSignal.timeout(30000) });
-  if (!res.ok) throw new Error(`APMS 구조동물 API 오류: ${res.status}`);
-  const json = await res.json();
-  const body = json?.response?.body;
-  const rawItems = body?.items?.item;
-  const items: RescuedAnimalRow[] = !rawItems
-    ? []
-    : Array.isArray(rawItems)
-      ? rawItems
-      : [rawItems];
-  return { items, total: body?.totalCount ?? 0 };
+  let json: unknown = null;
+  try {
+    json = await res.json();
+  } catch {
+    json = null;
+  }
+  return parseApmsResponse<RescuedAnimalRow>({ httpOk: res.ok, httpStatus: res.status, json });
 }
 
 export async function syncRescuedAnimals(): Promise<void> {
@@ -70,24 +66,37 @@ export async function syncRescuedAnimals(): Promise<void> {
       set: { lastAttemptAt: attemptAt, updatedAt: attemptAt },
     });
 
-  const { total } = await fetchPage(1, 1);
-  const totalPages = Math.ceil(total / 1000);
-  console.log(`[ETL:rescued-animals] 총 ${total}건 (${totalPages}페이지)`);
-
-  if (total === 0) {
-    await recordSuccessfulRun(attemptAt);
-    console.log("[ETL:rescued-animals] 데이터 없음 — 정상 완료");
+  const firstPage = await fetchPage(1, 1);
+  if (firstPage.kind === "failed") {
+    console.error(`[ETL:rescued-animals] 첫 페이지 조회 실패 — ${firstPage.reason}. 성공 시각을 갱신하지 않음`);
     return;
   }
 
-  const now = new Date().toISOString();
+  const total = firstPage.totalCount;
+  const totalPages = Math.max(1, Math.ceil(total / 1000));
+  console.log(`[ETL:rescued-animals] 총 ${total}건 (${totalPages}페이지)`);
+
+  const pageOutcomes: PageOutcome[] = [];
   let upserted = 0;
   const BATCH_SIZE = 200;
 
   for (let page = 1; page <= totalPages; page++) {
-    const { items } = await fetchPage(page, 1000);
-    if (items.length === 0) break;
+    const result = await fetchPage(page, 1000);
+    if (result.kind === "failed") {
+      pageOutcomes.push({ kind: "failed", reason: result.reason });
+      console.error(`[ETL:rescued-animals] ${page}페이지 조회 실패 — ${result.reason}`);
+      break;
+    }
 
+    const items = result.items;
+    pageOutcomes.push({ kind: "ok", itemCount: items.length });
+
+    if (items.length === 0) {
+      // 예상보다 적은 페이지에서 끝났다 — 이후 classifyEtlRun이 partial로 판정한다.
+      break;
+    }
+
+    const now = new Date().toISOString();
     for (let i = 0; i < items.length; i += BATCH_SIZE) {
       const chunk = items.slice(i, i + BATCH_SIZE);
       const statements = chunk.map((row) =>
@@ -153,29 +162,44 @@ export async function syncRescuedAnimals(): Promise<void> {
     }
 
     if (page % 3 === 0 || page === totalPages) {
-      console.log(
-        `[ETL:rescued-animals] ${page}/${totalPages} 페이지 완료 (${upserted}건)`,
-      );
+      console.log(`[ETL:rescued-animals] ${page}/${totalPages} 페이지 완료 (${upserted}건)`);
     }
   }
 
-  await recordSuccessfulRun(now);
+  const classification = classifyEtlRun(pageOutcomes, { expectedPages: totalPages });
+  console.log(
+    `[ETL:rescued-animals] 실행 결과: ${classification.outcome} (처리 ${classification.pagesProcessed}/${totalPages}페이지, upsert ${upserted}건)`
+  );
 
+  if (classification.outcome !== "complete") {
+    console.warn(
+      `[ETL:rescued-animals] 완전 성공이 아님(${classification.outcome}) — lastSuccessfulAt을 갱신하지 않음`
+    );
+    return;
+  }
+
+  // 성공 시각은 수집·검증이 모두 끝난 이 시점에 기록한다 (수집 도중 계산하지 않음).
+  await recordSuccessfulRun(new Date().toISOString());
   console.log(`[ETL:rescued-animals] 완료 — ${upserted}건 upsert`);
 
-  // Next.js 캐시 무효화 (rescue + stats 태그)
+  // Next.js 캐시 무효화 (rescue + stats 태그) — 응답 실패도 검사해 성공처럼 삼키지 않는다.
   const cronSecret = process.env.CRON_SECRET;
   if (cronSecret) {
-    await fetch(`${SITE_URL}/api/cache/revalidate`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: `Bearer ${cronSecret}`,
-      },
-      body: JSON.stringify({ tags: ["rescue", "stats"] }),
-    }).catch((e) =>
-      console.error("[ETL:rescued-animals] 캐시 무효화 실패:", e),
-    );
+    try {
+      const res = await fetch(`${SITE_URL}/api/cache/revalidate`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${cronSecret}`,
+        },
+        body: JSON.stringify({ tags: ["rescue", "stats"] }),
+      });
+      if (!res.ok) {
+        console.error(`[ETL:rescued-animals] 캐시 무효화 실패 — HTTP ${res.status}`);
+      }
+    } catch (e) {
+      console.error("[ETL:rescued-animals] 캐시 무효화 실패:", e);
+    }
   }
 }
 

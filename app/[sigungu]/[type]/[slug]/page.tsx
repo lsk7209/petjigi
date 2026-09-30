@@ -4,7 +4,7 @@ import Link from "next/link";
 import { db } from "@/db/client";
 import { businesses, contents } from "@/db/schema";
 import { and, eq, ne, sql, desc } from "drizzle-orm";
-import { getCachedRegionBySlug } from "@/lib/db-queries";
+import { getCachedResolvedRegion } from "@/lib/db-queries";
 import { localBusinessSchema, breadcrumbSchema } from "@/lib/seo/structured-data";
 import type { CategoryId } from "@/lib/category";
 import { YmylDisclaimer } from "@/components/content/ymyl-disclaimer";
@@ -15,6 +15,7 @@ import { AdPolicyProvider } from "@/components/providers/ad-policy-provider";
 import { BusinessViewTracker } from "@/components/analytics/business-view-tracker";
 import { BusinessContactLinks } from "@/components/analytics/business-contact-links";
 import { getAddressRegionConsistency } from "@/lib/business-listing";
+import { pickUniqueBusinessMatch } from "@/lib/business-detail-match";
 
 export const revalidate = 86400;
 
@@ -63,7 +64,7 @@ export async function generateMetadata({
   const name = decodeURIComponent(slug);
   const typeLabel = TYPE_LABEL[type] ?? type;
 
-  const region = await getCachedRegionBySlug(sigungu);
+  const region = await getCachedResolvedRegion(sigungu);
   const location = region?.sigungu ?? sigungu;
   const title = `${name} ${typeLabel} | ${location} | 펫지기`;
   const description = `${location} ${name} ${typeLabel} — 위치, 연락처, 주변 시설 정보. 공공데이터 기반.`;
@@ -85,21 +86,20 @@ export default async function BusinessDetailPage({
   const { sigungu: type, type: sigungu, slug } = await params;
   const name = decodeURIComponent(slug);
 
-  const business = await db
+  const region = await getCachedResolvedRegion(sigungu);
+
+  const candidates = await db
     .select()
     .from(businesses)
-    .where(
-      and(
-        eq(businesses.type, type),
-        eq(businesses.name, name),
-        ne(businesses.status, "closed")
-      )
-    )
-    .get();
+    .where(and(eq(businesses.type, type), eq(businesses.name, name)));
 
-  if (!business) notFound();
+  // region이 모호하거나 미해결이면 sigungu slug 문자열 자체로 좁힌다(과거 URL 호환).
+  // region이 해소됐으면 실제 시군구명으로 좁혀, 다른 시도의 동명업체가 섞이지 않게 한다.
+  const targetSigungu = region?.sigungu ?? sigungu;
+  const match = pickUniqueBusinessMatch(candidates, { sigungu: targetSigungu });
 
-  const region = await getCachedRegionBySlug(sigungu);
+  if (match.kind !== "resolved") notFound();
+  const business = match.business as typeof candidates[number];
 
   const nearby = await db
     .select()

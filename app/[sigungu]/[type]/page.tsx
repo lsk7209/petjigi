@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { notFound, redirect } from "next/navigation";
 import Link from "next/link";
-import { getCachedBusinessListing, getCachedRegionBySlug } from "@/lib/db-queries";
+import { getCachedBusinessListing, getCachedResolvedRegion } from "@/lib/db-queries";
 import { breadcrumbSchema, faqSchema, itemListSchema, collectionPageSchema } from "@/lib/seo/structured-data";
 import type { CategoryId } from "@/lib/category";
 import { CategoryCta } from "@/components/content/category-cta";
@@ -53,7 +53,7 @@ export async function generateMetadata({
   const meta = TYPE_META[type];
   if (!meta) return {};
 
-  const region = await getCachedRegionBySlug(sigungu);
+  const region = await getCachedResolvedRegion(sigungu);
   const location = region?.sigungu ?? decodeURIComponent(sigungu);
   const title = `${location} ${meta.label}${page > 1 ? ` ${page}페이지` : ""}`;
   const description = `${location} ${meta.label} 전체 목록. ${meta.desc} — 공공데이터 기반 정확한 업체 정보.`;
@@ -96,7 +96,7 @@ export default async function SigunguTypePage({
   const meta = TYPE_META[type];
   if (!meta) notFound();
 
-  const region = await getCachedRegionBySlug(sigungu);
+  const region = await getCachedResolvedRegion(sigungu);
   const sigunguName = region?.sigungu ?? decodeURIComponent(sigungu);
   const sidoName = region?.sido ?? "";
 

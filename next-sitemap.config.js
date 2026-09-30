@@ -7,19 +7,31 @@ module.exports = {
     additionalSitemaps: [
       `${process.env.NEXT_PUBLIC_SITE_URL || "https://petjigi.kr"}/sitemap-content.xml`,
     ],
+    // 모든 crawler 그룹(개별 bot 포함)이 공유해야 하는 최소 제한.
+    // Google 등은 '*' 그룹과 구체적인 user-agent 그룹을 결합하지 않으므로,
+    // 이 배열을 각 그룹에 명시적으로 다시 적용해야 한다.
+    //   - /admin/, /api/: 관리자·내부 API. robots는 보안 장치가 아니므로 실제 접근 제어는
+    //     인증으로 별도 보호하지만, 크롤러가 애초에 시도하지 않도록 공통 차단한다.
+    //   - /search: 여기서는 disallow하지 않는다. 이 페이지는 HTML에서 noindex,follow:false를
+    //     선언하므로, Google이 그 지시를 읽으려면 크롤링 자체는 허용돼야 한다.
+    // 모든 crawler 그룹(개별 bot 포함)이 공유해야 하는 최소 제한.
+    // Google 등은 '*' 그룹과 구체적인 user-agent 그룹을 결합하지 않으므로,
+    // 아래 각 그룹에 /api/, /admin/을 명시적으로 반복한다(F14).
+    //   - /search: 어떤 그룹에서도 disallow하지 않는다. 이 페이지는 HTML에서
+    //     noindex,follow:false를 선언하므로, Google이 그 지시를 읽으려면
+    //     크롤링 자체는 허용돼야 한다.
+    //   - /rescue: crawlable(HTML noindex)이므로 여기서 disallow하지 않는다.
     policies: [
-      // /rescue pages expose an HTML noindex directive, so crawlers must be able
-      // to fetch them. Keep them out of the sitemap below without blocking crawl.
-      { userAgent: "*", allow: "/", disallow: ["/search", "/api/", "/admin/"] },
-      // AI 크롤러 전체 허용
-      { userAgent: "GPTBot", allow: "/" },
-      { userAgent: "ClaudeBot", allow: "/" },
-      { userAgent: "PerplexityBot", allow: "/" },
-      { userAgent: "Google-Extended", allow: "/" },
-      { userAgent: "Yeti", allow: "/" },
-      { userAgent: "Applebot-Extended", allow: "/" },
-      { userAgent: "CCBot", allow: "/" },
-      { userAgent: "Bytespider", allow: "/" },
+      { userAgent: "*", allow: "/", disallow: ["/api/", "/admin/"] },
+      // AI 크롤러 전체 허용 — 공통 제한(/api/, /admin/)은 동일하게 적용한다.
+      { userAgent: "GPTBot", allow: "/", disallow: ["/api/", "/admin/"] },
+      { userAgent: "ClaudeBot", allow: "/", disallow: ["/api/", "/admin/"] },
+      { userAgent: "PerplexityBot", allow: "/", disallow: ["/api/", "/admin/"] },
+      { userAgent: "Google-Extended", allow: "/", disallow: ["/api/", "/admin/"] },
+      { userAgent: "Yeti", allow: "/", disallow: ["/api/", "/admin/"] },
+      { userAgent: "Applebot-Extended", allow: "/", disallow: ["/api/", "/admin/"] },
+      { userAgent: "CCBot", allow: "/", disallow: ["/api/", "/admin/"] },
+      { userAgent: "Bytespider", allow: "/", disallow: ["/api/", "/admin/"] },
     ],
   },
   // 콘텐츠 상세 페이지는 /sitemap-content.xml에서 실제 DB 날짜로 처리 (중복 방지)
