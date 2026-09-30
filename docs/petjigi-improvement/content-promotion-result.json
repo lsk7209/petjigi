@@ -1,0 +1,151 @@
+{
+  "generatedAt": "2026-09-30T05:54:17.111Z",
+  "mode": "apply",
+  "totalCandidates": 24,
+  "results": [
+    {
+      "slug": "dog-disc-disease",
+      "content_id": "seed-condition-dog-disc-disease",
+      "outcome": "updated",
+      "rowsAffected": 1
+    },
+    {
+      "slug": "cat-grooming-basics-guide",
+      "content_id": "blog-166",
+      "outcome": "updated",
+      "rowsAffected": 1
+    },
+    {
+      "slug": "pet-food-rotation-guide",
+      "content_id": "blog-155",
+      "outcome": "updated",
+      "rowsAffected": 1
+    },
+    {
+      "slug": "puppy-first-week-guide",
+      "content_id": "blog-puppy-first-week-guide",
+      "outcome": "updated",
+      "rowsAffected": 1
+    },
+    {
+      "slug": "pet-first-aid-guide",
+      "content_id": "seed-guide-pet-first-aid",
+      "outcome": "updated",
+      "rowsAffected": 1
+    },
+    {
+      "slug": "pet-registration-guide",
+      "content_id": "blog-pet-registration-guide",
+      "outcome": "updated",
+      "rowsAffected": 1
+    },
+    {
+      "slug": "pet-emergency-vet-preparation",
+      "content_id": "blog-453",
+      "outcome": "updated",
+      "rowsAffected": 1
+    },
+    {
+      "slug": "pet-emergency-kit-guide",
+      "content_id": "blog-164",
+      "outcome": "updated",
+      "rowsAffected": 1
+    },
+    {
+      "slug": "pet-toxic-plants-dog-guide",
+      "content_id": "blog-199",
+      "outcome": "updated",
+      "rowsAffected": 1
+    },
+    {
+      "slug": "pet-toxic-plants-cat-guide",
+      "content_id": "blog-200",
+      "outcome": "updated",
+      "rowsAffected": 1
+    },
+    {
+      "slug": "dog-flea-tick-guide",
+      "content_id": "blog-167",
+      "outcome": "updated",
+      "rowsAffected": 1
+    },
+    {
+      "slug": "cat-flea-tick-prevention",
+      "content_id": "blog-168",
+      "outcome": "updated",
+      "rowsAffected": 1
+    },
+    {
+      "slug": "dog-heartworm-treatment-guide",
+      "content_id": "blog-170",
+      "outcome": "updated",
+      "rowsAffected": 1
+    },
+    {
+      "slug": "dog-dental-scaling-guide",
+      "content_id": "blog-231",
+      "outcome": "updated",
+      "rowsAffected": 1
+    },
+    {
+      "slug": "cat-anal-gland-guide",
+      "content_id": "blog-232",
+      "outcome": "updated",
+      "rowsAffected": 1
+    },
+    {
+      "slug": "dog-anal-gland-express-guide",
+      "content_id": "blog-233",
+      "outcome": "updated",
+      "rowsAffected": 1
+    },
+    {
+      "slug": "cat-summer-safety-guide",
+      "content_id": "blog-162",
+      "outcome": "updated",
+      "rowsAffected": 1
+    },
+    {
+      "slug": "dog-eye-care-guide",
+      "content_id": "blog-163",
+      "outcome": "updated",
+      "rowsAffected": 1
+    },
+    {
+      "slug": "dog-summer-paw-protection",
+      "content_id": "blog-198",
+      "outcome": "updated",
+      "rowsAffected": 1
+    },
+    {
+      "slug": "dog-skin-care-guide",
+      "content_id": "blog-165",
+      "outcome": "updated",
+      "rowsAffected": 1
+    },
+    {
+      "slug": "pet-vet-visit-guide",
+      "content_id": "blog-169",
+      "outcome": "updated",
+      "rowsAffected": 1
+    },
+    {
+      "slug": "online-vet-consultation-guide",
+      "content_id": "blog-213",
+      "outcome": "updated",
+      "rowsAffected": 1
+    },
+    {
+      "slug": "pet-allergy-season-guide",
+      "content_id": "blog-197",
+      "outcome": "updated",
+      "rowsAffected": 1
+    },
+    {
+      "slug": "pet-human-allergy-guide",
+      "content_id": "blog-234",
+      "outcome": "updated",
+      "rowsAffected": 1
+    }
+  ]
+}
