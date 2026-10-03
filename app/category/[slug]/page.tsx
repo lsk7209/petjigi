@@ -167,7 +167,7 @@ export default async function CategoryPage({
   };
 
   const faqItems = CATEGORY_FAQS[slug] ?? [
-    { question: `${cat.name} 정보는 어떻게 제공되나요?`, answer: `펫지기는 공공데이터포털에서 주기적으로 동기화한 데이터와 전문가 검수 가이드를 제공합니다.`, url: `${SITE_URL}/category/${slug}` },
+    { question: `${cat.name} 정보는 어떻게 제공되나요?`, answer: `펫지기는 공공데이터포털에서 주기적으로 동기화한 데이터와 공인된 출처 기반 가이드를 제공합니다.`, url: `${SITE_URL}/category/${slug}` },
     { question: `${cat.name} 관련 업체를 찾으려면?`, answer: `지역별 검색에서 시도를 선택하면 가까운 업체를 찾을 수 있습니다.`, url: `${SITE_URL}/sido/seoul` },
     ...(desc?.detail ? [{ question: `${cat.name}에 대해 더 알고 싶어요.`, answer: desc.detail }] : []),
   ];

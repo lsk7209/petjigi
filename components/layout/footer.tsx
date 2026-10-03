@@ -34,6 +34,7 @@ const COMPANY_LINKS = [
   { label: "소개",              href: "/about" },
   { label: "자료 출처·검토 정책", href: "/about" },
   { label: "광고·제휴 안내",    href: "/advertising" },
+  { label: "어필리에이트 고지",  href: "/disclosure" },
   { label: "개인정보처리방침",   href: "/privacy" },
   { label: "이용약관",          href: "/terms" },
   { label: "문의",              href: "/contact" },

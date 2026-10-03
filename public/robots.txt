@@ -1,6 +1,8 @@
 # Mediapartners-Google (AdSense)
 User-agent: Mediapartners-Google
 Allow: /
+Disallow: /api/
+Disallow: /admin/
 
 # *
 User-agent: *

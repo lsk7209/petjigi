@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   title: { absolute: "광고 게재 정책 | 펫지기" },
   description: "펫지기 광고 게재 정책 — Google AdSense 광고 사실, 카테고리별 광고 정책, 사용자 추적 안내.",
   alternates: { canonical: "/advertising" },
-  robots: { index: true, follow: false },
+  robots: { index: true, follow: true },
 };
 
 export default function AdvertisingPage() {

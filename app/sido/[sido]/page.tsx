@@ -184,7 +184,9 @@ export default async function SidoPage({
           </p>
         </header>
 
-        <AdSlot adType="adsense" format="horizontal" className="mb-6" />
+        {sigunguList.length > 0 && (
+          <AdSlot adType="adsense" format="horizontal" className="mb-6" />
+        )}
 
         {/* 제공 업종 안내 */}
         <div className="flex flex-wrap gap-2 mb-6 sm:mb-8">
@@ -200,7 +202,7 @@ export default async function SidoPage({
 
         {/* 시군구 목록 또는 데이터 준비 중 안내 */}
         {sigunguList.length === 0 ? (
-          <section className="my-8 p-6 sm:p-10 rounded-2xl border border-[var(--brand-border)] bg-[var(--brand-surface,#FAF5EE)] text-center" aria-label="데이터 준비 안내">
+          <section data-ads-policy="block" className="my-8 p-6 sm:p-10 rounded-2xl border border-[var(--brand-border)] bg-[var(--brand-surface,#FAF5EE)] text-center" aria-label="데이터 준비 안내">
             <div className="w-12 h-12 mx-auto mb-3 rounded-full bg-[var(--brand-accent-soft,#FAF0E6)] flex items-center justify-center text-xl">
               📍
             </div>

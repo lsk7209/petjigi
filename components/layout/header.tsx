@@ -65,7 +65,7 @@ export function Header() {
           </Link>
         </div>
 
-        {/* 모바일 햄버거 */}
+        {/* 모바일 햄버거 / 닫기 */}
         <button
           type="button"
           className="md:hidden! pj-btn pj-btn-ghost pj-btn-sm"
@@ -74,9 +74,15 @@ export function Header() {
           aria-expanded={open}
           onClick={() => setOpen((v) => !v)}
         >
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" aria-hidden="true">
-            <path d="M4 7h16M4 12h16M4 17h16"/>
-          </svg>
+          {open ? (
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+              <path d="M18 6L6 18M6 6l12 12" />
+            </svg>
+          ) : (
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" aria-hidden="true">
+              <path d="M4 7h16M4 12h16M4 17h16" />
+            </svg>
+          )}
         </button>
       </div>
 
@@ -117,6 +123,16 @@ export function Header() {
                 {item.label}
               </Link>
             ))}
+            <Link
+              href="/search"
+              onClick={() => setOpen(false)}
+              className="px-3 py-3 text-sm rounded-xl text-[var(--brand-text-secondary)] hover:text-[var(--brand-text)] hover:bg-[var(--brand-border)] transition-colors flex items-center gap-2 border-t border-[var(--brand-border)] mt-1 pt-3"
+            >
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                <circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/>
+              </svg>
+              통합 검색
+            </Link>
           </nav>
         </div>
       )}
