@@ -15,7 +15,7 @@ const notoSerifKR = Noto_Serif_KR({
   preload: true,
 });
 
-const ADSENSE_ID = process.env.NEXT_PUBLIC_ADSENSE_ID;
+const ADSENSE_ID = process.env.NEXT_PUBLIC_ADSENSE_ID ?? "ca-pub-3050601904412736";
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://petjigi.kr";
 
@@ -83,6 +83,7 @@ export const metadata: Metadata = {
   other: {
     "google-extended": "allow",
     "mobile-web-app-capable": "yes",
+    "google-adsense-account": ADSENSE_ID,
   },
   appleWebApp: {
     capable: true,
@@ -126,6 +127,12 @@ export default function RootLayout({
             content={process.env.NEXT_PUBLIC_NAVER_VERIFICATION}
           />
         )}
+        {/* Google AdSense */}
+        <script
+          async
+          src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${ADSENSE_ID}`}
+          crossOrigin="anonymous"
+        />
         {/* Structured data — separate tags for valid JSON-LD */}
         <script
           type="application/ld+json"
