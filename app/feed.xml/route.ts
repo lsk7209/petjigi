@@ -10,7 +10,6 @@ const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://petjigi.kr";
 function contentUrl(type: string, slug: string): string {
   if (type === "blog") return `${SITE_URL}/blog/${slug}`;
   if (type === "condition") return `${SITE_URL}/condition/${slug}`;
-  if (type === "breed") return `${SITE_URL}/breed/${slug}`;
   return `${SITE_URL}/guide/${slug}`;
 }
 
@@ -35,7 +34,6 @@ export async function GET() {
           eq(contents.type, "blog"),
           eq(contents.type, "guide"),
           eq(contents.type, "condition"),
-          eq(contents.type, "breed"),
         )
       )
     )

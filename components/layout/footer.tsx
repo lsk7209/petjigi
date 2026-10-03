@@ -25,7 +25,7 @@ const SIDO_LINKS = [
   { label: "경기도",     href: "/sido/gyeonggi" },
   { label: "부산광역시", href: "/sido/busan" },
   { label: "대구광역시", href: "/sido/daegu" },
-  { label: "전체 17개 시·도", href: "/sido/seoul" },
+  { label: "전체 17개 시·도", href: "/#region-search" },
 ];
 
 const COMPANY_LINKS = [

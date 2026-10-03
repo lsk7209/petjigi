@@ -169,7 +169,7 @@ export default async function HomePage() {
         </section>
 
         {/* ── 지역 빠른 검색 ── */}
-        <section className="py-12 sm:py-16 md:py-20" aria-label="지역별 검색">
+        <section id="region-search" className="py-12 sm:py-16 md:py-20" aria-label="지역별 검색">
           <div className="pj-container-7xl">
             <div className="grid gap-8 md:gap-14 items-start grid-cols-1 md:grid-cols-[1fr_2fr]">
               <div className="md:sticky md:top-6">

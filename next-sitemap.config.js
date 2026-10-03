@@ -23,6 +23,8 @@ module.exports = {
     //   - /rescue: crawlable(HTML noindex)이므로 여기서 disallow하지 않는다.
     policies: [
       { userAgent: "*", allow: "/", disallow: ["/api/", "/admin/"] },
+      // Google AdSense 크롤러
+      { userAgent: "Mediapartners-Google", allow: "/", disallow: ["/api/", "/admin/"] },
       // AI 크롤러 전체 허용 — 공통 제한(/api/, /admin/)은 동일하게 적용한다.
       { userAgent: "GPTBot", allow: "/", disallow: ["/api/", "/admin/"] },
       { userAgent: "ClaudeBot", allow: "/", disallow: ["/api/", "/admin/"] },
