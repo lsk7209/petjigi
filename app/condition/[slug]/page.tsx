@@ -139,6 +139,20 @@ export async function generateMetadata({
       title: socialTitle(`${content.title} — 증상·원인·치료`),
       description: withoutUnverifiedReviewClaim(content.metaDescription),
       type: "article",
+      images: [
+        {
+          url: `/condition/${slug}/opengraph-image`,
+          width: 1200,
+          height: 630,
+          alt: `${content.title} — 증상·원인·치료`,
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: socialTitle(`${content.title} — 증상·원인·치료`),
+      description: withoutUnverifiedReviewClaim(content.metaDescription),
+      images: [`/condition/${slug}/opengraph-image`],
     },
   };
 }

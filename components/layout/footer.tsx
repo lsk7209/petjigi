@@ -18,6 +18,8 @@ const CONTENT_LINKS = [
   { label: "강아지 품종",     href: "/breed/dog" },
   { label: "고양이 품종",     href: "/breed/cat" },
   { label: "펫보험 비교",     href: "/insurance/compare" },
+  { label: "동물보호센터",     href: "/shelter" },
+  { label: "구조동물 현황",     href: "/rescue" },
 ];
 
 const SIDO_LINKS = [

@@ -80,8 +80,21 @@ export async function generateMetadata({
       modifiedTime: content.reviewedAt ?? undefined,
       authors: content.authorName ? [content.authorName] : undefined,
       section: CATEGORIES[content.category as CategoryId]?.name,
+      images: [
+        {
+          url: `/guide/${slug}/opengraph-image`,
+          width: 1200,
+          height: 630,
+          alt: title,
+        },
+      ],
     },
-    twitter: { card: "summary_large_image", title: shareTitle, description },
+    twitter: {
+      card: "summary_large_image",
+      title: shareTitle,
+      description,
+      images: [`/guide/${slug}/opengraph-image`],
+    },
     alternates: { canonical: `/guide/${slug}` },
   };
 }
