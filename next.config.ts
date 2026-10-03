@@ -52,9 +52,17 @@ const nextConfig: NextConfig = {
         ],
       },
       {
-        // ads.txt와 feed.xml은 Next.js에서 캐시하고, robots/sitemap은 vercel.json에서 관리한다.
-        source: "/(ads\\.txt|feed\\.xml)",
+        // ads.txt는 구글 크롤러 요건에 맞춰 text/plain 명시
+        source: "/ads\\.txt",
         headers: [
+          { key: "Content-Type", value: "text/plain; charset=utf-8" },
+          { key: "Cache-Control", value: "public, max-age=86400, stale-while-revalidate=3600" },
+        ],
+      },
+      {
+        source: "/feed\\.xml",
+        headers: [
+          { key: "Content-Type", value: "application/xml; charset=utf-8" },
           { key: "Cache-Control", value: "public, max-age=86400, stale-while-revalidate=3600" },
         ],
       },

@@ -55,6 +55,7 @@ module.exports = {
       path === "/condition" ||
       path === "/breed" ||
       path === "/insurance" ||
+      path === "/shelter" ||
       path.startsWith("/category/") ||
       path.startsWith("/insurance/")
     ) {

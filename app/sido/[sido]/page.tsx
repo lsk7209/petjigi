@@ -67,11 +67,31 @@ export async function generateMetadata({
   const title = `${sidoName} 반려동물 정보 | 동물병원·펫미용·장묘 | 펫지기`;
   const description = `${sidoName} 지역 동물병원·펫미용·펫호텔·장묘업체 정보. 공공데이터 기반.`;
 
+  const ogImageUrl = `/sido/${sido}/opengraph-image`;
+
   return {
     title: { absolute: title },
     description,
     alternates: { canonical: `/sido/${sido}` },
-    openGraph: { title, description },
+    openGraph: {
+      title,
+      description,
+      url: `/sido/${sido}`,
+      images: [
+        {
+          url: ogImageUrl,
+          width: 1200,
+          height: 630,
+          alt: `${sidoName} 반려동물 정보`,
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+      images: [ogImageUrl],
+    },
   };
 }
 
