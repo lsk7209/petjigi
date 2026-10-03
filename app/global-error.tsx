@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect } from "react";
+import Link from "next/link";
 
 export default function GlobalError({
   error,
@@ -37,12 +38,12 @@ export default function GlobalError({
             >
               다시 시도하기
             </button>
-            <a
+            <Link
               href="/"
               className="w-full sm:w-auto px-6 py-2.5 rounded-xl border border-[#E5E7EB] bg-white text-[#1A1A1A] font-semibold text-sm hover:border-[#5C7C54] hover:text-[#5C7C54] transition-all shadow-sm"
             >
               홈으로 돌아가기
-            </a>
+            </Link>
           </div>
           <p className="text-xs text-[#6B7280]">
             문제가 지속되면 <a href="mailto:contact@petjigi.kr" className="underline hover:text-[#5C7C54]">contact@petjigi.kr</a>로 문의해 주세요.

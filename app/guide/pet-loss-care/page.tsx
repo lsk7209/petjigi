@@ -16,9 +16,23 @@ export const metadata: Metadata = {
     title: "펫로스 증후군 극복 가이드 — 반려동물을 떠나보낸 보호자를 위해",
     description:
       "반려동물과의 이별 후 찾아오는 펫로스 증후군의 증상과 슬픔을 건강하게 극복하는 방법을 안내합니다.",
-    images: [{ url: "/og-pet-loss-care.png", width: 1200, height: 630 }],
+    images: [
+      {
+        url: "/opengraph-image",
+        width: 1200,
+        height: 630,
+        alt: "펫로스 증후군 극복 가이드 | 펫지기",
+      },
+    ],
     siteName: "펫지기",
     locale: "ko_KR",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "펫로스 증후군 극복 가이드 — 반려동물을 떠나보낸 보호자를 위해",
+    description:
+      "반려동물과의 이별 후 찾아오는 펫로스 증후군의 증상과 슬픔을 건강하게 극복하는 방법을 안내합니다.",
+    images: ["/opengraph-image"],
   },
   alternates: {
     canonical: PAGE_URL,
