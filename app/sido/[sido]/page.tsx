@@ -19,6 +19,38 @@ export function generateStaticParams() {
   return SIDO_SLUGS.map((sido) => ({ sido }));
 }
 
+const SIDO_NAMES: Record<string, string> = {
+  seoul: "서울",
+  gyeonggi: "경기",
+  busan: "부산",
+  incheon: "인천",
+  daegu: "대구",
+  gwangju: "광주",
+  daejeon: "대전",
+  ulsan: "울산",
+  sejong: "세종",
+  gangwon: "강원",
+  chungbuk: "충북",
+  chungnam: "충남",
+  jeonbuk: "전북",
+  jeonnam: "전남",
+  gyeongbuk: "경북",
+  gyeongnam: "경남",
+  jeju: "제주",
+};
+
+const ACTIVE_SIDO_LIST = [
+  { label: "서울", slug: "seoul" },
+  { label: "경기", slug: "gyeonggi" },
+  { label: "부산", slug: "busan" },
+  { label: "인천", slug: "incheon" },
+  { label: "대구", slug: "daegu" },
+  { label: "광주", slug: "gwangju" },
+  { label: "대전", slug: "daejeon" },
+  { label: "울산", slug: "ulsan" },
+  { label: "세종", slug: "sejong" },
+];
+
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://petjigi.kr";
 
 export async function generateMetadata({
@@ -28,12 +60,12 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { sido } = await params;
   const rows = await getCachedRegionsBySido(sido);
-  const first = rows[0];
+  const sidoName = rows[0]?.sido ?? SIDO_NAMES[sido];
 
-  if (!first) return {};
+  if (!sidoName) return {};
 
-  const title = `${first.sido} 반려동물 정보 | 동물병원·펫미용·장묘 | 펫지기`;
-  const description = `${first.sido} 지역 동물병원·펫미용·펫호텔·장묘업체를 시군구별로 찾아보세요. 공공데이터 기반.`;
+  const title = `${sidoName} 반려동물 정보 | 동물병원·펫미용·장묘 | 펫지기`;
+  const description = `${sidoName} 지역 동물병원·펫미용·펫호텔·장묘업체 정보. 공공데이터 기반.`;
 
   return {
     title: { absolute: title },
@@ -79,9 +111,9 @@ export default async function SidoPage({
     .slice()
     .sort((a, b) => a.sigungu.localeCompare(b.sigungu));
 
-  if (sigunguList.length === 0) notFound();
+  const sidoName = sigunguList[0]?.sido ?? SIDO_NAMES[sido];
 
-  const sidoName = sigunguList[0].sido;
+  if (!sidoName) notFound();
 
   const breadcrumb = breadcrumbSchema([
     { name: "홈", url: SITE_URL },
@@ -146,33 +178,65 @@ export default async function SidoPage({
           ))}
         </div>
 
-        {/* 시군구 목록 */}
-        <section aria-label="시군구 목록">
-          <h2 className="text-lg sm:text-xl font-bold text-[var(--brand-text)] mb-3 sm:mb-4">
-            시군구 ({sigunguList.length}개)
-          </h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
-            {sigunguList.map((r) => (
-              <div
-                key={r.code}
-                className="p-4 rounded-2xl border border-[var(--brand-border)] hover:border-[var(--brand-accent)] transition-colors"
-              >
-                <p className="font-bold text-[var(--brand-text)] mb-3 text-base">{r.sigungu}</p>
-                <div className="flex flex-wrap gap-1.5">
-                  {BUSINESS_TYPES.map((bt) => (
-                    <Link
-                      key={bt.type}
-                      href={`/${r.sigunguSlug}/${bt.type}`}
-                      className="flex items-center gap-1 px-2.5 py-1.5 rounded-lg text-xs border border-[var(--brand-border)] hover:border-[var(--brand-accent)] hover:text-[var(--brand-accent)] transition-colors font-medium"
-                    >
-                      {bt.emoji} {bt.label}
-                    </Link>
-                  ))}
-                </div>
+        {/* 시군구 목록 또는 데이터 준비 중 안내 */}
+        {sigunguList.length === 0 ? (
+          <section className="my-8 p-6 sm:p-10 rounded-2xl border border-[var(--brand-border)] bg-[var(--brand-surface,#FAF5EE)] text-center" aria-label="데이터 준비 안내">
+            <div className="w-12 h-12 mx-auto mb-3 rounded-full bg-[var(--brand-accent-soft,#FAF0E6)] flex items-center justify-center text-xl">
+              📍
+            </div>
+            <h2 className="text-lg sm:text-xl font-bold text-[var(--brand-text)] mb-2">
+              {sidoName} 공공데이터 수집·등록 준비 중입니다
+            </h2>
+            <p className="text-sm sm:text-base text-[var(--brand-text-secondary)] max-w-lg mx-auto mb-6 leading-relaxed" style={{ wordBreak: "keep-all" }}>
+              현재 {sidoName} 지역의 동물병원, 펫미용, 펫호텔, 장묘업체 등 인허가 공공데이터를 정제하여 순차적으로 등록하고 있습니다.
+              데이터가 등록된 다른 시·도를 먼저 확인해 보세요.
+            </p>
+
+            <div className="pt-6 border-t border-[var(--brand-border)]">
+              <p className="text-xs font-semibold text-[var(--brand-text-secondary)] mb-3">
+                현재 이용 가능한 지역 바로가기
+              </p>
+              <div className="flex flex-wrap justify-center gap-2 max-w-2xl mx-auto">
+                {ACTIVE_SIDO_LIST.map((active) => (
+                  <Link
+                    key={active.slug}
+                    href={`/sido/${active.slug}`}
+                    className="px-3.5 py-2 rounded-xl text-xs sm:text-sm font-semibold border border-[var(--brand-border)] bg-white hover:border-[var(--brand-accent)] hover:text-[var(--brand-accent)] transition-all shadow-sm"
+                  >
+                    {active.label} 바로가기 →
+                  </Link>
+                ))}
               </div>
-            ))}
-          </div>
-        </section>
+            </div>
+          </section>
+        ) : (
+          <section aria-label="시군구 목록">
+            <h2 className="text-lg sm:text-xl font-bold text-[var(--brand-text)] mb-3 sm:mb-4">
+              시군구 ({sigunguList.length}개)
+            </h2>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+              {sigunguList.map((r) => (
+                <div
+                  key={r.code}
+                  className="p-4 rounded-2xl border border-[var(--brand-border)] hover:border-[var(--brand-accent)] transition-colors"
+                >
+                  <p className="font-bold text-[var(--brand-text)] mb-3 text-base">{r.sigungu}</p>
+                  <div className="flex flex-wrap gap-1.5">
+                    {BUSINESS_TYPES.map((bt) => (
+                      <Link
+                        key={bt.type}
+                        href={`/${r.sigunguSlug}/${bt.type}`}
+                        className="flex items-center gap-1 px-2.5 py-1.5 rounded-lg text-xs border border-[var(--brand-border)] hover:border-[var(--brand-accent)] hover:text-[var(--brand-accent)] transition-colors font-medium"
+                      >
+                        {bt.emoji} {bt.label}
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </section>
+        )}
 
         {/* FAQ */}
         <section className="mt-10 pt-8 border-t border-[var(--brand-border)]" aria-label="자주 묻는 질문">

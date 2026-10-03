@@ -26,23 +26,23 @@ const CATEGORY_META: Record<number, { emoji: string; desc: string; cta: string }
 };
 
 const SIDO_LIST = [
-  { label: "서울", slug: "seoul" },
-  { label: "경기", slug: "gyeonggi" },
-  { label: "부산", slug: "busan" },
-  { label: "인천", slug: "incheon" },
-  { label: "대구", slug: "daegu" },
-  { label: "광주", slug: "gwangju" },
-  { label: "대전", slug: "daejeon" },
-  { label: "울산", slug: "ulsan" },
-  { label: "세종", slug: "sejong" },
-  { label: "강원", slug: "gangwon" },
-  { label: "충북", slug: "chungbuk" },
-  { label: "충남", slug: "chungnam" },
-  { label: "전북", slug: "jeonbuk" },
-  { label: "전남", slug: "jeonnam" },
-  { label: "경북", slug: "gyeongbuk" },
-  { label: "경남", slug: "gyeongnam" },
-  { label: "제주", slug: "jeju" },
+  { label: "서울", slug: "seoul", active: true },
+  { label: "경기", slug: "gyeonggi", active: true },
+  { label: "부산", slug: "busan", active: true },
+  { label: "인천", slug: "incheon", active: true },
+  { label: "대구", slug: "daegu", active: true },
+  { label: "광주", slug: "gwangju", active: true },
+  { label: "대전", slug: "daejeon", active: true },
+  { label: "울산", slug: "ulsan", active: true },
+  { label: "세종", slug: "sejong", active: true },
+  { label: "강원", slug: "gangwon", active: false },
+  { label: "충북", slug: "chungbuk", active: false },
+  { label: "충남", slug: "chungnam", active: false },
+  { label: "전북", slug: "jeonbuk", active: false },
+  { label: "전남", slug: "jeonnam", active: false },
+  { label: "경북", slug: "gyeongbuk", active: false },
+  { label: "경남", slug: "gyeongnam", active: false },
+  { label: "제주", slug: "jeju", active: false },
 ];
 
 
@@ -184,10 +184,17 @@ export default async function HomePage() {
                   <Link
                     key={sido.slug}
                     href={`/sido/${sido.slug}`}
-                    className="pj-card pj-card-hover"
+                    className={`pj-card pj-card-hover flex items-center justify-between ${
+                      !sido.active ? "opacity-70 bg-[var(--brand-surface-2,#f6f4ee)]" : ""
+                    }`}
                     style={{ padding: "14px 16px", textDecoration: "none", color: "inherit" }}
                   >
                     <span style={{ fontSize: 15, fontWeight: 600 }}>{sido.label}</span>
+                    {!sido.active && (
+                      <span className="text-[10px] text-[var(--brand-text-secondary)] font-normal ml-1 shrink-0">
+                        준비중
+                      </span>
+                    )}
                   </Link>
                 ))}
               </div>

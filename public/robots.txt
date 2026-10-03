@@ -1,3 +1,7 @@
+# Mediapartners-Google (AdSense)
+User-agent: Mediapartners-Google
+Allow: /
+
 # *
 User-agent: *
 Allow: /

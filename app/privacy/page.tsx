@@ -53,19 +53,37 @@ export default function PrivacyPage() {
         <li>Turso — 데이터베이스 (미국)</li>
       </ul>
 
-      <h2>5. 개인정보의 국외 이전</h2>
+      <h2>5. 제3자 광고 사업자(Google)의 쿠키 사용 안내</h2>
+      <p>
+        펫지기는 Google AdSense를 통해 광고를 게재합니다. Google을 포함한 제3자 공급업체는
+        쿠키를 사용하여 사용자의 이전 웹사이트 방문 기록을 바탕으로 광고를 제공합니다.
+      </p>
+      <p>
+        사용자는{" "}
+        <a
+          href="https://adssettings.google.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="underline text-[var(--brand-accent)]"
+        >
+          Google 광고 설정
+        </a>
+        을 방문하여 맞춤형 광고 게재에 사용되는 쿠키 설정을 직접 관리하거나 사용을 중지할 수 있습니다.
+      </p>
+
+      <h2>6. 개인정보의 국외 이전</h2>
       <p>
         위 서비스는 모두 미국 등 해외 클라우드를 사용하며, 해당 국가의 개인정보
         보호법령이 적용됩니다.
       </p>
 
-      <h2>6. 정보주체의 권리</h2>
+      <h2>7. 정보주체의 권리</h2>
       <p>
         열람, 정정, 삭제, 처리 정지를 요구할 수 있습니다.
         문의: {SITE_IDENTITY.contactEmail}
       </p>
 
-      <h2>7. 개인정보 보호책임자</h2>
+      <h2>8. 개인정보 보호책임자</h2>
       <p>이메일: {SITE_IDENTITY.contactEmail}</p>
     </main>
     </>
