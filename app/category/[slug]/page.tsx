@@ -99,18 +99,23 @@ const CATEGORY_EMOJI: Record<string, string> = {
 };
 
 const SIDO_LIST = [
-  { label: "서울", slug: "seoul" },
-  { label: "경기", slug: "gyeonggi" },
-  { label: "부산", slug: "busan" },
-  { label: "인천", slug: "incheon" },
-  { label: "대구", slug: "daegu" },
-  { label: "광주", slug: "gwangju" },
-  { label: "대전", slug: "daejeon" },
-  { label: "울산", slug: "ulsan" },
-  { label: "강원", slug: "gangwon" },
-  { label: "경남", slug: "gyeongnam" },
-  { label: "경북", slug: "gyeongbuk" },
-  { label: "전남", slug: "jeonnam" },
+  { label: "서울", slug: "seoul", active: true },
+  { label: "경기", slug: "gyeonggi", active: true },
+  { label: "부산", slug: "busan", active: true },
+  { label: "인천", slug: "incheon", active: true },
+  { label: "대구", slug: "daegu", active: true },
+  { label: "광주", slug: "gwangju", active: true },
+  { label: "대전", slug: "daejeon", active: true },
+  { label: "울산", slug: "ulsan", active: true },
+  { label: "세종", slug: "sejong", active: true },
+  { label: "강원", slug: "gangwon", active: false },
+  { label: "충북", slug: "chungbuk", active: false },
+  { label: "충남", slug: "chungnam", active: false },
+  { label: "전북", slug: "jeonbuk", active: false },
+  { label: "전남", slug: "jeonnam", active: false },
+  { label: "경북", slug: "gyeongbuk", active: false },
+  { label: "경남", slug: "gyeongnam", active: false },
+  { label: "제주", slug: "jeju", active: false },
 ];
 
 
@@ -272,13 +277,22 @@ export default async function CategoryPage({
                 가까운 지역의 반려동물 관련 업장을 찾아보세요.
               </p>
               <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-2">
-                {SIDO_LIST.map(({ label, slug: sidoSlug }) => (
+                {SIDO_LIST.map(({ label, slug: sidoSlug, active }) => (
                   <Link
                     key={sidoSlug}
                     href={`/sido/${sidoSlug}`}
-                    className="p-2.5 rounded-xl border border-[var(--brand-border)] hover:border-[var(--brand-accent)] text-sm text-center transition-colors font-medium hover:text-[var(--brand-accent)]"
+                    className={`p-2.5 rounded-xl border text-sm text-center transition-colors font-medium ${
+                      active
+                        ? "border-[var(--brand-border)] hover:border-[var(--brand-accent)] text-[var(--brand-text)] hover:text-[var(--brand-accent)]"
+                        : "border-[var(--brand-border)]/60 text-[var(--brand-text-secondary)] opacity-75 hover:border-[var(--brand-border)]"
+                    }`}
                   >
-                    {label}
+                    <span>{label}</span>
+                    {!active && (
+                      <span className="block text-[10px] text-[var(--brand-text-secondary)]">
+                        준비중
+                      </span>
+                    )}
                   </Link>
                 ))}
               </div>

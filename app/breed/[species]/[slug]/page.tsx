@@ -66,7 +66,7 @@ export async function generateMetadata({
       description: `${breed.nameKo} 품종 정보: 특징, 성격, 평균 수명, 흔한 질병, 키우는 방법.`,
       images: [
         {
-          url: `/breed/${species}/opengraph-image`,
+          url: `/breed/${species}/${slug}/opengraph-image`,
           width: 1200,
           height: 630,
           alt: `${breed.nameKo} 품종 정보`,
@@ -77,7 +77,7 @@ export async function generateMetadata({
       card: "summary_large_image",
       title: `${breed.nameKo} 특징·성격·키우기 | 펫지기`,
       description: `${breed.nameKo} 품종 정보: 특징, 성격, 평균 수명, 흔한 질병, 키우는 방법.`,
-      images: [`/breed/${species}/opengraph-image`],
+      images: [`/breed/${species}/${slug}/opengraph-image`],
     },
   };
 }

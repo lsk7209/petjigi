@@ -46,7 +46,7 @@ export async function generateMetadata({
   if (shelterList.length === 0) {
     return {
       title: { absolute: `${region.sigungu} 동물보호센터 | 펫지기` },
-      robots: { index: false },
+      robots: { index: false, follow: true },
     };
   }
 
@@ -132,7 +132,10 @@ export default async function ShelterSigunguPage({
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(collectionPage) }}
       />
-    <main className="max-w-5xl mx-auto px-4 py-8 sm:py-12">
+    <main
+      className="max-w-5xl mx-auto px-4 py-8 sm:py-12"
+      {...(shelterList.length === 0 ? { "data-ads-policy": "block" } : {})}
+    >
       {/* 브레드크럼 */}
       <nav className="text-xs text-[var(--brand-text-secondary)] mb-5 sm:mb-6 flex items-center gap-1.5 flex-wrap" aria-label="breadcrumb">
         <Link href="/" className="hover:text-[var(--brand-accent)] transition-colors">홈</Link>
@@ -160,9 +163,17 @@ export default async function ShelterSigunguPage({
             <p className="text-[var(--brand-text-secondary)] text-sm mb-1">
               보호센터 정보가 아직 없습니다.
             </p>
-            <p className="text-[var(--brand-text-secondary)] text-xs">
+            <p className="text-[var(--brand-text-secondary)] text-xs mb-4">
               데이터는 매주 자동으로 갱신됩니다.
             </p>
+            <div className="flex justify-center gap-3">
+              <Link href="/shelter" className="text-xs text-[var(--brand-accent)] hover:underline">
+                전국 보호센터 목록 보기 →
+              </Link>
+              <Link href="/rescue" className="text-xs text-[var(--brand-accent)] hover:underline">
+                구조동물 현황 보기 →
+              </Link>
+            </div>
           </div>
         </>
       ) : (

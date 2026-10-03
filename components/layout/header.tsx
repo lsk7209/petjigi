@@ -69,7 +69,7 @@ export function Header() {
         <button
           type="button"
           className="md:hidden! pj-btn pj-btn-ghost pj-btn-sm"
-          style={{ padding: 0, width: 40, height: 40, justifyContent: "center" }}
+          style={{ padding: 0, width: 44, height: 44, minWidth: 44, minHeight: 44, justifyContent: "center" }}
           aria-label={open ? "메뉴 닫기" : "메뉴 열기"}
           aria-expanded={open}
           onClick={() => setOpen((v) => !v)}

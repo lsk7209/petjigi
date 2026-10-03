@@ -155,7 +155,10 @@ export default async function SigunguTypePage({
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faq) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(itemList) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(collectionPage) }} />
-      <main className="max-w-5xl mx-auto px-4 py-10">
+      <main
+        className="max-w-5xl mx-auto px-4 py-10"
+        {...(businessList.length === 0 ? { "data-ads-policy": "block" } : {})}
+      >
         {/* 브레드크럼 */}
         <nav
           className="text-xs text-[var(--brand-text-secondary)] mb-6 flex items-center gap-1.5 flex-wrap"
@@ -206,7 +209,9 @@ export default async function SigunguTypePage({
           </div>
         </div>
 
-        <AdSlot adType="adsense" format="horizontal" className="mb-6" />
+        {businessList.length > 0 && (
+          <AdSlot adType="adsense" format="horizontal" className="mb-6" />
+        )}
 
         {businessList.length === 0 ? (
           <div className="text-center py-16 text-[var(--brand-text-secondary)]">
@@ -303,7 +308,9 @@ export default async function SigunguTypePage({
 
         <AdsenseTrustSection compact />
 
-        <AdSlot adType="adsense" format="rectangle" className="mt-8" />
+        {businessList.length > 0 && (
+          <AdSlot adType="adsense" format="rectangle" className="mt-8" />
+        )}
 
         <p className="mt-8 text-xs text-[var(--brand-text-secondary)]">
           정보 기준: 공공데이터포털 · 마지막 성공 동기화 {listing.sourceAsOf ? listing.sourceAsOf.slice(0, 10) : "확인 필요"} &nbsp;·&nbsp;

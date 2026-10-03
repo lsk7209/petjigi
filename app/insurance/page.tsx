@@ -192,8 +192,8 @@ export default function InsurancePage() {
           <h2 className="text-lg font-bold text-[var(--brand-text)] mb-4">보험·법률 가이드</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
             {[
-              { href: "/guide/pet-insurance-before-joining", label: "펫보험 가입 전 꼭 알아야 할 7가지" },
-              { href: "/guide/pet-insurance-claim-guide", label: "펫보험 보험금 청구 방법 완전 가이드" },
+              { href: "/blog/pet-insurance-guide", label: "펫보험 처음 가입할 때 확인해야 할 5가지" },
+              { href: "/blog/pet-insurance-claim-guide", label: "펫보험 보험금 청구 방법 완전 가이드" },
               { href: "/guide/pet-insurance-exclusions", label: "펫보험 면책 사항 완전 정복" },
               { href: "/guide/animal-protection-law-basics", label: "동물보호법 기초 — 보호자가 알아야 할 규정" },
               { href: "/guide/dog-bite-liability-guide", label: "반려견 사고 손해배상 책임 가이드" },

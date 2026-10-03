@@ -77,7 +77,7 @@ export async function generateMetadata({
       description,
       images: [
         {
-          url: `/${type}/${sigungu}/opengraph-image`,
+          url: `/${type}/${sigungu}/${slug}/opengraph-image`,
           width: 1200,
           height: 630,
           alt: title,
@@ -88,7 +88,7 @@ export async function generateMetadata({
       card: "summary_large_image",
       title,
       description,
-      images: [`/${type}/${sigungu}/opengraph-image`],
+      images: [`/${type}/${sigungu}/${slug}/opengraph-image`],
     },
     alternates: { canonical: `/${type}/${sigungu}/${slug}` },
   };
@@ -158,7 +158,9 @@ export default async function BusinessDetailPage({
   const schema = localBusinessSchema(business);
   const breadcrumb = breadcrumbSchema([
     { name: "홈", url: SITE_URL },
-    ...(sidoName ? [{ name: `${sidoName} 정보`, url: `${SITE_URL}/sido/${sigungu.split("-")[0] ?? sigungu}` }] : []),
+    ...(sidoName && region?.sidoSlug
+      ? [{ name: `${sidoName} 정보`, url: `${SITE_URL}/sido/${region.sidoSlug}` }]
+      : []),
     { name: `${locationName} ${typeLabel}`, url: `${SITE_URL}/${sigungu}/${type}` },
     { name: business.name, url: `${SITE_URL}/${type}/${sigungu}/${slug}` },
   ]);
@@ -178,6 +180,17 @@ export default async function BusinessDetailPage({
           aria-label="breadcrumb"
         >
           <Link href="/" className="hover:text-[var(--brand-accent)] transition-colors">홈</Link>
+          {sidoName && region?.sidoSlug && (
+            <>
+              <span aria-hidden="true">›</span>
+              <Link
+                href={`/sido/${region.sidoSlug}`}
+                className="hover:text-[var(--brand-accent)] transition-colors"
+              >
+                {sidoName}
+              </Link>
+            </>
+          )}
           <span aria-hidden="true">›</span>
           <Link
             href={`/${sigungu}/${type}`}

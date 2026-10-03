@@ -1,6 +1,15 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { CATEGORIES } from "@/lib/category";
 import { NotFoundTracker } from "@/components/analytics/not-found-tracker";
+
+export const metadata: Metadata = {
+  title: "페이지를 찾을 수 없습니다",
+  robots: {
+    index: false,
+    follow: false,
+  },
+};
 
 const POPULAR_LINKS = [
   { href: "/sido/seoul", label: "서울 동물병원 찾기", emoji: "🏥" },
