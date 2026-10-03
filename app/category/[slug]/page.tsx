@@ -41,7 +41,24 @@ export async function generateMetadata({
     title: { absolute: title },
     description,
     alternates: { canonical: `/category/${slug}` },
-    openGraph: { title, description },
+    openGraph: {
+      title,
+      description,
+      images: [
+        {
+          url: `/category/${slug}/opengraph-image`,
+          width: 1200,
+          height: 630,
+          alt: title,
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+      images: [`/category/${slug}/opengraph-image`],
+    },
   };
 }
 

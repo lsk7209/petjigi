@@ -55,6 +55,20 @@ export const metadata: Metadata = {
   openGraph: {
     title: "견종·묘종 도감 | 펫지기",
     description: "강아지·고양이·소동물 품종별 특징과 건강 정보를 확인하세요.",
+    images: [
+      {
+        url: "/breed/opengraph-image",
+        width: 1200,
+        height: 630,
+        alt: "견종·묘종 도감",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "견종·묘종 도감 | 펫지기",
+    description: "강아지·고양이·소동물 품종별 특징과 건강 정보를 확인하세요.",
+    images: ["/breed/opengraph-image"],
   },
 };
 

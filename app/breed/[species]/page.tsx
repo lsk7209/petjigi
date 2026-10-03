@@ -61,6 +61,24 @@ export async function generateMetadata({
     title: { absolute: `${config.label} 목록 | 펫지기` },
     description: config.desc,
     alternates: { canonical: `/breed/${species}` },
+    openGraph: {
+      title: `${config.label} 목록 | 펫지기`,
+      description: config.desc,
+      images: [
+        {
+          url: `/breed/${species}/opengraph-image`,
+          width: 1200,
+          height: 630,
+          alt: `${config.label} 목록`,
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: `${config.label} 목록 | 펫지기`,
+      description: config.desc,
+      images: [`/breed/${species}/opengraph-image`],
+    },
   };
 }
 

@@ -24,6 +24,20 @@ export const metadata: Metadata = {
   openGraph: {
     title: "반려동물 질병·증상 정보 | 펫지기",
     description: "강아지·고양이의 흔한 질병과 증상 관련 정보.",
+    images: [
+      {
+        url: "/condition/opengraph-image",
+        width: 1200,
+        height: 630,
+        alt: "반려동물 질병·증상 정보",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "반려동물 질병·증상 정보 | 펫지기",
+    description: "강아지·고양이의 흔한 질병과 증상 관련 정보.",
+    images: ["/condition/opengraph-image"],
   },
 };
 

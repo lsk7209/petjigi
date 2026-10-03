@@ -17,10 +17,30 @@ export async function generateMetadata({ params }: { params: Promise<{ insurer: 
   const { insurer } = await params;
   const data = getInsuranceProductEvidence(insurer);
   if (!data) return {};
+  const title = `${data.insurer} 펫보험 공식 정보 확인 | 펫지기`;
+  const description = `${data.insurer} 펫보험의 공식 확인 경로와 비교 전 확인할 조건을 안내합니다.`;
   return {
-    title: { absolute: `${data.insurer} 펫보험 공식 정보 확인 | 펫지기` },
-    description: `${data.insurer} 펫보험의 공식 확인 경로와 비교 전 확인할 조건을 안내합니다.`,
+    title: { absolute: title },
+    description,
     alternates: { canonical: `/insurance/${insurer}` },
+    openGraph: {
+      title,
+      description,
+      images: [
+        {
+          url: `/insurance/${insurer}/opengraph-image`,
+          width: 1200,
+          height: 630,
+          alt: `${data.insurer} 펫보험`,
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+      images: [`/insurance/${insurer}/opengraph-image`],
+    },
   };
 }
 

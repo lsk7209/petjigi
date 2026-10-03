@@ -59,6 +59,20 @@ export const metadata: Metadata = {
   openGraph: {
     title: "펫보험 안내 — 비교·선택 가이드 | 펫지기",
     description: "보험사 공식 채널과 약관을 기준으로 확인하는 펫보험 선택 체크리스트.",
+    images: [
+      {
+        url: "/insurance/opengraph-image",
+        width: 1200,
+        height: 630,
+        alt: "펫보험 안내 — 비교·선택 가이드",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "펫보험 안내 — 비교·선택 가이드 | 펫지기",
+    description: "보험사 공식 채널과 약관을 기준으로 확인하는 펫보험 선택 체크리스트.",
+    images: ["/insurance/opengraph-image"],
   },
 };
 

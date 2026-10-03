@@ -12,6 +12,24 @@ export const metadata: Metadata = {
   title: { absolute: "펫보험 확인 가이드 — 공식 상품·약관 비교 | 펫지기" },
   description: "보험사 공식 채널에서 확인된 펫보험 상품과 비교 전에 확인할 계약 조건을 안내합니다.",
   alternates: { canonical: "/insurance/compare" },
+  openGraph: {
+    title: "펫보험 확인 가이드 — 공식 상품·약관 비교 | 펫지기",
+    description: "보험사 공식 채널에서 확인된 펫보험 상품과 비교 전에 확인할 계약 조건을 안내합니다.",
+    images: [
+      {
+        url: "/insurance/compare/opengraph-image",
+        width: 1200,
+        height: 630,
+        alt: "펫보험 확인 가이드",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "펫보험 확인 가이드 — 공식 상품·약관 비교 | 펫지기",
+    description: "보험사 공식 채널에서 확인된 펫보험 상품과 비교 전에 확인할 계약 조건을 안내합니다.",
+    images: ["/insurance/compare/opengraph-image"],
+  },
 };
 
 const CHECK_ITEMS = [

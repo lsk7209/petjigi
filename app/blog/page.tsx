@@ -52,6 +52,20 @@ export async function generateMetadata({
     openGraph: {
       title: "반려동물 블로그 | 펫지기",
       description: "집사 에디터가 쓰는 반려동물 생활 정보 블로그.",
+      images: [
+        {
+          url: "/opengraph-image",
+          width: 1200,
+          height: 630,
+          alt: "반려동물 블로그 | 펫지기",
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: "반려동물 블로그 | 펫지기",
+      description: "집사 에디터가 쓰는 반려동물 생활 정보 블로그.",
+      images: ["/opengraph-image"],
     },
   };
 }

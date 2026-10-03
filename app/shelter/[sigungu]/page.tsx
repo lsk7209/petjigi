@@ -57,6 +57,20 @@ export async function generateMetadata({
     openGraph: {
       title: `${region.sigungu} 동물보호센터 | 펫지기`,
       description: `${region.sigungu} 동물보호센터 ${shelterList.length}개소 — 유기동물 입양 문의처`,
+      images: [
+        {
+          url: `/shelter/${sigungu}/opengraph-image`,
+          width: 1200,
+          height: 630,
+          alt: `${region.sigungu} 동물보호센터`,
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: `${region.sigungu} 동물보호센터 | 펫지기`,
+      description: `${region.sigungu} 동물보호센터 ${shelterList.length}개소 — 유기동물 입양 문의처`,
+      images: [`/shelter/${sigungu}/opengraph-image`],
     },
   };
 }

@@ -48,6 +48,20 @@ export const metadata: Metadata = {
   openGraph: {
     title: "반려동물 가이드 | 펫지기",
     description: "반려동물 가이드 — 입양부터 장례까지 6개 카테고리.",
+    images: [
+      {
+        url: "/guide/opengraph-image",
+        width: 1200,
+        height: 630,
+        alt: "반려동물 가이드",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "반려동물 가이드 | 펫지기",
+    description: "반려동물 가이드 — 입양부터 장례까지 6개 카테고리.",
+    images: ["/guide/opengraph-image"],
   },
 };
 

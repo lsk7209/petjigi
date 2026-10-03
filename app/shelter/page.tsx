@@ -16,6 +16,20 @@ export const metadata: Metadata = {
   openGraph: {
     title: "전국 동물보호센터 안내 | 펫지기",
     description: "전국 공공 동물보호센터와 유기동물 입양·보호 안내.",
+    images: [
+      {
+        url: "/opengraph-image",
+        width: 1200,
+        height: 630,
+        alt: "전국 동물보호센터 안내 | 펫지기",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "전국 동물보호센터 안내 | 펫지기",
+    description: "전국 공공 동물보호센터와 유기동물 입양·보호 안내.",
+    images: ["/opengraph-image"],
   },
 };
 
