@@ -44,8 +44,49 @@ export default function SearchClient() {
   // 요청 순서를 추적해, 늦게 도착한 과거 응답이 최신 화면을 덮지 않게 한다.
   const requestIdRef = useRef(0);
 
+  const executeSearch = async (searchQuery: string) => {
+    if (timer.current) {
+      clearTimeout(timer.current);
+      timer.current = null;
+    }
+    if (abortRef.current) {
+      abortRef.current.abort();
+      abortRef.current = null;
+    }
+
+    if (searchQuery.trim().length < 2) {
+      setData(null);
+      setLoading(false);
+      return;
+    }
+
+    const myRequestId = ++requestIdRef.current;
+    const controller = new AbortController();
+    abortRef.current = controller;
+    setLoading(true);
+    setError("");
+
+    try {
+      const res = await fetch(`/api/search?q=${encodeURIComponent(searchQuery)}`, {
+        signal: controller.signal,
+      });
+      if (!res.ok) throw new Error();
+      const json: SearchResponse = await res.json();
+      if (myRequestId !== requestIdRef.current) return;
+      setData(json);
+      track.search({ query: searchQuery, resultsCount: json.returnedCount });
+    } catch (err) {
+      if (err instanceof DOMException && err.name === "AbortError") {
+        return;
+      }
+      if (myRequestId !== requestIdRef.current) return;
+      setError("검색 중 오류가 발생했습니다. 잠시 후 다시 시도해주세요.");
+    } finally {
+      if (myRequestId === requestIdRef.current) setLoading(false);
+    }
+  };
+
   useEffect(() => {
-    // 매 query 변경마다 이전 타이머와 진행 중인 요청을 항상 먼저 정리한다.
     if (timer.current) {
       clearTimeout(timer.current);
       timer.current = null;
@@ -59,35 +100,10 @@ export default function SearchClient() {
       return;
     }
 
-    const myRequestId = ++requestIdRef.current;
-    timer.current = setTimeout(async () => {
-      const controller = new AbortController();
-      abortRef.current = controller;
-      setLoading(true);
-      setError("");
-      try {
-        const res = await fetch(`/api/search?q=${encodeURIComponent(query)}`, {
-          signal: controller.signal,
-        });
-        if (!res.ok) throw new Error();
-        const json: SearchResponse = await res.json();
-        // 이 응답이 최신 요청의 결과가 아니면 화면·이벤트를 갱신하지 않는다.
-        if (myRequestId !== requestIdRef.current) return;
-        setData(json);
-        track.search({ query, resultsCount: json.returnedCount });
-      } catch (err) {
-        if (err instanceof DOMException && err.name === "AbortError") {
-          // 사용자가 입력을 바꿔 취소된 요청 — 오류로 표시하지 않는다.
-          return;
-        }
-        if (myRequestId !== requestIdRef.current) return;
-        setError("검색 중 오류가 발생했습니다. 잠시 후 다시 시도해주세요.");
-      } finally {
-        if (myRequestId === requestIdRef.current) setLoading(false);
-      }
+    timer.current = setTimeout(() => {
+      executeSearch(query);
     }, 400);
 
-    // unmount 또는 다음 effect 실행 전 정리 — 낡은 타이머/요청이 남지 않게 한다.
     return () => {
       if (timer.current) {
         clearTimeout(timer.current);
@@ -104,7 +120,14 @@ export default function SearchClient() {
     <main className="max-w-3xl mx-auto px-4 py-12">
       <h1 className="text-2xl font-bold text-[var(--brand-text)] mb-6">검색</h1>
 
-      <div className="relative mb-8">
+      <form
+        onSubmit={(e) => {
+          e.preventDefault();
+          executeSearch(query);
+        }}
+        className="relative mb-8"
+        role="search"
+      >
         <label htmlFor="site-search" className="sr-only">사이트 검색어</label>
         <input
           id="site-search"
@@ -128,7 +151,7 @@ export default function SearchClient() {
             검색 중…
           </span>
         )}
-      </div>
+      </form>
 
       {error && <p role="alert" className="text-sm text-red-500 mb-4">{error}</p>}
 

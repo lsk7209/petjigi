@@ -133,14 +133,14 @@ export default async function RescuePage() {
       <section className="mt-12 pt-8 border-t border-[var(--brand-border)]">
         <h2 className="text-base font-bold text-[var(--brand-text)] mb-4">입양 전 알아두세요</h2>
         <div className="flex flex-wrap gap-3">
-          <Link href="/guide/rescue-dog-adoption-guide" className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl border border-[var(--brand-border)] hover:border-[var(--brand-accent)] hover:text-[var(--brand-accent)] transition-colors text-sm font-medium">
-            📖 구조견 입양 가이드
+          <Link href="/guide/dog-adoption-checklist" className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl border border-[var(--brand-border)] hover:border-[var(--brand-accent)] hover:text-[var(--brand-accent)] transition-colors text-sm font-medium">
+            📖 반려견 입양 가이드
           </Link>
           <Link href="/category/adoption" className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl border border-[var(--brand-border)] hover:border-[var(--brand-accent)] hover:text-[var(--brand-accent)] transition-colors text-sm font-medium">
             🐾 입양·등록 정보
           </Link>
-          <Link href="/shelter/seoul" className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl border border-[var(--brand-border)] hover:border-[var(--brand-accent)] hover:text-[var(--brand-accent)] transition-colors text-sm font-medium">
-            🏠 보호센터 찾기
+          <Link href="/shelter" className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl border border-[var(--brand-border)] hover:border-[var(--brand-accent)] hover:text-[var(--brand-accent)] transition-colors text-sm font-medium">
+            🏠 전국 보호센터 안내
           </Link>
         </div>
       </section>

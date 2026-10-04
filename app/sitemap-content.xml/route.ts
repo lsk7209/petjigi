@@ -52,7 +52,8 @@ export async function GET() {
         .orderBy(desc(contents.publishedAt)),
       db
         .select({ slug: breeds.slug, species: breeds.species, updatedAt: breeds.updatedAt })
-        .from(breeds),
+        .from(breeds)
+        .where(eq(breeds.status, "published")),
     ]);
 
     const contentUrls = contentRows.map((r) => {
