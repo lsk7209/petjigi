@@ -31,3 +31,13 @@
 
 ## 롤백
 커밋 단위: `git revert <sha>` (f02b0d1, 92af6fd, 891af15, ebb17ce, 및 이 보고 커밋). 콘텐츠 DB 변경 없음.
+
+## 추가: 운영 기준선 재현 (공개 GET 7건, 2026-10-09, 예산 100 내, 429/403 없음)
+- 사이트맵: /sitemap.xml 2 loc(인덱스), /sitemap-0.xml 522, /sitemap-content.xml 577 → 합집합 1,099 고유 URL, 중복 0. 기준값(522+577)과 동일.
+- 운영 /sitemap-0.xml에 `/sido/gangwon` 포함 (로컬 config는 제외 — 운영은 낡은 산출물).
+- 운영 raw HTML의 `adsbygoogle.js` 수: /condition/zzz-not-real=1, /sido/gangwon=1, /gangseo/vet=1, /guide/pet-loss-care=1. **운영은 제외 대상 화면(404, 추모)에도 광고 스크립트를 내보냄.** 로컬 `56098ed`(head 삽입 제거)는 origin/main에 없어 아직 미배포 → 이 브랜치가 해소하는 결함의 운영 재현 증거.
+- 운영 /condition/zzz-not-real: HTTP 200 + canonical=홈(`https://petjigi.kr`) + noindex → E05/E06 재현. 로컬은 404로 수정.
+- 운영 /guide/pet-loss-care: 1393 포함(수정 전) 재현. 로컬은 109로 수정.
+- 운영 /gangseo/vet: HTTP 200, index. 업체 건수·혼합 여부는 DB 데이터 확인 필요(미검증).
+- 보호센터 "매주 자동 갱신" 표기 vs `etl-shelters.yml` 월 1회(`0 19 1 * *`) → 표기를 월 1회 점검으로 정정, 계약 테스트 추가.
+- 이 결과는 운영 현재 상태 관찰이며, 수정 반영/검증이 아니다(PRODUCTION_NOT_APPLIED).

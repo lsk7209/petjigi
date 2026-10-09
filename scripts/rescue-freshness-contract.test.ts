@@ -15,3 +15,11 @@ test("rescue page reads run-level attempt and success timestamps separately", ()
   assert.match(page, /원본 기준일은 각 공고의 공고일/);
   assert.doesNotMatch(page, /매일 05:00 갱신/);
 });
+
+test("shelter pages describe the real monthly ETL cadence, not a weekly refresh", () => {
+  const workflow = fs.readFileSync(".github/workflows/etl-shelters.yml", "utf8");
+  assert.match(workflow, /cron:\s*"0 19 1 \* \*"/);
+  const page = fs.readFileSync("app/shelter/[sigungu]/page.tsx", "utf8");
+  assert.equal(page.includes("매주 자동으로 갱신"), false);
+  assert.ok(page.includes("월 1회 자동 점검"));
+});
