@@ -38,7 +38,7 @@ const SEED_CONTENTS: NewContent[] = [
 <p>슬픔이 2주 이상 일상 기능을 방해한다면 전문 상담을 고려하세요.</p>
 <ul>
   <li><strong>정신건강복지센터</strong>: 무료 전화 상담 1577-0199</li>
-  <li><strong>자살예방상담전화</strong>: 24시간 1393</li>
+  <li><strong>자살예방 상담전화(보건복지부)</strong>: 24시간 109</li>
   <li>펫로스 온라인 커뮤니티나 자조 모임 참여</li>
 </ul>
 
@@ -4457,7 +4457,8 @@ const SEED_CONTENTS: NewContent[] = [
     type: "condition",
     category: 3,
     title: "강아지 갑상선 기능 저하증 — 증상·원인·호르몬 치료",
-    metaTitle: "강아지 갑상선 기능 저하증 증상·치료 | 체중증가·무기력·털빠짐 | 펫지기",
+    metaTitle:
+      "강아지 갑상선 기능 저하증 증상·치료 | 체중증가·무기력·털빠짐 | 펫지기",
     metaDescription:
       "강아지 갑상선 기능 저하증(Hypothyroidism)의 주요 증상(체중 증가·무기력·털 빠짐), 원인, 갑상선 호르몬 보충 치료, 예후를 안내합니다.",
     body: `<h2>강아지 갑상선 기능 저하증이란?</h2>
@@ -4674,7 +4675,8 @@ const SEED_CONTENTS: NewContent[] = [
     type: "guide",
     category: 3,
     title: "동물병원 선택 가이드 — 믿을 수 있는 병원 고르는 기준",
-    metaTitle: "동물병원 선택 가이드 | 일반·전문·응급 병원 차이·체크리스트 | 펫지기",
+    metaTitle:
+      "동물병원 선택 가이드 | 일반·전문·응급 병원 차이·체크리스트 | 펫지기",
     metaDescription:
       "반려동물에게 맞는 동물병원을 선택하는 기준을 안내합니다. 일반·2차 전문·응급 병원의 차이, 방문 전 체크리스트, 전문 진료과 설명을 포함합니다.",
     body: `<h2>동물병원, 어떻게 선택할까?</h2>
@@ -4749,7 +4751,8 @@ const SEED_CONTENTS: NewContent[] = [
     slug: "dog-bite-liability-guide",
     type: "guide",
     category: 4,
-    title: "반려견 사고 손해배상 가이드 — 교상·재산피해 시 보호자 책임과 대처법",
+    title:
+      "반려견 사고 손해배상 가이드 — 교상·재산피해 시 보호자 책임과 대처법",
     metaTitle: "반려견 교상·사고 손해배상 책임 | 동물보호법·민사 책임 | 펫지기",
     metaDescription:
       "반려견이 사람을 물거나 다른 동물·재산을 손상시켰을 때 보호자 법적 책임(민사·행정)과 대처 순서, 분쟁 해결 방법을 안내합니다.",
@@ -4881,7 +4884,8 @@ const SEED_CONTENTS: NewContent[] = [
     type: "condition",
     category: 3,
     title: "고양이 피부사상균증(링웜) — 증상·전염·치료와 사람 전염 예방",
-    metaTitle: "고양이 링웜(피부사상균증) 증상·치료·사람 전염 예방 | 수의사 검토 | 펫지기",
+    metaTitle:
+      "고양이 링웜(피부사상균증) 증상·치료·사람 전염 예방 | 수의사 검토 | 펫지기",
     metaDescription:
       "고양이 링웜(피부사상균증)의 증상, 진단, 치료 방법, 그리고 사람과 다른 반려동물로의 전염 예방법을 수의사 검토를 거쳐 안내합니다.",
     body: `<h2>피부사상균증(링웜)이란?</h2>
@@ -5508,7 +5512,8 @@ const SEED_CONTENTS: NewContent[] = [
     type: "condition",
     category: 3,
     title: "강아지 식이 알레르기 — 증상·원인 식재료·제거 식이 시험",
-    metaTitle: "강아지 식이 알레르기 증상·원인·제거 식이 | 수의사 검토 | 펫지기",
+    metaTitle:
+      "강아지 식이 알레르기 증상·원인·제거 식이 | 수의사 검토 | 펫지기",
     metaDescription:
       "강아지 식이 알레르기(음식 과민증)의 증상, 흔한 알레르겐(닭·소·밀·유제품), 제거 식이 시험 방법과 저알레르기 사료 선택법을 안내합니다.",
     body: `<h2>식이 알레르기 vs 아토피 피부염</h2>

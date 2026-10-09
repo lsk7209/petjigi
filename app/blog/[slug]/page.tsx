@@ -21,6 +21,7 @@ import { ScrollDepthTracker } from "@/components/analytics/scroll-depth-tracker"
 import { OutboundLinkTracker } from "@/components/analytics/outbound-link-tracker";
 import { GuideViewTracker } from "@/components/analytics/guide-view-tracker";
 import { getReviewEvidence } from "@/lib/ymyl";
+import { adsPolicyAttrs } from "@/lib/ads-policy";
 import type { TocHeading } from "@/components/content/table-of-contents";
 
 export const dynamic = "force-dynamic";
@@ -263,7 +264,7 @@ export default async function BlogPostPage({
       {faqItems.length > 0 && (
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema(faqItems)) }} />
       )}
-      <main className="max-w-3xl mx-auto px-4 py-6 sm:py-10">
+      <main className="max-w-3xl mx-auto px-4 py-6 sm:py-10" {...adsPolicyAttrs(categoryId)}>
         {/* 브레드크럼 */}
         <nav
           className="text-xs text-[var(--brand-text-secondary)] mb-5 sm:mb-6 flex items-center gap-1 sm:gap-1.5 flex-wrap"
