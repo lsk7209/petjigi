@@ -13,7 +13,7 @@
   word-break: keep-all;
 }
 .hm a { text-decoration: none; }
-.hm a:not([class*="text-"]) { color: inherit; }
+:where(.hm) a:not([class*="text-"]) { color: inherit; }
 .hm a:focus-visible, .hm button:focus-visible { outline: 3px solid var(--hm-green); outline-offset: 3px; border-radius: 8px; }
 .hm-wrap { max-width: 1240px; margin: 0 auto; padding: 0 20px; }
 .hm-sec { padding: 56px 0; }
