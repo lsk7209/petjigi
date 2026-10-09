@@ -41,3 +41,15 @@
 - 운영 /gangseo/vet: HTTP 200, index. 업체 건수·혼합 여부는 DB 데이터 확인 필요(미검증).
 - 보호센터 "매주 자동 갱신" 표기 vs `etl-shelters.yml` 월 1회(`0 19 1 * *`) → 표기를 월 1회 점검으로 정정, 계약 테스트 추가.
 - 이 결과는 운영 현재 상태 관찰이며, 수정 반영/검증이 아니다(PRODUCTION_NOT_APPLIED).
+
+## 추가: 브라우저 검증 (로컬 격리, 2026-10-09)
+- 환경: `next dev -p 3100`, `TURSO_DATABASE_URL=file:<scratchpad>/test.db`(폐기 가능한 로컬 DB, 스키마 `drizzle-kit push`, **합성 fixture**: 일반 글·추모(cat6) 글·서울/부산 강서구·합성 병원 2곳), Chrome(설치본) + `playwright-core` 1.64.0(devDependency, 브라우저 다운로드 없음). 스크립트: `scripts/browser-verify/ads-check.mjs` (localhost 외 실행 거부).
+- 광고·분석 도메인은 **mock으로 가로채 기록만** 함(실계정 광고 검증 아님). 모든 요청은 로컬/모킹, 외부 전송 0.
+- **발견·수정한 실제 결함**: 스트리밍된 404(`force-dynamic` 라우트의 `notFound()`)는 차단 마커가 hydration보다 늦게 도착 → 로더가 먼저 광고 스크립트를 마운트(수정 전 `/condition/zzz-not-real`: 광고 요청 1, 최종 DOM에 마커+스크립트 공존, 새로고침 1회). `AdsenseLoader`에 `POLICY_SETTLE_MS`(1.2s) 보류를 추가 → 수정 후 요청 0. 정적 테스트로는 잡히지 않던 결함.
+- 수정 후 결과 27/27 통과:
+  - 직접 접속 7경로: 허용(일반 글) 광고 요청 1·DOM 스크립트 1·raw HTML 스크립트 0 / 제외(카테고리6 신규 글, 펫로스, 404, 없는 질환, 준비 중 시도, 문의) 요청 0·DOM 0·raw HTML 0.
+  - SPA 허용→제외→뒤로→앞으로: 제외 화면에 광고 스크립트 0, 이후 6초간 네비게이션 수 불변(무한 새로고침 없음). 참고: 허용→제외 이동은 설계상 새로고침 1회로 광고 런타임을 제거함.
+  - 강서구 모호 지역: 200, `noindex, follow`, 서울·부산 안내문, 양쪽 합성 병원 표시.
+  - 없는 질환: 404, canonical 태그 0.
+  - viewport 360/390/768/1440 × 4경로(실제 `window.innerWidth` 확인): 가로 overflow 0.
+- 한계: dev 모드 검증(프로덕션 빌드 아님), 합성 데이터, Lighthouse/CrUX 미실행, 표·키보드·폼 상세 검사 미실행.
