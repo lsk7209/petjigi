@@ -375,7 +375,7 @@ export default async function HomePage() {
               ].map(b => (
                 <div key={b.title}>
                   <div style={{ fontSize: 32, marginBottom: 12 }}>{b.icon}</div>
-                  <h4 style={{ fontSize: 16, fontWeight: 700, marginBottom: 6 }}>{b.title}</h4>
+                  <h3 style={{ fontSize: 16, fontWeight: 700, marginBottom: 6 }}>{b.title}</h3>
                   <p className="pj-muted" style={{ fontSize: 14, lineHeight: 1.7 }}>{b.desc}</p>
                 </div>
               ))}

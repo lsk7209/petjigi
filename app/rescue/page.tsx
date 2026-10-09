@@ -68,7 +68,7 @@ export default async function RescuePage() {
             현재 구조동물 데이터가 없습니다.
           </p>
           <p className="text-xs text-[var(--brand-text-secondary)] mt-2">
-            ETL 동기화 후 표시됩니다.
+            다음 정기 수집 이후 표시됩니다.
           </p>
         </div>
       ) : (

@@ -1,5 +1,22 @@
+// next-sitemap 설정은 CommonJS 로 로드된다
+/* eslint-disable @typescript-eslint/no-require-imports */
+const fs = require("node:fs");
+const path = require("node:path");
+/* eslint-enable @typescript-eslint/no-require-imports */
+
+// 여러 시도가 같은 slug를 쓰는 시군구(동구·서구 등): 페이지는 noindex이므로 사이트맵에서 제외
+function ambiguousSigunguSlugs() {
+  const src = fs.readFileSync(path.join(__dirname, "db", "seeds", "regions.ts"), "utf8");
+  const counts = new Map();
+  for (const m of src.matchAll(/sigunguSlug:\s*"([^"]+)"/g)) counts.set(m[1], (counts.get(m[1]) ?? 0) + 1);
+  return [...counts].filter(([, n]) => n > 1).map(([slug]) => slug).sort();
+}
+const AMBIGUOUS_REGION_EXCLUDES = ambiguousSigunguSlugs().map((slug) => `/${slug}/*`);
+
 /** @type {import('next-sitemap').IConfig} */
 module.exports = {
+  // 빌드 시각을 lastmod로 일괄 기록하지 않는다(신뢰할 수정일이 없으면 생략)
+  autoLastmod: false,
   siteUrl: process.env.NEXT_PUBLIC_SITE_URL || "https://petjigi.kr",
   generateRobotsTxt: true,
   robotsTxtOptions: {
@@ -41,6 +58,7 @@ module.exports = {
     "/rescue", "/rescue/*", "/search*", "/admin/*", "/*?page=*", "/*?cat=*",
     "/opengraph-image", "/**/opengraph-image", "/icon", "/apple-icon", "/manifest.webmanifest",
     "/guide/*", "/blog/*", "/condition/*", "/breed/*/*",
+    ...AMBIGUOUS_REGION_EXCLUDES,
     "/sido/chungbuk", "/sido/chungnam", "/sido/gangwon", "/sido/gyeongbuk",
     "/sido/gyeongnam", "/sido/jeju", "/sido/jeonbuk", "/sido/jeonnam",
   ],

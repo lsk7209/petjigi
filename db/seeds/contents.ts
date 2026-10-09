@@ -2636,7 +2636,7 @@ const SEED_CONTENTS: NewContent[] = [
   <li>췌장염 병력</li>
   <li>여성호르몬(임신, 황체기 프로게스테론 분비)</li>
   <li>스테로이드 장기 투여</li>
-  <li>중성화하지 않은 암컷 — 발생률이 수컷 대비 약 2~3배 높음</li>
+  <li>중성화하지 않은 암컷 — 발정 후기 호르몬 영향으로 위험이 높을 수 있음</li>
 </ul>
 
 <h2>진단</h2>
@@ -2660,13 +2660,12 @@ const SEED_CONTENTS: NewContent[] = [
 <p>인슐린 과다 투여 시 저혈당이 발생할 수 있습니다. 강아지가 떨거나, 비틀거리거나, 의식이 흐려지면 즉시 잇몸에 꿀이나 포도당 젤을 바르고 동물병원에 연락하세요.</p>
 
 <h2>예후</h2>
-<p>지속적으로 인슐린을 관리하면 정상적인 삶의 질을 유지할 수 있습니다. 진단 초기에는 2~4주 간격으로 혈당 모니터링이 필요합니다.</p>`,
+<p>지속적으로 인슐린을 관리하면 삶의 질을 유지할 수 있는 경우가 많습니다. 진단 초기에는 용량 조절을 위해 수의사가 정한 일정에 따라 혈당 모니터링이 필요합니다.</p>`,
     disclaimer:
       "본 정보는 수의학 참고 자료로 제공되며 의학적 진단과 치료를 대체하지 않습니다. 인슐린 용량은 반드시 담당 수의사가 결정해야 합니다. 저혈당 응급 상황 시 즉시 동물병원을 방문하세요.",
     sources: [
-      "WSAVA Diabetes Mellitus Management Guidelines (2023)",
+      "Behrend E, et al. 2018 AAHA Diabetes Management Guidelines for Dogs and Cats. J Am Anim Hosp Assoc 2018;54(1):1-21 (인슐린 치료·모니터링·식이 개요 확인, 개별 수치는 대조 전)",
       "Feldman EC, Nelson RW. Canine and Feline Endocrinology and Reproduction (4th ed.)",
-      "대한수의사회 임상 수의학 가이드라인 (2022)",
     ],
     ymyl: true,
     status: "published",

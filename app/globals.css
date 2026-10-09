@@ -872,7 +872,7 @@ p {
   font-size: 13px;
   line-height: 1.7;
 }
-.pj-footer h4 { font-size: 13px; font-weight: 700; color: var(--brand-text); margin-bottom: 12px; }
+.pj-footer h3 { font-size: 13px; font-weight: 700; color: var(--brand-text); margin-bottom: 12px; }
 .pj-footer a { color: var(--brand-text-secondary); text-decoration: none; }
 .pj-footer a:hover { color: var(--brand-text); }
 
