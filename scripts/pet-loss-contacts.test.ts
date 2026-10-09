@@ -23,3 +23,10 @@ test("pet-loss guide does not claim an unverified expert review", () => {
   assert.equal(/reviewerName|reviewedAt/.test(s), false);
   assert.ok(s.includes("펫지기 편집팀 작성"));
 });
+
+test("only officially documented hours are shown next to helpline numbers", () => {
+  const s = fs.readFileSync(files[0], "utf8");
+  assert.ok(s.includes('contact: "109 (24시간)"'));
+  assert.ok(s.includes('contact: "1588-9191"'));
+  assert.equal(s.includes("1588-9191 (24시간)"), false);
+});

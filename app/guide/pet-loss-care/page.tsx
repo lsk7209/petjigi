@@ -159,7 +159,7 @@ export default function PetLossCarePage() {
                 {[
                   { name: "정신건강 상담전화", contact: "1577-0199" },
                   { name: "자살예방 상담전화 (보건복지부)", contact: "109 (24시간)" },
-                  { name: "한국생명의전화", contact: "1588-9191 (24시간)" },
+                  { name: "한국생명의전화", contact: "1588-9191" },
                 ].map((item, i) => (
                   <div
                     key={i}
