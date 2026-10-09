@@ -150,9 +150,15 @@ export default async function BreedSpeciesPage({
       </div>
 
       {breedList.length === 0 ? (
-        <p className="text-[var(--brand-text-secondary)] text-sm">
-          품종 정보가 준비 중입니다.
-        </p>
+        <section
+          data-ads-policy="block"
+          className="my-8 p-6 sm:p-10 rounded-2xl border border-[var(--brand-border)] bg-[var(--brand-surface,#FAF5EE)] text-center"
+          aria-label="데이터 준비 안내"
+        >
+          <p className="text-[var(--brand-text-secondary)] text-sm">
+            {config.label} 정보가 준비 중입니다. 순차적으로 등록될 예정입니다.
+          </p>
+        </section>
       ) : (
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           {breedList.map((breed) => (
@@ -189,7 +195,9 @@ export default async function BreedSpeciesPage({
         </div>
       )}
 
-      <AdSlot adType="adsense" format="horizontal" className="my-8" />
+      {breedList.length > 0 && (
+        <AdSlot adType="adsense" format="horizontal" className="my-8" />
+      )}
 
       {/* FAQ */}
       <section className="mt-12 pt-8 border-t border-[var(--brand-border)]" aria-label="자주 묻는 질문">

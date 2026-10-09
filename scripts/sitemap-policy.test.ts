@@ -25,3 +25,15 @@ test("metadata image and manifest endpoints are excluded from sitemaps", () => {
     assert.ok(config.includes(`"${route}"`), `${route} must be excluded`);
   }
 });
+
+test("sido pages without registered regions are noindex and kept out of the sitemap", () => {
+  const page = fs.readFileSync("app/sido/[sido]/page.tsx", "utf8");
+  assert.match(page, /rows\.length === 0 \? \{ robots: \{ index: false, follow: true \} \}/);
+  for (const slug of ["gangwon", "chungbuk", "jeju"]) {
+    assert.ok(config.includes(`"/sido/${slug}"`), `${slug} must be excluded while data is pending`);
+  }
+});
+
+test("a pending noindex page is not also blocked by robots.txt Disallow", () => {
+  assert.equal(/disallow:\s*\[[^\]]*\/sido/.test(config), false);
+});

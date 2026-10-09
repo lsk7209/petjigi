@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { notFound } from "next/navigation";
 import { cache } from "react";
 import { db } from "@/db/client";
 import { contents } from "@/db/schema";
@@ -9,6 +10,7 @@ import { YmylDisclaimer } from "@/components/content/ymyl-disclaimer";
 import { articleSchema, breadcrumbSchema, faqSchema, medicalConditionSchema } from "@/lib/seo/structured-data";
 import { withoutUnverifiedReviewClaim } from "@/lib/content-review";
 import { socialTitle } from "@/lib/seo/title";
+import { adsPolicyAttrs } from "@/lib/ads-policy";
 import { TableOfContents, type TocHeading } from "@/components/content/table-of-contents";
 import { ReadingProgress } from "@/components/content/reading-progress";
 import { ShareButtons } from "@/components/content/share-buttons";
@@ -165,15 +167,7 @@ export default async function ConditionPage({
   const { slug } = await params;
   const content = await getConditionContent(slug);
 
-  if (!content) {
-    return (
-      <main className="max-w-3xl mx-auto px-4 py-12 text-center">
-        <p className="text-[var(--brand-text-secondary)] text-sm">
-          해당 질환·증상 정보를 찾을 수 없습니다.
-        </p>
-      </main>
-    );
-  }
+  if (!content) notFound();
 
   const headings = extractHeadings(content.body);
   const bodyWithIds = injectHeadingIds(content.body, headings);
@@ -229,7 +223,7 @@ export default async function ConditionPage({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema(faqItems.map((f) => ({ ...f, url: pageUrl })))) }}
         />
       )}
-      <main className="max-w-3xl mx-auto px-4 py-6 sm:py-10">
+      <main className="max-w-3xl mx-auto px-4 py-6 sm:py-10" {...adsPolicyAttrs(categoryId)}>
         {/* 브레드크럼 */}
         <nav
           className="text-xs text-[var(--brand-text-secondary)] mb-5 sm:mb-6 flex items-center gap-1 sm:gap-1.5 flex-wrap"

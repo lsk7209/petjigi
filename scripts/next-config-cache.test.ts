@@ -25,11 +25,11 @@ test("Vercel headers do not override page-level robots metadata", () => {
     headers: Array<{ source: string; headers: Array<{ key: string; value: string }> }>;
   };
   const globalRule = parsed.headers.find((rule) => rule.source === "/(.*)");
-  const rescueRule = parsed.headers.find((rule) => rule.source === "/rescue(.*)");
+  const rescueRule = parsed.headers.find((rule) => rule.source === "/rescue/(.*)");
 
   assert.ok(globalRule, "global security-header rule must remain");
   assert.ok(!globalRule.headers.some((header) => header.key === "X-Robots-Tag"));
-  assert.ok(rescueRule, "rescue root and detail pages must share the noindex header rule");
+  assert.ok(rescueRule, "rescue detail pages must keep the noindex header rule (root page sets robots in its own metadata)");
   assert.ok(
     rescueRule.headers.some(
       (header) => header.key === "X-Robots-Tag" && header.value === "noindex, nofollow"

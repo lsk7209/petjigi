@@ -34,3 +34,29 @@ export function resolveRegionIdentity(candidates: RegionCandidate[]): RegionReso
   if (candidates.length === 1) return { kind: "resolved", region: candidates[0] };
   return { kind: "ambiguous", candidates };
 }
+
+export interface RegionSlugView {
+  /** 조회·표시에 쓸 시군구 이름. slug 문자열이 아니라 후보의 실제 이름이다. */
+  sigunguName: string | null;
+  sidoName: string;
+  sidoSlug: string | null;
+  /** 같은 slug를 쓰는 시도 이름들 (모호할 때만 2개 이상) */
+  ambiguousSidoNames: string[];
+}
+
+/** 모호한 slug는 임의의 첫 행 대신 모든 후보 시도를 드러낸다. */
+export function describeRegionSlug(resolution: RegionResolution): RegionSlugView {
+  if (resolution.kind === "resolved") {
+    const { region } = resolution;
+    return { sigunguName: region.sigungu, sidoName: region.sido, sidoSlug: region.sidoSlug, ambiguousSidoNames: [] };
+  }
+  if (resolution.kind === "ambiguous") {
+    return {
+      sigunguName: resolution.candidates[0].sigungu,
+      sidoName: "",
+      sidoSlug: null,
+      ambiguousSidoNames: resolution.candidates.map((c) => c.sido),
+    };
+  }
+  return { sigunguName: null, sidoName: "", sidoSlug: null, ambiguousSidoNames: [] };
+}

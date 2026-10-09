@@ -94,7 +94,6 @@ export const metadata: Metadata = {
     telephone: false,
   },
   alternates: {
-    canonical: SITE_URL,
     types: {
       "application/rss+xml": [{ url: `${SITE_URL}/feed.xml`, title: "펫지기 RSS" }],
     },
@@ -128,12 +127,6 @@ export default function RootLayout({
             content={process.env.NEXT_PUBLIC_NAVER_VERIFICATION}
           />
         )}
-        {/* Google AdSense */}
-        <script
-          async
-          src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${ADSENSE_ID}`}
-          crossOrigin="anonymous"
-        />
         {/* Structured data — separate tags for valid JSON-LD */}
         <script
           type="application/ld+json"

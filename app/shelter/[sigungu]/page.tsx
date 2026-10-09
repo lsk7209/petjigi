@@ -164,7 +164,7 @@ export default async function ShelterSigunguPage({
               보호센터 정보가 아직 없습니다.
             </p>
             <p className="text-[var(--brand-text-secondary)] text-xs mb-4">
-              데이터는 매주 자동으로 갱신됩니다.
+              데이터는 월 1회 자동 점검하며, 원천 기관의 공개 시점에 따라 실제 반영일은 다를 수 있습니다.
             </p>
             <div className="flex justify-center gap-3">
               <Link href="/shelter" className="text-xs text-[var(--brand-accent)] hover:underline">
@@ -226,7 +226,7 @@ export default async function ShelterSigunguPage({
           <CategoryCta categoryId={1} className="mt-2" />
 
           <p className="mt-8 text-xs text-[var(--brand-text-secondary)] text-center">
-            데이터는 매주 자동으로 갱신됩니다.
+            데이터는 월 1회 자동 점검하며, 원천 기관의 공개 시점에 따라 실제 반영일은 다를 수 있습니다.
           </p>
         </>
       )}

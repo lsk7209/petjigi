@@ -5,6 +5,7 @@ import { emailSubscribers } from "@/db/schema";
 import { and, eq, isNotNull } from "drizzle-orm";
 import { Resend } from "resend";
 import { renderWelcomeEmail } from "@/lib/email/templates";
+import { sendWelcomeEmail, subscribeMessage, type WelcomeEmailStatus } from "@/lib/email/send-welcome";
 import { trackSubscribe } from "@/lib/analytics/ga4-server";
 import { NewsletterRequestError, readNewsletterJson } from "@/lib/newsletter-request";
 
@@ -17,28 +18,21 @@ const bodySchema = z.object({
   website: z.string().max(200).optional().default(""),
 });
 
-async function sendWelcomeEmail(
+async function deliverWelcomeEmail(
   email: string,
   subscriberId: string,
   hasMarketingConsent: boolean,
-) {
+): Promise<WelcomeEmailStatus> {
   const apiKey = process.env.RESEND_API_KEY;
-  if (!apiKey) return; // RESEND_API_KEY 미설정 시 조용히 스킵
-
-  try {
-    const resend = new Resend(apiKey);
-    const from = process.env.RESEND_FROM_EMAIL ?? "noreply@petjigi.com";
-    const html = await renderWelcomeEmail({
-      email,
-      unsubscribeToken: subscriberId,
-      hasMarketingConsent,
-    });
-    const subject = "[펫지기] 구독을 환영합니다";
-
-    await resend.emails.send({ from, to: email, subject, html });
-  } catch {
-    // 이메일 발송 실패는 구독 자체를 실패 처리하지 않음
-  }
+  return sendWelcomeEmail(email, {
+    apiKey,
+    from: process.env.RESEND_FROM_EMAIL,
+    render: () => renderWelcomeEmail({ email, unsubscribeToken: subscriberId, hasMarketingConsent }),
+    send: async (message) => {
+      const { error } = await new Resend(apiKey).emails.send(message);
+      if (error) throw new Error(error.message);
+    },
+  });
 }
 
 export async function POST(req: NextRequest) {
@@ -100,9 +94,12 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ message: "이미 구독 중인 이메일입니다." }, { status: 200 });
     }
 
-    await sendWelcomeEmail(email, reactivated.id, consentMarketing);
+    const mailStatus = await deliverWelcomeEmail(email, reactivated.id, consentMarketing);
     void trackSubscribe(source ?? "unknown", false);
-    return NextResponse.json({ message: "구독이 재활성화되었습니다. 환영합니다!" }, { status: 200 });
+    return NextResponse.json(
+      { message: subscribeMessage("구독이 재활성화되었습니다.", mailStatus), welcomeEmail: mailStatus },
+      { status: 200 },
+    );
   }
 
   const id = crypto.randomUUID();
@@ -123,7 +120,10 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ message: "이미 구독 중인 이메일입니다." }, { status: 200 });
   }
 
-  await sendWelcomeEmail(email, id, consentMarketing);
+  const mailStatus = await deliverWelcomeEmail(email, id, consentMarketing);
   void trackSubscribe(source ?? "unknown", true);
-  return NextResponse.json({ message: "구독이 완료되었습니다. 환영합니다!" }, { status: 201 });
+  return NextResponse.json(
+    { message: subscribeMessage("구독이 완료되었습니다.", mailStatus), welcomeEmail: mailStatus },
+    { status: 201 },
+  );
 }

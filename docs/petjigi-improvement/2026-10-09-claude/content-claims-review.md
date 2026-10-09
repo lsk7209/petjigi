@@ -1,0 +1,55 @@
+# 고위험 콘텐츠 claim 검토 (2026-10-09, AI 작성 — 전문가 검수 아님)
+
+모든 `review_status`는 `NEEDS_EXPERT_REVIEW`. 이 문서는 전문가 서명이 아니다.
+실제 검토자·자격·검토일·대상 버전은 제공되지 않았다.
+
+## A. /guide/pet-heatstroke-prevention-complete-guide
+대상: content_id `guide-pet-heatstroke-prevention-complete`, type guide, category 5, status published
+(seed: `db/seeds/guides-batch-3.ts`). **seed는 수정하지 않음. 운영 DB 승격 안 함.**
+
+출처 (확인일 2026-10-09, 검색 요약 기준 — 원문 전체 정독은 아님):
+- RVC VetCompass, "The RVC urges owners of hot dogs to cool first, transport second"
+  https://www.rvc.ac.uk/vetcompass/news/the-rvc-urges-owners-of-hot-dogs-to-cool-first-transport-second
+- RVC "How to cool hot dogs" PDF https://rvc.ac.uk/Media/Default/VetCompass/HOW%20TO%20COOL%20HOT%20DOGS%20(1).pdf
+- 적용 동물: **개**. 고양이에 대한 근거는 확보하지 못함 → 고양이에 일반화 금지.
+
+| claim_id | 원문 | finding | 근거/조건 | 제안 |
+|---|---|---|---|---|
+| H1 | "차가운 물은 혈관을 수축시켜 오히려 역효과. 미지근한 물(25~30℃)" | CONTRADICTED (개 기준) | RVC: "cool slowly/tepid"는 구식 조언. 개에게는 주변보다 시원한 물이면 종류 무관, 건강한 젊은 개는 냉수 침수가 가장 효과적, 노령·기저질환견은 물 끼얹기 + 송풍 | 아래 패치 1 |
+| H2 | "응급처치 … 즉시 동물병원으로 가야 합니다. 이동하면서 동시에" | PARTIAL | RVC 원칙은 "cool first, transport second" (냉각 시작 후 이동). 순서 모호 | 패치 2 |
+| H3 | "정상 체온 개·고양이 37.5~39.5℃ / 40℃ 이상 장기 손상 / 41℃ 이상 비가역" | UNVERIFIED | 이번 조사에서 근거 위치 미확보. 고정 임계값 단정 | 패치 3 (수치 단정 삭제 또는 출처 확보 후 복원) |
+| H4 | "외부 25℃ … 10분 내 40℃ 이상" | UNVERIFIED | 근거 미확보 | 패치 3 |
+| H5 | "산책 오전 7시/오후 7시", "실내 26℃ 이하", "여름철 2배 이상 음수량", "7초 테스트" | UNVERIFIED | 임의 수치 가능성. 7초 테스트는 널리 쓰이나 이번에 1차 출처 미확인 | 패치 3 |
+
+### 제안 패치 (국소, 수정 밖 보존)
+1. 응급처치 2번 항목 교체:
+   - 현재: `미지근한 물로 체온 낮추기: 차가운 물은 혈관을 수축시켜 오히려 역효과. 미지근한 물(25~30℃)을 …`
+   - 제안: `빠르게 체온 낮추기: 몸보다 시원한 물이면 종류와 관계없이 즉시 몸에 끼얹거나 적시고 바람을 쐬어 줍니다. 젊고 건강한 개는 시원한 물에 몸을 담그는 방법이 효과적일 수 있으나, 노령·기저질환·의식 저하 동물은 물을 끼얹고 송풍하는 방식을 쓰고 수의사 지시를 따르세요. 고양이에 대한 구체적 지침은 수의사에게 문의하세요.`
+2. 응급처치 도입 문장: `열사병이 의심되면 곧바로 동물병원에 연락하고, 냉각을 시작한 뒤 이동하세요(냉각 먼저, 이동은 그다음).`
+3. H3~H5의 확정 수치(체온 구간, 10분 40℃, 시각, 26℃, 2배)는 출처 확보 전까지 "일반적으로 더운 시간대를 피하고…" 같은 비수치 표현으로 교체.
+- 약물 용량·확진·치료 보장 표현은 추가하지 않음.
+
+남은 검토: 수의사 검토 필요(H1~H5 적용 조건, 고양이 지침). category 5이나 응급 내용이므로 `ymyl: false` 플래그 재분류 필요 → 운영자 판단.
+
+## B. /guide/pet-loss-care
+대상: `app/guide/pet-loss-care/page.tsx` (정적 코드), `db/seeds/contents.ts` (추모 가이드 seed 1곳).
+**로컬 코드에 적용함 (운영 미배포).**
+
+출처: 보도 요약 기준 — 보건복지부 2024-01-01부터 자살예방 상담전화 109 통합 운영, 1393 대체, 1577-0199(정신건강상담)·1388(청소년)은 유지
+(https://www.etoday.co.kr/news/view/2312343 , https://www.kukinews.com/article/view/kuk202401020145).
+**보건복지부 원문 페이지는 이번에 직접 열람하지 못함 → 운영자가 공식 페이지로 재확인 필요.**
+한국생명의전화 1588-9191 24시간: findahelpline/therapyroute 요약 기준(2차 출처), 공식 사이트 미확인.
+
+| claim_id | 원문 | finding | 조치 |
+|---|---|---|---|
+| L1 | 자살예방상담전화 1393 (24시간) | OUTDATED | 109 (24시간) 로 교체 (page.tsx, contents.ts) |
+| L2 | 1577-0199 (24시간) | PARTIAL | 24시간 표기 근거 없음 → 시간 문구 제거, 번호 유지 |
+| L3 | 한국생명의전화 1588-9191 (24시간) | PARTIAL(2차 출처) | 유지, 공식 확인 필요 |
+| L4 | "일상생활이 6개월 이상 어려울 경우 … 도움" (본문 meta FAQ JSON-LD + FAQ UI) | 지연 유발 | "기간과 상관없이 힘들면 기다리지 말고 도움" 으로 교체 (JSON-LD와 UI 동일 문구) |
+
+자살예방 상담을 모든 펫로스 상담의 대체 경로로 연결하지 않음: 109는 위기 상황용 항목으로만 표기.
+
+### 미해결 (운영자/전문가)
+- 이 페이지는 `reviewerName: "동물행동심리 전문가"`, "검토: 동물행동심리 전문가 2026-03-01"을 표시한다.
+  실제 검토자·자격 증빙이 제공되지 않았으므로 **NEEDS_OPERATOR_FACT**. 증빙이 없으면 표기 제거를 권고(이번에는 사실 확인 없이 임의 삭제하지 않음).
+- 운영 DB 내 동일 가이드 본문(DB 렌더링 여부)은 미확인 → 승격 필요 여부는 5단계 dry-run에서 확인.

@@ -30,9 +30,9 @@ const CTA_MAP: Partial<Record<CategoryId, CtaConfig>> = {
     catSoftVar: "var(--cat-2-soft)",
   },
   3: {
-    heading: "펫보험 무료 비교견적",
-    body: "동물병원비 부담을 줄이는 펫보험, 5분 만에 주요 상품을 한눈에 비교하세요.",
-    label: "펫보험 비교하기",
+    heading: "펫보험 공식 상품 정보 확인",
+    body: "가입 전 보험사별 공식 상품 페이지와 약관, 보장 조건을 직접 확인할 수 있도록 안내합니다.",
+    label: "펫보험 정보 보기",
     href: "/insurance/compare",
     affiliate: true,
     catVar: "var(--cat-3)",
@@ -40,8 +40,8 @@ const CTA_MAP: Partial<Record<CategoryId, CtaConfig>> = {
   },
   4: {
     heading: "내 아이에게 맞는 펫보험은?",
-    body: "품종·나이·보장 범위별 펫보험 상품을 한눈에 비교하고 최적 플랜을 찾아보세요.",
-    label: "펫보험 비교하기",
+    body: "가입 연령, 면책, 보장 조건처럼 가입 전 확인할 항목을 공식 자료 기준으로 정리했습니다.",
+    label: "펫보험 정보 보기",
     href: "/insurance/compare",
     affiliate: true,
     catVar: "var(--cat-4)",

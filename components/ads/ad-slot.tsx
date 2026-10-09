@@ -31,9 +31,9 @@ const FORMAT_MIN_HEIGHT: Record<string, number> = {
 const HOUSE_ADS: Record<string, { href: string; title: string; desc: string; cta: string }> = {
   horizontal: {
     href: "/insurance/compare",
-    title: "펫보험, 한눈에 비교하세요",
-    desc: "현대해상·KB·삼성 등 6대 손보사 실비 무료 비교",
-    cta: "비교하기 →",
+    title: "펫보험, 공식 상품 정보 확인",
+    desc: "보험사별 공식 상품 페이지와 약관 확인 경로 안내",
+    cta: "확인하기 →",
   },
   rectangle: {
     href: "/guide",
@@ -43,9 +43,9 @@ const HOUSE_ADS: Record<string, { href: string; title: string; desc: string; cta
   },
   vertical: {
     href: "/insurance/compare",
-    title: "펫보험 비교",
-    desc: "6대 손보사 보험료·보장 비교",
-    cta: "무료 비교 →",
+    title: "펫보험 정보 확인",
+    desc: "공식 상품·약관 확인 안내",
+    cta: "안내 보기 →",
   },
   auto: {
     href: "/guide",

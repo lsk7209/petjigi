@@ -17,7 +17,7 @@ for (const pagePath of PAGES_MUST_USE_RESOLVED_REGION) {
     const source = fs.readFileSync(pagePath, "utf8");
     assert.match(
       source,
-      /getCachedResolvedRegion/,
+      /getCachedResolvedRegion|getCachedRegionSlugView/,
       `${pagePath} should call getCachedResolvedRegion so an ambiguous sigungu slug (e.g. Seoul/Busan Gangseo) does not silently expose the first matching sido`
     );
     assert.doesNotMatch(
@@ -33,4 +33,12 @@ test("db-queries exposes getCachedResolvedRegion built on resolveRegionIdentity"
   assert.match(source, /export async function getCachedResolvedRegion/);
   assert.match(source, /resolveRegionIdentity\(candidates\)/);
   assert.match(source, /resolution\.kind === "resolved"/);
+});
+
+test("listing page uses the slug view so ambiguous sigungu is not queried by slug text", () => {
+  const src = fs.readFileSync("app/[sigungu]/[type]/page.tsx", "utf8");
+  assert.ok(src.includes("getCachedRegionSlugView"));
+  assert.equal(src.includes("getCachedResolvedRegion"), false);
+  assert.equal(src.includes('`/sido/${region?.sidoSlug ?? ""}`'), false);
+  assert.ok(src.includes("robots: { index: false, follow: true }"));
 });

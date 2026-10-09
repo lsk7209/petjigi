@@ -346,7 +346,7 @@ export default async function CategoryPage({
                     💊 질병·증상 정보 보기 →
                   </Link>
                   <Link
-                    href="/condition/dog-patellar-luxation"
+                    href="/guide/dog-patellar-luxation"
                     className="flex items-center gap-1.5 px-4 py-2 rounded-xl border border-[var(--brand-border)] text-sm hover:border-[var(--cat-3)] hover:text-[var(--cat-3)] transition-colors"
                   >
                     🦴 슬개골 탈구
