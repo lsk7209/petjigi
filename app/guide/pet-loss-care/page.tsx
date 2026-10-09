@@ -45,8 +45,6 @@ const articleJsonLd = articleSchema({
   authorName: "펫지기 편집팀",
   authorCredential: "반려동물 전문 콘텐츠 에디터",
   publishedAt: "2025-01-15",
-  reviewedAt: "2026-03-01",
-  reviewerName: "동물행동심리 전문가",
   isYmyl: true,
 });
 
@@ -95,7 +93,7 @@ export default function PetLossCarePage() {
               <span className="text-[var(--brand-accent)]">펫로스 케어 가이드</span>
             </h1>
             <p className="text-sm text-[var(--brand-text-secondary)]">
-              검토일: 2026년 3월 1일 · 검토: 동물행동심리 전문가
+              펫지기 편집팀 작성 · 일반 정보이며 전문 상담을 대체하지 않습니다
             </p>
           </header>
 
