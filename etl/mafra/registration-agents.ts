@@ -78,6 +78,10 @@ export async function syncRegistrationAgents(): Promise<void> {
           set: {
             name: row.orgNm,
             address: fullAddr,
+            addressSido: parts[0] ?? null,
+            addressSigungu: parts[1] ?? null,
+            lat: geo?.lat ?? null,
+            lng: geo?.lng ?? null,
             phone: row.tel || null,
             lastSyncedAt: now,
             updatedAt: now,
