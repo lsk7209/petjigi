@@ -19,6 +19,14 @@ test("content detail pages wire the category marker onto <main>", () => {
   }
 });
 
-test("condition not-found state blocks ads", () => {
-  assert.ok(fs.readFileSync("app/condition/[slug]/page.tsx", "utf8").includes('data-ads-policy="block"'));
+test("missing condition returns a real 404 (not-found.tsx carries the ads block)", () => {
+  const src = fs.readFileSync("app/condition/[slug]/page.tsx", "utf8");
+  assert.ok(src.includes("if (!content) notFound();"));
+  assert.ok(fs.readFileSync("app/not-found.tsx", "utf8").includes('data-ads-policy="block"'));
+});
+
+test("root layout does not set a site-wide canonical that error pages would inherit", () => {
+  const layout = fs.readFileSync("app/layout.tsx", "utf8");
+  assert.equal(/canonical:\s*SITE_URL/.test(layout), false);
+  assert.ok(fs.readFileSync("app/page.tsx", "utf8").includes('canonical: "/"'));
 });

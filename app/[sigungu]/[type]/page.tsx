@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { notFound, redirect } from "next/navigation";
 import Link from "next/link";
-import { getCachedBusinessListing, getCachedResolvedRegion } from "@/lib/db-queries";
+import { getCachedBusinessListing, getCachedRegionSlugView } from "@/lib/db-queries";
 import { breadcrumbSchema, faqSchema, itemListSchema, collectionPageSchema } from "@/lib/seo/structured-data";
 import type { CategoryId } from "@/lib/category";
 import { CategoryCta } from "@/components/content/category-cta";
@@ -53,8 +53,9 @@ export async function generateMetadata({
   const meta = TYPE_META[type];
   if (!meta) return {};
 
-  const region = await getCachedResolvedRegion(sigungu);
-  const location = region?.sigungu ?? decodeURIComponent(sigungu);
+  const regionView = await getCachedRegionSlugView(sigungu);
+  const location = regionView.sigunguName ?? decodeURIComponent(sigungu);
+  const isAmbiguousRegion = regionView.ambiguousSidoNames.length > 1;
   const title = `${location} ${meta.label}${page > 1 ? ` ${page}페이지` : ""}`;
   const description = `${location} ${meta.label} 전체 목록. ${meta.desc} — 공공데이터 기반 정확한 업체 정보.`;
   const canonical = businessListingPath(sigungu, type, page);
@@ -63,6 +64,7 @@ export async function generateMetadata({
     title,
     description,
     alternates: { canonical },
+    ...(isAmbiguousRegion ? { robots: { index: false, follow: true } } : {}),
     openGraph: {
       title: `${title} | 펫지기`,
       description,
@@ -114,9 +116,10 @@ export default async function SigunguTypePage({
   const meta = TYPE_META[type];
   if (!meta) notFound();
 
-  const region = await getCachedResolvedRegion(sigungu);
-  const sigunguName = region?.sigungu ?? decodeURIComponent(sigungu);
-  const sidoName = region?.sido ?? "";
+  const region = await getCachedRegionSlugView(sigungu);
+  const sigunguName = region.sigunguName ?? decodeURIComponent(sigungu);
+  const sidoName = region.sidoName;
+  const ambiguousSidoNames = region.ambiguousSidoNames;
 
   const listing = await getCachedBusinessListing(sigunguName, type, requestedPage);
   const businessList = listing.items;
@@ -125,7 +128,7 @@ export default async function SigunguTypePage({
 
   const breadcrumb = breadcrumbSchema([
     { name: "홈", url: SITE_URL },
-    ...(sidoName && region?.sidoSlug
+    ...(sidoName && region.sidoSlug
       ? [{ name: `${sidoName} 반려동물`, url: `${SITE_URL}/sido/${region.sidoSlug}` }]
       : []),
     { name: `${sigunguName} ${meta.label}`, url: `${SITE_URL}/${sigungu}/${type}` },
@@ -165,7 +168,7 @@ export default async function SigunguTypePage({
           aria-label="breadcrumb"
         >
           <Link href="/" className="hover:text-[var(--brand-accent)] transition-colors">홈</Link>
-          {sidoName && region?.sidoSlug && (
+          {sidoName && region.sidoSlug && (
             <>
               <span aria-hidden="true">›</span>
               <Link
@@ -181,6 +184,16 @@ export default async function SigunguTypePage({
             {sigunguName} {meta.label}
           </span>
         </nav>
+
+        {ambiguousSidoNames.length > 1 && (
+          <p
+            role="note"
+            className="mb-4 rounded-lg border border-[var(--brand-border)] bg-[var(--brand-surface,#FAF5EE)] px-4 py-3 text-sm text-[var(--brand-text-secondary)]"
+          >
+            &lsquo;{sigunguName}&rsquo;는 {ambiguousSidoNames.join("·")}에 모두 있는 이름입니다.
+            아래 목록에는 여러 시도의 업체가 함께 표시될 수 있으니 각 업체의 주소를 확인해 주세요.
+          </p>
+        )}
 
         <header className="mb-6 sm:mb-8">
           <div className="flex items-center gap-2 mb-2 sm:mb-3">
@@ -314,9 +327,11 @@ export default async function SigunguTypePage({
 
         <p className="mt-8 text-xs text-[var(--brand-text-secondary)]">
           정보 기준: 공공데이터포털 · 마지막 성공 동기화 {listing.sourceAsOf ? listing.sourceAsOf.slice(0, 10) : "확인 필요"} &nbsp;·&nbsp;
-          <Link href={`/sido/${region?.sidoSlug ?? ""}`} className="hover:text-[var(--brand-accent)]">
-            {sidoName} 지역 전체 보기
-          </Link>
+          {region.sidoSlug && (
+            <Link href={`/sido/${region.sidoSlug}`} className="hover:text-[var(--brand-accent)]">
+              {sidoName} 지역 전체 보기
+            </Link>
+          )}
         </p>
       </main>
     </AdPolicyProvider>

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { notFound } from "next/navigation";
 import { cache } from "react";
 import { db } from "@/db/client";
 import { contents } from "@/db/schema";
@@ -166,15 +167,7 @@ export default async function ConditionPage({
   const { slug } = await params;
   const content = await getConditionContent(slug);
 
-  if (!content) {
-    return (
-      <main className="max-w-3xl mx-auto px-4 py-12 text-center" data-ads-policy="block">
-        <p className="text-[var(--brand-text-secondary)] text-sm">
-          해당 질환·증상 정보를 찾을 수 없습니다.
-        </p>
-      </main>
-    );
-  }
+  if (!content) notFound();
 
   const headings = extractHeadings(content.body);
   const bodyWithIds = injectHeadingIds(content.body, headings);
