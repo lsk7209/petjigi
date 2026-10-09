@@ -53,7 +53,7 @@ export function Footer() {
               펫지기
             </Link>
             <p className="pj-tiny" style={{ marginTop: 14, maxWidth: 320, lineHeight: 1.7 }}>
-              공공데이터 기반 전국 30,000+ 동물병원·펫미용·펫호텔·장묘업체와
+              공공데이터 기반 전국 동물병원·펫미용·펫호텔·장묘업체와
               반려동물 가이드를 한 곳에서 만나보세요.
             </p>
             <p className="pj-tiny" style={{ marginTop: 12, lineHeight: 1.6 }}>
