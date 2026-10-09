@@ -7,7 +7,7 @@ AdSense 승인 준비 개선 (handoff 2026-10-09). 브랜치 fix/adsense-readine
 ## TODO
 - [ ] 사이트맵 3종 대조 / /sido/gangwon 준비중 noindex·제외 (4단계 잔여)
 - [ ] 중복 콘텐츠 inventory 갱신, DB 승격 dry-run (5단계)
-- [ ] 보험 CTA 문구("6대 손보사 무료 비교") 정정, 구독 저장/메일 상태 분리 (6단계)
+- [x] 보험 CTA 문구 정정 완료. 남음: 구독 저장 vs 메일 발송 상태 분리 (6단계)
 - [ ] 브라우저/viewport 검증 (격리 DB+브라우저 필요, NOT_RUN)
 ## 결정사항
 - 열사병 가이드 본문은 미수정: 수의사 검토 대기, 검토용 patch는 docs/petjigi-improvement/2026-10-09-claude/
