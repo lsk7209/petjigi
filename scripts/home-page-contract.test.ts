@@ -26,5 +26,5 @@ test("home page keeps canonical and links only existing top-level routes", () =>
 test("home css does not override utility text colors on links", () => {
   const css = fs.readFileSync("app/home.css", "utf8");
   assert.doesNotMatch(css, /^\.hm a \{[^}]*color:\s*inherit/m);
-  assert.match(css, /\.hm a:not\(\[class\*="text-"\]\)\s*\{\s*color:\s*inherit/);
+  assert.match(css, /:where\(\.hm\) a:not\(\[class\*="text-"\]\)\s*\{\s*color:\s*inherit/);
 });
