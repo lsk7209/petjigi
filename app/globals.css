@@ -11,11 +11,11 @@
   --brand-surface: #ffffff;
   --brand-surface-2: #f3ecdf;
   --brand-text: #2a2520;
-  --brand-text-secondary: #8c6a4f;
+  --brand-text-secondary: #7a5a42;
   --brand-text-tertiary: #b29c83;
-  --brand-accent: #9caf88;
+  --brand-accent: #5e7350;
   --brand-accent-soft: #e6ecd9;
-  --brand-accent-warm: #c97d5b;
+  --brand-accent-warm: #8f5033;
   --brand-accent-warm-soft: #f4e1d6;
   --brand-border: #e8dfd0;
   --brand-border-soft: #f0e8d8;
@@ -872,7 +872,7 @@ p {
   font-size: 13px;
   line-height: 1.7;
 }
-.pj-footer h4 { font-size: 13px; font-weight: 700; color: var(--brand-text); margin-bottom: 12px; }
+.pj-footer h3 { font-size: 13px; font-weight: 700; color: var(--brand-text); margin-bottom: 12px; }
 .pj-footer a { color: var(--brand-text-secondary); text-decoration: none; }
 .pj-footer a:hover { color: var(--brand-text); }
 

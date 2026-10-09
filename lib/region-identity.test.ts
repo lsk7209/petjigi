@@ -1,6 +1,6 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
-import { resolveRegionIdentity, type RegionCandidate } from "./region-identity";
+import { describeRegionSlug, resolveRegionIdentity, type RegionCandidate } from "./region-identity";
 
 const SEOUL_GANGSEO: RegionCandidate = {
   code: "11500", sido: "서울특별시", sidoSlug: "seoul",
@@ -40,4 +40,18 @@ test("ambiguous result never exposes only the first candidate as if it were the 
   const result = resolveRegionIdentity([SEOUL_GANGSEO, BUSAN_GANGSEO]);
   // @ts-expect-error - ambiguous 타입에는 region 단일 필드가 없어야 한다
   assert.equal(result.region, undefined);
+});
+
+test("ambiguous slug exposes real sigungu name and every candidate sido, never the slug text", () => {
+  const view = describeRegionSlug(resolveRegionIdentity([SEOUL_GANGSEO, BUSAN_GANGSEO]));
+  assert.equal(view.sigunguName, "강서구");
+  assert.deepEqual(view.ambiguousSidoNames, ["서울특별시", "부산광역시"]);
+  assert.equal(view.sidoSlug, null);
+});
+
+test("resolved and missing slugs describe cleanly", () => {
+  const resolved = describeRegionSlug(resolveRegionIdentity([NOWON]));
+  assert.equal(resolved.sigunguName, "노원구");
+  assert.deepEqual(resolved.ambiguousSidoNames, []);
+  assert.equal(describeRegionSlug(resolveRegionIdentity([])).sigunguName, null);
 });

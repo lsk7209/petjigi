@@ -94,7 +94,6 @@ export const metadata: Metadata = {
     telephone: false,
   },
   alternates: {
-    canonical: SITE_URL,
     types: {
       "application/rss+xml": [{ url: `${SITE_URL}/feed.xml`, title: "펫지기 RSS" }],
     },

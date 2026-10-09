@@ -50,3 +50,4 @@ local.db-shm
 local.db-wal
 
 .vercel
+.backup-prod/

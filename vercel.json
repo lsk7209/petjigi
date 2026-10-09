@@ -32,7 +32,7 @@
       ]
     },
     {
-      "source": "/rescue(.*)",
+      "source": "/rescue/(.*)",
       "headers": [
         {
           "key": "X-Robots-Tag",
@@ -53,12 +53,21 @@
         },
         {
           "key": "Cache-Control",
-          "value": "no-store"
+          "value": "public, s-maxage=300, stale-while-revalidate=3600"
         }
       ]
     },
     {
-      "source": "/api/(.*)",
+      "source": "/api/search(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, s-maxage=300, stale-while-revalidate=3600"
+        }
+      ]
+    },
+    {
+      "source": "/api/((?!search).*)",
       "headers": [
         {
           "key": "Cache-Control",

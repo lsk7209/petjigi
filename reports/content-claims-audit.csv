@@ -1,0 +1,22 @@
+url,claim,status,evidence,action,checked_at
+/blog/pet-insurance-guide,"금감원 2023 펫보험 가입 건수 약 85만 건(+32%)",원문 확인 불가·불일치 정황,"검색상 금감원 인용 보도는 2023년 말 약 10.9~11만 건 수준으로 보도됨(원문 보도자료 미확인, 정의·기준일 미확정)",수치 제거(대체 수치 미삽입),2026-10-10
+/blog/pet-insurance-guide,"소비자원 2022 분쟁의 약 36%가 기존질환 면책",원문 또는 정확한 문헌 미확인,원문 미발견,수치 제거·정성 표현,2026-10-10
+/blog/pet-insurance-guide,출처 목록 3건,원문 또는 정확한 문헌 미확인,문서 제목 실재 미확인,일반 참고 2건으로 정정(개별 통계 미인용 명시),2026-10-10
+/blog/maine-coon-care-guide,"AKC 브리드 데이터 수컷 10kg·100cm",원문은 있으나 주장과 불일치(AKC는 개 품종 단체),고양이 품종 근거로 부적합,AKC 인용·수치 제거,2026-10-10
+/blog/british-shorthair-care-guide,"AKC 고양이 품종 데이터 4-8kg·12-17년",동일,동일,AKC 인용·수치 제거,2026-10-10
+/blog/persian-cat-care-guide,"AKC 3-6kg / ASPCA 분류",동일(ASPCA 분류도 미확인),동일,인용·수치 제거,2026-10-10
+/blog/pet-photo-tips,"Instagram 2023 Pet Content Report 2.3배",원문 또는 정확한 문헌 미확인,보고서 미발견,수치 제거 후 촬영 설명 유지,2026-10-10
+/condition/dog-diabetes,"WSAVA Diabetes Mellitus Management Guidelines (2023)",원문 또는 정확한 문헌 미확인,동명 WSAVA 지침 미발견,제거,2026-10-10
+/condition/dog-diabetes,"대한수의사회 임상 수의학 가이드라인 (2022)",원문 또는 정확한 문헌 미확인,특정 문서 미확인,제거,2026-10-10
+/condition/dog-diabetes,"AAHA 2018 Diabetes Management Guidelines (JAAHA 54(1):1-21)",원문 확인(초록 수준)·주장별 대조 미완,인슐린 중심 치료·모니터링·식이 개요 확인,출처 추가(개별 수치는 대조 전 표기),2026-10-10
+/condition/dog-diabetes,"중성화 안 한 암컷 발생률 수컷 2~3배",원문 또는 정확한 문헌 미확인,근거 미확보,수치 제거,2026-10-10
+/condition/dog-diabetes,"진단 초기 2~4주 간격 혈당 모니터링",원문 또는 정확한 문헌 미확인,근거 미확보,수의사 일정 표현으로 변경,2026-10-10
+/condition/dog-diabetes,"저혈당 시 잇몸에 꿀·포도당 젤",시점·대상 추가 검토 필요,응급 지시라 수의사 검토 필요,유지·검토 보류,2026-10-10
+/blog/cat-outdoor-safety-guide,"AKC 하네스 적응 훈련 자료(고양이 글 출처)",원문은 있으나 주장과 불일치(개 단체),고양이 글 근거로 부적합,출처 행 제거,2026-10-10
+/blog/dog-cat-introduction,"AKC가 합사 시 고양이에 수 개월 공포 반응 강조",원문 또는 정확한 문헌 미확인,원문 미발견,기관 귀속 제거·정성 표현,2026-10-10
+/blog/cat-outdoor-safety-guide,"ASPCA·AVMA·WSAVA 해당 주제 문서",원문 또는 정확한 문헌 미확인,기관명만 기재 정확한 문서 미특정,유지·전문 검토 필요(미검증),2026-10-10
+/blog/cat-senior-diet-transition,"WSAVA: 7세 이상 고양이 약 40% 근육 소실",원문 또는 정확한 문헌 미확인,원문 미발견,수치·기관 귀속 제거,2026-10-10
+/blog/pet-moving-new-home-adaptation,"이삿날 강아지가 떨고 있었다(경험담 형식 도입)",직접 경험 근거 없음,경험 기록 없음,일반 서술로 교체,2026-10-10
+/blog/cat-breed-selection-guide 및 고양이 입양 준비 글,"농식품부 2023: 반려묘 양육 312만 가구·코숏 약 40%",원문 또는 정확한 문헌 미확인,"2023 동물복지 국민의식조사 검색 결과에서 반려묘 가구 수·코숏 비율 확인 불가(양육 비율 28.2%는 보도 인용, 공식 발표 여부 불명)",수치 제거·정성 표현,2026-10-10
+/blog/cat-protein-requirements,"AAFCO 성묘 최소 단백질 26%(건물 기준)",원문 확인 및 주장 일치,"FDA 소비자 안내(https://www.fda.gov/animal-veterinary/animal-health-literacy/complete-and-balanced-pet-food)에 26% 건물 기준 명시",유지,2026-10-10
+/blog/cat-protein-requirements,"AAFCO 성장·임신·수유 최소 단백질 30%",시점·대상·통계 정의가 달라 추가 검토 필요,"PetMD 2차 자료로만 확인(AAFCO 원문 미확인); 에너지 기준(4000 kcal ME/kg) 전제",유지·원문 대조 대기,2026-10-10

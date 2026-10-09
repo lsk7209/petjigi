@@ -25,10 +25,10 @@ export default function AdvertisingPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(BREADCRUMB) }} />
       <main className="max-w-3xl mx-auto px-4 py-16 prose prose-sm">
       <h1>광고 게재 정책</h1>
-      <p className="text-sm text-[var(--brand-text-secondary)]">최종 업데이트: 2026-05-18</p>
+      <p className="text-sm text-[var(--brand-text-secondary)]">최종 업데이트: 2026-10-10</p>
 
       <h2>광고 게재 사실</h2>
-      <p>펫지기는 Google AdSense를 통해 광고를 게재합니다. 광고는 Google의 개인화 알고리즘에 의해 표시될 수 있습니다.</p>
+      <p>펫지기는 Google AdSense를 이용해 광고를 표시할 수 있습니다. 광고 승인·정책에 따라 광고가 표시되지 않는 페이지도 있으며, 표시되는 광고는 Google의 알고리즘에 따라 개인화될 수 있습니다.</p>
 
       <h2>광고와 콘텐츠 구분</h2>
       <p>광고는 &quot;광고&quot; 또는 &quot;Ads&quot; 라벨로 콘텐츠와 명확히 구분됩니다.</p>

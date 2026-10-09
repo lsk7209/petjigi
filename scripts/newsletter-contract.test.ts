@@ -8,13 +8,19 @@ const privacy = fs.readFileSync("app/privacy/page.tsx", "utf8");
 const form = fs.readFileSync("components/forms/subscribe-form.tsx", "utf8");
 
 test("newsletter source accepts only implemented entry points", () => {
-  assert.match(route, /z\.enum\(\["contact_page", "home_newsletter", "pet_loss_newsletter"\]\)/);
+  assert.match(
+    route,
+    /z\.enum\(\["contact_page", "home_newsletter", "pet_loss_newsletter"\]\)/,
+  );
   assert.doesNotMatch(route, /pet_loss_care/);
 });
 
 test("welcome email does not promise a missing PDF", () => {
   for (const source of [route, template]) {
-    assert.doesNotMatch(source, /pet-loss-care-guide\.pdf|PDF 다운로드|30일간 유효|가이드 PDF가 도착/);
+    assert.doesNotMatch(
+      source,
+      /pet-loss-care-guide\.pdf|PDF 다운로드|30일간 유효|가이드 PDF가 도착/,
+    );
   }
 });
 
@@ -33,7 +39,10 @@ test("newsletter form and API share a non-interactive bot honeypot", () => {
 test("newsletter signup normalizes email and absorbs concurrent duplicate inserts", () => {
   const route = fs.readFileSync("app/api/subscribe/route.ts", "utf8");
   assert.match(route, /\.trim\(\)\.toLowerCase\(\)\.max\(254\)\.email\(/);
-  assert.match(route, /\.onConflictDoNothing\(\{ target: emailSubscribers\.email \}\)/);
+  assert.match(
+    route,
+    /\.onConflictDoNothing\(\{ target: emailSubscribers\.email \}\)/,
+  );
   assert.match(route, /if \(!inserted\)/);
 });
 
@@ -42,5 +51,8 @@ test("newsletter reactivation has one atomic winner before sending email", () =>
   assert.match(route, /isNotNull\(emailSubscribers\.unsubscribedAt\)/);
   assert.match(route, /\.returning\(\{ id: emailSubscribers\.id \}\)/);
   assert.match(route, /if \(!reactivated\)/);
-  assert.match(route, /sendWelcomeEmail\(email, reactivated\.id, consentMarketing\)/);
+  assert.match(
+    route,
+    /deliverWelcomeEmail\(email, reactivated\.id, consentMarketing\)/,
+  );
 });

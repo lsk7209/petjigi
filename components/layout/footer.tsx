@@ -53,7 +53,7 @@ export function Footer() {
               펫지기
             </Link>
             <p className="pj-tiny" style={{ marginTop: 14, maxWidth: 320, lineHeight: 1.7 }}>
-              공공데이터 기반 전국 30,000+ 동물병원·펫미용·펫호텔·장묘업체와
+              공공데이터 기반 전국 동물병원·펫미용·펫호텔·장묘업체와
               반려동물 가이드를 한 곳에서 만나보세요.
             </p>
             <p className="pj-tiny" style={{ marginTop: 12, lineHeight: 1.6 }}>
@@ -63,7 +63,7 @@ export function Footer() {
 
           {/* 카테고리 */}
           <div>
-            <h4>카테고리</h4>
+            <h3>카테고리</h3>
             <ul className="space-y-2">
               {CATEGORY_LINKS.map((link) => (
                 <li key={link.href + link.label}>
@@ -75,7 +75,7 @@ export function Footer() {
 
           {/* 콘텐츠 */}
           <div>
-            <h4>콘텐츠</h4>
+            <h3>콘텐츠</h3>
             <ul className="space-y-2">
               {CONTENT_LINKS.map((link) => (
                 <li key={link.href + link.label}>
@@ -87,7 +87,7 @@ export function Footer() {
 
           {/* 지역별 */}
           <div>
-            <h4>지역별</h4>
+            <h3>지역별</h3>
             <ul className="space-y-2">
               {SIDO_LINKS.map((link) => (
                 <li key={link.href + link.label}>
@@ -99,7 +99,7 @@ export function Footer() {
 
           {/* 회사 정보 */}
           <div>
-            <h4>회사 정보</h4>
+            <h3>회사 정보</h3>
             <ul className="space-y-2">
               {COMPANY_LINKS.map((link) => (
                 <li key={link.href + link.label}>
@@ -129,7 +129,7 @@ export function Footer() {
             <br />
             <strong style={{ color: "var(--brand-text)" }}>어필리에이트 고지:</strong> 펫지기는 일부 링크를 통해 수수료를 받을 수 있습니다.{" "}
             <Link href="/disclosure" style={{ color: "var(--brand-accent-warm)", textDecoration: "underline" }}>
-              자세히 보기
+              어필리에이트 고지 자세히 보기
             </Link>
           </div>
           <div className="pj-tiny">© 2026 PetJigi. All rights reserved.</div>

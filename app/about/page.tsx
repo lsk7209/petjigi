@@ -113,7 +113,7 @@ export default function AboutPage() {
           <div className="space-y-4 text-[var(--brand-text-secondary)] text-sm leading-relaxed">
             <div>
               <p className="font-semibold text-[var(--brand-text)] mb-1">정보 정확성 우선</p>
-              <p>모든 가이드 콘텐츠는 공인된 출처(학술지, 공공기관 자료, 수의학 교재)를 참고하여 작성합니다. 참고 자료는 각 페이지 하단에 공개합니다.</p>
+              <p>가이드 콘텐츠는 학술지, 공공기관 자료, 수의학 교재 등을 참고 출처로 삼고 페이지 하단에 표기합니다. 표기된 출처는 계속 재확인하고 있으며, 확인하지 못한 통계는 수치를 빼는 방식으로 정정합니다. 오류는 문의 페이지로 알려 주세요.</p>
             </div>
             <div>
               <p className="font-semibold text-[var(--brand-text)] mb-1">YMYL 콘텐츠 검수</p>

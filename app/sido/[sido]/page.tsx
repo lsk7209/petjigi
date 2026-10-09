@@ -73,6 +73,8 @@ export async function generateMetadata({
     title: { absolute: title },
     description,
     alternates: { canonical: `/sido/${sido}` },
+    // 데이터 준비 중(등록된 시군구 없음)인 시도는 색인하지 않는다. sitemap 제외와 같은 기준.
+    ...(rows.length === 0 ? { robots: { index: false, follow: true } } : {}),
     openGraph: {
       title,
       description,

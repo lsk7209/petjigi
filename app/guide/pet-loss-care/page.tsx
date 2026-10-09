@@ -45,8 +45,6 @@ const articleJsonLd = articleSchema({
   authorName: "펫지기 편집팀",
   authorCredential: "반려동물 전문 콘텐츠 에디터",
   publishedAt: "2025-01-15",
-  reviewedAt: "2026-03-01",
-  reviewerName: "동물행동심리 전문가",
   isYmyl: true,
 });
 
@@ -54,7 +52,7 @@ const faqJsonLd = faqSchema([
   {
     question: "펫로스 증후군은 얼마나 지속되나요?",
     answer:
-      "개인차가 크며, 일반적으로 수 주에서 수 개월까지 이어질 수 있습니다. 일상생활이 6개월 이상 어려울 경우 전문 심리상담사의 도움을 받으시기 바랍니다.",
+      "개인차가 크며, 일반적으로 수 주에서 수 개월까지 이어질 수 있습니다. 기간과 상관없이 일상생활이 힘들거나 마음이 너무 괴롭다면 기다리지 말고 전문 심리상담사나 정신건강복지센터의 도움을 받으세요.",
   },
   {
     question: "펫로스 증후군의 주요 증상은 무엇인가요?",
@@ -95,7 +93,7 @@ export default function PetLossCarePage() {
               <span className="text-[var(--brand-accent)]">펫로스 케어 가이드</span>
             </h1>
             <p className="text-sm text-[var(--brand-text-secondary)]">
-              검토일: 2026년 3월 1일 · 검토: 동물행동심리 전문가
+              펫지기 편집팀 작성 · 일반 정보이며 전문 상담을 대체하지 않습니다
             </p>
           </header>
 
@@ -159,9 +157,9 @@ export default function PetLossCarePage() {
               <h2 className="text-xl font-semibold mb-3">도움받을 수 있는 곳</h2>
               <div className="rounded-[var(--radius-card)] border border-[var(--brand-border)] overflow-hidden text-sm">
                 {[
-                  { name: "정신건강 위기상담 전화", contact: "1577-0199 (24시간)" },
-                  { name: "자살예방상담전화", contact: "1393 (24시간)" },
-                  { name: "한국생명의전화", contact: "1588-9191 (24시간)" },
+                  { name: "정신건강 상담전화", contact: "1577-0199" },
+                  { name: "자살예방 상담전화 (보건복지부)", contact: "109 (24시간)" },
+                  { name: "한국생명의전화", contact: "1588-9191" },
                 ].map((item, i) => (
                   <div
                     key={i}
@@ -181,7 +179,7 @@ export default function PetLossCarePage() {
                 {[
                   {
                     q: "펫로스 증후군은 얼마나 지속되나요?",
-                    a: "개인차가 크며, 수 주에서 수 개월까지 이어질 수 있습니다. 일상생활이 6개월 이상 어려울 경우 전문 심리상담사의 도움을 받으세요.",
+                    a: "개인차가 크며, 수 주에서 수 개월까지 이어질 수 있습니다. 기간과 상관없이 일상생활이 힘들거나 마음이 너무 괴롭다면 기다리지 말고 전문 심리상담사나 정신건강복지센터의 도움을 받으세요.",
                   },
                   {
                     q: "주변에서 \"그냥 동물인데\"라고 할 때 어떻게 해야 하나요?",

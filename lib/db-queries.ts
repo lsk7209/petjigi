@@ -4,7 +4,7 @@ import { businesses, contents, shelters, rescuedAnimals, regions, etlSyncState }
 import { eq, and, asc, desc, count, ne, lte } from "drizzle-orm";
 import { sql } from "drizzle-orm";
 import { DEFAULT_BUSINESS_PAGE_SIZE, getPageWindow } from "@/lib/business-listing";
-import { resolveRegionIdentity } from "@/lib/region-identity";
+import { describeRegionSlug, resolveRegionIdentity } from "@/lib/region-identity";
 
 // ── 홈 통계 카운트 ──────────────────────────────────────────────────────────
 export const getCachedStats = unstable_cache(
@@ -100,6 +100,20 @@ export const getCachedBusinessListing = unstable_cache(
   { revalidate: 86400, tags: ["businesses"] }
 );
 
+// ── 업종 전체의 가장 최근 업체 정보 갱신일 (지역 0건이 수집 전인지 판별) ────────
+export const getCachedTypeSourceAsOf = unstable_cache(
+  async (type: string) => {
+    const row = await db
+      .select({ asOf: sql<string | null>`max(${businesses.lastSyncedAt})` })
+      .from(businesses)
+      .where(and(eq(businesses.type, type), eq(businesses.status, "active")))
+      .get();
+    return row?.asOf ?? null;
+  },
+  ["businesses", "type-as-of"],
+  { revalidate: 86400, tags: ["businesses"] }
+);
+
 // ── 영업장 상세 (type + name) ─────────────────────────────────────────────────
 export const getCachedBusinessDetail = unstable_cache(
   async (type: string, name: string) =>
@@ -144,6 +158,10 @@ export const getCachedRegionBySlug = unstable_cache(
  * 이는 URL 구조를 바꾸지 않는 최소 통합이다 — 시도 접두 slug 등으로 충돌을 실제
  * 구분하는 것은 별도 승인 대상(docs 8.2)이므로 여기서 다루지 않는다.
  */
+export async function getCachedRegionSlugView(sigunguSlug: string) {
+  return describeRegionSlug(resolveRegionIdentity(await getCachedRegionCandidatesBySlug(sigunguSlug)));
+}
+
 export async function getCachedResolvedRegion(sigunguSlug: string) {
   const candidates = await getCachedRegionCandidatesBySlug(sigunguSlug);
   const resolution = resolveRegionIdentity(candidates);

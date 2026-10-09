@@ -22,8 +22,8 @@ test("public legal and contact identity uses the shared evidence boundary", () =
 });
 
 test("unverified identity claims remain operator decisions, not fabricated facts", () => {
-  assert.equal(SITE_IDENTITY.evidence.legalEntity.status, "UNKNOWN");
+  assert.equal(SITE_IDENTITY.evidence.legalEntity.status, "OPERATOR_STATED_NOT_A_CORPORATION");
+  assert.doesNotMatch(SITE_IDENTITY.legalEntityLabel, /\(주\)|주식회사|㈜/);
   assert.equal(SITE_IDENTITY.evidence.contactMailbox.status, "UNKNOWN");
-  assert.match(SITE_IDENTITY.evidence.legalEntity.operatorAction, /Confirm/);
   assert.match(SITE_IDENTITY.evidence.contactMailbox.operatorAction, /Confirm/);
 });
