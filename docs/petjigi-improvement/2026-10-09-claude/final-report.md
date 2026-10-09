@@ -22,7 +22,7 @@
 - 기존 테스트 2개 갱신: next-config-cache(upstream rescue 헤더 규칙 변경 반영), newsletter-contract(함수명).
 
 ## 운영 반영 안 함 / 후속 필요
-- 환경변수: **`RESEND_FROM_EMAIL`이 Vercel에 설정돼 있어야 환영 메일이 발송된다.** 미설정이면 저장만 되고 메일은 스킵(이전엔 petjigi.com 기본값으로 시도). 인증된 발신 도메인 확인 필요(운영자).
+- 이메일 발송은 운영하지 않음(운영자 확인, 2026-10-09). `RESEND_FROM_EMAIL` 미설정이어도 구독은 저장되고 환영 메일만 스킵된다 → 블로커 아님.
 - `public/sitemap-0.xml`(추적 파일)은 낡음: 준비 중 시도 8곳 포함. 빌드(`postbuild next-sitemap`)가 재생성하므로 손으로 고치지 않음.
 - 열사병 수의사 검토, 펫로스 "동물행동심리 전문가 검토" 표기 증빙, 109/1588-9191 공식 페이지 확인.
 - 중복 slug 65건 처리 방침과 운영 DB 실제 보유 행 확인(읽기 전용 쿼리는 duplicate-slug-findings.md).
