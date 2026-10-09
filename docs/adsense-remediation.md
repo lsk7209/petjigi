@@ -32,7 +32,7 @@
 - `next build` 성공(격리 DB). `next-sitemap` postbuild는 커밋된 사이트맵을 덮어쓰므로 실행하지 않음.
 - 프로덕션 서버(`next start`) 브라우저 샘플: 14경로(홈·블로그 목록/글 4·질환·지역 2상태·소개·개인정보·광고·보험 비교·404) × 390/1440px = 28/28 통과(H1 1개, canonical 자기참조, 404는 canonical 없음, 가로·표 넘침 0, 모바일 메뉴 열림, 콘솔 오류 0).
 - 308: /blog/pet-photo-tips-guide, /blog/cat-treats-guide 확인. 로컬 sitemap-content.xml에 두 URL 없음.
-- Lighthouse(모바일, /blog/pet-insurance-guide, 로컬 http): 접근성 94→96, SEO 92→100(푸터 링크 문구·제목 위계·공유 버튼 접근 이름 수정). 색 대비: 보조 텍스트 토큰 #8c6a4f→#7a5a42(같은 색상계, 대비 4.7↑)로 조정. 남은 항목: 브랜드 강조색(#c97d5b 텍스트, #9caf88 배경+흰 글자)의 대비 부족 — 브랜드 색 변경이라 미변경(제안: #a65f3e / 어두운 글자색), 서드파티 쿠키·inspector issues(광고/분석 스크립트 로드 영향), CLS 0.96. 성능 점수·Core Web Vitals는 운영 환경 측정 필요(미측정).
+- Lighthouse(모바일, /blog/pet-insurance-guide, 로컬 http): 접근성 94→96, SEO 92→100(푸터 링크 문구·제목 위계·공유 버튼 접근 이름 수정). 색 대비: 보조 텍스트 토큰 #8c6a4f→#7a5a42(같은 색상계, 대비 4.7↑)로 조정. 브랜드 강조색도 같은 색상계에서 어둡게 조정(라이트 모드만; 세이지 #9caf88→#5e7350, 테라코타 #c97d5b→#8f5033, 다크 모드·소프트 배경색 불변). 되돌리려면 `app/globals.css` 16·18행 값 복원. 최종 Lighthouse 모바일(로컬): 접근성 100, SEO 100, 베스트 프랙티스 77(광고·분석 스크립트의 서드파티 쿠키/inspector 항목, 로컬 환경 영향), 서드파티 쿠키·inspector issues(광고/분석 스크립트 로드 영향), CLS 0.96. 로컬 프로덕션 빌드 랩 측정(무스로틀, localhost): LCP 133ms, CLS 0.08. INP 미측정. 실사용(CrUX) 데이터 없음 — 운영 반영 후 재측정 필요.
 
 ## 테스트
 `pnpm test`: 230 통과 / 0 실패(신규: lastmod, listing-state, content-redirects, redirect-links, unverified-stats-removed).
