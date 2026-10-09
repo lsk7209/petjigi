@@ -433,7 +433,7 @@ const BLOG_POSTS: NewContent[] = [
 <h3>약물 치료</h3>
 <ul>
 <li><strong>NSAIDs(비스테로이드 소염제)</strong> — 멜록시캄·카프로펜 등. 통증·염증 동시 조절. 장기 사용 시 혈액 검사 모니터링 필요</li>
-<li><strong>갈라파고스펩타이드(Librela/모노클로날 항체)</strong> — 2024년 국내 도입. 월 1회 주사, 소화기 부작용 없음</li>
+<li><strong>갈라파고스펩타이드(Librela/모노클로날 항체)</strong> — 2024년 국내 도입. 월 1회 주사. NSAIDs와 작용 방식이 다르지만 부작용이 전혀 없는 것은 아니므로, 적합 여부와 이상 반응은 수의사와 상의하세요</li>
 <li><strong>관절 내 주사(히알루론산·PRP)</strong> — 심한 단관절 관절염에 선택적 사용</li>
 </ul>
 
