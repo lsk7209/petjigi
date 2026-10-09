@@ -53,3 +53,10 @@
   - 없는 질환: 404, canonical 태그 0.
   - viewport 360/390/768/1440 × 4경로(실제 `window.innerWidth` 확인): 가로 overflow 0.
 - 한계: dev 모드 검증(프로덕션 빌드 아님), 합성 데이터, Lighthouse/CrUX 미실행, 표·키보드·폼 상세 검사 미실행.
+
+## 추가: 운영 반영 및 재검증 (2026-10-09)
+- PR #2(squash `010fc66`), PR #3(`b4430a2`) 병합 → Vercel Production Ready. Preview 빌드는 Preview 환경에 `TURSO_DATABASE_URL`이 없어 실패(코드 원인 아님, TypeScript 통과). 병합 전 로컬 `next build`(격리 DB) 성공 확인.
+- 운영 raw HTML: 광고 스크립트 0(전 경로), /condition/zzz-not-real 404·canonical 없음, /sido/gangwon·/gangseo/vet noindex, 펫로스 109 표기·1393 없음, "무료 비교/6대 손보사/매주 자동" 문구 0.
+- 운영 사이트맵: sitemap-0.xml 522→514 (noindex 8개 시도 제거), 운영에서 해당 8개 noindex 확인 후 제거.
+- 운영 브라우저(광고 도메인 mock, 390px): 허용 페이지 광고 요청 1, 펫로스·404·없는 질환·준비 중 시도 0, 가로 overflow 0.
+- 상태: LOCAL_VERIFIED + PRODUCTION_VERIFIED(위 항목에 한함). AdSense 계정 설정과 승인 여부는 UNKNOWN.
