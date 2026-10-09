@@ -1,4 +1,5 @@
 import type { NextConfig } from "next";
+import { CONTENT_REDIRECTS } from "./lib/content-redirects";
 
 const nextConfig: NextConfig = {
   compress: true,
@@ -13,6 +14,9 @@ const nextConfig: NextConfig = {
   serverExternalPackages: ["@libsql/client"],
   experimental: {
     optimizePackageImports: ["drizzle-orm", "lucide-react"],
+  },
+  async redirects() {
+    return CONTENT_REDIRECTS.map((r) => ({ source: r.from, destination: r.to, permanent: true }));
   },
   async rewrites() {
     return [

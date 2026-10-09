@@ -72,7 +72,7 @@ export function ShareButtons({ url, title }: ShareButtonsProps) {
         rel="noopener noreferrer"
         onClick={() => trackEvent("share", { method: "twitter", content_title: title })}
         className="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-black text-white text-xs font-medium hover:bg-gray-800 transition-colors"
-        aria-label="X(트위터)에 공유"
+        title="X(트위터)에 공유"
       >
         𝕏 공유
       </a>

@@ -25,7 +25,7 @@ export default function PrivacyPage() {
       <main className="max-w-3xl mx-auto px-4 py-16 prose prose-sm">
       <h1>개인정보처리방침</h1>
       <p className="text-sm text-[var(--brand-text-secondary)]">
-        최종 업데이트: 2026-05-18
+        최종 업데이트: 2026-10-10
       </p>
 
       <h2>1. 처리하는 개인정보 항목</h2>
@@ -42,7 +42,7 @@ export default function PrivacyPage() {
       </ul>
 
       <h2>3. 처리 및 보유 기간</h2>
-      <p>뉴스레터 구독 취소 또는 발송 동의 철회 시까지 보관합니다.</p>
+      <p>뉴스레터 구독 취소 또는 발송 동의 철회 시까지 구독 이메일을 보관합니다. 구독 취소는 발송된 메일의 구독 해지 링크 또는 아래 이메일 문의로 요청할 수 있습니다. 접속 기록(IP, 쿠키, User-Agent)은 분석·광고 서비스 제공자의 정책에 따라 보관되며, 사이트가 직접 저장하는 개인정보는 구독 이메일입니다.</p>
 
       <h2>4. 처리 위탁 (제3자)</h2>
       <ul>
@@ -55,7 +55,7 @@ export default function PrivacyPage() {
 
       <h2>5. 제3자 광고 사업자(Google)의 쿠키 사용 안내</h2>
       <p>
-        펫지기는 Google AdSense를 통해 광고를 게재합니다. Google을 포함한 제3자 공급업체는
+        펫지기는 Google AdSense를 이용해 광고를 표시할 수 있습니다. Google을 포함한 제3자 공급업체는
         쿠키를 사용하여 사용자의 이전 웹사이트 방문 기록을 바탕으로 광고를 제공합니다.
       </p>
       <p>

@@ -1,0 +1,4 @@
+url_a,url_b,similarity,title_a,title_b
+/blog/cat-flea-tick-prevention,/blog/dog-flea-tick-guide,title:0.73,"고양이 벼룩·진드기 예방 — 제품 선택과 관리법","강아지 벼룩·진드기 예방 — 제품 선택과 관리법"
+/blog/cat-snack-selection-guide,/blog/cat-treats-guide,title:0.69,"고양이 간식 잘 고르는 법 — 성분 읽기부터 급여량까지 완전 정리","고양이 간식 잘 고르는 법 — 성분부터 급여량까지"
+/blog/senior-cat-adoption,/blog/senior-dog-adoption,title:0.61,"노묘 입양의 모든 것 — 7세 이상 고양이를 가족으로 맞이하는 법","노견 입양의 모든 것 — 7세 이상 강아지를 가족으로 맞이하는 법"

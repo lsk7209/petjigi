@@ -100,6 +100,20 @@ export const getCachedBusinessListing = unstable_cache(
   { revalidate: 86400, tags: ["businesses"] }
 );
 
+// ── 업종 전체의 가장 최근 업체 정보 갱신일 (지역 0건이 수집 전인지 판별) ────────
+export const getCachedTypeSourceAsOf = unstable_cache(
+  async (type: string) => {
+    const row = await db
+      .select({ asOf: sql<string | null>`max(${businesses.lastSyncedAt})` })
+      .from(businesses)
+      .where(and(eq(businesses.type, type), eq(businesses.status, "active")))
+      .get();
+    return row?.asOf ?? null;
+  },
+  ["businesses", "type-as-of"],
+  { revalidate: 86400, tags: ["businesses"] }
+);
+
 // ── 영업장 상세 (type + name) ─────────────────────────────────────────────────
 export const getCachedBusinessDetail = unstable_cache(
   async (type: string, name: string) =>
