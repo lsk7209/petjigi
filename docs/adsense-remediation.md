@@ -32,10 +32,10 @@
 - `next build` 성공(격리 DB). `next-sitemap` postbuild는 커밋된 사이트맵을 덮어쓰므로 실행하지 않음.
 - 프로덕션 서버(`next start`) 브라우저 샘플: 14경로(홈·블로그 목록/글 4·질환·지역 2상태·소개·개인정보·광고·보험 비교·404) × 390/1440px = 28/28 통과(H1 1개, canonical 자기참조, 404는 canonical 없음, 가로·표 넘침 0, 모바일 메뉴 열림, 콘솔 오류 0).
 - 308: /blog/pet-photo-tips-guide, /blog/cat-treats-guide 확인. 로컬 sitemap-content.xml에 두 URL 없음.
-- Lighthouse(모바일, /blog/pet-insurance-guide, 로컬 http): 접근성 94→96, SEO 92→100(푸터 링크 문구·제목 위계·공유 버튼 접근 이름 수정). 남은 항목: 색 대비(브랜드 토큰 #8c6a4f/#c97d5b/#9caf88 — 디자인 결정 사안이라 미변경), 서드파티 쿠키·inspector issues(광고/분석 스크립트 로드 영향), CLS 0.96. 성능 점수·Core Web Vitals는 운영 환경 측정 필요(미측정).
+- Lighthouse(모바일, /blog/pet-insurance-guide, 로컬 http): 접근성 94→96, SEO 92→100(푸터 링크 문구·제목 위계·공유 버튼 접근 이름 수정). 색 대비: 보조 텍스트 토큰 #8c6a4f→#7a5a42(같은 색상계, 대비 4.7↑)로 조정. 남은 항목: 브랜드 강조색(#c97d5b 텍스트, #9caf88 배경+흰 글자)의 대비 부족 — 브랜드 색 변경이라 미변경(제안: #a65f3e / 어두운 글자색), 서드파티 쿠키·inspector issues(광고/분석 스크립트 로드 영향), CLS 0.96. 성능 점수·Core Web Vitals는 운영 환경 측정 필요(미측정).
 
 ## 테스트
-`pnpm test`: 229 통과 / 0 실패(신규: lastmod, listing-state, content-redirects, redirect-links, unverified-stats-removed).
+`pnpm test`: 230 통과 / 0 실패(신규: lastmod, listing-state, content-redirects, redirect-links, unverified-stats-removed).
 브라우저(dev 모드, 합성 데이터): 6/6 통과. 운영 반영 후 재검증(HTTP·Lighthouse 성능): 미실행.
 
 ## 주의: 시드 수정 ≠ 운영 반영
@@ -48,7 +48,8 @@
 - 다른 시드의 같은 유형(출처 미확인 통계·AKC/WSAVA 인용)은 전수 검증 못함: 고양이 AKC 3건·당뇨·보험·사진만 처리. `pnpm audit:sources` 확대 필요.
 - 수의사·보험 전문가 검토, (주)펫지기 법인 여부는 운영자 확인 필요. 보험 CTA는 소스상 본문 뒤 1회뿐이며 글 상단 반복 배너는 코드에서 확인되지 않아(운영 DB 본문 내 삽입 가능성은 미확인) 변경하지 않음. 문의 페이지에는 데이터 오류 신고 경로가 이미 있음.
 - 문서(법률) 적합성은 코드 대조만 했고 법률 검토 완료가 아님.
-- 통계 후보 81개 문서(143문장)는 `reports/content-claims-candidates.csv`에 자동 추출, **전부 원문 미확인 상태**. 이번에 원문 확인을 시도해 수치를 제거한 것은 보험·반려묘 가구/코숏·사진·당뇨·노령묘 40%·AKC 고양이 등 `reports/content-claims-audit.csv` 행. 나머지는 사람 검증 대기(예: ISFM 58% 등).
+- **출처 귀속 통계 일괄 정리(이번 추가)**: 자동 추출한 통계 후보 143문장과 추가 패턴 46문장(총 약 190문장, 약 80개 문서)을 문장 단위로 다시 써서, 원문을 확인하지 못한 기관 귀속·구체 수치를 제거하고 정성적 설명으로 바꿨다(의미 있는 안내·주의 문구는 유지). 재작성 목록: `scripts/data/claim-rewrites-1~7.json`. 검증 못 한 수치를 '검증됨'으로 바꾼 것이 아니라 **제거**한 것이다. 예외(ALLOW): AKC 견종 표준(개 품종 체중·수명), AAFCO 고양이 단백질 기준, FDA DCM 조사 언급 — 이들도 개별 수치는 원문 대조 전이다. 회귀 테스트 `scripts/seed-attributed-stats.test.ts`가 기관 귀속+구체 수치 문장의 재유입을 막는다.
+- 이전 설명(참고): 통계 후보 81개 문서(143문장)는 `reports/content-claims-candidates.csv`에 자동 추출, 당시 **전부 원문 미확인 상태**. 이번에 원문 확인을 시도해 수치를 제거한 것은 보험·반려묘 가구/코숏·사진·당뇨·노령묘 40%·AKC 고양이 등 `reports/content-claims-audit.csv` 행. 나머지는 사람 검증 대기(예: ISFM 58% 등).
 - 중복 후보 분류(reports/duplicate-candidates.csv, 제목/본문 유사도):
   - 통합 완료: cat-treats-guide → cat-snack-selection-guide
   - 차별화 수정 완료: pet-moving-guide(이사 전 준비·당일) vs pet-moving-new-home-adaptation(도착 후 적응; 제목·메타·도입 재작성, 중복 단계 제거, 상호 링크), cat-senior-diet-transition(전환 방법) vs senior-cat-food-guide(선택 기준; 제목 변경, 상호 링크)
