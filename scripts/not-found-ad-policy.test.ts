@@ -11,7 +11,7 @@ test("not-found screen declares a DOM-level Auto ads block before the loader bec
   assert.match(loader, /new MutationObserver\(onStoreChange\)/);
   assert.match(loader, /attributeFilter: \["data-ads-policy"\]/);
   assert.match(loader, /observer\.disconnect\(\)/);
-  assert.match(loader, /!eligible && document\.getElementById\("adsense-auto"\)/);
+  assert.match(loader, /!policyEligible && document\.getElementById\("adsense-auto"\)/);
   assert.match(loader, /window\.location\.replace\(window\.location\.href\)/);
   assert.match(loader, /\(\) => false/);
   assert.match(loader, /document\.querySelector\('\[data-ads-policy="block"\]'\)/);
