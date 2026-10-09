@@ -1,11 +1,11 @@
 export const SITE_IDENTITY = {
   brandName: "펫지기",
-  legalEntityLabel: "(주)펫지기",
+  legalEntityLabel: "펫지기",
   contactEmail: "contact@petjigi.kr",
   evidence: {
     legalEntity: {
-      status: "UNKNOWN",
-      operatorAction: "Confirm the exact registered operating entity before changing the public label.",
+      status: "OPERATOR_STATED_NOT_A_CORPORATION",
+      operatorAction: "Operator stated 2026-10-10 that 펫지기 is a brand, not a corporation. Do not use (주) or other corporate labels; add registration details only if the operator provides them.",
     },
     contactMailbox: {
       status: "UNKNOWN",
