@@ -1,7 +1,7 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
 import {
-  enforceSearchCacheCap,
+  setBoundedSearchCache,
   isValidSearchQueryLength,
   likeLiteralPattern,
   isSupportedSearchType,
@@ -36,27 +36,46 @@ test("% and _ are escaped as literals, not wildcards", () => {
   assert.equal(likeLiteralPattern("%%"), "%\\%\\%%");
 });
 
-test("cache never exceeds the hard cap of 500 active entries", () => {
-  const cache = new Map<string, { expires: number }>();
-  const now = 1_000_000;
-  for (let i = 0; i < 501; i++) {
-    cache.set(`key-${i}`, { expires: now + 60_000 }); // 모두 유효(만료 안 됨)
-    enforceSearchCacheCap(cache, now);
-  }
-  assert.ok(cache.size <= SEARCH_CACHE_HARD_CAP, `cache size ${cache.size} exceeds hard cap`);
+type Entry = { expires: number };
+const NOW = 1_000_000;
+const live = (): Entry => ({ expires: NOW + 60_000 });
+const fill = (n: number) => {
+  const cache = new Map<string, Entry>();
+  for (let i = 0; i < n; i++) cache.set(`k-${i}`, live());
+  return cache;
+};
+
+test("새 항목 삽입: 500개가 찬 상태에서도 삽입 직후 500을 넘지 않고 가장 오래된 키가 밀려난다", () => {
+  const cache = fill(SEARCH_CACHE_HARD_CAP);
+  setBoundedSearchCache(cache, "new", live(), NOW);
+  assert.equal(cache.size, SEARCH_CACHE_HARD_CAP);
+  assert.equal(cache.has("new"), true);
+  assert.equal(cache.has("k-0"), false);
 });
 
-test("expired entries are purged before evicting active ones", () => {
-  const cache = new Map<string, { expires: number }>();
-  const now = 1_000_000;
-  cache.set("expired-1", { expires: now - 1000 });
-  cache.set("expired-2", { expires: now - 1000 });
-  for (let i = 0; i < SEARCH_CACHE_HARD_CAP - 1; i++) {
-    cache.set(`active-${i}`, { expires: now + 60_000 });
+test("기존 키 갱신: 크기가 늘지 않고 최신 항목으로 이동한다", () => {
+  const cache = fill(SEARCH_CACHE_HARD_CAP);
+  setBoundedSearchCache(cache, "k-0", live(), NOW);
+  assert.equal(cache.size, SEARCH_CACHE_HARD_CAP);
+  assert.equal([...cache.keys()].at(-1), "k-0");
+  setBoundedSearchCache(cache, "another", live(), NOW);
+  assert.equal(cache.has("k-0"), true);
+  assert.equal(cache.has("k-1"), false);
+});
+
+test("만료 항목 정리: 상한 초과 시 유효 항목보다 만료 항목을 먼저 제거한다", () => {
+  const cache = fill(SEARCH_CACHE_HARD_CAP - 1);
+  cache.set("expired", { expires: NOW - 1 });
+  setBoundedSearchCache(cache, "new", live(), NOW);
+  assert.equal(cache.size, SEARCH_CACHE_HARD_CAP);
+  assert.equal(cache.has("expired"), false);
+  assert.equal(cache.has("k-0"), true);
+});
+
+test("연속 삽입 1000건에도 상한을 넘지 않는다", () => {
+  const cache = new Map<string, Entry>();
+  for (let i = 0; i < 1000; i++) {
+    setBoundedSearchCache(cache, `k-${i}`, live(), NOW);
+    assert.ok(cache.size <= SEARCH_CACHE_HARD_CAP);
   }
-  assert.equal(cache.size, SEARCH_CACHE_HARD_CAP + 1);
-  enforceSearchCacheCap(cache, now);
-  assert.equal(cache.has("expired-1"), false);
-  assert.equal(cache.has("expired-2"), false);
-  assert.ok(cache.size <= SEARCH_CACHE_HARD_CAP);
 });

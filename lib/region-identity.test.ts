@@ -55,3 +55,11 @@ test("resolved and missing slugs describe cleanly", () => {
   assert.deepEqual(resolved.ambiguousSidoNames, []);
   assert.equal(describeRegionSlug(resolveRegionIdentity([])).sigunguName, null);
 });
+
+test("describeRegionSlug는 missing/ambiguous/resolved를 kind로 구분한다", async () => {
+  const { describeRegionSlug, resolveRegionIdentity } = await import("./region-identity");
+  const mk = (sido: string) => ({ code: sido, sido, sidoSlug: sido, sigungu: "강서구", sigunguSlug: "gangseo", fullName: `${sido} 강서구` });
+  assert.equal(describeRegionSlug(resolveRegionIdentity([])).kind, "missing");
+  assert.equal(describeRegionSlug(resolveRegionIdentity([mk("서울"), mk("부산")])).kind, "ambiguous");
+  assert.equal(describeRegionSlug(resolveRegionIdentity([mk("서울")])).kind, "resolved");
+});

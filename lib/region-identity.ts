@@ -36,6 +36,8 @@ export function resolveRegionIdentity(candidates: RegionCandidate[]): RegionReso
 }
 
 export interface RegionSlugView {
+  /** 지역 판별 결과. missing이면 호출자는 정상 0건 지역이 아니라 404로 처리해야 한다. */
+  kind: RegionResolution["kind"];
   /** 조회·표시에 쓸 시군구 이름. slug 문자열이 아니라 후보의 실제 이름이다. */
   sigunguName: string | null;
   sidoName: string;
@@ -48,15 +50,16 @@ export interface RegionSlugView {
 export function describeRegionSlug(resolution: RegionResolution): RegionSlugView {
   if (resolution.kind === "resolved") {
     const { region } = resolution;
-    return { sigunguName: region.sigungu, sidoName: region.sido, sidoSlug: region.sidoSlug, ambiguousSidoNames: [] };
+    return { kind: "resolved", sigunguName: region.sigungu, sidoName: region.sido, sidoSlug: region.sidoSlug, ambiguousSidoNames: [] };
   }
   if (resolution.kind === "ambiguous") {
     return {
+      kind: "ambiguous",
       sigunguName: resolution.candidates[0].sigungu,
       sidoName: "",
       sidoSlug: null,
       ambiguousSidoNames: resolution.candidates.map((c) => c.sido),
     };
   }
-  return { sigunguName: null, sidoName: "", sidoSlug: null, ambiguousSidoNames: [] };
+  return { kind: "missing", sigunguName: null, sidoName: "", sidoSlug: null, ambiguousSidoNames: [] };
 }

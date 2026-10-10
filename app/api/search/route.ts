@@ -1,11 +1,12 @@
 import { NextRequest, NextResponse } from "next/server";
 import { db } from "@/db/client";
 import { businesses, contents, regions } from "@/db/schema";
-import { like, or, and, eq, inArray, lte } from "drizzle-orm";
+import { or, and, eq, inArray, lte } from "drizzle-orm";
+import { likeEscaped } from "@/lib/search-sql";
 import { isPublicContentType } from "@/lib/content-publication";
-import { buildContentHref, buildBusinessHref } from "@/lib/search-contract";
+import { buildContentHref, buildBusinessHref, buildUniqueRegionSlugMap } from "@/lib/search-contract";
 import {
-  enforceSearchCacheCap,
+  setBoundedSearchCache,
   isSupportedSearchType,
   isValidSearchQueryLength,
   likeLiteralPattern,
@@ -80,7 +81,7 @@ export async function GET(req: NextRequest) {
         .where(
           and(
             eq(businesses.status, "active"),
-            or(like(businesses.name, pattern), like(businesses.address, pattern))
+            or(likeEscaped(businesses.name, pattern), likeEscaped(businesses.address, pattern))
           )
         )
         .orderBy(businesses.name, businesses.id)
@@ -90,13 +91,13 @@ export async function GET(req: NextRequest) {
       const bizPage = bizRows.slice(0, bizLimit);
 
       const sigunguNames = [...new Set(bizPage.map((r) => r.addressSigungu).filter(Boolean))] as string[];
-      const regionMap = new Map<string, string>();
+      let regionMap = new Map<string, string>();
       if (sigunguNames.length > 0) {
         const regionRows = await db
           .select({ sigungu: regions.sigungu, sigunguSlug: regions.sigunguSlug })
           .from(regions)
           .where(inArray(regions.sigungu, sigunguNames));
-        for (const r of regionRows) regionMap.set(r.sigungu, r.sigunguSlug);
+        regionMap = buildUniqueRegionSlugMap(regionRows);
       }
 
       for (const row of bizPage) {
@@ -132,7 +133,7 @@ export async function GET(req: NextRequest) {
           and(
             eq(contents.status, "published"),
             lte(contents.publishedAt, now),
-            like(contents.title, pattern)
+            likeEscaped(contents.title, pattern)
           )
         )
         .orderBy(contents.publishedAt, contents.id)
@@ -171,9 +172,9 @@ export async function GET(req: NextRequest) {
     );
   }
 
-  // 캐시 저장 — hard cap 500개를 초과하면 가장 오래된 항목부터 제거한다.
-  enforceSearchCacheCap(SEARCH_CACHE, Date.now());
-  SEARCH_CACHE.set(cacheKey, { data: responseData, expires: Date.now() + CACHE_TTL_MS });
+  // 캐시 저장 — 삽입 후에도 hard cap(500)을 넘지 않는다.
+  const cachedAt = Date.now();
+  setBoundedSearchCache(SEARCH_CACHE, cacheKey, { data: responseData, expires: cachedAt + CACHE_TTL_MS }, cachedAt);
 
   return NextResponse.json(responseData, {
     status: 200,

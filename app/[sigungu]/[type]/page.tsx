@@ -125,12 +125,17 @@ export async function generateMetadata({
   if (!meta) return {};
 
   const regionView = await getCachedRegionSlugView(sigungu);
+  if (regionView.kind === "missing") notFound();
   const location = regionView.sigunguName ?? decodeURIComponent(sigungu);
   const isAmbiguousRegion = regionView.ambiguousSidoNames.length > 1;
   const listing = await getCachedBusinessListing(location, type, page);
   const isUnverified =
-    classifyListing(listing.totalCount, await getCachedTypeSourceAsOf(type))
-      .state === "not_collected";
+    classifyListing(
+      listing.totalCount,
+      await getCachedTypeSourceAsOf(type),
+      new Date(),
+      listing.sourceAsOf,
+    ).state === "not_collected";
   const title = `${location} ${meta.label}${page > 1 ? ` ${page}페이지` : ""}`;
   const description = `${location} ${meta.label} 전체 목록. ${meta.desc} — 공공데이터 기반 정확한 업체 정보.`;
   const canonical = businessListingPath(sigungu, type, page);
@@ -197,6 +202,7 @@ export default async function SigunguTypePage({
   if (!meta) notFound();
 
   const region = await getCachedRegionSlugView(sigungu);
+  if (region.kind === "missing") notFound();
   const sigunguName = region.sigunguName ?? decodeURIComponent(sigungu);
   const sidoName = region.sidoName;
   const ambiguousSidoNames = region.ambiguousSidoNames;
@@ -210,6 +216,8 @@ export default async function SigunguTypePage({
   const status = classifyListing(
     listing.totalCount,
     await getCachedTypeSourceAsOf(type),
+    new Date(),
+    listing.sourceAsOf,
   );
   const canonicalPath = businessListingPath(sigungu, type, listing.page);
   if (listing.page !== requestedPage) redirect(canonicalPath);
@@ -375,8 +383,9 @@ export default async function SigunguTypePage({
                   않았습니다.
                 </p>
                 <p className="text-sm mt-1">
-                  {status.asOf} 기준 공공데이터에서 이 지역 결과가 없다는
-                  뜻이며, 실제 영업 여부와 다를 수 있습니다.
+                  업종 전체 수집 기준일 {status.asOf} 현재 공공데이터에서 이 지역 결과가
+                  없다는 뜻이며, 지역 단위 수집 완료를 보증하지 않고 실제 영업
+                  여부와 다를 수 있습니다.
                 </p>
               </>
             ) : (
@@ -519,7 +528,7 @@ export default async function SigunguTypePage({
         )}
 
         <p className="mt-8 text-xs text-[var(--brand-text-secondary)]">
-          정보 기준: 공공데이터포털 · 업체 정보 갱신일{" "}
+          정보 기준: 공공데이터포털 · {status.scope === "type" ? "업종 전체 기준 갱신일" : "업체 정보 갱신일"}{" "}
           {(listing.sourceAsOf ?? status.asOf)?.slice(0, 10) ?? "확인 불가"}
           {status.stale ? " (갱신 지연 가능성 있음)" : ""} &nbsp;·&nbsp;
           {region.sidoSlug && (

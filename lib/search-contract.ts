@@ -36,3 +36,23 @@ export function buildBusinessHref(input: BusinessHrefInput): string | null {
   if (!bizType || !sigunguSlug || !name) return null;
   return `/${bizType}/${sigunguSlug}/${encodeURIComponent(name)}`;
 }
+
+export interface RegionSlugRow {
+  sigungu: string;
+  sigunguSlug: string;
+}
+
+/**
+ * 시군구 이름 → slug 매핑. 같은 이름의 지역 행이 둘 이상이면(서울/부산 강서구 등) 어느 쪽인지
+ * 알 수 없으므로 매핑에서 제외한다. 호출자는 매핑이 없는 항목의 상세 링크를 만들지 않는다.
+ */
+export function buildUniqueRegionSlugMap(rows: RegionSlugRow[]): Map<string, string> {
+  const slugs = new Map<string, string>();
+  const ambiguous = new Set<string>();
+  for (const { sigungu, sigunguSlug } of rows) {
+    if (slugs.has(sigungu)) ambiguous.add(sigungu);
+    else slugs.set(sigungu, sigunguSlug);
+  }
+  for (const name of ambiguous) slugs.delete(name);
+  return slugs;
+}

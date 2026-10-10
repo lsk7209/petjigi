@@ -24,3 +24,16 @@ test("결과가 있으면 available, 오래된 기준일은 stale", () => {
 test("잘못된 날짜는 수집 이력으로 보지 않는다", () => {
   assert.equal(classifyListing(0, "garbage", NOW).state, "not_collected");
 });
+
+test("결과가 있으면 기준일은 업종 전체가 아니라 해당 지역 행 기준이다", () => {
+  const r = classifyListing(3, "2026-10-09", NOW, "2026-08-01");
+  assert.equal(r.scope, "region");
+  assert.equal(r.asOf, "2026-08-01");
+  assert.equal(r.stale, true);
+});
+
+test("0건의 기준일은 업종 전체 범위로 표시되고 지역 기준으로 위장하지 않는다", () => {
+  const r = classifyListing(0, "2026-10-09", NOW, null);
+  assert.equal(r.state, "empty_confirmed");
+  assert.equal(r.scope, "type");
+});
