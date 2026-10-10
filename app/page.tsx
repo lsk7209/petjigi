@@ -33,7 +33,7 @@ const ICON_PATHS: Record<string, string> = {
 };
 
 const QUICK_NAV = [
-  { label: "동물병원·시설 찾기", href: "/sido/seoul", icon: "place" },
+  { label: "동물병원·시설 찾기", href: "#hm-local", icon: "place" },
   { label: "건강·질병 알아보기", href: "/condition", icon: "health" },
   { label: "사료·영양 확인하기", href: "/category/nutrition", icon: "food" },
   { label: "입양·등록 준비하기", href: "/category/adoption", icon: "adopt" },
@@ -134,7 +134,7 @@ export default async function HomePage() {
                 펫지기가 차근차근 안내합니다.
               </p>
               <div className="hm-actions">
-                <Link href="/sido/seoul" className="hm-btn hm-btn--solid">
+                <Link href="#hm-local" className="hm-btn hm-btn--solid">
                   우리 동네 동물병원 찾기
                 </Link>
                 <Link href="/guide" className="hm-btn hm-btn--line">
@@ -144,10 +144,6 @@ export default async function HomePage() {
             </div>
             <figure style={{ margin: 0 }}>
               <HeroIllustration />
-              <figcaption className="hm-art-note">
-                임시 일러스트입니다. 사용권이 확인된 사진으로 교체할 수
-                있습니다.
-              </figcaption>
             </figure>
           </div>
         </section>
@@ -175,6 +171,7 @@ export default async function HomePage() {
 
         {/* ④ 우리 동네 반려시설 */}
         <section
+          id="hm-local"
           className="hm-sec hm-sec--sage"
           aria-labelledby="hm-local-title"
         >

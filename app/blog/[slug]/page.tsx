@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { buildToc } from "@/lib/toc";
 import { publicContentCondition } from "@/lib/content-publication-sql";
 import { cache } from "react";
 import { notFound } from "next/navigation";
@@ -23,7 +24,6 @@ import { OutboundLinkTracker } from "@/components/analytics/outbound-link-tracke
 import { GuideViewTracker } from "@/components/analytics/guide-view-tracker";
 import { getReviewEvidence } from "@/lib/ymyl";
 import { adsPolicyAttrs } from "@/lib/ads-policy";
-import type { TocHeading } from "@/components/content/table-of-contents";
 
 export const dynamic = "force-dynamic";
 
@@ -171,30 +171,6 @@ async function getRelatedGuides(category: number) {
     .limit(3);
 }
 
-function extractHeadings(html: string): TocHeading[] {
-  const headings: TocHeading[] = [];
-  const re = /<h([23])([^>]*)>([\s\S]*?)<\/h\1>/gi;
-  let match;
-  while ((match = re.exec(html)) !== null) {
-    const level = parseInt(match[1]) as 2 | 3;
-    const text = match[3].replace(/<[^>]+>/g, "").trim();
-    if (!text) continue;
-    const id = `h-${headings.length}-${text.slice(0, 30).replace(/[^\w가-힣]/g, "-").replace(/-+/g, "-").replace(/^-|-$/g, "")}`;
-    headings.push({ id, level, text });
-  }
-  return headings;
-}
-
-function injectHeadingIds(html: string, headings: TocHeading[]): string {
-  let idx = 0;
-  return html.replace(/<h([23])([^>]*)>([\s\S]*?)<\/h\1>/gi, (_, level, attrs, inner) => {
-    const h = headings[idx++];
-    if (!h) return _;
-    if (attrs.includes("id=")) return _;
-    return `<h${level}${attrs} id="${h.id}">${inner}</h${level}>`;
-  });
-}
-
 const CATEGORY_EMOJI: Record<number, string> = {
   1: "🐾", 2: "🥗", 3: "💊", 4: "📋", 5: "✂️", 6: "🕊️",
 };
@@ -217,9 +193,8 @@ export default async function BlogPostPage({
     getRelatedGuides(content.category),
   ]);
 
-  const headings = extractHeadings(content.body ?? "");
-  const bodyWithIds = injectHeadingIds(content.body ?? "", headings);
-
+  const { headings, html: bodyWithIds } = buildToc(content.body ?? "");
+  
   const plainText = (content.body ?? "").replace(/<[^>]+>/g, "");
   const wordCount = plainText.trim().length > 0
     ? Math.max(1, Math.round(plainText.replace(/\s+/g, "").length / 2))

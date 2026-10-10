@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { buildToc } from "@/lib/toc";
 import { publicContentCondition } from "@/lib/content-publication-sql";
 import Link from "next/link";
 import { notFound } from "next/navigation";
@@ -12,7 +13,7 @@ import { articleSchema, breadcrumbSchema, faqSchema, medicalConditionSchema } fr
 import { withoutUnverifiedReviewClaim } from "@/lib/content-review";
 import { socialTitle } from "@/lib/seo/title";
 import { adsPolicyAttrs } from "@/lib/ads-policy";
-import { TableOfContents, type TocHeading } from "@/components/content/table-of-contents";
+import { TableOfContents } from "@/components/content/table-of-contents";
 import { ReadingProgress } from "@/components/content/reading-progress";
 import { ShareButtons } from "@/components/content/share-buttons";
 import { CategoryCta } from "@/components/content/category-cta";
@@ -26,27 +27,6 @@ import { getReviewEvidence } from "@/lib/ymyl";
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://petjigi.kr";
 
 export const dynamic = "force-dynamic";
-
-function extractHeadings(html: string): TocHeading[] {
-  const re = /<h([23])([^>]*)>([\s\S]*?)<\/h\1>/gi;
-  const headings: TocHeading[] = [];
-  let m: RegExpExecArray | null;
-  let i = 0;
-  while ((m = re.exec(html)) !== null) {
-    const text = m[3].replace(/<[^>]+>/g, "").trim();
-    const id = `h-${i++}-${text.toLowerCase().replace(/[^a-z0-9가-힣]/g, "-").slice(0, 40)}`;
-    headings.push({ id, text, level: Number(m[1]) as 2 | 3 });
-  }
-  return headings;
-}
-
-function injectHeadingIds(html: string, headings: TocHeading[]): string {
-  let counter = 0;
-  return html.replace(/<h([23])([^>]*)>/gi, (_, lvl) => {
-    const id = headings[counter++]?.id ?? `h-${counter}`;
-    return `<h${lvl} id="${id}">`;
-  });
-}
 
 function extractFaq(html: string) {
   const re = /<h3[^>]*>([\s\S]*?)<\/h3>\s*<p[^>]*>([\s\S]*?)<\/p>/gi;
@@ -167,9 +147,8 @@ export default async function ConditionPage({
 
   if (!content) notFound();
 
-  const headings = extractHeadings(content.body);
-  const bodyWithIds = injectHeadingIds(content.body, headings);
-  const faqItems = extractFaq(content.body);
+  const { headings, html: bodyWithIds } = buildToc(content.body);
+    const faqItems = extractFaq(content.body);
   const [relatedConditions, relatedGuides, relatedBlogs] = await Promise.all([
     getRelatedConditions(slug, content.category ?? 3),
     getRelatedGuides(content.category ?? 3),
