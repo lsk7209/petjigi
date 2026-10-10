@@ -98,7 +98,8 @@ try {
       const { ctx, page, adRequests } = await newPage(browser, { userAgent: ua });
       await page.goto(BASE + path);
       const s = await snapshot(page, adRequests);
-      allow ? expectAds(s) : expectNoAds(s);
+      if (allow) expectAds(s);
+      else expectNoAds(s);
       await ctx.close();
     }
   });

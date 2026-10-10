@@ -1,3 +1,4 @@
+import Link from "next/link";
 import {
   describeDataCoverage,
   type CoverageInput,
@@ -36,9 +37,9 @@ export function DataCoverage({
       </ul>
       <p className="mt-2">
         정보가 사실과 다르면{" "}
-        <a href="/contact" className="underline">
+        <Link href="/contact" className="underline">
           문의하기
-        </a>
+        </Link>
         로 알려 주세요.
       </p>
     </section>
