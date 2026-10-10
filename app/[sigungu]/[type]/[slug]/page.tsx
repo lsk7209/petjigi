@@ -14,6 +14,8 @@ import { YmylDisclaimer } from "@/components/content/ymyl-disclaimer";
 import { CategoryCta } from "@/components/content/category-cta";
 import { ShareButtons } from "@/components/content/share-buttons";
 import { AdSlot } from "@/components/ads/ad-slot";
+import { adsPolicyAttrs } from "@/lib/ads-policy";
+import { DataCoverage } from "@/components/business/data-coverage";
 import { AdPolicyProvider } from "@/components/providers/ad-policy-provider";
 import { BusinessViewTracker } from "@/components/analytics/business-view-tracker";
 import { BusinessContactLinks } from "@/components/analytics/business-contact-links";
@@ -172,7 +174,7 @@ export default async function BusinessDetailPage({
       <BusinessViewTracker type={type} name={business.name} sigungu={locationName} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb) }} />
-      <main className="max-w-3xl mx-auto px-4 py-10">
+      <main className="max-w-3xl mx-auto px-4 py-10" {...adsPolicyAttrs(categoryId)}>
         {/* 브레드크럼 */}
         <nav
           className="text-xs text-[var(--brand-text-secondary)] mb-6 flex items-center gap-1.5 flex-wrap"
@@ -343,6 +345,8 @@ export default async function BusinessDetailPage({
         <CategoryCta categoryId={categoryId} className="mb-8" />
 
         <AdSlot adType="adsense" format="rectangle" className="mb-8" />
+
+        <DataCoverage business={business} syncedAt={business.lastSyncedAt} />
 
         <div className="mb-8 pt-2">
           <ShareButtons url={pageUrl} title={`${business.name} ${typeLabel} | 펫지기`} />

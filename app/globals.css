@@ -875,6 +875,8 @@ p {
 .pj-footer h3 { font-size: 13px; font-weight: 700; color: var(--brand-text); margin-bottom: 12px; }
 .pj-footer a { color: var(--brand-text-secondary); text-decoration: none; }
 .pj-footer a:hover { color: var(--brand-text); }
+/* 모바일 터치 영역 확보(링크 높이 약 36px) */
+.pj-footer li > a { display: inline-flex; align-items: center; min-height: 36px; }
 
 /* 빵부스러기 */
 .pj-bc { font-size: 13px; color: var(--brand-text-secondary); display: flex; align-items: center; flex-wrap: wrap; gap: 6px; }

@@ -2,6 +2,8 @@ import type { NextConfig } from "next";
 import { CONTENT_REDIRECTS } from "./lib/content-redirects";
 
 const nextConfig: NextConfig = {
+  // 격리 검증 빌드용(운영 .next와 분리). 미설정이면 기본값.
+  distDir: process.env.NEXT_DIST_DIR || ".next",
   compress: true,
   poweredByHeader: false,
   images: {

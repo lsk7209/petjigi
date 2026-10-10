@@ -24,7 +24,7 @@ export function BusinessDisambiguation({
   candidates: DisambiguationCandidate[];
 }) {
   return (
-    <main className="max-w-3xl mx-auto px-4 py-10">
+    <main className="max-w-3xl mx-auto px-4 py-10" data-ads-policy="block">
       <h1 className="text-2xl font-extrabold text-[var(--brand-text)] mb-2">
         &lsquo;{name}&rsquo; {typeLabel} {candidates.length}곳
       </h1>

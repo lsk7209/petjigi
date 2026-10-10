@@ -29,7 +29,7 @@ export function AdsenseTrustSection({ compact = false }: { compact?: boolean }) 
     >
       <span className="pj-eyebrow">검증 기준</span>
       <h2 className="pj-display" style={{ fontSize: compact ? 22 : 28, marginTop: 8, marginBottom: 12 }}>
-        반려동물 정보는 공식 자료와 현장 확인 기준을 함께 봅니다.
+        반려동물 정보는 공식 자료를 기준으로 하고, 이용 전 확인 항목을 함께 안내합니다.
       </h2>
       <p style={{ color: "var(--brand-text-secondary)", fontSize: 15, lineHeight: 1.75, wordBreak: "keep-all" }}>
         펫지기는 업체 목록을 그대로 나열하는 데서 끝내지 않고, 방문 전 확인해야 할 항목을 함께

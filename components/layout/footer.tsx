@@ -64,7 +64,7 @@ export function Footer() {
           {/* 카테고리 */}
           <div>
             <h3>카테고리</h3>
-            <ul className="space-y-2">
+            <ul>
               {CATEGORY_LINKS.map((link) => (
                 <li key={link.href + link.label}>
                   <Link href={link.href}>{link.label}</Link>
@@ -76,7 +76,7 @@ export function Footer() {
           {/* 콘텐츠 */}
           <div>
             <h3>콘텐츠</h3>
-            <ul className="space-y-2">
+            <ul>
               {CONTENT_LINKS.map((link) => (
                 <li key={link.href + link.label}>
                   <Link href={link.href}>{link.label}</Link>
@@ -88,7 +88,7 @@ export function Footer() {
           {/* 지역별 */}
           <div>
             <h3>지역별</h3>
-            <ul className="space-y-2">
+            <ul>
               {SIDO_LINKS.map((link) => (
                 <li key={link.href + link.label}>
                   <Link href={link.href}>{link.label}</Link>
@@ -97,10 +97,10 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* 회사 정보 */}
+          {/* 운영 정보 */}
           <div>
-            <h3>회사 정보</h3>
-            <ul className="space-y-2">
+            <h3>운영 정보</h3>
+            <ul>
               {COMPANY_LINKS.map((link) => (
                 <li key={link.href + link.label}>
                   <Link href={link.href}>{link.label}</Link>
@@ -127,9 +127,9 @@ export function Footer() {
             <br />
             본 사이트는 정보 제공을 목적으로 하며, 의료·법률·재정적 결정에 대한 최종 책임은 이용자 본인에게 있습니다.
             <br />
-            <strong style={{ color: "var(--brand-text)" }}>어필리에이트 고지:</strong> 펫지기는 일부 링크를 통해 수수료를 받을 수 있습니다.{" "}
+            <strong style={{ color: "var(--brand-text)" }}>어필리에이트 고지:</strong> 현재 제휴(수수료) 링크는 게재하지 않으며, 게재하게 되면 해당 링크 근처에 표시합니다.{" "}
             <Link href="/disclosure" style={{ color: "var(--brand-accent-warm)", textDecoration: "underline" }}>
-              어필리에이트 고지 자세히 보기
+              고지 자세히 보기
             </Link>
           </div>
           <div className="pj-tiny">© 2026 PetJigi. All rights reserved.</div>

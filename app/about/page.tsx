@@ -127,6 +127,10 @@ export default function AboutPage() {
               </p>
             </div>
             <div>
+              <p className="font-semibold text-[var(--brand-text)] mb-1">AI·자동화 사용 범위</p>
+              <p>콘텐츠 초안 작성과 점검에 AI 도구와 자동화 스크립트를 사용합니다. 검토자 표시가 없는 글에는 외부 전문가가 확인한 기록이 없으며, 사이트에 쓰인 일러스트·이미지 중 AI로 만든 것은 실제 업체·반려동물·현장 사진이 아닙니다.</p>
+            </div>
+            <div>
               <p className="font-semibold text-[var(--brand-text)] mb-1">금지 표현 자동 스캔</p>
               <p>약사법·동물의료법 금지 표현(&quot;치료를 보장한다&quot;, &quot;확실히 낫는다&quot; 등)은 자동 정규식 스캐너로 차단합니다.</p>
             </div>

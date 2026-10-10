@@ -44,6 +44,7 @@ function renderFixture(relative, content) {
     '@/components/content/reading-progress': { ReadingProgress: emptyComponent },
     '@/components/content/share-buttons': { ShareButtons: emptyComponent },
     '@/components/content/category-cta': { CategoryCta: emptyComponent },
+    '@/components/content/practical-tool': { PracticalTool: emptyComponent },
     '@/components/analytics/scroll-depth-tracker': { ScrollDepthTracker: emptyComponent },
     '@/components/analytics/outbound-link-tracker': { OutboundLinkTracker: emptyComponent },
     '@/components/analytics/guide-view-tracker': { GuideViewTracker: emptyComponent },
