@@ -1,10 +1,12 @@
 import type { Metadata } from "next";
+import { buildToc } from "@/lib/toc";
+import { publicContentCondition } from "@/lib/content-publication-sql";
 import { cache } from "react";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { db } from "@/db/client";
 import { contents } from "@/db/schema";
-import { and, eq, ne, desc, lte, gt, lt } from "drizzle-orm";
+import { and, eq, ne, desc, gt, lt, or } from "drizzle-orm";
 import type { CategoryId } from "@/lib/category";
 import { CATEGORIES } from "@/lib/category";
 import { YmylDisclaimer } from "@/components/content/ymyl-disclaimer";
@@ -22,7 +24,6 @@ import { OutboundLinkTracker } from "@/components/analytics/outbound-link-tracke
 import { GuideViewTracker } from "@/components/analytics/guide-view-tracker";
 import { getReviewEvidence } from "@/lib/ymyl";
 import { adsPolicyAttrs } from "@/lib/ads-policy";
-import type { TocHeading } from "@/components/content/table-of-contents";
 
 export const dynamic = "force-dynamic";
 
@@ -34,9 +35,7 @@ const getBlogContent = cache(async (slug: string) =>
     .from(contents)
     .where(and(
       eq(contents.slug, slug),
-      eq(contents.type, "blog"),
-      eq(contents.status, "published"),
-      lte(contents.publishedAt, new Date().toISOString()),
+      publicContentCondition("blog"),
     ))
     .get()
 );
@@ -46,7 +45,7 @@ export async function generateStaticParams() {
     const rows = await db
       .select({ slug: contents.slug })
       .from(contents)
-      .where(and(eq(contents.status, "published"), eq(contents.type, "blog"), lte(contents.publishedAt, new Date().toISOString())));
+      .where(and(publicContentCondition("blog")));
     return rows.map((r) => ({ slug: r.slug }));
   } catch {
     return [];
@@ -107,19 +106,31 @@ export async function generateMetadata({
   };
 }
 
-async function getAdjacentPosts(publishedAt: string | null) {
+async function getAdjacentPosts(publishedAt: string | null, id: string) {
   if (!publishedAt) return { prev: null, next: null };
   const [prev, next] = await Promise.all([
     db.select({ slug: contents.slug, title: contents.title })
       .from(contents)
-      .where(and(eq(contents.status, "published"), eq(contents.type, "blog"), lt(contents.publishedAt, publishedAt)))
-      .orderBy(desc(contents.publishedAt))
+      .where(and(
+        publicContentCondition("blog"),
+        or(
+          lt(contents.publishedAt, publishedAt),
+          and(eq(contents.publishedAt, publishedAt), lt(contents.id, id)),
+        ),
+      ))
+      .orderBy(desc(contents.publishedAt), desc(contents.id))
       .limit(1)
       .then(r => r[0] ?? null),
     db.select({ slug: contents.slug, title: contents.title })
       .from(contents)
-      .where(and(eq(contents.status, "published"), eq(contents.type, "blog"), gt(contents.publishedAt, publishedAt)))
-      .orderBy(contents.publishedAt)
+      .where(and(
+        publicContentCondition("blog"),
+        or(
+          gt(contents.publishedAt, publishedAt),
+          and(eq(contents.publishedAt, publishedAt), gt(contents.id, id)),
+        ),
+      ))
+      .orderBy(contents.publishedAt, contents.id)
       .limit(1)
       .then(r => r[0] ?? null),
   ]);
@@ -137,13 +148,12 @@ async function getRelatedPosts(slug: string, category: number) {
     .from(contents)
     .where(
       and(
-        eq(contents.status, "published"),
-        eq(contents.type, "blog"),
+        publicContentCondition("blog"),
         eq(contents.category, category),
         ne(contents.slug, slug)
       )
     )
-    .orderBy(desc(contents.publishedAt))
+    .orderBy(desc(contents.publishedAt), desc(contents.id))
     .limit(3);
 }
 
@@ -153,37 +163,12 @@ async function getRelatedGuides(category: number) {
     .from(contents)
     .where(
       and(
-        eq(contents.status, "published"),
-        eq(contents.type, "guide"),
+        publicContentCondition("guide"),
         eq(contents.category, category)
       )
     )
-    .orderBy(desc(contents.publishedAt))
+    .orderBy(desc(contents.publishedAt), desc(contents.id))
     .limit(3);
-}
-
-function extractHeadings(html: string): TocHeading[] {
-  const headings: TocHeading[] = [];
-  const re = /<h([23])([^>]*)>([\s\S]*?)<\/h\1>/gi;
-  let match;
-  while ((match = re.exec(html)) !== null) {
-    const level = parseInt(match[1]) as 2 | 3;
-    const text = match[3].replace(/<[^>]+>/g, "").trim();
-    if (!text) continue;
-    const id = `h-${headings.length}-${text.slice(0, 30).replace(/[^\w가-힣]/g, "-").replace(/-+/g, "-").replace(/^-|-$/g, "")}`;
-    headings.push({ id, level, text });
-  }
-  return headings;
-}
-
-function injectHeadingIds(html: string, headings: TocHeading[]): string {
-  let idx = 0;
-  return html.replace(/<h([23])([^>]*)>([\s\S]*?)<\/h\1>/gi, (_, level, attrs, inner) => {
-    const h = headings[idx++];
-    if (!h) return _;
-    if (attrs.includes("id=")) return _;
-    return `<h${level}${attrs} id="${h.id}">${inner}</h${level}>`;
-  });
 }
 
 const CATEGORY_EMOJI: Record<number, string> = {
@@ -204,13 +189,12 @@ export default async function BlogPostPage({
   const cat = CATEGORIES[categoryId];
   const [relatedPosts, adjacent, relatedGuides] = await Promise.all([
     getRelatedPosts(slug, content.category),
-    getAdjacentPosts(content.publishedAt),
+    getAdjacentPosts(content.publishedAt, content.id),
     getRelatedGuides(content.category),
   ]);
 
-  const headings = extractHeadings(content.body ?? "");
-  const bodyWithIds = injectHeadingIds(content.body ?? "", headings);
-
+  const { headings, html: bodyWithIds } = buildToc(content.body ?? "");
+  
   const plainText = (content.body ?? "").replace(/<[^>]+>/g, "");
   const wordCount = plainText.trim().length > 0
     ? Math.max(1, Math.round(plainText.replace(/\s+/g, "").length / 2))

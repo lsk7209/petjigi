@@ -1,14 +1,9 @@
 import fs from "node:fs";
 import path from "node:path";
-import { execFileSync } from "node:child_process";
 import { createHash } from "node:crypto";
 import ts from "typescript";
-import {
-  evaluateChangedHighRiskContent,
-  includeEntireFiles,
-  parseAddedLineRanges,
-  rangesOverlap,
-} from "../lib/content-risk-gate";
+import { evaluateChangedHighRiskContent, rangesOverlap } from "../lib/content-risk-gate";
+import { GateScopeError, gateVerdict, resolveGateScope, selectManifestRecords } from "../lib/content-gate-scope";
 import { sourceValues } from "../lib/content-seed-parser";
 import { MEMORIAL_AUTO_ADS_EXCLUDED_PATHS } from "../lib/memorial-auto-ads-paths";
 import { isAutoAdsEligiblePath } from "../lib/ads-policy";
@@ -122,27 +117,26 @@ function inventory(): ContentRecord[] {
   return rows.sort((a, b) => a.slug.localeCompare(b.slug, "en"));
 }
 
-function contentGate(records: ContentRecord[]) {
-  const baseArg = process.argv.find((arg) => arg.startsWith("--base="));
-  const base = baseArg?.slice("--base=".length) || "HEAD";
-  if (!/^[A-Za-z0-9._/~-]+$/.test(base)) {
-    throw new Error("Invalid --base revision");
+function manifestSlugs(): string[] | null {
+  const arg = process.argv.find((x) => x.startsWith("--manifest="));
+  if (!arg) return null;
+  const parsed: unknown = JSON.parse(fs.readFileSync(arg.slice("--manifest=".length), "utf8"));
+  if (!Array.isArray(parsed) || !parsed.every((x) => typeof x === "string")) {
+    throw new GateScopeError("manifest는 slug 문자열 배열이어야 합니다.");
   }
+  return parsed;
+}
 
-  const diff = execFileSync(
-    "git",
-    ["diff", "--unified=0", "--no-ext-diff", base, "--", "db/seeds"],
-    { cwd: ROOT, encoding: "utf8", maxBuffer: 16 * 1024 * 1024 }
-  );
-  const untrackedFiles = execFileSync(
-    "git",
-    ["ls-files", "--others", "--exclude-standard", "--", "db/seeds"],
-    { cwd: ROOT, encoding: "utf8" }
-  ).split(/\r?\n/).filter(Boolean);
-  const changedRanges = includeEntireFiles(parseAddedLineRanges(diff), untrackedFiles);
-  const changedRecords = records.filter((record) =>
-    rangesOverlap(record.startLine, record.endLine, changedRanges.get(record.file) ?? [])
-  );
+function contentGate(records: ContentRecord[]) {
+  const baseArg = process.argv.find((arg) => arg.startsWith("--base="))?.slice("--base=".length);
+  const slugs = manifestSlugs();
+  // manifest가 있으면 git 이력과 무관하게 반영 대상 레코드 전체를 검사한다.
+  const scope = slugs ? null : resolveGateScope({ cwd: ROOT, baseArg });
+  const changedRecords = slugs
+    ? selectManifestRecords(records, slugs)
+    : records.filter((record) =>
+        rangesOverlap(record.startLine, record.endLine, scope?.rangesByFile.get(record.file) ?? [])
+      );
   const evaluated = changedRecords.map((record) => ({
     record,
     issues: evaluateChangedHighRiskContent(record),
@@ -164,10 +158,13 @@ function contentGate(records: ContentRecord[]) {
   );
 
   return {
-    base,
+    scope: slugs ? "manifest" : scope?.mode,
+    base: scope?.base ?? null,
+    mergeBase: scope?.mergeBase ?? null,
     changedRecords: changedRecords.length,
     blockers: blockers.length,
-    note: "Only added/modified seed records are gated; unchanged legacy gaps remain audit-only.",
+    verdict: gateVerdict(changedRecords.length, blockers.length),
+    note: "Only added/modified seed records (or manifest records) are gated; unchanged legacy gaps remain audit-only.",
   };
 }
 
@@ -504,19 +501,31 @@ function adsAudit(records: ContentRecord[]) {
 
 const kind = process.argv[2] as AuditKind | undefined;
 if (!kind || !["content", "content-gate", "sources", "data", "seo", "ads"].includes(kind)) {
-  console.error("Usage: tsx scripts/audit-quality.ts <content|content-gate|sources|data|seo|ads> [--base=HEAD]");
+  console.error("Usage: tsx scripts/audit-quality.ts <content|content-gate|sources|data|seo|ads> [--base=<ref>] [--manifest=<slugs.json>]");
   process.exit(2);
 }
 
 const records = kind === "content" || kind === "content-gate" || kind === "sources" || kind === "ads"
   ? inventory()
   : [];
-const result = kind === "content" ? contentAudit(records)
-  : kind === "content-gate" ? contentGate(records)
-    : kind === "sources" ? sourceAudit(records)
-    : kind === "data" ? dataAudit()
-      : kind === "seo" ? seoAudit()
-        : adsAudit(records);
+function runAudit() {
+  return kind === "content" ? contentAudit(records)
+    : kind === "content-gate" ? contentGate(records)
+      : kind === "sources" ? sourceAudit(records)
+        : kind === "data" ? dataAudit()
+          : kind === "seo" ? seoAudit()
+            : adsAudit(records);
+}
+
+let result: ReturnType<typeof runAudit>;
+try {
+  result = runAudit();
+} catch (error) {
+  if (!(error instanceof GateScopeError)) throw error;
+  // 검사 범위를 정할 수 없으면 '통과'가 아니라 실패로 중단한다.
+  console.error(`[content-gate] ${error.message}`);
+  process.exit(2);
+}
 
 console.log(JSON.stringify({ audit: kind, mode: "read-only/dry-run", ...result }, null, 2));
 if (kind === "content-gate" && "blockers" in result && result.blockers > 0) {

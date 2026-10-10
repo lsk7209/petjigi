@@ -12,17 +12,23 @@ export interface ListingStatus {
   /** 업종 전체 기준 가장 최근 업체 정보 갱신일(YYYY-MM-DD), 없으면 null */
   asOf: string | null;
   stale: boolean;
+  /** asOf의 의미: region=이 지역 업체 행 기준, type=업종 전체 기준(지역 단위 수집 완료를 뜻하지 않음) */
+  scope: "region" | "type" | null;
 }
 
 export function classifyListing(
   totalCount: number,
   typeAsOf: string | null,
   now: Date = new Date(),
+  regionAsOf: string | null = null,
 ): ListingStatus {
-  const asOf = typeAsOf ? typeAsOf.slice(0, 10) : null;
+  const evidence = totalCount > 0 && regionAsOf ? regionAsOf : typeAsOf;
+  const asOf = evidence ? evidence.slice(0, 10) : null;
   const ts = asOf ? Date.parse(asOf) : Number.NaN;
-  const stale = Number.isFinite(ts) && now.getTime() - ts > LISTING_STALE_DAYS * 86_400_000;
-  if (totalCount > 0) return { state: "available", asOf, stale };
-  if (asOf && Number.isFinite(ts)) return { state: "empty_confirmed", asOf, stale };
-  return { state: "not_collected", asOf: null, stale: false };
+  const valid = asOf !== null && Number.isFinite(ts);
+  const stale = valid && now.getTime() - ts > LISTING_STALE_DAYS * 86_400_000;
+  const scope = valid ? (totalCount > 0 && regionAsOf ? "region" : "type") : null;
+  if (totalCount > 0) return { state: "available", asOf, stale, scope };
+  if (valid) return { state: "empty_confirmed", asOf, stale, scope };
+  return { state: "not_collected", asOf: null, stale: false, scope: null };
 }

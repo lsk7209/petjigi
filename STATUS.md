@@ -1,13 +1,14 @@
 # Status | 마지막: 2026-10-10
 ## 현재 작업
-AdSense 승인 준비 개선·메인 리디자인: 코드 배포(PR #9~#12)와 운영 DB 본문 152건 갱신 완료. 남은 것은 수의사 검토·AAFCO 30% 원문 대조(유료 문서)·히어로 사진 교체·CrUX 축적·재심사 신청(사용자).
+심층 개선 F01~F09 로컬 완료(브랜치 fix/deep-improve-20261010, 미푸시·미배포·운영 미반영). 상세: docs/petjigi-improvement/2026-10-10-deep-improve.md. 다음: 승인 후 push/PR, 운영 본문·등록대행 정정.
 ## 최근 변경
+- 10-10: 심층 개선 F01~F09(FLUTD 응급 안내, 미등록 지역 404, 공통 공개 SQL, 검색 ESCAPE, 등록대행 분리, 게이트 CI, 알림 결과 구분, 목차 id) 테스트 355 통과
 - 10-10: AKC·FDA 원문 대조로 본문 정정 16건(FDA DCM, AKC 발톱·귀·크레이트·리콜·운동량·견종 체중·수명·영구치·사과·어질리티 등) PR #15~#20, 운영 DB 반영(백업 .backup-prod). 근거 기록 reports/content-claims-audit.csv
 - 10-10: PR #9~#12 병합·배포, 운영 DB 본문 152건 CAS 갱신(백업 .backup-prod), 홈 리디자인(뉴스레터 제거·임시 SVG 히어로), 운영 Lighthouse 접근성 100/SEO 100, LCP 272ms
 - 10-09: 운영 DB 4행 body만 CAS 반영(열사병·중성화·관절염·오메가3), 운영 확인. 중복 slug 32개 운영 대조(PR #7)
 - 10-09: /bucheon/sale 원인 확인: 등록대행 ETL id 100자 절단 충돌 + upsert가 시군구 미갱신(ETL 수정, 데이터 정정은 미적용)
-- 10-09: PR #3 사이트맵에서 noindex 준비 중 시도 8곳 제거(522→514), 운영 확인
 ## TODO
+- [ ] 승인 후: push/PR, 운영 cat-flutd·구토 글 본문/메타·블로그35 정정(CAS), 등록대행 정정 dry-run→apply→ETL, 사이트맵 재생성
 - [ ] 열사병 가이드 수의사 검토 후 수정(content-claims-review.md의 patch)
 - [ ] 펫로스 가이드 "동물행동심리 전문가 검토" 표기 증빙 확인 또는 제거
 - [ ] 109/1588-9191 공식 페이지 확인

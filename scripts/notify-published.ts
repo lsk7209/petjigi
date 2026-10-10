@@ -15,6 +15,7 @@ import { eq, and, gte } from "drizzle-orm";
 import { submitSitemapToGSC } from "../lib/seo/google-indexing";
 import { pingIndexNow } from "../lib/seo/index-now";
 import { buildNotificationCandidates } from "../lib/seo/notification-candidates";
+import { outcomeFromError, summarizeOutcomes, type NotifyOutcome } from "../lib/seo/notification-outcome";
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://petjigi.kr";
 const DAYS = 30; // 최근 N일 이내 발행분 대상
@@ -33,7 +34,7 @@ async function run() {
   const candidates = buildNotificationCandidates(rows, now);
 
   if (candidates.length === 0) {
-    console.log("[notify] 알림 대상 없음 — 종료");
+    reportSummary([{ service: "notify", status: "no_targets", detail: "최근 공개 콘텐츠 없음" }]);
     return;
   }
 
@@ -45,15 +46,26 @@ async function run() {
   if (urls.length > 5) console.log(`  ... 외 ${urls.length - 5}건`);
 
   // GSC 사이트맵 제출 (두 사이트맵 모두 — GSC가 최신 사이트맵 인식)
-  await Promise.allSettled([
-    submitSitemapToGSC(`${SITE_URL}/`, `${SITE_URL}/sitemap.xml`),
-    submitSitemapToGSC(`${SITE_URL}/`, `${SITE_URL}/sitemap-content.xml`),
-  ]);
-  console.log("[notify] GSC 사이트맵 제출 완료");
+  const sitemapPaths = ["/sitemap.xml", "/sitemap-content.xml"];
+  const settled = await Promise.allSettled(
+    sitemapPaths.map((p) => submitSitemapToGSC(`${SITE_URL}/`, `${SITE_URL}${p}`)),
+  );
+  const outcomes: NotifyOutcome[] = settled.map((r, i) =>
+    r.status === "fulfilled" ? r.value : outcomeFromError(`GSC sitemap ${sitemapPaths[i]}`, r.reason),
+  );
 
   // IndexNow — Naver + Bing (한도 없음). 일반 콘텐츠 알림은 이 경로만 사용한다.
   const result = await pingIndexNow(urls);
-  console.log("[notify] IndexNow 전송:", result.results.join(" | "));
+  reportSummary([...outcomes, ...result.outcomes]);
+}
+
+/** 서비스별 실제 결과를 출력하고, 하나라도 실패하면 종료 코드 1(배포 실패와 별개 단계에서 표시됨). */
+function reportSummary(outcomes: NotifyOutcome[]): void {
+  const summary = summarizeOutcomes(outcomes);
+  console.log(`[notify] 결과: ${summary.overall}`);
+  summary.lines.forEach((l) => console.log("  ", l));
+  if (summary.failed > 0) console.log(`::warning title=검색엔진 알림 일부 실패::${summary.failed}건 실패 (배포와 무관)`);
+  process.exitCode = summary.exitCode;
 }
 
 run().catch((e) => {

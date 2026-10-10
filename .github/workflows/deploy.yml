@@ -1,5 +1,12 @@
 name: Deploy — Vercel Production
 
+# 상태 구분: 이 워크플로의 초록색은 '배포 성공'이 아니다.
+#  - DEPLOY_SKIPPED : 필수 secret 누락 → 배포 단계 전체 생략(Vercel Git 연동 등 다른 경로가 배포했을 수 있음)
+#  - DEPLOYED       : vercel deploy --prebuilt --prod 성공
+#  - 배포/빌드 실패  : 잡 실패(빨강)
+#  - 알림(IndexNow/GSC) 실패는 배포와 별개이며 'Notify search engines' 단계에만 표시된다.
+# 마지막 'Report deploy state' 단계가 Job Summary에 실제 상태를 기록한다.
+
 on:
   push:
     branches:
@@ -21,17 +28,18 @@ jobs:
       - name: Check deploy secrets
         id: secrets
         run: |
-          missing=0
+          missing=""
           for k in VERCEL_ORG_ID VERCEL_PROJECT_ID VERCEL_TOKEN TURSO_DATABASE_URL TURSO_AUTH_TOKEN; do
             if [ -z "${!k}" ]; then
-              echo "::notice title=Missing deploy secret::GitHub secret ${k} is empty; deployment will be skipped."
-              missing=1
+              missing="${missing} ${k}"
             fi
           done
-          if [ "${missing}" -eq 0 ]; then
+          if [ -z "${missing}" ]; then
             echo "can_deploy=true" >> "$GITHUB_OUTPUT"
           else
             echo "can_deploy=false" >> "$GITHUB_OUTPUT"
+            echo "missing=${missing# }" >> "$GITHUB_OUTPUT"
+            echo "::warning title=배포 생략 (DEPLOY_SKIPPED)::누락된 secret: ${missing# }. 이 실행은 배포하지 않았습니다."
           fi
         env:
           VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
@@ -55,14 +63,6 @@ jobs:
         if: steps.secrets.outputs.can_deploy == 'true'
         run: pnpm install --frozen-lockfile
 
-      - name: Build
-        if: steps.secrets.outputs.can_deploy == 'true'
-        run: pnpm build
-        env:
-          NEXT_PUBLIC_SITE_URL: ${{ secrets.NEXT_PUBLIC_SITE_URL }}
-          TURSO_DATABASE_URL: ${{ secrets.TURSO_DATABASE_URL }}
-          TURSO_AUTH_TOKEN: ${{ secrets.TURSO_AUTH_TOKEN }}
-
       - name: Install Vercel CLI
         if: steps.secrets.outputs.can_deploy == 'true'
         run: pnpm add -g vercel@latest
@@ -71,12 +71,25 @@ jobs:
         if: steps.secrets.outputs.can_deploy == 'true'
         run: vercel pull --yes --environment=production --token=${{ secrets.VERCEL_TOKEN }}
 
+      # --prebuilt는 .vercel/output(Build Output API)을 요구한다. 이는 `vercel build`만 만든다(pnpm build는 만들지 않음).
+      - name: Build (vercel build)
+        if: steps.secrets.outputs.can_deploy == 'true'
+        run: vercel build --prod --token=${{ secrets.VERCEL_TOKEN }}
+        env:
+          NEXT_PUBLIC_SITE_URL: ${{ secrets.NEXT_PUBLIC_SITE_URL }}
+          TURSO_DATABASE_URL: ${{ secrets.TURSO_DATABASE_URL }}
+          TURSO_AUTH_TOKEN: ${{ secrets.TURSO_AUTH_TOKEN }}
+
       - name: Deploy to Vercel
+        id: deploy
         if: steps.secrets.outputs.can_deploy == 'true'
         run: vercel deploy --prebuilt --prod --token=${{ secrets.VERCEL_TOKEN }}
 
+      # 알림 실패는 배포 실패가 아니므로 continue-on-error. 실패 시 이 단계만 주황 경고로 남는다.
       - name: Notify search engines (Google + IndexNow)
-        if: steps.secrets.outputs.can_deploy == 'true' && success()
+        id: notify
+        if: steps.deploy.outcome == 'success'
+        continue-on-error: true
         run: pnpm tsx scripts/notify-published.ts
         env:
           TURSO_DATABASE_URL: ${{ secrets.TURSO_DATABASE_URL }}
@@ -84,6 +97,23 @@ jobs:
           NEXT_PUBLIC_SITE_URL: ${{ secrets.NEXT_PUBLIC_SITE_URL }}
           GOOGLE_SA_JSON: ${{ secrets.GOOGLE_SA_JSON }}
           INDEXNOW_KEY: ${{ secrets.INDEXNOW_KEY }}
+
+      - name: Report deploy state
+        if: always()
+        run: |
+          if [ "${{ steps.secrets.outputs.can_deploy }}" != "true" ]; then
+            state="DEPLOY_SKIPPED (누락 secret: ${{ steps.secrets.outputs.missing }})"
+          elif [ "${{ steps.deploy.outcome }}" = "success" ]; then
+            state="DEPLOYED"
+          else
+            state="DEPLOY_FAILED"
+          fi
+          {
+            echo "### 배포 상태: ${state}"
+            echo ""
+            echo "- 검색엔진 알림: ${{ steps.notify.outcome || 'not_run' }} (배포와 별개)"
+            echo "- 커밋: ${{ github.sha }}"
+          } >> "$GITHUB_STEP_SUMMARY"
 
       - name: Alert on failure
         if: failure()

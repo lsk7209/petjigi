@@ -94,7 +94,7 @@ module.exports = {
       return { loc: path, changefreq: "weekly", priority: 0.7 };
     }
     // 지역×업종 목록 + 업체 상세
-    if (path.match(/^\/[a-z]+-[a-z]+\//) || path.match(/^\/(vet|grooming|boarding|funeral|sale|breeder|transport|exhibition)\//)) {
+    if (path.match(/^\/[a-z]+-[a-z]+\//) || path.match(/^\/(vet|grooming|boarding|funeral|sale|registration|breeder|transport|exhibition)\//)) {
       return { loc: path, changefreq: "daily", priority: 0.6 };
     }
     return { loc: path, changefreq: config.changefreq, priority: config.priority };

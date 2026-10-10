@@ -1,10 +1,12 @@
 import type { Metadata } from "next";
+import { buildToc } from "@/lib/toc";
+import { publicContentCondition } from "@/lib/content-publication-sql";
 import { cache } from "react";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { db } from "@/db/client";
 import { contents } from "@/db/schema";
-import { and, eq, ne, desc, lte } from "drizzle-orm";
+import { and, eq, ne, desc } from "drizzle-orm";
 import type { CategoryId } from "@/lib/category";
 import { CATEGORIES } from "@/lib/category";
 import { YmylDisclaimer } from "@/components/content/ymyl-disclaimer";
@@ -20,7 +22,6 @@ import { CategoryCta } from "@/components/content/category-cta";
 import { ScrollDepthTracker } from "@/components/analytics/scroll-depth-tracker";
 import { OutboundLinkTracker } from "@/components/analytics/outbound-link-tracker";
 import { GuideViewTracker } from "@/components/analytics/guide-view-tracker";
-import type { TocHeading } from "@/components/content/table-of-contents";
 import { getReviewEvidence } from "@/lib/ymyl";
 import { adsPolicyAttrs } from "@/lib/ads-policy";
 
@@ -34,9 +35,7 @@ const getContent = cache(async (slug: string) =>
     .from(contents)
     .where(and(
       eq(contents.slug, slug),
-      eq(contents.type, "guide"),
-      eq(contents.status, "published"),
-      lte(contents.publishedAt, new Date().toISOString()),
+      publicContentCondition("guide"),
     ))
     .get()
 );
@@ -46,7 +45,7 @@ export async function generateStaticParams() {
     const rows = await db
       .select({ slug: contents.slug })
       .from(contents)
-      .where(and(eq(contents.status, "published"), eq(contents.type, "guide"), lte(contents.publishedAt, new Date().toISOString())));
+      .where(and(publicContentCondition("guide")));
     return rows.map((r) => ({ slug: r.slug }));
   } catch {
     return [];
@@ -110,8 +109,7 @@ async function getRelatedGuides(slug: string, category: number) {
     .from(contents)
     .where(
       and(
-        eq(contents.status, "published"),
-        eq(contents.type, "guide"),
+        publicContentCondition("guide"),
         eq(contents.category, category),
         ne(contents.slug, slug)
       )
@@ -126,38 +124,13 @@ async function getRelatedBlogPosts(slug: string, category: number) {
     .from(contents)
     .where(
       and(
-        eq(contents.status, "published"),
-        eq(contents.type, "blog"),
+        publicContentCondition("blog"),
         eq(contents.category, category),
         ne(contents.slug, slug)
       )
     )
     .orderBy(desc(contents.publishedAt))
     .limit(3);
-}
-
-function extractHeadings(html: string): TocHeading[] {
-  const headings: TocHeading[] = [];
-  const re = /<h([23])([^>]*)>([\s\S]*?)<\/h\1>/gi;
-  let match;
-  while ((match = re.exec(html)) !== null) {
-    const level = parseInt(match[1]) as 2 | 3;
-    const text = match[3].replace(/<[^>]+>/g, "").trim();
-    if (!text) continue;
-    const id = `h-${headings.length}-${text.slice(0, 30).replace(/[^\w가-힣]/g, "-").replace(/-+/g, "-").replace(/^-|-$/g, "")}`;
-    headings.push({ id, level, text });
-  }
-  return headings;
-}
-
-function injectHeadingIds(html: string, headings: TocHeading[]): string {
-  let idx = 0;
-  return html.replace(/<h([23])([^>]*)>([\s\S]*?)<\/h\1>/gi, (_, level, attrs, inner) => {
-    const h = headings[idx++];
-    if (!h) return _;
-    if (attrs.includes("id=")) return _;
-    return `<h${level}${attrs} id="${h.id}">${inner}</h${level}>`;
-  });
 }
 
 const CATEGORY_EMOJI: Record<number, string> = {
@@ -186,9 +159,8 @@ export default async function GuidePage({
     getRelatedBlogPosts(slug, content.category),
   ]);
 
-  const headings = extractHeadings(content.body ?? "");
-  const bodyWithIds = injectHeadingIds(content.body ?? "", headings);
-
+  const { headings, html: bodyWithIds } = buildToc(content.body ?? "");
+  
   const plainText = (content.body ?? "").replace(/<[^>]+>/g, "");
   const wordCount = plainText.trim().length > 0
     ? Math.max(1, Math.round(plainText.replace(/\s+/g, "").length / 2))

@@ -33,7 +33,6 @@
 .hm-hero { padding: 36px 0 44px; }
 .hm-hero-grid { display: grid; gap: 28px; align-items: center; }
 .hm-hero-art { width: 100%; height: auto; max-height: 420px; border-radius: 20px; display: block; }
-.hm-art-note { font-size: 12px; color: var(--hm-muted); margin-top: 8px; }
 
 .hm-quick { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; margin-top: 24px; }
 .hm-quick a { display: flex; flex-direction: column; gap: 10px; padding: 16px; min-height: 92px; background: var(--hm-surface); border: 1px solid var(--hm-border); border-radius: 14px; font-weight: 700; font-size: 15px; line-height: 1.35; }

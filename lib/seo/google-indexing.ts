@@ -12,6 +12,7 @@
  */
 
 import { classifyIndexingResponses } from "./indexing-outcome";
+import { outcomeFromError, outcomeFromHttp, type NotifyOutcome } from "./notification-outcome";
 
 const INDEXING_API = "https://indexing.googleapis.com/v3/urlNotifications:publish";
 
@@ -176,9 +177,10 @@ export async function notifyGoogleBatch(
 export async function submitSitemapToGSC(
   siteUrl: string,
   sitemapUrl: string,
-): Promise<void> {
+): Promise<NotifyOutcome> {
+  const service = `GSC sitemap ${new URL(sitemapUrl).pathname}`;
   const saJson = process.env.GOOGLE_SA_JSON;
-  if (!saJson) return;
+  if (!saJson) return { service, status: "not_configured", detail: "GOOGLE_SA_JSON 미설정" };
 
   try {
     const sa = JSON.parse(saJson) as ServiceAccount;
@@ -196,8 +198,10 @@ export async function submitSitemapToGSC(
     );
 
     console.log(`[GSC Sitemap] ${sitemapUrl} → ${res.status}`);
+    return outcomeFromHttp(service, res.status);
   } catch (err) {
     console.warn("[GSC Sitemap] 제출 실패 (비치명적):", err);
+    return outcomeFromError(service, err);
   }
 }
 

@@ -16,7 +16,7 @@ test("public condition surfaces require published status", () => {
     "app/feed.xml/route.ts",
     "app/api/search/route.ts",
   ]) {
-    assert.match(read(file), /eq\(contents\.status, "published"\)/, `${file} must filter publication status`);
+    assert.match(read(file), /publicContentCondition[(]/, `${file} must filter publication status`);
   }
 });
 

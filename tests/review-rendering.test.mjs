@@ -32,7 +32,8 @@ function renderFixture(relative, content) {
     'next/navigation': { notFound: () => { throw new Error('unexpected notFound'); } },
     '@/db/client': { db },
     '@/db/schema': { contents: {} },
-    'drizzle-orm': {
+    '@/lib/content-publication-sql': { publicContentCondition: () => undefined },
+    'drizzle-orm': { or: () => undefined,
       and: () => undefined, desc: () => undefined, eq: () => undefined,
       gt: () => undefined, lt: () => undefined, lte: () => undefined, ne: () => undefined,
     },

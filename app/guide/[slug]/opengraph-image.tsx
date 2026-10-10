@@ -1,6 +1,7 @@
 import { ImageResponse } from "next/og";
+import { publicContentCondition } from "@/lib/content-publication-sql";
 import { contents } from "@/db/schema";
-import { and, eq, lte } from "drizzle-orm";
+import { and, eq } from "drizzle-orm";
 import { CATEGORIES } from "@/lib/category";
 import type { CategoryId } from "@/lib/category";
 
@@ -37,9 +38,7 @@ export default async function OgImage({
     .from(contents)
     .where(and(
       eq(contents.slug, slug),
-      eq(contents.type, "guide"),
-      eq(contents.status, "published"),
-      lte(contents.publishedAt, new Date().toISOString()),
+      publicContentCondition("guide"),
     ))
     .get();
 

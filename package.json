@@ -7,7 +7,7 @@
     "build": "next build && next-sitemap",
     "start": "next start",
     "lint": "eslint",
-    "test": "tsx --test \"lib/**/*.test.ts\" \"scripts/**/*.test.ts\"",
+    "test": "tsx --test \"lib/**/*.test.ts\" \"scripts/**/*.test.ts\" \"etl/**/*.test.ts\" \"tests/**/*.test.mjs\" \"tests/**/*.test.ts\"",
     "audit:content": "tsx scripts/audit-quality.ts content",
     "audit:content:gate": "tsx scripts/audit-quality.ts content-gate",
     "audit:sources": "tsx scripts/audit-quality.ts sources",
@@ -145,7 +145,7 @@
     "etl:vets": "tsx --env-file=.env.local etl/mois/animal-hospitals.ts",
     "etl:shelters": "tsx --env-file=.env.local etl/apms/shelters.ts",
     "etl:rescued": "tsx --env-file=.env.local etl/apms/rescued-animals.ts",
-    "etl:registration": "tsx --env-file=.env.local etl/mafra/registration-agents.ts",
+    "etl:registration": "tsx --env-file=.env.local etl/mafra/run-registration-agents.ts",
     "verify": "tsx --env-file=.env.local scripts/verify-setup.ts",
     "notify": "tsx --env-file=.env.local scripts/notify-published.ts"
   },

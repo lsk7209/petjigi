@@ -68,7 +68,7 @@ export async function PATCH(
     const contentUrl = `${SITE_URL}${result.path}`;
     // A failed notification does not undo an already committed approval.
     const indexNow = await pingIndexNow([contentUrl, `${SITE_URL}/`])
-      .then(() => "pinged" as const).catch(() => "failed" as const);
+      .then((r) => (r.ok ? "pinged" : "failed") as "pinged" | "failed").catch(() => "failed" as const);
     await notifyGoogleIndexing(contentUrl).catch(() => {});
     let cache: "revalidated" | "failed" = "revalidated";
     try {

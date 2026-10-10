@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { publicContentCondition } from "@/lib/content-publication-sql";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { db } from "@/db/client";
@@ -27,6 +28,7 @@ const TYPE_LABEL: Record<string, string> = {
   boarding: "펫호텔",
   funeral: "장묘업체",
   sale: "분양업체",
+  registration: "동물등록 대행기관",
   breeder: "브리더",
   transport: "반려동물 운송",
   exhibition: "체험전시",
@@ -38,6 +40,7 @@ const TYPE_EMOJI: Record<string, string> = {
   boarding: "🏠",
   funeral: "🕊️",
   sale: "🐾",
+  registration: "🪪",
   breeder: "🐕",
   transport: "🚗",
   exhibition: "🎪",
@@ -49,6 +52,7 @@ const TYPE_CATEGORY: Record<string, CategoryId> = {
   boarding: 5,
   funeral: 6,
   sale: 1,
+  registration: 1,
   breeder: 1,
   transport: 5,
   exhibition: 5,
@@ -151,7 +155,7 @@ export default async function BusinessDetailPage({
   const relatedGuides = await db
     .select({ slug: contents.slug, title: contents.title })
     .from(contents)
-    .where(and(eq(contents.status, "published"), eq(contents.type, "guide"), eq(contents.category, categoryId)))
+    .where(and(publicContentCondition("guide"), eq(contents.category, categoryId)))
     .orderBy(desc(contents.publishedAt))
     .limit(3);
 

@@ -28,3 +28,11 @@ test("home css does not override utility text colors on links", () => {
   assert.doesNotMatch(css, /^\.hm a \{[^}]*color:\s*inherit/m);
   assert.match(css, /:where\(\.hm\) a:not\(\[class\*="text-"\]\)\s*\{\s*color:\s*inherit/);
 });
+
+test("홈 지역 CTA는 서울 고정 링크가 아니라 지역 선택 영역으로 이동하고 제작 메모가 없다", async () => {
+  const fs = await import("node:fs");
+  const source = fs.readFileSync("app/page.tsx", "utf8");
+  assert.match(source, /id="hm-local"/);
+  assert.equal((source.match(/href[:=]\s*"#hm-local"/g) ?? []).length, 2);
+  assert.doesNotMatch(source, /임시 일러스트|교체할 수/);
+});

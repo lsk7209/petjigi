@@ -101,7 +101,7 @@ export default async function ConditionIndexPage() {
         {/* 주의 배너 */}
         <div className="mb-6 p-4 rounded-xl border border-[var(--cat-3-soft)] bg-[var(--cat-3-soft)]">
           <p className="text-sm text-[var(--cat-3)] font-medium">
-            💊 응급 증상(호흡 곤란·경련·실신·12시간 이상 소변 없음)은 즉시 24시간 응급 동물병원을 방문하세요.
+            💊 응급 증상(호흡 곤란·경련·실신·소변을 보려 힘주는데 거의 또는 전혀 나오지 않음)은 즉시 24시간 응급 동물병원을 방문하세요.
           </p>
         </div>
 

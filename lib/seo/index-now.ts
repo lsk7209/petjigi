@@ -9,8 +9,12 @@ const INDEXNOW_HOSTS: { host: string; limit: number }[] = [
   { host: "www.bing.com", limit: 10000 },
 ];
 
-export async function pingIndexNow(urls: string[]): Promise<{ ok: boolean; results: string[] }> {
-  if (!INDEXNOW_KEY || urls.length === 0) return { ok: false, results: [] };
+import { outcomeFromError, outcomeFromHttp, type NotifyOutcome } from "./notification-outcome";
+
+/** ok는 최소 한 곳이 2xx로 수락했을 때만 true. 서비스별 결과는 outcomes. */
+export async function pingIndexNow(urls: string[]): Promise<{ ok: boolean; results: string[]; outcomes: NotifyOutcome[] }> {
+  if (!INDEXNOW_KEY) return { ok: false, results: [], outcomes: [{ service: "IndexNow", status: "not_configured" }] };
+  if (urls.length === 0) return { ok: false, results: [], outcomes: [{ service: "IndexNow", status: "no_targets" }] };
 
   const hostname = new URL(SITE_URL).hostname;
 
@@ -27,16 +31,19 @@ export async function pingIndexNow(urls: string[]): Promise<{ ok: boolean; resul
         headers: { "Content-Type": "application/json; charset=utf-8" },
         body: JSON.stringify(body),
         signal: AbortSignal.timeout(10000),
-      }).then((r) => `${host}: ${r.status}`);
+      }).then((r) => ({ host, status: r.status }));
     })
   );
 
-  const logs = results.map((r) =>
-    r.status === "fulfilled" ? r.value : `error: ${r.reason}`
+  const outcomes = results.map((r, i) =>
+    r.status === "fulfilled"
+      ? outcomeFromHttp(`IndexNow ${r.value.host}`, r.value.status)
+      : outcomeFromError(`IndexNow ${INDEXNOW_HOSTS[i].host}`, r.reason)
   );
+  const logs = outcomes.map((o) => `${o.service}: ${o.detail}`);
 
   console.log("[IndexNow]", logs.join(" | "));
-  return { ok: true, results: logs };
+  return { ok: outcomes.some((o) => o.status === "success"), results: logs, outcomes };
 }
 
 /** 가이드 슬러그 → 전체 URL 변환 후 핑 */

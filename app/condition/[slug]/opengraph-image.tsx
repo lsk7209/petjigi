@@ -1,6 +1,7 @@
 import { ImageResponse } from "next/og";
+import { publicContentCondition } from "@/lib/content-publication-sql";
 import { contents } from "@/db/schema";
-import { and, eq, lte } from "drizzle-orm";
+import { and, eq } from "drizzle-orm";
 
 export const dynamic = "force-dynamic";
 export const size = { width: 1200, height: 630 };
@@ -21,9 +22,7 @@ export default async function OgImage({
     .from(contents)
     .where(and(
       eq(contents.slug, slug),
-      eq(contents.type, "condition"),
-      eq(contents.status, "published"),
-      lte(contents.publishedAt, new Date().toISOString()),
+      publicContentCondition("condition"),
     ))
     .get();
 

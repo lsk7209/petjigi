@@ -46,3 +46,14 @@ test("business href returns null when bizType or name missing", () => {
   assert.equal(buildBusinessHref({ bizType: undefined, sigunguSlug: "nowon", name: "행복동물병원" }), null);
   assert.equal(buildBusinessHref({ bizType: "vet", sigunguSlug: "nowon", name: "" }), null);
 });
+
+test("동명 시군구(서울/부산 강서구)는 지역 맵에서 제외되어 임의 slug로 덮어쓰지 않는다", async () => {
+  const { buildUniqueRegionSlugMap } = await import("./search-contract");
+  const map = buildUniqueRegionSlugMap([
+    { sigungu: "강서구", sigunguSlug: "gangseo" },
+    { sigungu: "강서구", sigunguSlug: "gangseo" },
+    { sigungu: "강남구", sigunguSlug: "gangnam" },
+  ]);
+  assert.equal(map.has("강서구"), false);
+  assert.equal(map.get("강남구"), "gangnam");
+});
