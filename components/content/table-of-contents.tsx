@@ -71,7 +71,7 @@ export function TableOfContents({ headings, slug = "" }: { headings: TocHeading[
           {headings.map((h, i) => (
             <li key={h.id} className={h.level === 3 ? "ml-4" : ""}>
               <a
-                href={`#${h.id}`}
+                href={`#${encodeURIComponent(h.id)}`}
                 onClick={() => track.tocClick({ headingText: h.text, guideSlug: slug })}
                 className={[
                   "flex items-start gap-1.5 text-sm py-0.5 transition-colors leading-snug",

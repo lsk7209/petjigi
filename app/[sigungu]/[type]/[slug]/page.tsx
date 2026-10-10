@@ -5,7 +5,9 @@ import Link from "next/link";
 import { db } from "@/db/client";
 import { businesses, contents } from "@/db/schema";
 import { and, eq, ne, sql, desc } from "drizzle-orm";
-import { getCachedResolvedRegion } from "@/lib/db-queries";
+import { businessStatusNotice, regionCountSentence } from "@/lib/business-status-wording";
+import { resolveBusinessDetail, sameRegionCondition } from "@/lib/business-detail-resolve";
+import { BusinessDisambiguation } from "@/components/business/business-disambiguation";
 import { localBusinessSchema, breadcrumbSchema } from "@/lib/seo/structured-data";
 import type { CategoryId } from "@/lib/category";
 import { YmylDisclaimer } from "@/components/content/ymyl-disclaimer";
@@ -16,7 +18,6 @@ import { AdPolicyProvider } from "@/components/providers/ad-policy-provider";
 import { BusinessViewTracker } from "@/components/analytics/business-view-tracker";
 import { BusinessContactLinks } from "@/components/analytics/business-contact-links";
 import { getAddressRegionConsistency } from "@/lib/business-listing";
-import { pickUniqueBusinessMatch } from "@/lib/business-detail-match";
 
 export const revalidate = 86400;
 
@@ -68,14 +69,18 @@ export async function generateMetadata({
   const name = decodeURIComponent(slug);
   const typeLabel = TYPE_LABEL[type] ?? type;
 
-  const region = await getCachedResolvedRegion(sigungu);
-  const location = region?.sigungu ?? sigungu;
+  const { region, match } = await resolveBusinessDetail(type, sigungu, name);
+  if (match.kind === "missing") notFound();
+  const location = region.sigunguName ?? sigungu;
   const title = `${name} ${typeLabel} | ${location} | 펫지기`;
   const description = `${location} ${name} ${typeLabel} — 위치, 연락처, 주변 시설 정보. 공공데이터 기반.`;
+  // URL만으로 지역이나 업체가 하나로 정해지지 않는 페이지는 색인하지 않는다(목록과 같은 정책).
+  const robots = region.kind === "ambiguous" || match.kind === "ambiguous" ? { index: false, follow: true } : undefined;
 
   return {
     title,
     description,
+    ...(robots ? { robots } : {}),
     openGraph: {
       title,
       description,
@@ -106,50 +111,40 @@ export default async function BusinessDetailPage({
   const { sigungu: type, type: sigungu, slug } = await params;
   const name = decodeURIComponent(slug);
 
-  const region = await getCachedResolvedRegion(sigungu);
-
-  const candidates = await db
-    .select()
-    .from(businesses)
-    .where(and(eq(businesses.type, type), eq(businesses.name, name)));
-
-  // region이 모호하거나 미해결이면 sigungu slug 문자열 자체로 좁힌다(과거 URL 호환).
-  // region이 해소됐으면 실제 시군구명으로 좁혀, 다른 시도의 동명업체가 섞이지 않게 한다.
-  const targetSigungu = region?.sigungu ?? sigungu;
-  const match = pickUniqueBusinessMatch(candidates, { sigungu: targetSigungu });
-
-  if (match.kind !== "resolved") notFound();
-  const business = match.business as typeof candidates[number];
+  const { region, match } = await resolveBusinessDetail(type, sigungu, name);
+  if (match.kind === "missing") notFound();
+  if (match.kind === "ambiguous") {
+    return (
+      <BusinessDisambiguation
+        name={name}
+        typeLabel={TYPE_LABEL[type] ?? type}
+        listingHref={`/${sigungu}/${type}`}
+        candidates={match.candidates}
+      />
+    );
+  }
+  const business = match.business;
 
   const nearby = await db
     .select()
     .from(businesses)
-    .where(
-      and(
-        eq(businesses.addressSigungu, business.addressSigungu ?? ""),
-        eq(businesses.status, "active"),
-        ne(businesses.id, business.id)
-      )
-    )
+    .where(and(sameRegionCondition(business), eq(businesses.status, "active"), ne(businesses.id, business.id)))
     .limit(6);
 
   const sameTypeCount = await db
     .select({ count: sql<number>`count(*)` })
     .from(businesses)
     .where(
-      and(
-        eq(businesses.type, type),
-        eq(businesses.addressSigungu, business.addressSigungu ?? ""),
-        eq(businesses.status, "active")
-      )
+      and(eq(businesses.type, type), sameRegionCondition(business), eq(businesses.status, "active"))
     )
     .get();
 
+  const statusNotice = businessStatusNotice(type, business.status);
   const categoryId = TYPE_CATEGORY[type] ?? 1;
   const typeLabel = TYPE_LABEL[type] ?? type;
   const typeEmoji = TYPE_EMOJI[type] ?? "📍";
-  const locationName = region?.sigungu ?? sigungu;
-  const sidoName = region?.sido ?? "";
+  const locationName = region.sigunguName ?? sigungu;
+  const sidoName = region.sidoName;
   const pageUrl = `${SITE_URL}/${type}/${sigungu}/${slug}`;
 
   const relatedGuides = await db
@@ -162,7 +157,7 @@ export default async function BusinessDetailPage({
   const schema = localBusinessSchema(business);
   const breadcrumb = breadcrumbSchema([
     { name: "홈", url: SITE_URL },
-    ...(sidoName && region?.sidoSlug
+    ...(sidoName && region.sidoSlug
       ? [{ name: `${sidoName} 정보`, url: `${SITE_URL}/sido/${region.sidoSlug}` }]
       : []),
     { name: `${locationName} ${typeLabel}`, url: `${SITE_URL}/${sigungu}/${type}` },
@@ -184,7 +179,7 @@ export default async function BusinessDetailPage({
           aria-label="breadcrumb"
         >
           <Link href="/" className="hover:text-[var(--brand-accent)] transition-colors">홈</Link>
-          {sidoName && region?.sidoSlug && (
+          {sidoName && region.sidoSlug && (
             <>
               <span aria-hidden="true">›</span>
               <Link
@@ -229,6 +224,12 @@ export default async function BusinessDetailPage({
             {locationName}{sidoName ? ` · ${sidoName}` : ""}
           </p>
         </header>
+
+        {statusNotice && (
+          <p className="mb-4 rounded-xl bg-amber-50 px-4 py-3 text-xs text-amber-900" role="note">
+            {statusNotice}
+          </p>
+        )}
 
         <YmylDisclaimer categoryId={categoryId} />
 
@@ -285,11 +286,7 @@ export default async function BusinessDetailPage({
             📊 {locationName} 지역 현황
           </h2>
           <p className="text-[var(--brand-text-secondary)]">
-            {locationName} 지역에는 현재{" "}
-            <strong className="text-[var(--brand-text)]">
-              {sameTypeCount?.count ?? 0}개
-            </strong>
-            의 {typeLabel}가 운영 중입니다.
+            {regionCountSentence(type, locationName, typeLabel, sameTypeCount?.count ?? 0)}
           </p>
           <Link
             href={`/${sigungu}/${type}`}
@@ -352,7 +349,7 @@ export default async function BusinessDetailPage({
         </div>
 
         <p className="text-xs text-[var(--brand-text-secondary)]">
-          정보 기준일: {business.lastSyncedAt?.slice(0, 10) ?? "공공데이터 최신 기준"}
+          마지막 수집일: {business.lastSyncedAt?.slice(0, 10) ?? "확인되지 않음"}
           &nbsp;·&nbsp;
           <Link href={`/${sigungu}/${type}`} className="hover:text-[var(--brand-accent)]">
             {locationName} {typeLabel} 목록

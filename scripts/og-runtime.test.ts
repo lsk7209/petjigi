@@ -19,7 +19,8 @@ test("DB 기반 OpenGraph 이미지는 요청 시점에 생성한다", () => {
     const source = fs.readFileSync(path.join(process.cwd(), relativePath), "utf8");
     assert.match(source, /export const dynamic = "force-dynamic";/, relativePath);
     assert.doesNotMatch(source, /import \{ db \} from "@\/db\/client";/, relativePath);
-    assert.match(source, /await import\("@\/db\/client"\)/, relativePath);
+    // DB는 요청 시점에 지연 import한다. 업체 상세 OG는 같은 지역·업체 식별 규칙을 쓰는 공통 resolver를 지연 import한다.
+    assert.match(source, /await import\("@\/(?:db\/client|lib\/business-detail-resolve)"\)/, relativePath);
   }
 });
 

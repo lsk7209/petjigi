@@ -43,16 +43,19 @@ export interface RegionSlugRow {
 }
 
 /**
- * 시군구 이름 → slug 매핑. 같은 이름의 지역 행이 둘 이상이면(서울/부산 강서구 등) 어느 쪽인지
- * 알 수 없으므로 매핑에서 제외한다. 호출자는 매핑이 없는 항목의 상세 링크를 만들지 않는다.
+ * 시군구 이름 → slug 매핑. 같은 이름의 지역 행이 여럿이어도(서울/부산 강서구) 모두 같은 slug를 쓰면
+ * 그 slug가 곧 URL이며, 상세 페이지가 저장된 시군구명으로 업체를 확정하므로 매핑에 포함한다.
+ * 같은 이름에 서로 다른 slug가 섞여 있으면 어느 쪽인지 알 수 없으므로 제외한다 —
+ * 호출자는 매핑이 없는 항목의 상세 링크를 만들지 않는다.
  */
 export function buildUniqueRegionSlugMap(rows: RegionSlugRow[]): Map<string, string> {
   const slugs = new Map<string, string>();
-  const ambiguous = new Set<string>();
+  const conflicting = new Set<string>();
   for (const { sigungu, sigunguSlug } of rows) {
-    if (slugs.has(sigungu)) ambiguous.add(sigungu);
-    else slugs.set(sigungu, sigunguSlug);
+    const existing = slugs.get(sigungu);
+    if (existing === undefined) slugs.set(sigungu, sigunguSlug);
+    else if (existing !== sigunguSlug) conflicting.add(sigungu);
   }
-  for (const name of ambiguous) slugs.delete(name);
+  for (const name of conflicting) slugs.delete(name);
   return slugs;
 }

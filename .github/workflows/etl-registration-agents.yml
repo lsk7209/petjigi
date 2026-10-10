@@ -5,6 +5,10 @@ on:
     - cron: "0 21 1 * *"  # 매월 1일 06:00 KST
   workflow_dispatch:
 
+concurrency:
+  group: etl-registration-agents
+  cancel-in-progress: false
+
 jobs:
   sync:
     runs-on: ubuntu-latest
