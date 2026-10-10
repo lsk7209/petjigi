@@ -9,6 +9,8 @@
  * 최종 식별자는 business.id이며, 이 계약은 그 축소 규칙만 담당한다.
  */
 
+import type { RegionSlugView } from "./region-identity";
+
 export interface BusinessCandidate {
   id: string;
   type: string;
@@ -17,9 +19,9 @@ export interface BusinessCandidate {
   status: string;
 }
 
-export type BusinessMatchResult =
-  | { kind: "resolved"; business: BusinessCandidate }
-  | { kind: "ambiguous"; candidates: BusinessCandidate[] }
+export type BusinessMatchResult<T extends BusinessCandidate = BusinessCandidate> =
+  | { kind: "resolved"; business: T }
+  | { kind: "ambiguous"; candidates: T[] }
   | { kind: "missing" };
 
 export interface BusinessMatchQuery {
@@ -31,14 +33,29 @@ export interface BusinessMatchQuery {
  * 좁힌 결과가 정확히 하나면 resolved, 둘 이상이면 ambiguous(첫 행 임의 선택 금지),
  * 없으면 missing을 반환한다.
  */
-export function pickUniqueBusinessMatch(
-  candidates: BusinessCandidate[],
+export function pickUniqueBusinessMatch<T extends BusinessCandidate>(
+  candidates: T[],
   query: BusinessMatchQuery
-): BusinessMatchResult {
+): BusinessMatchResult<T> {
   const scoped = candidates.filter(
     (c) => c.addressSigungu === query.sigungu && c.status !== "closed"
   );
   if (scoped.length === 0) return { kind: "missing" };
   if (scoped.length === 1) return { kind: "resolved", business: scoped[0] };
   return { kind: "ambiguous", candidates: scoped };
+}
+
+/**
+ * 지역 판별 결과(RegionSlugView)를 상세 단계까지 유지해 후보를 좁힌다.
+ * URL의 sigungu는 영문 slug이므로 DB의 한글 시군구명과 직접 비교하면 안 된다 —
+ * 항상 지역 판별이 돌려준 실제 시군구명(sigunguName)으로 비교한다. 동명 지역(서울·부산 강서구)은
+ * 두 시도가 같은 시군구명을 쓰므로 이름이 하나뿐인 업체는 확정되고, 같은 이름이 둘 이상이면 ambiguous다.
+ * 미등록 지역(missing)은 후보와 무관하게 missing이다.
+ */
+export function matchBusinessInRegion<T extends BusinessCandidate>(
+  region: RegionSlugView,
+  candidates: T[]
+): BusinessMatchResult<T> {
+  if (region.kind === "missing" || !region.sigunguName) return { kind: "missing" };
+  return pickUniqueBusinessMatch(candidates, { sigungu: region.sigunguName });
 }

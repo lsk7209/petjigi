@@ -17,7 +17,7 @@ for (const pagePath of PAGES_MUST_USE_RESOLVED_REGION) {
     const source = fs.readFileSync(pagePath, "utf8");
     assert.match(
       source,
-      /getCachedResolvedRegion|getCachedRegionSlugView/,
+      /getCachedResolvedRegion|getCachedRegionSlugView|resolveBusinessDetail/,
       `${pagePath} should call getCachedResolvedRegion so an ambiguous sigungu slug (e.g. Seoul/Busan Gangseo) does not silently expose the first matching sido`
     );
     assert.doesNotMatch(
@@ -27,6 +27,13 @@ for (const pagePath of PAGES_MUST_USE_RESOLVED_REGION) {
     );
   });
 }
+
+test("업체 상세 resolver는 지역 slug view(모호 시 후보 전체)와 공통 매칭 규칙을 사용한다", () => {
+  const source = fs.readFileSync("lib/business-detail-resolve.ts", "utf8");
+  assert.match(source, /getCachedRegionSlugView/);
+  assert.match(source, /matchBusinessInRegion/);
+  assert.doesNotMatch(source, /getCachedRegionBySlug/);
+});
 
 test("db-queries exposes getCachedResolvedRegion built on resolveRegionIdentity", () => {
   const source = fs.readFileSync("lib/db-queries.ts", "utf8");

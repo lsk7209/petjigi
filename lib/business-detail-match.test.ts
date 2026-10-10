@@ -36,3 +36,41 @@ test("this helper only narrows by region/status; name+type filtering is the call
   assert.equal(result.kind, "resolved");
   if (result.kind === "resolved") assert.equal(result.business.id, "biz-1");
 });
+
+// ── R02: 지역 판별 결과(resolved/ambiguous/missing)를 상세 단계까지 유지 ──────────
+import { matchBusinessInRegion } from "./business-detail-match";
+import type { RegionSlugView } from "./region-identity";
+
+const resolvedNowon: RegionSlugView = { kind: "resolved", sigunguName: "노원구", sidoName: "서울특별시", sidoSlug: "seoul", ambiguousSidoNames: [] };
+const ambiguousGangseo: RegionSlugView = { kind: "ambiguous", sigunguName: "강서구", sidoName: "", sidoSlug: null, ambiguousSidoNames: ["서울특별시", "부산광역시"] };
+const missingRegion: RegionSlugView = { kind: "missing", sigunguName: null, sidoName: "", sidoSlug: null, ambiguousSidoNames: [] };
+const gangseo = (id: string, name: string): BusinessCandidate => ({ id, type: "vet", name, addressSigungu: "강서구", status: "active" });
+
+test("R02 일반 단일 지역은 기존처럼 해당 시군구의 업체로 확정된다", () => {
+  const result = matchBusinessInRegion(resolvedNowon, [VET_A_SEOUL, VET_A_BUSAN]);
+  assert.equal(result.kind, "resolved");
+});
+
+test("R02 동명 지역(서울·부산 강서구)에서 이름이 하나뿐인 업체는 URL slug가 아니라 저장된 시군구명으로 확정된다", () => {
+  const result = matchBusinessInRegion(ambiguousGangseo, [gangseo("s1", "서울강서병원")]);
+  assert.equal(result.kind, "resolved");
+  if (result.kind === "resolved") assert.equal(result.business.id, "s1");
+});
+
+test("R02 동명 지역에서 같은 이름의 업체가 둘 이상이면 임의의 첫 행이 아니라 ambiguous", () => {
+  const result = matchBusinessInRegion(ambiguousGangseo, [gangseo("s1", "행복동물병원"), gangseo("b1", "행복동물병원")]);
+  assert.equal(result.kind, "ambiguous");
+  if (result.kind === "ambiguous") assert.deepEqual(result.candidates.map((c) => c.id), ["s1", "b1"]);
+});
+
+test("R02 같은 지역·같은 이름의 서로 다른 업체도 ambiguous", () => {
+  const result = matchBusinessInRegion(resolvedNowon, [
+    { ...VET_A_SEOUL, id: "x1" },
+    { ...VET_A_SEOUL, id: "x2" },
+  ]);
+  assert.equal(result.kind, "ambiguous");
+});
+
+test("R02 미등록 지역은 후보가 있어도 missing(404 유지)", () => {
+  assert.equal(matchBusinessInRegion(missingRegion, [VET_A_SEOUL]).kind, "missing");
+});

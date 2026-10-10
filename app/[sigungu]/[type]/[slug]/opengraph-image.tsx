@@ -1,6 +1,4 @@
 import { ImageResponse } from "next/og";
-import { businesses, regions } from "@/db/schema";
-import { and, eq, ne } from "drizzle-orm";
 
 export const dynamic = "force-dynamic";
 export const size = { width: 1200, height: 630 };
@@ -33,16 +31,11 @@ export default async function OgImage({
   let locationName = decodeURIComponent(sigungu);
   let address: string | null = null;
   try {
-    const { db } = await import("@/db/client");
-    const [region, biz] = await Promise.all([
-      db.select({ sigungu: regions.sigungu }).from(regions).where(eq(regions.sigunguSlug, sigungu)).get(),
-      db.select({ address: businesses.address, addressSigungu: businesses.addressSigungu })
-        .from(businesses)
-        .where(and(eq(businesses.type, type), eq(businesses.name, businessName), ne(businesses.status, "closed")))
-        .get(),
-    ]);
-    if (region?.sigungu) locationName = region.sigungu;
-    if (biz?.address) address = biz.address.slice(0, 50);
+    // 상세 페이지와 같은 식별 규칙을 써서 다른 지역의 동명 업체 주소가 섞이지 않게 한다.
+    const { resolveBusinessDetail } = await import("@/lib/business-detail-resolve");
+    const { region, match } = await resolveBusinessDetail(type, sigungu, businessName);
+    if (region.sigunguName) locationName = region.sigunguName;
+    if (match.kind === "resolved" && match.business.address) address = match.business.address.slice(0, 50);
   } catch {
     // fallback
   }
