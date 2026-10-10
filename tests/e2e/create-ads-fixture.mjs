@@ -3,6 +3,7 @@ import { createClient } from '@libsql/client';
 import { mkdirSync, readdirSync, readFileSync, rmSync } from 'node:fs';
 import { dirname, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { seedBody } from './seed-body.mjs';
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), '../..');
 export const FIXTURE_FILE = resolve(root, '.seo-cache/fixtures/ads-decision.sqlite');
@@ -34,7 +35,14 @@ try {
   for (const [slug, type, category] of [['animal-hospital-guide', 'guide', 3], ['pet-insurance-guide', 'blog', 4], ['microchip-registration-complete-guide', 'guide', 1]]) {
     await client.execute({
       sql: 'INSERT INTO contents (id,slug,type,category,title,body,author_name,status,ymyl,published_at,created_at,updated_at) VALUES (?,?,?,?,?,?,?,?,?,?,?,?)',
-      args: [`c-${slug}`, slug, type, category, `QA 합성 ${slug}`, '<h2>합성</h2><p>합성 본문입니다.</p>', 'QA', 'published', 0, d, d, d],
+      args: [`c-${slug}`, slug, type, category, `QA 합성 ${slug}`, slug === 'microchip-registration-complete-guide' ? seedBody(slug) : '<h2>합성</h2><p>합성 본문입니다.</p>', 'QA', 'published', 0, d, d, d],
+    });
+  }
+  // 비공개 보호 검증용: 검토 대기·미래 발행 콘텐츠는 어떤 경로로도 공개되면 안 된다.
+  for (const [slug, status, publishedAt] of [['fixture-draft', 'draft', d], ['fixture-future', 'published', '2099-01-01T00:00:00.000Z']]) {
+    await client.execute({
+      sql: 'INSERT INTO contents (id,slug,type,category,title,body,author_name,status,ymyl,published_at,created_at,updated_at) VALUES (?,?,?,?,?,?,?,?,?,?,?,?)',
+      args: [`c-${slug}`, slug, 'guide', 5, `QA 비공개 ${slug}`, '<h2>비공개</h2><p>공개되면 안 됩니다.</p>', 'QA', status, 0, publishedAt, d, d],
     });
   }
   console.log(JSON.stringify({ FIXTURE_FILE, productionAccess: false }));
