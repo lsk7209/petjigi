@@ -6,7 +6,7 @@ import { PRACTICAL_TOOLS } from "./practical-tools";
 test("시범 도구 3종이 등록돼 있다", () => {
   assert.deepEqual(Object.keys(PRACTICAL_TOOLS).sort(), [
     "animal-hospital-guide",
-    "animal-registration-chip-guide",
+    "microchip-registration-complete-guide",
     "pet-insurance-guide",
   ]);
 });

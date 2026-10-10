@@ -9,7 +9,7 @@ const CHROME = process.env.CHROME_PATH || 'C:/Program Files/Google/Chrome/Applic
 const VIEWPORTS = [[360, 800], [768, 1024], [1440, 900]];
 const PAGES = [
   ['/', 'h1'], ['/guide', 'h1'], ['/guide/fixture-guide', 'h1'], ['/guide/animal-hospital-guide', '#practical-tool'],
-  ['/blog/pet-insurance-guide', '#practical-tool'], ['/blog/animal-registration-chip-guide', '#practical-tool'],
+  ['/blog/pet-insurance-guide', '#practical-tool'], ['/guide/microchip-registration-complete-guide', '#practical-tool'],
   ['/hwaseong/vet', 'h1'], [`/vet/hwaseong/${encodeURIComponent('합성병원')}`, 'section[aria-label="데이터 범위"]'],
   ['/about', 'h1'], ['/contact', 'h1'], ['/privacy', 'h1'], ['/disclosure', 'h1'], ['/advertising', 'h1'],
 ];

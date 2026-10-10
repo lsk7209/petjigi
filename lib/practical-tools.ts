@@ -76,7 +76,7 @@ export const PRACTICAL_TOOLS: Readonly<Record<string, PracticalToolData>> = {
     ],
     note: "병원 정보는 변경될 수 있어 방문 전 병원에 직접 확인하세요. 이 표는 진단이나 치료 판단을 대신하지 않으며, 증상이 급하면 바로 가까운 동물병원에 연락하세요.",
   },
-  "animal-registration-chip-guide": {
+  "microchip-registration-complete-guide": {
     kind: "checklist",
     title: "동물등록 확인 순서와 준비물",
     intro:
