@@ -14,7 +14,7 @@ const require = createRequire(import.meta.url);
 
 // Actual AdSlot + provider + policy matrix. Only framework rendering adapters
 // are stubbed; no live credentials, scripts, DB or network are used.
-function fixture(env = {}) {
+function fixture(env = {}, decision = 'allow') {
   const cache = new Map();
   function load(relative) {
     const filename = resolve(root, relative);
@@ -27,6 +27,7 @@ function fixture(env = {}) {
     runInNewContext(outputText, {
       module: fixtureModule, exports: fixtureModule.exports, process: { env },
       require: name => {
+        if (name === '@/components/ads/use-page-ad-decision') return { usePageAdDecision: () => decision };
         if (name === 'next/link') return function FixtureLink({ children, ...props }) { return React.createElement('a', props, children); };
         if (name === 'next/script') return function FixtureScript({ children, strategy, ...props }) { return React.createElement('script', { ...props, 'data-strategy': strategy }, children); };
         if (name.startsWith('@/components/')) return load(`${name.slice(2)}.tsx`);
@@ -87,4 +88,23 @@ test('incomplete configuration remains a house promo without ad markup', () => {
     assert.match(html, /사이트 추천/);
     assert.doesNotMatch(html, /<ins|<script/);
   }
+});
+
+const SLOT_ENV = { NEXT_PUBLIC_ADSENSE_ID: 'ca-pub-fixture', NEXT_PUBLIC_AD_SLOT_HORIZONTAL: '1234567890' };
+
+test('판정 block이면 AdSense 슬롯·하우스 광고 모두 렌더하지 않는다', () => {
+  assert.equal(fixture(SLOT_ENV, 'block')({ format: 'horizontal' }), '');
+  assert.equal(fixture({}, 'block')({ format: 'horizontal' }), '');
+});
+
+test('판정 pending이면 ins/push 없이 자리만 예약한다', () => {
+  const html = fixture(SLOT_ENV, 'pending')({ format: 'horizontal', className: 'fixture-slot' });
+  assert.doesNotMatch(html, /<ins|<script|adsbygoogle/);
+  assert.match(html, /min-height:90px/);
+});
+
+test('판정 allow에서만 ins와 push가 생긴다', () => {
+  const html = fixture(SLOT_ENV, 'allow')({ format: 'horizontal' });
+  assert.match(html, /<ins class="adsbygoogle"/);
+  assert.match(html, /adsbygoogle = window\.adsbygoogle/);
 });

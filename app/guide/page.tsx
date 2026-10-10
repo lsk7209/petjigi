@@ -99,7 +99,10 @@ export default async function GuideIndexPage() {
       {guides.length > 0 && (
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(GUIDE_LIST) }} />
       )}
-      <main className="max-w-4xl mx-auto px-4 py-8 sm:py-12">
+      <main
+        className="max-w-4xl mx-auto px-4 py-8 sm:py-12"
+        {...(guides.length === 0 ? { "data-ads-policy": "block" } : {})}
+      >
         {/* 브레드크럼 */}
         <nav className="text-xs text-[var(--brand-text-secondary)] mb-5 sm:mb-6 flex items-center gap-1.5 flex-wrap" aria-label="breadcrumb">
           <Link href="/" className="hover:text-[var(--brand-accent)] transition-colors">홈</Link>

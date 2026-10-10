@@ -3,6 +3,7 @@
 import Link from "next/link";
 import Script from "next/script";
 import { useAdPolicy } from "@/components/providers/ad-policy-provider";
+import { usePageAdDecision } from "@/components/ads/use-page-ad-decision";
 import type { AdType } from "@/db/schema/ad-policies";
 
 interface AdSlotProps {
@@ -59,6 +60,7 @@ const HOUSE_ADS: Record<string, { href: string; title: string; desc: string; cta
 export function AdSlot({ adType, slotId, format = "auto", className }: AdSlotProps) {
   const { getPolicy } = useAdPolicy();
   const policy = getPolicy(adType);
+  const decision = usePageAdDecision();
 
   if (policy === "block") return null;
 
@@ -71,6 +73,11 @@ export function AdSlot({ adType, slotId, format = "auto", className }: AdSlotPro
   }
 
   if (adType === "adsense") {
+    if (decision === "block") return null;
+    // 판정 보류 중에는 광고·하우스 콘텐츠 없이 자리만 예약한다(CLS 방지).
+    if (decision === "pending") {
+      return <div className={className} style={{ minHeight: FORMAT_MIN_HEIGHT[format] ?? 100 }} aria-hidden="true" />;
+    }
     const adsenseId = process.env.NEXT_PUBLIC_ADSENSE_ID;
     const resolvedSlotId = slotId ?? ENV_SLOT_IDS[format];
 

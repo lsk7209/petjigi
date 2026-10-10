@@ -17,6 +17,7 @@ import {
 import type { CategoryId } from "@/lib/category";
 import { CategoryCta } from "@/components/content/category-cta";
 import { AdSlot } from "@/components/ads/ad-slot";
+import { adsPolicyAttrs } from "@/lib/ads-policy";
 import { AdPolicyProvider } from "@/components/providers/ad-policy-provider";
 import { AdsenseTrustSection } from "@/components/content/adsense-trust-section";
 import { RegionViewTracker } from "@/components/analytics/region-view-tracker";
@@ -287,7 +288,7 @@ export default async function SigunguTypePage({
       />
       <main
         className="max-w-5xl mx-auto px-4 py-10"
-        {...(businessList.length === 0 ? { "data-ads-policy": "block" } : {})}
+        {...(businessList.length === 0 ? { "data-ads-policy": "block" } : adsPolicyAttrs(meta.categoryId))}
       >
         {/* 브레드크럼 */}
         <nav

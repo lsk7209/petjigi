@@ -37,3 +37,28 @@ test("일반 콘텐츠 경로에서는 Auto ads를 허용한다", () => {
 test("404 또는 오류 화면의 DOM 정책 표시는 경로와 무관하게 Auto ads를 막는다", () => {
   assert.equal(isAutoAdsEligiblePath("/missing-page", true), false);
 });
+
+import { decideAdPage } from "./ads-policy";
+
+test("장례 업체 상세 /funeral/{지역}/{업체} 도 자동광고 대상에서 제외된다", () => {
+  assert.equal(isAutoAdsEligiblePath("/funeral/hwaseong/example-business"), false);
+  assert.equal(isAutoAdsEligiblePath("/funeral/hwaseong"), false);
+  assert.equal(isAutoAdsEligiblePath("/vet/hwaseong/example-business"), true);
+});
+
+test("구조동물 목록·상세는 광고 대상이 아니다", () => {
+  assert.equal(isAutoAdsEligiblePath("/rescue"), false);
+  assert.equal(isAutoAdsEligiblePath("/rescue/abc"), false);
+});
+
+test("decideAdPage: 렌더 완료 전에는 pending, 시간이 아니라 완료 신호로만 allow", () => {
+  assert.equal(decideAdPage({ pathname: "/guide/x", marker: null, renderComplete: false }), "pending");
+  assert.equal(decideAdPage({ pathname: "/guide/x", marker: null, renderComplete: true }), "allow");
+  assert.equal(decideAdPage({ pathname: "/guide/x", marker: "pending", renderComplete: true }), "pending");
+});
+
+test("decideAdPage: 차단 경로·마커는 렌더 완료 전에도 block", () => {
+  assert.equal(decideAdPage({ pathname: "/privacy", marker: null, renderComplete: false }), "block");
+  assert.equal(decideAdPage({ pathname: "/guide/x", marker: "block", renderComplete: false }), "block");
+  assert.equal(decideAdPage({ pathname: "/funeral/a/b", marker: null, renderComplete: true }), "block");
+});
