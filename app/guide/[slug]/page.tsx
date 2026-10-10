@@ -24,6 +24,7 @@ import { OutboundLinkTracker } from "@/components/analytics/outbound-link-tracke
 import { GuideViewTracker } from "@/components/analytics/guide-view-tracker";
 import { getReviewEvidence } from "@/lib/ymyl";
 import { adsPolicyAttrs } from "@/lib/ads-policy";
+import { PracticalTool } from "@/components/content/practical-tool";
 
 export const dynamic = "force-dynamic";
 
@@ -296,6 +297,8 @@ export default async function GuidePage({
           dangerouslySetInnerHTML={{ __html: bodyWithIds }}
         />
         <OutboundLinkTracker />
+
+        <PracticalTool slug={slug} />
 
         {/* 본문 하단 광고 */}
         <AdPolicyProvider category={categoryId}>

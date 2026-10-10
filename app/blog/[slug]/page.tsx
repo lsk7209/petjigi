@@ -24,6 +24,7 @@ import { OutboundLinkTracker } from "@/components/analytics/outbound-link-tracke
 import { GuideViewTracker } from "@/components/analytics/guide-view-tracker";
 import { getReviewEvidence } from "@/lib/ymyl";
 import { adsPolicyAttrs } from "@/lib/ads-policy";
+import { PracticalTool } from "@/components/content/practical-tool";
 
 export const dynamic = "force-dynamic";
 
@@ -346,6 +347,8 @@ export default async function BlogPostPage({
           dangerouslySetInnerHTML={{ __html: bodyWithIds }}
         />
         <OutboundLinkTracker />
+
+        <PracticalTool slug={slug} />
 
         <AdPolicyProvider category={categoryId}>
           <AdSlot adType="adsense" format="rectangle" className="my-6" />
