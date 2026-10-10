@@ -1,13 +1,16 @@
 # Status | 마지막: 2026-10-10
 ## 현재 작업
-(1) 후속 안정화 R01~R06: R01~R04 구현·단위/통합 테스트 완료 → 로컬 브랜치 fix/stabilize-r01-r04 커밋 5c80317 (push·배포 안 함). R05(e2e·CI)·R06(DB 계측) 미착수.
-(2) 홈 시안 구현: 브랜치 feat/home-approved-design. 코드 미착수, 이미지 생성 스크립트만 준비(scripts/home-assets/generate.py). 이미지 자산 확보가 선행 과제.
+(1) 후속 안정화 R01~R06: R01~R04 구현·단위/통합 테스트 완료 → PR #23 병합·운영 배포 완료(main 7f300b4). R05(e2e·CI)·R06(DB 계측) 미착수.
+(2) 홈 시안: fix/stabilize-r01-r04에서 홈·헤더 코드 적용+로컬 브라우저 검증 완료(미커밋·미배포). 승인 시안 PNG 원본 미확인 → CODEX_HANDOFF §B 명세 기준 구현. 스크린샷: docs/design/home-verify/. 이미지 기록: docs/home-assets.md.
 ## 최근 변경
+- 10-10: 홈 재구성(components/home/*, lib/home-guides.ts)+공통 헤더(8메뉴·GET 검색·1100px 모바일 메뉴 Esc 포커스 복귀). hero-illustration 삭제, 헤더·홈 테스트 갱신
 - 10-10: R01 등록대행 ETL 완전 수집 판정+실행 락+재시도. 원본 미확인 행은 폐업 확정 없이 paused(재등장 시 active). 불완전 수집은 exit 1
 - 10-10: R02 상세가 지역 판별(resolved/ambiguous/missing) 유지, 동명 업체는 주소·전화·지도 선택 안내(noindex), 주변 시설 시도 한정
 - 10-10: R03 등록대행 '운영 중' 제거(lib/business-status-wording.ts), R04 목차 빈 id·엔티티 id 처리
 ## TODO
-- [ ] 홈 시안: 유효한 GEMINI_API_KEY 또는 사용권 확인된 사진 10종 확보 후 구현(자산 목록은 generate.py ASSETS)
+- [x] 홈 AI 이미지 10종 생성·WebP 준비(내장 image_gen, 별도 API 키 미사용)
+- [x] 홈 구현·로컬 브라우저 검증(문서 명세 기준)
+- [ ] 홈: 승인 시안 원본 확보 시 비교, 커밋·운영 반영은 승인 후
 - [ ] R05: tests/e2e(격리 SQLite 픽스처+next build/start+playwright-core)·CI job. next.config distDir env 필요
 - [ ] R06: 요청별 쿼리 수 계측(db 클라이언트 계층), 근거 있는 최소 최적화
 - [ ] 운영 반영 전 승인: R01 코드 배포(paused 의미 변경), 기존 closed 4,873건 처리 방침

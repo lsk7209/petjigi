@@ -1,143 +1,156 @@
 "use client";
 
 import Link from "next/link";
-import { useState, useEffect } from "react";
+import { useEffect, useRef, useState } from "react";
+import "./header.css";
 
 const NAV_LINKS = [
-  { label: "블로그",  href: "/blog" },
-  { label: "가이드",  href: "/guide" },
-  { label: "질환정보", href: "/condition" },
-  { label: "동물병원", href: "/sido/seoul" },
-  { label: "펫보험",  href: "/insurance/compare" },
-  { label: "견종도감", href: "/breed" },
+  { label: "동물병원", href: "/#hm-local" },
+  { label: "건강정보", href: "/condition" },
+  { label: "사료·영양", href: "/category/nutrition" },
+  { label: "생활·케어", href: "/category/care" },
+  { label: "입양·등록", href: "/category/adoption" },
+  { label: "보험·제도", href: "/category/insurance" },
+  { label: "장례·추모", href: "/category/memorial" },
+  { label: "가이드", href: "/guide" },
 ];
+
+const DESKTOP_QUERY = "(min-width: 1100px)";
+
+function SearchIcon() {
+  return (
+    <svg
+      width="18"
+      height="18"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.8"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      aria-hidden="true"
+    >
+      <circle cx="11" cy="11" r="7" />
+      <path d="M20 20l-3.5-3.5" />
+    </svg>
+  );
+}
+
+// JS 없이도 /search?q= 로 이동하는 실제 검색 폼
+function SearchForm({ id }: { id: string }) {
+  return (
+    <form
+      action="/search"
+      method="get"
+      role="search"
+      className="pj-search"
+    >
+      <label htmlFor={id} className="sr-only">
+        사이트 검색어
+      </label>
+      <input
+        id={id}
+        type="search"
+        name="q"
+        placeholder="병원·증상·가이드 검색"
+        autoComplete="off"
+      />
+      <button type="submit" aria-label="검색">
+        <SearchIcon />
+      </button>
+    </form>
+  );
+}
 
 export function Header() {
   const [open, setOpen] = useState(false);
+  const triggerRef = useRef<HTMLButtonElement>(null);
+
+  const closeAndRestoreFocus = () => {
+    setOpen(false);
+    triggerRef.current?.focus();
+  };
 
   useEffect(() => {
     if (!open) return;
     const originalOverflow = document.body.style.overflow;
     document.body.style.overflow = "hidden";
     const handleKeyDown = (e: KeyboardEvent) => {
-      if (e.key === "Escape") {
-        setOpen(false);
-      }
+      if (e.key === "Escape") closeAndRestoreFocus();
     };
+    const desktop = window.matchMedia(DESKTOP_QUERY);
+    const handleResize = () => desktop.matches && setOpen(false);
     window.addEventListener("keydown", handleKeyDown);
+    desktop.addEventListener("change", handleResize);
     return () => {
       document.body.style.overflow = originalOverflow;
       window.removeEventListener("keydown", handleKeyDown);
+      desktop.removeEventListener("change", handleResize);
     };
   }, [open]);
 
   return (
     <header className="pj-header">
       <div className="pj-header-inner">
-        {/* 로고 */}
-        <Link
-          href="/"
-          className="pj-logo"
-          onClick={() => setOpen(false)}
-          style={{ flexShrink: 0 }}
-        >
+        <Link href="/" className="pj-logo" onClick={() => setOpen(false)}>
           <span className="pj-logo-mark" aria-hidden="true" />
-          펫지기
+          <span className="pj-logo-text">
+            <span className="pj-logo-name">펫지기</span>
+            <span className="pj-logo-tag">반려생활의 모든 순간, 함께.</span>
+          </span>
         </Link>
 
-        {/* 데스크탑 Nav */}
-        <nav className="pj-nav hidden! md:flex!" aria-label="주요 메뉴">
+        <nav className="pj-nav pj-only-desktop" aria-label="주요 메뉴">
           {NAV_LINKS.map((item) => (
-            <Link key={item.href + item.label} href={item.href}>
+            <Link key={item.label} href={item.href}>
               {item.label}
             </Link>
           ))}
         </nav>
 
-        <div className="flex-1" />
-
-        {/* 우측 액션 */}
-        <div className="hidden md:flex items-center gap-2">
-          <Link
-            href="/search"
-            className="pj-btn pj-btn-ghost pj-btn-sm"
-            aria-label="검색"
-          >
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-              <circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/>
-            </svg>
-            검색
-          </Link>
+        <div className="pj-only-desktop pj-header-search">
+          <SearchForm id="header-search" />
         </div>
 
-        {/* 모바일 햄버거 / 닫기 */}
         <button
+          ref={triggerRef}
           type="button"
-          className="md:hidden! pj-btn pj-btn-ghost pj-btn-sm"
-          style={{ padding: 0, width: 44, height: 44, minWidth: 44, minHeight: 44, justifyContent: "center" }}
+          className="pj-menu-btn pj-only-mobile"
           aria-label={open ? "메뉴 닫기" : "메뉴 열기"}
           aria-expanded={open}
+          aria-controls="pj-mobile-menu"
           onClick={() => setOpen((v) => !v)}
         >
-          {open ? (
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-              <path d="M18 6L6 18M6 6l12 12" />
-            </svg>
-          ) : (
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" aria-hidden="true">
-              <path d="M4 7h16M4 12h16M4 17h16" />
-            </svg>
-          )}
+          <svg
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="1.8"
+            strokeLinecap="round"
+            aria-hidden="true"
+          >
+            <path
+              d={open ? "M18 6L6 18M6 6l12 12" : "M4 7h16M4 12h16M4 17h16"}
+            />
+          </svg>
         </button>
       </div>
 
-      {/* 모바일 카테고리 칩 바 */}
       {open && (
-        <div className="md:hidden border-t border-[var(--brand-border)] bg-[var(--brand-bg)]">
-          {/* 카테고리 칩 스크롤 */}
-          <div className="flex gap-1.5 px-4 py-2 overflow-x-auto">
-            {[
-              { slug: "health",   name: "건강·의료",    color: "var(--cat-3)",   soft: "var(--cat-3-soft)" },
-              { slug: "nutrition", name: "사료·영양",    color: "var(--cat-2)",   soft: "var(--cat-2-soft)" },
-              { slug: "insurance",name: "보험·법률",    color: "var(--cat-4)",   soft: "var(--cat-4-soft)" },
-              { slug: "care",     name: "케어·라이프",  color: "var(--cat-5)",   soft: "var(--cat-5-soft)" },
-              { slug: "adoption", name: "입양·등록",    color: "var(--cat-1)",   soft: "var(--cat-1-soft)" },
-              { slug: "memorial", name: "장례·추모",    color: "var(--cat-6)",   soft: "var(--cat-6-soft)" },
-            ].map((c) => (
-              <Link
-                key={c.slug}
-                href={`/category/${c.slug}`}
-                onClick={() => setOpen(false)}
-                className="pj-pill shrink-0"
-                style={{ background: c.soft, color: c.color, fontWeight: 600, fontSize: 12 }}
-              >
-                {c.name}
-              </Link>
-            ))}
-          </div>
-
-          {/* 전체 메뉴 */}
-          <nav className="px-4 pb-3 flex flex-col gap-0.5">
+        <div id="pj-mobile-menu" className="pj-mobile-menu pj-only-mobile">
+          <SearchForm id="mobile-search" />
+          <nav aria-label="전체 메뉴">
             {NAV_LINKS.map((item) => (
               <Link
-                key={item.href + item.label}
+                key={item.label}
                 href={item.href}
                 onClick={() => setOpen(false)}
-                className="px-3 py-3 text-sm rounded-xl text-[var(--brand-text-secondary)] hover:text-[var(--brand-text)] hover:bg-[var(--brand-border)] transition-colors"
               >
                 {item.label}
               </Link>
             ))}
-            <Link
-              href="/search"
-              onClick={() => setOpen(false)}
-              className="px-3 py-3 text-sm rounded-xl text-[var(--brand-text-secondary)] hover:text-[var(--brand-text)] hover:bg-[var(--brand-border)] transition-colors flex items-center gap-2 border-t border-[var(--brand-border)] mt-1 pt-3"
-            >
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                <circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/>
-              </svg>
-              통합 검색
-            </Link>
           </nav>
         </div>
       )}

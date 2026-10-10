@@ -1,5 +1,5 @@
 import assert from 'node:assert/strict';
-import { readFileSync } from 'node:fs';
+import { existsSync, readFileSync } from 'node:fs';
 import { createRequire } from 'node:module';
 import { resolve, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -24,9 +24,14 @@ const stubs = {
   '@/components/ads/ad-slot': { AdSlot: emptyComponent },
   '@/components/providers/ad-policy-provider': { AdPolicyProvider: ({ children }) => children },
   '@/components/content/adsense-trust-section': { AdsenseTrustSection: emptyComponent },
-  '@/components/home/hero-illustration': { HeroIllustration: emptyComponent },
+  'next/image': ({ src, alt, width, height, fill, preload, sizes, ...rest }) =>
+    React.createElement('img', { src, alt, width, height, sizes, 'data-fill': fill ? '1' : undefined, 'data-preload': preload ? '1' : undefined, ...rest }),
+  'next/navigation': { useRouter: () => ({ push() {} }) },
   './home.css': {},
 };
+
+// 확장자가 없는 경로는 .ts 다음 .tsx 순으로 찾는다
+const withExtension = base => ['.ts', '.tsx'].map(ext => `${base}${ext}`).find(existsSync) ?? `${base}.ts`;
 
 function load(relative) {
   const filename = resolve(root, relative);
@@ -42,8 +47,9 @@ function load(relative) {
     process: { env: { NEXT_PUBLIC_SITE_URL: 'https://petjigi.kr' } },
     require: name => {
       if (Object.hasOwn(stubs, name)) return stubs[name];
-      if (name.startsWith('@/lib/')) return load(`${name.slice(2)}.ts`);
-      if (name.startsWith('.')) return load(`${resolve(dirname(filename), name)}.ts`);
+      if (name.startsWith('@/lib/')) return load(withExtension(resolve(root, name.slice(2))));
+      if (name.startsWith('@/components/home/')) return load(withExtension(resolve(root, name.slice(2))));
+      if (name.startsWith('.')) return load(withExtension(resolve(dirname(filename), name)));
       if (name === 'react/jsx-runtime' || name === 'react') return require(name);
       throw new Error(`Unexpected fixture dependency: ${name}`);
     },
