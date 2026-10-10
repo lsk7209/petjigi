@@ -1,4 +1,5 @@
 import { db } from "@/db/client";
+import { sitemapLoc } from "@/lib/seo/sitemap-xml";
 import { publicContentCondition } from "@/lib/content-publication-sql";
 import { contents, breeds } from "@/db/schema";
 import { eq, and, desc } from "drizzle-orm";
@@ -11,9 +12,9 @@ export const revalidate = 3600;
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://petjigi.kr";
 
 function contentUrl(type: string, slug: string): string {
-  if (type === "blog") return `${SITE_URL}/blog/${slug}`;
-  if (type === "condition") return `${SITE_URL}/condition/${slug}`;
-  return `${SITE_URL}/guide/${slug}`;
+  if (type === "blog") return sitemapLoc(SITE_URL, "blog", slug);
+  if (type === "condition") return sitemapLoc(SITE_URL, "condition", slug);
+  return sitemapLoc(SITE_URL, "guide", slug);
 }
 
 function priority(type: string): string {
@@ -62,7 +63,7 @@ export async function GET() {
     });
 
     const breedUrls = breedRows.map((r) => {
-      const loc = `${SITE_URL}/breed/${r.species}/${r.slug}`;
+      const loc = sitemapLoc(SITE_URL, "breed", r.species, r.slug);
       const lastmod = r.updatedAt?.split("T")[0] ?? null;
       return urlEntry(loc, lastmod, "monthly", "0.7");
     });
