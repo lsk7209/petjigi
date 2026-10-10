@@ -41,3 +41,8 @@ dog-walk-guide(메타 설명 포함), pet-insurance-guide(30일 면책·10~30%·
 3. **AdSense 계정**: 실제 심사 사유, 자동광고 URL 제외 설정, EEA/영국/스위스 CMP 적용 여부, publisher ID 일치, ads.txt 상태.
 4. **운영자 사실**: 쿠팡파트너스 등 제휴 가입·계약 여부(가입했다면 링크 게재 시 고지 갱신), AI 사용 범위 문구 적합성, 문의 메일함 수신 여부(SITE_IDENTITY UNKNOWN), 수의사/전문가 검토 계획(검토 기록 미생성).
 5. **콘텐츠 검토**: 동물보호법 제13조·시행규칙, 보험사 약관, 품종 질환 문헌 원문 대조.
+
+## 운영 DB 반영 기록 (2026-10-10, 사용자 승인 후)
+- `scripts/apply-content-update.ts`(body·metaDescription·sources CAS, 시드가 정의한 컬럼 중 달라진 것만 변경)로 dog-walk-guide / pet-insurance-guide / maine-coon-care-guide 적용. 격리 DB에서 dry-run·apply·재실행 no-op·restore 검증 후 운영 실행.
+- 적용 전 원본은 `.backup-prod/<slug>.<id>.content.json`(gitignore)에 저장. 복구: `--restore --yes <slug>`.
+- 사후 재실행 dry-run 3건 모두 noop_identical. status·publishedAt·reviewer 필드 불변.
