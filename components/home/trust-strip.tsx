@@ -10,18 +10,18 @@ interface TrustItem {
 const TRUST_ITEMS: TrustItem[] = [
   {
     icon: "book",
-    title: "신뢰할 수 있는 정보",
+    title: "출처와 기준일 표시",
     body: "공공데이터와 공식 자료를 바탕으로, 출처와 기준일을 함께 안내합니다.",
   },
   {
     icon: "people",
-    title: "반려가족과 함께 성장",
+    title: "문의로 다듬는 정보",
     body: "문의로 남겨 주신 의견을 확인하며 정보를 다듬어 갑니다.",
   },
   {
     icon: "heart",
-    title: "모두를 위한 반려문화",
-    body: "광고·제휴 링크는 본문과 구분해 표시하고, 추모 페이지에는 광고를 두지 않습니다.",
+    title: "광고와 정보의 분리",
+    body: "광고는 본문과 구분해 표시하고, 추모 페이지에는 광고를 두지 않습니다.",
   },
 ];
 
