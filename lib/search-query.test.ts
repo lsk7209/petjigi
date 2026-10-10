@@ -5,6 +5,7 @@ import {
   isValidSearchQueryLength,
   likeLiteralPattern,
   isSupportedSearchType,
+  splitSearchTokens,
   SEARCH_CACHE_HARD_CAP,
 } from "./search-query";
 
@@ -78,4 +79,10 @@ test("연속 삽입 1000건에도 상한을 넘지 않는다", () => {
     setBoundedSearchCache(cache, `k-${i}`, live(), NOW);
     assert.ok(cache.size <= SEARCH_CACHE_HARD_CAP);
   }
+});
+
+test("splitSearchTokens splits on whitespace, dedupes and caps tokens", () => {
+  assert.deepEqual(splitSearchTokens("  강남   동물병원 "), ["강남", "동물병원"]);
+  assert.deepEqual(splitSearchTokens("구토 구토"), ["구토"]);
+  assert.equal(splitSearchTokens("a b c d e f g").length, 5);
 });
