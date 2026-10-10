@@ -1,6 +1,8 @@
 import assert from "node:assert/strict";
+import { readdirSync, readFileSync } from "node:fs";
 import test from "node:test";
 import {
+  URINARY_WAIT_THRESHOLD,
   countStoredSources,
   evaluatePublicationCandidate,
   evaluateChangedHighRiskContent,
@@ -87,4 +89,33 @@ test("runtime publication gate accepts both array and serialized source storage"
     }),
     []
   );
+});
+
+test("urinary wait-threshold copy is flagged for published high-risk content", () => {
+  for (const body of [
+    "소변이 12시간 이상 없음 (특히 수컷)",
+    "12시간 이상 소변이 전혀 없음 → 응급",
+    "소변을 24시간 동안 못 봄",
+  ]) {
+    assert.deepEqual(evaluateChangedHighRiskContent({ ...validHighRisk, body }), ["URINARY_WAIT_THRESHOLD"], body);
+  }
+});
+
+test("straining-without-urine copy without a wait time is not flagged", () => {
+  assert.deepEqual(
+    evaluateChangedHighRiskContent({
+      ...validHighRisk,
+      body: "소변을 보려고 반복해서 힘주지만 거의 또는 전혀 나오지 않으면 즉시 진료받으세요. 마취 전 8~12시간 금식",
+    }),
+    []
+  );
+});
+
+test("no source file keeps the 12-hour urinary wait threshold", () => {
+  const files = [
+    "app/condition/page.tsx",
+    ...readdirSync("db/seeds").filter((f) => f.endsWith(".ts")).map((f) => `db/seeds/${f}`),
+  ];
+  const hits = files.filter((f) => URINARY_WAIT_THRESHOLD.test(readFileSync(f, "utf8")));
+  assert.deepEqual(hits, []);
 });

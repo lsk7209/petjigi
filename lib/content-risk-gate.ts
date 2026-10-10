@@ -18,48 +18,72 @@ export interface ContentRiskGateRecord {
 export type ContentRiskIssue =
   | "MISSING_SOURCES"
   | "MISSING_DISCLAIMER"
-  | "UNVERIFIED_REVIEW_CLAIM";
+  | "UNVERIFIED_REVIEW_CLAIM"
+  | "URINARY_WAIT_THRESHOLD";
 
 const REVIEW_CLAIM = /전문가 검토|수의사 검토|의료진 검토/;
+
+/** "소변이 N시간 이상 없음"처럼 요도 폐색 대응을 시간 경과 뒤로 미루게 읽히는 표현 */
+export const URINARY_WAIT_THRESHOLD =
+  /(?:소변|배뇨)[^.<\n]{0,15}?\d+\s*시간[^.<\n]{0,8}(?:없|못|안)|\d+\s*시간\s*(?:이상|동안)?\s*(?:소변|배뇨)[^.<\n]{0,10}(?:없|못|안)/;
 
 export function isHighRiskContent(record: ContentRiskGateRecord): boolean {
   return record.ymyl === true || [3, 4, 6].includes(record.category ?? -1);
 }
 
-export function evaluateChangedHighRiskContent(record: ContentRiskGateRecord): ContentRiskIssue[] {
+export function evaluateChangedHighRiskContent(
+  record: ContentRiskGateRecord,
+): ContentRiskIssue[] {
   if (record.status !== "published" || !isHighRiskContent(record)) return [];
 
   const issues: ContentRiskIssue[] = [];
   if (record.sourceCount === 0) issues.push("MISSING_SOURCES");
   if (!record.disclaimer?.trim()) issues.push("MISSING_DISCLAIMER");
-  if (REVIEW_CLAIM.test([
-    record.metaTitle,
-    record.metaDescription,
-    record.body,
-  ].filter(Boolean).join("\n"))) {
+  if (
+    REVIEW_CLAIM.test(
+      [record.metaTitle, record.metaDescription, record.body]
+        .filter(Boolean)
+        .join("\n"),
+    )
+  ) {
     issues.push("UNVERIFIED_REVIEW_CLAIM");
+  }
+  if (
+    URINARY_WAIT_THRESHOLD.test(
+      [record.metaTitle, record.metaDescription, record.body, record.disclaimer]
+        .filter(Boolean)
+        .join("\n"),
+    )
+  ) {
+    issues.push("URINARY_WAIT_THRESHOLD");
   }
   return issues;
 }
 
 export function countStoredSources(value: unknown): number {
   if (Array.isArray(value)) {
-    return value.filter((item) => typeof item === "string" && item.trim().length > 0).length;
+    return value.filter(
+      (item) => typeof item === "string" && item.trim().length > 0,
+    ).length;
   }
   if (typeof value !== "string" || !value.trim()) return 0;
   try {
     const parsed: unknown = JSON.parse(value);
     return Array.isArray(parsed)
-      ? parsed.filter((item) => typeof item === "string" && item.trim().length > 0).length
+      ? parsed.filter(
+          (item) => typeof item === "string" && item.trim().length > 0,
+        ).length
       : 0;
   } catch {
     return 0;
   }
 }
 
-export function evaluatePublicationCandidate(record: Omit<ContentRiskGateRecord, "status" | "sourceCount"> & {
-  sources: unknown;
-}): ContentRiskIssue[] {
+export function evaluatePublicationCandidate(
+  record: Omit<ContentRiskGateRecord, "status" | "sourceCount"> & {
+    sources: unknown;
+  },
+): ContentRiskIssue[] {
   return evaluateChangedHighRiskContent({
     ...record,
     status: "published",
@@ -67,7 +91,9 @@ export function evaluatePublicationCandidate(record: Omit<ContentRiskGateRecord,
   });
 }
 
-export function parseAddedLineRanges(diff: string): Map<string, ChangedLineRange[]> {
+export function parseAddedLineRanges(
+  diff: string,
+): Map<string, ChangedLineRange[]> {
   const result = new Map<string, ChangedLineRange[]>();
   let currentFile: string | null = null;
 
@@ -83,7 +109,8 @@ export function parseAddedLineRanges(diff: string): Map<string, ChangedLineRange
     if (!match) continue;
     const start = Number(match[1]);
     const count = match[2] === undefined ? 1 : Number(match[2]);
-    if (count > 0) result.get(currentFile)?.push({ start, end: start + count - 1 });
+    if (count > 0)
+      result.get(currentFile)?.push({ start, end: start + count - 1 });
   }
 
   return result;
@@ -92,17 +119,22 @@ export function parseAddedLineRanges(diff: string): Map<string, ChangedLineRange
 export function rangesOverlap(
   recordStart: number,
   recordEnd: number,
-  ranges: ChangedLineRange[]
+  ranges: ChangedLineRange[],
 ): boolean {
-  return ranges.some((range) => range.start <= recordEnd && range.end >= recordStart);
+  return ranges.some(
+    (range) => range.start <= recordEnd && range.end >= recordStart,
+  );
 }
 
 export function includeEntireFiles(
   rangesByFile: Map<string, ChangedLineRange[]>,
-  files: string[]
+  files: string[],
 ): Map<string, ChangedLineRange[]> {
   for (const file of files) {
-    if (file) rangesByFile.set(file.replaceAll("\\", "/"), [{ start: 1, end: Number.MAX_SAFE_INTEGER }]);
+    if (file)
+      rangesByFile.set(file.replaceAll("\\", "/"), [
+        { start: 1, end: Number.MAX_SAFE_INTEGER },
+      ]);
   }
   return rangesByFile;
 }
