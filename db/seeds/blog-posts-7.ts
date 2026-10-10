@@ -364,7 +364,7 @@ const BLOG_POSTS_7: NewContent[] = [
   <li><strong>생후 3~4개월</strong>: 유치 빠지기 시작 — 절치(앞니)부터</li>
   <li><strong>생후 4~5개월</strong>: 송곳니 교환</li>
   <li><strong>생후 5~7개월</strong>: 대구치·소구치 교환</li>
-  <li><strong>생후 7개월</strong>: AKC 기준 영구치(42개) 교환 완료가 목표</li>
+  <li><strong>생후 6~8개월</strong>: AKC는 보통 6개월 무렵 영구치(42개) 교환이 끝나며 길게는 8개월까지 걸리기도 한다고 설명</li>
 </ul>
 
 <h2>치아 교환 시기 증상</h2>
