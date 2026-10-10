@@ -30,10 +30,20 @@ export function likeLiteralPattern(q: string): string {
   return `%${escaped}%`;
 }
 
+export const SEARCH_MAX_TOKENS = 5;
+
+/** 공백 기준으로 검색어를 토큰화한다(중복 제거, 최대 SEARCH_MAX_TOKENS개). 토큰은 AND로 매칭한다. */
+export function splitSearchTokens(q: string): string[] {
+  const tokens = q.split(/\s+/).filter(Boolean);
+  return [...new Set(tokens)].slice(0, SEARCH_MAX_TOKENS);
+}
+
 export type AllowedSearchType = "business" | "guide" | null;
 
 /** searchParams의 type 값이 지원되는 값인지 검사한다. */
-export function isSupportedSearchType(type: string | null): type is AllowedSearchType {
+export function isSupportedSearchType(
+  type: string | null,
+): type is AllowedSearchType {
   return type === null || type === "business" || type === "guide";
 }
 
@@ -46,7 +56,7 @@ export function setBoundedSearchCache<K, V extends CacheEntryLike>(
   key: K,
   value: V,
   now: number,
-  hardCap: number = SEARCH_CACHE_HARD_CAP
+  hardCap: number = SEARCH_CACHE_HARD_CAP,
 ): void {
   cache.delete(key);
   cache.set(key, value);
