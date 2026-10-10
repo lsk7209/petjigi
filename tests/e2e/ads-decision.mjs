@@ -11,8 +11,8 @@ const CHROME = process.env.CHROME_PATH || 'C:/Program Files/Google/Chrome/Applic
 const AD_SCRIPT_STUB = 'window.__adScriptLoaded = (window.__adScriptLoaded || 0) + 1;';
 const results = [];
 
-const server = spawn(process.platform === 'win32' ? 'pnpm.cmd' : 'pnpm', ['exec', 'next', 'start', '-p', String(PORT)], {
-  env: process.env, stdio: 'ignore', shell: process.platform === 'win32',
+const server = spawn(process.execPath, ['node_modules/next/dist/bin/next', 'start', '-p', String(PORT)], {
+  env: process.env, stdio: 'ignore',
 });
 async function waitReady() {
   for (let i = 0; i < 60; i++) {
@@ -131,7 +131,6 @@ try {
   await browser.close();
 } finally {
   server.kill();
-  if (process.platform === 'win32') spawn('taskkill', ['/pid', String(server.pid), '/T', '/F'], { stdio: 'ignore' });
 }
 console.table(results);
 process.exit(results.every(r => r.ok) ? 0 : 1);

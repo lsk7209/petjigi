@@ -31,6 +31,12 @@ try {
     sql: 'INSERT INTO contents (id,slug,type,category,title,body,author_name,status,ymyl,published_at,created_at,updated_at) VALUES (?,?,?,?,?,?,?,?,?,?,?,?)',
     args: ['c-guide', 'fixture-guide', 'guide', 5, 'QA 합성 가이드', '<h2>합성</h2><p>합성 본문입니다.</p>', 'QA', 'published', 0, d, d, d],
   });
+  for (const [slug, type, category] of [['animal-hospital-guide', 'guide', 3], ['pet-insurance-guide', 'blog', 4], ['animal-registration-chip-guide', 'blog', 1]]) {
+    await client.execute({
+      sql: 'INSERT INTO contents (id,slug,type,category,title,body,author_name,status,ymyl,published_at,created_at,updated_at) VALUES (?,?,?,?,?,?,?,?,?,?,?,?)',
+      args: [`c-${slug}`, slug, type, category, `QA 합성 ${slug}`, '<h2>합성</h2><p>합성 본문입니다.</p>', 'QA', 'published', 0, d, d, d],
+    });
+  }
   console.log(JSON.stringify({ FIXTURE_FILE, productionAccess: false }));
 } finally {
   client.close();
