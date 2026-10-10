@@ -46,3 +46,7 @@ dog-walk-guide(메타 설명 포함), pet-insurance-guide(30일 면책·10~30%·
 - `scripts/apply-content-update.ts`(body·metaDescription·sources CAS, 시드가 정의한 컬럼 중 달라진 것만 변경)로 dog-walk-guide / pet-insurance-guide / maine-coon-care-guide 적용. 격리 DB에서 dry-run·apply·재실행 no-op·restore 검증 후 운영 실행.
 - 적용 전 원본은 `.backup-prod/<slug>.<id>.content.json`(gitignore)에 저장. 복구: `--restore --yes <slug>`.
 - 사후 재실행 dry-run 3건 모두 noop_identical. status·publishedAt·reviewer 필드 불변.
+
+## 배포 경로 진단 (2026-10-11)
+- Vercel 프로젝트는 GitHub 연동(productionBranch=main)이며, main 병합마다 Git 연동이 Production 배포를 만든 것을 확인(#27 acd9229, #28 228d5da = source git, READY). #26(a2e9121) 병합 직후 한 건은 목록에 없었고 이후 수동 `vercel deploy --prod`로 보완했으나, 이후 병합은 자동 배포됨. 프로젝트 설정 변경 불필요.
+- GitHub Actions `Deploy — Vercel Production`은 배포 시크릿이 없어 의도대로 skip(Git 연동이 담당). Preview 배포 실패는 기존 알려진 원인(TURSO_*가 Production에만 있음).
