@@ -89,6 +89,13 @@ const TYPE_META: Record<
     desc: "반려동물 분양·입양",
     categoryId: 1,
   },
+  registration: {
+    label: "동물등록 대행기관",
+    emoji: "🪪",
+    categorySlug: "adoption",
+    desc: "반려동물 등록 대행 기관",
+    categoryId: 1,
+  },
   breeder: {
     label: "브리더",
     emoji: "🐕",
@@ -169,13 +176,24 @@ export async function generateMetadata({
   };
 }
 
-function buildFaq(location: string, typeLabel: string, count: number) {
+/** 원본에 영업 상태 정보가 없어 '영업 중'으로 안내하지 않는 업종 */
+const STATUS_NOT_PROVIDED_TYPES = new Set(["registration"]);
+
+function activeWording(type: string): string {
+  return STATUS_NOT_PROVIDED_TYPES.has(type)
+    ? "공공데이터에 등록된 업체(영업 여부는 원본에 없어 확인되지 않음)"
+    : "공공데이터 기준 영업 중인 업체";
+}
+
+function buildFaq(type: string, location: string, typeLabel: string, count: number) {
   return [
     {
       question: `${location}에 ${typeLabel}이 몇 곳이나 있나요?`,
       answer:
         count > 0
-          ? `공공데이터 기준으로 ${location}에는 현재 영업 중인 ${typeLabel} ${count}곳이 등록되어 있습니다.`
+          ? STATUS_NOT_PROVIDED_TYPES.has(type)
+            ? `공공데이터 기준으로 ${location}에는 ${typeLabel} ${count}곳이 등록되어 있습니다. 영업 여부는 원본에 없으므로 방문 전 확인이 필요합니다.`
+            : `공공데이터 기준으로 ${location}에는 현재 영업 중인 ${typeLabel} ${count}곳이 등록되어 있습니다.`
           : `공공데이터에서 ${location}의 ${typeLabel}은 확인되지 않았습니다. 실제 영업 여부와 다를 수 있으니 관할 시·군·구청이나 인근 지역에서 확인해 주세요.`,
     },
     {
@@ -238,7 +256,7 @@ export default async function SigunguTypePage({
     },
   ]);
 
-  const faq = faqSchema(buildFaq(sigunguName, meta.label, listing.totalCount));
+  const faq = faqSchema(buildFaq(type, sigunguName, meta.label, listing.totalCount));
 
   const itemList = itemListSchema(
     businessList.map((b, i) => ({
@@ -348,7 +366,7 @@ export default async function SigunguTypePage({
                 ? "공공데이터에서 이 조건에 맞는 업체가 확인되지 않았습니다."
                 : "이 조건의 데이터 수집 여부를 확인하지 못했습니다."
               : `총 ${listing.totalCount}곳 중 ${listing.start}~${listing.end}곳을 표시합니다.`}{" "}
-            {meta.desc}. 공공데이터 기준 영업 중인 업체만 표시됩니다.
+            {meta.desc}. {activeWording(type)}만 표시됩니다.
           </p>
         </header>
 

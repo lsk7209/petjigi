@@ -12,6 +12,7 @@ const TYPE_CONFIG: Record<string, { label: string; emoji: string; bg: string; ac
   boarding:   { label: "펫호텔",        emoji: "🏠", bg: "#FFF8F0", accent: "#C97D5B" },
   funeral:    { label: "장묘업체",      emoji: "🕊️", bg: "#2C2C2C", accent: "#B89968" },
   sale:       { label: "분양업체",      emoji: "🐾", bg: "#FAF5EE", accent: "#9CAF88" },
+  registration: { label: "동물등록 대행기관", emoji: "🪪", bg: "#FAF5EE", accent: "#9CAF88" },
   breeder:    { label: "브리더",        emoji: "🐕", bg: "#FAF5EE", accent: "#9CAF88" },
   transport:  { label: "반려동물 운송", emoji: "🚗", bg: "#FFF8F0", accent: "#C97D5B" },
   exhibition: { label: "체험전시",     emoji: "🎪", bg: "#FFF8F0", accent: "#C97D5B" },

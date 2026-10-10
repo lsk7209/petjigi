@@ -103,6 +103,7 @@ const BUSINESS_TYPES = [
   { type: "boarding", label: "펫호텔", emoji: "🏠" },
   { type: "funeral", label: "장묘", emoji: "🕊️" },
   { type: "sale", label: "분양", emoji: "🐾" },
+  { type: "registration", label: "동물등록 대행", emoji: "🪪" },
 ];
 
 function buildFaq(sidoName: string) {

@@ -67,6 +67,7 @@ export function localBusinessSchema(business: Business) {
     funeral: "LocalBusiness",
     boarding: "LodgingBusiness",
     sale: "PetStore",
+    registration: "LocalBusiness",
     breeder: "LocalBusiness",
     transport: "LocalBusiness",
     exhibition: "TouristAttraction",
