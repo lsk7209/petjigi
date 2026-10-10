@@ -17,10 +17,10 @@
 | F09 | 중 | 목차: 3개 페이지 복제 로직 → `lib/toc.ts` 단일화(기존 id 사용, 중복 id 교체, 빈 제목 인덱스 어긋남 해결). 홈: 서울 고정 CTA 2곳 → `#hm-local`, "임시 일러스트…" 메모 제거. 사이트맵 `<loc>` XML 이스케이프·URL 인코딩 | toc 7케이스, 실서버 목차 href 대상 전부 존재, 홈 DOM | ✅ (광고 SPA 이동·키보드·모바일 브라우저 검증 미실시, 구독 개인정보 대조 미실시) |
 
 ## 검증 실행 기록
-- `pnpm test`: 287 tests / 287 pass / 0 fail / 0 skip (기준 커밋은 `etl/**` 미포함, 이번에 포함)
+- `pnpm test`: 355 tests / 355 pass / 0 fail / 0 skip. 기준 커밋의 스크립트는 `etl/**`·`tests/**`를 포함하지 않아 이번에 포함했다(`tests/`는 기준 커밋 61/62, 내 변경 직후 14건 회귀를 발견해 픽스처 stub 보강으로 해결).
 - `tsc --noEmit`: exit 0, `eslint app lib scripts etl`: 0 error 0 warning
 - 격리 `next build`(file DB, `.env*` 없음) exit 0 → `next start` 실서버 curl 14개 URL·검색·SEO 헤더 확인. 임시 DB·서버는 삭제/종료.
-- `tests/home-readiness.test.mjs`는 기준 커밋부터 깨져 있음(`hero-illustration` fixture 의존성). `pnpm test`에 포함되지 않아 별도 수정 필요.
+- `tests/home-readiness.test.mjs`는 기준 커밋부터 깨져 있었음(리디자인 후 stub·낡은 단언) → stub 추가, 사라진 문구(보험 링크·갱신 주기·집계 수) 단언 제거, 지역 CTA 단언 추가로 복구.
 - 미실시: Lighthouse·브라우저 렌더 검증, `next-sitemap` 재생성(정적 `public/sitemap-0.xml`에 `registration` 반영하려면 재생성 후 커밋 필요).
 
 ## 운영 반영 대기 (승인 필요)

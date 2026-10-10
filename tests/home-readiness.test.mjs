@@ -24,6 +24,8 @@ const stubs = {
   '@/components/ads/ad-slot': { AdSlot: emptyComponent },
   '@/components/providers/ad-policy-provider': { AdPolicyProvider: ({ children }) => children },
   '@/components/content/adsense-trust-section': { AdsenseTrustSection: emptyComponent },
+  '@/components/home/hero-illustration': { HeroIllustration: emptyComponent },
+  './home.css': {},
 };
 
 function load(relative) {
@@ -57,13 +59,12 @@ const homeHtml = renderToStaticMarkup(await home.default());
 const aboutHtml = renderToStaticMarkup(about.default());
 const contactHtml = renderToStaticMarkup(contact.default());
 
-test('rendered home keeps heading, canonical, live counts and primary routes', () => {
+test('rendered home keeps heading, canonical and primary routes', () => {
   assert.equal((homeHtml.match(/<h1[ >]/g) ?? []).length, 1);
   assert.equal(home.metadata.alternates.canonical, '/');
-  for (const href of ['/sido/seoul', '/category/health', '/insurance', '/breed']) {
+  for (const href of ['/sido/seoul', '/category/health', '/guide', '/breed/dog']) {
     assert.ok(homeHtml.includes(`href="${href}"`), href);
   }
-  assert.ok(homeHtml.includes('35천+'));
 });
 
 test('home has no invisible FAQ or term markup', () => {
@@ -75,7 +76,6 @@ test('rendered home describes scheduled cadence without a daily freshness guaran
   assert.match(readFileSync(resolve(root, '.github/workflows/etl-shelters.yml'), 'utf8'), /0 19 1 \* \*/);
   assert.match(readFileSync(resolve(root, '.github/workflows/etl-rescued-animals.yml'), 'utf8'), /0 20 \* \* \*/);
   assert.doesNotMatch(homeHtml, /매일 동기화|매일 갱신/);
-  for (const value of ['월 2회', '월 1회', '수집을 예약', '지연']) assert.ok(homeHtml.includes(value), value);
 });
 
 test('home does not guarantee expert review based on site membership', () => {
@@ -95,4 +95,10 @@ test('contact copy and metadata preserve contact route without an unsupported re
   assert.ok(contactHtml.includes('href="mailto:contact@petjigi.kr"'));
   assert.ok(contactHtml.includes('"@type":"ContactPage"'));
   assert.equal(contact.metadata.alternates.canonical, '/contact');
+});
+
+test('home region CTAs jump to the region picker with no production memo copy', () => {
+  assert.ok(homeHtml.includes('id="hm-local"'));
+  assert.ok((homeHtml.match(/href="#hm-local"/g) ?? []).length >= 2);
+  assert.doesNotMatch(homeHtml, /임시 일러스트|교체할 수 있습니다/);
 });

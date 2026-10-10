@@ -7,7 +7,7 @@
     "build": "next build && next-sitemap",
     "start": "next start",
     "lint": "eslint",
-    "test": "tsx --test \"lib/**/*.test.ts\" \"scripts/**/*.test.ts\" \"etl/**/*.test.ts\"",
+    "test": "tsx --test \"lib/**/*.test.ts\" \"scripts/**/*.test.ts\" \"etl/**/*.test.ts\" \"tests/**/*.test.mjs\" \"tests/**/*.test.ts\"",
     "audit:content": "tsx scripts/audit-quality.ts content",
     "audit:content:gate": "tsx scripts/audit-quality.ts content-gate",
     "audit:sources": "tsx scripts/audit-quality.ts sources",
