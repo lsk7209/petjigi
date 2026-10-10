@@ -69,6 +69,17 @@ export default function PrivacyPage() {
           Google 광고 설정
         </a>
         을 방문하여 맞춤형 광고 게재에 사용되는 쿠키 설정을 직접 관리하거나 사용을 중지할 수 있습니다.
+        브라우저 설정에서 쿠키를 거부하거나 삭제할 수도 있으며, 이 경우 일부 기능이 제한될 수 있습니다.
+        Google의 광고 쿠키 사용 방식은{" "}
+        <a
+          href="https://policies.google.com/technologies/partner-sites"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="underline text-[var(--brand-accent)]"
+        >
+          Google 정책 안내
+        </a>
+        에서 확인할 수 있습니다.
       </p>
 
       <h2>6. 개인정보의 국외 이전</h2>
