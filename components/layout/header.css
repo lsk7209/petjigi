@@ -1,0 +1,38 @@
+/* 공통 헤더 확장: 로고+설명 / 8개 메뉴 / 실제 검색. 1100px 미만은 모바일 메뉴로 전환한다. */
+.pj-header-inner { max-width: 1280px; gap: 20px; }
+.pj-logo-text { display: flex; flex-direction: column; line-height: 1.15; }
+.pj-logo-tag { display: none; font-family: var(--font-sans, inherit); font-size: 11px; font-weight: 500; letter-spacing: 0; color: var(--brand-text-secondary); margin-top: 2px; }
+.pj-logo { flex-shrink: 0; }
+.pj-header .pj-nav { flex: 1; min-width: 0; justify-content: center; gap: 0; }
+.pj-header .pj-nav a { padding: 8px 9px; font-size: 14.5px; font-weight: 600; min-height: 44px; display: inline-flex; align-items: center; }
+
+.pj-search { display: flex; align-items: center; border: 1.5px solid var(--brand-border); background: var(--brand-surface, #fff); border-radius: 999px; padding-left: 14px; min-height: 44px; }
+.pj-search:focus-within { border-color: var(--brand-text); }
+.pj-search input { border: 0; background: transparent; outline: 0; font-size: 14px; width: 150px; min-width: 0; color: var(--brand-text); }
+.pj-search input::placeholder { color: var(--brand-text-secondary); }
+.pj-search button { width: 44px; height: 44px; display: inline-flex; align-items: center; justify-content: center; background: transparent; border: 0; border-radius: 999px; color: var(--brand-text); cursor: pointer; }
+.pj-search button:focus-visible, .pj-menu-btn:focus-visible { outline: 3px solid var(--brand-text); outline-offset: 2px; }
+
+.pj-menu-btn { margin-left: auto; width: 44px; height: 44px; display: inline-flex; align-items: center; justify-content: center; background: transparent; border: 1px solid var(--brand-border); border-radius: 12px; color: var(--brand-text); cursor: pointer; }
+
+.pj-header .pj-only-desktop { display: none; }
+.pj-mobile-menu { position: absolute; left: 0; right: 0; top: 100%; max-height: calc(100dvh - 60px); overflow-y: auto; background: var(--brand-bg); border-top: 1px solid var(--brand-border); border-bottom: 1px solid var(--brand-border); padding: 14px 16px 20px; box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08); }
+.pj-mobile-menu .pj-search { margin-bottom: 8px; }
+.pj-mobile-menu .pj-search input { flex: 1; width: auto; font-size: 16px; }
+.pj-mobile-menu nav { display: grid; grid-template-columns: 1fr 1fr; gap: 4px 8px; }
+.pj-mobile-menu nav a { display: flex; align-items: center; min-height: 48px; padding: 0 12px; border-radius: 12px; font-weight: 600; font-size: 15px; color: var(--brand-text); text-decoration: none; }
+.pj-mobile-menu nav a:hover { background: var(--brand-surface); }
+
+@media (min-width: 640px) {
+  .pj-mobile-menu { max-height: calc(100dvh - 68px); padding-left: 32px; padding-right: 32px; }
+}
+@media (min-width: 1100px) {
+  .pj-header .pj-only-desktop { display: flex; }
+  .pj-header .pj-only-mobile { display: none; }
+  .pj-header-inner { gap: 12px; }
+}
+@media (min-width: 1280px) {
+  .pj-logo-tag { display: block; }
+  .pj-header .pj-nav a { padding: 8px 11px; }
+  .pj-search input { width: 180px; }
+}
