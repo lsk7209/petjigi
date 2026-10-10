@@ -519,7 +519,7 @@ export default async function SigunguTypePage({
             자주 묻는 질문
           </h2>
           <dl className="space-y-4">
-            {buildFaq(sigunguName, meta.label, listing.totalCount).map(
+            {buildFaq(type, sigunguName, meta.label, listing.totalCount).map(
               (item, i) => (
                 <div
                   key={i}

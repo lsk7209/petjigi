@@ -24,7 +24,7 @@ export interface GateScope {
 export interface GateScopeOptions {
   cwd: string;
   baseArg?: string;
-  env?: NodeJS.ProcessEnv;
+  env?: Record<string, string | undefined>;
 }
 
 const SAFE_REF = /^[A-Za-z0-9._/~^@{}-]+$/;
@@ -44,7 +44,7 @@ function tryGit(cwd: string, args: string[]): string | null {
 }
 
 /** CI에서 --base가 없을 때 이벤트 정보로 기준 ref를 추론한다. 추론 불가면 null. */
-export function inferCiBase(env: NodeJS.ProcessEnv): string | null {
+export function inferCiBase(env: Record<string, string | undefined>): string | null {
   if (env.GITHUB_BASE_REF) return `origin/${env.GITHUB_BASE_REF}`;
   const before = env.GITHUB_EVENT_BEFORE;
   if (before && !ZERO_SHA.test(before)) return before;

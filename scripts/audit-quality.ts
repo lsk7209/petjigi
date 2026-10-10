@@ -1,6 +1,5 @@
 import fs from "node:fs";
 import path from "node:path";
-import { execFileSync } from "node:child_process";
 import { createHash } from "node:crypto";
 import ts from "typescript";
 import { evaluateChangedHighRiskContent, rangesOverlap } from "../lib/content-risk-gate";
