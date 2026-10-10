@@ -19,10 +19,10 @@ dog-walk-guide(메타 설명 포함), pet-insurance-guide(30일 면책·10~30%·
 `docs/ads-decision-verification.md` 참조. 단일 판정 `decideAdPage`, 장례 상세 경로 누락·마커 누락 수정, 타이머 제거, 브라우저 12 시나리오 통과.
 
 ## A03
-- 동물병원 질문표(`/guide/animal-hospital-guide`), 동물등록 확인 순서(`/blog/animal-registration-chip-guide`), 펫보험 같은 조건 비교표+계산 예시(`/blog/pet-insurance-guide`). 서버 렌더링, 입력 저장·전송 없음. `lib/practical-tools.ts`에 데이터.
+- 동물병원 질문표(`/guide/animal-hospital-guide`), 동물등록 확인 순서(`/guide/microchip-registration-complete-guide`, 운영 DB에 존재하는 slug), 펫보험 같은 조건 비교표+계산 예시(`/blog/pet-insurance-guide`). 서버 렌더링, 입력 저장·전송 없음. `lib/practical-tools.ts`에 데이터.
 - 업체 상세 "이 정보의 범위": 출처·등록 항목·수집일(원본 기준일 미제공 명시)·미제공 항목.
 - 홈은 승인 디자인 유지를 위해 변경하지 않음.
-- 검색 의도 중복 후보(통합/역할 분리 검토, 이번에 조치 없음): `animal-registration-chip-guide` · `microchip-animal-registration-guide` · `microchip-registration-complete-guide` / `pet-insurance-*` 40여 건(가입 전·비교·자기부담금·면책·갱신 등).
+- 검색 의도 중복 후보(통합/역할 분리 검토, 이번에 조치 없음): `microchip-registration-complete-guide` · `microchip-animal-registration-guide` · `animal-registration-change-cancel-guide` / `pet-insurance-*` 40여 건(가입 전·비교·자기부담금·면책·갱신 등).
 
 ## A04
 - /disclosure: 제휴 링크가 코드에 없는데 쿠팡파트너스·비마이펫·라이펫을 "참여 프로그램"으로 나열 → "현재 게재된 제휴 링크 없음 / 도입 시 표시 방침"으로 정정. 내부 링크 CTA(카테고리 3·4)의 "제휴 링크·수익" 라벨 제거.
