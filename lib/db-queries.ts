@@ -1,7 +1,8 @@
 import { unstable_cache } from "next/cache";
+import { publicContentCondition } from "@/lib/content-publication-sql";
 import { db } from "@/db/client";
 import { businesses, contents, shelters, rescuedAnimals, regions, etlSyncState } from "@/db/schema";
-import { eq, and, asc, desc, count, ne, lte } from "drizzle-orm";
+import { eq, and, asc, desc, count, ne } from "drizzle-orm";
 import { sql } from "drizzle-orm";
 import { DEFAULT_BUSINESS_PAGE_SIZE, getPageWindow } from "@/lib/business-listing";
 import { describeRegionSlug, resolveRegionIdentity } from "@/lib/region-identity";
@@ -35,7 +36,7 @@ export const getCachedRecentGuides = unstable_cache(
         publishedAt: contents.publishedAt,
       })
       .from(contents)
-      .where(and(eq(contents.status, "published"), eq(contents.type, "guide"), lte(contents.publishedAt, new Date().toISOString())))
+      .where(and(publicContentCondition("guide")))
       .orderBy(desc(contents.publishedAt))
       .limit(6),
   ["guides", "recent"],
@@ -57,7 +58,7 @@ export const getCachedAllGuides = unstable_cache(
         reviewedAt: contents.reviewedAt,
       })
       .from(contents)
-      .where(and(eq(contents.status, "published"), eq(contents.type, "guide"), lte(contents.publishedAt, new Date().toISOString())))
+      .where(and(publicContentCondition("guide")))
       .orderBy(desc(contents.publishedAt)),
   ["guides", "all"],
   { revalidate: 3600, tags: ["guides"] }
@@ -218,7 +219,7 @@ export const getCachedCategoryGuides = unstable_cache(
     db
       .select({ slug: contents.slug, title: contents.title, publishedAt: contents.publishedAt })
       .from(contents)
-      .where(and(eq(contents.status, "published"), eq(contents.type, "guide"), eq(contents.category, categoryId), lte(contents.publishedAt, new Date().toISOString())))
+      .where(and(publicContentCondition("guide"), eq(contents.category, categoryId)))
       .orderBy(desc(contents.publishedAt))
       .limit(6),
   ["category-guides"],
@@ -231,7 +232,7 @@ export const getCachedCategoryBlogPosts = unstable_cache(
     db
       .select({ slug: contents.slug, title: contents.title, subtitle: contents.subtitle, publishedAt: contents.publishedAt })
       .from(contents)
-      .where(and(eq(contents.status, "published"), eq(contents.type, "blog"), eq(contents.category, categoryId), lte(contents.publishedAt, new Date().toISOString())))
+      .where(and(publicContentCondition("blog"), eq(contents.category, categoryId)))
       .orderBy(desc(contents.publishedAt))
       .limit(4),
   ["category-blog"],
@@ -250,7 +251,7 @@ export const getCachedRecentBlogPosts = unstable_cache(
         publishedAt: contents.publishedAt,
       })
       .from(contents)
-      .where(and(eq(contents.status, "published"), eq(contents.type, "blog"), lte(contents.publishedAt, new Date().toISOString())))
+      .where(and(publicContentCondition("blog")))
       .orderBy(desc(contents.publishedAt))
       .limit(6),
   ["blog", "recent-posts"],
@@ -274,7 +275,7 @@ export const getCachedAllBlogPosts = unstable_cache(
         authorName: contents.authorName,
       })
       .from(contents)
-      .where(and(eq(contents.status, "published"), eq(contents.type, "blog"), lte(contents.publishedAt, new Date().toISOString())))
+      .where(and(publicContentCondition("blog")))
       .orderBy(desc(contents.publishedAt)),
   ["blog", "all-posts"],
   { revalidate: 3600, tags: ["guides"] }
@@ -306,7 +307,7 @@ export const getCachedAllConditions = unstable_cache(
         reviewedAt: contents.reviewedAt,
       })
       .from(contents)
-      .where(and(eq(contents.status, "published"), eq(contents.type, "condition"), lte(contents.publishedAt, new Date().toISOString())))
+      .where(and(publicContentCondition("condition")))
       .orderBy(desc(contents.publishedAt)),
   ["conditions", "all"],
   { revalidate: 3600, tags: ["guides"] }

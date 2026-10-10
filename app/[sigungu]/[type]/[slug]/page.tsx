@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { publicContentCondition } from "@/lib/content-publication-sql";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { db } from "@/db/client";
@@ -151,7 +152,7 @@ export default async function BusinessDetailPage({
   const relatedGuides = await db
     .select({ slug: contents.slug, title: contents.title })
     .from(contents)
-    .where(and(eq(contents.status, "published"), eq(contents.type, "guide"), eq(contents.category, categoryId)))
+    .where(and(publicContentCondition("guide"), eq(contents.category, categoryId)))
     .orderBy(desc(contents.publishedAt))
     .limit(3);
 

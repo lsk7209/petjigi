@@ -1,6 +1,7 @@
 import { db } from "@/db/client";
+import { publicContentCondition } from "@/lib/content-publication-sql";
 import { contents, breeds } from "@/db/schema";
-import { eq, and, desc, or, lte } from "drizzle-orm";
+import { eq, and, desc } from "drizzle-orm";
 import { sitemapUnavailableResponse } from "@/lib/seo/sitemap-response";
 import { resolveLastmod } from "@/lib/seo/lastmod";
 import { REDIRECTED_BLOG_SLUGS } from "@/lib/content-redirects";
@@ -42,13 +43,7 @@ export async function GET() {
         .from(contents)
         .where(
           and(
-            eq(contents.status, "published"),
-            lte(contents.publishedAt, new Date().toISOString()),
-            or(
-              eq(contents.type, "guide"),
-              eq(contents.type, "blog"),
-              eq(contents.type, "condition"),
-            )
+            publicContentCondition()
           )
         )
         .orderBy(desc(contents.publishedAt)),

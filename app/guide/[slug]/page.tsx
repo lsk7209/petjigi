@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
+import { publicContentCondition } from "@/lib/content-publication-sql";
 import { cache } from "react";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { db } from "@/db/client";
 import { contents } from "@/db/schema";
-import { and, eq, ne, desc, lte } from "drizzle-orm";
+import { and, eq, ne, desc } from "drizzle-orm";
 import type { CategoryId } from "@/lib/category";
 import { CATEGORIES } from "@/lib/category";
 import { YmylDisclaimer } from "@/components/content/ymyl-disclaimer";
@@ -34,9 +35,7 @@ const getContent = cache(async (slug: string) =>
     .from(contents)
     .where(and(
       eq(contents.slug, slug),
-      eq(contents.type, "guide"),
-      eq(contents.status, "published"),
-      lte(contents.publishedAt, new Date().toISOString()),
+      publicContentCondition("guide"),
     ))
     .get()
 );
@@ -46,7 +45,7 @@ export async function generateStaticParams() {
     const rows = await db
       .select({ slug: contents.slug })
       .from(contents)
-      .where(and(eq(contents.status, "published"), eq(contents.type, "guide"), lte(contents.publishedAt, new Date().toISOString())));
+      .where(and(publicContentCondition("guide")));
     return rows.map((r) => ({ slug: r.slug }));
   } catch {
     return [];
@@ -110,8 +109,7 @@ async function getRelatedGuides(slug: string, category: number) {
     .from(contents)
     .where(
       and(
-        eq(contents.status, "published"),
-        eq(contents.type, "guide"),
+        publicContentCondition("guide"),
         eq(contents.category, category),
         ne(contents.slug, slug)
       )
@@ -126,8 +124,7 @@ async function getRelatedBlogPosts(slug: string, category: number) {
     .from(contents)
     .where(
       and(
-        eq(contents.status, "published"),
-        eq(contents.type, "blog"),
+        publicContentCondition("blog"),
         eq(contents.category, category),
         ne(contents.slug, slug)
       )

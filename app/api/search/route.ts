@@ -1,8 +1,9 @@
 import { NextRequest, NextResponse } from "next/server";
 import { db } from "@/db/client";
 import { businesses, contents, regions } from "@/db/schema";
-import { or, and, eq, inArray, lte } from "drizzle-orm";
+import { or, and, eq, inArray } from "drizzle-orm";
 import { likeEscaped } from "@/lib/search-sql";
+import { publicContentCondition } from "@/lib/content-publication-sql";
 import { isPublicContentType } from "@/lib/content-publication";
 import { buildContentHref, buildBusinessHref, buildUniqueRegionSlugMap } from "@/lib/search-contract";
 import {
@@ -50,7 +51,6 @@ export async function GET(req: NextRequest) {
   }
 
   const pattern = likeLiteralPattern(q);
-  const now = new Date().toISOString();
 
   const results: {
     type: "business" | "guide" | "blog" | "condition";
@@ -130,11 +130,7 @@ export async function GET(req: NextRequest) {
         })
         .from(contents)
         .where(
-          and(
-            eq(contents.status, "published"),
-            lte(contents.publishedAt, now),
-            likeEscaped(contents.title, pattern)
-          )
+          and(publicContentCondition(), likeEscaped(contents.title, pattern))
         )
         .orderBy(contents.publishedAt, contents.id)
         .limit(contentLimit + 1);
