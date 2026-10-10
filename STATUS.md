@@ -3,6 +3,7 @@
 (1) 후속 안정화 R01~R06: R01~R04 구현·단위/통합 테스트 완료 → PR #23 병합·운영 배포 완료(main 7f300b4). R05(e2e·CI)·R06(DB 계측) 미착수.
 (2) 홈 시안: fix/stabilize-r01-r04에서 홈·헤더 코드 적용+로컬 브라우저 검증 완료(미커밋·미배포). 승인 시안 PNG 원본 미확인 → CODEX_HANDOFF §B 명세 기준 구현. 스크린샷: docs/design/home-verify/. 이미지 기록: docs/home-assets.md.
 ## 최근 변경
+- 10-10: A01 dog-walk-guide 미확인 수치(43%·552만·AVMA 시간 등) 제거, 요약·표 단위 모순 해소(시드만, 운영 미반영) — docs/claim-verification
 - 10-10: 홈 재구성(components/home/*, lib/home-guides.ts)+공통 헤더(8메뉴·GET 검색·1100px 모바일 메뉴 Esc 포커스 복귀). hero-illustration 삭제, 헤더·홈 테스트 갱신
 - 10-10: R01 등록대행 ETL 완전 수집 판정+실행 락+재시도. 원본 미확인 행은 폐업 확정 없이 paused(재등장 시 active). 불완전 수집은 exit 1
 - 10-10: R02 상세가 지역 판별(resolved/ambiguous/missing) 유지, 동명 업체는 주소·전화·지도 선택 안내(noindex), 주변 시설 시도 한정
