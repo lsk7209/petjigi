@@ -50,3 +50,9 @@ dog-walk-guide(메타 설명 포함), pet-insurance-guide(30일 면책·10~30%·
 ## 배포 경로 진단 (2026-10-11)
 - Vercel 프로젝트는 GitHub 연동(productionBranch=main)이며, main 병합마다 Git 연동이 Production 배포를 만든 것을 확인(#27 acd9229, #28 228d5da = source git, READY). #26(a2e9121) 병합 직후 한 건은 목록에 없었고 이후 수동 `vercel deploy --prod`로 보완했으나, 이후 병합은 자동 배포됨. 프로젝트 설정 변경 불필요.
 - GitHub Actions `Deploy — Vercel Production`은 배포 시크릿이 없어 의도대로 skip(Git 연동이 담당). Preview 배포 실패는 기존 알려진 원인(TURSO_*가 Production에만 있음).
+
+## 공개 범위 점검 (2026-10-11, 운영 사이트 읽기 전용)
+- 사이트 소유 확인: 홈 `<meta name="google-adsense-account" content="ca-pub-3050601904412736">` 존재. 자동광고 스크립트 client ID와 `/ads.txt`(`google.com, pub-3050601904412736, DIRECT, f08c47fec0942fa0`)의 publisher ID가 일치. (ads.txt 존재·일치는 계정 소유·승인 완료의 증거가 아님)
+- 크롤러 접근: `/robots.txt`가 Mediapartners-Google·`*` 모두 Allow(/api/, /admin/만 제외). Mediapartners-Google / Googlebot UA 모두 `/guide` 200 응답, UA별 콘텐츠 분기 없음(브라우저 검증과 일치).
+- 호스트: `www.petjigi.kr` → `https://petjigi.kr/` **307**(임시). 영구(308) 리디렉션이 더 적합 — Vercel 도메인 설정에서 변경 필요(운영 설정, 승인 대상).
+- 계정 쪽 확인 대기(코드·공개 응답으로 판단 불가): 실제 심사 사유, 자동광고 URL 제외 설정, CMP 적용 상태.
