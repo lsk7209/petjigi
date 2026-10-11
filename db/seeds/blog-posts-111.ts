@@ -19,51 +19,62 @@ const BLOG_POSTS: NewContent[] = [
     subtitle: "고혈압 원인 질환, 고혈압이 유발하는 장기 손상, 측정 방법, 약물 치료",
     metaTitle: "고양이 전신 고혈압 — 원인·장기 손상·치료 완전 가이드 | 펫지기",
     metaDescription: "고양이 전신 고혈압 원인과 치료. 증상 없이 진행하다 실명·심장·신장 손상을 일으키는 고혈압, 혈압 측정 방법, 암로디핀 치료 방법을 설명합니다.",
-    body: `<p>고양이 고혈압은 증상이 없다가 갑자기 실명, 심장 손상, 신장 악화를 유발하는 '침묵의 병'이다. 중년 이상의 고양이에서 정기 혈압 측정이 중요한 이유다.</p>
+    body: `<p>고혈압은 노령 고양이에서 흔하지만 눈에 띄는 증상이 없어서 눈이나 신장, 뇌에 손상이 생긴 뒤에야 발견되는 경우가 많다. 만성 신장병이나 갑상선기능항진증이 있는 노령묘라면 정기적인 혈압 측정이 중요하다.</p>
 
-<h2>고혈압이 생기는 이유</h2>
-<ul>
-<li><strong>만성 신장 질환(CKD)</strong>: 고양이 고혈압의 가장 흔한 원인</li>
-<li><strong>갑상선기능항진증</strong>: 심박출량 증가로 혈압 상승</li>
-<li><strong>당뇨병</strong></li>
-<li><strong>원발성(본태성) 고혈압</strong>: 기저 질환 없이 발생 (드묾)</li>
-</ul>
+<h2>원인</h2>
+<p>고양이 고혈압은 다른 질환과 함께 진단되는 경우가 흔하다. ISFM 합의 가이드라인은 만성 신장병과 갑상선기능항진증을 대표적 동반 질환으로 든다. 원인 질환이 없는 경우도 있다. 신장 질환이 고혈압을 일으키는지, 고혈압이 신장을 손상시키는지는 확실하지 않은 부분이 있다.</p>
 
-<h2>고혈압이 일으키는 장기 손상</h2>
+<h2>표적 장기 손상</h2>
+<table>
+<thead><tr><th>장기</th><th>나타날 수 있는 문제</th></tr></thead>
+<tbody>
+<tr><td>눈</td><td>망막 출혈, 망막 부종, 망막 박리, 갑작스러운 시력 저하·실명, 동공이 커짐 — 일부는 되돌릴 수 없다</td></tr>
+<tr><td>신장</td><td>신장 손상 가속화, 단백뇨</td></tr>
+<tr><td>심장</td><td>심장 잡음, 좌심실 비대</td></tr>
+<tr><td>뇌</td><td>발작, 방향 감각 상실, 행동 변화</td></tr>
+</tbody>
+</table>
+
 <div class="callout-cat">
-<strong>고양이 고혈압의 표적 장기 손상</strong><br>
-• <strong>눈(망막)</strong>: 망막 박리 → 갑작스러운 실명 (가장 劇的인 증상)<br>
-• <strong>신장</strong>: 신장 혈관 손상 → CKD 가속<br>
-• <strong>심장</strong>: 심근 비대 (고혈압성 심장병)<br>
-• <strong>뇌</strong>: 뇌혈관 손상 → 신경 증상<br>
-▶ 망막 박리는 수 시간~수일 내 치료 시작해야 시력 회복 가능성 있음
+<strong>이런 증상은 빠른 진료</strong><br>
+• 갑자기 눈이 안 보이는 듯 부딪히거나 동공이 크게 열려 있다<br>
+• 눈 안에 출혈이 보인다<br>
+• 발작이나 심한 비틀거림이 나타난다<br>
+→ 시력은 빠르게 치료하면 일부 회복될 수 있다
 </div>
 
 <h2>혈압 측정</h2>
 <ul>
-<li>정상 범위: 수축기 혈압 120~140 mmHg</li>
-<li>고혈압 기준: 160 mmHg 이상 (반복 측정 확인)</li>
-<li>고위험 기준: 180 mmHg 이상 → 즉각적 처치 필요</li>
-<li>도플러 또는 오실로메트리 방식으로 동물병원에서 측정</li>
-<li>7세 이상 고양이: 연 1회 이상 정기 측정 권장</li>
+<li>조용한 환경에서 고양이가 적응할 시간을 준 뒤 측정한다.</li>
+<li>도플러나 고해상도 오실로메트릭 장비로 여러 번 측정해 평균을 낸다 (첫 측정은 제외하는 방식이 권장된다).</li>
+<li>병원에서 긴장하면 일시적으로 높게 나올 수 있어서 침착한 환경이 중요하다.</li>
+<li>노령묘, 신장병·갑상선 질환이 있는 고양이는 정기적으로 측정한다.</li>
 </ul>
 
 <h2>치료</h2>
 <ul>
-<li>1차 약물: 암로디핀(칼슘 채널 차단제) — 고양이에서 효과적, 부작용 적음</li>
-<li>기저 질환 치료: CKD 관리, 갑상선 치료</li>
-<li>치료 후 2~4주 재측정: 목표 혈압 도달 여부 확인</li>
+<li><strong>원인 질환 치료</strong>: 신장병, 갑상선기능항진증을 함께 관리한다.</li>
+<li><strong>혈압약</strong>: 암로디핀이 대표적인 치료제로 많은 고양이에서 효과적이다. 용량은 개체별로 다르고 재검진으로 조절한다. 약은 수의사 처방대로 먹인다.</li>
+<li><strong>모니터링</strong>: 투약 후 1~2주 간격으로 혈압을 다시 재고 이후 정기적으로 확인한다.</li>
+</ul>
+
+<h2>집에서</h2>
+<ul>
+<li>약을 일정한 시간에 먹이고 빠뜨리지 않는다.</li>
+<li>눈 모양, 시력, 행동 변화를 관찰한다.</li>
+<li>스트레스를 줄이는 환경을 유지한다.</li>
 </ul>
 
 <h2>마지막으로</h2>
-<p>고혈압은 측정해야만 알 수 있다. 7세 이상 또는 CKD·갑상선 질환이 있는 고양이는 정기 혈압 측정을 루틴으로 만들자.</p>`,
+<p>고양이 고혈압은 조용히 진행되는 병이다. 7~8세가 넘었거나 신장·갑상선 질환이 있다면 정기 혈압 검사를 꼭 받자.</p>`,
     authorName: "펫지기 에디터",
     authorCredential: "반려동물 건강 정보 큐레이터",
     ymyl: true,
-    sources: JSON.stringify([
-      "Acierno, M.J. et al. — ACVIM consensus statement: Guidelines for the identification, evaluation, and management of systemic hypertension in dogs and cats. J Vet Intern Med 2018",
-      "한국수의내과학회 고양이 전신 고혈압 진단 및 치료 가이드라인",
-    ]),
+    sources: [
+      "https://www.rcvsknowledge.org/resource/isfm-consensus-guidelines-on-the-diagnosis-and-management-of-hypertension-in-cats/ — RCVS Knowledge, ISFM consensus guidelines on hypertension in cats",
+      "https://journals.sagepub.com/doi/10.1177/1098612X17693500 — Journal of Feline Medicine and Surgery 2017, ISFM Consensus Guidelines: Hypertension in Cats",
+      "https://www.vettimes.com/news/vets/small-animal-vets/an-update-on-feline-hypertension — Vet Times, An update on feline hypertension",
+    ],
     disclaimer: "이 글은 정보 제공을 목적으로 하며 수의사 진료를 대체하지 않습니다.",
     status: "published",
     publishedAt: "2026-12-19T09:00:00.000Z",

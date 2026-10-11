@@ -84,49 +84,64 @@ const BLOG_POSTS: NewContent[] = [
     subtitle: "FHV-1 잠복 감염 기전, 재발 유발 요인, 눈 증상·코 증상 관리, L-라이신 논쟁",
     metaTitle: "고양이 헤르페스 바이러스(FHV-1) — 평생 보균·재발 관리 가이드 | 펫지기",
     metaDescription: "고양이 헤르페스 바이러스(FHV-1) 잠복 감염과 재발 관리. 스트레스로 인한 재발 기전, 눈·코 증상 대처, L-라이신 효과 논란, 항바이러스제 사용 기준을 정리했습니다.",
-    body: `<p>한 번 고양이 헤르페스 바이러스에 감염되면 평생 잠복 상태로 남는다. 면역이 떨어지거나 스트레스를 받으면 다시 깨어난다.</p>
-
-<h2>FHV-1이란</h2>
-<p>고양이 헤르페스 바이러스 1형(FHV-1)은 고양이 상부 호흡기 감염의 주요 원인 중 하나다. 다묘 가정, 보호소 출신 고양이에서 감염률이 높다. 초기 감염 후 삼차신경절에 잠복하며 평생 재활성화 가능성이 있다.</p>
-
-<h2>재발을 유발하는 요인</h2>
-<ul>
-<li>스트레스(이사, 새 반려동물 도입, 병원 방문)</li>
-<li>면역 억제(코르티코스테로이드 투여, 질병)</li>
-<li>출산·수유</li>
-<li>계절 변화</li>
-</ul>
+    body: `<p>고양이 허피스바이러스(FHV-1)는 고양이 상부 호흡기 감염(고양이 감기)의 가장 흔한 원인 중 하나다. 재채기, 콧물, 눈곱이 반복되는 고양이는 이 바이러스에 감염되어 있을 수 있다. 한 번 감염되면 평생 몸 안에 남아 스트레스 때 재발하는 특징이 있다.</p>
 
 <h2>증상</h2>
-<div class="callout-cat">
-<strong>FHV-1 재발 시 주요 증상</strong><br>
-• 결막염: 눈 충혈, 눈꼽, 눈물 과다<br>
-• 각막 궤양: 통증, 눈 감음, 심하면 시력 손상<br>
-• 코 분비물, 재채기<br>
-• 코막힘으로 인한 식욕 저하<br>
-• 발열, 무기력 동반 가능
-</div>
-
-<h2>치료</h2>
 <ul>
-<li>경증: 눈 세정, 보조 치료</li>
-<li>각막 궤양: 항바이러스 안약(이독수리딘, 시도포비어)</li>
-<li>항바이러스제(팜시클로비르): 심한 재발 시 수의사 처방</li>
-<li>세균 이차감염: 항생제 병행</li>
+<li>재채기, 콧물, 코막힘</li>
+<li>눈 충혈, 눈곱, 결막염 (눈물, 눈을 가늘게 뜸)</li>
+<li>식욕 감소, 열, 기운 없음</li>
+<li>심하면 각막 궤양과 입안 궤양</li>
+</ul>
+<p>코가 막히면 냄새를 못 맡아 식욕이 떨어지는 것이 흔하다. 하루 이상 먹지 않으면 고양이는 간에 문제가 생길 수 있어 병원 진료가 필요하다.</p>
+
+<h2>어떻게 전파되고 재발하나</h2>
+<ul>
+<li>코·눈 분비물, 침, 공동 그릇·화장실을 통한 접촉으로 전파된다.</li>
+<li>회복 후에도 신경 조직에 잠복하다가 스트레스, 환경 변화, 다른 질환, 면역 저하 때 재활성화된다.</li>
+<li>새끼 고양이와 보호소, 다묘 환경에서 흔하다.</li>
 </ul>
 
-<h2>L-라이신 논쟁</h2>
-<p>L-라이신 보충제가 FHV-1 재발 억제에 효과적이라는 주장이 오랫동안 유지되었으나, 2015년 체계적 문헌 고찰에서 효과 근거가 부족하다고 결론지었다. 현재는 루틴 사용이 권장되지 않는 추세다.</p>
+<h2>치료와 관리</h2>
+<table>
+<thead><tr><th>항목</th><th>내용</th></tr></thead>
+<tbody>
+<tr><td>지지 요법</td><td>수분 공급, 영양 지원, 코 막힘 완화(따뜻한 증기, 눈코 분비물 닦아 주기)</td></tr>
+<tr><td>항바이러스·안약</td><td>눈 증상이 있으면 수의사가 안약을 처방한다. 약은 개체에 맞게 선택한다</td></tr>
+<tr><td>2차 세균 감염</td><td>세균 감염이 의심되면 항생제를 사용한다 (바이러스 자체에는 효과 없음)</td></tr>
+<tr><td>스트레스 관리</td><td>일과, 숨을 곳, 다묘 가정에서 충분한 자원 제공</td></tr>
+<tr><td>예방접종</td><td>허피스바이러스를 포함한 복합 백신은 증상을 줄여 준다. 완전한 감염 예방은 아니다</td></tr>
+</tbody>
+</table>
+
+<div class="callout-cat">
+<strong>라이신 보충제는 근거가 부족하다</strong><br>
+• 라이신이 허피스바이러스 감염에 효과가 있다는 믿음이 널리 퍼져 있지만, 2015년 체계적 문헌 고찰은 효과를 뒷받침하는 근거가 없다고 결론지었다<br>
+• 보호소 고양이를 대상으로 한 시험에서도 상부 호흡기 감염 예방 효과가 확인되지 않았다<br>
+• 제품을 쓰기 전에 수의사와 상의한다
+</div>
+
+<h2>이런 경우는 병원</h2>
+<ul>
+<li>눈을 뜨지 못하거나 각막이 흐려짐 (궤양 의심)</li>
+<li>누런 콧물, 열, 호흡이 힘듦</li>
+<li>24시간 이상 먹지 않음</li>
+<li>새끼 고양이나 노령묘의 증상이 심함</li>
+</ul>
+
+<h2>다묘 가정</h2>
+<p>증상이 있는 고양이를 분리하고 그릇, 화장실, 침구를 따로 쓴다. 손 씻기와 환경 청소를 철저히 한다. 새로 들이는 고양이는 일정 기간 격리한 뒤 합사한다.</p>
 
 <h2>마지막으로</h2>
-<p>FHV-1 보균 고양이는 스트레스 최소화가 재발 예방의 핵심이다. 재발 시 눈 증상이 악화되면 빠르게 수의사 상담을 받는 것이 시력 보호에 중요하다.</p>`,
+<p>허피스바이러스는 완전히 없애기는 어렵지만 스트레스 관리와 조기 치료로 재발 빈도와 증상을 줄일 수 있다. 눈 증상이 있으면 서둘러 진료를 받자.</p>`,
     authorName: "펫지기 에디터",
     authorCredential: "반려동물 건강 정보 큐레이터",
     ymyl: true,
-    sources: JSON.stringify([
-      "Thiry, E. et al. — Feline herpesvirus infection. ABCD guidelines on prevention and management. J Feline Med Surg 2009",
-      "Bol, S. & Bunnik, E.M. — Lysine supplementation is not effective for the prevention or treatment of feline herpesvirus 1 infection in cats. BMC Vet Res 2015",
-    ]),
+    sources: [
+      "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4647294/ — PMC, Lysine supplementation is not effective for the prevention or treatment of FHV-1 infection in cats: a systematic review",
+      "https://pubmed.ncbi.nlm.nih.gov/18547855/ — PubMed, Oral supplementation with L-lysine did not prevent upper respiratory infection in a shelter population of cats",
+      "https://www.aaha.org/publications/newstat/articles/2015-11/lysine-ineffective-in-treating-cats-with-herpesvirus-1-infection/ — AAHA NEWStat, Lysine ineffective in treating cats with herpesvirus 1 infection",
+    ],
     disclaimer: "이 글은 정보 제공을 목적으로 하며 수의사 진료를 대체하지 않습니다.",
     status: "published",
     publishedAt: "2027-01-04T09:00:00.000Z",

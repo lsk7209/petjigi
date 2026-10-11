@@ -37,6 +37,11 @@ export const CONTENT_REDIRECTS: readonly ContentRedirect[] = [
     reason: "동일 검색 의도(동물등록 정보 변경·말소). 대표 문서가 절차·서류·기한을 모두 다룸",
   },
   {
+    from: "/blog/dog-spleen-mass-benign-vs-malignant",
+    to: "/blog/dog-splenic-hemangiosarcoma-guide",
+    reason: "동일 검색 의도(비장 종괴의 양성·악성 구분). 대표 문서가 비장 종괴 감별·진단·치료를 모두 다룸",
+  },
+  {
     from: "/blog/pet-insurance-comparison-guide",
     to: "/blog/pet-insurance-comparison-method",
     reason: "동일 검색 의도(펫보험 비교 기준). 더 짧은 문서이며 비교 기준·한도·갱신 항목은 대표 문서가 모두 다룸",
