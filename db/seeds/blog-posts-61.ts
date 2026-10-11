@@ -78,44 +78,50 @@ const BLOG_POSTS: NewContent[] = [
     subtitle: "비만세포종 외관 특징, 등급 분류, 수술 기준, 조기 발견이 중요한 이유",
     metaTitle: "강아지 비만세포종(MCT) — 증상·등급·치료 가이드 | 펫지기",
     metaDescription: "강아지 피부 혹이 비만세포종일 수 있습니다. 외관 특징, 1~3등급 구분, 수술 기준, 항히스타민 전처치 필요성을 정리했습니다.",
-    body: `<p>강아지의 피부 혹을 발견했을 때 "지방종이겠지"라고 넘기기 쉽다. 그러나 강아지 피부 종양 중 가장 흔한 것 중 하나가 비만세포종(Mast Cell Tumor, MCT)이다. 외관만으로 구분이 어렵기 때문에 반드시 세포 검사가 필요하다.</p>
+    body: `<p>강아지 피부에 혹이 생기면 지방종이겠거니 하고 넘기기 쉽다. 그러나 개 피부 종양에서 흔히 다루는 것 중 하나가 비만세포종(Mast Cell Tumor, MCT)이고, 겉모양이 지방종처럼 보일 수 있다. 그래서 만져지는 혹은 세포검사로 확인하는 것이 안전하다.</p>
 
 <h2>비만세포종이란</h2>
-<p>비만세포(mast cell)에서 유래한 악성 종양이다. 피부·피하에 가장 흔하게 발생하지만, 내장에도 생긴다. 히스타민을 포함한 활성 물질을 방출해 전신 반응을 일으킬 수 있다.</p>
+<p>비만세포에서 생기는 종양으로, 주로 피부와 피하에서 발견된다. 비만세포는 히스타민 같은 물질을 가지고 있어서, 종양이 자극받거나 커지면 이런 물질이 나와 주변이나 전신에 영향을 줄 수 있다. 일부 개에서는 위궤양이 동반되고, 구토·설사·부종·멍·허탈 같은 증상이 나타나기도 한다.</p>
 
-<h2>외관 특징</h2>
+<h2>진단은 어떻게 하나</h2>
+<table>
+<thead><tr><th>단계</th><th>내용</th></tr></thead>
+<tbody>
+<tr><td>세침흡인검사(FNA)</td><td>혹의 세포를 뽑아 특징적인 과립을 확인한다. 메르크 수의학 매뉴얼은 피부 종양을 절제하기 전에 세침흡인으로 비만세포종을 배제하라고 안내한다</td></tr>
+<tr><td>조직검사</td><td>등급과 절제 경계를 확인하는 데 필요하다. 세포검사만으로는 예후와 연결되는 등급을 대신할 수 없다</td></tr>
+<tr><td>병기 설정</td><td>혈액검사, 가까운 림프절 세포검사, 영상검사 등을 상황에 맞게 조합한다. 저등급에서는 간·비장 검사의 필요성에 대한 연구도 있어 수의사가 판단한다</td></tr>
+</tbody>
+</table>
+
+<h2>예후에 영향을 주는 요인</h2>
 <ul>
-<li>경계가 불분명하고 모양이 불규칙한 경우 많음</li>
-<li>긁거나 만지면 갑자기 커지거나 빨개지는 경우 (다리우스 현상)</li>
-<li>같은 혹이 컸다 작아졌다를 반복하기도 함</li>
-<li>단단하거나 말랑한 경우 모두 가능</li>
-</ul>
-
-<h2>진단 방법</h2>
-<p>세침흡인검사(FNA)로 세포를 채취해 현미경으로 확인한다. 외래에서 비교적 간단히 할 수 있다. 확진 및 등급 판정은 수술 후 조직병리 검사(생검)로 한다.</p>
-
-<h2>등급(Grade)에 따른 예후</h2>
-<ul>
-<li><strong>Grade 1 (저등급)</strong>: 국소적, 수술 후 예후 좋음</li>
-<li><strong>Grade 2 (중등급)</strong>: 약 50% 재발·전이 가능성, 추가 치료 고려</li>
-<li><strong>Grade 3 (고등급)</strong>: 전이율 높음, 적극적 치료 필요</li>
+<li>수술 당시 종양 크기: 지름 3cm를 넘으면 생존 기간이 짧아지는 경향이 보고되어 있다.</li>
+<li>불완전 절제, 빠른 성장, 점막과 피부 경계·주둥이·배·포피·발톱 아래 같은 부위 발생은 더 공격적인 경과와 연관된다.</li>
+<li>진단 시 전신 증상이 있는 경우.</li>
+<li>조직 등급: 저등급은 국소 치료로 좋은 경과를 보이는 경우가 많고, 고등급일수록 추가 치료가 필요하다.</li>
 </ul>
 
 <div class="callout-dog">
-<strong>수술 전 항히스타민 전처치</strong><br>
-비만세포 조작 시 히스타민 방출로 혈압 저하 가능<br>
-→ 수술 전 디펜히드라민 + H2 차단제 전처치가 표준
+<strong>빨리 진료받아야 하는 경우</strong><br>
+• 새로 생겼거나 빠르게 커지는 혹<br>
+• 혹이 붉어지거나 진물·출혈이 있음<br>
+• 혹이 있으면서 구토, 검은 변, 식욕 저하, 무기력이 함께 나타남<br>
+• 혹 주변이 멍들거나 붓는 경우
 </div>
 
+<h2>치료 방향</h2>
+<p>비만세포종으로 확인되면 넓고 깊은 절제를 계획하는 것이 일반적인 원칙이다. 절제 범위는 등급과 위치에 따라 달라지고, 병리 결과에 따라 추가 수술, 방사선, 약물 치료가 논의된다. 수술 전후 약 사용은 수의사가 판단한다. 집에서 혹을 문지르거나 짜면 자극으로 증상이 악화될 수 있으니 하지 않는다.</p>
+
 <h2>마지막으로</h2>
-<p>피부 혹을 발견하면 크기와 상관없이 세포 검사를 받는 것이 권장된다. 비만세포종은 조기 발견·완전 절제 시 좋은 예후를 보인다.</p>`,
+<p>혹의 크기가 작아도 겉모양으로 양성이라고 판단할 수 없다. 새로 생긴 혹은 한 번은 세포검사를 받고, 비만세포종이면 등급과 병기를 확인해 치료 계획을 세우는 것이 순서다.</p>`,
     authorName: "펫지기 에디터",
     authorCredential: "반려동물 건강 정보 큐레이터",
     ymyl: true,
-    sources: JSON.stringify([
-      "Kiupel, M. et al. — Proposal of a 2-Tier Histologic Grading System for Canine MCT. Vet Pathol 2011",
-      "대한수의종양학회 비만세포종 임상 가이드라인",
-    ]),
+    sources: [
+      "https://www.merckvetmanual.com/dog-owners/skin-disorders-of-dogs/tumors-of-the-skin-in-dogs — Merck Veterinary Manual, Tumors of the Skin in Dogs",
+      "https://www.merckvetmanual.com/integumentary-system/tumors-of-the-skin-and-soft-tissues/lymphocytic-histiocytic-and-related-cutaneous-tumors-in-animals — Merck Veterinary Manual, Lymphocytic, Histiocytic, and Related Cutaneous Tumors in Animals",
+      "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9506313/ — The Role of Fine Needle Aspiration of Liver and Spleen in the Staging of Low-Grade Canine Cutaneous Mast Cell Tumor",
+    ],
     disclaimer: "이 글은 정보 제공을 목적으로 하며 수의사 진료를 대체하지 않습니다.",
     status: "published",
     publishedAt: "2026-08-16T11:00:00.000Z",

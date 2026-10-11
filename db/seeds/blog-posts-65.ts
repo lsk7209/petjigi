@@ -74,55 +74,60 @@ const BLOG_POSTS: NewContent[] = [
     subtitle: "임신 확인 방법, 식이·운동 조정, 출산 준비, 산후 관리",
     metaTitle: "임신한 반려동물 케어 — 개·고양이 임신 관리 가이드 | 펫지기",
     metaDescription: "임신한 강아지·고양이 케어 방법. 임신 확인, 영양·운동 조정, 출산 준비, 산후 관리를 정리했습니다.",
-    body: `<p>의도하지 않은 임신이든, 계획된 번식이든 — 임신한 반려동물은 특별한 관리가 필요하다.</p>
+    body: `<p>임신한 강아지·고양이는 평소와 먹는 양, 활동량, 필요한 진료가 달라진다. 계획된 번식이든 예상 못 한 임신이든, 임신 사실을 확인하면 수의사와 상담해 관리 계획을 세우는 것이 가장 안전하다. 이 글은 보호자가 알아두면 좋은 일반 원칙을 정리한 것이다.</p>
 
-<h2>임신 기간</h2>
+<h2>임신 기간과 확인</h2>
 <ul>
-<li><strong>강아지</strong>: 약 63일 (58~68일)</li>
-<li><strong>고양이</strong>: 약 63~65일 (63~69일)</li>
+<li>개와 고양이 모두 임신 기간은 대략 두 달(약 9주) 정도이며 개체에 따라 며칠 차이가 난다.</li>
+<li>개는 호르몬(릴랙신) 혈액검사로 교배 후 대략 22~27일부터 임신을 확인할 수 있고, 음성이면 1주 뒤 반복하라고 VCA는 안내한다.</li>
+<li>새끼 수는 임신 후기에 엑스레이로 파악하는 것이 가장 정확하다. 분만 약 3주 전이 적당한 시기다.</li>
 </ul>
 
-<h2>임신 확인 방법</h2>
+<h2>임신 중 식이</h2>
+<table>
+<thead><tr><th>시기</th><th>개</th><th>고양이</th></tr></thead>
+<tbody>
+<tr><td>임신 초중기</td><td>평소 양을 유지하고 체중이 과하게 늘거나 줄지 않게 한다</td><td>임신 중 새끼 고양이용 사료를 권하는 자료가 많다</td></tr>
+<tr><td>임신 후기</td><td>마지막 3주쯤에는 필요량이 평소의 약 1.5배까지 늘 수 있어 소량씩 자주 급여한다</td><td>마지막 3주에 평소보다 25~50% 정도 늘린다는 자료가 있다. 과체중이 되면 난산 위험이 커진다</td></tr>
+</tbody>
+</table>
 <ul>
-<li>교배 후 3~4주: 복부 초음파로 태아 확인 가능</li>
-<li>교배 후 5주: 복부 촉진으로 확인 가능 (수의사)</li>
-<li>교배 후 7주: X-ray로 태아 수 정확히 파악</li>
-<li>체중 증가·유두 발달·식욕 변화가 임신 신호</li>
-</ul>
-
-<h2>임신 중 식이 조정</h2>
-<div class="callout-dog">
-<strong>임신 기간 영양 조정</strong><br>
-• 임신 초기 4주: 기존 사료 유지<br>
-• 5주부터: 퍼피 사료(고칼로리·고단백)로 전환<br>
-• 후기: 급식량 25~50% 증가<br>
-• 출산 직전: 소량씩 더 자주 (자궁이 위장 압박)
-</div>
-
-<h2>운동 조정</h2>
-<ul>
-<li>임신 초기: 정상 운동 유지</li>
-<li>임신 후기(7주+): 격렬한 운동·점프 제한</li>
-<li>출산 1주 전: 짧은 산책만</li>
+<li>개는 포장지에 임신·수유기(또는 모든 성장 단계)에 적합하다고 표시된 사료를 고른다. 대형견 자견용 사료는 칼슘·인 균형이 맞지 않아 피한다.</li>
+<li>칼슘 보충제나 유제품은 임의로 먹이지 않는다. 과잉 칼슘은 출산 후 저칼슘혈증(자간증) 위험을 높일 수 있다고 알려져 있다.</li>
+<li>구충·백신·영양제는 임신 중 안전성이 약마다 다르므로 반드시 수의사와 상의한다.</li>
 </ul>
 
 <h2>출산 준비</h2>
 <ul>
-<li>조용하고 따뜻한 분만 공간 사전 준비 (박스+담요)</li>
-<li>출산 예정 1~2주 전 분만 공간에 익숙하게</li>
-<li>담당 수의사 연락처 및 야간 응급 병원 파악</li>
-<li>출산 1주 전부터 매일 직장 체온 측정 (100°F 이하로 떨어지면 24시간 내 출산)</li>
+<li>조용하고 따뜻하며 사람 왕래가 적은 분만 공간(박스+깨끗한 담요)을 미리 마련하고 익숙해지게 한다.</li>
+<li>담당 병원과 야간 응급 병원의 연락처와 이동 방법을 확인해 둔다.</li>
+<li>분만이 가까워지면 직장 체온을 잰다. VCA는 개의 체온이 약 37.2℃(99℉) 아래로 내려가면 24시간 안에 분만이 시작되는 경우가 많다고 설명한다. 고양이는 약 37.5℃(100℉) 아래 기준이 제시된다.</li>
+<li>둥지를 만들려는 행동, 안절부절못함, 식욕 저하, 헐떡임은 분만이 가깝다는 신호다.</li>
 </ul>
 
+<div class="callout-dog">
+<strong>즉시 병원에 연락해야 하는 경우</strong><br>
+• 새끼 없이 녹색 분비물이 나옴<br>
+• 강한 진통이 1~2시간(고양이는 45~60분) 이어지는데 새끼가 나오지 않음<br>
+• 한 마리를 낳은 뒤 2시간 이상 힘을 주지 않거나, 남은 새끼가 있는 것 같은데 오래 진행이 없음<br>
+• 체온이 떨어진 뒤 하루가 지나도 진통이 없음<br>
+• 출혈이 계속되거나 어미가 갑자기 처지고 무기력함
+</div>
+
+<h2>산후 관리</h2>
+<p>수유 중에는 어미가 더 많이 먹어야 하며, 새끼가 1~4주 정도일 때 헐떡임, 안절부절못함, 떨림이 나타나면 자간증(저칼슘혈증) 응급일 수 있다. 이때는 새끼의 수유를 중단시키고 바로 병원에 연락한다. 출산 후 분비물이 1주 이상 계속되면 태반 잔류 여부를 확인받아야 한다.</p>
+
 <h2>마지막으로</h2>
-<p>임신은 자연스러운 과정이지만 수의사와 정기 모니터링이 필수다. 특히 첫 출산·소형견·고령 동물에서 난산 위험이 있으므로 응급 연락처를 항상 준비해둔다.</p>`,
+<p>임신과 출산은 자연스러운 과정이지만 난산과 산후 응급이 생길 수 있다. 특히 첫 출산, 소형견, 고령 동물은 위험이 높으므로 정기 진료와 응급 연락처를 미리 준비하자. 임신을 원하지 않는다면 중성화는 수의사와 시기를 상담해 결정한다.</p>`,
     authorName: "펫지기 에디터",
     authorCredential: "반려동물 생활 정보 큐레이터",
     ymyl: true,
-    sources: JSON.stringify([
-      "Root Kustritz, M.V. — Pregnancy Diagnosis and Abnormalities of Pregnancy in the Dog",
-      "대한수의사회 번식 관리 임상 가이드라인",
-    ]),
+    sources: [
+      "https://vcahospitals.com/know-your-pet/feeding-the-pregnant-dog — VCA, Feeding the Pregnant Dog",
+      "https://vcahospitals.com/know-your-pet/breeding-for-dog-owners---problems-at-birth — VCA, Breeding for Dog Owners - Problems at Birth",
+      "https://vcahospitals.com/know-your-pet/pregnancy-and-parturition-in-cats — VCA, Pregnancy and Parturition in Cats",
+      "https://www.merckvetmanual.com/management-and-nutrition/management-of-reproduction-dogs-and-cats/whelping-and-queening-in-dogs-and-cats — Merck Veterinary Manual, Whelping and Queening in Dogs and Cats",
+    ],
     disclaimer: "이 글은 정보 제공을 목적으로 하며 수의사 진료를 대체하지 않습니다.",
     status: "published",
     publishedAt: "2026-08-26T11:00:00.000Z",
