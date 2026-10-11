@@ -193,57 +193,61 @@ const BLOG_POSTS: NewContent[] = [
     subtitle: "강아지 등산 적합 여부 확인, 물·간식 준비, 발바닥 보호, 피로 신호 읽기",
     metaTitle: "강아지 등산·하이킹 완전 가이드 — 안전 준비·물·발바닥 | 펫지기",
     metaDescription: "강아지와 등산할 때 안전 준비. 적합한 강아지 확인, 물·간식 준비, 발바닥 보호, 등산 중 피로·탈진 신호를 정리했습니다.",
-    body: `<p>강아지와 함께하는 등산은 두 배로 즐거운 경험이다. 그러나 강아지의 체력과 건강 상태를 고려한 준비가 필요하다.</p>
+    body: `<p>강아지와 함께하는 등산과 하이킹은 좋은 운동이 되지만, 개는 땀으로 체온을 식히지 못해 쉽게 과열되고 발바닥도 다치기 쉽다. 코스 선택부터 준비물, 현장 매너까지 점검해 보자.</p>
 
-<h2>등산에 적합한 강아지 확인</h2>
+<h2>출발 전 준비</h2>
 <ul>
-<li>나이: 성장판이 닫힌 성견(소형 12개월, 대형 18~24개월) 이상</li>
-<li>건강: 관절·심장·호흡기 문제가 없는 개체</li>
-<li>주의: 단두종(불독·퍼그)은 호흡 문제로 과격한 등산 부적합</li>
-<li>처음이라면: 짧은 거리·완만한 경사부터 시작</li>
+<li><strong>건강 점검</strong>: 장거리 산행 전에 수의사와 관절·심장 상태를 확인한다.</li>
+<li><strong>체력 단련</strong>: 짧은 코스부터 시작해 거리를 서서히 늘린다. 갑작스러운 장시간 활동은 부상 위험이 크다.</li>
+<li><strong>동반 가능 확인</strong>: 국립공원·지자체 구역은 반려견 동반 규정(줄 길이, 입장 가능 여부)이 다르다. 사전에 확인한다.</li>
+<li><strong>예방접종·구충</strong>: 야생동물 접촉이나 진드기에 대비해 예방 계획을 수의사와 확인한다.</li>
 </ul>
 
-<h2>등산 전 준비물</h2>
+<h2>준비물</h2>
+<table>
+<thead><tr><th>준비물</th><th>이유</th></tr></thead>
+<tbody>
+<tr><td>충분한 물과 접이식 그릇</td><td>정체된 하천·웅덩이 물은 기생충과 세균(렙토스피라 등)에 오염되었을 수 있다</td></tr>
+<tr><td>짧고 고정된 줄 (신축형 줄은 지양)</td><td>신축형이나 너무 긴 줄은 덤불에 엉킨다</td></tr>
+<tr><td>발 보호 신발, 응급 키트</td><td>거친 바위나 뜨거운 바닥에서 발바닥을 보호하고 상처에 대비</td></tr>
+<tr><td>배변봉투, 간식</td><td>배설물은 반드시 수거하고 에너지를 보충</td></tr>
+<tr><td>진드기 제거 도구</td><td>산행 후 확인하고 발견하면 빠르게 제거</td></tr>
+</tbody>
+</table>
+
 <div class="callout-dog">
-<strong>등산 필수 준비물</strong><br>
-□ 물 (강아지 체중 1kg당 60ml/시간 추가 준비)<br>
-□ 접이식 물그릇<br>
-□ 간식 (고칼로리 에너지 보충용)<br>
-□ 목줄 + 이름표 (이탈 방지)<br>
-□ 응급 키트 (거즈·반창고·지혈분말)<br>
-□ 발바닥 왁스 (거친 돌·뜨거운 바위 대비)
+<strong>과열·탈진 신호 — 즉시 쉬고 병원 연락</strong><br>
+• 과도한 헐떡임, 침 흘림, 잇몸이 붉거나 창백함<br>
+• 비틀거림, 주저앉음, 반응이 둔함<br>
+• 구토나 설사<br>
+→ 그늘에서 쉬게 하고 물을 조금씩 마시게 하며, 호전되지 않으면 서둘러 하산해 진료받는다.
 </div>
 
-<h2>등산 중 수분 관리</h2>
-<p>강아지는 헐떡임으로 수분을 빠르게 잃는다. 30~45분마다 물을 제공한다. 산 속 계곡물을 직접 마시게 하면 기생충 감염 위험이 있다 — 가져온 물을 준다.</p>
-
-<h2>피로·탈진 신호</h2>
+<h2>산에서의 매너와 안전</h2>
 <ul>
-<li>발걸음이 느려지거나 멈춤</li>
-<li>과도한 헐떡임 (평소보다 빠르고 깊음)</li>
-<li>뒤처지거나 않으려 함</li>
-<li>발바닥 들어올리기 (통증 신호)</li>
+<li>오는 사람이나 다른 개를 만나면 줄을 짧게 잡고 길가로 비켜선다.</li>
+<li>야생동물을 쫓지 않게 "기다려", "이리 와" 신호를 미리 훈련한다.</li>
+<li>무더운 시간대를 피해 이른 시간에 출발한다.</li>
+<li>배설물을 치우고 쓰레기를 가져온다.</li>
 </ul>
-<p>이 신호가 보이면 그늘에서 충분히 쉬고, 심하면 하산한다.</p>
 
-<h2>등산로 에티켓</h2>
+<h2>산행 후</h2>
 <ul>
-<li>목줄 착용 필수 (국립공원은 법적 의무)</li>
-<li>좁은 길에서 사람이 지나갈 때 옆으로 비켜주기</li>
-<li>배변 수거 필수 — 자연 환경 오염 방지</li>
-<li>야생 동물 추적하지 않도록 통제</li>
+<li>몸 전체, 귀, 발가락 사이에서 진드기와 상처를 확인한다.</li>
+<li>발바닥이 갈라지거나 헐지 않았는지 본다.</li>
+<li>다음 날까지 절뚝임, 식욕 저하, 구토가 있으면 진료를 받는다.</li>
 </ul>
 
 <h2>마지막으로</h2>
-<p>강아지와 함께하는 등산은 두 사람 모두에게 최고의 신체·정신 건강 활동이다. 강아지의 능력에 맞는 코스와 충분한 준비로 안전하고 즐거운 산행을 만들어보자.</p>`,
+<p>개의 체력과 컨디션에 맞춰 코스를 정하고, 물과 휴식을 충분히 주자. 무리하지 않고 안전하게 돌아오는 것이 목표다.</p>`,
     authorName: "펫지기 에디터",
     authorCredential: "반려동물 생활 정보 큐레이터",
     ymyl: false,
-    sources: JSON.stringify([
-      "American Kennel Club — Hiking with Dogs Safety Guide",
-      "국립공원관리공단 반려동물 탐방 안내",
-      "한국반려동물협회 야외 활동 안전 가이드",
-    ]),
+    sources: [
+      "https://www.akc.org/expert-advice/lifestyle/tips-for-hiking-with-your-dog/ — AKC, Hiking With Your Dog: Expert Safety, Training, and Gear Tips",
+      "https://vcahospitals.com/resources/lifestyle-dog/hiking-with-your-dog-101 — VCA, Hiking with your dog 101",
+      "https://www.avma.org/resources-tools/veterinarians-and-public-health/disease-precautions-outdoor-companion-animals — AVMA, Disease precautions for outdoor enthusiasts and their companion animals",
+    ],
     disclaimer: null,
     status: "published",
     publishedAt: "2026-08-12T11:00:00.000Z",

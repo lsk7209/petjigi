@@ -664,55 +664,59 @@ const BLOG_POSTS_12: NewContent[] = [
     title: "강아지 수영 — 처음 물에 데려가는 법과 안전 수칙",
     metaTitle: "강아지 수영 방법·안전 수칙 | 처음 물 적응·익사 예방 | 펫지기",
     metaDescription: "강아지 수영 처음 시작하는 법과 안전 수칙. 단두종 주의사항, 구명조끼 필요 기준, 청조 위험, 수영 후 귀·피부 관리, 수영이 어려운 견종.",
-    body: `<p>수중 운동은 관절에 가해지는 부담이 적어 관절이 약한 강아지에게도 활용된다. 관절염이 있는 강아지, 노령견, 수술 후 재활 중인 강아지에게 수의사들이 권장하는 운동법이다. 하지만 모든 강아지가 본능적으로 잘 헤엄치는 것은 아니다.</p>
+    body: `<p>강아지가 모두 수영을 잘하는 것은 아니다. 물을 좋아하는 개도 있지만, 체형이나 경험에 따라 쉽게 지치거나 당황하는 개도 있다. 처음 물에 데려갈 때는 안전을 우선으로 천천히 시작해야 한다.</p>
 
-<h2>수영이 어려운 견종 — 주의가 필요한 경우</h2>
-<p>불독, 퍼그, 보스턴테리어 등 단두종과 무거운 체형의 강아지는 수중에서 빨리 지치고, 짧은 주둥이로 숨쉬기가 더 어렵다. 이 품종에게는 반드시 구명조끼를 착용시키고 보호자가 밀착해서 지원해야 한다.</p>
+<h2>시작 전 점검</h2>
+<ul>
+<li><strong>건강</strong>: 관절염, 심장 질환, 간질 등이 있으면 수영이 위험할 수 있어 수의사와 먼저 상담한다.</li>
+<li><strong>체형</strong>: 다리가 짧거나 가슴이 깊은 품종, 코가 납작한 품종은 물에서 불리할 수 있다.</li>
+<li><strong>나이</strong>: 너무 어린 강아지는 체온 유지가 어려워 무리하지 않는다.</li>
+</ul>
 
-<h2>처음 물에 데려가는 법 (AKC 권장 단계)</h2>
+<h2>단계별 연습</h2>
 <ol>
-  <li>얕은 물(발목~무릎 깊이)에서 시작해 자신감을 갖게 한다</li>
-  <li>강제로 물에 던지거나 밀지 않는다 — 물에 대한 공포가 평생 남을 수 있다</li>
-  <li>보호자가 먼저 물에 들어가 초대한다</li>
-  <li>수영을 좋아하는 다른 강아지가 있으면 함께 입수하면 효과적이다</li>
-  <li>물속에서 좋아하는 장난감을 던져 관심을 유도한다</li>
-  <li>처음엔 짧게 — 피로나 스트레스 전에 긍정적으로 마무리한다</li>
+<li>얕은 물에서 발만 담그며 간식과 칭찬으로 좋은 경험을 만든다. 억지로 물에 넣지 않는다.</li>
+<li>구명조끼를 입혀 몸이 뜨는 것에 익숙하게 한다. AKC는 구명조끼가 있으면 처음 수영하는 개가 당황하거나 물을 삼키는 위험을 줄여 준다고 설명한다.</li>
+<li>보호자가 곁에서 몸을 받쳐 주며 앞발을 움직이게 한다.</li>
+<li>풀장이라면 출입 계단이나 경사로 위치를 반복해서 알려 준다. 개는 본능적으로 출구를 찾지 못할 수 있다.</li>
+<li>짧게 놀고 쉬는 시간을 충분히 둔다.</li>
 </ol>
 
-<h2>구명조끼 — 필요한 경우</h2>
+<div class="callout-dog">
+<strong>구명조끼 고르는 법</strong><br>
+• 몸에 맞는 크기 — 너무 크면 벗겨지고 너무 작으면 움직임을 방해한다<br>
+• 목과 가슴을 받쳐 주고 손잡이가 있는 제품<br>
+• 밝은 색으로 멀리서도 잘 보이는 제품
+</div>
+
+<h2>물 중독과 안전</h2>
 <ul>
-  <li>수영을 처음 배우는 모든 강아지</li>
-  <li>수영이 어려운 체형 품종</li>
-  <li>파도가 있는 바다, 조류가 있는 강</li>
-  <li>보트 탑승 시</li>
-  <li>노령견, 장애가 있는 강아지</li>
+<li>수영하면서 물을 많이 삼키면 물 중독(수분 과다)이 생길 수 있다. 구토, 처짐, 비틀거림, 호흡 곤란이 나타나면 즉시 병원에 간다.</li>
+<li>공 던지기보다 납작한 원반 같은 장난감이 물을 덜 삼키게 한다.</li>
+<li>한 번에 오래 하지 않고 자주 쉬게 한다.</li>
+<li>수영장 물은 소량이면 대체로 괜찮다고 보지만 염소 소독 물을 많이 마시게 하지 않는다. 바닷물은 마시면 위험하다.</li>
+<li>수영 뒤에는 깨끗한 물로 헹구고 귀를 말려 외이염을 예방한다.</li>
 </ul>
 
-<h2>피해야 할 장소</h2>
+<h2>수영하면 안 되는 경우</h2>
 <ul>
-  <li>조류가 강하거나 깊이를 알 수 없는 강·바다</li>
-  <li>청조(Blue-Green Algae) 발생 구역 — 시아노박테리아 독소가 강아지에게 치명적이다</li>
-  <li>수질 오염 의심 지역</li>
-  <li>반려동물 출입 금지 구역</li>
+<li>고여 있고 녹색 막이나 페인트 같은 층이 보이는 물(유해 조류 가능성)</li>
+<li>물살이 센 하천, 깊은 호수, 파도가 높은 바다</li>
+<li>개가 겁먹고 떨거나 도망치려 할 때</li>
+<li>더운 낮 시간대의 장시간 활동</li>
 </ul>
 
-<h2>수영 후 관리</h2>
-<ul>
-  <li>귀를 충분히 건조시킨다 — 물이 귀에 남으면 외이염 위험이 높아진다</li>
-  <li>깨끗한 물로 헹궈 염소·소금·조류 제거</li>
-  <li>완전히 말린다 — 습기가 피부 트러블 원인이 된다</li>
-</ul>
-
-<p>수영과 더불어 매일의 산책이 강아지 건강의 기본이다. <a href="/blog/dog-walk-guide">강아지 산책 완전 가이드</a>를 참고하자. 겨울철 수영 후 저체온 주의사항은 <a href="/blog/dog-winter-care-guide">강아지 겨울 관리 가이드</a>에서 확인하자.</p>`,
+<h2>마지막으로</h2>
+<p>수영은 관절에 부담이 적은 좋은 운동이 될 수 있지만, 안전 장비와 감독이 필수다. 개의 속도에 맞춰 천천히 시작하고 이상이 보이면 바로 중단하자.</p>`,
     ymyl: false,
     status: "published",
     publishedAt: scheduleDate(87),
     authorName: "펫지기 에디터",
-    sources: JSON.stringify([
-      "American Kennel Club (AKC) — Dog Swimming Safety",
-      "AVMA — Water Safety for Pets",
-      "WSAVA — Preventive Healthcare and Exercise Guidelines",
-    ]),
+    sources: [
+      "https://www.akc.org/expert-advice/home-living/tips-for-taking-your-dog-out-on-the-water/ — AKC, Water Safety for Dogs: Swimming and Boating Precautions",
+      "https://vcahospitals.com/resources/lifestyle-dog/hazards-safety/the-dos-and-don-ts-of-dog-water-safety — VCA, The dos and don'ts of dog water safety",
+      "https://www.akc.org/expert-advice/health/can-all-dogs-swim-safety-and-training-tips-for-dog-swimming/ — AKC, Can All Dogs Swim? How to Teach a Dog to Swim",
+    ],
     updatedAt: NOW,
     createdAt: NOW,
   },

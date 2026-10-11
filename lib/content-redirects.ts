@@ -17,6 +17,11 @@ export const CONTENT_REDIRECTS: readonly ContentRedirect[] = [
     reason: "동일 검색 의도(고양이 간식 선택). 더 짧은 문서이며 훈련 활용 섹션을 대표 문서에 병합",
   },
   {
+    from: "/blog/dog-summer-heat-care-guide",
+    to: "/guide/pet-heatstroke-prevention-complete-guide",
+    reason: "동일 검색 의도(여름 더위·열사병). 대표 가이드가 응급 처치·예방을 모두 다룸",
+  },
+  {
     from: "/blog/pet-insurance-comparison-guide",
     to: "/blog/pet-insurance-comparison-method",
     reason: "동일 검색 의도(펫보험 비교 기준). 더 짧은 문서이며 비교 기준·한도·갱신 항목은 대표 문서가 모두 다룸",
