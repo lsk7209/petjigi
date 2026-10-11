@@ -81,49 +81,48 @@ const BLOG_POSTS: NewContent[] = [
     subtitle: "제거식이 필요한 증상, 단일 단백질·가수분해 단백질 사료 선택, 테스트 중 절대 금지",
     metaTitle: "고양이 음식 알레르기 제거식 테스트 — 8주 프로토콜 가이드 | 펫지기",
     metaDescription: "고양이 음식 알레르기 확인을 위한 제거식 테스트 방법. 증상, 단일 단백질·가수분해 사료 선택, 8~12주 진행법, 도전 테스트 방법을 정리했습니다.",
-    body: `<p>고양이가 반복적으로 구토하거나, 발·귀·얼굴을 긁거나, 탈모가 생긴다면 음식 알레르기를 의심할 수 있다. 확인하는 유일한 방법은 '제거식 테스트(Elimination Diet Trial)'다.</p>
+    body: `<p>고양이가 계속 긁고 털을 뽑거나, 구토와 설사가 반복되면 음식 알레르기를 의심해 볼 수 있다. 하지만 혈액검사나 키트로 확진하기는 어렵고, 가장 믿을 만한 방법은 배제식이(elimination diet) 시험이라고 VCA는 안내한다.</p>
 
-<h2>제거식 테스트가 필요한 증상</h2>
-<ul>
-<li>반복적인 구토·설사 (주 2회 이상, 수개월)</li>
-<li>발·귀·배·얼굴 가려움</li>
-<li>만성 외이염</li>
-<li>털 뭉치·탈모 (과도한 그루밍)</li>
-</ul>
+<h2>배제식이 시험이란</h2>
+<p>알레르기를 일으킬 수 있는 성분을 모두 끊고, 새로운 단백질이나 가수분해 단백질 사료만 일정 기간 먹여 증상이 좋아지는지 보는 검사다. 보통 8주 이상 걸리며 8~12주를 권하는 자료도 있다. 반응이 나타나는 시기는 개체마다 1~9주로 다양하다고 알려져 있다.</p>
 
-<h2>제거식의 기본 원칙</h2>
-<p>이전에 먹어본 적 없는 새로운 단백질·탄수화물 원료를 먹이면서 기존 알레르기항원을 제거한다. 이전 사료의 성분과 겹치지 않는 것이 핵심이다.</p>
+<table>
+<thead><tr><th>식이 유형</th><th>내용</th><th>유의점</th></tr></thead>
+<tbody>
+<tr><td>새로운 단백질 식이</td><td>지금까지 먹어본 적 없는 단백질원 사용 (예: 토끼, 사슴, 오리 등 급여 이력에 따라 선택)</td><td>과거 급여 이력을 정확히 알려야 한다</td></tr>
+<tr><td>가수분해 단백질 식이</td><td>단백질을 잘게 쪼개 면역계가 반응하기 어렵게 만든 처방식</td><td>수의사가 제품을 선택한다</td></tr>
+</tbody>
+</table>
 
-<h2>사료 선택</h2>
+<h2>시험이 성공하려면</h2>
 <div class="callout-cat">
-<strong>제거식 사료 종류</strong><br>
-• <strong>단일 단백질(Novel Protein)</strong>: 이전에 먹어본 적 없는 고기 (오리·토끼·캥거루·사슴·곤충)<br>
-• <strong>가수분해 단백질(Hydrolyzed)</strong>: 단백질을 아주 작게 분해해 면역 반응 최소화 (수의사 처방식 권장)<br>
-• 홈쿡: 이전에 안 먹어본 단일 단백질 + 탄수화물
+<strong>시험 기간에 지킬 것</strong><br>
+• 정해진 사료 외에 간식·영양제·사람 음식·맛을 입힌 약을 먹이지 않는다<br>
+• 다른 고양이의 사료를 먹지 못하게 분리한다<br>
+• 피부 증상과 배변 상태를 매일 기록한다<br>
+• 중간에 사료를 바꾸거나 한 번이라도 다른 음식을 주면 결과가 무효가 될 수 있다
 </div>
 
-<h2>8~12주 프로토콜</h2>
-<ol>
-<li>제거식 사료로 100% 전환 (7~10일 점진적 전환)</li>
-<li>8~12주 엄격히 유지</li>
-<li><strong>테스트 중 절대 금지</strong>: 기존 사료·간식·사람 음식·다른 동물 사료</li>
-<li>증상이 개선되면 → 원래 사료 재도전(Challenge)</li>
-<li>증상 재발 → 음식 알레르기 확진</li>
-</ol>
+<h2>증상이 좋아졌다면</h2>
+<p>배제식이로 호전되더라도 그것만으로 확진은 아니다. 원래 먹던 음식을 다시 먹여 증상이 재발하는지 확인하는 재도전(rechallenge)을 거쳐야 원인 성분을 확정할 수 있다. 재도전은 수의사 지시에 따라 한 가지씩 진행한다.</p>
 
-<h2>왜 8~12주가 필요한가</h2>
-<p>면역 반응이 완전히 가라앉고 피부·소화기가 회복되는 데 시간이 필요하다. 4주 만에 판단하면 오진 가능성이 높다.</p>
+<h2>음식 알레르기가 아닐 수도 있다</h2>
+<ul>
+<li>벼룩 알레르기와 환경 알레르기도 가려움의 흔한 원인이다.</li>
+<li>만성 구토·설사는 염증성 장질환 등 다른 병일 수 있다.</li>
+<li>그래서 시험 전에 외부 기생충 관리와 기본 검사를 먼저 하는 것이 좋다.</li>
+</ul>
 
 <h2>마지막으로</h2>
-<p>제거식 테스트는 인내가 필요하지만 음식 알레르기를 확인하는 유일한 방법이다. 혈액 알레르기 검사는 음식 알레르기 진단에 신뢰도가 낮다. 수의사와 함께 계획하고 진행하는 것을 권장한다.</p>`,
+<p>배제식이는 번거롭지만 가장 확실한 방법이다. 기간과 규칙을 끝까지 지키는 것이 핵심이므로, 시작 전에 수의사와 사료 선택, 기간, 재도전 계획을 함께 정하자.</p>`,
     authorName: "펫지기 에디터",
     authorCredential: "반려동물 영양 정보 큐레이터",
     ymyl: true,
-    sources: JSON.stringify([
-      "Guilford, W.G. — Adverse reactions to food — Gastrointestinal food hypersensitivity. Veterinary Gastroenterology 1996",
-      "WSAVA Nutritional Assessment — Food Allergy Protocol",
-      "한국수의피부과학회 음식 알레르기 진단 가이드라인",
-    ]),
+    sources: [
+      "https://vcahospitals.com/know-your-pet/food-allergies-in-cats — VCA, Food Allergies in Cats",
+      "https://vcahospitals.com/know-your-pet/implementing-an-elimination-challenge-diet-trial-cat — VCA, Implementing an Elimination-Challenge Diet Trial (Cat)",
+      "https://www.merckvetmanual.com/cat-owners/skin-disorders-of-cats/allergies-of-cats — Merck Veterinary Manual, Allergies of Cats",
+    ],
     disclaimer: "이 글은 정보 제공을 목적으로 하며 수의사 진료를 대체하지 않습니다.",
     status: "published",
     publishedAt: "2026-08-06T11:00:00.000Z",
@@ -204,66 +203,57 @@ const BLOG_POSTS: NewContent[] = [
     subtitle: "간의 역할, 황달·복수·무기력 등 증상, 혈액검사 ALT·ALP 해석, 간 보호 식이",
     metaTitle: "강아지 간 질환 초기 신호·혈액검사·관리 가이드 | 펫지기",
     metaDescription: "강아지 간 질환은 증상이 늦게 나타납니다. 황달·복수·무기력 증상, 혈액검사 ALT·ALP 수치 해석, 간 보호 식이를 정리했습니다.",
-    body: `<p>간은 재생 능력이 뛰어나 70%가 손상될 때까지 증상이 나타나지 않는 경우가 있다. 이 때문에 '침묵의 장기'라 불린다.</p>
+    body: `<p>간은 증상이 늦게 나타나는 장기다. 초기 만성 간염은 겉으로 아무 증상이 없다가 건강검진 혈액검사에서 처음 발견되는 경우도 있다. 그래서 어떤 신호가 간 질환을 의심하게 하는지, 어떤 검사로 확인하는지 알아두면 도움이 된다.</p>
 
-<h2>간이 하는 일</h2>
+<h2>간 질환에서 보이는 신호</h2>
 <ul>
-<li>해독 (약물·독소·대사 산물 분해)</li>
-<li>단백질·응혈인자 합성</li>
-<li>담즙 생성 (지방 소화)</li>
-<li>혈당 조절 (글리코겐 저장)</li>
+<li>식욕 저하, 구토, 설사</li>
+<li>물을 많이 마시고 소변을 많이 봄</li>
+<li>체중 감소</li>
+<li>눈 흰자·잇몸·피부가 노랗게 변하는 황달</li>
+<li>배에 물이 차서 불러 옴</li>
+<li>멍한 상태, 방향 감각 상실, 발작 같은 신경 증상이 오락가락함</li>
 </ul>
+<p>이 신호들은 다른 질환에서도 나타나므로, 증상만으로 간 질환이라고 판단할 수 없다.</p>
 
-<h2>간 질환의 초기~중기 신호</h2>
 <div class="callout-dog">
-<strong>간 문제 의심 신호</strong><br>
-• 식욕 감소·체중 감소<br>
-• 무기력<br>
-• 구토·설사 (비특이적)<br>
-• 다음·다뇨 (간성 당뇨 가능성)<br>
-• 황달 (잇몸·공막·피부 노란색) — 중등도 이상<br>
-• 복부 팽창 (복수 — 중증)<br>
-• 간성 뇌증 증상 (배회·멍함·발작) — 중증
+<strong>빨리 진료받아야 하는 경우</strong><br>
+• 황달이 보임<br>
+• 반복 구토와 식욕 부진이 이어짐<br>
+• 배가 급격히 불러 옴<br>
+• 비틀거림, 발작, 의식 저하
 </div>
 
-<h2>혈액검사 결과 해석</h2>
+<h2>어떤 검사로 확인하나</h2>
 <table>
-<thead><tr><th>항목</th><th>의미</th></tr></thead>
+<thead><tr><th>검사</th><th>알 수 있는 것</th></tr></thead>
 <tbody>
-<tr><td>ALT (GPT)</td><td>간세포 손상 지표. 높으면 간세포 염증·괴사.</td></tr>
-<tr><td>ALP (알칼리인산분해효소)</td><td>담즙 흐름 장애·골 문제. 쿠싱증후군에서도 상승.</td></tr>
-<tr><td>총 빌리루빈</td><td>황달 정도. 높으면 간·담도·용혈 문제.</td></tr>
-<tr><td>알부민</td><td>간 합성 기능. 낮으면 만성 간 기능 저하.</td></tr>
+<tr><td>혈액검사(간 효소)</td><td>간 세포 손상 여부를 보는 첫 단서. 국소적인 병변에서는 효소 수치가 먼저 오른다</td></tr>
+<tr><td>담즙산·빌리루빈</td><td>간의 기능 상태를 평가. 손상이 진행되면 담즙산, 이어서 빌리루빈이 오르는 경향이 있다</td></tr>
+<tr><td>복부 초음파</td><td>간의 모양, 복수, 결절 여부 확인</td></tr>
+<tr><td>응고 검사</td><td>출혈 위험 평가</td></tr>
+<tr><td>간 조직검사</td><td>만성 간염 같은 정확한 진단에 필요</td></tr>
 </tbody>
 </table>
+<p>담즙산 검사가 모든 간 질환에서 이상으로 나오는 것은 아니어서, 수의사는 여러 검사 결과를 종합해 판단한다.</p>
 
-<h2>원인별 간 질환</h2>
+<h2>집에서 도움이 되는 관리</h2>
 <ul>
-<li>간염 (세균·바이러스·독소·면역 매개)</li>
-<li>간 지방증 (비만·당뇨)</li>
-<li>간 종양 (노령견)</li>
-<li>간문맥 단락 (선천성 — 소형 품종 많음)</li>
-<li>구리 축적 질환 (베들링턴·달마시안 품종)</li>
-</ul>
-
-<h2>간 보호 식이</h2>
-<ul>
-<li>저지방·고품질 단백질</li>
-<li>항산화 성분 (비타민E·C)</li>
-<li>SAMe (S-아데노실메티오닌) — 간 보호 보충제 (수의사 처방)</li>
-<li>밀크시슬 (실리마린) — 간 세포 보호 효과, 일부 연구 지지</li>
+<li>수의사가 지정한 식단과 약을 지킨다. 간 질환 식이는 원인과 상태에 따라 달라진다.</li>
+<li>사람용 영양제나 진통제, 허브 제품을 임의로 먹이지 않는다. 간에 부담을 줄 수 있다.</li>
+<li>정기 혈액검사 일정을 지킨다. 간 수치 이상을 한 번 들은 적이 있다면 추적이 중요하다.</li>
 </ul>
 
 <h2>마지막으로</h2>
-<p>간 질환은 조기에 발견할수록 예후가 좋다. 7세 이상 강아지의 정기 혈액검사에 간 수치(ALT·ALP·빌리루빈)가 포함되어 있는지 확인하자. 증상이 없어도 수치 이상이 먼저 발견되는 경우가 많다.</p>`,
+<p>간 수치 상승은 원인이 다양하고 일시적일 수도 있다. 수치가 높다는 말을 들었다면 바로 영양제를 사기보다 원인 검사를 먼저 하고, 재검사 시기를 수의사와 정하는 것이 순서다.</p>`,
     authorName: "펫지기 에디터",
     authorCredential: "반려동물 건강 정보 큐레이터",
     ymyl: true,
-    sources: JSON.stringify([
-      "Webster, C.R.L. — History, Clinical Signs, and Physical Findings in Hepatobiliary Disease. Vet Clin North Am 2009",
-      "WSAVA Liver Disease Guidelines",
-      "대한수의사회 소화기 질환 임상 가이드라인",
-    ]),
+    sources: [
+      "https://www.merckvetmanual.com/dog-owners/digestive-disorders-of-dogs/disorders-of-the-liver-and-gallbladder-in-dogs — Merck Veterinary Manual, Disorders of the Liver and Gallbladder in Dogs",
+      "https://vcahospitals.com/know-your-pet/chronic-hepatitis-in-dogs — VCA, Chronic Hepatitis in Dogs",
+      "https://vcahospitals.com/know-your-pet/liver-disease---testing — VCA, Testing for Liver Disease",
+    ],
     disclaimer: "이 글은 정보 제공을 목적으로 하며 수의사 진료를 대체하지 않습니다.",
     status: "published",
     publishedAt: "2026-08-07T11:00:00.000Z",
