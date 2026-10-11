@@ -253,55 +253,60 @@ const BLOG_POSTS: NewContent[] = [
     subtitle: "첫 밤 켄넬 환경 세팅, 울음의 의미, 달래는 방법과 절대 하면 안 되는 것",
     metaTitle: "강아지 첫날 밤 울음 달래는 법 — 처음 집에 온 날 가이드 | 펫지기",
     metaDescription: "강아지가 처음 집에 온 첫날 밤 울음을 달래는 방법, 켄넬 환경 세팅, 해야 할 것과 하면 안 되는 것을 정리했습니다.",
-    body: `<p class="aeo-answer" style="border-left:3px solid var(--cat-1,#c97d5b);padding-left:0.75rem;margin-bottom:1rem;">강아지가 첫날 밤 우는 가장 큰 이유는 엄마·형제들과 분리된 낯선 환경에 대한 불안이다. 이때 달래는 방법이 이후 분리불안 형성에 영향을 미칠 수 있다. 울 때마다 안아주면 "울면 안아주는" 패턴이 생기므로, 환경을 안정적으로 만들면서 조금씩 혼자 있는 시간에 익숙해지도록 돕는 것이 핵심이다.</p>
+    body: `<p>새 강아지가 집에 오는 첫날 밤은 보호자도 강아지도 긴장되는 시간이다. 어미와 형제를 떠나 처음 혼자 자는 밤이므로 우는 것은 자연스럽다. 며칠 안에 적응하는 강아지가 많지만, 개체마다 다르다. 첫날 밤을 준비하는 방법을 정리했다.</p>
 
-<div class="callout-cat">
-<strong>첫날 밤 원칙</strong><br>
-• 지나친 반응(울 때마다 달려가기)도, 완전 무시도 좋지 않다<br>
-• 따뜻하고 안전한 환경을 만드는 것이 달래기보다 먼저다<br>
-• 이미 지쳐있을 강아지에게는 자극보다 조용한 환경이 더 중요하다
+<h2>자기 전 준비</h2>
+<ul>
+<li><strong>잠자리</strong>: 크레이트나 작은 울타리에 푹신한 담요와 안전한 장난감을 둔다. 크레이트를 침실 안, 침대 곁에 두면 안정에 도움이 된다.</li>
+<li><strong>배변</strong>: 자기 직전에 밖이나 배변 장소로 데려가 배변하게 한다.</li>
+<li><strong>활동량 조절</strong>: 자기 전에는 과하게 흥분하지 않게 한다. 낮에 놀이와 낮잠을 적절히 하게 한다.</li>
+<li><strong>식수</strong>: 자기 전에 많이 마시지 않게 조절하되, 수의사 지시가 있으면 따른다.</li>
+</ul>
+
+<h2>밤에 울 때</h2>
+<table>
+<thead><tr><th>상황</th><th>대처</th></tr></thead>
+<tbody>
+<tr><td>배변이 필요해 보임</td><td>조용히 밖으로 데려가 짧게 배변시키고 바로 다시 재운다. 놀아 주지 않는다</td></tr>
+<tr><td>외로움·불안</td><td>크레이트 옆에서 손을 넣어 안심시킨다. 침대로 데려오는 습관은 피한다</td></tr>
+<tr><td>계속 길게 운다</td><td>잠깐 쉬어 가며 확인한다. 배변, 추위, 아픔 여부를 점검한다</td></tr>
+</tbody>
+</table>
+<p>AKC 안내에 따르면 대부분의 강아지는 생후 4개월 무렵이면 밤새 배변 없이 잘 수 있다. 그 전에는 밤에 한두 번 일어나야 할 수 있다.</p>
+
+<div class="callout-dog">
+<strong>걱정해야 하는 경우</strong><br>
+• 구토, 설사, 처짐, 먹지 않음<br>
+• 숨쉬기가 힘들어 보이거나 떨림이 심함<br>
+• 일어서지 못하거나 심하게 아파하는 소리<br>
+• 어린 강아지가 하루 이상 먹지 않음 — 저혈당 위험이 있어 빨리 진료
 </div>
 
-<h2>환경 세팅 — 첫날 밤 켄넬 구성</h2>
+<h2>이렇게 하면 좋다</h2>
 <ul>
-<li><strong>크기</strong>: 서고 돌아설 수 있는 정도면 충분. 너무 크면 오히려 불안해한다</li>
-<li><strong>온도</strong>: 새끼 강아지는 체온 조절이 미숙 — 담요나 핫팩을 수건으로 감싸 켄넬 한쪽에 둔다 (직접 접촉 금지)</li>
-<li><strong>심장 박동 소리</strong>: 엄마 심장 소리를 흉내 낸 틱톡 심장 소리 기기 또는 유튜브 음원이 안정에 도움이 된다는 보고가 있다</li>
-<li><strong>보호자 냄새</strong>: 입던 옷이나 수건을 켄넬에 넣어주면 안심 효과가 있다</li>
+<li>크레이트는 처벌이 아니라 편안한 공간으로 소개한다. 낮에도 간식과 함께 짧게 연습한다.</li>
+<li>어린 강아지는 배변을 오래 참지 못한다. 깨어 있을 때 자주, 활동이 바뀔 때마다 배변 장소로 간다.</li>
+<li>첫 주에 동물병원 방문 일정을 잡아 건강검진과 예방접종 계획을 세운다.</li>
+<li>처음 며칠은 방문객을 줄여 환경에 적응할 시간을 준다.</li>
 </ul>
 
-<h2>울음의 종류 파악하기</h2>
+<h2>하지 말아야 할 것</h2>
 <ul>
-<li><strong>낑낑/끙끙</strong>: 낯선 환경 불안 — 환경 안정화가 우선</li>
-<li><strong>짖음</strong>: 더 강한 불안 또는 배변 욕구 — 배변 패드 확인 후 무시하거나 조용히 달랜다</li>
-<li><strong>끊임없는 울음 + 구토</strong>: 멀미나 스트레스 과부하 — 물을 소량 제공하고 수의사에게 연락</li>
+<li>밤새 울면 혼내거나 소리치기</li>
+<li>우는 즉시 놀아 주거나 침대에 들이기 — 울면 보상받는다고 학습할 수 있다</li>
+<li>보온이 필요한 어린 강아지를 추운 곳에 두기</li>
 </ul>
 
-<h2>하면 안 되는 것</h2>
-<ul>
-<li>울 때마다 안아주기 — "울면 관심을 받는다"는 패턴이 굳어짐</li>
-<li>큰 소리로 "그만" 하기 — 더 불안해진다</li>
-<li>처벌하기 — 아직 규칙을 학습하지 못한 아이에게 처벌은 신뢰를 무너뜨린다</li>
-<li>밤새 켄넬에서 꺼내어 같이 자기 — 첫날부터 습관이 된다</li>
-</ul>
-
-<h2>자주 묻는 질문</h2>
-<h3>며칠이나 울까요?</h3>
-<p>대부분의 강아지는 3~7일 내에 새 환경에 적응한다. 그 이상 지속되거나 식욕 저하·무기력이 동반된다면 수의사에게 상담하는 것이 좋다.</p>
-
-<div style="margin:2rem 0;padding:1rem 1.25rem;background:var(--brand-accent-soft,#e6ecd9);border-radius:12px;">
-<strong>📚 관련 글</strong><br>
-<a href="/blog/dog-first-week-guide">강아지를 처음 집에 데려온 첫 주 가이드</a><br>
-<a href="/blog/dog-separation-anxiety-prevention-guide">강아지 분리불안 예방 가이드</a><br>
-<a href="/blog/dog-first-adoption-checklist">강아지 처음 입양 준비물 체크리스트</a>
-</div>`,
+<h2>마지막으로</h2>
+<p>첫 며칠은 힘들어도 일정한 루틴과 안전한 잠자리가 있으면 적응이 빨라진다. 울음이 오래 이어지거나 건강 이상이 보이면 수의사와 상의하자.</p>`,
     authorName: "펫지기 에디터",
     authorCredential: "반려동물 행동 정보 큐레이터",
     ymyl: false,
-    sources: JSON.stringify([
-      "ASPCA — 신규 반려동물 적응 기간 가이드",
-      "대한수의사회 반려동물 행동 상담 자료",
-    ]),
+    sources: [
+      "https://www.akc.org/expert-advice/puppy-information/first-day-new-puppy/ — AKC, Your First Day at Home With a New Puppy",
+      "https://www.akc.org/expert-advice/training/setting-schedules-and-developing-a-routine-for-your-new-puppy/ — AKC, Puppy Schedule: Daily Routine for New Puppies",
+      "https://vcahospitals.com/pediatric/puppy — VCA, New Puppy Guide: Vet Care, Training & Supplies",
+    ],
     disclaimer: null,
     status: "published",
     publishedAt: "2026-06-04T09:00:00.000Z",

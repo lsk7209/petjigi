@@ -263,47 +263,57 @@ const BLOG_POSTS: NewContent[] = [
     subtitle: "자원 분산 원칙, 집단 내 긴장 신호 읽기, 갈등 중재 방법, 다묘 가정 스트레스 관리",
     metaTitle: "다묘 가정 갈등 예방·관리 가이드 — 3마리 이상 함께 사는 법 | 펫지기",
     metaDescription: "3마리 이상 고양이가 함께 사는 다묘 가정 관리법. 자원 분산 원칙, 집단 내 긴장 신호, 갈등 중재, 스트레스 관리 방법을 정리했습니다.",
-    body: `<p>고양이가 많을수록 아름답게도, 복잡하게도 될 수 있다. 다묘 가정의 평화는 자연스럽게 생기지 않는다 — 환경 설계로 만들어야 한다.</p>
+    body: `<p>고양이를 세 마리 이상 키우면 눈에 보이는 싸움이 없어도 보이지 않는 갈등과 스트레스가 쌓일 수 있다. 고양이는 영역과 자원에 민감해서, 자원을 충분히 나누고 피할 공간을 만들어 주는 것이 평화의 핵심이다.</p>
 
-<h2>고양이는 독거 동물이다</h2>
-<p>고양이는 야생에서 단독 생활을 한다. 여러 마리가 함께 사는 것은 자연스러운 상태가 아니다. 좋은 다묘 가정은 각 고양이가 '원할 때 혼자 있을 수 있는' 환경을 제공해야 한다.</p>
+<h2>자원은 넉넉하게, 흩어서</h2>
+<table>
+<thead><tr><th>자원</th><th>권장</th></tr></thead>
+<tbody>
+<tr><td>화장실</td><td>고양이 수 + 1개 이상, 집 안 최소 두 곳 이상에 분산 (예: 세 마리면 네 개)</td></tr>
+<tr><td>밥·물그릇</td><td>여러 곳에 두어 한 마리가 독점하지 못하게 한다</td></tr>
+<tr><td>휴식 장소</td><td>고양이마다 선호하는 자리가 있으니 침상·캣타워·숨을 곳을 넉넉히</td></tr>
+<tr><td>수직 공간</td><td>선반, 캣타워, 창가 자리로 서로 마주치지 않고 지낼 수 있게 한다</td></tr>
+</tbody>
+</table>
+<p>ASPCA는 고양이 사이의 갈등이 화장실 문제로 나타나기도 한다고 설명한다. 서로 직접 싸우지 않아도 긴장이 스트레스가 되어 배변 실수나 마킹이 생길 수 있다.</p>
 
-<h2>자원 분산 원칙</h2>
+<h2>갈등 신호 알아보기</h2>
+<ul>
+<li>한 마리가 계속 높은 곳이나 숨은 곳에서 나오지 않음</li>
+<li>밥그릇이나 화장실 앞에서 길을 막고 노려봄</li>
+<li>쫓아다니기, 하악질, 때리기</li>
+<li>평소와 다른 곳에서 소변을 봄, 식욕 저하, 과도한 그루밍</li>
+</ul>
+
 <div class="callout-cat">
-<strong>다묘 가정 자원 공식</strong><br>
-• <strong>화장실</strong>: 고양이 수 + 1개 (3마리 → 4개)<br>
-• <strong>음식·물 그릇</strong>: 고양이 수 + 1세트, 다른 방이나 공간에 분산<br>
-• <strong>잠자는 공간</strong>: 고양이 수 이상, 높이 다양화<br>
-• <strong>스크래처</strong>: 각 공간마다 1개 이상<br>
-→ 자원 부족이 갈등의 가장 흔한 원인
+<strong>이럴 땐 진료·상담</strong><br>
+• 화장실 실수가 갑자기 시작됨 — 방광염이나 요로 질환일 수 있어 진료가 먼저<br>
+• 상처가 날 정도의 싸움<br>
+• 한 마리가 하루 이상 먹지 않음
 </div>
 
-<h2>집단 내 긴장 신호 읽기</h2>
-<ul>
-<li><strong>소극적 공격</strong>: 한 고양이가 다른 고양이가 지나갈 때 막고 있음 (공간 통제)</li>
-<li><strong>응시</strong>: 직접 눈을 맞추며 장시간 응시 — 지배적 행동</li>
-<li><strong>과도한 그루밍 또는 식욕 변화</strong>: 스트레스 신호</li>
-<li><strong>화장실 밖 배변</strong>: 스트레스 또는 영역 표시</li>
-</ul>
+<h2>평화를 유지하는 방법</h2>
+<ol>
+<li><strong>식사 장소 분리</strong>: 눈치 보는 고양이는 별도 장소에서 먹게 한다.</li>
+<li><strong>놀이 시간 개별화</strong>: 한 마리씩 시간을 내어 놀아 주면 갈등이 줄어든다.</li>
+<li><strong>신선한 환경</strong>: 장난감을 돌려 쓰고 창가 자리를 마련한다.</li>
+<li><strong>일시적 분리 공간</strong>: 갈등이 생기면 한 마리가 따로 쉴 수 있는 공간을 만든다.</li>
+<li><strong>변화는 천천히</strong>: 가구를 옮기거나 새 고양이를 들이는 등의 변화는 단계적으로 한다.</li>
+</ol>
 
-<h2>갈등 중재 방법</h2>
-<ul>
-<li>공격하는 고양이와 피하는 고양이의 분리 → 재도입 프로토콜</li>
-<li>페로몬 디퓨저(펠리웨이 멀티캣) 설치 — 사회적 긴장 완화</li>
-<li>공격하는 개체와 1:1 놀이 증가 → 에너지 소진</li>
-<li>수직 공간 늘리기 → 회피 가능한 경로 확보</li>
-</ul>
+<h2>새 식구를 들일 때</h2>
+<p>기존 고양이가 여러 마리라도 분리와 냄새 교환을 거친 단계적 소개가 필요하다. 건강검진을 먼저 하고, 전염병 위험이 있으면 검사 결과를 확인한다.</p>
 
 <h2>마지막으로</h2>
-<p>다묘 가정에서 완벽한 조화는 없다. 목표는 모든 개체가 스트레스 없이 자원에 접근하고, 원할 때 혼자 있을 수 있는 환경이다. 자원을 충분히 제공하고 공간을 풍부하게 만드는 것이 갈등의 80%를 예방한다.</p>`,
+<p>고양이는 공동생활을 위해 만들어진 동물이 아니라, 필요에 따라 공간을 나누며 사는 동물이다. 자원과 수직 공간을 넉넉히 마련하고, 작은 신호를 놓치지 않는 것이 다묘 가정의 평화를 만든다.</p>`,
     authorName: "펫지기 에디터",
     authorCredential: "반려동물 행동 정보 큐레이터",
     ymyl: false,
-    sources: JSON.stringify([
-      "Bradshaw, J.W.S. — Cat Sense: How the New Feline Science Can Make You a Better Friend to Your Pet",
-      "International Cat Care — Multi-Cat Households",
-      "한국고양이보호협회 다묘 가정 관리 가이드",
-    ]),
+    sources: [
+      "https://vcahospitals.com/know-your-pet/cat-behavior-problems--aggression-in-cats-fear-and-territorial-to-other-household-cats — VCA, Cat Behavior Problems - Aggression in Cats, Fear and Territorial to Other Household Cats",
+      "https://www.aspca.org/pet-care/cat-care/common-cat-behavior-issues/litter-box-problems — ASPCA, Litter Box Problems",
+      "https://icatcare.org/advice/aggression-between-cats — International Cat Care, Aggression between cats",
+    ],
     disclaimer: null,
     status: "published",
     publishedAt: "2026-08-08T09:00:00.000Z",

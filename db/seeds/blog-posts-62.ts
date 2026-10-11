@@ -258,38 +258,55 @@ const BLOG_POSTS: NewContent[] = [
     subtitle: "사냥 유형별 장난감 매칭, 로테이션 원칙, 흥미를 잃은 장난감 다시 활성화하기",
     metaTitle: "고양이 장난감 선택 — 사냥 유형별 매칭 가이드 | 펫지기",
     metaDescription: "고양이 장난감을 개체 성향에 맞게 선택하는 방법. 사냥 유형별 장난감 매칭, 로테이션 원칙, 흥미를 잃은 장난감을 다시 활성화하는 방법을 정리했습니다.",
-    body: `<p>고양이마다 좋아하는 사냥 대상이 다르다. 새를 쫓는 것을 좋아하는지, 땅 위의 작은 생물을 쫓는지, 달리는 것을 좋아하는지에 따라 맞는 장난감이 다르다.</p>
+    body: `<p>고양이 장난감은 종류가 너무 많아서 고르기 어렵다. 가장 중요한 기준은 "이 고양이가 사냥 놀이를 하도록 도와주는가"와 "삼켜도 안전한가"다. 비싼 제품보다 고양이의 사냥 본능에 맞는 놀이가 효과적이다.</p>
 
-<h2>사냥 유형별 장난감 매칭</h2>
-<ul>
-<li><strong>공중 새 사냥 유형</strong>: 낚싯대 장난감 (허공에서 불규칙하게 움직이는 것)</li>
-<li><strong>땅 위 설치류 사냥 유형</strong>: 전동 마우스·작은 공·페더 와이어</li>
-<li><strong>달리기·추격 유형</strong>: 전동 레이스 트랙·레이저 포인터</li>
-<li><strong>탐색·후각 유형</strong>: 캣닙 쥐·퍼즐 장난감</li>
-</ul>
+<h2>사냥 순서를 채워 주는 놀이</h2>
+<p>고양이의 사냥은 탐색, 접근, 추적, 덮치기, 잡기, 물어뜯기의 순서로 이루어진다. 국제고양이협회(iCatCare)는 마지막에 "잡았다"는 만족감이 없으면 놀이가 오히려 좌절감을 줄 수 있다고 설명한다. 레이저 포인터로 놀았다면 마지막에는 낚싯대 장난감이나 간식을 잡게 해 마무리한다.</p>
 
-<h2>좋은 놀이의 조건</h2>
-<p>장난감이 살아있는 것처럼 움직여야 한다. 쥐처럼 — 멈추고, 느리게 움직이다가, 갑자기 튀어오르는 불규칙한 움직임이 본능을 자극한다. 일직선으로 계속 달리는 것보다 불규칙하게 멈추는 것이 더 효과적이다.</p>
-
-<h2>장난감 로테이션</h2>
-<p>같은 장난감을 매일 주면 신선함이 떨어진다. 5~6가지를 2~3일마다 교체한다. 한동안 치워뒀다가 다시 꺼내주면 새로운 것처럼 반응하는 경우가 많다.</p>
+<h2>종류별 특징</h2>
+<table>
+<thead><tr><th>유형</th><th>장점</th><th>주의</th></tr></thead>
+<tbody>
+<tr><td>낚싯대(완드) 장난감</td><td>보호자와 함께하는 놀이. 거리를 두어 물리거나 긁힐 위험이 적다</td><td>놀이 후에는 치워서 보관한다. 방치하면 줄을 삼킬 수 있다</td></tr>
+<tr><td>작은 인형·공</td><td>혼자 굴리고 물어뜯기 좋다</td><td>삼킬 수 없는 크기, 떨어질 부품이 없는지 확인</td></tr>
+<tr><td>퍼즐 급식기</td><td>사료를 찾는 사냥 놀이로 활동량을 늘린다</td><td>처음에는 쉬운 것부터</td></tr>
+<tr><td>종이봉투·박스·탁구공</td><td>저렴하고 효과적</td><td>손잡이 끈이 있는 봉투는 제거하고, 질식 위험이 없게</td></tr>
+</tbody>
+</table>
 
 <div class="callout-cat">
-<strong>놀이 완결의 중요성</strong><br>
-마지막에 항상 장난감을 천천히 멈춰 '잡은 것처럼' 느끼게 한다.<br>
-완결 없는 놀이는 좌절감을 남긴다.<br>
-놀이 후 간식을 주면 완결감 강화.
+<strong>피해야 할 것</strong><br>
+• 끈, 리본, 털실, 고무줄 — 삼키면 장을 말아 올리는 선상 이물이 될 수 있다<br>
+• 작은 부품이나 깃털이 쉽게 떨어지는 장난감<br>
+• 감독 없이 낚싯대 장난감을 두기 — 줄에 얽히거나 삼킬 수 있다<br>
+• 손으로 직접 놀아 주기 — 물고 할퀴는 습관이 들 수 있다
 </div>
 
+<h2>몇 개를 어떻게 돌려 쓰나</h2>
+<ul>
+<li>여러 개를 갖추되 한 번에 몇 개만 꺼내 두고 주기적으로 바꿔 주면 흥미가 유지된다. VCA는 20개 정도를 준비하고 4~5개씩 일주일 정도 간격으로 돌려 쓰는 방법을 소개한다.</li>
+<li>하루에 짧은 놀이를 여러 번 한다. 10분 안팎의 세션을 몇 번 하는 것이 도움이 된다.</li>
+<li>고양이가 가장 활동적인 새벽과 해질 무렵에 맞추면 반응이 좋다.</li>
+</ul>
+
+<h2>개체별로 고르기</h2>
+<ul>
+<li>활동적인 고양이: 높이 뛰게 하는 낚싯대, 쫓는 장난감.</li>
+<li>소심한 고양이: 숨을 수 있는 터널, 부드러운 인형, 조용한 놀이.</li>
+<li>노령묘: 낮은 높이, 짧은 세션, 관절에 부담 없는 놀이.</li>
+<li>비만 고양이: 활동량을 서서히 늘리고 퍼즐 급식기로 식사 시간을 놀이로 바꾼다.</li>
+</ul>
+
 <h2>마지막으로</h2>
-<p>고양이가 장난감에 반응하지 않는다면 장난감이 나쁜 것이 아니라 움직임이 맞지 않는 것일 수 있다. 여러 방식으로 움직여보고, 개체의 반응을 관찰하며 맞는 스타일을 찾아가는 것이 핵심이다.</p>`,
+<p>좋은 장난감은 고양이의 사냥 순서를 채워 주고 안전한 것이다. 놀이가 끝나면 줄 달린 장난감은 꼭 치워 두자.</p>`,
     authorName: "펫지기 에디터",
     authorCredential: "반려동물 행동 정보 큐레이터",
     ymyl: false,
-    sources: JSON.stringify([
-      "Ellis, S.L.H. — Play and Predatory Behaviour in Cats",
-      "한국고양이보호협회 장난감 선택 가이드",
-    ]),
+    sources: [
+      "https://icatcare.org/articles/playing-with-your-cat — International Cat Care, Playing with your cat",
+      "https://vcahospitals.com/know-your-pet/cat-behavior-and-training---play-and-play-toys — VCA, Cat Behavior and Training - Play and Play Toys",
+      "https://www.vet.cornell.edu/departments-centers-and-institutes/cornell-feline-health-center/health-information/feline-health-topics/safe-toys-and-gifts — Cornell Feline Health Center, Safe toys and gifts",
+    ],
     disclaimer: null,
     status: "published",
     publishedAt: "2026-08-20T11:00:00.000Z",

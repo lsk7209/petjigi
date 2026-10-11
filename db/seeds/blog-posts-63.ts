@@ -79,39 +79,48 @@ const BLOG_POSTS: NewContent[] = [
     subtitle: "첫 번째 고양이 안정화 기간, 나이·성격 조합 고려, 합사 준비 체크리스트",
     metaTitle: "두 번째 고양이 맞이하는 시기 — 준비 체크리스트 | 펫지기",
     metaDescription: "두 번째 고양이를 입양하는 적절한 시기와 준비사항. 첫 고양이 안정화 기간, 나이·성격 조합, 합사 준비 체크리스트를 정리했습니다.",
-    body: `<p>고양이가 외로워 보인다고, 또는 함께 놀면 좋을 것 같아서 두 번째 고양이를 들이려는 보호자가 많다. 그러나 타이밍과 준비가 중요하다.</p>
+    body: `<p>고양이를 한 마리 더 데려오고 싶을 때 가장 중요한 것은 "언제"보다 "어떻게 소개하느냐"다. 서두르면 기존 고양이와 새 고양이가 모두 스트레스를 받고, 이후 관계가 오래 나빠질 수 있다.</p>
 
-<h2>첫 번째 고양이 안정화 기간</h2>
-<p>첫 고양이를 입양한 지 6개월 미만이라면 기다리는 것이 좋다. 아직 새 집 환경에 완전히 적응 중이며, 새 가족 구성원의 루틴도 파악 중이다. 이미 영역이 확립된 성묘에 새 개체를 도입하는 것이 더 수월하다.</p>
-
-<h2>나이·성격 조합</h2>
+<h2>둘째를 들이기 전에 점검할 것</h2>
 <ul>
-<li><strong>성묘 + 새끼</strong>: 많은 성묘가 자신보다 어린 개체를 용인한다. 단, 성묘가 놀이 참여를 강요받는 스트레스 방지 필요.</li>
-<li><strong>비슷한 연령</strong>: 에너지 수준이 맞아 자연스럽게 어울리는 경우 많다.</li>
-<li><strong>성묘 + 성묘</strong>: 성격이 이미 확립되어 합사가 가장 어려울 수 있다.</li>
-<li><strong>독립적 성격 + 사교적 성격</strong>: 좋지 않은 조합 — 사교적인 고양이가 독립적인 개체를 끊임없이 귀찮게 할 수 있다.</li>
+<li><strong>기존 고양이의 성격</strong>: 사교적이고 다른 고양이와 잘 지낸 경험이 있는지. 겁이 많거나 영역 의식이 강하면 더 천천히 진행한다.</li>
+<li><strong>공간</strong>: 새 고양이가 한동안 지낼 별도의 방, 그리고 두 마리가 피할 수 있는 여분의 공간이 있는지.</li>
+<li><strong>자원</strong>: 화장실, 밥그릇, 물그릇, 휴식 장소를 늘릴 수 있는지.</li>
+<li><strong>건강</strong>: 새 고양이의 건강검진과 필요한 검사(전염병 등)를 받았는지. 고양이 백혈병·면역결핍 검사는 합사 전에 하는 것이 일반적이다.</li>
+<li><strong>시간과 비용</strong>: 진료비와 관리 시간이 늘어난다.</li>
 </ul>
 
-<h2>합사 준비 체크리스트</h2>
+<h2>소개 과정 (단계별)</h2>
+<table>
+<thead><tr><th>단계</th><th>할 일</th><th>다음 단계 조건</th></tr></thead>
+<tbody>
+<tr><td>1. 분리</td><td>새 고양이를 기존 고양이가 쓰지 않는 방에 두고 적응시킨다. 각자 화장실·밥그릇·잠자리를 쓴다</td><td>새 고양이가 편안히 먹고 쉬며 화장실을 쓴다 (며칠~1~2주 이상)</td></tr>
+<tr><td>2. 냄새 교환</td><td>담요나 장난감을 서로 바꿔 주고, 방을 번갈아 탐색하게 한다. 문 양쪽에서 밥을 먹게 해 냄새를 좋은 경험과 연결한다</td><td>서로의 냄새에 흥분하거나 하악질을 하지 않는다</td></tr>
+<tr><td>3. 시각 접촉</td><td>문을 살짝 열거나 아기 문(게이트)을 통해 잠깐씩 서로 보게 한다. 간식·놀이로 긍정적으로 연결한다</td><td>두 마리가 느긋한 모습을 보인다</td></tr>
+<tr><td>4. 감독하의 만남</td><td>짧은 시간 같이 둔다. 끝나면 다시 분리한다</td><td>싸움 없이 무심하게 지낸다</td></tr>
+<tr><td>5. 자유 접촉</td><td>처음에는 몇 분만 감독 없이 두고 점차 늘린다</td><td>수 주에 걸쳐 안정</td></tr>
+</tbody>
+</table>
+<p>소개에 걸리는 시간은 며칠에서 몇 달까지 다양하다. 하악질이나 때리기가 나타나면 마지막으로 잘 되었던 단계로 돌아가 속도를 늦춘다. 어떤 성묘는 다른 성묘를 끝내 받아들이지 못하기도 한다.</p>
+
 <div class="callout-cat">
-<strong>두 번째 고양이 맞이 전 준비</strong><br>
-□ 격리 가능한 별도 방 확보<br>
-□ 화장실 N+1개 준비<br>
-□ 각자 식사·물 공간 분리<br>
-□ 캣타워·선반 추가 (수직 공간)<br>
-□ 페로몬 디퓨저 구입<br>
-□ 4~6주 합사 프로토콜 계획
+<strong>이런 경우는 전문가 상담</strong><br>
+• 한 마리가 계속 숨거나 먹지 않음<br>
+• 지속적인 공격, 상처가 날 정도의 싸움<br>
+• 화장실 실수, 소변 마킹이 생김<br>
+→ 수의사와 행동 전문가에게 문의한다. 스트레스로 방광염 등 질환이 올 수 있다.
 </div>
 
 <h2>마지막으로</h2>
-<p>두 번째 고양이를 위한 '고양이 외로움' 해소는 좋은 의도다. 그러나 첫 번째 고양이가 사람과의 관계만으로도 충분히 행복한 경우가 많다. 정말 필요한지, 합사 실패 시 두 마리 모두 평생 분리 생활을 해야 할 수도 있다는 것을 알고 결정해야 한다.</p>`,
+<p>둘째를 맞이하는 "적절한 시기"는 날짜가 아니라 준비된 공간과 천천히 진행할 마음이 있을 때다. 단계마다 두 마리가 편안한지 확인하고, 급하게 합치지 말자.</p>`,
     authorName: "펫지기 에디터",
     authorCredential: "반려동물 생활 정보 큐레이터",
     ymyl: false,
-    sources: JSON.stringify([
-      "International Cat Care — Getting a Second Cat",
-      "한국고양이보호협회 다묘 입양 가이드",
-    ]),
+    sources: [
+      "https://icatcare.org/articles/introducing-cats — International Cat Care, Introducing Cats",
+      "https://vcahospitals.com/know-your-pet/introducing-new-adult-cats — VCA, Introducing New Adult Cats",
+      "https://www.aspca.org/pet-care/cat-care/common-cat-behavior-issues/aggression-between-cats-your-household — ASPCA, Aggression Between Cats in Your Household",
+    ],
     disclaimer: null,
     status: "published",
     publishedAt: "2026-08-21T11:00:00.000Z",
@@ -244,39 +253,54 @@ const BLOG_POSTS: NewContent[] = [
     subtitle: "비 소리에 예민한 고양이 달래기, 날씨 변화 스트레스 줄이기, 특별한 놀이 루틴",
     metaTitle: "비 오는 날 고양이 실내 놀이 10가지 | 펫지기",
     metaDescription: "비 오는 날 고양이와 실내에서 자극을 만드는 방법 10가지. 비 소리 예민한 고양이 달래기, 날씨 변화 스트레스 관리, 특별한 놀이 루틴을 정리했습니다.",
-    body: `<p>비 오는 날 고양이는 대부분 창문 앞에서 빗소리를 들으며 낮잠을 잔다. 하지만 천둥·강한 비바람에 예민한 고양이도 있고, 실내 루틴이 망가지면 에너지가 남는 경우도 있다.</p>
+    body: `<p>비 오는 날이나 집에서만 지내는 고양이는 활동량이 줄고 지루해지기 쉽다. 실내 고양이에게는 사냥과 탐색의 기회를 의도적으로 만들어 주는 환경 풍부화(enrichment)가 중요하다. 비싼 장비 없이도 집에 있는 물건으로 할 수 있는 놀이를 정리했다.</p>
 
-<h2>비 소리에 예민한 고양이 달래기</h2>
+<h2>10가지 실내 놀이</h2>
+<table>
+<thead><tr><th>놀이</th><th>방법</th><th>안전 포인트</th></tr></thead>
+<tbody>
+<tr><td>1. 낚싯대 사냥 놀이</td><td>숨었다 나타나는 움직임으로 추적·덮치기를 유도</td><td>끈 달린 장난감은 놀이 후 꼭 치우기</td></tr>
+<tr><td>2. 간식 숨기기</td><td>하루 사료 일부를 여러 곳에 숨겨 찾게 한다</td><td>전체 열량 안에서 조절</td></tr>
+<tr><td>3. 퍼즐 급식기</td><td>굴리거나 건드려야 사료가 나온다</td><td>처음엔 쉬운 단계부터</td></tr>
+<tr><td>4. 박스·종이봉투 탐험</td><td>택배 상자에 구멍을 내거나 종이봉투를 펼쳐 둔다</td><td>손잡이 끈 제거, 테이프·스테이플러 핀 제거</td></tr>
+<tr><td>5. 탁구공 굴리기</td><td>빈 욕조나 복도에서 굴려 쫓게 한다</td><td>삼키지 않는 크기인지 확인</td></tr>
+<tr><td>6. 창가 관찰대</td><td>창가에 안전한 자리를 만들고 밖을 볼 수 있게 한다</td><td>방충망·창문 잠금 확인</td></tr>
+<tr><td>7. 캣타워·선반 오르기</td><td>높은 곳을 오르내리는 길을 만든다</td><td>미끄럽지 않고 안정적인지 확인</td></tr>
+<tr><td>8. 터널 놀이</td><td>종이 터널이나 접이식 터널을 설치</td><td>너무 좁지 않게</td></tr>
+<tr><td>9. 새 소리·영상</td><td>고양이용 영상을 틀어 관찰하게 한다</td><td>너무 오래 보여 주지 않고 실제 놀이로 이어지게</td></tr>
+<tr><td>10. 훈련 놀이</td><td>간식으로 "앉아", 손 맞추기 같은 간단한 신호를 가르친다</td><td>짧게, 즐겁게</td></tr>
+</tbody>
+</table>
+
+<h2>놀이 시간 정하기</h2>
 <ul>
-<li>안전한 숨는 공간 추가 제공 (닫힌 박스·침대 아래)</li>
-<li>TV·음악으로 빗소리 차단</li>
-<li>페로몬 디퓨저(펠리웨이) 작동</li>
-<li>보호자가 옆에 있어주는 것 (강요 없이)</li>
+<li>하루에 짧은 놀이를 몇 번 나눠서 한다. 한 번에 10분 안팎이 적당하다.</li>
+<li>고양이가 활동적인 새벽과 해질 무렵에 맞추면 반응이 좋다.</li>
+<li>놀이를 마칠 때는 "잡았다"는 만족감을 주는 마무리를 하고 간식을 준다.</li>
+<li>장난감은 한 번에 몇 개만 내어 두고 주기적으로 바꾼다.</li>
 </ul>
 
-<h2>비 오는 날 실내 활동 10가지</h2>
-<ol>
-<li><strong>새 박스 탐험</strong>: 빈 택배 박스는 언제나 성공적인 자극</li>
-<li><strong>종이 뭉치 공</strong>: 구겨진 종이 공을 던져주면 열광하는 고양이 많음</li>
-<li><strong>숨바꼭질</strong>: 고양이 눈 앞에서 담요 뒤에 숨고 다시 나타나기</li>
-<li><strong>낚싯대 집중 놀이</strong>: 평소보다 더 긴 15~20분 세션</li>
-<li><strong>터널 탐험</strong>: 고양이 터널을 다른 방향으로 배치해 새로운 느낌</li>
-<li><strong>퍼즐 피더 도전</strong>: 평소보다 어려운 레벨의 퍼즐 사용</li>
-<li><strong>캣닙 타임</strong>: 평소와 다른 요일에 제공 → 신선함</li>
-<li><strong>손가락 미로</strong>: 담요 아래 손가락을 움직여 사냥 유도</li>
-<li><strong>새 장난감 데뷔</strong>: 비 오는 날을 새 장난감 공개 날로 활용</li>
-<li><strong>그루밍 시간</strong>: 편안한 상태에서 긴 브러싱 세션</li>
-</ol>
+<div class="callout-cat">
+<strong>위험한 놀이용품</strong><br>
+• 끈, 리본, 털실, 고무줄, 비닐 — 삼키면 장폐색 위험<br>
+• 작은 부품이 떨어지는 장난감, 깃털이 빠지는 제품<br>
+• 레이저만으로 놀이를 끝내기 — 잡는 만족이 없어 좌절감이 쌓일 수 있다<br>
+→ Cornell 고양이건강센터는 "아이에게 안전하지 않다면 고양이에게도 안전하지 않다"고 안내한다.
+</div>
+
+<h2>놀이가 줄었다면</h2>
+<p>갑자기 활동량이 줄고 놀이에 관심을 잃거나 숨는 시간이 늘면 기분 탓만이 아니라 통증이나 질병 신호일 수 있다. 며칠 이상 계속되면 진료를 받는다.</p>
 
 <h2>마지막으로</h2>
-<p>비 오는 날은 보호자와 고양이가 집에 함께 있는 특별한 날이다. 서로의 페이스를 존중하면서 조용하게 함께하는 시간 자체가 고양이에게 큰 자극이 된다.</p>`,
+<p>실내 고양이에게 놀이는 운동이자 정신적 자극이다. 집에 있는 안전한 물건으로 하루 몇 번 사냥 놀이를 만들어 주면 지루함과 체중 문제를 함께 줄일 수 있다.</p>`,
     authorName: "펫지기 에디터",
     authorCredential: "반려동물 생활 정보 큐레이터",
     ymyl: false,
-    sources: JSON.stringify([
-      "International Cat Care — Indoor Activities for Cats",
-      "한국고양이보호협회 실내 자극 가이드",
-    ]),
+    sources: [
+      "https://vcahospitals.com/know-your-pet/cat-behavior-and-training---enrichment-for-indoor-cats — VCA, Cat Behavior and Training - Enrichment for Indoor Cats",
+      "https://icatcare.org/articles/playing-with-your-cat — International Cat Care, Playing with your cat",
+      "https://www.vet.cornell.edu/departments-centers-and-institutes/cornell-feline-health-center/health-information/feline-health-topics/safe-toys-and-gifts — Cornell Feline Health Center, Safe toys and gifts",
+    ],
     disclaimer: null,
     status: "published",
     publishedAt: "2026-08-23T09:00:00.000Z",
