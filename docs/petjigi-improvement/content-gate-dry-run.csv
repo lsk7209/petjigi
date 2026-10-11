@@ -1,1 +1,2 @@
 content_id,url,file,status,high_risk,result,issues
+guide-microchip-registration-complete,/guide/microchip-registration-complete-guide,db/seeds/guides-batch-2.ts,published,false,PASS_OR_NOT_APPLICABLE,
