@@ -127,42 +127,51 @@ const BLOG_POSTS: NewContent[] = [
     subtitle: "정상 vs 이상 콧물, 한쪽·양쪽 분비물의 차이, 즉시 병원이 필요한 신호",
     metaTitle: "강아지 코 분비물 원인 구분 — 정상 vs 이상 신호 가이드 | 펫지기",
     metaDescription: "강아지 코 분비물 원인 구분. 맑은 콧물의 정상 범위, 노란·녹색·피가 섞인 분비물의 의미, 한쪽만 나올 때 주의사항을 정리했습니다.",
-    body: `<p>강아지의 코는 항상 촉촉하고 시원해야 한다. 분비물이 생겼을 때 그 색깔과 양, 방향(양쪽/한쪽)이 원인을 가늠하는 중요한 단서다.</p>
+    body: `<p>강아지 코에서 분비물이 나올 때는 색, 양, 한쪽인지 양쪽인지, 얼마나 오래 이어지는지가 원인을 가늠하는 단서가 된다. 다만 색만으로 원인을 단정할 수는 없고, 지속되거나 변하면 검사가 필요하다.</p>
 
-<h2>코 분비물 색깔별 원인</h2>
+<h2>관찰 포인트</h2>
 <table>
-<thead><tr><th>색깔</th><th>원인</th></tr></thead>
+<thead><tr><th>관찰 항목</th><th>의미 있는 단서</th></tr></thead>
 <tbody>
-<tr><td>맑은 물 같은 콧물</td><td>알레르기, 흥분, 더위 (정상 범위 가능)</td></tr>
-<tr><td>노란색</td><td>세균 감염 신호</td></tr>
-<tr><td>황녹색 (짙은)</td><td>심한 세균 감염, 부비동염</td></tr>
-<tr><td>피 섞임</td><td>외상, 이물질, 종양, 응혈 이상 — 즉시 검사 필요</td></tr>
-<tr><td>한쪽만 분비물</td><td>이물질, 치과 문제, 국소 종양 의심</td></tr>
+<tr><td>맑고 묽은 콧물</td><td>자극·알레르기 등으로 흔하다. 짧게 지나가면 지켜볼 수 있다</td></tr>
+<tr><td>끈적이거나 누런·녹색 분비물</td><td>염증이나 감염이 있을 수 있다. 며칠 이상 계속되면 진료 대상이다</td></tr>
+<tr><td>피가 섞임</td><td>외상, 이물, 곰팡이 감염, 종양 등 여러 원인이 있어 검사가 필요하다</td></tr>
+<tr><td>한쪽 콧구멍만</td><td>이물, 곰팡이(아스페르길루스) 감염, 종양 등 국소 원인을 의심한다</td></tr>
+<tr><td>얼굴 비비기, 재채기·역재채기 반복</td><td>이물이나 비강 자극을 시사할 수 있다</td></tr>
 </tbody>
 </table>
 
-<h2>한쪽 분비물이 더 위험하다</h2>
-<p>양쪽 모두 콧물이 나오면 전신 감염·알레르기 가능성이 높다. 한쪽에서만 분비물이 나온다면 국소 원인(이물질·치근 농양·비강 종양)을 의심해야 한다. 특히 노령견에서 한쪽 코 분비물이 지속되면 종양 감별 검사가 권장된다.</p>
+<h2>흔한 원인</h2>
+<ul>
+<li><strong>급성 비염</strong>: 바이러스·세균·알레르기, 연기·먼지 같은 자극 물질이 원인일 수 있다.</li>
+<li><strong>만성 염증성 비염</strong>: 만성 코 증상의 흔한 원인 중 하나다.</li>
+<li><strong>비강 이물</strong>: 풀씨 같은 이물이 들어가면 갑자기 재채기와 한쪽 분비물이 생기는 경우가 있다.</li>
+<li><strong>곰팡이 감염</strong>: 아스페르길루스가 대표적이다. 한쪽 코의 냄새나는 분비물이 항생제에 반응하지 않고 가끔 코피가 나는 양상을 보일 수 있다.</li>
+<li><strong>종양</strong>: 분비물이 한쪽에서 시작해 양쪽으로 번지거나, 점액·고름에서 피 섞인 형태로 바뀔 수 있다.</li>
+</ul>
 
-<h2>즉시 병원이 필요한 신호</h2>
 <div class="callout-dog">
-<strong>즉시 병원으로</strong><br>
-• 분비물에 피가 섞임<br>
-• 한쪽만 지속적으로 나옴 (특히 1주 이상)<br>
-• 코가 붓거나 변형됨<br>
-• 재채기·역재채기가 반복됨<br>
-• 호흡이 힘들어 보임
+<strong>빨리 진료받아야 하는 경우</strong><br>
+• 코피나 피 섞인 분비물<br>
+• 한쪽 분비물이 일주일 넘게 계속됨<br>
+• 얼굴이 붓거나 변형됨<br>
+• 숨쉬기 힘들어 보이거나 입으로 숨을 쉼<br>
+• 식욕 저하, 열, 무기력이 함께 있음
 </div>
 
+<h2>병원에서 하는 검사</h2>
+<p>문진과 신체검사 후 방사선이나 CT 같은 영상검사, 비강 내시경(비경), 조직검사, 배양검사를 필요에 따라 조합한다. 이물은 영상에서 놓칠 수 있어 내시경 확인이 필요한 경우가 있다. 진단 전에 사람 약이나 남은 항생제를 먹이면 증상이 가려져 원인 찾기가 더 어려워진다.</p>
+
 <h2>마지막으로</h2>
-<p>단순 알레르기성 맑은 콧물은 흔하지만, 색깔이 변하거나 한쪽에서만 나온다면 가볍게 보지 않는 것이 좋다. 특히 노령견의 한쪽 코 분비물은 조기 검사를 권장한다.</p>`,
+<p>짧은 맑은 콧물은 흔하지만, 색이 변하거나 한쪽에서만 계속 나오거나 피가 섞이면 원인을 찾아야 한다. 언제부터 어느 쪽에서 어떤 색이었는지 사진과 함께 기록해 가면 진료에 큰 도움이 된다.</p>`,
     authorName: "펫지기 에디터",
     authorCredential: "반려동물 건강 정보 큐레이터",
     ymyl: true,
-    sources: JSON.stringify([
-      "Merck Veterinary Manual — Nasal Discharge in Dogs",
-      "대한수의사회 내과 임상 가이드라인",
-    ]),
+    sources: [
+      "https://www.merckvetmanual.com/respiratory-system/respiratory-diseases-of-small-animals/rhinitis-and-sinusitis-in-dogs-and-cats — Merck Veterinary Manual, Rhinitis and Sinusitis in Dogs and Cats",
+      "https://www.merckvetmanual.com/dog-owners/lung-and-airway-disorders-of-dogs/rhinitis-and-sinusitis-in-dogs — Merck Veterinary Manual, Rhinitis and Sinusitis in Dogs",
+      "https://vcahospitals.com/know-your-pet/aspergillosis-in-dogs — VCA, Aspergillosis in Dogs",
+    ],
     disclaimer: "이 글은 정보 제공을 목적으로 하며 수의사 진료를 대체하지 않습니다.",
     status: "published",
     publishedAt: "2026-08-19T11:00:00.000Z",

@@ -19,40 +19,49 @@ const BLOG_POSTS: NewContent[] = [
     subtitle: "귀혈종 원인(자가 외상·외이염 연관), 자연 치유 vs 수술 기준, 재발 예방",
     metaTitle: "강아지 귀혈종 원인·치료·재발 예방 가이드 | 펫지기",
     metaDescription: "강아지 귀가 빵빵하게 부풀면 귀혈종입니다. 원인인 자가 외상과 외이염 연관성, 자연 치유·배액·수술 기준, 재발 예방법을 정리했습니다.",
-    body: `<p>강아지 귓바퀴(이개)가 갑자기 빵빵하게 부풀어 오르면 귀혈종(Aural Hematoma)이다. 귓바퀴 안에 혈액이 고인 상태로, 통증을 유발한다.</p>
+    body: `<p>강아지 귓바퀴(이개)가 갑자기 빵빵하게 부풀어 오르면 귀혈종(Aural Hematoma)일 수 있다. 귓바퀴의 피부와 연골 사이에 혈액이 고인 상태로, 만지면 말랑하고 따뜻하며 강아지가 아파하거나 귀를 계속 털 수 있다.</p>
 
-<h2>원인</h2>
-<p>강아지가 귀를 심하게 긁거나 머리를 세차게 흔들 때 귓바퀴 내부 혈관이 터져 혈액이 모인다. 근본 원인은 대부분 외이염·귀진드기·알레르기로 인한 가려움이다.</p>
+<h2>왜 생기나</h2>
+<p>작은 혈관이 터지면서 피가 고이는데, 대개 귀를 심하게 긁거나 머리를 세게 흔들 때 생긴다. 그 배경에는 외이염, 귀 진드기, 알레르기(아토피 피부염·식이 알레르기 등)처럼 귀를 가렵게 만드는 문제가 있는 경우가 많다. 그래서 혈종만 처리하면 같은 귀나 반대쪽 귀에 다시 생길 수 있다.</p>
 
-<h2>치료 방법</h2>
+<h2>치료 선택지 비교</h2>
 <table>
-<thead><tr><th>방법</th><th>장점</th><th>단점</th></tr></thead>
+<thead><tr><th>방법</th><th>내용</th><th>알아둘 점</th></tr></thead>
 <tbody>
-<tr><td>자연 흡수 대기</td><td>침습 없음</td><td>수주 걸림, 귀 기형 가능성</td></tr>
-<tr><td>배액(주사기 흡인)</td><td>빠른 부기 감소</td><td>재발률 높음</td></tr>
-<tr><td>수술(봉합+배액)</td><td>재발률 낮음</td><td>마취 필요</td></tr>
+<tr><td>치료 없이 경과 관찰</td><td>일부는 저절로 흡수된다</td><td>귀가 두꺼워지고 주름진 이른바 콜리플라워 귀로 남는 경우가 많다</td></tr>
+<tr><td>주사기 배액(+스테로이드 주입)</td><td>마취 부담이 적다</td><td>메르크 수의학 매뉴얼은 성공률을 약 절반 정도로 소개하며, 반복 배액이 필요할 수 있다</td></tr>
+<tr><td>수술적 배액·봉합</td><td>피를 빼고 세척한 뒤 여러 군데를 봉합해 고인 공간을 없앤다</td><td>실밥은 흉터 조직이 생기도록 보통 3주 정도 유지한다. 마취가 필요하다</td></tr>
 </tbody>
 </table>
+<p>어떤 방법이 맞는지는 혈종의 크기, 통증, 마취 가능 여부, 재발 여부에 따라 수의사가 판단한다.</p>
 
 <div class="callout-dog">
-<strong>수술이 필요한 경우</strong><br>
-• 크기가 크고 통증이 심한 경우<br>
-• 배액 후 빠르게 재충전되는 경우<br>
-• 미용적으로 귀 형태 유지가 중요한 경우
+<strong>집에서 하지 말아야 할 것</strong><br>
+• 혈종을 직접 바늘로 찌르거나 짜내기 (감염·재발 위험)<br>
+• 귀를 문지르거나 세게 눌러 확인하기<br>
+• 외이염 약을 임의로 넣기 — 고막 상태를 모르면 위험할 수 있다
 </div>
 
-<h2>근본 원인 치료가 핵심</h2>
-<p>귀혈종을 치료해도 외이염·알레르기를 해결하지 않으면 재발한다. 귀 검사와 외이염 치료를 함께 진행해야 한다.</p>
+<h2>진료받을 때 확인하면 좋은 질문</h2>
+<ul>
+<li>귀 안쪽(외이도) 검사와 세포 검사를 함께 했는지</li>
+<li>가려움의 원인으로 알레르기를 의심하는지, 어떤 검사를 권하는지</li>
+<li>수술 후 붕대·넥칼라를 얼마나 유지하고 언제 재방문하는지</li>
+</ul>
+
+<h2>재발을 줄이려면</h2>
+<p>귀 긁기가 다시 시작되지 않는지 매일 살핀다. 귀에서 냄새·진물이 나거나 머리를 자주 흔들면 혈종이 없어도 진료 대상이다. 근본 원인 치료가 빠지면 어떤 시술을 해도 다시 생길 수 있다.</p>
 
 <h2>마지막으로</h2>
-<p>귀혈종은 방치하면 귓바퀴가 쪼그라들거나 변형된다(콜리플라워 귀). 발견하면 빠른 수의사 상담이 좋다.</p>`,
+<p>귀혈종은 응급은 아니지만 통증이 있고 방치하면 귀 모양이 변형될 수 있다. 부기를 발견하면 며칠 안에 수의사 진료를 받고, 원인이 된 가려움까지 함께 치료하는 것이 핵심이다.</p>`,
     authorName: "펫지기 에디터",
     authorCredential: "반려동물 건강 정보 큐레이터",
     ymyl: true,
-    sources: JSON.stringify([
-      "Swaim, S.F. — Aural Hematomas in Dogs. Compend Contin Educ Pract Vet 2003",
-      "대한수의사회 이과 질환 임상 가이드라인",
-    ]),
+    sources: [
+      "https://vcahospitals.com/know-your-pet/hematoma-of-the-ear-in-dogs — VCA, Hematoma of the Ear in Dogs",
+      "https://www.merckvetmanual.com/ear-disorders/diseases-of-the-pinna/auricular-hematomas-in-animals — Merck Veterinary Manual, Auricular Hematomas in Animals",
+      "https://www.merckvetmanual.com/dog-owners/ear-disorders-of-dogs/disorders-of-the-outer-ear-in-dogs — Merck Veterinary Manual, Disorders of the Outer Ear in Dogs",
+    ],
     disclaimer: "이 글은 정보 제공을 목적으로 하며 수의사 진료를 대체하지 않습니다.",
     status: "published",
     publishedAt: "2026-08-16T09:00:00.000Z",

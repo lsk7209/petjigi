@@ -19,49 +19,57 @@ const BLOG_POSTS: NewContent[] = [
     subtitle: "각막 궤양 원인·증상, 헤르페스 재발 패턴, 각막염 응급 신호, 치료 방법",
     metaTitle: "고양이 각막 궤양·눈 상처 — 증상·응급 신호·치료 가이드 | 펫지기",
     metaDescription: "고양이가 눈을 찡그리거나 반쯤 감고 있으면 각막 궤양일 수 있습니다. 원인, 헤르페스 재발, 응급 신호, 치료 방법을 정리했습니다.",
-    body: `<p>고양이가 한쪽 눈을 찡그리거나 반쯤 감고 있다면, 단순한 피로가 아닐 수 있다. 각막 상처·궤양은 빠르게 악화될 수 있는 눈 질환이다.</p>
+    body: `<p>고양이가 한쪽 눈을 찡그리거나 반쯤 감고 있다면 피곤해서가 아닐 수 있다. 각막(눈 앞쪽 투명한 층)에 상처가 나는 각막 궤양은 아프고, 깊어지면 눈 손상으로 이어질 수 있어 빠른 진료가 필요하다.</p>
 
-<h2>각막 궤양의 주요 원인</h2>
-<ul>
-<li>고양이 헤르페스바이러스(FHV-1) 재활성화 — 가장 흔함</li>
-<li>다른 고양이와의 싸움(발톱 상처)</li>
-<li>눈꺼풀 안으로 말린 속눈썹</li>
-<li>이물질(먼지·모래)</li>
-<li>건성 각결막염(KCS, 눈물 부족)</li>
-</ul>
-
-<h2>증상</h2>
+<h2>이런 모습이 보이면 의심한다</h2>
 <div class="callout-cat">
 <strong>각막 궤양 의심 신호</strong><br>
-• 눈을 찡그리거나 반쯤 감음<br>
-• 빛을 피하는 행동<br>
-• 눈에서 분비물(투명~황록색)<br>
-• 눈 주변 긁기<br>
-• 각막이 뿌옇게 보임 (부종)<br>
-→ 24시간 이상 지속되면 병원 필수
+• 한쪽 눈을 찡그리거나 자꾸 감고 깜빡임<br>
+• 앞발로 눈을 비비거나 바닥에 얼굴을 문지름<br>
+• 눈물·분비물이 늘고 눈 안쪽 구석에 고임<br>
+• 각막이 뿌옇게 보이거나 결막이 붉게 부음<br>
+• 밝은 빛을 피함
 </div>
 
-<h2>헤르페스 관련 각막 병변</h2>
-<p>FHV-1은 신경계에 잠복하다가 스트레스·면역 저하 시 재활성화된다. 반복적으로 같은 눈에 문제가 생긴다면 헤르페스를 의심해야 한다. 라이신 보충, 항바이러스 안약(트리플루리딘)이 도움이 될 수 있다.</p>
+<h2>원인</h2>
+<table>
+<thead><tr><th>원인</th><th>설명</th></tr></thead>
+<tbody>
+<tr><td>외상</td><td>다른 고양이와의 싸움, 발톱·이물에 긁힘</td></tr>
+<tr><td>고양이 헤르페스바이러스</td><td>고양이에서 의심할 만한 원인 중 하나로, 반복되는 눈 문제의 배경이 될 수 있다</td></tr>
+<tr><td>속눈썹·눈꺼풀 이상</td><td>각막을 계속 긁는 구조적 문제</td></tr>
+<tr><td>눈물 부족 등</td><td>각막 표면이 건조해 상처가 생기기 쉬움</td></tr>
+</tbody>
+</table>
 
-<h2>치료</h2>
+<h2>병원에서는 어떻게 하나</h2>
+<p>형광 염색으로 각막 상처의 위치와 깊이를 확인하고 원인을 살핀다. 얕은 궤양은 항생제 안약이나 연고, 통증 조절, 눈을 비비지 못하게 하는 엘리자베스 칼라로 치료하는 경우가 많다. 헤르페스가 의심되면 항바이러스 치료를 검토한다. VCA 안내에 따르면 깊은 궤양이나 각막 조직이 상당히 소실된 경우에는 안과 전문의 평가와 수술이 필요할 수 있다.</p>
+
+<div class="callout-cat">
+<strong>집에서 피해야 할 것</strong><br>
+• 사람용 안약이나 이전에 쓰고 남은 안약을 임의로 넣기 — 상처가 있는 눈에 쓰면 악화될 수 있다<br>
+• 눈을 직접 닦거나 이물을 억지로 빼기<br>
+• 엘리자베스 칼라 없이 방치하기
+</div>
+
+<h2>응급에 가까운 경우</h2>
 <ul>
-<li>항생제 안약 (세균 2차 감염 예방)</li>
-<li>항바이러스 안약 (헤르페스 원인 시)</li>
-<li>아트로핀 (통증 완화, 일부)</li>
-<li>넥칼라 착용 (긁지 않게)</li>
-<li>심한 경우 수술적 처치</li>
+<li>동공 크기가 갑자기 서로 달라짐</li>
+<li>눈이 한쪽으로 튀어나오거나 표면이 움푹 들어간 듯 보임</li>
+<li>눈에 피가 차거나 분비물이 급격히 늘어남</li>
 </ul>
+<p>이런 경우는 당일 진료를 받는 것이 좋다.</p>
 
 <h2>마지막으로</h2>
-<p>눈 문제는 48시간 이내 치료를 시작하는 것이 예후에 결정적이다. 눈을 찡그리는 고양이를 그냥 두지 않는 것이 중요하다.</p>`,
+<p>각막 궤양은 통증이 크고 변화가 빠를 수 있어서, 눈을 찡그리는 모습이 하루 이상 이어지면 기다리지 말고 진료를 받자. 같은 눈이 반복해서 문제라면 원인 검사를 함께 요청하는 것이 좋다.</p>`,
     authorName: "펫지기 에디터",
     authorCredential: "반려동물 건강 정보 큐레이터",
     ymyl: true,
-    sources: JSON.stringify([
-      "Gelatt, K.N. — Veterinary Ophthalmology (5th ed.)",
-      "한국수의안과학회 각막 질환 임상 가이드라인",
-    ]),
+    sources: [
+      "https://vcahospitals.com/know-your-pet/corneal-ulcers-in-cats — VCA, Corneal Ulcers in Cats",
+      "https://vcahospitals.com/know-your-pet/ulcerative-keratitis-in-cats — VCA, Corneal Ulcers (Ulcerative Keratitis) in Cats",
+      "https://www.merckvetmanual.com/emergency-medicine-and-critical-care/ophthalmic-emergencies-in-small-animals/deep-stromal-corneal-ulcers-descemetocele-and-iris-prolapse-in-small-animals — Merck Veterinary Manual, Deep Stromal Corneal Ulcers",
+    ],
     disclaimer: "이 글은 정보 제공을 목적으로 하며 수의사 진료를 대체하지 않습니다.",
     status: "published",
     publishedAt: "2026-08-23T11:00:00.000Z",
@@ -78,48 +86,54 @@ const BLOG_POSTS: NewContent[] = [
     subtitle: "발톱 파절 유형, 지혈 방법, 병원 가야 할 시점, 감염 예방 관리",
     metaTitle: "강아지 발톱 부러짐 응급처치 — 지혈·감염 예방 가이드 | 펫지기",
     metaDescription: "강아지 발톱이 부러졌을 때 집에서 할 수 있는 응급처치. 지혈 방법, 퀵 노출 여부 확인, 병원 가야 할 시점, 감염 예방 관리를 정리했습니다.",
-    body: `<p>강아지가 갑자기 발을 들고 핥거나, 바닥에 피가 보인다면 발톱 파절일 가능성이 있다. 놀라지 않고 차분히 대처하면 대부분 집에서 응급 관리가 가능하다.</p>
+    body: `<p>강아지가 갑자기 발을 들고 핥거나 바닥에 피가 묻어 있다면 발톱이 부러졌을 가능성이 있다. 당황하면 강아지도 더 불안해하므로, 먼저 출혈을 멈추고 병원에 갈지 판단하는 순서를 알아두자.</p>
 
-<h2>발톱 파절 유형</h2>
-<ul>
-<li><strong>끝 부분만 부러짐</strong>: 퀵(혈관)에 닿지 않음 → 집에서 관리 가능</li>
-<li><strong>퀵 노출</strong>: 출혈·통증 → 응급처치 후 병원 권장</li>
-<li><strong>발톱 뿌리부터 완전 탈락</strong>: 즉시 병원</li>
-</ul>
+<h2>상태별 판단</h2>
+<table>
+<thead><tr><th>상태</th><th>대처</th></tr></thead>
+<tbody>
+<tr><td>끝만 살짝 갈라짐, 출혈 없음</td><td>날카로운 부분만 정리하고 며칠간 붓기·절뚝임을 확인</td></tr>
+<tr><td>피가 나고 아파함 (혈관과 신경이 있는 부분이 노출)</td><td>아래 지혈 방법을 시도한 뒤 진료 권장</td></tr>
+<tr><td>부러진 조각이 덜렁거림, 뿌리째 빠짐</td><td>억지로 떼지 말고 진료. VCA는 제거를 대개 병원에서 하라고 안내한다</td></tr>
+</tbody>
+</table>
 
-<h2>집에서 할 수 있는 응급처치</h2>
+<h2>집에서 할 수 있는 응급 지혈</h2>
 <ol>
-<li>강아지를 차분하게 한 후 발을 확인</li>
-<li>출혈이 있으면 깨끗한 거즈로 3~5분 압박</li>
-<li>지혈분말(퀵스탑) 또는 옥수수 전분으로 지혈</li>
-<li>부러진 발톱이 매달려 있다면 더 손상되지 않게 안정화</li>
-<li>발에 임시 붕대를 가볍게 감아 더러워지지 않게</li>
+<li>강아지를 안정시키고, 물릴 수 있으니 입 근처를 조심한다.</li>
+<li>깨끗한 거즈나 수건으로 발가락을 감싸 눌러 압박한다. 보통 5~10분 안에 멎는다.</li>
+<li>계속 나오면 지혈 가루(스타이프틱)나 질산은 막대를 쓴다. 없으면 옥수수 전분이나 밀가루로 대신하기도 한다.</li>
+<li>피가 멎으면 핥지 못하게 넥칼라나 가벼운 붕대로 보호한다. 붕대는 너무 조이지 않게 한다.</li>
 </ol>
 
 <div class="callout-dog">
-<strong>즉시 병원이 필요한 경우</strong><br>
-• 발톱이 뿌리부터 완전히 빠진 경우<br>
-• 10분 이상 지혈이 안 되는 경우<br>
-• 발을 아예 사용하지 못할 정도의 통증<br>
-• 발톱 주변 피부가 손상된 경우
+<strong>바로 병원에 가야 하는 경우</strong><br>
+• 10~15분 압박해도 출혈이 멈추지 않음<br>
+• 부러진 조각이 붙어 있어 제거가 필요함<br>
+• 발가락·발등이 붓고 열감이 있거나 고름이 나옴<br>
+• 발을 전혀 딛지 못하거나 며칠이 지나도 절뚝임
 </div>
 
-<h2>감염 예방</h2>
+<h2>회복 중 관리</h2>
 <ul>
-<li>야외 산책 전 발톱 부위 보호</li>
-<li>2~3일간 발 상태 확인 (붓기·화농 여부)</li>
-<li>핥지 않도록 넥칼라 또는 발 양말 착용</li>
+<li>발톱 아래는 뼈와 가까워 감염이 생기면 깊어질 수 있다. 붓기, 붉어짐, 고름, 냄새를 매일 확인한다.</li>
+<li>핥거나 물어뜯지 못하게 한다.</li>
+<li>필요하면 수의사가 항생제나 진통제를 처방한다. 사람용 진통제를 임의로 주지 않는다.</li>
 </ul>
 
+<h2>예방</h2>
+<p>발톱이 너무 길면 바닥에 걸려 부러지기 쉽다. 정기적으로 다듬고, 산책 후 발을 살피는 습관이 가장 좋은 예방이다.</p>
+
 <h2>마지막으로</h2>
-<p>발톱 파절은 매우 흔한 부상이다. 지혈만 되면 대부분 자연 회복된다. 그러나 퀵이 노출된 경우엔 감염 예방을 위한 항생제 처방이 필요할 수 있다.</p>`,
+<p>발톱 파절은 흔하지만 통증이 크고 감염 위험이 있다. 지혈이 잘 되면 대부분 안정되지만, 조각이 남았거나 출혈이 계속되면 지체하지 말고 진료를 받자.</p>`,
     authorName: "펫지기 에디터",
     authorCredential: "반려동물 건강 정보 큐레이터",
     ymyl: true,
-    sources: JSON.stringify([
-      "Veterinary Partner — Broken Toenails in Dogs",
-      "대한수의사회 응급처치 가이드라인",
-    ]),
+    sources: [
+      "https://vcahospitals.com/know-your-pet/first-aid-for-broken-nails-in-dogs — VCA, First Aid for Broken Nails",
+      "https://vcahospitals.com/know-your-pet/first-aid-for-bleeding-in-dogs — VCA, First Aid for Bleeding in Dogs",
+      "https://www.merckvetmanual.com/special-pet-topics/emergencies/minor-injuries-and-accidents — Merck Veterinary Manual, Minor Injuries and Accidents",
+    ],
     disclaimer: "이 글은 정보 제공을 목적으로 하며 수의사 진료를 대체하지 않습니다.",
     status: "published",
     publishedAt: "2026-08-24T09:00:00.000Z",

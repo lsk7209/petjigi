@@ -187,44 +187,53 @@ const BLOG_POSTS: NewContent[] = [
     subtitle: "DM과 디스크 차이, 단계별 진행, 재활 치료로 삶의 질 유지, 반려차 활용",
     metaTitle: "강아지 척수 변성증(DM) — 증상·진행·재활 관리 가이드 | 펫지기",
     metaDescription: "강아지 척수 변성증(DM) 뒷다리 약해지는 진행성 신경 질환. DM과 디스크 차이, 단계별 진행, 재활 치료, 반려차(카트) 활용을 정리했습니다.",
-    body: `<p>노령견의 뒷다리가 점점 약해지고, 발을 끌며 걷고, 시간이 지나면서 더 심해진다면 척수 변성증(Degenerative Myelopathy, DM)일 수 있다.</p>
+    body: `<p>노령견의 뒷다리가 서서히 약해지고 발을 끌며 걷고, 시간이 지날수록 심해진다면 퇴행성 척수병증(Degenerative Myelopathy, DM)을 포함해 여러 신경 질환을 생각해 볼 수 있다. DM은 척수가 서서히 퇴화하는 진행성 질환으로, 완치법은 없다.</p>
 
-<h2>DM이란</h2>
-<p>척수의 신경 섬유(백질)가 점진적으로 퇴화하는 진행성 신경 질환이다. 완치가 없으며 시간이 지나면서 악화된다. 독일 셰퍼드에서 가장 흔하지만 다른 품종에서도 발생한다.</p>
-
-<h2>DM vs 디스크(추간판탈출증) 구분</h2>
-<table>
-<thead><tr><th>항목</th><th>DM</th><th>디스크</th></tr></thead>
-<tbody>
-<tr><td>발생</td><td>서서히 (수개월)</td><td>갑자기 (수 시간~일)</td></tr>
-<tr><td>통증</td><td>없음 (자각 없음)</td><td>극심한 통증</td></tr>
-<tr><td>수술 효과</td><td>없음</td><td>조기 수술 효과 있음</td></tr>
-<tr><td>진단</td><td>유전자 검사+MRI로 배제 진단</td><td>MRI로 확진</td></tr>
-</tbody>
-</table>
-
-<h2>단계별 진행</h2>
+<h2>DM의 특징</h2>
 <ul>
-<li><strong>초기</strong>: 발을 끌며 걷기, 계단 어려움</li>
-<li><strong>중기</strong>: 뒷다리 마비, 배변·배뇨 조절 어려움</li>
-<li><strong>말기</strong>: 완전 하반신 마비, 앞다리로 진행</li>
+<li>뒷다리에서 시작해 균형 잡기와 협응이 점점 어려워진다.</li>
+<li>초기에는 뒷발등을 끌거나 누웠다 일어나기 힘들어하는 모습이 관절염과 비슷해 놓치기 쉽다.</li>
+<li>진행하면 뒷다리로 서지 못하고, 이후 앞다리에도 영향을 줄 수 있다.</li>
+<li>SOD1 유전자 변이가 가장 잘 알려진 위험 요인이다. 이 변이는 열성으로 유전되며, 변이가 있다고 모두 발병하는 것은 아니다.</li>
 </ul>
 
-<h2>재활 치료로 진행 늦추기</h2>
-<p>완치는 없지만 재활로 진행 속도를 늦출 수 있다는 연구가 있다. 수중 트레드밀·물리치료·근육 유지 운동이 효과적이다.</p>
+<h2>비슷한 병과 구분하기</h2>
+<table>
+<thead><tr><th>구분</th><th>DM</th><th>디스크 등 척수 압박 질환</th></tr></thead>
+<tbody>
+<tr><td>시작</td><td>대체로 서서히 진행</td><td>갑자기 악화되기도 한다</td></tr>
+<tr><td>통증</td><td>뚜렷하지 않은 경우가 많다</td><td>통증을 보이는 경우가 많다</td></tr>
+<tr><td>치료</td><td>원인 치료법 없음. 재활·보조 중심</td><td>진단에 따라 약물이나 수술이 도움이 될 수 있다</td></tr>
+</tbody>
+</table>
+<p>DM에는 단일 확정 검사가 없다. 임상 증상과 신경학적 검사, MRI 등으로 척수 압박 병변이나 염증성 질환 같은 다른 원인을 배제하고 진단하며, 유전자 검사는 보조 자료로 쓰인다. 그래서 수의사가 감별 진단을 거치는 과정이 꼭 필요하다.</p>
 
-<h2>반려차(카트) 활용</h2>
-<p>뒷다리를 사용하지 못하게 되면 반려 휠체어(카트)로 이동성을 유지할 수 있다. 이동성이 유지되면 삶의 질과 수명에 긍정적인 영향을 준다.</p>
+<div class="callout-dog">
+<strong>이런 변화는 빨리 진료</strong><br>
+• 갑자기 뒷다리를 못 쓰거나 심하게 아파함<br>
+• 소변·대변을 가리지 못하게 됨<br>
+• 호흡이 가빠지거나 삼키기 어려워 보임<br>
+→ DM 외의 원인일 수 있고, 일부는 빠른 치료가 중요하다.
+</div>
+
+<h2>진행을 늦추기 위한 관리</h2>
+<ul>
+<li><strong>재활</strong>: 물리치료와 규칙적인 운동이 진행을 늦추는 데 도움이 될 수 있다고 보고된 연구가 있다. 소규모 연구가 많아 개체별 효과는 다를 수 있다.</li>
+<li><strong>생활 환경</strong>: 미끄럼 방지 매트, 계단 대신 경사로, 체중 관리로 부담을 줄인다.</li>
+<li><strong>보조기구</strong>: 뒷다리 지지대나 휠체어(카트)는 이동성을 유지하는 데 도움이 될 수 있어 재활 담당 수의사와 상담해 선택한다.</li>
+<li><strong>2차 문제 관리</strong>: 욕창, 요로 감염, 근육 소실은 진행 단계에서 생길 수 있어 정기 점검이 필요하다.</li>
+</ul>
 
 <h2>마지막으로</h2>
-<p>DM은 보호자에게 긴 여정이다. 통증이 없다는 점이 위안이 된다. 이동성과 삶의 질을 최대한 유지하는 것이 목표다. 재활 전문 수의사와 상담하면 훨씬 나은 관리 방법을 찾을 수 있다.</p>`,
+<p>DM은 보호자에게 긴 돌봄을 요구하는 병이다. 정확한 진단을 먼저 받고, 재활과 환경 정비로 편안한 시간을 늘리는 데 초점을 맞추자. 삶의 질에 관한 결정은 수의사와 충분히 상의하는 것이 좋다.</p>`,
     authorName: "펫지기 에디터",
     authorCredential: "반려동물 건강 정보 큐레이터",
     ymyl: true,
-    sources: JSON.stringify([
-      "Coates, J.R. & Wininger, F.A. — Canine Degenerative Myelopathy. Vet Clin North Am 2010",
-      "한국수의신경학회 척수 질환 임상 가이드라인",
-    ]),
+    sources: [
+      "https://vcahospitals.com/know-your-pet/degenerative-myelopathy-in-dogs — VCA, Degenerative Myelopathy in Dogs",
+      "https://www.merckvetmanual.com/nervous-system/congenital-and-inherited-anomalies-of-the-nervous-system-in-small-animals/congenital-and-inherited-spinal-cord-disorders-in-dogs-and-cats — Merck Veterinary Manual, Congenital and Inherited Spinal Cord Disorders in Dogs and Cats",
+      "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10374290/ — Intensive neurorehabilitation and allogeneic stem cells transplantation in canine degenerative myelopathy",
+    ],
     disclaimer: "이 글은 정보 제공을 목적으로 하며 수의사 진료를 대체하지 않습니다.",
     status: "published",
     publishedAt: "2026-08-30T09:00:00.000Z",

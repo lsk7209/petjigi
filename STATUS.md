@@ -3,6 +3,7 @@
 (1) 후속 안정화 R01~R06: R01~R04 구현·단위/통합 테스트 완료 → PR #23 병합·운영 배포 완료(main 7f300b4). R05(e2e·CI)·R06(DB 계측) 미착수.
 (2) 홈 시안: fix/stabilize-r01-r04에서 홈·헤더 코드 적용+로컬 브라우저 검증 완료(미커밋·미배포). 승인 시안 PNG 원본 미확인 → CODEX_HANDOFF §B 명세 기준 구현. 스크린샷: docs/design/home-verify/. 이미지 기록: docs/home-assets.md.
 ## 최근 변경
+- 10-11: 건강 글 7건 보강(운영 DB 반영, 백업 .backup-prod)·shelter 센터 1곳 지역 noindex — 남은 얇은 글 12건은 후속
 - 10-11: 4차 감사 — 이중 인코딩 sources 렌더 정규화(blog 326건 출처 미노출 해소), 사이트맵 shelter 404 6건·feed/sitemap 자기등재 제거 — docs/adsense-audit-4th-20261011.md
 - 10-11: B01~B04 병합·배포(PR #31 7cace26), 동물등록 가이드 운영 DB 반영 완료(백업 .backup-prod, 복구 --restore). 라이브 고지 페이지 확인은 봇 챌린지로 미완(수동 확인 필요): 동물등록 과태료 정정(20/40/60·변경 10/20/40), 고지 공통 문구, pnpm test:e2e+CI 단계, 체크리스트→지역 선택 링크 — docs/adsense-readiness-20261010.md
 - 10-10: AdSense A01~A05 로컬 완료(fix/adsense-a01-claims, 미push·미배포): 주장 정정 3건, 광고 단일 판정, 실용 도구 3종+업체 데이터 범위, 제휴 고지 정정 — docs/adsense-readiness-20261010.md
