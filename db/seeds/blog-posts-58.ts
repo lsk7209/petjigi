@@ -252,7 +252,7 @@ const BLOG_POSTS: NewContent[] = [
       "https://www.samhsa.gov/resource/dbhis/pet-loss-grief — SAMHSA, Pet Loss and Grief",
       "https://www.dailyvet.co.kr/?p=276994 — 데일리벳, 동물장례식장 이용 비율 늘었지만 여전히 반려동물 사체를 땅에 묻는 경우 가장 많아",
     ],
-    disclaimer: null,
+    disclaimer: "이 글은 일반적인 정보 제공 목적으로 작성되었으며, 수의학적 진단·상담이나 법률 자문을 대체하지 않습니다. 장묘·사체 처리 기준은 법령과 지자체에 따라 달라질 수 있으니 진행 전 관할 지자체 등 공식 기관에서 확인하시고, 슬픔이 일상생활을 어렵게 하면 전문 상담을 받으세요.",
     status: "published",
     publishedAt: "2026-08-10T09:00:00.000Z",
     createdAt: NOW,
