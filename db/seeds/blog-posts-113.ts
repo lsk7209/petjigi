@@ -140,47 +140,46 @@ const BLOG_POSTS: NewContent[] = [
     subtitle: "성별에 따른 행동 경향, 중성화 전·후 변화, 입양 선택 기준, 다묘 가정에서의 궁합",
     metaTitle: "수컷 vs 암컷 고양이 성격 차이 — 중성화 후 현실 가이드 | 펫지기",
     metaDescription: "수컷과 암컷 고양이의 성격 차이를 중성화 전후로 정리했습니다. 스프레이·발정 행동, 중성화 후 성격 변화 현실, 다묘 가정에서의 성별 궁합을 설명합니다.",
-    body: `<p>수컷 고양이를 입양할지, 암컷을 입양할지 고민하는 사람이 많다. 성별이 정말 성격을 결정할까? 중성화 후에는 어떻게 달라질까.</p>
+    body: `<p>수컷 고양이는 애교가 많고 암컷은 도도하다는 말을 흔히 한다. 하지만 성별 자체보다 중성화 여부와 어릴 때의 사회화, 개체의 기질이 성격에 더 큰 영향을 준다는 것이 일반적인 설명이다.</p>
 
-<h2>중성화 전 성별 차이 — 중요한 이유</h2>
+<h2>성별이 성격을 결정하지 않는다</h2>
+<p>영국 PDSA는 수컷이 사람에게 더 애정적이라는 이야기는 근거가 약한 통념이며 개체 성격에 달려 있다고 설명한다. 우드 그린 같은 동물 복지 단체도 성별보다 개체 차이가 훨씬 크다고 안내한다. 고양이의 성격은 유전적 기질, 생후 2~7주 무렵의 사회화 경험, 입양 후 환경에 크게 좌우된다.</p>
+
+<h2>중성화 여부가 큰 차이를 만든다</h2>
+<table>
+<thead><tr><th>구분</th><th>중성화 전</th><th>중성화 후</th></tr></thead>
+<tbody>
+<tr><td>수컷</td><td>스프레이(영역 표시), 싸움, 가출·배회, 공격성이 늘 수 있다</td><td>이런 행동이 크게 줄어드는 경향이 있다</td></tr>
+<tr><td>암컷</td><td>발정기에 크게 울고 안절부절, 가출 시도</td><td>발정 행동이 없어지고 더 안정적이다</td></tr>
+</tbody>
+</table>
+<p>PDSA는 중성화가 호르몬과 관련된 문제 행동(스프레이, 싸움, 멀리 배회)을 줄일 수 있다고 설명한다. 그래서 흔히 말하는 성별 차이의 상당 부분이 사실은 중성화하지 않은 고양이 사이의 차이다.</p>
+
+<h2>성별 외에 고려할 것</h2>
 <ul>
-<li><strong>중성화 전 수컷</strong>: 스프레이(마킹) 행동, 방랑 욕구, 다른 수컷과 싸움, 강한 소변 냄새</li>
-<li><strong>중성화 전 암컷</strong>: 발정 행동(울음, 뒹굴기), 6~12개월부터 주기적 발정 반복</li>
-<li>두 가지 모두 중성화로 크게 감소하거나 사라짐</li>
+<li><strong>나이</strong>: 성묘는 이미 기질이 드러나 있어 선택이 쉽다 (<a href="/blog/adult-cat-adoption-guide">성묘 입양 가이드</a>).</li>
+<li><strong>품종·털 길이</strong>: 품종별 경향이 있다.</li>
+<li><strong>다묘 가정</strong>: 기존 고양이와의 궁합이 중요하다. 성별보다 성격 궁합을 본다.</li>
+<li><strong>건강 관련 차이</strong>: 수컷은 요도 폐색 위험이 높고, 암컷은 중성화하지 않으면 자궁 질환과 유선 종양 위험이 있다 (모두 수의사와 상담).</li>
 </ul>
 
-<h2>중성화 후 성격 차이 — 현실</h2>
 <div class="callout-cat">
-<strong>중성화 후 수컷 vs 암컷 실제 경향</strong><br>
-• 수컷: 일반적으로 더 애교스럽고 사교적인 경향<br>
-• 암컷: 독립적이고 자기 영역 의식 강한 경향<br>
-• 단, 이것은 경향일 뿐 — 개체 차이가 성별 차이보다 훨씬 큼<br>
-▶ 중성화 후 성격은 품종, 어린 시절 사회화, 개체 성격이 성별보다 더 큰 영향
+<strong>입양할 때는</strong><br>
+• 성별로 고르기보다 직접 만나 성격을 확인한다<br>
+• 사람을 따르는지, 낯선 소리에 얼마나 놀라는지, 놀이 반응을 본다<br>
+• 입양 후 중성화 계획을 세운다
 </div>
 
-<h2>다묘 가정에서 성별 궁합</h2>
-<ul>
-<li>같은 성별 여러 마리: 수컷끼리도, 암컷끼리도 다 가능 (중성화 상태에서)</li>
-<li>수컷 + 암컷: 가장 갈등이 적다는 일반적인 인식, 그러나 개체 성격이 더 중요</li>
-<li>새 고양이 도입: 성별보다 천천히 소개하는 과정이 더 중요</li>
-</ul>
-
-<h2>어떤 성별을 선택해야 할까</h2>
-<ul>
-<li>성별보다 개체의 성격, 보호자와의 궁합 확인이 더 실질적</li>
-<li>성묘 입양 시 실제 성격 파악 가능 — 더 예측 가능한 선택</li>
-<li>어떤 성별이든 중성화는 건강과 행동 양면에서 권장</li>
-</ul>
-
 <h2>마지막으로</h2>
-<p>"수컷은 이렇다, 암컷은 저렇다"는 일반화보다 입양하려는 개체를 직접 만나보는 것이 최선이다. 고양이는 각자가 다른 개성을 가진 존재다.</p>`,
+<p>고양이의 성격은 성별이 아니라 그 아이의 기질과 경험에서 나온다. 만나서 서로 잘 맞는 고양이를 고르자.</p>`,
     authorName: "펫지기 에디터",
     authorCredential: "반려동물 입양·관계 정보 큐레이터",
     ymyl: false,
-    sources: JSON.stringify([
-      "한국고양이보호협회 고양이 성별 및 중성화 관련 행동 자료",
-      "Levine, E. et al. — Source of acquired behavioral problems in domestic cats. J Vet Behav 2005",
-    ]),
+    sources: [
+      "https://pdsa.org.uk/pet-help-and-advice/looking-after-your-pet/kittens-cats/battle-of-the-sexes — PDSA, Battle of the sexes (male vs female cats)",
+      "https://woodgreen.org.uk/pet-advice/cat/female-vs-male-cats-is-there-really-a-difference/ — Wood Green, Female vs male cats: is there really a difference?",
+      "https://burgesspetcare.com/blog/cat/girls-v-boys-feline-myths-and-misconceptions — Burgess Pet Care, Girls v boys: feline myths and misconceptions",
+    ],
     disclaimer: null,
     status: "published",
     publishedAt: "2026-12-25T09:00:00.000Z",
