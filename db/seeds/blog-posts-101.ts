@@ -264,52 +264,50 @@ const BLOG_POSTS: NewContent[] = [
     subtitle: "온라인 입양 사기 5가지 유형, 사기 신호 체크리스트, 피해 시 신고 방법",
     metaTitle: "반려동물 입양 사기 예방 — 온라인 사기 유형과 신호 체크리스트 | 펫지기",
     metaDescription: "반려동물 온라인 입양 사기 유형과 예방 방법. 선금 요구·배송 사기·가짜 브리더 5가지 유형, 사기 신호 체크리스트, 피해 시 신고 방법을 정리했습니다.",
-    body: `<p>반려동물 사기가 증가하고 있다. 귀여운 강아지 사진에 마음이 동하기 전에 사기 신호를 먼저 확인하는 것이 필요하다.</p>
+    body: `<p>인기 품종 강아지·고양이를 싸게 분양한다며 선입금을 받고 사라지는 반려동물 분양 사기가 반복된다. 사진만 보고 계약금을 보내기 전에 몇 가지 확인만 해도 대부분 피할 수 있다. 위험 신호와 피해 시 대처법을 정리했다.</p>
 
-<h2>주요 사기 유형 5가지</h2>
-<ul>
-<li><strong>선금 배송 사기</strong>: "강아지 배송비 선납해야 함" → 입금 후 잠적</li>
-<li><strong>가짜 브리더</strong>: 유명 브리더 사진·이름 도용, 직접 방문 거부</li>
-<li><strong>무료 입양 후 추가 비용</strong>: "무료 입양"이라더니 배송·수의비·관세 명목 반복 요구</li>
-<li><strong>과금 사기</strong>: 허가 없는 업체가 전문 업체인 척</li>
-<li><strong>SNS 허위 판매</strong>: 실제 없는 강아지 사진으로 계약금 수령</li>
-</ul>
+<h2>사기 위험 신호</h2>
+<table>
+<thead><tr><th>신호</th><th>설명</th></tr></thead>
+<tbody>
+<tr><td>직접 만남·영상 통화 거부</td><td>실물을 보여 주지 않고 사진만 보낸다</td></tr>
+<tr><td>선입금 요구</td><td>만나기 전 계약금·배송비·보험료를 먼저 보내라고 한다. 추가 비용을 계속 요구하기도 한다</td></tr>
+<tr><td>시세보다 매우 낮은 가격</td><td>인기 품종인데 지나치게 저렴하다</td></tr>
+<tr><td>즉시 분양 가능</td><td>검증된 브리더는 대기자가 있거나 번식 시기가 제한적인 경우가 많다</td></tr>
+<tr><td>택배·항공 배송만 가능</td><td>직접 인수 없이 배송만 제안한다</td></tr>
+<tr><td>추적하기 어려운 결제</td><td>상품권, 해외송금, 가상화폐, 타인 명의 계좌만 받는다</td></tr>
+<tr><td>재촉·감정 호소</td><td>다른 구매자가 있다, 사정이 급해서 재분양한다 등으로 서두르게 한다</td></tr>
+<tr><td>도용한 사진</td><td>다른 사이트의 사진을 그대로 쓴다. 이미지 역검색으로 확인할 수 있다</td></tr>
+</tbody>
+</table>
 
-<h2>사기 신호 체크리스트</h2>
+<h2>안전하게 분양받는 방법</h2>
+<ol>
+<li><strong>직접 방문</strong>: 어미견·새끼의 환경을 보고 업체의 등록 여부를 확인한다. 반려동물 판매업·생산업은 지자체 허가·등록 업종이다.</li>
+<li><strong>서류 확인</strong>: 건강 기록, 접종 기록, 계약서(환불·반환 규정 포함)를 받는다.</li>
+<li><strong>결제 안전</strong>: 가능하면 카드 등 분쟁 시 구제가 가능한 방법을 쓰고, 개인 계좌 선입금은 피한다.</li>
+<li><strong>보호소·구조단체</strong>: 입양 절차와 서류가 갖춰진 곳을 먼저 알아본다 (<a href="/blog/dog-adoption-vs-purchase-guide">입양 vs 구매 가이드</a>).</li>
+<li><strong>동물등록</strong>: 인수 후 동물등록 정보를 정확히 변경한다.</li>
+</ol>
+
 <div class="callout-dog">
-<strong>이런 경우 의심하라</strong><br>
-□ 가격이 지나치게 저렴<br>
-□ 직접 방문 불가, 배송만 가능<br>
-□ 부모견 사진 제공 거부<br>
-□ 현금·계좌이체만 가능 (카드 거부)<br>
-□ 급하게 결정 압박 ("오늘 안에 입금 안 하면 다른 분에게")<br>
-□ 수의 기록·혈통서 제공 거부
+<strong>피해를 봤다면</strong><br>
+• 대화 내용, 입금 내역, 광고 화면을 보관한다<br>
+• 경찰(사이버범죄 신고)에 신고하고 거래 은행에 지급정지를 요청한다<br>
+• 한국소비자원(1372) 등 소비자 상담 기관에도 상담한다<br>
+• 피해 사례를 공유해 다른 사람의 피해를 막는다
 </div>
 
-<h2>안전한 입양 방법</h2>
-<ul>
-<li>반드시 직접 방문 (강아지 실물 확인)</li>
-<li>동물등록 번호로 APMS에서 확인</li>
-<li>계약서 서면 작성</li>
-<li>이상한 느낌이 든다면 거래 중단</li>
-</ul>
-
-<h2>피해 신고</h2>
-<ul>
-<li>경찰 사이버수사대 (cyberbureau.police.go.kr)</li>
-<li>한국소비자원 소비자 신고센터</li>
-<li>관련 플랫폼 신고 (판매자 신고)</li>
-</ul>
-
 <h2>마지막으로</h2>
-<p>합리적 의심이 사기를 막는다. "설마 사기일까"가 아니라 "확인하고 나서 입양하자"가 올바른 태도다.</p>`,
+<p>싸고 빠르게 데려올 수 있다는 말은 의심의 신호다. 반드시 직접 보고, 서류를 받고, 안전한 방법으로 결제하자.</p>`,
     authorName: "펫지기 에디터",
     authorCredential: "반려동물 입양·관계 정보 큐레이터",
     ymyl: false,
-    sources: JSON.stringify([
-      "한국소비자원 반려동물 거래 피해 분석 2023",
-      "경찰청 사이버범죄 신고 안내",
-    ]),
+    sources: [
+      "https://www.consumerprotectionbc.ca/2014/06/puppy-scam/ — Consumer Protection BC, Puppy scam",
+      "https://dogster.com/lifestyle/how-to-spot-a-puppy-scam-online — Dogster, How to spot a puppy scam online",
+      "https://stg1.experian.com/blogs/ask-experian/how-to-avoid-puppy-scams-when-adopting-pet/ — Experian, How to avoid puppy scams when adopting a pet",
+    ],
     disclaimer: null,
     status: "published",
     publishedAt: "2026-11-26T09:00:00.000Z",

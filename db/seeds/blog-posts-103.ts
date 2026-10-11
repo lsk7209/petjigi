@@ -137,43 +137,48 @@ const BLOG_POSTS: NewContent[] = [
     subtitle: "교배종 건강 주장의 과학적 근거, 실제 건강 위험, 책임 있는 선택",
     metaTitle: "디자이너 견종 건강 현실 — 말티푸·교배종의 실제 위험 | 펫지기",
     metaDescription: "디자이너 견종(말티푸·포메믹스 등)의 건강 주장을 과학적으로 분석했습니다. 교배종이 건강하다는 주장의 근거, 실제 위험, 책임 있는 입양 방법을 정리했습니다.",
-    body: `<p>"교배종이 순종보다 건강하다"는 말이 있다. 부분적으로 맞지만, 디자이너 견종 산업의 마케팅 문구이기도 하다.</p>
+    body: `<p>푸들 믹스(래브라두들, 코카푸, 카바푸 등)는 '털이 안 빠진다', '순종보다 건강하다'는 말로 홍보되곤 한다. 이런 믿음이 사실인지 연구 결과를 중심으로 살펴본다. 믹스견도 좋은 반려견이 될 수 있지만 마케팅과 사실은 구분해야 한다.</p>
 
-<h2>교배종 건강 주장의 근거와 한계</h2>
-<p>혼혈 강세(Hybrid Vigor)는 유전적 다양성이 높아 일부 열성 유전 질환 발현이 낮아지는 현상이다. 그러나 교배종도 부모 양측의 유전 질환을 모두 가질 수 있다.</p>
+<h2>'잡종강세'는 항상 성립하는가</h2>
+<p>2024년 영국 왕립수의대(RVC) 연구는 코카푸, 래브라두들, 카바푸와 부모 품종의 건강 상태를 비교했다. 약 9,400명의 보호자가 응답한 57개 질환 중 약 87%에서 믹스견과 순종의 결과가 같았다. 일부 질환은 믹스견이 더 많았고 일부는 더 적었다. 연구진은 이 푸들 믹스에서 뚜렷한 잡종강세는 확인되지 않았다고 결론지었다. 다만 이 연구는 젊은 성견만 평가해 노년기 건강은 반영하지 못한다는 한계가 있다.</p>
 
-<h2>디자이너 견종의 실제 문제</h2>
+<p>UC 데이비스 연구진도 믹스견이 유전 질환에서 무조건 안전하다는 믿음은 사실이 아니라고 밝힌 바 있다. 결국 믹스견이라는 사실 자체보다 부모견의 건강과 번식 환경이 더 중요하다.</p>
+
+<h2>흔한 오해</h2>
+<table>
+<thead><tr><th>오해</th><th>현실</th></tr></thead>
+<tbody>
+<tr><td>털이 안 빠지고 알레르기 걱정이 없다</td><td>털 빠짐과 알레르기는 개체마다 다르다. 믹스에서 어떤 털이 나올지 예측하기 어렵다</td></tr>
+<tr><td>순종보다 건강하다</td><td>연구 결과 큰 차이가 없는 질환이 많았다</td></tr>
+<tr><td>성격이 부모 중 좋은 쪽만 닮는다</td><td>어느 쪽을 닮을지 예측하기 어렵고 형제 사이에도 편차가 크다</td></tr>
+<tr><td>값이 비싸면 좋은 브리더다</td><td>높은 가격이 건강 검진과 윤리적 번식을 보장하지 않는다</td></tr>
+</tbody>
+</table>
+
+<h2>입양 전 확인</h2>
+<ul>
+<li>양쪽 부모견의 유전 질환 검사 결과(품종별 필수 검사)</li>
+<li>어미와 새끼가 지내는 환경을 직접 보고, 한 곳에서 여러 품종을 대량으로 번식하지 않는지</li>
+<li>건강 보증과 반환 규정이 서면으로 제공되는지</li>
+<li>어른이 되었을 때의 크기와 털 관리 부담 (푸들 계열은 정기적인 미용이 필요하다)</li>
+</ul>
+
 <div class="callout-dog">
-<strong>교배종 건강 위험 현실</strong><br>
-• 1세대(F1) 교배종: 부모 유전 질환 불예측<br>
-• 소형 디자이너 견종 다수: 수두증·저혈당·치아 과밀 위험<br>
-• 무허가 브리더가 "건강한 교배종"으로 마케팅하는 경우 많음<br>
-• 부모견 유전 검사 여부 확인이 핵심
+<strong>보호소에도 믹스견이 많습니다</strong><br>
+• 보호소·구조단체에는 다양한 믹스견이 입양을 기다린다<br>
+• 성견은 성격과 크기를 이미 알 수 있다
 </div>
 
-<h2>말티푸·포메믹스 등 인기 교배종 주의사항</h2>
-<ul>
-<li>부모견(말티즈·푸들 등)의 유전 질환 각각 파악</li>
-<li>두 품종의 유전 질환이 합쳐질 가능성 이해</li>
-<li>소형 믹스: 저혈당·슬개골 탈구·치아 문제 흔함</li>
-</ul>
-
-<h2>책임 있는 선택</h2>
-<ul>
-<li>부모견 유전 검사 결과 요청</li>
-<li>윤리적 브리더 찾기 (방문 가능, 부모 공개)</li>
-<li>보호소 혼혈견 입양 고려 — 진정한 혼혈 강세 + 구조 동물 지원</li>
-</ul>
-
 <h2>마지막으로</h2>
-<p>교배종이 나쁜 것이 아니다. 그러나 "교배종 = 자동으로 건강" 공식은 없다. 부모의 건강과 브리더의 책임감이 품종보다 중요하다.</p>`,
+<p>믹스견은 매력적인 반려견이지만 '건강이 보장된다'는 광고를 그대로 믿지는 말자. 브리더와 부모견의 건강을 확인하고 개체를 직접 만나 결정하는 것이 가장 중요하다.</p>`,
     authorName: "펫지기 에디터",
     authorCredential: "반려동물 입양·관계 정보 큐레이터",
     ymyl: false,
-    sources: JSON.stringify([
-      "Bellumori, T.P. et al. — Prevalence of inherited disorders in mixed- and purebred dogs. JAVMA 2013",
-      "한국동물복지협회 교배종 건강 정보 가이드라인",
-    ]),
+    sources: [
+      "https://theconversation.com/new-research-busts-the-myth-that-crossbred-designer-dogs-are-healthier-than-pedigrees-237648 — The Conversation, New research busts the myth that crossbred 'designer dogs' are healthier than pedigrees",
+      "https://findanexpert.unimelb.edu.au/news/91383-new-research-busts-the-myth-that-crossbred-designer-dogs-are-healthier-than-pedigrees — University of Melbourne, 같은 연구 소개",
+      "https://news.vin.com/doc/?id=6005608 — VIN News, 믹스견 유전 질환 관련 UC Davis 연구 보도",
+    ],
     disclaimer: null,
     status: "published",
     publishedAt: "2026-11-30T09:00:00.000Z",
