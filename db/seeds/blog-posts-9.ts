@@ -536,7 +536,7 @@ const BLOG_POSTS_9: NewContent[] = [
 <h2>법령 확인 방법</h2>
 <p>동물보호법 전문은 법제처 국가법령정보센터(www.law.go.kr)에서 확인할 수 있다. 지역마다 조례로 세부 규정이 다를 수 있으므로 지자체 동물보호 담당 부서에 문의하는 것이 정확하다. 반려동물이 타인에게 피해를 입혔을 때를 대비한 배상책임 보장은 <a href="/blog/pet-insurance-comparison-method">펫보험 비교 가이드</a>에서 확인하자.</p>`,
     ymyl: true,
-    disclaimer: LEGAL_DISCLAIMER,
+    disclaimer: "이 글은 일반적인 정보 제공 목적으로 작성되었으며, 법률·금융·보험 자문을 대체하지 않습니다. 구체적인 법률 해석이나 보험 선택은 전문가와 상담하시기 바랍니다.",
     status: "published",
     publishedAt: scheduleDate(55),
     authorName: "펫지기 에디터",
@@ -687,7 +687,7 @@ const BLOG_POSTS_9: NewContent[] = [
 <h2>펫보험으로 큰 지출 대비하기</h2>
 <p>만성 질환, 수술, 응급 처치에는 수백~수천만 원이 드는 경우가 있다. <a href="/insurance/compare">펫보험</a>은 이런 큰 지출을 분산시키는 가장 현실적인 방법이다. 어릴 때 가입할수록 보험료가 낮고 보장 범위가 넓다. <a href="/blog/pet-insurance-comparison-method">펫보험 제대로 비교하는 5가지 기준</a>도 함께 읽어보자.</p>`,
     ymyl: true,
-    disclaimer: LEGAL_DISCLAIMER,
+    disclaimer: "이 글은 일반적인 정보 제공 목적으로 작성되었으며, 법률·금융·보험 자문을 대체하지 않습니다. 구체적인 법률 해석이나 보험 선택은 전문가와 상담하시기 바랍니다.",
     status: "published",
     publishedAt: scheduleDate(57),
     authorName: "펫지기 에디터",
@@ -836,7 +836,7 @@ const BLOG_POSTS_9: NewContent[] = [
 <h2>면책사항 확인 방법</h2>
 <p>상품 광고가 아닌 약관 전문을 직접 읽어야 한다. 금융감독원 보험상품 통합 비교 공시 시스템(보험다모아)에서 주요 면책 내용을 비교할 수 있다. <a href="/insurance/compare">펫보험 비교 페이지</a>에서 상품별 주요 면책사항을 나란히 확인해 보자. 보험을 처음 비교하는 경우라면 <a href="/blog/pet-insurance-comparison-method">펫보험 제대로 비교하는 5가지 기준</a>부터 읽어두면 도움이 된다.</p>`,
     ymyl: true,
-    disclaimer: LEGAL_DISCLAIMER,
+    disclaimer: "이 글은 일반적인 정보 제공 목적으로 작성되었으며, 법률·금융·보험 자문을 대체하지 않습니다. 구체적인 법률 해석이나 보험 선택은 전문가와 상담하시기 바랍니다.",
     status: "published",
     publishedAt: scheduleDate(59),
     authorName: "펫지기 에디터",
