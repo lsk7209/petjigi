@@ -48,6 +48,7 @@ function load(relative) {
     require: name => {
       if (Object.hasOwn(stubs, name)) return stubs[name];
       if (name.startsWith('@/lib/')) return load(withExtension(resolve(root, name.slice(2))));
+      if (name === '@/components/content/owner-journeys') return load(withExtension(resolve(root, name.slice(2))));
       if (name.startsWith('@/components/home/')) return load(withExtension(resolve(root, name.slice(2))));
       if (name.startsWith('.')) return load(withExtension(resolve(dirname(filename), name)));
       if (name === 'react/jsx-runtime' || name === 'react') return require(name);
@@ -91,14 +92,14 @@ test('home does not guarantee expert review based on site membership', () => {
 test('about explains available review metadata and keeps existing identity/canonical', () => {
   assert.doesNotMatch(aboutHtml, /콘텐츠는 전문가 검토를 거친 후 발행합니다/);
   assert.ok(aboutHtml.includes('검토자와 검토일이 기록된 콘텐츠'));
-  assert.ok(aboutHtml.includes('contact@petjigi.kr'));
+  assert.ok(aboutHtml.includes('cs@petjigi.kr'));
   assert.equal(about.metadata.alternates.canonical, 'https://petjigi.kr/about');
 });
 
 test('contact copy and metadata preserve contact route without an unsupported review promise', () => {
   assert.doesNotMatch(contactHtml, /수의사·전문가 검토를 거친|월 2회 전문가 검토/);
   assert.doesNotMatch(contact.metadata.description, /전문가 검토/);
-  assert.ok(contactHtml.includes('href="mailto:contact@petjigi.kr"'));
+  assert.ok(contactHtml.includes('href="mailto:cs@petjigi.kr"'));
   assert.ok(contactHtml.includes('"@type":"ContactPage"'));
   assert.equal(contact.metadata.alternates.canonical, '/contact');
 });

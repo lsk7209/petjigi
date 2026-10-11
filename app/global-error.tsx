@@ -46,7 +46,7 @@ export default function GlobalError({
             </Link>
           </div>
           <p className="text-xs text-[#6B7280]">
-            문제가 지속되면 <a href="mailto:contact@petjigi.kr" className="underline hover:text-[#5C7C54]">contact@petjigi.kr</a>로 문의해 주세요.
+            문제가 지속되면 <a href="mailto:cs@petjigi.kr" className="underline hover:text-[#5C7C54]">cs@petjigi.kr</a>로 문의해 주세요.
           </p>
         </main>
       </body>

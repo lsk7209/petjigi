@@ -31,9 +31,69 @@ export interface InsuranceSheetTool {
   note: string;
 }
 
-export type PracticalToolData = ChecklistTool | InsuranceSheetTool;
+export interface BudgetTool {
+  kind: "budget";
+  title: string;
+  intro: string;
+  groups: readonly { heading: string; items: readonly string[] }[];
+  links: readonly ToolLink[];
+  note: string;
+}
+
+/** Empty amounts are omitted; invalid or unsafe amounts never produce a total. */
+export function sumBudgetAmounts(amounts: readonly string[]): number | null {
+  let sum = 0;
+  let hasAmount = false;
+  for (const amount of amounts) {
+    const trimmed = amount.trim();
+    if (!trimmed) continue;
+    if (!/^\d+$/.test(trimmed)) return null;
+    const value = Number(trimmed);
+    if (!Number.isSafeInteger(value) || !Number.isSafeInteger(sum + value)) return null;
+    sum += value;
+    hasAmount = true;
+  }
+  return hasAmount ? sum : null;
+}
+
+export type PracticalToolData = ChecklistTool | InsuranceSheetTool | BudgetTool;
+
+const INSURANCE_SHEET: InsuranceSheetTool = {
+  kind: "insurance-sheet",
+  title: "펫보험 같은 조건 비교표",
+  intro: "상품마다 용어와 산식이 달라 같은 항목으로 나란히 적어 보면 차이가 보입니다. 값은 각 보험사의 상품설명서·약관에서 직접 옮겨 적어 주세요. 이 표는 순위나 추천이 아닙니다.",
+  rows: [
+    { item: "보험사·상품명", where: "보험사 상품 페이지" },
+    { item: "약관 버전·기준일", where: "약관 첫 장·시행일" },
+    { item: "가입 가능 연령·갱신 조건", where: "상품설명서" },
+    { item: "보장 비율", where: "보장 내용 표" },
+    { item: "자기부담금 (정액/정률, 최소 금액)", where: "보장 내용 표" },
+    { item: "연간 한도와 항목별 한도 (통원·입원·수술)", where: "보장 내용 표" },
+    { item: "면책 기간", where: "보장 개시일 조항" },
+    { item: "보장 제외 항목·기존 질환 처리", where: "보장하지 않는 사항" },
+    { item: "청구 방식", where: "보험금 청구 안내" },
+    { item: "보험료 (견적 일자·반려동물 조건 함께 기록)", where: "보험사 견적" },
+  ],
+  links: [
+    { name: "펫지기 펫보험 비교", href: "/insurance/compare" },
+    { name: "금융감독원", href: "https://www.fss.or.kr/" },
+  ],
+  note: "펫지기는 보험 중개·모집을 하지 않으며 보험료 예측이나 가입 보장을 제공하지 않습니다. 정확한 내용은 보험사 약관을 확인하세요.",
+};
 
 export const PRACTICAL_TOOLS: Readonly<Record<string, PracticalToolData>> = {
+  "dog-adoption-checklist": {
+    kind: "budget",
+    title: "입양 준비 예산표",
+    intro: "예상 금액을 직접 적어 초기 준비비, 매달 지출, 비상 예비비를 따로 살펴보세요. 실제 비용은 상황과 지역에 따라 다르므로 각 항목을 직접 확인하세요.",
+    groups: [
+      { heading: "초기 준비비", items: ["입양 관련 비용", "이동장·목줄·침구 등 용품", "초기 건강 확인·예방 관리"] },
+      { heading: "매달 지출", items: ["사료·간식", "소모품·위생 관리", "정기적인 건강 관리", "돌봄·훈련 등"] },
+      { heading: "비상 예비비", items: ["예상하지 못한 진료", "긴급 돌봄·이동"] },
+    ],
+    links: [{ name: "국가동물보호정보시스템", href: "https://www.animal.go.kr/" }],
+    note: "표의 금액은 저장하거나 전송하지 않습니다. 새로고침하면 입력이 지워집니다.",
+  },
   "animal-hospital-guide": {
     kind: "checklist",
     title: "동물병원 방문 전 질문표",
@@ -109,33 +169,6 @@ export const PRACTICAL_TOOLS: Readonly<Record<string, PracticalToolData>> = {
     ],
     note: "법적 의무와 신청 조건은 위 공식 기관의 현재 안내가 우선합니다. 펫지기는 등록 업무를 대행하지 않습니다.",
   },
-  "pet-insurance-guide": {
-    kind: "insurance-sheet",
-    title: "펫보험 같은 조건 비교표",
-    intro:
-      "상품마다 용어와 산식이 달라 같은 항목으로 나란히 적어 보면 차이가 보입니다. 값은 각 보험사의 상품설명서·약관에서 직접 옮겨 적어 주세요. 이 표는 순위나 추천이 아닙니다.",
-    rows: [
-      { item: "보험사·상품명", where: "보험사 상품 페이지" },
-      { item: "약관 버전·기준일", where: "약관 첫 장·시행일" },
-      { item: "가입 가능 연령·갱신 조건", where: "상품설명서" },
-      { item: "보장 비율", where: "보장 내용 표" },
-      { item: "자기부담금 (정액/정률, 최소 금액)", where: "보장 내용 표" },
-      {
-        item: "연간 한도와 항목별 한도 (통원·입원·수술)",
-        where: "보장 내용 표",
-      },
-      { item: "면책 기간", where: "보장 개시일 조항" },
-      { item: "보장 제외 항목·기존 질환 처리", where: "보장하지 않는 사항" },
-      { item: "청구 방식", where: "보험금 청구 안내" },
-      {
-        item: "보험료 (견적 일자·반려동물 조건 함께 기록)",
-        where: "보험사 견적",
-      },
-    ],
-    links: [
-      { name: "펫지기 펫보험 비교", href: "/insurance/compare" },
-      { name: "금융감독원", href: "https://www.fss.or.kr/" },
-    ],
-    note: "펫지기는 보험 중개·모집을 하지 않으며 보험료 예측이나 가입 보장을 제공하지 않습니다. 정확한 내용은 보험사 약관을 확인하세요.",
-  },
+  "pet-insurance-guide": INSURANCE_SHEET,
+  "pet-insurance-comparison-method": INSURANCE_SHEET,
 };

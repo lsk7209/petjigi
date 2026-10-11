@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { OwnerJourneys } from "@/components/content/owner-journeys";
 import { YmylDisclaimer } from "@/components/content/ymyl-disclaimer";
 import { breadcrumbSchema } from "@/lib/seo/structured-data";
 
@@ -39,7 +40,7 @@ const GUIDE_LINKS = [
   {
     href: "/guide/memorial-cost",
     title: "장례 비용 가이드",
-    desc: "화장·납골·수목장 유형별 평균 비용 범위를 정리했습니다.",
+    desc: "장례 견적의 포함 서비스와 추가 비용을 확인하는 방법을 안내합니다.",
   },
   {
     href: "/guide/pet-loss-care",
@@ -109,6 +110,7 @@ export default function MemorialCategoryPage() {
         </div>
 
         <YmylDisclaimer categoryId={6} />
+        <OwnerJourneys category="memorial" />
 
         {/* 가이드 링크 */}
         <section className="mt-10 mb-12">
@@ -140,7 +142,7 @@ export default function MemorialCategoryPage() {
             지역별 장묘업체 찾기
           </h2>
           <p className="text-sm text-[var(--brand-text-secondary)] mb-5">
-            공공데이터 기반 등록 장묘업체 목록입니다.
+            공공데이터 기반 장묘업체 목록입니다. 이용 전 현재 허가 정보와 실제 진행 장소를 확인하세요.
           </p>
           <div className="grid grid-cols-3 sm:grid-cols-4 gap-2">
             {SIDO_LIST.map((sido) => (

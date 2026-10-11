@@ -1,6 +1,7 @@
 import Link from "next/link";
 import {
   describeDataCoverage,
+  collectedDateLabel,
   type CoverageInput,
 } from "@/lib/business-data-coverage";
 
@@ -27,7 +28,7 @@ export function DataCoverage({
           {c.registered.length > 0 ? c.registered.join(", ") : "없음"}
         </li>
         <li>
-          펫지기 수집일: {syncedAt?.slice(0, 10) ?? "확인되지 않음"} (원본
+          펫지기 수집일: {collectedDateLabel(syncedAt)} (원본
           기준일은 데이터에 제공되지 않아 표시하지 않습니다)
         </li>
         <li>

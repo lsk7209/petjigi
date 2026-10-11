@@ -7,6 +7,21 @@ export interface ContentRedirect {
 
 export const CONTENT_REDIRECTS: readonly ContentRedirect[] = [
   {
+    from: "/guide/pet-insurance-claim-guide",
+    to: "/blog/pet-insurance-claim-guide",
+    reason: "동명 guide/blog 시드의 운영 공개 경로는 blog(200)이며 guide는404. 기존 링크를 실제 공개 청구 기사로 연결",
+  },
+  {
+    from: "/guide/dog-adoption-complete-guide",
+    to: "/guide/dog-adoption-checklist",
+    reason: "동일 검색 의도(강아지 입양 전 준비·첫날). 입양 경로·인계 기록·첫날 적응을 대표 체크리스트에 병합하고 미확인 비용·대기 시간을 제거",
+  },
+  {
+    from: "/guide/cat-indoor-enrichment-guide",
+    to: "/guide/indoor-cat-enrichment-guide",
+    reason: "동일 검색 의도(실내 고양이 환경 풍부화). 긁기 자리·놀이 순환·창가 관찰을 대표 문서에 병합하고 일률적 높이·시간·효과 주장을 제거",
+  },
+  {
     from: "/blog/pet-photo-tips-guide",
     to: "/blog/pet-photo-tips",
     reason: "동일 검색 의도(스마트폰 반려동물 촬영). 고유 팁을 대표 문서에 병합",

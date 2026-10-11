@@ -51,3 +51,24 @@ test("SQL 판정은 JS 판정(isPubliclyVisibleContent)과 모든 행에서 일�
     assert.equal(sqlIds.has(r.id), js, r.id);
   }
 });
+
+test("통합 원본은 LIMIT 전에 제외하고 다른 타입의 같은 slug는 유지한다", async () => {
+  const client = createClient({ url: ":memory:" });
+  try {
+    await client.execute("CREATE TABLE contents (id TEXT PRIMARY KEY, slug TEXT, type TEXT, status TEXT, published_at TEXT)");
+    for (const [id, type, slug] of [
+      ["z-retired", "guide", "dog-adoption-complete-guide"],
+      ["a-target", "guide", "dog-adoption-checklist"],
+      ["b-different-type", "blog", "dog-adoption-complete-guide"],
+    ]) {
+      await client.execute({sql: "INSERT INTO contents VALUES (?,?,?,?,?)", args: [id, slug, type, "published", "2026-10-01T00:00:00.000Z"]});
+    }
+    const db = drizzle(client);
+    const first = await db.select({id: contents.id}).from(contents).where(publicContentCondition("guide", NOW)).orderBy(desc(contents.id)).limit(1);
+    assert.deepEqual(first.map(r => r.id), ["a-target"]);
+    const blogs = await db.select({id: contents.id}).from(contents).where(publicContentCondition("blog", NOW));
+    assert.deepEqual(blogs.map(r => r.id), ["b-different-type"]);
+    assert.equal(isPubliclyVisibleContent({status: "published", type: "guide", slug: "dog-adoption-complete-guide", publishedAt: "2026-10-01T00:00:00.000Z"}, NOW), false);
+    assert.equal(isPubliclyVisibleContent({status: "published", type: "blog", slug: "dog-adoption-complete-guide", publishedAt: "2026-10-01T00:00:00.000Z"}, NOW), true);
+  } finally { client.close(); }
+});

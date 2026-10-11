@@ -1,3 +1,5 @@
+import { collectedDateLabel } from "@/lib/business-data-coverage";
+import { VisitQuestions } from "@/components/business/visit-questions";
 import type { Metadata } from "next";
 import { publicContentCondition } from "@/lib/content-publication-sql";
 import { notFound } from "next/navigation";
@@ -347,13 +349,14 @@ export default async function BusinessDetailPage({
         <AdSlot adType="adsense" format="rectangle" className="mb-8" />
 
         <DataCoverage business={business} syncedAt={business.lastSyncedAt} />
+        <VisitQuestions type={type} />
 
         <div className="mb-8 pt-2">
           <ShareButtons url={pageUrl} title={`${business.name} ${typeLabel} | 펫지기`} />
         </div>
 
         <p className="text-xs text-[var(--brand-text-secondary)]">
-          마지막 수집일: {business.lastSyncedAt?.slice(0, 10) ?? "확인되지 않음"}
+          마지막 수집일: {collectedDateLabel(business.lastSyncedAt)}
           &nbsp;·&nbsp;
           <Link href={`/${sigungu}/${type}`} className="hover:text-[var(--brand-accent)]">
             {locationName} {typeLabel} 목록

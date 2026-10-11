@@ -2,14 +2,30 @@ import assert from "node:assert/strict";
 import fs from "node:fs";
 import test from "node:test";
 import { estimateInsurancePayout } from "./insurance-estimate";
-import { PRACTICAL_TOOLS } from "./practical-tools";
+import { PRACTICAL_TOOLS, sumBudgetAmounts } from "./practical-tools";
 
-test("시범 도구 3종이 등록돼 있다", () => {
+test("실용 도구가 대상 문서에 등록돼 있다", () => {
   assert.deepEqual(Object.keys(PRACTICAL_TOOLS).sort(), [
     "animal-hospital-guide",
+    "dog-adoption-checklist",
     "microchip-registration-complete-guide",
+    "pet-insurance-comparison-method",
     "pet-insurance-guide",
   ]);
+  assert.equal(PRACTICAL_TOOLS["pet-insurance-guide"], PRACTICAL_TOOLS["pet-insurance-comparison-method"]);
+});
+
+test("입양 예산은 입력된 정수 금액만 합산하고 빈칸은 추정하지 않는다", () => {
+  assert.equal(sumBudgetAmounts(["", " "]), null);
+  assert.equal(sumBudgetAmounts(["10000", "", "2500"]), 12500);
+  assert.equal(sumBudgetAmounts(["0", ""]), 0);
+});
+
+test("입양 예산은 음수·소수·무한대·안전 범위 초과를 거부한다", () => {
+  for (const invalid of ["-1", "1.5", "1e9", "Infinity", "abc", "9007199254740992"]) {
+    assert.equal(sumBudgetAmounts(["10", invalid]), null, invalid);
+  }
+  assert.equal(sumBudgetAmounts(["9007199254740991", "1"]), null);
 });
 
 test("도구 문구에 근거 없는 가격·순위·검증 표현이 없다", () => {

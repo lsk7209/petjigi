@@ -91,7 +91,9 @@ const GUIDES: NewContent[] = [
   <li><strong>Q. 외장형과 내장형 중 어떤 것이 좋나요?</strong> — 내장형(피하 삽입)이 분실·마모 걱정이 없어 훨씬 신뢰성이 높습니다.</li>
   <li><strong>Q. 고양이도 등록할 수 있나요?</strong> — 의무는 아니지만 동일한 절차로 자율 등록 가능합니다.</li>
   <li><strong>Q. 해외 여행 시에도 인식되나요?</strong> — ISO 표준 칩이라면 전 세계 리더기로 인식 가능합니다.</li>
-</ul>`,
+</ul>
+<h2>함께 확인할 준비</h2>
+<ul><li><a href="/guide/dog-adoption-checklist">입양 전 돌봄·예산 준비</a></li></ul>`,
     status: "published",
     sources: [
       "서울시 미디어허브 — 동물등록 자진신고 안내(2024-08-20 발행): 미등록 1차 20만·2차 40만·3차 60만 원, 변경사항 미신고 1차 10만·2차 20만·3차 40만 원 (2026-10-11 확인, 법령 원문 대조 대기)",
@@ -183,7 +185,9 @@ const GUIDES: NewContent[] = [
   <li>실제 물어뜯거나 상처가 생기는 싸움</li>
   <li>한쪽이 숨어서 나오지 않거나 극심한 털 빠짐·피부 자해</li>
   <li>배변 실수가 갑자기 늘어남 (스트레스 반응)</li>
-</ul>`,
+</ul>
+<h2>함께 확인할 준비</h2>
+<ul><li><a href="/guide/indoor-cat-enrichment-guide">고양이별 자원과 통로 점검</a></li></ul>`,
     status: "published",
     ymyl: false,
     authorName: "펫지기 에디터팀",

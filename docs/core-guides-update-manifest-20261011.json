@@ -1,0 +1,293 @@
+{
+  "date": "2026-10-11",
+  "baseline": "0df857f",
+  "scope": "local-only",
+  "entries": [
+    {
+      "file": "db/seeds/contents.ts",
+      "id": "seed-guide-petloss-care",
+      "slug": "petloss-care-guide",
+      "type": "guide",
+      "changedFields": [
+        "body"
+      ],
+      "bodyBeforeSha256": "7397c60bd0b23fd74aca3dd8b39b0d7d0a49f75c165b8d629e8c9a7e49700e36",
+      "bodyAfterSha256": "05f1dbc2eee2064c336cd2229b2b92ec82888db0287bdced83a0a2c13ad976ce",
+      "protectedMetadataUnchanged": true
+    },
+    {
+      "file": "db/seeds/contents.ts",
+      "id": "seed-guide-dog-adoption-checklist",
+      "slug": "dog-adoption-checklist",
+      "type": "guide",
+      "changedFields": [
+        "metaDescription",
+        "body",
+        "sources",
+        "updatedAt"
+      ],
+      "bodyBeforeSha256": "b845e4f3317fee98554dbc97261da569528e46bdcc2acd1b8f8d66e1d57d222c",
+      "bodyAfterSha256": "57fec9178cf3e47751a247912d4373718435d891137ae8fca9ee7aaa32336836",
+      "protectedMetadataUnchanged": true
+    },
+    {
+      "file": "db/seeds/contents.ts",
+      "id": "seed-guide-dog-food-label-guide",
+      "slug": "dog-food-label-guide",
+      "type": "guide",
+      "changedFields": [
+        "metaDescription",
+        "body",
+        "sources",
+        "updatedAt"
+      ],
+      "bodyBeforeSha256": "ad60f370479cee3aa1148cd48bd96b1bc57a2de8edc5e31252dfc1f50dfd6be6",
+      "bodyAfterSha256": "5b6597ac082a6b716895ffa91e57a48a900783e6be54063054daf8193141120f",
+      "protectedMetadataUnchanged": true
+    },
+    {
+      "file": "db/seeds/contents.ts",
+      "id": "seed-guide-indoor-cat-enrichment",
+      "slug": "indoor-cat-enrichment-guide",
+      "type": "guide",
+      "changedFields": [
+        "metaDescription",
+        "body",
+        "sources",
+        "updatedAt"
+      ],
+      "bodyBeforeSha256": "2edab24e4f7bb028fa059011f022d935951de6aeb733feb16457e13507b7ee20",
+      "bodyAfterSha256": "1d6dd10467cdf8d4a28c1c1deb2504db6756827d6f92a56b7f6a211a727a6507",
+      "protectedMetadataUnchanged": true
+    },
+    {
+      "file": "db/seeds/contents.ts",
+      "id": "seed-guide-cat-litter-guide",
+      "slug": "cat-litter-guide",
+      "type": "guide",
+      "changedFields": [
+        "body"
+      ],
+      "bodyBeforeSha256": "72cf423bb0a3dacbde3f2bb7c00c415f1507cb1b4291057051680a791935b54c",
+      "bodyAfterSha256": "5bd83971f6b0b462b62289051a52b19090c87478a2acf539596116f5014d781f",
+      "protectedMetadataUnchanged": true
+    },
+    {
+      "file": "db/seeds/contents.ts",
+      "id": "seed-guide-cat-food-guide",
+      "slug": "cat-food-guide",
+      "type": "guide",
+      "changedFields": [
+        "body"
+      ],
+      "bodyBeforeSha256": "733dc914eb451daae71c05e3e89028ba77ccdda2c23716090ad3cdec43630e1f",
+      "bodyAfterSha256": "b2c530630d0248f9f7a97ee1361ba7d90c18e4659ad8f8383071a82aeda802c6",
+      "protectedMetadataUnchanged": true
+    },
+    {
+      "file": "db/seeds/contents.ts",
+      "id": "seed-guide-dog-nutrition-basics",
+      "slug": "dog-nutrition-basics",
+      "type": "guide",
+      "changedFields": [
+        "body"
+      ],
+      "bodyBeforeSha256": "4ceb96177ddd99f1f9f6d7f43485c7cc23ce34c8de64e7fe5bd4c20680a2ae8d",
+      "bodyAfterSha256": "42335e997f9083a26bb5b96ac2c624aa90a66415351baefc89dc00d918da25b0",
+      "protectedMetadataUnchanged": true
+    },
+    {
+      "file": "db/seeds/contents.ts",
+      "id": "seed-guide-pet-first-aid",
+      "slug": "pet-first-aid-guide",
+      "type": "guide",
+      "changedFields": [
+        "body"
+      ],
+      "bodyBeforeSha256": "d36fb82200d0dda0b3d0ae28bc00d8d2b7bdaaffe65a19fbfa0a107c429b7f8c",
+      "bodyAfterSha256": "65c13c978f9f601ac78fc2921b041bdb655fadd98bea6267b118006497880dc8",
+      "protectedMetadataUnchanged": true
+    },
+    {
+      "file": "db/seeds/contents.ts",
+      "id": "seed-guide-cat-indoor-safety",
+      "slug": "cat-indoor-safety-guide",
+      "type": "guide",
+      "changedFields": [
+        "body"
+      ],
+      "bodyBeforeSha256": "cc739f3ec3f0a907915febe8e190b16c6672652eb49f908688aa4224e0790271",
+      "bodyAfterSha256": "40fa12f49259bcd0e9a8c0f4e42e9edcc5644508c7e55daf36542e402a493294",
+      "protectedMetadataUnchanged": true
+    },
+    {
+      "file": "db/seeds/contents.ts",
+      "id": "seed-guide-pet-health-checkup",
+      "slug": "pet-health-checkup-guide",
+      "type": "guide",
+      "changedFields": [
+        "metaDescription",
+        "body"
+      ],
+      "bodyBeforeSha256": "f01a8e4a0eb5edb4b87c88523b783821903f2e865a9c02f731083bd29929d21a",
+      "bodyAfterSha256": "ca393b6e120344c150dbfb5d88d7c1b986ece074bdabfaf28ee8d512dc22cdf3",
+      "protectedMetadataUnchanged": true
+    },
+    {
+      "file": "db/seeds/contents.ts",
+      "id": "seed-guide-memorial-ceremony",
+      "slug": "memorial-ceremony",
+      "type": "guide",
+      "changedFields": [
+        "metaDescription",
+        "body",
+        "disclaimer",
+        "sources",
+        "updatedAt"
+      ],
+      "bodyBeforeSha256": "0f7c54db97c469caa51068e689544a47149d6fb4a30fb96e1dda2246a7be16d5",
+      "bodyAfterSha256": "256936ebcebf614597460ba2f1e9a5506133f29f6019ff905a9ae09e201dd2e5",
+      "protectedMetadataUnchanged": true
+    },
+    {
+      "file": "db/seeds/contents.ts",
+      "id": "seed-guide-memorial-cost",
+      "slug": "memorial-cost",
+      "type": "guide",
+      "changedFields": [
+        "body"
+      ],
+      "bodyBeforeSha256": "125ea904952db695b03bb5ff354120eaf0ef25fbd356e0976de9cf4ce23a84ed",
+      "bodyAfterSha256": "cdecc3b5825bcfcd091415f6f14f4cf60fe347a2aa67866df211b7276912bb7a",
+      "protectedMetadataUnchanged": true
+    },
+    {
+      "file": "db/seeds/contents.ts",
+      "id": "seed-guide-pet-insurance-claim",
+      "slug": "pet-insurance-claim-guide",
+      "type": "guide",
+      "changedFields": [
+        "body"
+      ],
+      "bodyBeforeSha256": "0a0ed6a18e94fb3bc35889f7bbc4d8931b4c35b7a0121b74cdd7d5311a85310d",
+      "bodyAfterSha256": "4249c4f4e2ebee9524b24f1a13203f61494f1df1cfcca4e6e92f1089d049a9ce",
+      "protectedMetadataUnchanged": true
+    },
+    {
+      "file": "db/seeds/contents.ts",
+      "id": "seed-guide-pet-treats-guide",
+      "slug": "pet-treats-guide",
+      "type": "guide",
+      "changedFields": [
+        "body"
+      ],
+      "bodyBeforeSha256": "25f8587f6657beed61e07777b070a2d00542696f429b28a4c9a0edbb3c8c9d3e",
+      "bodyAfterSha256": "4d69a5cfdbbcb8afe9e0d9f08aaa05a905c75df8a70840b0e2a7b10922864454",
+      "protectedMetadataUnchanged": true
+    },
+    {
+      "file": "db/seeds/contents.ts",
+      "id": "seed-guide-carrier-training",
+      "slug": "carrier-training-guide",
+      "type": "guide",
+      "changedFields": [
+        "body"
+      ],
+      "bodyBeforeSha256": "85af1cbe8ce3af7bedf611692a312e166e9846aa3de3d086804b582e4777b591",
+      "bodyAfterSha256": "aa9b73b175a5ed35f3d1fdd2ca74a34ff12678af5412f46bbb673e409115ad4e",
+      "protectedMetadataUnchanged": true
+    },
+    {
+      "file": "db/seeds/contents.ts",
+      "id": "seed-guide-animal-hospital-guide",
+      "slug": "animal-hospital-guide",
+      "type": "guide",
+      "changedFields": [
+        "metaDescription",
+        "body",
+        "sources",
+        "updatedAt"
+      ],
+      "bodyBeforeSha256": "b2b99a4117337417d8b9223ba8f0e76e78ad9b5d42162fc8e3dadf81333212b6",
+      "bodyAfterSha256": "71f3f55751107bf5403133cb12b0eca546a5a5d4ff0847771afae85a124cac79",
+      "protectedMetadataUnchanged": true
+    },
+    {
+      "file": "db/seeds/blog-posts-21.ts",
+      "id": "blog-202",
+      "slug": "pet-insurance-deductible-guide",
+      "type": "blog",
+      "changedFields": [
+        "disclaimer",
+        "body"
+      ],
+      "bodyBeforeSha256": "d6d0fadab582463a1e39674eb74715964118c15b0a741d54b6505f3809003711",
+      "bodyAfterSha256": "9a389afed891a47adc4bc0affce13440880a4f9e6f04dbebc5a0eadafdd63f60",
+      "protectedMetadataUnchanged": true
+    },
+    {
+      "file": "db/seeds/blog-posts-21.ts",
+      "id": "blog-210",
+      "slug": "pet-insurance-comparison-method",
+      "type": "blog",
+      "changedFields": [
+        "metaDescription",
+        "disclaimer",
+        "sources",
+        "updatedAt",
+        "body"
+      ],
+      "bodyBeforeSha256": "e187dcd0e3cc30f85b88aeb0b048c7c976fadefc8b75e486b904d47037f0d87f",
+      "bodyAfterSha256": "3c5ebd61b14efa24a8e8f3b5ce73b25862d13b4a35a2b3bbc83fc11ec88edd70",
+      "protectedMetadataUnchanged": true
+    },
+    {
+      "file": "db/seeds/blog-posts-25.ts",
+      "id": "blog-244",
+      "slug": "animal-registration-change-cancel-guide",
+      "type": "blog",
+      "changedFields": [
+        "body"
+      ],
+      "bodyBeforeSha256": "11e503144e2d651adf912a7a080e6f384e2c17408283f9062d31dcb5041fd6f9",
+      "bodyAfterSha256": "a264c796311a6215a2e18c00366e2853ba681bf3aec113748b12a322944ab225",
+      "protectedMetadataUnchanged": true
+    },
+    {
+      "file": "db/seeds/guides-batch-1.ts",
+      "id": "guide-shelter-animal-adoption",
+      "slug": "shelter-animal-adoption-guide",
+      "type": "guide",
+      "changedFields": [
+        "body"
+      ],
+      "bodyBeforeSha256": "5a6600ceb4d511a1dd3c082a1bed8aa96c304e3dee723b86ce86c1de1d1ee0f6",
+      "bodyAfterSha256": "16e23f03782aafee417f40711ba9d2ff70fca7e69507c80587b931bfee31238e",
+      "protectedMetadataUnchanged": true
+    },
+    {
+      "file": "db/seeds/guides-batch-2.ts",
+      "id": "guide-microchip-registration-complete",
+      "slug": "microchip-registration-complete-guide",
+      "type": "guide",
+      "changedFields": [
+        "body"
+      ],
+      "bodyBeforeSha256": "39bac8030fa2cb151ce5e1b38bf94b5ac41cf356c90772bd086c922c93445188",
+      "bodyAfterSha256": "ccb17a681f5b28f0fc654274700f1b061c63f2e83d9b9f3fd870f866f39d854e",
+      "protectedMetadataUnchanged": true
+    },
+    {
+      "file": "db/seeds/guides-batch-2.ts",
+      "id": "guide-multi-pet-household",
+      "slug": "multi-pet-household-guide",
+      "type": "guide",
+      "changedFields": [
+        "body"
+      ],
+      "bodyBeforeSha256": "f3e6a2630952933576b8f2cc18b4b406a940f0db65563c4e4173e5ea79cd741e",
+      "bodyAfterSha256": "2da7cfdac0d0166fabfe6e71d256e4684db925c38486d623ea024f2d5c83417b",
+      "protectedMetadataUnchanged": true
+    }
+  ]
+}

@@ -1,6 +1,8 @@
 import Link from "next/link";
 import { InsuranceEstimator } from "@/components/content/insurance-estimator";
+import { BudgetWorksheet, EditableChecklist, EditableTable } from "@/components/content/practical-fields";
 import { PrintButton } from "@/components/content/print-button";
+import "./practical-print.css";
 import {
   PRACTICAL_TOOLS,
   type ChecklistTool,
@@ -10,9 +12,6 @@ import {
 
 const COMPARE_COLUMNS = ["후보 1", "후보 2", "후보 3"] as const;
 const INSURANCE_COLUMNS = ["상품 A", "상품 B"] as const;
-const CELL =
-  "border border-[var(--brand-border)] px-2 py-2 align-top text-xs sm:text-sm";
-const HEAD_CELL = `${CELL} bg-[var(--brand-soft,#FAF5EE)]`;
 
 function Links({ links }: { links: readonly ToolLink[] }) {
   return (
@@ -44,66 +43,12 @@ function Links({ links }: { links: readonly ToolLink[] }) {
   );
 }
 
-function BlankTable({
-  rows,
-  columns,
-  head,
-}: {
-  rows: readonly string[];
-  columns: readonly string[];
-  head: string;
-}) {
-  return (
-    <div className="mt-4 overflow-x-auto">
-      <table className="w-full border-collapse text-left">
-        <thead>
-          <tr>
-            <th scope="col" className={HEAD_CELL}>
-              {head}
-            </th>
-            {columns.map((c) => (
-              <th key={c} scope="col" className={HEAD_CELL}>
-                {c}
-              </th>
-            ))}
-          </tr>
-        </thead>
-        <tbody>
-          {rows.map((r) => (
-            <tr key={r}>
-              <th scope="row" className={`${CELL} font-medium`}>
-                {r}
-              </th>
-              {columns.map((c) => (
-                <td key={c} className={`${CELL} min-w-20`}>
-                  &nbsp;
-                </td>
-              ))}
-            </tr>
-          ))}
-        </tbody>
-      </table>
-    </div>
-  );
-}
-
 function Checklist({ tool }: { tool: ChecklistTool }) {
   return (
     <>
-      {tool.groups.map((g) => (
-        <div key={g.heading} className="mt-4">
-          <h3 className="text-base font-bold text-[var(--brand-text)]">
-            {g.heading}
-          </h3>
-          <ul className="mt-2 space-y-1.5 text-sm leading-relaxed text-[var(--brand-text-secondary)]">
-            {g.items.map((it) => (
-              <li key={it}>☐ {it}</li>
-            ))}
-          </ul>
-        </div>
-      ))}
+      <EditableChecklist groups={tool.groups} />
       {tool.compareRows && (
-        <BlankTable
+        <EditableTable
           rows={tool.compareRows}
           columns={COMPARE_COLUMNS}
           head="비교 항목"
@@ -117,7 +62,7 @@ function InsuranceSheet({ tool }: { tool: InsuranceSheetTool }) {
   const rows = tool.rows.map((r) => `${r.item} (${r.where})`);
   return (
     <>
-      <BlankTable
+      <EditableTable
         rows={rows}
         columns={INSURANCE_COLUMNS}
         head="비교 항목 (확인 위치)"
@@ -149,11 +94,10 @@ export function PracticalTool({ slug }: { slug: string }) {
       <p className="mt-2 text-sm leading-relaxed text-[var(--brand-text-secondary)]">
         {tool.intro}
       </p>
-      {tool.kind === "checklist" ? (
-        <Checklist tool={tool} />
-      ) : (
-        <InsuranceSheet tool={tool} />
-      )}
+      <p className="mt-1 text-xs text-[var(--brand-text-secondary)]">
+        입력 내용은 이 화면에서만 유지됩니다. 새로고침하면 지워지며 저장하거나 전송하지 않습니다.
+      </p>
+      {tool.kind === "checklist" ? <Checklist tool={tool} /> : tool.kind === "insurance-sheet" ? <InsuranceSheet tool={tool} /> : <BudgetWorksheet groups={tool.groups} />}
       <Links links={tool.links} />
       <p className="mt-4 text-xs leading-relaxed text-[var(--brand-text-secondary)]">
         {tool.note}

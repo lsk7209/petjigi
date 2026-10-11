@@ -50,7 +50,7 @@ export default function GlobalErrorPage({ error, reset }: ErrorProps) {
         </div>
 
         <p className="text-xs text-[var(--brand-text-secondary)]">
-          문제가 지속되면 <a href="mailto:contact@petjigi.kr" className="underline hover:text-[var(--brand-accent)]">contact@petjigi.kr</a>로 문의해 주세요.
+          문제가 지속되면 <a href="mailto:cs@petjigi.kr" className="underline hover:text-[var(--brand-accent)]">cs@petjigi.kr</a>로 문의해 주세요.
         </p>
       </div>
     </main>

@@ -1,3 +1,4 @@
+import { VisitQuestions } from "@/components/business/visit-questions";
 import { faqCountAnswer, listingScopeWording } from "@/lib/business-status-wording";
 import type { Metadata } from "next";
 import { notFound, redirect } from "next/navigation";
@@ -146,7 +147,7 @@ export async function generateMetadata({
       listing.sourceAsOf,
     ).state === "not_collected";
   const title = `${location} ${meta.label}${page > 1 ? ` ${page}페이지` : ""}`;
-  const description = `${location} ${meta.label} 전체 목록. ${meta.desc} — 공공데이터 기반 정확한 업체 정보.`;
+  const description = `${location} ${meta.label} 전체 목록. ${meta.desc} — 공공데이터 기반 업체 목록과 방문 전 확인 안내.`;
   const canonical = businessListingPath(sigungu, type, page);
 
   return {
@@ -357,6 +358,8 @@ export default async function SigunguTypePage({
             {meta.desc}. {listingScopeWording(type)}만 표시됩니다.
           </p>
         </header>
+
+        <VisitQuestions type={type} />
 
         {/* 지역 현황 카드 */}
         <div className="bg-[var(--brand-border)] rounded-2xl p-4 mb-8 text-sm flex items-start gap-3">

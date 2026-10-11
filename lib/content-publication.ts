@@ -10,6 +10,8 @@
 
 /** 실제 /guide, /blog, /condition 라우트로 렌더링되는 contents.type 값만 포함한다.
  *  breed/business_overlay/comparison 등은 별도 테이블·라우트를 쓰므로 여기서 제외한다. */
+import { isRedirectedContent } from "./content-redirects";
+
 export const PUBLIC_CONTENT_TYPES = new Set(["guide", "blog", "condition"] as const);
 
 export type PublicContentType = "guide" | "blog" | "condition";
@@ -18,6 +20,8 @@ export interface ContentPublicationInput {
   status: string;
   type: string;
   publishedAt: string | null | undefined;
+  /** slug를 제공한 판정에서는 대표 문서로 통합된 원본을 제외한다. */
+  slug?: string;
 }
 
 function isValidPastOrPresentDate(publishedAt: string | null | undefined, now: Date): boolean {
@@ -42,5 +46,6 @@ export function isPubliclyVisibleContent(
 ): boolean {
   if (input.status !== "published") return false;
   if (!isPublicContentType(input.type)) return false;
+  if (input.slug && isRedirectedContent(input.type, input.slug)) return false;
   return isValidPastOrPresentDate(input.publishedAt, now);
 }

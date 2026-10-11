@@ -1,7 +1,7 @@
 export const SITE_IDENTITY = {
   brandName: "펫지기",
   legalEntityLabel: "펫지기",
-  contactEmail: "contact@petjigi.kr",
+  contactEmail: "cs@petjigi.kr",
   evidence: {
     legalEntity: {
       status: "OPERATOR_STATED_NOT_A_CORPORATION",
@@ -9,7 +9,7 @@ export const SITE_IDENTITY = {
     },
     contactMailbox: {
       status: "UNKNOWN",
-      operatorAction: "Confirm that the published mailbox is monitored without sending an unauthorized test email.",
+      operatorAction: "Operator requested cs@petjigi.kr for display on 2026-10-12 and deferred mailbox setup and delivery checks. Reception and monitoring remain unverified; do not claim they are confirmed.",
     },
   },
 } as const;

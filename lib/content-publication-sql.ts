@@ -1,6 +1,7 @@
-import { and, eq, inArray, sql, type SQL } from "drizzle-orm";
+import { and, eq, inArray, notInArray, sql, type SQL } from "drizzle-orm";
 import { contents } from "@/db/schema";
 import { PUBLIC_CONTENT_TYPES, type PublicContentType } from "./content-publication";
+import { REDIRECTED_CONTENT_KEYS } from "./content-redirects";
 
 /**
  * isPubliclyVisibleContent의 SQL 버전 — 모든 노출 경로가 같은 조건을 LIMIT 이전에 적용한다.
@@ -15,6 +16,7 @@ export function publicContentCondition(type?: PublicContentType, now: Date = new
   return and(
     eq(contents.status, "published"),
     typeCondition,
+    notInArray(sql`${contents.type} || '/' || ${contents.slug}`, [...REDIRECTED_CONTENT_KEYS]),
     sql`julianday(${contents.publishedAt}) IS NOT NULL AND julianday(${contents.publishedAt}) <= julianday(${nowIso})`,
   ) as SQL;
 }

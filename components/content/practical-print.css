@@ -1,0 +1,15 @@
+@media print {
+  body:has(#practical-tool) *:not(:has(#practical-tool)):not(#practical-tool):not(#practical-tool *) {
+    display: none !important;
+  }
+  body:has(#practical-tool) :has(#practical-tool) { min-height: 0 !important; }
+  #practical-tool {
+    width: 100% !important;
+    max-width: none !important;
+    margin: 0 !important;
+    box-shadow: none !important;
+    background: white !important;
+  }
+  #practical-tool table { table-layout: fixed; width: 100%; }
+  #practical-tool tr, #practical-tool fieldset { break-inside: avoid; }
+}

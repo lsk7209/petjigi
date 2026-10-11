@@ -1,0 +1,16 @@
+.headCell, .rowHead, .cell {
+  border: 1px solid var(--brand-border);
+  padding: 0.5rem;
+  vertical-align: top;
+  overflow-wrap: anywhere;
+}
+.headCell { background: var(--brand-soft, #faf5ee); }
+.rowHead { font-weight: 500; }
+.printValue { display: none; white-space: pre-wrap; overflow-wrap: anywhere; }
+.printCheck { display: none; }
+
+@media print {
+  .screenField { display: none !important; }
+  .printValue { display: block; min-height: 1.5em; }
+  .printCheck { display: inline; }
+}

@@ -46,3 +46,12 @@ export function describeDataCoverage(b: CoverageInput): DataCoverage {
     notProvided: NOT_PROVIDED,
   };
 }
+
+/** A blank or malformed collection value is unknown, not a freshness claim. */
+export function collectedDateLabel(value: string | null | undefined): string {
+  const day = value?.match(/^(\d{4}-\d{2}-\d{2})(?:T|$)/)?.[1];
+  if (!day || !value || !Number.isFinite(Date.parse(value))) return "확인되지 않음";
+  // Date.parse normalizes February 30; compare the original calendar day separately.
+  if (new Date(day + "T00:00:00.000Z").toISOString().slice(0, 10) !== day) return "확인되지 않음";
+  return day;
+}

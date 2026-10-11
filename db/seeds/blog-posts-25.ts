@@ -407,7 +407,9 @@ BSAVA(영국 소동물 수의사협회) 가이드라인에 따르면 췌장염�
 <a href="/blog/animal-registration-complete-guide">동물등록 방법 완전 가이드 — 내장칩·외장칩·과태료까지</a><br>
 <a href="/blog/dog-first-adoption-checklist">강아지 처음 입양 준비물 체크리스트 — 첫 날 전에 갖춰야 할 것들</a><br>
 <a href="/blog/pet-death-admin-checklist">반려동물이 떠난 후 행정 처리 — 동물등록 말소부터 보험금 청구까지</a>
-</div>`,
+</div>
+<h2>함께 확인할 준비</h2>
+<ul><li><a href="/guide/memorial-ceremony">장례 연락·행정 확인 순서</a></li></ul>`,
     authorName: "펫지기 에디터",
     authorCredential: "반려동물 정책 정보 큐레이터",
     ymyl: false,

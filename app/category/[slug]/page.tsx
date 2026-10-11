@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import { getCategoryBySlug, CATEGORIES } from "@/lib/category";
 import { getCachedCategoryGuides, getCachedCategoryBlogPosts } from "@/lib/db-queries";
+import { OwnerJourneys } from "@/components/content/owner-journeys";
 import { YmylDisclaimer } from "@/components/content/ymyl-disclaimer";
 import { CategoryProvider } from "@/components/providers/category-provider";
 import { AdPolicyProvider } from "@/components/providers/ad-policy-provider";
@@ -142,32 +143,26 @@ export default async function CategoryPage({
 
   const CATEGORY_FAQS: Record<string, { question: string; answer: string; url?: string }[]> = {
     adoption: [
-      { question: "강아지 입양 전 무엇을 준비해야 하나요?", answer: "생활공간 정비, 기본 용품(밥그릇·물그릇·침대·목줄·배변패드) 준비, 근처 동물병원 사전 확인이 필요합니다. 입양 후 2주 이내 초기 건강검진을 받는 것을 권장합니다.", url: `${SITE_URL}/category/adoption` },
-      { question: "동물등록은 어디서, 언제 해야 하나요?", answer: "2개월령 이상 반려견은 의무 등록 대상입니다. 동물병원, 동물보호센터, 등록대행업체에서 신청할 수 있으며 미등록 시 최대 100만원 과태료가 부과됩니다.", url: `${SITE_URL}/category/adoption` },
-      { question: "유기동물 입양 절차는 어떻게 되나요?", answer: "지역 보호센터를 방문해 분양 신청서를 작성하고, 사전 상담 후 입양이 이루어집니다. 입양 시 중성화 수술·동물등록이 완료되어 있는 경우가 많습니다.", url: `${SITE_URL}/rescue` },
+      { question: "입양 전 무엇을 준비하나요?", answer: "가족의 돌봄 역할, 실제 견적을 기록하는 예산, 인계받을 건강 기록과 첫날 공간을 준비합니다. 병원 방문 시기는 동물의 상태와 인계 기록을 보고 수의사와 정하세요.", url: SITE_URL + "/guide/dog-adoption-checklist" },
+      { question: "동물등록 조건은 어디서 확인하나요?", answer: "등록 대상과 절차는 동물보호법 및 공식 안내를 확인합니다. 미등록과 변경 신고 누락은 서로 다른 사항이므로 해당 안내를 구분해 읽으세요.", url: SITE_URL + "/guide/microchip-registration-complete-guide" },
     ],
     nutrition: [
-      { question: "강아지 사료는 어떻게 선택하나요?", answer: "AAFCO(미국사료협회) 또는 FEDIAF(유럽사료협회) 기준 충족 여부, 주 원료 단백질 출처, 생애주기(퍼피·어덜트·시니어) 적합성을 확인하세요.", url: `${SITE_URL}/category/nutrition` },
-      { question: "반려동물이 먹으면 안 되는 음식은?", answer: "포도·건포도, 양파·마늘, 초콜릿, 자일리톨(껌 등), 아보카도, 생 마카다미아 너트는 반려동물에게 독성이 있습니다. 섭취 시 즉시 동물병원에 연락하세요.", url: `${SITE_URL}/category/nutrition` },
-      { question: "고양이 습식사료와 건식사료 차이는?", answer: "습식사료는 수분 함량이 70% 이상으로 수분 섭취에 유리하고 신장 건강에 도움이 됩니다. 건식사료는 치아 관리에 유리하고 보관이 편리합니다. 혼합 급여를 권장하는 수의사가 많습니다.", url: `${SITE_URL}/category/nutrition` },
+      { question: "사료의 무엇을 비교하나요?", answer: "대상 동물과 생활 단계, 표시 정보, 제조사 영양 관리와 문의 창구를 확인합니다. 성분 나열 순서만으로 품질이나 질환에 대한 적합성을 단정하지 않습니다.", url: SITE_URL + "/guide/dog-food-label-guide" },
+      { question: "건식과 습식 중 어떤 것이 맞나요?", answer: "수분 함량 외에도 전체 식사 구성과 개별 건강 상태를 고려합니다. 사료 형태만으로 치아나 신장 건강 효과를 보장하지 말고 필요하면 수의사와 상담하세요.", url: SITE_URL + "/guide/cat-food-guide" },
     ],
     health: [
-      { question: "강아지 필수 예방접종은 무엇인가요?", answer: "종합백신(DHPPL) 5차, 코로나장염 2차, 켄넬코프 2차, 인플루엔자 2차, 광견병 1차(연 1회)가 기본입니다. 퍼피는 6주령부터 시작해 16주까지 완료해야 합니다.", url: `${SITE_URL}/category/health` },
-      { question: "동물병원은 어떻게 선택하나요?", answer: "집과 가까운 24시간 응급 가능 병원을 미리 파악해두고, 정기 검진은 전문 진료과목이 있는 병원을 이용하세요. 반려동물의 품종 전문 진료 경험도 확인하면 좋습니다.", url: `${SITE_URL}/sido/seoul` },
-      { question: "반려동물 응급 상황 시 어떻게 해야 하나요?", answer: "경련·실신·심한 출혈·호흡 곤란·독성물질 섭취 등 응급 증상은 즉시 24시간 동물병원을 방문하세요. 이동 전 전화로 증상을 알리면 도착 전 준비를 도와줄 수 있습니다.", url: `${SITE_URL}/category/health` },
+      { question: "예방접종과 검진 일정은 어떻게 정하나요?", answer: "종·생활 단계·기존 접종 기록·건강 상태와 노출 위험에 맞춰 수의사와 정합니다. 모든 동물에게 같은 접종 횟수나 검사 묶음을 적용하지 않습니다.", url: SITE_URL + "/guide/pet-health-checkup-guide" },
+      { question: "병원 방문 전에 무엇을 확인하나요?", answer: "진료 가능한 동물 종과 증상, 오늘 접수 가능 여부, 준비할 기록과 검사 전 주의사항을 전화로 확인합니다.", url: SITE_URL + "/guide/animal-hospital-guide" },
+      { question: "응급 신호가 있으면 어떻게 하나요?", answer: "호흡곤란·의식 저하·심한 출혈·독성물질 섭취 등이 의심되면 기록을 마칠 때까지 기다리지 말고 응급병원에 연락하며 이동을 준비하세요.", url: SITE_URL + "/guide/pet-first-aid-guide" },
     ],
     insurance: [
-      { question: "펫보험은 어떤 것을 보장하나요?", answer: "상품에 따라 다르지만 일반적으로 수술비, 입원비, 통원치료비를 보장합니다. 선천성 질환, 치과 치료, 미용 비용 등은 대부분 보장 제외입니다.", url: `${SITE_URL}/insurance/compare` },
-      { question: "펫보험은 언제 가입하는 것이 좋나요?", answer: "건강할 때, 특히 어릴 때 가입할수록 보험료가 낮고 면책 기간 적용 없이 보장받기 유리합니다. 기존 질병은 가입 후에도 보장에서 제외될 수 있습니다.", url: `${SITE_URL}/insurance/compare` },
-      { question: "반려동물 관련 분쟁이 생기면 어떻게 하나요?", answer: "동물보호법 위반은 지자체 동물보호팀에 신고하고, 진료 과실은 한국수의학회 또는 소비자원에 상담을 요청할 수 있습니다.", url: `${SITE_URL}/category/insurance` },
+      { question: "보장 범위와 면책 기간이 모두 같나요?", answer: "상품·특약·가입 시점의 약관에 따라 다릅니다. 치과·피부·기존 질환의 취급과 질병·상해별 보장 개시 조건을 따로 확인하세요.", url: SITE_URL + "/blog/pet-insurance-exclusions-guide" },
+      { question: "보험 비교는 어디서 시작하나요?", answer: "같은 동물 조건과 견적 날짜로 약관 버전, 보상 비율, 자기부담금, 한도, 제외 조건을 나란히 기록합니다. 나이가 어리다고 대기 기간이 없어지는 것은 아닙니다.", url: SITE_URL + "/blog/pet-insurance-comparison-method" },
+      { question: "보험금 청구 전에 무엇을 준비하나요?", answer: "보험사의 공식 청구 안내에서 담보별 서류와 접수 경로를 확인하고 접수번호를 보관합니다. 지급 여부와 기간을 임의로 예상하지 않습니다.", url: SITE_URL + "/blog/pet-insurance-claim-guide" },
     ],
     care: [
-      { question: "강아지 목욕은 얼마나 자주 해야 하나요?", answer: "일반적으로 2~4주에 한 번이 권장됩니다. 단, 피부 상태와 생활 환경에 따라 달라질 수 있으므로 수의사나 전문 그루머에게 개별 상담을 받는 것이 좋습니다.", url: `${SITE_URL}/category/care` },
-      { question: "펫호텔 이용 시 주의사항은?", answer: "맡기기 전 예방접종 이력을 확인하고, 시설 방문 및 케이지·환기 상태를 사전 점검하세요. 사회화가 잘 된 동물인지, 공동 생활 가능 여부도 미리 확인합니다.", url: `${SITE_URL}/category/care` },
-    ],
-    memorial: [
-      { question: "반려동물 장례 절차는 어떻게 되나요?", answer: "반려동물 사망 후 동물장묘업체에 연락해 수거·안치·장례식·화장·납골 순서로 진행됩니다. 비용은 체중·서비스 종류에 따라 다르며 사전 상담을 권장합니다.", url: `${SITE_URL}/category/memorial` },
-      { question: "펫로스 증후군이란 무엇인가요?", answer: "반려동물을 잃은 후 경험하는 슬픔·상실감·죄책감 등의 복합적 감정입니다. 이는 자연스러운 반응으로, 충분한 애도 시간이 필요하며 필요 시 심리 상담을 받을 수 있습니다.", url: `${SITE_URL}/guide/pet-loss-care` },
+      { question: "고양이 생활 공간을 어떻게 살펴보나요?", answer: "안전한 휴식 자리, 분리된 생활 자원, 놀이와 관찰을 우리 동물의 행동과 이동 능력에 맞춰 점검합니다.", url: SITE_URL + "/guide/indoor-cat-enrichment-guide" },
+      { question: "미용·위탁 시설에 무엇을 물어보나요?", answer: "대상 동물, 건강 상태에 따른 이용 조건, 관리 방식, 포함 비용과 응급 연락 절차를 직접 확인하세요.", url: SITE_URL + "/category/care" },
     ],
   };
 
@@ -234,6 +229,7 @@ export default async function CategoryPage({
                 </p>
               )}
             </header>
+            <OwnerJourneys category={slug} />
 
             <YmylDisclaimer categoryId={cat.id} />
 

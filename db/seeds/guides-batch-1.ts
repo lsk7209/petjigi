@@ -217,7 +217,9 @@ const GUIDES: NewContent[] = [
   <li>화장실 실수 반복: 배변 훈련 재시작 또는 병원 검진 (방광 문제 가능성)</li>
   <li>심한 분리불안: 행동 전문가·수의 행동학과 상담</li>
   <li>입양 단체 연락: 대부분의 단체가 입양 후 지원을 제공합니다</li>
-</ul>`,
+</ul>
+<h2>함께 확인할 준비</h2>
+<ul><li><a href="/guide/dog-adoption-checklist">입양 전 가족·주거·돌봄 점검</a></li></ul>`,
     status: "published",
     ymyl: false,
     authorName: "펫지기 에디터팀",

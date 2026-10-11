@@ -1,0 +1,446 @@
+{
+  "date": "2026-10-12",
+  "baseline": "0df857f",
+  "scope": "approved combined production release; 27 seed records / 26 public rows",
+  "productionApplied": true,
+  "note": "Historical core-guides manifest is superseded for current content hashes. Archived guide claim source is retained; public canonical is /blog/pet-insurance-claim-guide. Production row eligibility requires a future authorized dry-run.",
+  "entries": [
+    {
+      "file": "db/seeds/blog-posts-2.ts",
+      "id": "blog-pet-insurance-claim-guide",
+      "slug": "pet-insurance-claim-guide",
+      "type": "blog",
+      "changedFields": [
+        "title",
+        "metaTitle",
+        "metaDescription",
+        "body",
+        "sources",
+        "updatedAt"
+      ],
+      "bodyBeforeSha256": "0a48ca0468103db70abcd725670d8e4a70ebe938f2b9c75be91243e683194c3b",
+      "bodyAfterSha256": "8288851824306653154069c0067beba2a2a258e43f9e476b41bf2cc84edc2215",
+      "protectedMetadataUnchanged": true,
+      "publicationPath": "/blog/pet-insurance-claim-guide",
+      "archivedClaimSource": false
+    },
+    {
+      "file": "db/seeds/blog-posts-21.ts",
+      "id": "blog-202",
+      "slug": "pet-insurance-deductible-guide",
+      "type": "blog",
+      "changedFields": [
+        "disclaimer",
+        "body"
+      ],
+      "bodyBeforeSha256": "94e529b04c4df62d98b986124f226f8a36a0af9d62b5246ab66a0c1240e31037",
+      "bodyAfterSha256": "8196644d985840d893cf371c0a60958f76c438e2da5cdc4d2a9139c55ae02c4f",
+      "protectedMetadataUnchanged": true,
+      "publicationPath": "/blog/pet-insurance-deductible-guide",
+      "archivedClaimSource": false
+    },
+    {
+      "file": "db/seeds/blog-posts-21.ts",
+      "id": "blog-210",
+      "slug": "pet-insurance-comparison-method",
+      "type": "blog",
+      "changedFields": [
+        "metaDescription",
+        "disclaimer",
+        "sources",
+        "updatedAt",
+        "body"
+      ],
+      "bodyBeforeSha256": "cdb0b20c08afa9937b048154bea60a87a5d673ea309291bfc30d03a15c0034bc",
+      "bodyAfterSha256": "787329eae3b13e0231b55ad8c23524ae4f9c8199716deb5dbd170b161696955f",
+      "protectedMetadataUnchanged": true,
+      "publicationPath": "/blog/pet-insurance-comparison-method",
+      "archivedClaimSource": false
+    },
+    {
+      "file": "db/seeds/blog-posts-25.ts",
+      "id": "blog-244",
+      "slug": "animal-registration-change-cancel-guide",
+      "type": "blog",
+      "changedFields": [
+        "body"
+      ],
+      "bodyBeforeSha256": "0a14d6e525990fb54202e75c1a8f9a648e22a2ac84edbb0cf1380f072d96c8a8",
+      "bodyAfterSha256": "3b23c7e9124bc0fa037e71df591aa3bd2a6e9f4116d79c3c968049a3df69c31d",
+      "protectedMetadataUnchanged": true,
+      "publicationPath": "/blog/animal-registration-change-cancel-guide",
+      "archivedClaimSource": false
+    },
+    {
+      "file": "db/seeds/blog-posts-57.ts",
+      "id": "blog-407",
+      "slug": "cat-food-allergy-elimination-diet",
+      "type": "blog",
+      "changedFields": [
+        "title",
+        "subtitle",
+        "metaTitle",
+        "metaDescription",
+        "body",
+        "updatedAt"
+      ],
+      "bodyBeforeSha256": "5262e700496511632ce0a36e6d30db6ff4c3d5fe275a8e2d1e1d2562a642f0d5",
+      "bodyAfterSha256": "62e37a20699577064fd5820f658927e74569aa9c62fea312a45fcf9ea674158d",
+      "protectedMetadataUnchanged": true,
+      "publicationPath": "/blog/cat-food-allergy-elimination-diet",
+      "archivedClaimSource": false
+    },
+    {
+      "file": "db/seeds/blog-posts-57.ts",
+      "id": "blog-409",
+      "slug": "dog-liver-disease-early-signs",
+      "type": "blog",
+      "changedFields": [
+        "body",
+        "updatedAt"
+      ],
+      "bodyBeforeSha256": "96c1821ccae1489136df7102f65f4c27075ff19b7c817d044c3c4974202c0e3c",
+      "bodyAfterSha256": "58d64bd724f74557f51b3140a0863ac0c4fa96cc7f40aa7c91368928a332920e",
+      "protectedMetadataUnchanged": true,
+      "publicationPath": "/blog/dog-liver-disease-early-signs",
+      "archivedClaimSource": false
+    },
+    {
+      "file": "db/seeds/blog-posts-65.ts",
+      "id": "blog-450",
+      "slug": "dog-skin-lump-guide",
+      "type": "blog",
+      "changedFields": [
+        "title",
+        "subtitle",
+        "metaTitle",
+        "metaDescription",
+        "body",
+        "updatedAt"
+      ],
+      "bodyBeforeSha256": "a6b4a0dc2bfa6dccd776842f2ec4427cbc13121093b8524111b9362822bfc025",
+      "bodyAfterSha256": "d42e7ad4be29b9ef992ac945c2eea8f4996b39a2975b8c2eacc4f7a2ddf914e3",
+      "protectedMetadataUnchanged": true,
+      "publicationPath": "/blog/dog-skin-lump-guide",
+      "archivedClaimSource": false
+    },
+    {
+      "file": "db/seeds/blog-posts-9.ts",
+      "id": "blog-pet-insurance-exclusions-guide",
+      "slug": "pet-insurance-exclusions-guide",
+      "type": "blog",
+      "changedFields": [
+        "title",
+        "metaTitle",
+        "metaDescription",
+        "body",
+        "sources",
+        "updatedAt"
+      ],
+      "bodyBeforeSha256": "437e5400af2c5b90d19ea0e25c8543d5b32c21eb8eac8b81b168e602413f2706",
+      "bodyAfterSha256": "5458005f041abc6d59f78759096df46c6be36f236837bba5baa6c6c5ebdd82fd",
+      "protectedMetadataUnchanged": true,
+      "publicationPath": "/blog/pet-insurance-exclusions-guide",
+      "archivedClaimSource": false
+    },
+    {
+      "file": "db/seeds/contents.ts",
+      "id": "seed-guide-petloss-care",
+      "slug": "petloss-care-guide",
+      "type": "guide",
+      "changedFields": [
+        "body"
+      ],
+      "bodyBeforeSha256": "38d58da461a6575200997d76c303aca9452fdc0027f9d533686bfc3d57d784e2",
+      "bodyAfterSha256": "a36416ee583844bb7752548b322384ab4e0226605790efb254c47ca5b8ee9fca",
+      "protectedMetadataUnchanged": true,
+      "publicationPath": "/guide/petloss-care-guide",
+      "archivedClaimSource": false
+    },
+    {
+      "file": "db/seeds/contents.ts",
+      "id": "seed-guide-dog-adoption-checklist",
+      "slug": "dog-adoption-checklist",
+      "type": "guide",
+      "changedFields": [
+        "metaDescription",
+        "body",
+        "sources",
+        "updatedAt"
+      ],
+      "bodyBeforeSha256": "5f7650edd0438528176e62e1ab3c679bfcb50243f49ba607da3d6289e3573987",
+      "bodyAfterSha256": "58f49086bbbc464c0bfd779e55efa99456cdb6d5aab0b84d924748900c8227a6",
+      "protectedMetadataUnchanged": true,
+      "publicationPath": "/guide/dog-adoption-checklist",
+      "archivedClaimSource": false
+    },
+    {
+      "file": "db/seeds/contents.ts",
+      "id": "seed-guide-dog-food-label-guide",
+      "slug": "dog-food-label-guide",
+      "type": "guide",
+      "changedFields": [
+        "metaDescription",
+        "body",
+        "sources",
+        "updatedAt"
+      ],
+      "bodyBeforeSha256": "c22cad38731734a9549acef6cb9a980e1518a5b2838b272c802553f0f011618a",
+      "bodyAfterSha256": "2fd9458936da679932a58dc478464440a977866a70c742fe3bb326ab514d050b",
+      "protectedMetadataUnchanged": true,
+      "publicationPath": "/guide/dog-food-label-guide",
+      "archivedClaimSource": false
+    },
+    {
+      "file": "db/seeds/contents.ts",
+      "id": "seed-guide-indoor-cat-enrichment",
+      "slug": "indoor-cat-enrichment-guide",
+      "type": "guide",
+      "changedFields": [
+        "metaDescription",
+        "body",
+        "sources",
+        "updatedAt"
+      ],
+      "bodyBeforeSha256": "4230a28e383fde904644d11fdaf40fb149e0ff2fa4c61c31096b3625fc5d1bd8",
+      "bodyAfterSha256": "84072ff5e7ae6bd6d16fc79f0a700a6f73709974701542802d5abad258eeeb87",
+      "protectedMetadataUnchanged": true,
+      "publicationPath": "/guide/indoor-cat-enrichment-guide",
+      "archivedClaimSource": false
+    },
+    {
+      "file": "db/seeds/contents.ts",
+      "id": "seed-guide-cat-litter-guide",
+      "slug": "cat-litter-guide",
+      "type": "guide",
+      "changedFields": [
+        "body"
+      ],
+      "bodyBeforeSha256": "f87e6d19b702ad98430085552394b9ab0845ddc942f1768e1e6c4a4318d20cf1",
+      "bodyAfterSha256": "989a2556142b4194d06348fc5230244e7bb3f876e4c086d62f18bdca766f01ae",
+      "protectedMetadataUnchanged": true,
+      "publicationPath": "/guide/cat-litter-guide",
+      "archivedClaimSource": false
+    },
+    {
+      "file": "db/seeds/contents.ts",
+      "id": "seed-guide-cat-food-guide",
+      "slug": "cat-food-guide",
+      "type": "guide",
+      "changedFields": [
+        "body"
+      ],
+      "bodyBeforeSha256": "f9093ed5ef4f71fae6d70093fdc9b10b688644073f74515282fab68c8d7e26d2",
+      "bodyAfterSha256": "2fd3faf4d9221e87c5d20cde1bd70842c610b34a20afb1ce3859d7c9b0199347",
+      "protectedMetadataUnchanged": true,
+      "publicationPath": "/guide/cat-food-guide",
+      "archivedClaimSource": false
+    },
+    {
+      "file": "db/seeds/contents.ts",
+      "id": "seed-guide-dog-nutrition-basics",
+      "slug": "dog-nutrition-basics",
+      "type": "guide",
+      "changedFields": [
+        "body"
+      ],
+      "bodyBeforeSha256": "757de598e6f351b66586f768867ade663a53eafa199c983ddd97b63c5621e95b",
+      "bodyAfterSha256": "db794858f828c4d20dde24182c503ecdc92bbcdeb41a4203633520e6673799a1",
+      "protectedMetadataUnchanged": true,
+      "publicationPath": "/guide/dog-nutrition-basics",
+      "archivedClaimSource": false
+    },
+    {
+      "file": "db/seeds/contents.ts",
+      "id": "seed-guide-pet-first-aid",
+      "slug": "pet-first-aid-guide",
+      "type": "guide",
+      "changedFields": [
+        "title",
+        "metaTitle",
+        "metaDescription",
+        "body",
+        "sources",
+        "updatedAt"
+      ],
+      "bodyBeforeSha256": "2fa7e1afd31ada109728cd276c53250b56b6e748286361c882bbf378c247e085",
+      "bodyAfterSha256": "db9eaf98053c69ed8ed4deb31977f54d3a67a8e275c4ea8d1e136a789235b1af",
+      "protectedMetadataUnchanged": true,
+      "publicationPath": "/guide/pet-first-aid-guide",
+      "archivedClaimSource": false
+    },
+    {
+      "file": "db/seeds/contents.ts",
+      "id": "seed-guide-cat-indoor-safety",
+      "slug": "cat-indoor-safety-guide",
+      "type": "guide",
+      "changedFields": [
+        "body"
+      ],
+      "bodyBeforeSha256": "d36fdbbe87561ff6e37e0120c7f9e301454b91718d509235ed9111df4c1519db",
+      "bodyAfterSha256": "851350fb79701959c4a24af962ffa2e27450e9eafdaa85d4572084face51d071",
+      "protectedMetadataUnchanged": true,
+      "publicationPath": "/guide/cat-indoor-safety-guide",
+      "archivedClaimSource": false
+    },
+    {
+      "file": "db/seeds/contents.ts",
+      "id": "seed-guide-pet-health-checkup",
+      "slug": "pet-health-checkup-guide",
+      "type": "guide",
+      "changedFields": [
+        "title",
+        "metaTitle",
+        "metaDescription",
+        "body",
+        "sources",
+        "updatedAt"
+      ],
+      "bodyBeforeSha256": "c846fa7df65609e9fa1dc3f4cb5780914e8798131af44c6318309d39ff221fa7",
+      "bodyAfterSha256": "055b9476e5c42b3c72f3244faf863f58a4c3656ef66d12a8593cfe9227caecde",
+      "protectedMetadataUnchanged": true,
+      "publicationPath": "/guide/pet-health-checkup-guide",
+      "archivedClaimSource": false
+    },
+    {
+      "file": "db/seeds/contents.ts",
+      "id": "seed-guide-memorial-ceremony",
+      "slug": "memorial-ceremony",
+      "type": "guide",
+      "changedFields": [
+        "metaDescription",
+        "body",
+        "disclaimer",
+        "sources",
+        "updatedAt"
+      ],
+      "bodyBeforeSha256": "569501b6ff91afe7950e2313b02f025e1e174aca4d605e3660631090c9558439",
+      "bodyAfterSha256": "9fe2c798f568003b619dd9b579c5210f1810073f4b38f375ef759155eba0fc94",
+      "protectedMetadataUnchanged": true,
+      "publicationPath": "/guide/memorial-ceremony",
+      "archivedClaimSource": false
+    },
+    {
+      "file": "db/seeds/contents.ts",
+      "id": "seed-guide-memorial-cost",
+      "slug": "memorial-cost",
+      "type": "guide",
+      "changedFields": [
+        "body"
+      ],
+      "bodyBeforeSha256": "95b73c4259dfbfb43c320db1557116c26e9da40c43defd32a48787c8963b3b6e",
+      "bodyAfterSha256": "f7d59f1754a3681a6632a4edd5c23f0e8bc6d7fce2221f6fdff6582839c2a1c4",
+      "protectedMetadataUnchanged": true,
+      "publicationPath": "/guide/memorial-cost",
+      "archivedClaimSource": false
+    },
+    {
+      "file": "db/seeds/contents.ts",
+      "id": "seed-guide-pet-insurance-claim",
+      "slug": "pet-insurance-claim-guide",
+      "type": "guide",
+      "changedFields": [
+        "title",
+        "metaTitle",
+        "metaDescription",
+        "body",
+        "sources",
+        "updatedAt"
+      ],
+      "bodyBeforeSha256": "292b5ff594de8e182d660632f4e085744b0a82ab4b01eef9de19fcc3f543e8de",
+      "bodyAfterSha256": "8288851824306653154069c0067beba2a2a258e43f9e476b41bf2cc84edc2215",
+      "protectedMetadataUnchanged": true,
+      "publicationPath": "/guide/pet-insurance-claim-guide",
+      "archivedClaimSource": true
+    },
+    {
+      "file": "db/seeds/contents.ts",
+      "id": "seed-guide-pet-treats-guide",
+      "slug": "pet-treats-guide",
+      "type": "guide",
+      "changedFields": [
+        "body"
+      ],
+      "bodyBeforeSha256": "84841fc9f4da22942f91a5bab07ffd09e787f647c8313032d05401841cdd744e",
+      "bodyAfterSha256": "522b7e2b33daba7e0d2422ad74759cc2512fdf0bb0f0afae6779647457230130",
+      "protectedMetadataUnchanged": true,
+      "publicationPath": "/guide/pet-treats-guide",
+      "archivedClaimSource": false
+    },
+    {
+      "file": "db/seeds/contents.ts",
+      "id": "seed-guide-carrier-training",
+      "slug": "carrier-training-guide",
+      "type": "guide",
+      "changedFields": [
+        "body"
+      ],
+      "bodyBeforeSha256": "f4eb30b147a3378323f1363cde3891528977e0228104748d0c34fa3ce4e24c9b",
+      "bodyAfterSha256": "b763e303a03c9b4a75f4b3c3f97b55f6c873a325d5dd4a69b4b92c425b9e4082",
+      "protectedMetadataUnchanged": true,
+      "publicationPath": "/guide/carrier-training-guide",
+      "archivedClaimSource": false
+    },
+    {
+      "file": "db/seeds/contents.ts",
+      "id": "seed-guide-animal-hospital-guide",
+      "slug": "animal-hospital-guide",
+      "type": "guide",
+      "changedFields": [
+        "metaDescription",
+        "body",
+        "sources",
+        "updatedAt"
+      ],
+      "bodyBeforeSha256": "a994251e4e084a2630a41aef7ae12ebf34d6d0fdfb6434b64a012fbd45406da2",
+      "bodyAfterSha256": "37f020d7b87ef0d8984d2e7e105015b7d420774aa5181c34dff31b6cada3eed8",
+      "protectedMetadataUnchanged": true,
+      "publicationPath": "/guide/animal-hospital-guide",
+      "archivedClaimSource": false
+    },
+    {
+      "file": "db/seeds/guides-batch-1.ts",
+      "id": "guide-shelter-animal-adoption",
+      "slug": "shelter-animal-adoption-guide",
+      "type": "guide",
+      "changedFields": [
+        "body"
+      ],
+      "bodyBeforeSha256": "37405fc7493a806af1534905e1436c2c9ea8065538c7dfd7c5ee1a1633404f4a",
+      "bodyAfterSha256": "5ca69c240cd42c64d25a6fbf72b08a57dfcd70c74db13bc3ffdc88aff632f421",
+      "protectedMetadataUnchanged": true,
+      "publicationPath": "/guide/shelter-animal-adoption-guide",
+      "archivedClaimSource": false
+    },
+    {
+      "file": "db/seeds/guides-batch-2.ts",
+      "id": "guide-microchip-registration-complete",
+      "slug": "microchip-registration-complete-guide",
+      "type": "guide",
+      "changedFields": [
+        "body"
+      ],
+      "bodyBeforeSha256": "9e8a4f10e5d40d247605fcacd4df402c95587ee6ef60279e986179156c0f21de",
+      "bodyAfterSha256": "187ff7b5c30509dfb74455ca76174f487b324d19d354918356c46d9621b8b2d4",
+      "protectedMetadataUnchanged": true,
+      "publicationPath": "/guide/microchip-registration-complete-guide",
+      "archivedClaimSource": false
+    },
+    {
+      "file": "db/seeds/guides-batch-2.ts",
+      "id": "guide-multi-pet-household",
+      "slug": "multi-pet-household-guide",
+      "type": "guide",
+      "changedFields": [
+        "body"
+      ],
+      "bodyBeforeSha256": "0647567eb3bec6eeb274e864c0e9325fa36b9d90500f4dbcc352ac5823ae6d05",
+      "bodyAfterSha256": "6a31b067725a3ff833015f5921ec306b8ece247c74b85f5b9d848d454c8e954b",
+      "protectedMetadataUnchanged": true,
+      "publicationPath": "/guide/multi-pet-household-guide",
+      "archivedClaimSource": false
+    }
+  ],
+  "productionRowsUpdated": 26,
+  "productionVerification": "26/26 desired content and unchanged non-allowlisted fields; dry-run26noop"
+}
