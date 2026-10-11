@@ -204,51 +204,58 @@ const BLOG_POSTS: NewContent[] = [
     subtitle: "고독성·중독성·저독성 식물 분류, 중독 증상, 안전한 대체 식물",
     metaTitle: "고양이 독성 실내 식물 — 고독성·중독성·안전 식물 완전 목록 | 펫지기",
     metaDescription: "고양이에게 독성인 실내 식물을 정리했습니다. 백합·몬스테라·포인세티아 등 고독성 식물, 중독 증상, 고양이와 함께해도 안전한 대체 식물을 알아보세요.",
-    body: `<p>예쁜 실내 식물이 고양이에게 치명적일 수 있다. 고양이가 어떤 식물이든 입에 넣는 경우가 있으므로, 미리 확인하는 것이 중요하다.</p>
+    body: `<p>집에서 키우는 화분과 선물받은 꽃다발 중에는 고양이에게 치명적인 것이 있다. 특히 백합과 식물은 아주 적은 양으로도 급성 신부전을 일으킬 수 있다. 위험한 식물을 알고 미리 치우는 것이 중요하다.</p>
 
-<h2>고독성 식물 (즉시 응급)</h2>
+<h2>가장 위험한 식물</h2>
+<table>
+<thead><tr><th>식물</th><th>독성과 증상</th></tr></thead>
+<tbody>
+<tr><td>백합 (릴리, 나리, 원추리 포함)</td><td>급성 신부전. 꽃가루, 잎, 줄기, 꽃병 물까지 위험할 수 있다. ASPCA는 소량 노출도 치명적일 수 있다고 경고한다</td></tr>
+<tr><td>소철(사고야자)</td><td>간 독성이 강하다. 씨앗이 가장 독성이 높고 식물 전체가 위험하다</td></tr>
+<tr><td>철쭉·진달래(아젤리아, 로도덴드론)</td><td>구토, 침 흘림, 심장·신경 증상</td></tr>
+<tr><td>협죽도(올레안더)</td><td>심장에 영향을 준다</td></tr>
+<tr><td>튤립·수선화·히아신스(구근)</td><td>구근에 독성이 많아 구토·설사, 일부는 심장 문제</td></tr>
+<tr><td>시클라멘, 칼랑코에</td><td>구토·설사, 심장 리듬 이상 가능</td></tr>
+<tr><td>피마자</td><td>씨앗에 강한 독소가 있다</td></tr>
+</tbody>
+</table>
+
 <div class="callout-cat">
-<strong>고양이 치명적 독성 식물</strong><br>
-• <strong>백합(Lily) 전체 종류</strong>: 극소량으로도 신부전 유발 — 즉시 응급<br>
-• <strong>협죽도(Oleander)</strong>: 심장 독성<br>
-• <strong>대황(Rhubarb)</strong>: 신장 독성<br>
-• <strong>아이비(포도 Hedera)</strong>: 구토·설사·피부 자극<br>
-• <strong>딥라도레나·절란(Dieffenbachia)</strong>: 구강·소화기 자극
+<strong>백합은 즉시 응급</strong><br>
+• 고양이가 백합의 잎, 꽃가루를 핥았거나 꽃병 물을 마셨다면 증상이 없어도 즉시 병원에 간다<br>
+• 초기에는 구토와 식욕 부진 정도지만 시간이 지나면 신장이 손상되어 위험해질 수 있다 — 빠른 처치가 생존에 결정적이다<br>
+• 꽃다발에 백합이 섞여 있다면 집에 들이지 않는다
 </div>
 
-<h2>중독성 식물 (소량 섭취 시 불쾌감)</h2>
+<h2>비교적 안전한 식물 (참고)</h2>
+<p>ASPCA는 반려동물에게 독성이 없는 식물 목록도 제공한다. 일반적으로 알려진 예로는 스파이더 플랜트, 보스턴 고사리, 야자류 일부 등이 있으나, 이름이 비슷한 종 중 독성이 있는 식물이 있으므로 학명까지 확인해야 한다. '안전한 식물'도 많이 먹으면 구토를 일으킬 수 있다.</p>
+
+<h2>예방 방법</h2>
 <ul>
-<li>몬스테라·필로덴드론: 구강 자극·구토</li>
-<li>포인세티아: 경미한 소화기 자극</li>
-<li>알로에 베라: 구토·설사</li>
-<li>스파티필름(Peace Lily): 구강 자극</li>
-<li>선인장: 가시 상처 위험</li>
+<li>집에 있는 식물의 정확한 종(학명)을 확인한다. 이름표를 보관한다.</li>
+<li>독성 식물은 키우지 않거나 고양이가 닿지 못하는 곳에 둔다. 높이만으로는 고양이를 막기 어렵다.</li>
+<li>고양이용 풀(귀리, 캣그래스)을 따로 마련해 식물을 갉는 습관을 대체한다.</li>
+<li>시든 잎, 떨어진 꽃잎을 즉시 치운다.</li>
+<li>선물받은 꽃다발은 구성 식물을 확인한다.</li>
 </ul>
 
-<h2>안전한 대체 식물</h2>
-<ul>
-<li>스파이더 플랜트 (Spider Plant): 가장 안전한 실내 식물 중 하나</li>
-<li>마란타 (Prayer Plant): 안전</li>
-<li>에어플랜트 (Tillandsia): 안전</li>
-<li>캣그라스 (고양이 풀): 고양이 전용 — 무해하고 즐겨 먹음</li>
-</ul>
-
-<h2>중독 증상 발생 시</h2>
-<ul>
-<li>식물 이름 확인 즉시</li>
-<li>ASPCA 동물 독성 데이터베이스(aspca.org) 확인</li>
-<li>즉시 동물병원 또는 동물 중독 상담 전화</li>
-</ul>
+<h2>중독이 의심될 때</h2>
+<ol>
+<li>식물의 이름과 먹은 양, 시간을 확인한다. 식물 사진이나 일부를 챙긴다.</li>
+<li>임의로 구토를 시키지 않는다.</li>
+<li>즉시 동물병원이나 동물 중독 상담 센터에 연락한다.</li>
+<li>입과 털에 묻은 꽃가루는 닦아내되, 병원에 가는 것이 우선이다.</li>
+</ol>
 
 <h2>마지막으로</h2>
-<p>특히 백합은 화분뿐 아니라 꽃다발로 집에 들어오는 경우가 있다. 고양이가 있는 가정에 백합 반입은 생명을 위협할 수 있다.</p>`,
+<p>고양이를 키우는 집에서는 백합과 식물을 아예 들이지 않는 것이 가장 안전하다. 새 식물을 사기 전 반려동물 안전 여부를 확인하자.</p>`,
     authorName: "펫지기 에디터",
     authorCredential: "반려동물 케어 정보 큐레이터",
     ymyl: false,
-    sources: JSON.stringify([
-      "ASPCA Animal Poison Control — Toxic and Non-Toxic Plants for Cats",
-      "한국수의응급의학회 식물 중독 임상 가이드라인",
-    ]),
+    sources: [
+      "https://www.aspca.org/news/do-you-know-which-flowers-and-plants-are-toxic-pets-our-experts-explain — ASPCA, Which flowers and plants are toxic for your pets?",
+      "https://www.birdsandblooms.com/gardening/gardening-basics/poisonous-plants-cats — Birds & Blooms, Poisonous plants every cat owner should avoid",
+    ],
     disclaimer: null,
     status: "published",
     publishedAt: "2026-11-20T11:00:00.000Z",

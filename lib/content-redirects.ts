@@ -52,6 +52,21 @@ export const CONTENT_REDIRECTS: readonly ContentRedirect[] = [
     reason: "동일 검색 의도(반려동물 사망 시 동물등록 말소). 대표 문서가 변경·말소 절차를 모두 다룸",
   },
   {
+    from: "/blog/dog-crate-training-safe-space",
+    to: "/blog/dog-crate-training-step-by-step",
+    reason: "동일 검색 의도(강아지 크레이트 훈련). 대표 문서가 단계별 훈련을 모두 다룸",
+  },
+  {
+    from: "/blog/dog-seawater-swimming-dangers",
+    to: "/blog/dog-beach-water-safety-guide",
+    reason: "동일 검색 의도(바닷물·해변 수영 위험). 대표 문서가 바닷물·모래·녹조 위험을 모두 다룸",
+  },
+  {
+    from: "/blog/dog-cafe-pet-friendly-etiquette",
+    to: "/blog/pet-friendly-cafe-restaurant-guide",
+    reason: "동일 검색 의도(반려동물 동반 카페·식당 매너). 대표 문서가 확인 사항·매너를 모두 다룸",
+  },
+  {
     from: "/blog/pet-insurance-comparison-guide",
     to: "/blog/pet-insurance-comparison-method",
     reason: "동일 검색 의도(펫보험 비교 기준). 더 짧은 문서이며 비교 기준·한도·갱신 항목은 대표 문서가 모두 다룸",
