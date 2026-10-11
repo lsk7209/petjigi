@@ -282,37 +282,45 @@ const BLOG_POSTS: NewContent[] = [
     subtitle: "노령묘 수분 부족이 신장에 미치는 영향, 마시게 만드는 방법 6가지, 피하수액 가정 관리",
     metaTitle: "노령 고양이 수분 섭취 늘리기 — 신장 보호 전략 6가지 | 펫지기",
     metaDescription: "노령 고양이 신장 보호를 위한 수분 섭취 전략. 물 안 마시는 노령묘 대책, 마시게 만드는 방법 6가지, 피하수액 가정 관리를 정리했습니다.",
-    body: `<p>노령 고양이의 신장 건강에서 수분 관리는 가장 효과적이면서 가장 저비용의 개입이다. 조금 더 마시게 만드는 것만으로도 신장 부담이 크게 줄어든다.</p>
+    body: `<p>나이 든 고양이는 신장 기능이 떨어지기 쉽고 물을 충분히 마시기도 어려워진다. 수분 섭취를 늘리는 것은 신장 관리의 기본이지만, 억지로 물을 먹이는 방식은 오히려 해로울 수 있다.</p>
 
-<h2>노령묘와 수분 부족의 악순환</h2>
-<p>노령 고양이는 갈증을 덜 느끼고, 신장 기능이 저하되면서 소변 농축 능력이 줄어들어 더 많은 물이 필요해진다. 그러나 마시는 양은 줄어든다. 이 악순환이 신장 기능을 더 빠르게 악화시킨다.</p>
-
-<h2>수분 섭취 늘리기 방법 6가지</h2>
-<ol>
-<li><strong>습식 사료 비중 높이기</strong>: 가장 효과적. 건식에서 습식으로 전환 시 총 수분 섭취 2~3배 증가.</li>
-<li><strong>워터 파운틴</strong>: 흐르는 물 선호하는 고양이에 효과적. 세라믹 소재 권장.</li>
-<li><strong>물그릇 여러 곳에 배치</strong>: 각 방에 1개씩. 화장실과 분리.</li>
-<li><strong>건식 사료에 물 첨가</strong>: 건식에 따뜻한 물을 조금 부어 기호성+수분 동시 향상.</li>
-<li><strong>치킨 브로스 소량 추가</strong>: 무염·무양파. 냄새로 유인 효과.</li>
-<li><strong>물 그릇 소재 변경</strong>: 플라스틱 → 세라믹·유리·스테인리스로 교체.</li>
-</ol>
+<h2>물을 더 마시게 하는 방법</h2>
+<table>
+<thead><tr><th>방법</th><th>요령</th></tr></thead>
+<tbody>
+<tr><td>습식 사료</td><td>코넬 고양이건강센터는 습식 사료에 수분이 많이 들어 있어 건식만 먹는 고양이보다 마시는 물이 적어도 전체 수분 섭취는 늘 수 있다고 설명한다. 건식과 습식을 섞으면 효과가 줄 수 있다</td></tr>
+<tr><td>물그릇 여러 개</td><td>집 안 여러 곳에 깨끗한 물을 둔다. 고양이는 먹이 근처에서 마시는 것을 피하는 경향이 있어 물그릇과 밥그릇을 떼어 놓는다</td></tr>
+<tr><td>급수대(분수)</td><td>흐르는 물을 선호하는 고양이가 많다. 정기적으로 분해해 씻고 필터를 교체한다</td></tr>
+<tr><td>그릇 모양</td><td>수염이 그릇 가장자리에 닿는 것을 싫어하는 고양이가 있어 넓은 그릇을 시험해 본다</td></tr>
+<tr><td>맛 더하기</td><td>무염 닭고기 삶은 물 등을 소량 더해 주는 방법이 소개되지만 양념이나 양파·마늘 성분이 없어야 한다</td></tr>
+</tbody>
+</table>
 
 <div class="callout-cat">
-<strong>CKD 고양이 피하수액 가정 관리</strong><br>
-중증 CKD에서 수의사가 가정 피하수액을 처방하는 경우가 있다.<br>
-처음엔 무서워 보이지만 익숙해지면 집에서 관리 가능.<br>
-용량·주기는 수의사 지시에 따름.
+<strong>피해야 할 방법</strong><br>
+• 주사기로 강제로 물 먹이기 — 스트레스가 크고 물이 폐로 들어가면 위험하다고 iCatCare는 경고한다<br>
+• 임의로 건강 보조제나 소금을 넣기<br>
+• 처방식을 하루아침에 바꾸기 — 수의사와 상의 후 단계적으로
 </div>
 
+<h2>이런 변화는 진료 신호</h2>
+<ul>
+<li>물을 갑자기 많이 마시거나 소변량이 눈에 띄게 늘었다. 이는 신장 질환이나 당뇨의 신호일 수 있다.</li>
+<li>물을 거의 마시지 않고 식욕이 없으며 무기력하다.</li>
+<li>구토, 체중 감소, 입 냄새가 있다.</li>
+</ul>
+<p>섭취가 계속 부족하면 수의사가 피하 수액을 처방하는 경우가 있고, 교육을 받으면 집에서 하는 보호자도 있다. 방법과 주기는 반드시 수의사가 정한다.</p>
+
 <h2>마지막으로</h2>
-<p>노령 고양이의 물 섭취량을 조금이라도 늘리는 것이 다른 어떤 보충제보다 신장에 효과적이다. 오늘부터 워터 파운틴 하나, 습식 사료 비중 늘리기부터 시작해보자.</p>`,
+<p>노령묘의 수분 관리는 습식 사료, 깨끗한 물, 여러 개의 급수 장소에서 시작한다. 마시는 양이 급격히 변하면 원인을 찾는 것이 우선이므로 정기 검진 때 신장 수치를 확인하자.</p>`,
     authorName: "펫지기 에디터",
     authorCredential: "반려동물 영양 정보 큐레이터",
     ymyl: false,
-    sources: JSON.stringify([
-      "IRIS — CKD Management Guidelines for Cats",
-      "한국고양이수의사회 노령묘 수분 관리 가이드라인",
-    ]),
+    sources: [
+      "https://www.vet.cornell.edu/departments-centers-and-institutes/cornell-feline-health-center/health-information/feline-health-topics/hydration — Cornell Feline Health Center, Hydration",
+      "https://vcahospitals.com/resources/preventive-cat/nutrition/tips-to-encourage-cats-to-drink-more-water — VCA, How To Get Your Cat To Drink More Water",
+      "https://icatcare.org/articles/chronic-kidney-disease-ckd-in-cats — International Cat Care, Chronic kidney disease (CKD) in cats",
+    ],
     disclaimer: null,
     status: "published",
     publishedAt: "2026-08-25T11:00:00.000Z",

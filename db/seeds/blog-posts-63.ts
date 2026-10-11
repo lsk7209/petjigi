@@ -19,47 +19,50 @@ const BLOG_POSTS: NewContent[] = [
     subtitle: "크레이트를 좋아하게 만드는 단계별 훈련, 올바른 크기 선택, 사용 시간 기준",
     metaTitle: "강아지 크레이트 훈련 — 단계별 긍정 연상 완전 가이드 | 펫지기",
     metaDescription: "강아지 크레이트를 안전 공간으로 만드는 단계별 훈련 방법. 올바른 크기 선택, 시간 기준, 부정 연상을 피하는 방법을 정리했습니다.",
-    body: `<p>크레이트(케이지)를 처벌 도구로 사용하면 공포 공간이 된다. 올바른 훈련으로 자발적으로 들어가고 싶어하는 안전 공간으로 만들 수 있다.</p>
+    body: `<p>크레이트(케이지) 훈련은 강아지에게 안전하고 편안한 개인 공간을 만들어 주는 훈련이다. 핵심은 처음부터 문을 닫아 두는 것이 아니라, 크레이트를 좋은 경험과 연결하는 것이다.</p>
 
-<h2>크레이트 선택</h2>
-<ul>
-<li><strong>크기</strong>: 강아지가 서서 돌아설 수 있는 크기. 너무 크면 구석에 배변한다.</li>
-<li><strong>소재</strong>: 플라스틱 하드케이지(안정감), 철망 케이지(환기 좋음), 소프트(이동용)</li>
-<li><strong>퍼피</strong>: 성견 크기 케이지에 칸막이로 공간 조절</li>
-</ul>
+<h2>단계별 진행</h2>
+<table>
+<thead><tr><th>단계</th><th>할 일</th></tr></thead>
+<tbody>
+<tr><td>1. 익숙해지기</td><td>문을 열어 둔 크레이트를 거실에 두고 담요와 장난감을 넣어 둔다</td></tr>
+<tr><td>2. 들어가 보기</td><td>간식을 입구 근처에 두었다가 점점 안쪽에 둔다. 스스로 들어가면 칭찬한다</td></tr>
+<tr><td>3. 문 닫아 보기</td><td>식사를 크레이트 안에서 먹이고 식사 뒤 문을 잠깐 닫는다. 점점 시간을 늘린다</td></tr>
+<tr><td>4. 시간 늘리기</td><td>짧은 휴식부터 시작해 천천히 늘린다. 보호자가 곁에 있다가 방을 잠깐 나가는 것으로 확장한다</td></tr>
+<tr><td>5. 자발적 입장</td><td>"하우스" 같은 신호를 붙여 스스로 들어가게 한다</td></tr>
+<tr><td>6. 좋은 장소로 유지</td><td>간식이 들어 있는 장난감을 줘서 크레이트 시간을 즐겁게 만든다</td></tr>
+</tbody>
+</table>
+<p>AKC는 이 과정을 단계적으로 쌓아 가라고 설명한다. 걸리는 시간은 개의 성격과 과거 경험에 따라 하루에서 몇 달까지 다르다고 하고, VCA는 강아지가 대체로 1~2개월 안에 익숙해진다고 안내한다.</p>
 
-<h2>단계별 훈련</h2>
-<ol>
-<li>크레이트를 생활 공간에 놓고 문을 열어둠 → 스스로 탐색 기다리기</li>
-<li>크레이트 안에 간식을 넣어두되 강요하지 않음</li>
-<li>들어가면 즉시 조용히 보상 → '크레이트 = 좋은 것' 연상</li>
-<li>문을 닫지 않고 먼저 안에서 식사 훈련</li>
-<li>짧게(30초) 문 닫기 → 조용히 있으면 보상 → 점점 늘리기</li>
-</ol>
-
-<h2>사용 시간 기준</h2>
 <div class="callout-dog">
-<strong>월령별 크레이트 최대 시간</strong><br>
-• 8~10주: 1시간 이하<br>
-• 11~14주: 1~3시간<br>
-• 15~16주: 3~4시간<br>
-• 17주+: 4시간 (수면 제외 최대)<br>
-<br>
-하루 대부분을 크레이트에 두는 것은 학대다.
+<strong>하지 말아야 할 것</strong><br>
+• 크레이트를 벌로 사용하기 — 훈련이 크게 후퇴할 수 있다<br>
+• 문을 세게 닫거나 큰 소리를 내기<br>
+• 울거나 짖을 때마다 바로 꺼내 주기 (진정되기를 기다렸다가 꺼내는 편이 좋다. 다만 배변 신호나 심한 공황은 구분해서 판단)<br>
+• 너무 오랜 시간 가두기
 </div>
 
-<h2>크레이트에서 울 때</h2>
-<p>훈련 초기 짧은 울음은 무시해야 한다 (나오면 보상이 된다). 단, 30분 이상 지속되면 훈련을 너무 빠르게 진행한 것 — 단계를 되돌린다.</p>
+<h2>얼마나 오래 있어도 되나</h2>
+<ul>
+<li>어린 강아지는 오래 참을 수 없다. 휴먼 소사이어티(HSUS)는 6개월 미만 강아지를 한 번에 3~4시간 넘게 가두지 말라고 안내한다.</li>
+<li>VCA는 6개월 무렵까지는 밤새 크레이트에 있는 것을 불편해할 수 있다고 설명한다.</li>
+<li>성견도 하루 대부분을 크레이트에 두지 않는다. 운동, 배변, 교감 시간이 충분해야 한다.</li>
+</ul>
+
+<h2>문제가 계속되면</h2>
+<p>크레이트에서 심하게 짖고 침을 흘리고 발버둥치거나 탈출하려다 다친다면 분리불안이나 공포가 원인일 수 있다. 억지로 계속하지 말고 수의사나 행동 전문가와 상담한다.</p>
 
 <h2>마지막으로</h2>
-<p>잘 훈련된 크레이트는 이동·병원·재난 대피 시 큰 도움이 된다. 인내를 갖고 긍정 경험을 쌓아가면 강아지가 스스로 들어가 낮잠을 자는 공간이 된다.</p>`,
+<p>크레이트는 가두는 곳이 아니라 쉬는 곳이어야 한다. 조급하게 늘리지 않고 좋은 경험을 쌓으면 이동, 병원 방문, 여행에서도 큰 도움이 된다.</p>`,
     authorName: "펫지기 에디터",
     authorCredential: "반려동물 행동 정보 큐레이터",
     ymyl: false,
-    sources: JSON.stringify([
-      "Ian Dunbar — Before and After Getting Your Puppy",
-      "ASPCA — Crate Training Your Dog",
-    ]),
+    sources: [
+      "https://www.akc.org/expert-advice/training/crate-training-step-by-step/ — AKC, Safe and Stress-Free Crate Training: A Step-by-Step Guide",
+      "https://www.humanesociety.org/resources/crate-training-101 — Humane Society of the United States, How to Crate Train Your Dog or Puppy",
+      "https://vcahospitals.com/know-your-pet/crate-training-your-dog---an-overview — VCA, Life Skills for Pets: Crate Training and Confinement for Puppies and Dogs",
+    ],
     disclaimer: null,
     status: "published",
     publishedAt: "2026-08-21T09:00:00.000Z",
@@ -125,41 +128,48 @@ const BLOG_POSTS: NewContent[] = [
     subtitle: "연어·고등어·정어리 vs 참치·날생선 비교, 뼈 위험, 조리 방법",
     metaTitle: "강아지 생선 급여 — 안전한 생선과 주의할 것 가이드 | 펫지기",
     metaDescription: "강아지에게 줄 수 있는 생선과 주의할 생선. 연어·고등어·정어리 효능, 참치 중금속 위험, 날생선·뼈 위험, 안전한 조리 방법을 정리했습니다.",
-    body: `<p>생선은 강아지에게 좋은 단백질과 오메가3를 제공하는 식품이다. 그러나 종류·가공 방법에 따라 위험할 수 있다.</p>
+    body: `<p>생선은 단백질과 지방산을 제공해서 간식이나 토핑으로 쓰는 보호자가 많다. 하지만 어떤 생선을 어떻게 조리하느냐에 따라 안전하기도 하고 위험하기도 하다. 핵심은 익히고, 뼈를 제거하고, 양념 없이 소량만 주는 것이다.</p>
 
-<h2>강아지에게 좋은 생선</h2>
-<ul>
-<li><strong>연어</strong>: 오메가3 풍부, 반드시 완전히 익혀서 (날 연어 — 고독소균·기생충 위험)</li>
-<li><strong>정어리</strong>: EPA+DHA 높음, 중금속 낮음, 통조림(무염)도 가능</li>
-<li><strong>고등어</strong>: 오메가3 우수, 소량 급여 (지방 많음)</li>
-<li><strong>흰살 생선(명태·대구·도미)</strong>: 지방 낮음, 소화 쉬움</li>
-</ul>
+<h2>안전하게 주려면</h2>
+<table>
+<thead><tr><th>항목</th><th>권장</th><th>이유</th></tr></thead>
+<tbody>
+<tr><td>조리</td><td>충분히 익히고 양념·기름·소금 없이</td><td>생선을 날것으로 주면 세균과 기생충 위험이 있다</td></tr>
+<tr><td>뼈</td><td>가시를 완전히 제거한 살코기</td><td>작고 부서지기 쉬운 가시는 목에 걸리거나 장을 다치게 할 수 있다</td></tr>
+<tr><td>양</td><td>간식 수준으로 가끔 소량</td><td>생선만 많이 주면 영양 균형이 깨진다. 주식은 균형 잡힌 사료여야 한다</td></tr>
+<tr><td>종류</td><td>대형 장수 어종보다 연어·틸라피아 같은 작은 어종 위주</td><td>수은은 큰 포식 어종에 더 많이 쌓인다. AKC는 신선한 참치가 연어나 틸라피아보다 수은이 훨씬 많다고 설명한다</td></tr>
+</tbody>
+</table>
 
-<h2>주의할 생선</h2>
-<ul>
-<li><strong>참치</strong>: 수은 축적 위험 (특히 참다랑어). 소량·간식으로만. 매일 급여 금지.</li>
-<li><strong>날생선</strong>: 연어살모넬라증·기생충 위험. 반드시 완전히 가열.</li>
-<li><strong>훈제·염장 생선</strong>: 나트륨 과다. 금지.</li>
-<li><strong>가시 있는 생선</strong>: 잔가시 제거 필수. 큰 가시는 소화관 천공 위험.</li>
-</ul>
+<h2>날연어는 특히 위험하다</h2>
+<p>미국 서북부 등에서는 날연어나 날송어에 붙은 흡충과 그 안의 세균 때문에 "연어 중독(salmon poisoning disease)"이 생길 수 있다. 메르크 수의학 매뉴얼에 따르면 치료하지 않으면 치명적일 수 있고, 증상은 먹은 뒤 일주일 안팎에 시작되는 경우가 많다. 한국에서 흔히 먹는 회나 말린 생선, 강가·해변에서 주운 생선을 개에게 주지 않는 것이 안전하다. 날생선을 먹었다면 증상이 없어도 수의사에게 알린다.</p>
 
 <div class="callout-dog">
-<strong>안전한 급여 방법</strong><br>
-• 완전히 익히기 (165°F/74°C 이상)<br>
-• 모든 가시 제거<br>
-• 간·양념 없이<br>
-• 체중 10kg 기준 주 2~3회 50~80g 이내
+<strong>이런 생선 제품은 피한다</strong><br>
+• 양념·소금·기름이 들어간 통조림이나 조림, 훈제 제품<br>
+• 가시가 있는 채로 구운 생선, 생선 머리·뼈<br>
+• 날생선, 회, 젓갈<br>
+• 알레르기나 소화 문제가 있는 개에게 처음 먹이는 새로운 생선
 </div>
 
+<h2>처음 먹일 때</h2>
+<ul>
+<li>아주 소량부터 시작하고 24시간 정도 구토, 설사, 가려움이 없는지 본다.</li>
+<li>췌장염 병력이 있거나 식이 관리 중인 개는 지방이 많은 생선을 먹이기 전에 수의사와 상의한다.</li>
+<li>먹은 뒤 반복 구토, 혈변, 심한 무기력이 있으면 바로 진료받는다.</li>
+</ul>
+
 <h2>마지막으로</h2>
-<p>생선은 훌륭한 단백질·오메가3 공급원이다. 익히고, 가시 빼고, 소량 급여하면 건강한 식이 보완이 된다.</p>`,
+<p>익힌 무가미 살코기를 가끔 조금 주는 정도가 안전한 선이다. 날생선, 가시, 양념이 들어간 제품만 피해도 대부분의 사고를 막을 수 있다.</p>`,
     authorName: "펫지기 에디터",
     authorCredential: "반려동물 영양 정보 큐레이터",
     ymyl: false,
-    sources: JSON.stringify([
-      "ASPCA — Fish for Dogs",
-      "한국수의영양학회 생선 급여 가이드라인",
-    ]),
+    sources: [
+      "https://www.akc.org/expert-advice/nutrition/can-dogs-eat-fish/ — AKC, Can Dogs Eat Fish?",
+      "https://www.akc.org/expert-advice/nutrition/can-dogs-eat-salmon/ — AKC, Can Dogs Eat Salmon?",
+      "https://vcahospitals.com/know-your-pet/salmon-poisoning — VCA, Salmon Poisoning",
+      "https://www.merckvetmanual.com/dog-owners/disorders-affecting-multiple-body-systems-of-dogs/salmon-poisoning-disease-and-elokomin-fluke-fever-in-dogs — Merck Veterinary Manual, Salmon Poisoning Disease and Elokomin Fluke Fever in Dogs",
+    ],
     disclaimer: null,
     status: "published",
     publishedAt: "2026-08-22T09:00:00.000Z",

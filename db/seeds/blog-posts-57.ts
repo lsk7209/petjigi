@@ -19,52 +19,45 @@ const BLOG_POSTS: NewContent[] = [
     subtitle: "달걀의 영양 가치, 살모넬라·아비딘 위험, 날달걀과 익힌 달걀 비교, 급여 방법",
     metaTitle: "강아지 달걀 급여 가이드 — 날달걀 vs 익힌 달걀 비교 | 펫지기",
     metaDescription: "강아지에게 달걀을 줘도 되는지 알아봤습니다. 달걀 영양 가치, 날달걀 살모넬라·아비딘 위험, 익힌 달걀과 비교, 급여량을 정리했습니다.",
-    body: `<p>달걀은 반려동물에게 줄 수 있는 가장 영양가 높은 자연식 중 하나다. 그러나 날달걀과 익힌 달걀은 다르게 접근해야 한다.</p>
-
-<h2>달걀의 영양 가치</h2>
-<ul>
-<li><strong>단백질</strong>: 생물가(BV)가 100으로 가장 높은 단백질원 중 하나</li>
-<li><strong>루테인·제아잔틴</strong>: 눈 건강</li>
-<li><strong>콜린</strong>: 뇌·간 기능</li>
-<li><strong>비오틴·리보플라빈</strong>: 피부·털 건강</li>
-</ul>
+    body: `<p>달걀은 단백질과 비타민을 갖춘 식품이라 간식으로 주는 보호자가 많다. 다만 날달걀은 위험 요인이 있어서, 개에게는 완전히 익힌 달걀을 주는 것이 안전하다는 것이 AKC와 FDA의 일반적인 안내다.</p>
 
 <h2>날달걀의 위험</h2>
-<h3>살모넬라</h3>
-<p>날달걀에는 살모넬라균이 있을 수 있다. 면역이 정상인 개에서는 감염 확률이 낮지만 0은 아니다. 특히 노령견·면역억제 상태·어린 강아지에서 위험이 높다. 핸들링 후 사람에게도 전파 위험.</p>
-
-<h3>아비딘 (Avidin)</h3>
-<p>날달걀 흰자에 있는 아비딘은 비오틴(비타민B7) 흡수를 방해한다. 날달걀 흰자를 장기적으로 많이 먹이면 비오틴 결핍 → 피부·털 문제가 생길 수 있다. 가열하면 아비딘이 변성돼 문제 없다.</p>
-
-<h2>익힌 달걀이 더 안전하다</h2>
 <table>
-<thead><tr><th>항목</th><th>날달걀</th><th>익힌 달걀</th></tr></thead>
+<thead><tr><th>위험</th><th>설명</th></tr></thead>
 <tbody>
-<tr><td>살모넬라 위험</td><td>있음</td><td>없음 (열처리)</td></tr>
-<tr><td>아비딘 문제</td><td>있음 (흰자)</td><td>없음 (변성)</td></tr>
-<tr><td>단백질 소화율</td><td>51%</td><td>91%</td></tr>
-<tr><td>권장 여부</td><td>가끔은 괜찮지만 주의</td><td>권장</td></tr>
+<tr><td>살모넬라</td><td>껍데기가 깨끗하고 금이 없어도 달걀에 살모넬라균이 있을 수 있다고 FDA는 설명한다. 개가 증상이 없어도 대변과 침으로 균을 퍼뜨려 사람이나 다른 반려동물에게 옮길 수 있다</td></tr>
+<tr><td>아비딘</td><td>흰자의 아비딘은 비오틴 흡수를 방해할 수 있다. 노른자에 비오틴이 있어 실제 결핍은 드물다고 AKC는 설명하며, 가열하면 아비딘의 영향이 없어진다</td></tr>
 </tbody>
 </table>
+<p>"날달걀을 먹이는 것이 괜찮다"는 의견도 있지만, 대부분의 식품 안전 기관은 날것 급여를 권하지 않는다. 특히 면역이 약한 개, 어린 강아지, 노령견, 가족 중 임산부·영유아·노약자가 있다면 더 조심한다.</p>
 
-<h2>급여 방법</h2>
-<ul>
-<li>삶거나 스크램블 (기름·소금 없이)</li>
-<li>중형견 기준 주 2~3회, 달걀 1개</li>
-<li>소형견은 달걀 1/2개</li>
-<li>칼로리 계산에 포함 (달걀 1개 약 70kcal)</li>
-</ul>
+<h2>안전하게 주는 법</h2>
+<ol>
+<li>흰자와 노른자가 단단하게 익도록 삶거나 익힌다.</li>
+<li>기름, 버터, 소금, 양념을 넣지 않는다.</li>
+<li>작은 개는 잘게 썰어서 준다.</li>
+<li>간식으로 가끔, 소량만 준다. 달걀을 주식처럼 많이 주지 않는다.</li>
+<li>만진 뒤에는 손과 도마, 식기를 씻는다.</li>
+</ol>
+
+<div class="callout-dog">
+<strong>날달걀을 먹었다면</strong><br>
+• 양이 적고 증상이 없으면 잘 관찰한다<br>
+• 구토, 설사, 열, 무기력이 보이면 동물병원에 문의<br>
+• 알레르기가 있거나 췌장염 병력이 있는 개는 달걀을 주기 전에 수의사와 상의
+</div>
 
 <h2>마지막으로</h2>
-<p>달걀은 영양 밀도가 높은 좋은 간식이다. 익혀서 주면 대부분의 위험이 사라진다. 사람 음식에서 반려동물에게 줄 수 있는 가장 안전하고 영양가 높은 단백질원 중 하나다.</p>`,
+<p>달걀은 익혀서 소량 주는 것이 가장 안전하다. 날달걀의 이점이 위험을 상쇄한다고 말하기는 어렵다.</p>`,
     authorName: "펫지기 에디터",
     authorCredential: "반려동물 영양 정보 큐레이터",
     ymyl: false,
-    sources: JSON.stringify([
-      "Case, L.P. et al. — Canine and Feline Nutrition (3rd ed.)",
-      "ASPCA — Are Eggs Safe for Dogs?",
-      "한국수의영양학회 자연식 성분 가이드",
-    ]),
+    sources: [
+      "https://www.akc.org/expert-advice/nutrition/can-dogs-eat-eggs/ — AKC, Can Dogs Eat Eggs? Benefits, Risks, and How to Feed Them",
+      "https://www.fda.gov/food/buy-store-serve-safe-food/what-you-need-know-about-egg-safety — FDA, What You Need to Know About Egg Safety",
+      "https://www.fda.gov/animal-veterinary/animal-health-literacy/get-facts-about-salmonella — FDA, Get the Facts about Salmonella",
+      "https://vcahospitals.com/know-your-pet/dogs-and-raw-food-diets — VCA, Dogs and Raw Food Diets",
+    ],
     disclaimer: null,
     status: "published",
     publishedAt: "2026-08-06T09:00:00.000Z",
