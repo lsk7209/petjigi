@@ -1,3 +1,5 @@
+import { parseStoredSources } from "./content-sources";
+
 export interface ChangedLineRange {
   start: number;
   end: number;
@@ -61,22 +63,7 @@ export function evaluateChangedHighRiskContent(
 }
 
 export function countStoredSources(value: unknown): number {
-  if (Array.isArray(value)) {
-    return value.filter(
-      (item) => typeof item === "string" && item.trim().length > 0,
-    ).length;
-  }
-  if (typeof value !== "string" || !value.trim()) return 0;
-  try {
-    const parsed: unknown = JSON.parse(value);
-    return Array.isArray(parsed)
-      ? parsed.filter(
-          (item) => typeof item === "string" && item.trim().length > 0,
-        ).length
-      : 0;
-  } catch {
-    return 0;
-  }
+  return parseStoredSources(value).length;
 }
 
 export function evaluatePublicationCandidate(
