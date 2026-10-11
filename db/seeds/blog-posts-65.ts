@@ -239,45 +239,49 @@ const BLOG_POSTS: NewContent[] = [
     subtitle: "지방종·낭종·비만세포종·유선종양 비교, 세침흡인검사 설명, 자가 체크 방법",
     metaTitle: "강아지 피부 혹 종류 구분 — 지방종·낭종·종양 비교 가이드 | 펫지기",
     metaDescription: "강아지 피부 혹 종류와 구분법. 지방종·낭종·비만세포종·유선종양 차이, 세침흡인검사(FNA) 설명, 집에서 할 수 있는 자가 체크 방법을 정리했습니다.",
-    body: `<p>강아지를 쓰다듬다가 혹을 발견했다. 크기도 모양도 여러 가지다. 어떤 것은 지방종이고 어떤 것은 종양일 수 있다. 외관만으로 구분할 수 없기 때문에 세포 검사가 필요하다.</p>
+    body: `<p>강아지를 쓰다듬다가 혹이 만져지면 걱정부터 앞선다. 대부분은 양성이지만 크기나 촉감만으로 종류를 구분하기는 어렵다. 그래서 수의사는 혹의 세포를 채취해 보는 세침흡인검사(FNA)부터 권하는 경우가 많다.</p>
 
-<h2>흔한 피부 혹 종류</h2>
+<h2>흔한 혹의 종류</h2>
 <table>
-<thead><tr><th>종류</th><th>특징</th><th>위험도</th></tr></thead>
+<thead><tr><th>종류</th><th>특징</th><th>알아둘 점</th></tr></thead>
 <tbody>
-<tr><td>지방종(Lipoma)</td><td>부드럽고 움직임. 천천히 자람.</td><td>낮음 (양성)</td></tr>
-<tr><td>피지낭종</td><td>작고 단단. 짜면 흰 물질 나옴.</td><td>낮음 (양성)</td></tr>
-<tr><td>비만세포종(MCT)</td><td>만지면 변화. 불규칙. 어디서나 발생.</td><td>높음 (악성)</td></tr>
-<tr><td>유선종양</td><td>유두 주변. 암컷·비중성화에서 흔함.</td><td>50% 악성</td></tr>
-<tr><td>히스티오사이토마</td><td>어린 강아지. 빨간 단추 모양. 자연 소실.</td><td>낮음 (양성)</td></tr>
+<tr><td>지방종</td><td>부드럽고 움직이는 경우가 많다. 중년 이후 흔하다</td><td>대부분 양성이고 오랫동안 크기가 유지되기도 한다. 위치 때문에 불편하거나 걷기에 지장이 있으면 제거를 고려한다</td></tr>
+<tr><td>침윤성 지방종</td><td>근육 사이로 파고드는 형태</td><td>겉보기 지방종과 달리 수술 범위가 커질 수 있다</td></tr>
+<tr><td>지방육종</td><td>지방종의 악성 형태</td><td>전이는 드물지만 더 넓은 절제가 필요하다</td></tr>
+<tr><td>비만세포종</td><td>모양이 다양하고 지방종처럼 보일 수 있다</td><td>악성 가능성이 있어 반드시 세포검사로 확인한다</td></tr>
 </tbody>
 </table>
 
 <h2>세침흡인검사(FNA)란</h2>
-<p>혹에 가는 바늘을 찔러 세포를 채취해 현미경으로 확인하는 검사다. 국소마취 없이도 가능하고, 대부분의 강아지가 잘 견딘다. 5~10분 이내로 끝나며 외래에서 가능하다. 모든 혹에 대해 권장되는 첫 번째 검사다.</p>
+<p>가는 바늘로 혹의 세포를 뽑아 현미경으로 확인하는 검사다. 지방종은 이 검사로 진단되는 경우가 많고, 비만세포종처럼 지방종과 비슷해 보이는 다른 종양을 가려내는 데 필요하다. 메르크 수의학 매뉴얼은 피부 종양을 절제하기 전에 세침흡인으로 비만세포종을 배제하라고 안내한다. 다만 세포검사로 알 수 있는 것에는 한계가 있어, 결과가 애매하거나 악성이 의심되면 조직검사가 이어진다.</p>
 
-<h2>즉시 검사가 필요한 혹</h2>
 <div class="callout-dog">
-<strong>빠른 검사 권장</strong><br>
-• 만지면 크기·모양이 바뀌는 혹<br>
-• 빠르게 커지는 혹 (1~2주 내 2배 이상)<br>
-• 피부 표면이 궤양화·출혈되는 혹<br>
-• 유두 근처 단단한 혹 (암컷)<br>
-• 노령견에서 새로 생긴 모든 혹
+<strong>빨리 검사를 받아야 하는 혹</strong><br>
+• 새로 생겼거나 눈에 띄게 커지는 혹<br>
+• 단단하고 주변 조직에 붙어 움직이지 않는 혹<br>
+• 표면이 헐거나 피·진물이 나는 혹<br>
+• 만지면 붉어지거나 부기가 오르내리는 혹<br>
+• 혹이 있는 강아지가 구토·식욕 저하·무기력을 보임
 </div>
 
-<h2>자가 체크 습관</h2>
-<p>매달 한 번 전신을 손으로 천천히 만져보는 습관을 들이면 새로 생긴 혹을 조기에 발견할 수 있다. 발견 시 날짜·크기·위치를 메모해 변화를 추적한다.</p>
+<h2>집에서 하는 기록 습관</h2>
+<ul>
+<li>한 달에 한 번 전신을 손으로 훑으며 새로 생긴 혹을 찾는다.</li>
+<li>혹의 위치를 몸 그림에 표시하고, 날짜와 크기(자를 대고 사진)를 남긴다.</li>
+<li>크기가 변하거나 모양·색이 달라지면 진료를 예약한다.</li>
+<li>혹을 직접 짜거나 바늘로 찌르지 않는다.</li>
+</ul>
 
 <h2>마지막으로</h2>
-<p>대부분의 피부 혹은 양성이다. 그러나 비만세포종처럼 외관이 양성처럼 보여도 악성인 경우도 있다. 발견한 혹을 방치하지 않고 세포 검사를 받는 것이 가장 현명한 대처다.</p>`,
+<p>혹이 있다고 모두 위험한 것은 아니지만, 겉모습만으로 안전하다고 판단할 수도 없다. 새로 생긴 혹은 한 번은 검사로 확인해 두고, 이후에는 크기 변화를 기록하며 지켜보는 것이 합리적인 접근이다.</p>`,
     authorName: "펫지기 에디터",
     authorCredential: "반려동물 건강 정보 큐레이터",
     ymyl: true,
-    sources: JSON.stringify([
-      "Withrow, S.J. et al. — Withrow and MacEwen's Small Animal Clinical Oncology",
-      "대한수의종양학회 임상 가이드라인",
-    ]),
+    sources: [
+      "https://www.merckvetmanual.com/dog-owners/skin-disorders-of-dogs/tumors-of-the-skin-in-dogs — Merck Veterinary Manual, Tumors of the Skin in Dogs",
+      "https://vcahospitals.com/know-your-pet/adipose-lipoma-tumors — VCA, Adipose (Lipoma) Tumors",
+      "https://www.merckvetmanual.com/integumentary-system/tumors-of-the-skin-and-soft-tissues/connective-tissue-tumors-in-animals — Merck Veterinary Manual, Connective Tissue Tumors in Animals",
+    ],
     disclaimer: "이 글은 정보 제공을 목적으로 하며 수의사 진료를 대체하지 않습니다.",
     status: "published",
     publishedAt: "2026-08-28T09:00:00.000Z",

@@ -77,34 +77,47 @@ const BLOG_POSTS: NewContent[] = [
     subtitle: "참치 중독 증상(황색 지방증), 비타민E 결핍, 수은 축적 위험, 안전한 급여 기준",
     metaTitle: "고양이 참치 중독·황색 지방증 — 위험과 안전 급여 가이드 | 펫지기",
     metaDescription: "고양이 참치를 매일 먹이면 황색 지방증이 생길 수 있습니다. 참치 중독 증상, 비타민E 결핍, 수은 축적 위험, 안전한 급여 기준을 정리했습니다.",
-    body: `<p>고양이가 참치를 좋아하는 것은 잘 알려진 사실이다. 그러나 참치를 주식으로 매일 먹이면 심각한 건강 문제가 생길 수 있다.</p>
+    body: `<p>참치 캔 냄새에 달려오는 고양이를 보면 좋아하는 것 같아 자주 주고 싶어진다. 하지만 참치는 주식이나 습관적 간식으로 주기에는 위험이 있다. 수의학 자료가 지적하는 이유를 정리했다.</p>
 
-<h2>황색 지방증(Steatitis)</h2>
-<p>참치를 과다 급여 시 발생하는 대표적인 질환이다. 참치에는 불포화지방산(DHA)이 많은데, 이것이 산화되면서 체지방이 노란색으로 변하고 염증이 생긴다. 증상: 지방 부위(특히 배)를 만지면 통증, 무기력, 발열, 식욕 감소.</p>
+<h2>참치를 많이 먹이면 생길 수 있는 문제</h2>
+<table>
+<thead><tr><th>문제</th><th>설명</th></tr></thead>
+<tbody>
+<tr><td>영양 불균형</td><td>VCA는 참치가 고양이에게 필요한 영양소가 부족하고 불포화지방이 많다고 설명하며, 어떤 연령의 고양이에게도 참치를 급여하지 말라고 안내한다</td></tr>
+<tr><td>비타민 E 결핍과 황색지방증(pansteatitis)</td><td>메르크 수의학 매뉴얼에 따르면 참치 캔을 많이 먹은 고양이에서 비타민 E 결핍과 지방 조직의 염증이 보고되었다. 배를 만지면 아파하고 무기력해지며 털이 거칠어질 수 있다</td></tr>
+<tr><td>수은</td><td>참치 같은 시판 어류 제품이 사람과 고양이의 장기 수은 중독 원인이 된 사례가 있다. 중독되면 뒷다리가 뻣뻣해지거나 균형을 잃고 떨 수 있으며 신경 증상은 되돌리기 어려울 수 있다</td></tr>
+</tbody>
+</table>
 
-<h2>비타민E 결핍</h2>
-<p>황색 지방증의 기전은 비타민E 결핍이다. 불포화지방산 산화를 막으려면 비타민E가 필요한데, 참치 위주 식이에서는 비타민E가 부족해진다. AAFCO 완전영양식 사료가 아닌 참치 캔만 먹이면 이 문제가 생긴다.</p>
-
-<h2>수은 축적</h2>
-<p>큰 생선(참다랑어·황다랑어)은 먹이사슬 상위에서 수은이 축적된다. 장기 섭취 시 신경계 독성 가능성이 있다. 고양이에서 수은 중독 증상: 신경 이상·떨림·조정 장애.</p>
+<h2>왜 고양이가 참치에 집착하나</h2>
+<p>생선 냄새와 맛은 고양이에게 강한 기호성을 준다. 한 번 맛을 들이면 다른 사료를 거부하는 편식으로 이어질 수 있다. 이것이 중독처럼 보이는 이유다. 영양학적으로 필요해서가 아니라 기호성이 높아서 찾는 것이다.</p>
 
 <div class="callout-cat">
-<strong>참치 안전 급여 기준</strong><br>
-• 주 1~2회, 소량 간식으로만<br>
-• AAFCO 완전영양식 사료가 주식<br>
-• 무염·조미 없는 참치 캔 (단, 비타민E 무첨가라면 소량)<br>
-• 키튼이나 임신묘에게는 피하기 권장
+<strong>이런 변화가 보이면 진료</strong><br>
+• 참치만 찾고 사료를 거부하는 날이 며칠 이어짐<br>
+• 만졌을 때 배를 아파함, 무기력, 털이 푸석해짐<br>
+• 걸음이 불안정하거나 떨림<br>
+• 24시간 이상 아무것도 먹지 않음 — 특히 비만 고양이는 식사를 거르면 위험할 수 있다
 </div>
 
+<h2>어떻게 줄이나</h2>
+<ul>
+<li>참치를 줄 때는 가끔 아주 소량만, 양념·소금이 없는 것으로 한정한다. 습관이 되지 않게 한다.</li>
+<li>완전·균형 영양을 갖춘 고양이용 습식 사료 중 생선 맛 제품으로 기호성을 채운다.</li>
+<li>기존 사료에 새 사료를 조금씩 섞어 1~2주에 걸쳐 바꾼다.</li>
+<li>식사량을 정해 두고, 간식은 하루 섭취량의 소량으로 제한한다.</li>
+</ul>
+
 <h2>마지막으로</h2>
-<p>참치는 간식으로는 괜찮다. 그러나 주식이 되어서는 안 된다. 고양이가 참치만 먹으려 하는 상황은 이미 중독 상태일 수 있다 — 점진적으로 완전영양식으로 전환하는 것이 필요하다.</p>`,
+<p>일상적으로 주지 않는다는 원칙이 중요하다. 이미 참치만 먹는 습관이 생겼다면 서두르지 말고 단계적으로 바꾸고, 먹지 않는 기간이 길어지면 병원에 상담하자.</p>`,
     authorName: "펫지기 에디터",
     authorCredential: "반려동물 영양 정보 큐레이터",
     ymyl: true,
-    sources: JSON.stringify([
-      "Norsworthy, G.D. — Steatitis (Yellow Fat Disease) in Cats. The Feline Patient 2011",
-      "한국고양이수의사회 영양 관련 질환 임상 가이드라인",
-    ]),
+    sources: [
+      "https://vcahospitals.com/resources/preventive-cat/nutrition/true-or-false-milk-and-tuna-are-great-foods-for-cats — VCA, True or False: Milk and tuna are great foods for cats",
+      "https://www.merckvetmanual.com/management-and-nutrition/nutrition-small-animals/nutritional-requirements-of-small-animals — Merck Veterinary Manual, Nutritional Requirements of Small Animals",
+      "https://www.merckvetmanual.com/special-pet-topics/poisoning/mercury-poisoning — Merck Veterinary Manual, Mercury Poisoning",
+    ],
     disclaimer: "이 글은 정보 제공을 목적으로 하며 수의사 진료를 대체하지 않습니다.",
     status: "published",
     publishedAt: "2026-08-29T09:00:00.000Z",

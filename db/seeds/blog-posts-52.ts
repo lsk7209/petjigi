@@ -89,56 +89,52 @@ const BLOG_POSTS: NewContent[] = [
     subtitle: "FIV·FeLV 감염 경로·증상 차이, 양성 고양이 관리 방법, 다묘 가정 격리 기준",
     metaTitle: "고양이 FIV 에이즈·FeLV 백혈병 — 검사·관리 완전 가이드 | 펫지기",
     metaDescription: "고양이 FIV(에이즈)와 FeLV(백혈병)의 감염 경로, 증상 차이, 양성 고양이 관리 방법, 다묘 가정 격리 기준을 정리했습니다.",
-    body: `<p>고양이 구조·입양 시 FIV와 FeLV 검사는 필수다. 양성 결과를 받더라도 적절한 관리로 오랫동안 건강하게 살 수 있다.</p>
+    body: `<p>고양이를 새로 데려오거나 길고양이를 구조했을 때 가장 먼저 듣는 검사가 고양이 면역결핍바이러스(FIV)와 고양이 백혈병바이러스(FeLV) 검사다. 간이 키트로 빠르게 확인할 수 있지만, 한 번의 결과만으로 단정하면 안 되는 경우가 있다.</p>
 
-<h2>FIV와 FeLV 차이</h2>
+<h2>두 바이러스 한눈에 보기</h2>
 <table>
-<thead><tr><th>항목</th><th>FIV (고양이 면역결핍)</th><th>FeLV (고양이 백혈병)</th></tr></thead>
+<thead><tr><th>구분</th><th>FIV</th><th>FeLV</th></tr></thead>
 <tbody>
-<tr><td>감염 경로</td><td>깊은 교상(물림)</td><td>타액·분비물·수직감염</td></tr>
-<tr><td>전파력</td><td>낮음 (싸움 없이는 거의 전파 안 됨)</td><td>높음 (같은 밥그릇·그루밍)</td></tr>
-<tr><td>잠복기</td><td>수년 (비활성)</td><td>수주~수개월</td></tr>
-<tr><td>주요 영향</td><td>면역 저하</td><td>빈혈·종양·면역 저하</td></tr>
-<tr><td>예후</td><td>관리 시 수명 비슷</td><td>FIV보다 예후 나쁨</td></tr>
-<tr><td>백신</td><td>있음 (효과 제한적)</td><td>있음 (효과적)</td></tr>
+<tr><td>이름</td><td>고양이 면역결핍바이러스</td><td>고양이 백혈병바이러스</td></tr>
+<tr><td>주요 감염 경로</td><td>주로 싸움 중 깊은 물림 상처</td><td>긴밀한 접촉(그루밍, 그릇 공유 등)과 어미에서 새끼로 전파</td></tr>
+<tr><td>예방</td><td>격리와 중성화, 실내 생활 등 관리</td><td>백신이 있으나 위험도에 맞춰 수의사와 상의</td></tr>
 </tbody>
 </table>
 
-<h2>양성 고양이 관리 방법</h2>
-<div class="callout-cat">
-<strong>FIV·FeLV 양성 고양이 관리 원칙</strong><br>
-• 실내 전용 사육 (외부 감염 차단, 다른 고양이 보호)<br>
-• 연 2회 혈액검사·건강검진<br>
-• 균형 잡힌 식이·스트레스 최소화<br>
-• 감염·상처 조기 치료<br>
-• 생식 사료 금지 (면역 저하 상태에서 세균 위험)<br>
-• 중성화 (면역 부담 감소)
-</div>
-
-<h2>다묘 가정에서의 격리 기준</h2>
+<h2>언제 검사하나</h2>
 <ul>
-<li><strong>FIV 양성</strong>: 싸우지 않는다면 다른 고양이와 같은 공간 가능. 단, 음식 그릇 분리 권장.</li>
-<li><strong>FeLV 양성</strong>: 다른 고양이와 분리 필요. 타액 접촉으로 전파 가능하므로 같은 공간 생활은 위험.</li>
+<li>새로 입양하거나 구조한 고양이는 집에 있는 고양이와 합치기 전에 검사한다.</li>
+<li>다른 고양이와 접촉했거나 물린 상처가 있었을 때.</li>
+<li>만성 구내염, 체중 감소, 잦은 감염 등 원인 모를 건강 문제가 있을 때.</li>
 </ul>
 
-<h2>검사 시기</h2>
+<h2>결과를 읽는 요령</h2>
+<p>미국고양이수의사회(AAFP) 지침은 새로 들인 고양이를 격리하고 도착 즉시 검사하라고 권한다. 음성이어도 감염 직후에는 양성으로 나오지 않을 수 있어서, 최소 FeLV는 30일, FIV는 60일 이상 간격을 두고 다시 검사하도록 안내한다. 이 지침은 2008년 자료이므로, 실제 일정은 담당 수의사의 최신 판단을 따른다.</p>
+
+<div class="callout-cat">
+<strong>새끼 고양이는 특히 주의</strong><br>
+• 어미가 FIV 양성이면 모유로 받은 항체 때문에 새끼가 몇 개월간 양성으로 나올 수 있다<br>
+• iCatCare는 4개월령 이후 재검사, 그래도 양성이면 2개월 뒤 재검사, 6개월령 이후에도 양성일 때 실제 감염 가능성이 높다고 안내한다<br>
+• 한 번 양성이 나왔다고 서둘러 결론 내리지 말 것
+</div>
+
+<h2>양성이 나왔다면</h2>
 <ul>
-<li>입양 직후 (보호소·길거리 출신)</li>
-<li>새로운 고양이 추가 전</li>
-<li>외출하는 고양이 — 연 1회</li>
-<li>병이 자주 걸리거나 면역 저하 의심 시</li>
+<li>간이 검사는 100% 정확하지 않다. 확인 검사(다른 방식 검사나 PCR)를 요청한다.</li>
+<li>FIV 백신 접종 이력이 있는 고양이는 양성이 감염을 뜻하지 않을 수 있다.</li>
+<li>양성 고양이의 관리와 다묘 가정의 격리·합사 계획은 수의사와 함께 세운다.</li>
 </ul>
 
 <h2>마지막으로</h2>
-<p>FIV·FeLV 양성 진단이 사형선고는 아니다. 많은 양성 고양이가 정기 관리를 받으며 10년 이상 사는 경우도 있다. 관리의 핵심은 실내 사육·스트레스 최소화·정기 검진이다.</p>`,
+<p>검사는 새 가족을 지키기 위한 첫 단계다. 결과가 애매하면 시기를 두고 재검사하고, 양성이라도 바로 결론짓지 말고 확인 검사와 전문 상담을 거치자.</p>`,
     authorName: "펫지기 에디터",
     authorCredential: "반려동물 건강 정보 큐레이터",
     ymyl: true,
-    sources: JSON.stringify([
-      "Hartmann, K. — Feline Immunodeficiency Virus Infection. Vet Immunol Immunopathol 2011",
-      "ABCD (Advisory Board on Cat Diseases) — FeLV and FIV Guidelines",
-      "한국고양이수의사회 FIV·FeLV 임상 가이드라인",
-    ]),
+    sources: [
+      "https://catvets.com/wp-content/uploads/2024/01/RetrovirusGLS.pdf — AAFP, 2008 Feline Retrovirus Management Guidelines",
+      "https://icatcare.org/resources/fiv-cat-friendly-decision-making.pdf — iCatCare, FIV infection and testing in unowned cats",
+      "https://icatcare.org/resources/felv-cat-friendly-decision-making.pdf — iCatCare, FeLV infection and testing in unowned cats",
+    ],
     disclaimer: "이 글은 정보 제공을 목적으로 하며 수의사 진료를 대체하지 않습니다.",
     status: "published",
     publishedAt: "2026-07-25T09:00:00.000Z",
