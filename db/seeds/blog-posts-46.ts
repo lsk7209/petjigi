@@ -216,44 +216,59 @@ const BLOG_POSTS: NewContent[] = [
     subtitle: "BCS로 비만 판단, 고양이 다이어트 특유의 위험(간지방증), 안전한 감량 방법",
     metaTitle: "고양이 비만 다이어트 — BCS 판단·간지방증 위험·안전 감량 | 펫지기",
     metaDescription: "고양이 비만은 당뇨·관절·간지방증을 유발합니다. BCS로 비만 판단, 고양이만의 다이어트 위험인 간지방증, 안전한 감량 방법을 정리했습니다.",
-    body: `<p>고양이의 통통한 배는 귀엽게 느껴지지만, 과체중은 당뇨·관절 문제·간지방증 위험을 높이는 실질적인 건강 위협이다. 강아지와 달리 고양이의 다이어트는 더 신중하게 접근해야 한다.</p>
+    body: `<p>통통한 고양이는 귀여워 보이지만 비만은 당뇨, 관절 질환, 요로 질환 등과 연관되는 건강 문제다. 다만 고양이는 급하게 살을 빼면 오히려 위험해질 수 있어서, 속도와 방법이 중요하다.</p>
 
-<h2>고양이 BCS(체형 점수)로 비만 판단</h2>
-<div class="callout-cat">
-<strong>BCS 5점 기준 (간이 체크)</strong><br>
-• <strong>2~3점 (저체중)</strong>: 갈비뼈 선명히 보임, 허리 심하게 들어감<br>
-• <strong>3점 (이상적)</strong>: 갈비뼈 쉽게 만져짐, 허리 들어감, 복부 약간 당겨짐<br>
-• <strong>4점 (과체중)</strong>: 갈비뼈 찾기 어려움, 복부 처짐<br>
-• <strong>5점 (비만)</strong>: 갈비뼈 거의 안 만져짐, 배가 바닥에 닿을 듯
-</div>
-
-<h2>고양이 다이어트의 특수 위험 — 간지방증</h2>
-<p>고양이에서 가장 중요한 다이어트 주의사항이다. 급격히 칼로리를 줄이거나 밥을 굶기면, 고양이는 에너지원으로 지방을 간으로 이동시킨다. 이 과정에서 <strong>지방간(간지방증)</strong>이 발생한다. 며칠만 굶어도 생명을 위협하는 수준이 될 수 있다.</p>
-
-<p>강아지처럼 하루 이틀 금식을 시켜서는 안 되는 이유가 이것이다.</p>
-
-<h2>안전한 감량 방법</h2>
+<h2>비만인지 어떻게 아나</h2>
 <ul>
-<li><strong>월 1~2% 감량 목표</strong>: 4kg 고양이라면 월 40~80g. 더 빠르면 위험.</li>
-<li><strong>현재 급여량 10~20% 감량</strong>: 급격하게 줄이지 않음</li>
-<li><strong>고단백·저탄수화물 처방 다이어트 사료</strong>: 수의사 권장</li>
-<li><strong>습식 비중 높이기</strong>: 포만감 증가, 수분 보충</li>
-<li><strong>여러 번 소량 급여</strong>: 자동 급식기로 하루 4~6회</li>
+<li>체중만으로는 부족하다. 품종과 체격에 따라 적정 체중이 다르므로 체형 점수(BCS)로 판단한다.</li>
+<li>위에서 봤을 때 허리 잘록함이 거의 없고, 옆에서 봤을 때 배가 처져 있으며, 갈비뼈가 잘 만져지지 않으면 과체중을 의심한다.</li>
+<li>정확한 목표 체중은 동물병원에서 정한다.</li>
 </ul>
 
-<h2>중성화와 비만의 관계</h2>
-<p>중성화 수술 후 기초대사량이 낮아지고 식욕은 늘어나는 경향이 있다. 중성화 후 같은 양을 먹여도 살이 찌기 쉽다. 중성화 후 즉시 급여량을 10~20% 줄이는 것이 권장된다.</p>
+<h2>왜 천천히 빼야 하나</h2>
+<div class="callout-cat">
+<strong>굶겨서 빼면 안 된다</strong><br>
+• 고양이가 오래 먹지 않으면 지방이 간에 쌓이는 지방간(간지질증)이 생길 수 있다<br>
+• 메르크 수의학 매뉴얼은 굶기는 것은 체중 감량의 안전하거나 인도적인 방법이 아니라고 설명한다<br>
+• 다이어트 중 하루 이상 거의 먹지 않으면 바로 병원에 알린다
+</div>
+<p>자료에서는 체중의 1~2% 정도를 매주 줄이는 것을 일반적인 목표로 소개하고, 매우 비만한 고양이는 더 느리게 잡기도 한다. 시작 열량은 현재 체중이 아니라 목표 체중을 기준으로 수의사가 계산해 주는 경우가 많다.</p>
+
+<h2>감량 계획의 구성</h2>
+<table>
+<thead><tr><th>요소</th><th>내용</th></tr></thead>
+<tbody>
+<tr><td>정량 급여</td><td>눈대중이 아니라 저울이나 계량컵으로 하루 급여량을 정한다. 자율 급식(밥을 항상 채워 두기)은 중단한다</td></tr>
+<tr><td>체중 감량 사료</td><td>필요한 단백질과 영양소를 채우면서 열량이 낮은 처방식을 수의사가 고른다. 습식 비율을 늘리는 방법도 쓴다</td></tr>
+<tr><td>간식 제한</td><td>간식은 하루 열량의 일부로 계산하고, 사람 음식을 주지 않는다</td></tr>
+<tr><td>활동량 늘리기</td><td>사냥 놀이, 퍼즐 급식기, 캣타워로 하루 몇 번 짧게 놀아 준다</td></tr>
+<tr><td>정기 체중 측정</td><td>2~4주마다 같은 저울로 재서 기록하고 계획을 조정한다. 아기 저울이 유용하다</td></tr>
+</tbody>
+</table>
+
+<h2>다묘 가정이라면</h2>
+<ul>
+<li>다른 고양이 사료를 훔쳐 먹지 못하게 급식 장소와 시간을 분리한다.</li>
+<li>마이크로칩 인식 급식기를 쓰는 방법도 있다.</li>
+</ul>
+
+<h2>이런 경우는 진료가 먼저</h2>
+<ul>
+<li>갑자기 체중이 늘거나 배가 부풀었다 (복수, 종양 가능성).</li>
+<li>물을 많이 마시고 소변이 많다 (당뇨 의심).</li>
+<li>식욕이 크게 늘었는데 살이 빠진다 (갑상선 기능항진증 등).</li>
+</ul>
 
 <h2>마지막으로</h2>
-<p>고양이 다이어트는 서두르면 위험하다. 수의사와 목표 체중과 감량 계획을 세우고, 월 단위로 체중을 측정하며 진행하는 것이 가장 안전하다. 식욕이 갑자기 줄거나 구토가 생기면 즉시 병원을 찾아야 한다.</p>`,
+<p>고양이 다이어트는 수의사와 함께 목표 체중과 속도를 정하고, 정량 급여와 놀이를 꾸준히 하는 것이 기본이다. 급하게 줄이려는 마음이 가장 위험하다.</p>`,
     authorName: "펫지기 에디터",
     authorCredential: "반려동물 영양 정보 큐레이터",
     ymyl: true,
-    sources: JSON.stringify([
-      "Zoran, D.L. — Obesity in Cats. Vet Clin North Am Small Anim Pract 2009",
-      "WSAVA Nutritional Assessment Guidelines",
-      "한국고양이수의사회 비만 관리 임상 가이드라인",
-    ]),
+    sources: [
+      "https://vcahospitals.com/know-your-pet/obesity-in-cats — VCA, Obesity in Cats",
+      "https://vcahospitals.com/know-your-pet/creating-a-weight-reduction-plan-for-cats — VCA, Creating a Weight Reduction Plan for Cats",
+      "https://www.vet.cornell.edu/departments-centers-and-institutes/cornell-feline-health-center/health-information/feline-health-topics/obesity — Cornell Feline Health Center, Obesity",
+    ],
     disclaimer: "이 글은 정보 제공을 목적으로 하며 수의사 진료를 대체하지 않습니다.",
     status: "published",
     publishedAt: "2026-07-11T09:00:00.000Z",

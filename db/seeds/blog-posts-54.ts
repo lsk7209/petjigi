@@ -150,55 +150,54 @@ const BLOG_POSTS: NewContent[] = [
     subtitle: "장내 미생물 균형의 역할, 항생제 후 유산균 복구, 균주 종류·CFU 수 해석, 인증 제품 고르기",
     metaTitle: "강아지 유산균 보충제 — 언제·어떻게 선택하는가 가이드 | 펫지기",
     metaDescription: "강아지 유산균 보충제가 필요한 상황과 선택 방법. 항생제 후 복구, 균주 종류, CFU 수 해석, 반려동물용 검증 제품 고르는 기준을 정리했습니다.",
-    body: `<p>유산균은 사람만의 관심사가 아니다. 강아지의 장내 미생물 균형도 건강에 중요하며, 특정 상황에서 보충제가 도움이 된다.</p>
+    body: `<p>강아지 유산균(프로바이오틱스)은 장 건강 제품으로 널리 팔린다. 하지만 모든 제품이 모든 개에게 효과가 있는 것은 아니며, 연구 결과도 제품과 균주에 따라 다르다. 필요할 때 근거를 보고 고르는 것이 좋다.</p>
 
-<h2>장내 미생물이 하는 일</h2>
+<h2>효과는 얼마나 확인되었나</h2>
 <ul>
-<li>소화·영양 흡수 도움</li>
-<li>유해균 성장 억제</li>
-<li>면역 조절 (장 면역이 전신 면역의 70%)</li>
-<li>스트레스·불안 완화 (장-뇌 축)</li>
+<li>급성 위장관 질환에서 프로바이오틱스의 효과를 평가한 체계적 문헌 고찰은 증상을 줄인다는 근거가 충분히 견고하지 않다고 결론 내렸다.</li>
+<li>개별 임상시험에서는 특정 제품이 설사 회복을 앞당겼다는 결과도 있고, 통계적으로 유의하지 않은 결과도 있다.</li>
+<li>효과는 균주, 혼합 구성, 농도에 따라 달라질 수 있다.</li>
+<li>스트레스나 환경 변화로 생긴 설사에서 상대적으로 도움이 될 가능성이 언급되지만 근거는 제한적이다.</li>
 </ul>
 
-<h2>유산균 보충이 특히 도움이 되는 상황</h2>
-<ul>
-<li>항생제 치료 중·후 (항생제는 유해균뿐 아니라 유익균도 제거)</li>
-<li>반복적인 설사·연변</li>
-<li>식이 전환 중 소화 불량</li>
-<li>스트레스 상황 전후 (이사·병원 방문·분리)</li>
-<li>면역 저하 상태</li>
-</ul>
+<h2>언제 도움이 될 수 있나</h2>
+<table>
+<thead><tr><th>상황</th><th>고려</th></tr></thead>
+<tbody>
+<tr><td>스트레스성 설사 (입소, 이동, 환경 변화)</td><td>수의사와 상의해 단기 사용을 고려할 수 있다</td></tr>
+<tr><td>항생제 치료 중 또는 직후</td><td>수의사가 필요하다고 판단하면 병행</td></tr>
+<tr><td>만성 장질환</td><td>진단과 치료가 우선. 프로바이오틱스는 보조 수단</td></tr>
+<tr><td>건강한데 예방 목적</td><td>필수는 아니다. 균형 잡힌 사료와 규칙적인 식사가 우선</td></tr>
+</tbody>
+</table>
 
-<h2>균주 종류 이해</h2>
 <div class="callout-dog">
-<strong>반려동물용 주요 균주</strong><br>
-• <strong>Lactobacillus acidophilus</strong>: 가장 일반적, 장 건강 기본<br>
-• <strong>Bifidobacterium animalis</strong>: 개 특화, 장 운동 개선<br>
-• <strong>Enterococcus faecium</strong>: 반려동물용으로 가장 연구된 균주<br>
-• <strong>Lactobacillus rhamnosus</strong>: 설사·항생제 후 회복
+<strong>유산균보다 진료가 먼저인 경우</strong><br>
+• 설사가 이틀 이상 계속되거나 혈변이 섞임<br>
+• 구토, 열, 무기력, 식욕 저하가 함께 있음<br>
+• 어린 강아지, 노령견, 지병이 있는 개의 설사<br>
+• 이물이나 독성 물질을 먹었을 가능성
 </div>
 
-<h2>CFU(Colony Forming Unit) 해석</h2>
-<p>CFU는 제품 내 살아있는 균 수를 나타낸다. 일반적으로 개에게는 하루 10억(10^9)~1,000억(10^11) CFU가 사용된다. 단, CFU 숫자가 높다고 항상 좋은 것이 아니다. 균주의 종류와 품질이 더 중요하다.</p>
-
-<h2>제품 선택 기준</h2>
+<h2>제품을 고를 때</h2>
 <ul>
-<li>반려동물 전용 제품 (사람용 일부 균주는 적합하지 않음)</li>
-<li>제조일·유통기한·보관 방법 확인 (냉장 유산균은 콜드체인 필요)</li>
-<li>균주명이 구체적으로 표기된 것 (Lactobacillus 정도만 표기된 것은 정보 부족)</li>
-<li>임상 연구 결과가 있는 브랜드 우선</li>
+<li>균주 이름과 보증 균수(CFU)가 라벨에 명시되어 있는지 확인한다.</li>
+<li>개용으로 연구된 제품인지 확인한다. 사람용을 임의로 쓰면 첨가물(자일리톨 등)이 문제가 될 수 있다.</li>
+<li>유통기한 안에서 보관 조건(냉장 등)을 지킨다.</li>
+<li>코넬 자료는 개에게 하루 10억~100억 CFU 정도가 현재 권고 범위로 소개한다. 실제 양은 제품과 개체에 따라 수의사와 정한다.</li>
+<li>효과를 판단할 기간을 정해 두고, 개선이 없으면 중단하고 진료를 받는다.</li>
 </ul>
 
 <h2>마지막으로</h2>
-<p>유산균은 '없어도 되는 보충제'가 아니라, 특정 상황에서 장 건강 회복을 도울 수 있는 도구다. 항생제 치료를 받는 강아지라면 치료 기간 중·후에 유산균을 병행하는 것이 수의사들에게도 권장되는 방법이다.</p>`,
+<p>유산균은 만능이 아니다. 설사나 소화 문제가 반복되면 원인 검사를 먼저 하고, 보조적으로 쓸 때는 개에게 연구된 제품과 합리적인 기간을 정해 시도하자.</p>`,
     authorName: "펫지기 에디터",
     authorCredential: "반려동물 영양 정보 큐레이터",
     ymyl: false,
-    sources: JSON.stringify([
-      "Bybee, S.N. et al. — Effect of a Lactobacillus-based probiotic on stress-related behaviors in dogs. JAVMA 2011",
-      "WSAVA Gastrointestinal Standardization Group — Probiotic Use in Pets",
-      "한국수의영양학회 프로바이오틱스 사용 가이드라인",
-    ]),
+    sources: [
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC6766488/ — Clinical effect of probiotics in prevention or treatment of gastrointestinal disease in dogs: A systematic review",
+      "https://www.vet.cornell.edu/departments-centers-and-institutes/riney-canine-health-center/canine-health-topics/power-probiotics — Cornell Riney Canine Health Center, The power of probiotics",
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC6524086/ — Efficacy of an orally administered anti-diarrheal probiotic paste in dogs with acute diarrhea: a randomized, placebo-controlled study",
+    ],
     disclaimer: null,
     status: "published",
     publishedAt: "2026-07-30T11:00:00.000Z",

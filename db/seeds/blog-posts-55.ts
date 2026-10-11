@@ -19,39 +19,48 @@ const BLOG_POSTS: NewContent[] = [
     subtitle: "고양이 탄수화물 소화 능력, 혈당 반응 특성, 전분이 해롭다는 주장의 근거 검토",
     metaTitle: "고양이 탄수화물 사료 — 그레인프리가 답인가? 과학적 검토 | 펫지기",
     metaDescription: "고양이에게 탄수화물이 나쁜지 과학적으로 검토했습니다. 고양이 탄수화물 소화 능력, 혈당 반응, 그레인프리 주장의 근거와 한계를 정리했습니다.",
-    body: `<p>고양이는 순수 육식동물이므로 탄수화물이 해롭다는 주장이 널리 퍼져 있다. 이것이 얼마나 과학적으로 뒷받침되는지 살펴보자.</p>
+    body: `<p>고양이는 육식동물이라서 탄수화물을 먹으면 안 된다는 말과, 고양이도 탄수화물을 소화한다는 말이 함께 돌아다닌다. 연구를 보면 둘 다 단순하게 맞다고 하기 어렵다. 중요한 것은 "곡물이 없다"가 아니라 전체 영양 균형과 개체의 건강 상태다.</p>
 
-<h2>고양이의 탄수화물 대사 특성</h2>
-<p>고양이는 개·인간과 달리 간에서 포도당 합성을 조절하는 효소(glucokinase)가 없거나 매우 낮다. 이는 탄수화물이 많은 식이에서 혈당이 더 높게 유지될 수 있음을 의미한다. 이것이 '고양이는 탄수화물을 처리하지 못한다'는 주장의 핵심 근거다.</p>
+<h2>자주 보이는 주장과 실제</h2>
+<table>
+<thead><tr><th>주장</th><th>수의학 자료가 말하는 것</th></tr></thead>
+<tbody>
+<tr><td>고양이는 탄수화물을 소화하지 못한다</td><td>고양이는 탄수화물을 어느 정도 소화·흡수할 수 있다는 리뷰가 있다. 다만 야생에서 먹는 먹이는 탄수화물이 적다</td></tr>
+<tr><td>탄수화물이 당뇨의 원인이다</td><td>건조 사료의 높은 탄수화물이 비만과 당뇨의 위험 요인일 수 있다는 가설이 있으나 과학자들 사이에 합의는 없다</td></tr>
+<tr><td>그레인프리는 저탄수화물이다</td><td>아니다. 곡물을 빼고 감자나 콩 전분을 쓰면 탄수화물이 비슷하거나 더 많을 수 있다</td></tr>
+<tr><td>곡물 알레르기가 흔하다</td><td>고양이에서 곡물·글루텐 알레르기는 드문 편이라고 VCA 임상 자료는 설명한다</td></tr>
+</tbody>
+</table>
 
-<h2>그러나 — 탄수화물을 소화하지 못하는 것은 아니다</h2>
-<p>고양이도 전분을 소화하는 아밀라아제가 있다. 개보다 적지만 없지는 않다. 상업용 사료의 일반적인 탄수화물 함량(20~35%)은 고양이가 소화·흡수할 수 있다. '소화 못 한다'와 '이상적인 식이가 아니다'는 다른 이야기다.</p>
+<h2>당뇨가 있는 고양이는 다르다</h2>
+<p>당뇨 고양이는 저탄수화물 식이를 하면 관리가 쉬워지고 관해 가능성이 더 높다는 보고가 있어, 많은 수의사가 습식 위주의 저탄수화물 식이를 권한다. 이 경우는 일반 가이드가 아니라 수의사가 혈당 상태에 맞춰 식이와 인슐린 계획을 세운다.</p>
 
-<h2>탄수화물과 당뇨의 관계</h2>
-<p>고양이 당뇨 발생과 고탄수화물 식이의 관계는 연구에 따라 결과가 엇갈린다. 비만이 당뇨의 가장 강한 위험 요인이며, 단순히 탄수화물 함량보다 총 칼로리와 비만이 더 중요하다는 견해가 우세하다.</p>
-
-<h2>그레인프리가 답인가</h2>
-<p>그레인프리 사료는 곡물 대신 콩류(완두콩·렌즈콩)를 주원료로 쓴다. 이는 탄수화물 함량이 비슷하거나 오히려 높은 경우도 있다. 단순히 '곡물 없음'이 '탄수화물 없음'이 아니다.</p>
+<h2>사료를 고를 때 보는 것</h2>
+<ul>
+<li><strong>완전·균형 영양</strong>: 라벨에 "완전 및 균형 영양(complete and balanced)" 문구가 있는지 본다.</li>
+<li><strong>단백질 급원</strong>: 동물성 단백질이 상위 원료인지 확인한다.</li>
+<li><strong>습식 비율</strong>: 수분 섭취와 열량 관리에 도움이 된다.</li>
+<li><strong>체중과 건강 상태</strong>: 비만, 당뇨, 신장·요로 질환이 있으면 수의사와 식이를 정한다.</li>
+<li><strong>그레인프리 마케팅</strong>: 곡물이 없다는 이유만으로 선택하지 않는다.</li>
+</ul>
 
 <div class="callout-cat">
-<strong>고양이 사료 선택 실질적 기준</strong><br>
-• 단백질 함량 충분 (건조 기준 35~45% 이상)<br>
-• 탄수화물이 주원료 상위에 없을 것<br>
-• 수분 보충을 위한 습식 병행<br>
-• AAFCO 완전영양식 기준 충족<br>
-• 특이 알레르기 없다면 곡물 포함 사료도 무관
+<strong>이런 경우는 먼저 진료</strong><br>
+• 물을 많이 마시고 소변이 늘었다<br>
+• 먹는데도 살이 빠진다<br>
+• 체중이 계속 늘고 활동이 줄었다
 </div>
 
 <h2>마지막으로</h2>
-<p>고양이에게 탄수화물이 '나쁜' 것이 아니라 '필수적이지 않은' 것이다. 고단백·고수분 식이가 고양이의 이상적인 식이에 가깝지만, 탄수화물이 포함된 균형 잡힌 사료를 먹는 고양이도 건강하게 산다.</p>`,
+<p>탄수화물 논쟁에서 확실한 것은 고양이가 육식동물이라는 점과, 건강 상태에 따라 식이를 달리해야 한다는 점이다. 광고 문구보다 라벨의 영양 적합성 표기와 수의사의 판단을 기준으로 삼자.</p>`,
     authorName: "펫지기 에디터",
     authorCredential: "반려동물 영양 정보 큐레이터",
     ymyl: false,
-    sources: JSON.stringify([
-      "Verbrugghe, A. & Bakovic, M. — Peculiarities of One-Carbon Metabolism in the Strict Carnivorous Cat. Nutrients 2013",
-      "Tufts University Cummings Veterinary Medical Center — Cat Carbohydrates",
-      "한국수의영양학회 고양이 탄수화물 대사 리뷰",
-    ]),
+    sources: [
+      "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5753635/ — Cats and Carbohydrates: The Carnivore Fantasy?",
+      "https://vcahospitals.com/know-your-pet/whats-in-my-cats-food-designer-diets-grain-free-diets — VCA, What's in My Cat's Food?: Designer Diets, Grain Free Diets",
+      "https://www.vet.cornell.edu/departments-centers-and-institutes/cornell-feline-health-center/health-information/feline-health-topics/feeding-your-cat — Cornell Feline Health Center, Feeding Your Cat",
+    ],
     disclaimer: null,
     status: "published",
     publishedAt: "2026-08-01T09:00:00.000Z",

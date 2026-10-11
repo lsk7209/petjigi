@@ -208,49 +208,50 @@ const BLOG_POSTS: NewContent[] = [
     subtitle: "고양이 필수 영양소(타우린·아라키돈산·비타민A), 절대 금지 재료, 검증 레시피 활용",
     metaTitle: "고양이 집밥(홈쿡) 가이드 — 타우린·필수 영양소·금지 재료 | 펫지기",
     metaDescription: "고양이 집밥은 강아지보다 더 까다롭습니다. 타우린, 아라키돈산, 비타민A 등 고양이 필수 영양소, 절대 금지 재료, 안전한 레시피 활용법을 정리했습니다.",
-    body: `<p>고양이 집밥은 강아지보다 훨씬 까다롭다. 고양이는 자체 합성하지 못하는 필수 영양소가 많아 식이 오류가 심각한 결핍으로 이어질 수 있다.</p>
+    body: `<p>직접 만든 밥을 먹이고 싶은 마음은 이해하지만, 고양이는 개보다 영양 요구가 까다로워서 집밥의 위험이 크다. 메르크 수의학 매뉴얼은 일반적으로 시판되는 완전·균형 영양식을 권하고, 집밥은 수의 영양 전문가가 설계했을 때 안전할 수 있다고 안내한다.</p>
 
-<h2>고양이 필수 영양소 — 체내 합성 불가</h2>
-<ul>
-<li><strong>타우린</strong>: 심장·눈 건강에 필수. 식물성으로 공급 불가. 결핍 시 확장성 심근병증·망막 퇴화.</li>
-<li><strong>아라키돈산(AA)</strong>: 오메가6 지방산. 고양이는 체내 합성 불가 — 동물성 지방에서만 공급.</li>
-<li><strong>비타민A (레티놀)</strong>: 고양이는 베타카로틴을 레티놀로 전환 불가. 간·생선에서 공급 필요.</li>
-<li><strong>니아신(B3)</strong>: 고양이는 트립토판에서 전환 불가 — 동물성으로 공급.</li>
-</ul>
+<h2>왜 고양이 집밥이 어려운가</h2>
+<table>
+<thead><tr><th>영양소</th><th>이유</th></tr></thead>
+<tbody>
+<tr><td>타우린</td><td>고양이는 몸에서 충분히 만들 수 없어 음식으로 공급해야 한다. 부족하면 심장 근육이 약해지는 확장성 심근병증 등이 생길 수 있다</td></tr>
+<tr><td>비타민 A, 아라키돈산 등</td><td>고양이는 식물성 전구체를 충분히 전환하지 못해 동물성 급원이 필요하다</td></tr>
+<tr><td>칼슘·인 균형</td><td>고기 위주(예: 고기와 밥만)로 먹이면 칼슘이 부족해질 수 있다</td></tr>
+<tr><td>과다 위험</td><td>간만 지속적으로 주면 비타민 A 독성이 생길 수 있다</td></tr>
+</tbody>
+</table>
+<p>온라인에서 흔히 보이는 레시피는 필수 영양소가 하나 이상 부족한 경우가 많다는 분석이 있다. 영양 부족은 서서히 진행되어 한참 뒤에야 증상이 나타날 수 있어 더 위험하다.</p>
 
-<h2>고양이에게 절대 금지 재료</h2>
+<h2>집밥을 꼭 하고 싶다면</h2>
+<ol>
+<li>수의 영양 전문가에게 고양이의 연령, 체중, 질환에 맞는 레시피를 설계받는다.</li>
+<li>레시피를 임의로 바꾸지 않는다. 재료를 바꾸면 영양 균형이 깨진다.</li>
+<li>레시피에 포함된 비타민·미네랄 보충제를 반드시 쓴다.</li>
+<li>6개월마다 체중, 혈액검사, 영양 평가를 받는다.</li>
+<li>질병이 생기면 레시피를 다시 평가받는다.</li>
+</ol>
+
 <div class="callout-cat">
-<strong>고양이 금지 식품</strong><br>
-• 양파·마늘·파·부추 (적혈구 파괴 — 개보다 민감)<br>
-• 포도·건포도<br>
-• 날 달걀 흰자 (아비딘 → 비오틴 결핍)<br>
-• 생선 다량 급여 (비타민B1 결핍, 중금속 축적)<br>
-• 우유·유제품 (유당 불내증)<br>
-• 개 사료 장기 급여 (타우린·필수 영양소 부족)
+<strong>이런 변화가 보이면 진료</strong><br>
+• 털이 푸석해지고 체중이 줄거나 늘어남<br>
+• 활동이 줄고 숨이 가빠짐<br>
+• 뼈가 약해 보이거나 걷는 모습이 이상함<br>
+• 식욕이 급격히 변함
 </div>
 
-<h2>안전한 집밥을 위한 조건</h2>
-<ul>
-<li><strong>전문 레시피 사용 필수</strong>: BalanceIT.com 등 수의영양사 검증 레시피</li>
-<li>타우린 보충제 별도 추가 (조리 과정에서 파괴됨)</li>
-<li>닭·오리·칠면조 등 다양한 동물성 단백질 위주</li>
-<li>탄수화물 최소화 (고양이는 탄수화물 소화 효소 적음)</li>
-<li>정기 혈액검사로 영양 상태 모니터링</li>
-</ul>
-
-<h2>집밥 100%는 고위험</h2>
-<p>전문 레시피 없이 집밥만 먹이면 타우린·비타민A 등 필수 영양소 결핍이 생길 수 있다. 증상이 수년 후에 나타나기 때문에 보호자가 인지하기 어렵다. 집밥을 주고 싶다면 전체 식이의 30~50% 이하로 제한하고 나머지는 AAFCO 완전영양식으로 보완하는 것이 안전하다.</p>
+<h2>간단한 토핑은 괜찮을까</h2>
+<p>주식은 완전 균형 사료로 하고, 익힌 닭고기나 흰살 생선 같은 단순한 재료를 간식 수준으로 가끔 추가하는 정도는 위험이 상대적으로 낮다. 양파, 마늘, 포도, 초콜릿은 고양이에게 독성이 있으니 절대 주지 않는다. 양념이나 소금도 넣지 않는다.</p>
 
 <h2>마지막으로</h2>
-<p>고양이 집밥은 좋은 의도에서 시작하더라도 충분한 정보 없이는 위험하다. 수의사 또는 수의영양사와 상담 후 검증된 레시피를 기반으로 시작하는 것을 강력히 권장한다.</p>`,
+<p>"신선한 재료"가 곧 "균형 잡힌 식사"는 아니다. 집밥을 고민한다면 먼저 수의사와 상담해 영양 전문가의 레시피를 받고, 아니라면 시판 완전식을 기본으로 하자.</p>`,
     authorName: "펫지기 에디터",
     authorCredential: "반려동물 영양 정보 큐레이터",
     ymyl: true,
-    sources: JSON.stringify([
-      "Pion, P.D. et al. — Myocardial failure in cats associated with low plasma taurine. Science 1987",
-      "BalanceIT.com — Veterinary Nutritionist Formulated Cat Recipes",
-      "한국수의영양학회 고양이 필수 영양소 가이드라인",
-    ]),
+    sources: [
+      "https://www.merckvetmanual.com/cat-owners/selecting-and-providing-a-home-for-a-cat/proper-nutrition-for-cats — Merck Veterinary Manual, Proper Nutrition for Cats",
+      "https://vcahospitals.com/know-your-pet/nutrition---home-made-diets — VCA, Nutrition - Home Made Diets",
+      "https://vcahospitals.com/resources/preventive-cat/nutrition/what-is-taurine-and-why-is-it-so-important — VCA, What is taurine and why is it so important?",
+    ],
     disclaimer: "이 글은 정보 제공을 목적으로 하며 집밥 전환 시 수의사 또는 수의영양사와 상담하세요.",
     status: "published",
     publishedAt: "2026-08-15T09:00:00.000Z",

@@ -255,55 +255,53 @@ const BLOG_POSTS: NewContent[] = [
     subtitle: "관절·인지·심장·면역 보충제 근거 수준 비교, 복용량·부작용·상호작용 주의사항",
     metaTitle: "노령견 보충제 효과 비교 — 근거 있는 것과 마케팅인 것 | 펫지기",
     metaDescription: "노령견 보충제의 효과와 근거 수준 비교. 글루코사민, 오메가3, SAMe, 코엔자임Q10 등 근거 수준과 복용량, 부작용, 구입 시 주의사항을 정리했습니다.",
-    body: `<p>노령견을 위한 보충제 시장은 매우 크다. 모든 제품이 효과가 있지는 않으며, 일부는 과학적 근거가 충분하고 일부는 마케팅이 앞선다.</p>
+    body: `<p>노령견이 되면 관절 영양제, 오메가3, 항산화제 등 보충제를 권하는 광고를 자주 보게 된다. 하지만 보충제마다 근거의 수준이 다르고, 마케팅과 실제 효과 사이에 차이가 있다. 무엇을 선택하기 전에 근거와 안전성을 먼저 살피는 것이 좋다.</p>
 
-<h2>근거 수준별 분류</h2>
+<h2>보충제별 근거 수준</h2>
+<table>
+<thead><tr><th>성분</th><th>근거 요약</th></tr></thead>
+<tbody>
+<tr><td>오메가3 (EPA·DHA)</td><td>골관절염 개에서 통증 완화 효과가 가장 일관되게 보고된 보충제로 소개된다. 최근 메타분석에서도 오메가3 기반 제품이 임상적 진통 효과를 보였다는 해석이 있다</td></tr>
+<tr><td>글루코사민·콘드로이틴</td><td>연구 결과가 엇갈린다. 단독 제품의 효과가 입증되지 않았다는 분석이 있고, 장기 사용 안전성은 대체로 괜찮다고 설명한다</td></tr>
+<tr><td>복합 제품 (난각막, 크릴 등 혼합)</td><td>일부 무작위 대조 시험이 있으나 제조사가 후원한 연구가 많아 해석에 주의가 필요하다</td></tr>
+<tr><td>항산화제·치매 관련 제품</td><td>제품별로 근거가 다르며 수의사와 상의가 필요하다</td></tr>
+</tbody>
+</table>
 
-<h3>근거 수준 높음</h3>
-<ul>
-<li><strong>오메가3 (EPA+DHA)</strong>: 관절·피부·심장·인지 전반에 항염 효과. 용량: 체중 1kg당 EPA+DHA 50~100mg/일.</li>
-<li><strong>SAMe (S-아데노실메티오닌)</strong>: 간 기능 보호·인지 기능 지원. 간 질환 환자에서 수의사가 자주 권장.</li>
-</ul>
-
-<h3>근거 수준 중간</h3>
-<ul>
-<li><strong>글루코사민 + 콘드로이틴</strong>: 관절 연골 보호. 효과 연구 결과가 엇갈리지만 부작용이 적어 널리 사용됨. 용량이 중요 — 작은 간식 형태의 함량으로는 치료 용량에 미달하는 경우 많음.</li>
-<li><strong>코엔자임Q10 (CoQ10)</strong>: 심장 에너지 대사 지원. 심장 질환이 있는 노령견에서 보조로 사용.</li>
-<li><strong>밀크시슬 (Silymarin)</strong>: 간 세포 보호. 간 수치 상승 시 보조제로 활용.</li>
-</ul>
-
-<h3>근거 수준 낮음 또는 마케팅 위주</h3>
-<ul>
-<li>일부 '젊음 유지' 항산화 복합제 — 성분이 명확하지 않고 임상 연구 부족</li>
-<li>과도하게 높은 용량의 비타민A·D — 축적 독성 위험</li>
-</ul>
-
-<h2>보충제 구입 주의사항</h2>
 <div class="callout-dog">
-<strong>신뢰할 수 있는 보충제 기준</strong><br>
-• 활성 성분명과 함량이 명확히 표시됨<br>
-• 반려동물 전용 또는 수의사 권장 제품<br>
-• 제조사 GMP(우수제조기준) 인증<br>
-• NASC(National Animal Supplement Council) 품질 인증 (수입 제품)
+<strong>보충제 시작 전에 확인할 것</strong><br>
+• 아프거나 절뚝이는 원인 자체가 진단되었는지 — 보충제가 약을 대신하지 않는다<br>
+• 먹고 있는 약과의 상호작용 (특히 신장·간 질환, 항응고제)<br>
+• 제품에 자일리톨 등 개에게 위험한 성분이 없는지<br>
+• 제조사의 품질 관리와 성분표시가 명확한지
 </div>
 
-<h2>복용 시 주의사항</h2>
+<h2>제품을 평가하는 법</h2>
 <ul>
-<li>오메가3: 과다 복용 시 혈액 응고 저하, 항응고제 병용 시 수의사 상담</li>
-<li>글루코사민: 혈당에 영향 가능 — 당뇨견은 주의</li>
-<li>여러 보충제 동시 복용 시 상호작용 수의사 확인</li>
+<li>"관절에 좋다" 같은 막연한 문구보다 성분과 함량이 구체적인지 본다.</li>
+<li>개를 대상으로 한 연구가 있는지, 독립적으로 수행되었는지 확인한다.</li>
+<li>여러 성분을 한꺼번에 시작하지 않고 하나씩 도입해 반응을 본다.</li>
+<li>2~3개월 정도 사용 후 통증 반응, 활동량, 걸음걸이를 기록으로 비교한다.</li>
+</ul>
+
+<h2>보충제보다 먼저 할 것</h2>
+<ul>
+<li>체중 관리: 과체중을 줄이는 것이 관절 통증 완화에 가장 효과적인 방법 중 하나로 알려져 있다.</li>
+<li>적절한 운동: 짧고 규칙적인 산책이 근육 유지에 도움이 된다.</li>
+<li>환경 정비: 미끄럼 방지 매트, 경사로, 푹신한 잠자리.</li>
+<li>정기 검진: 관절염 외에 신장·간·심장 문제도 확인한다.</li>
 </ul>
 
 <h2>마지막으로</h2>
-<p>보충제는 약물이 아니다. 균형 잡힌 식이와 정기 검진이 더 중요하며, 보충제는 그 위에 추가하는 것이다. 특정 증상 개선을 위해 보충제를 사용할 때는 수의사와 상담해 개체에 맞는 것을 선택하는 것이 안전하다.</p>`,
+<p>노령견 보충제는 "먹이면 좋겠지" 정도의 막연한 기대보다 필요한 이유와 근거를 확인하고 시작하는 편이 안전하다. 사람용 제품을 임의로 쓰지 말고, 수의사와 상의해 선택하자.</p>`,
     authorName: "펫지기 에디터",
     authorCredential: "반려동물 영양 정보 큐레이터",
     ymyl: false,
-    sources: JSON.stringify([
-      "Gruet, P. et al. — Omega-3 fatty acids in dogs: review. BMC Vet Res 2020",
-      "한국수의영양학회 노령 동물 보충제 가이드라인",
-      "WSAVA Nutritional Assessment for Senior Pets",
-    ]),
+    sources: [
+      "https://www.akc.org/expert-advice/health/joint-supplements-help-dogs-arthritis/ — AKC, How Can Joint Supplements Help Dogs With Arthritis?",
+      "https://www.akc.org/expert-advice/nutrition/nutrition-and-supplements-for-senior-dogs/ — AKC, Senior Dog Nutrition and Supplement Tips",
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC13355649/ — Supplement use is common in Dog Aging Project participants, especially among dogs with orthopedic conditions",
+    ],
     disclaimer: null,
     status: "published",
     publishedAt: "2026-08-10T11:00:00.000Z",
