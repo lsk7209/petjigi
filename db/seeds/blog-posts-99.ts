@@ -324,7 +324,7 @@ const BLOG_POSTS: NewContent[] = [
       "https://www.mafra.go.kr/bbs/home/792/566734/artclView.do — 농림축산식품부, 반려동물 사료 안전성·표시사항 특별점검 추진",
       "https://www.metroseoul.co.kr/article/20230802500690 — 메트로서울, 사료 회수 관련 보도",
     ],
-    disclaimer: null,
+    disclaimer: "이 글은 일반적인 정보 제공 목적으로 작성되었으며, 법률·세무·소비자 분쟁에 대한 전문가 자문을 대체하지 않습니다. 법령과 제도는 자주 바뀌므로 실제 적용 전 관할 기관(지자체, 한국소비자원, 농림축산검역본부 등)이나 전문가에게 최신 내용을 확인하세요.",
     status: "published",
     publishedAt: "2026-11-21T09:00:00.000Z",
     createdAt: NOW,

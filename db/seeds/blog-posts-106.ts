@@ -211,7 +211,7 @@ const BLOG_POSTS: NewContent[] = [
       "https://www.mafra.go.kr/bbs/home/792/574492/artclView.do — 농림축산식품부, 반려동물 해외 이동 관련 보도자료",
       "https://cargo.koreanair.com/sites/default/files/2025-02/%EA%B5%AD%EA%B0%80%EB%B3%84%20%EB%B0%98%EB%A0%A4%EB%8F%99%EB%AC%BC%20%EC%95%88%EB%82%B4%EB%AC%B8.pdf — 대한항공 화물, 국가별 반려동물 안내문",
     ],
-    disclaimer: null,
+    disclaimer: "이 글은 일반적인 정보 제공 목적으로 작성되었으며, 법률·세무·소비자 분쟁에 대한 전문가 자문을 대체하지 않습니다. 법령과 제도는 자주 바뀌므로 실제 적용 전 관할 기관(지자체, 한국소비자원, 농림축산검역본부 등)이나 전문가에게 최신 내용을 확인하세요.",
     status: "published",
     publishedAt: "2026-12-07T11:00:00.000Z",
     createdAt: NOW,

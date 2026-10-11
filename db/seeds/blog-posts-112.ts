@@ -253,7 +253,7 @@ const BLOG_POSTS: NewContent[] = [
       "https://www.taxwatch.co.kr/article/tax/2022/10/05/0003 — 택스워치, 반려동물 진료비 부가세 면세 관련",
       "https://www.dailyvet.co.kr/?p=126530 — 데일리벳, 반려동물 진료비 관련 세제",
     ],
-    disclaimer: null,
+    disclaimer: "이 글은 일반적인 정보 제공 목적으로 작성되었으며, 법률·세무·소비자 분쟁에 대한 전문가 자문을 대체하지 않습니다. 법령과 제도는 자주 바뀌므로 실제 적용 전 관할 기관(지자체, 한국소비자원, 농림축산검역본부 등)이나 전문가에게 최신 내용을 확인하세요.",
     status: "published",
     publishedAt: "2026-12-23T09:00:00.000Z",
     createdAt: NOW,

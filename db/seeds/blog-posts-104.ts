@@ -274,7 +274,7 @@ const BLOG_POSTS: NewContent[] = [
       "https://www.dailyvet.co.kr/print?id=157717 — 데일리벳, 반려동물 소비자 피해상담, 분양 관련 피해가 동물병원의 5배",
       "https://www.etoday.co.kr/news/view/197847 — 이투데이, 늘어나는 '애완견' 피해 어찌하오리까",
     ],
-    disclaimer: null,
+    disclaimer: "이 글은 일반적인 정보 제공 목적으로 작성되었으며, 법률·세무·소비자 분쟁에 대한 전문가 자문을 대체하지 않습니다. 법령과 제도는 자주 바뀌므로 실제 적용 전 관할 기관(지자체, 한국소비자원, 농림축산검역본부 등)이나 전문가에게 최신 내용을 확인하세요.",
     status: "published",
     publishedAt: "2026-12-03T09:00:00.000Z",
     createdAt: NOW,
