@@ -88,57 +88,54 @@ const BLOG_POSTS: NewContent[] = [
     subtitle: "아스팔트 표면 온도 현실, 2초 테스트, 화상 징후, 산책 시간대·경로 조정",
     metaTitle: "강아지 여름 발바닥 화상 — 2초 테스트와 아스팔트 온도 현실 | 펫지기",
     metaDescription: "강아지 여름 아스팔트 발바닥 화상 예방 방법. 기온 30도 이상 아스팔트 표면 온도, 2초 테스트, 발바닥 화상 징후, 산책 시간·경로 조정 방법을 정리했습니다.",
-    body: `<p>기온이 30°C를 넘는 날 아스팔트 표면 온도는 50~70°C를 웃돈다. 강아지 발바닥은 두껍지만 이 온도에서는 수 분 만에 화상을 입을 수 있다.</p>
+    body: `<p>한여름의 아스팔트와 콘크리트, 모래는 공기 온도보다 훨씬 뜨거워질 수 있다. 맨발로 걷는 강아지의 발바닥은 짧은 시간에도 화상을 입을 수 있다. 산책 전 간단한 확인과 대처법을 알아 두자.</p>
 
-<h2>아스팔트 표면 온도 현실</h2>
-<ul>
-<li>기온 30°C → 아스팔트 60°C 이상 가능</li>
-<li>기온 35°C → 아스팔트 70°C 이상 가능</li>
-<li>콘크리트는 아스팔트보다 약 5~10°C 낮음 (그래도 위험)</li>
-<li>그늘진 곳: 훨씬 낮음 — 경로 설계 핵심</li>
-</ul>
+<h2>왜 위험한가</h2>
+<p>햇볕을 받은 아스팔트는 기온보다 훨씬 뜨거워진다. 보도에 따르면 기온이 20도대 후반~30도 안팎에서도 지면이 위험한 수준으로 달궈질 수 있다. 발바닥 패드는 두껍지만 화상으로부터 완전히 보호되지는 않는다.</p>
 
-<h2>2초 테스트</h2>
+<h2>7초 테스트</h2>
 <div class="callout-dog">
-<strong>산책 전 2초 테스트</strong><br>
-손등(손바닥 아닌 손등)을 아스팔트에 7초 댄다.<br>
-• 7초 버틸 수 없으면 → 강아지 발바닥도 위험<br>
-• 7초 버틸 수 있어도 30분 이상 걷기는 위험<br>
-▶ 오전 10시 이전, 오후 6시 이후 산책이 안전합니다
+<strong>손등을 지면에 7초간 대 본다</strong><br>
+• 7초를 참기 어렵다면 강아지에게도 너무 뜨겁다<br>
+• 이 방법은 대략적인 확인이며, 개가 실제로 밟을 햇볕 드는 지면에서 확인한다<br>
+• 검은 아스팔트, 모래, 철제 바닥, 인조 잔디는 특히 뜨겁다
 </div>
 
-<h2>발바닥 화상 징후</h2>
+<h2>화상 신호</h2>
 <ul>
-<li>산책 중 또는 귀가 후 절뚝거림</li>
-<li>발을 들고 걷거나 걷기 거부</li>
-<li>발바닥 과도하게 핥기</li>
-<li>발바닥 패드 붉어짐, 부어오름, 물집, 벗겨짐</li>
+<li>절뚝이거나 걷기를 거부한다</li>
+<li>발바닥을 핥거나 물어뜯는다</li>
+<li>발바닥 패드가 붉거나 물집이 잡힌다, 껍질이 벗겨지거나 색이 어두워진다</li>
+<li>발을 들고 있거나 걷다 멈춘다</li>
 </ul>
 
-<h2>화상 시 응급 처치</h2>
+<h2>예방</h2>
 <ul>
-<li>즉시 시원한 물로 발 식히기 (얼음 금지)</li>
-<li>추가 자극 없이 안정</li>
-<li>수의사 연락: 화상 정도에 따라 항생제·붕대 처치 필요</li>
+<li>산책 시간을 이른 아침이나 해진 뒤로 옮긴다.</li>
+<li>풀밭, 그늘, 흙길을 고른다.</li>
+<li>강아지용 신발이나 발바닥 보호 왁스를 쓴다 (신발은 미리 적응 훈련을 한다).</li>
+<li>더운 날은 산책을 짧게 하고 물을 챙긴다.</li>
+<li>차량 짐칸이나 철제 바닥에 올려 두지 않는다.</li>
 </ul>
 
-<h2>예방 방법</h2>
-<ul>
-<li>아침·저녁 산책 시간대 선택</li>
-<li>잔디·흙 경로 우선 선택</li>
-<li>강아지 부티: 여름에도 유효, 착용 훈련 필요</li>
-<li>포 왁스(발바닥 보호크림): 여름도 사용 가능</li>
-</ul>
+<h2>화상을 입었을 때</h2>
+<ol>
+<li>즉시 그늘로 옮기고 걷지 못하게 한다. 필요하면 안아서 이동한다.</li>
+<li>흐르는 시원한 물(차가운 얼음물이 아닌 시원한 물)로 발을 식힌다.</li>
+<li>핥지 못하게 넥칼라를 씌우고 발을 깨끗한 천으로 느슨하게 감싼다.</li>
+<li>물집, 심한 붓기, 패드가 벗겨졌다면 병원에 간다. 화상 부위에 연고를 임의로 바르지 않는다.</li>
+</ol>
 
 <h2>마지막으로</h2>
-<p>강아지는 뜨겁다고 말하지 못한다. 보호자가 먼저 확인해야 한다.</p>`,
+<p>손등 테스트를 습관으로 하고, 뜨거운 시간대를 피하면 발바닥 화상 대부분을 막을 수 있다. 열사병 예방은 <a href="/guide/pet-heatstroke-prevention-complete-guide">반려동물 열사병 예방·응급 가이드</a>를 함께 참고하자.</p>`,
     authorName: "펫지기 에디터",
     authorCredential: "반려동물 행동·케어 정보 큐레이터",
     ymyl: false,
-    sources: JSON.stringify([
-      "한국반려동물수의사회 여름철 반려동물 안전 관리 지침",
-      "Journal of the American Veterinary Medical Association — Thermal burns in dogs from hot surfaces",
-    ]),
+    sources: [
+      "https://www.webvet.com/hot-pavement-and-dog-paws/ — WebVet, Hot pavement and dog paws",
+      "https://wjla.com/features/for-pets-sake/protecting-your-dogs-paws-during-summer-heat — WJLA, Protecting your dog's paws during summer heat",
+      "https://www.kfvs12.com/2026/06/23/hot-pavement-can-burn-dogs-paws-less-than-minute/ — KFVS12, Hot pavement can burn dogs' paws in less than a minute",
+    ],
     disclaimer: null,
     status: "published",
     publishedAt: "2026-12-22T09:00:00.000Z",

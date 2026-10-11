@@ -83,48 +83,58 @@ const BLOG_POSTS: NewContent[] = [
     subtitle: "정상 노화 vs 질환 신호 구분, 노령견 행동 변화 의미, 정기 검진 항목",
     metaTitle: "강아지 노화 신호 — 정상 노화와 질환 구분·정기 검진 가이드 | 펫지기",
     metaDescription: "강아지 노화 신호를 올바르게 인식하는 방법. 정상 노화와 질환 신호를 구분하는 기준, 노령견 행동 변화 의미, 7세 이상 강아지 정기 검진 항목을 정리했습니다.",
-    body: `<p>"나이 들어서 그런가 봐요"라는 말이 진단을 놓치게 한다. 노화와 질환을 구분하는 것이 노령견 케어의 핵심이다.</p>
+    body: `<p>강아지의 노화는 서서히 오기 때문에 보호자가 변화를 '나이 탓'으로 넘기기 쉽다. 하지만 정상적인 노화와 치료가 필요한 질환의 신호는 구분해야 한다. 일반적으로 7세가 넘으면 신체 변화를 주의 깊게 보기 시작하고, 대형견은 더 일찍 노령기에 접어든다.</p>
 
-<h2>정상 노화 vs 질환 신호</h2>
+<h2>정상적인 노화 변화</h2>
+<ul>
+<li>활동량이 조금 줄고 움직임이 느려진다</li>
+<li>털에 흰 털이 늘어난다 (유전·스트레스·질환으로도 생기므로 노화의 확실한 신호는 아니다)</li>
+<li>양쪽 눈의 수정체가 약간 뿌예진다 (핵경화)</li>
+<li>청력이 조금 떨어진다</li>
+<li>잠이 늘어난다</li>
+</ul>
+
+<h2>나이 탓으로 넘기면 안 되는 신호</h2>
 <table>
-<thead><tr><th>증상</th><th>정상 노화</th><th>질환 가능성</th></tr></thead>
+<thead><tr><th>신호</th><th>의심되는 문제</th></tr></thead>
 <tbody>
-<tr><td>흰 털</td><td>정상</td><td>—</td></tr>
-<tr><td>활동 감소</td><td>약간 감소 — 정상</td><td>갑작스러운 감소 — 통증</td></tr>
-<tr><td>체중 변화</td><td>약간 증가</td><td>급격한 감소 → 종양·당뇨</td></tr>
-<tr><td>물 많이 마심</td><td>정상 아님</td><td>당뇨·쿠싱·신부전 가능성</td></tr>
-<tr><td>잠을 많이 잠</td><td>약간 더 자는 것 정상</td><td>극도의 무기력 → 검진</td></tr>
+<tr><td>계단·점프 기피, 절뚝임, 일어나기 힘들어함</td><td>관절염·통증</td></tr>
+<tr><td>물을 많이 마시고 소변이 늘어남</td><td>신장 질환, 당뇨, 쿠싱 등</td></tr>
+<tr><td>이유 없는 체중 감소</td><td>종양, 내분비 질환, 소화기 질환, 치과 질환</td></tr>
+<tr><td>입 냄새, 씹기 힘들어함</td><td>치주 질환</td></tr>
+<tr><td>기침, 호흡이 가쁨, 쉽게 지침</td><td>심장·호흡기 질환</td></tr>
+<tr><td>방향 감각 상실, 밤에 서성임, 배변 실수, 잠 패턴 변화</td><td>인지 기능 장애(치매)</td></tr>
+<tr><td>혹이 만져짐</td><td>종양 — 검사 필요</td></tr>
 </tbody>
 </table>
 
-<h2>노령견 행동 변화 의미</h2>
 <div class="callout-dog">
-<strong>행동 변화 해석</strong><br>
-• 산책 거부·뒤처짐 → 관절통 가능성<br>
-• 밤에 헤매거나 울기 → 인지기능장애 또는 통증<br>
-• 갑자기 더 달라붙음 → 통증·불안·인지 저하<br>
-• 음식에 갑자기 무관심 → 치아·소화기·전신 문제
+<strong>이런 경우는 바로 병원</strong><br>
+• 쓰러짐, 일어서지 못할 정도의 허약, 갑작스러운 시력 상실, 발작<br>
+• 하루 이상 식욕이 없다<br>
+• 몇 달 사이 체중이 눈에 띄게 줄었다
 </div>
 
-<h2>7세 이상 권장 정기 검진 항목</h2>
+<h2>시니어 케어의 기본</h2>
 <ul>
-<li>혈액 검사 (CBC·혈청화학)</li>
-<li>소변 검사</li>
-<li>혈압 측정</li>
-<li>흉부·복부 X-ray</li>
-<li>복부 초음파 (내장 종양 조기 발견)</li>
-<li>심장 청진·심전도</li>
+<li><strong>정기 검진</strong>: 건강해 보여도 노령견은 6개월 간격 검진이 권장되는 경우가 많다. 혈액·소변 검사로 초기 질환을 찾는다.</li>
+<li><strong>체중 관리</strong>: 마른 체형을 유지하면 관절 부담이 줄어든다.</li>
+<li><strong>운동</strong>: 짧고 부드러운 산책을 꾸준히 한다 (<a href="/blog/senior-dog-gentle-exercise-guide">노령견 가벼운 운동 가이드</a>).</li>
+<li><strong>환경</strong>: 미끄럼 방지 매트, 낮은 침대와 경사로를 설치한다.</li>
+<li><strong>구강 관리</strong>: 치석과 치주 질환이 쌓이지 않게 한다.</li>
+<li><strong>식이</strong>: 노령견용 사료가 모두에게 필요하지는 않다. 질환과 체중에 맞게 수의사와 정한다.</li>
 </ul>
 
 <h2>마지막으로</h2>
-<p>노령견의 작은 변화를 놓치지 않는 것이 보호자의 가장 중요한 역할이다. 연 2회 검진 + 매달 체중 측정 + 집에서 매일 관찰 — 이것이 노령견 케어의 기본이다.</p>`,
+<p>노화는 막을 수 없지만 질환은 관리할 수 있다. 달라진 점을 기록하고 정기 검진을 받으며, 이상이 느껴지면 나이 탓으로 단정하지 말고 진료를 받자.</p>`,
     authorName: "펫지기 에디터",
     authorCredential: "반려동물 케어 정보 큐레이터",
     ymyl: false,
-    sources: JSON.stringify([
-      "Epstein, M. et al. — AAHA Senior Care Guidelines for Dogs and Cats. JAAHA 2005",
-      "한국수의내과학회 노령견 검진 가이드라인",
-    ]),
+    sources: [
+      "https://animal-medical-clinic.com/services/vet-education/blog/signs-your-senior-pet-needs-be-seen — Animal Medical Clinic, Signs your senior pet needs to be seen",
+      "https://purina.co.nz/articles/dogs/senior/care/6-physical-changes — Purina, 6 physical changes in senior dogs",
+      "https://www.revivalanimal.com/learning-center/vet-minute-signs-of-aging-in-dogs — Revival Animal Health, Vet minute: signs of aging in dogs",
+    ],
     disclaimer: null,
     status: "published",
     publishedAt: "2026-11-27T09:00:00.000Z",

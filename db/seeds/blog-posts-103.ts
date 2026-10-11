@@ -190,52 +190,63 @@ const BLOG_POSTS: NewContent[] = [
     subtitle: "눈·귀·코·입·발·피부 체크 방법, 기록 습관, 이상 신호 기준",
     metaTitle: "강아지 매일 건강 체크 — 3분 루틴으로 이상 신호 조기 발견 | 펫지기",
     metaDescription: "강아지 매일 3분 건강 체크 방법. 눈·귀·코·입·발·피부 확인 방법, 이상 신호 기준, 체크 기록 습관으로 조기 발견하는 방법을 정리했습니다.",
-    body: `<p>강아지의 이상을 가장 먼저 알아채는 것은 보호자다. 매일 3분의 건강 체크 습관이 수의사 방문보다 빠른 조기 발견을 가능하게 한다.</p>
+    body: `<p>강아지의 몸 상태를 집에서 정기적으로 확인하면 이상 신호를 일찍 발견할 수 있다. 수의사의 진찰을 대체하지는 않지만, 평소 모습을 아는 보호자의 관찰은 매우 가치 있다. 코에서 꼬리까지 순서대로 살피는 루틴을 정리했다.</p>
 
-<h2>매일 3분 체크 루틴</h2>
+<h2>기본 원칙</h2>
 <ul>
-<li><strong>눈</strong>: 분비물 색(투명·흰색 정상, 노란·녹색 이상), 충혈, 각막 탁해짐</li>
-<li><strong>귀</strong>: 냄새, 분비물, 과도한 긁기</li>
-<li><strong>코</strong>: 분비물(맑은 약간은 정상, 두껍거나 색 있으면 이상)</li>
-<li><strong>입</strong>: 잇몸 색(분홍 정상, 창백·파랑·노랑 이상), 냄새, 치석</li>
-<li><strong>발</strong>: 발바닥 상처·마모, 발가락 사이 붓기</li>
-<li><strong>피부·털</strong>: 새로운 혹·탈모·가려움 부위</li>
+<li>강아지가 편안할 때, 조용한 곳에서 한다. 간식과 칭찬으로 좋은 경험을 만든다.</li>
+<li>PDSA는 코에서 꼬리 순서로 적어도 일주일에 몇 번 확인하라고 안내한다. 식사·산책 같은 일상 속에서 간단히 보는 것도 좋다.</li>
+<li>평소 상태를 기억하거나 사진으로 남겨서 비교한다.</li>
 </ul>
 
-<h2>잇몸 색 응급 기준</h2>
+<h2>체크리스트</h2>
+<table>
+<thead><tr><th>부위</th><th>정상</th><th>이상 신호</th></tr></thead>
+<tbody>
+<tr><td>눈</td><td>맑고 흰자가 깨끗, 양쪽 동공 크기 비슷</td><td>눈곱 증가, 충혈, 눈을 가늘게 뜸, 흐림</td></tr>
+<tr><td>코</td><td>콧물 없음</td><td>누런 콧물, 코피, 갈라지고 딱지 앉음</td></tr>
+<tr><td>귀</td><td>깨끗하고 냄새 없음</td><td>냄새, 분비물, 붉음, 머리 흔들기</td></tr>
+<tr><td>입</td><td>잇몸 분홍색, 심한 입 냄새 없음</td><td>잇몸이 창백·붉음·출혈, 치석 많음, 부러진 이</td></tr>
+<tr><td>피부·털</td><td>윤기, 혹 없음</td><td>혹, 발진, 탈모, 비듬, 벼룩 오물(검은 가루)</td></tr>
+<tr><td>몸통</td><td>갈비뼈가 가볍게 만져짐, 허리 라인</td><td>복부 팽만, 만지면 아파함, 체중 변화</td></tr>
+<tr><td>발·발톱</td><td>패드 매끄러움, 발가락 사이 깨끗</td><td>갈라짐, 붓기, 발톱 부러짐, 절뚝임, 핥기</td></tr>
+<tr><td>항문·생식기</td><td>깨끗</td><td>분비물, 붓기, 엉덩이를 끌기</td></tr>
+</tbody>
+</table>
+
+<h2>체형 점수 간단 확인</h2>
+<ul>
+<li>갈비뼈를 세게 누르지 않고 만질 수 있어야 한다.</li>
+<li>위에서 보았을 때 허리 라인이 있고, 옆에서 보았을 때 배가 올라가 있어야 한다.</li>
+<li>갈비뼈가 안 만져지면 과체중, 지나치게 튀어나오면 저체중일 수 있다.</li>
+</ul>
+
+<h2>매일 관찰할 것</h2>
+<ul>
+<li>식욕, 음수량</li>
+<li>대소변의 양, 모양, 색, 횟수</li>
+<li>활동량, 걸음걸이, 호흡</li>
+<li>평소와 다른 행동 (숨기, 울음, 공격성)</li>
+</ul>
+
 <div class="callout-dog">
-<strong>잇몸 색으로 응급 판단</strong><br>
-• 분홍색: 정상<br>
-• 창백한 분홍~흰색: 빈혈·쇼크 → 응급<br>
-• 파란색(청색증): 산소 부족 → 즉시 응급<br>
-• 노란색(황달): 간·담즙 문제 → 당일 병원<br>
-• 밝은 빨간색: 발열·패혈증 → 즉시 응급
+<strong>병원에 가야 하는 경우</strong><br>
+• 하루 이상 먹지 않거나 물을 마시지 않는다<br>
+• 반복되는 구토·설사, 혈변, 혈뇨<br>
+• 호흡이 가쁘거나 기침이 계속된다<br>
+• 새로 생긴 혹이 커진다
 </div>
 
-<h2>기록 습관</h2>
-<ul>
-<li>스마트폰 메모·앱으로 간단히 기록</li>
-<li>새 혹이나 변화 발견 시 사진 찍어 기록</li>
-<li>수의사 방문 시 기록 공유 → 훨씬 정확한 진단</li>
-</ul>
-
-<h2>언제 바로 병원에 가야 하는가</h2>
-<ul>
-<li>잇몸이 창백·파랗게 변한 경우</li>
-<li>의식·반응이 저하된 경우</li>
-<li>24시간 이상 식음 거부</li>
-<li>구토·설사 + 혈액 포함</li>
-</ul>
-
 <h2>마지막으로</h2>
-<p>매일 3분 체크는 검진이 아니라 "오늘 내 강아지가 어제와 다른가"를 확인하는 것이다. 변화를 아는 것이 조기 발견의 시작이다.</p>`,
+<p>발견한 이상 신호는 날짜와 사진과 함께 기록해 병원에 가져가자. 집에서 진단하려 하지 말고 확인과 기록에 집중하는 것이 좋다.</p>`,
     authorName: "펫지기 에디터",
     authorCredential: "반려동물 케어 정보 큐레이터",
     ymyl: false,
-    sources: JSON.stringify([
-      "ASPCA — At-Home Pet Health Checks",
-      "한국수의사회 가정 반려동물 건강 모니터링 가이드라인",
-    ]),
+    sources: [
+      "https://vcahospitals.com/know-your-pet/giving-your-dog-a-thorough-home-check-up — VCA, Giving your dog a thorough home check-up",
+      "https://www.pdsa.org.uk/pet-help-and-advice/looking-after-your-pet/all-pets/how-to-give-your-pet-a-health-check-at-home — PDSA, How to give your pet a health check at home",
+      "https://www.humaneworld.org/resources/my-dog-sick-try-home-exam — Humane World for Animals, My dog is sick? Try a home exam",
+    ],
     disclaimer: null,
     status: "published",
     publishedAt: "2026-11-30T11:00:00.000Z",
