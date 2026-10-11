@@ -65,7 +65,7 @@ const BLOG_POSTS: NewContent[] = [
       "https://www.aspca.org/pet-care/general-pet-care/finding-lost-pet — ASPCA, Finding a Lost Pet",
       "https://icatcare.org/articles/lost-your-cat — International Cat Care, Lost your cat?",
     ],
-    disclaimer: null,
+    disclaimer: "이 글은 일반적인 정보 제공 목적으로 작성되었으며, 지역별 절차와 기준은 다를 수 있습니다. 실종 신고와 보호 현황은 관할 지자체·동물보호센터의 안내를 우선 확인하세요.",
     status: "published",
     publishedAt: "2026-08-18T11:00:00.000Z",
     createdAt: NOW,
