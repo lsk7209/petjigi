@@ -36,3 +36,6 @@
 - 얇은 건강 글 7건 보강(귀혈종·전립선·콧물·발톱 파절·고양이 각막·에디슨병·퇴행성 척수병증): 미확인 수치·약물명 제거, Merck/VCA/PMC 출처 3건 이내 부착(array 리터럴). 운영 DB는 `apply-content-update.ts`로 반영(백업 `.backup-prod/`, 복구 `--restore`). `dog-mast-cell-tumor-guide`는 시드 slug 중복으로 제외.
 - shelter 센터 1곳 지역 10개: noindex+광고 차단+사이트맵 제거(`lib/shelter-index-policy.ts`).
 - 글 통합(308)은 보류: 겹침이 확인된 쌍이 없어 근거 없이 합치지 않음.
+
+## 통합(308) 결과
+정규화 본문 유사도(6-gram Jaccard)는 0.12 이하였지만 검색 의도가 같은 쌍을 의도 기준으로 통합했다: pet-insurance-comparison-guide→-comparison-method, -deductible-fixed-vs-rate→-deductible-guide, -age-renewal-guide→senior-pet-insurance-guide, microchip-animal-registration-guide→pet-registration-guide(구 '최대 100만 원' 표현 문서 제거). 이들을 링크하던 본문 4건은 대표 문서로 교체(운영 반영, 백업). 보류: /guide 동물등록 3건(complete·korea·microchip)과 pet-insurance-exclusions(guide)↔exclusions-guide(blog) — 현재 리디렉션 체계가 /blog→/blog만 지원.

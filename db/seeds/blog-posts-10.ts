@@ -354,7 +354,7 @@ const BLOG_POSTS_10: NewContent[] = [
 <p>대형 수술이나 장기 치료가 필요할 때 병원 내 할부나 카드 무이자 할부를 활용할 수 있다. 일부 동물병원은 의료비 분할결제 프로그램을 운영한다. 이자나 수수료 여부를 미리 확인한다.</p>
 
 <h2>가장 확실한 대비 — 보험 + 적금 병행</h2>
-<p>금융 상품의 혜택이 매력적으로 보여도, 예상치 못한 큰 의료비에 대한 가장 체계적인 대비는 펫보험이다. <a href="/insurance/compare">펫보험 비교</a>에서 본인 상황에 맞는 보험을 먼저 확인하고, 그 위에 적금이나 카드 혜택을 추가하는 방식을 권장한다. 어떤 보험을 골라야 할지 모르겠다면 <a href="/blog/pet-insurance-comparison-guide">펫보험 제대로 비교하는 5가지 기준</a>부터 읽어보자.</p>`,
+<p>금융 상품의 혜택이 매력적으로 보여도, 예상치 못한 큰 의료비에 대한 가장 체계적인 대비는 펫보험이다. <a href="/insurance/compare">펫보험 비교</a>에서 본인 상황에 맞는 보험을 먼저 확인하고, 그 위에 적금이나 카드 혜택을 추가하는 방식을 권장한다. 어떤 보험을 골라야 할지 모르겠다면 <a href="/blog/pet-insurance-comparison-method">펫보험 제대로 비교하는 5가지 기준</a>부터 읽어보자.</p>`,
     ymyl: true,
     disclaimer: LEGAL_DISCLAIMER,
     status: "published",
