@@ -20,55 +20,61 @@ const BLOG_POSTS: NewContent[] = [
     subtitle: "영양 불균형의 실질적 위험, 안전한 재료 목록, 칼슘·인 비율 맞추는 법, 전문가 레시피 활용",
     metaTitle: "강아지 홈쿡(집밥) 가이드 — 영양 균형·안전 재료·주의사항 | 펫지기",
     metaDescription: "강아지 집밥은 잘못 만들면 영양 불균형으로 위험합니다. 안전한 재료 목록, 칼슘·인 비율, 검증된 레시피 사용법을 정리했습니다.",
-    body: `<p>강아지에게 집에서 만든 신선한 음식을 먹이고 싶은 마음은 자연스럽다. 그러나 집밥이 건강하려면 반드시 영양 균형이 맞아야 한다. 좋은 재료를 써도 균형이 맞지 않으면 오히려 사료보다 나쁜 결과가 생길 수 있다.</p>
+    body: `<p>강아지에게 집에서 만든 밥을 먹이려는 보호자가 늘고 있다. 신선한 재료로 만들었다는 만족감은 크지만, 영양 균형을 맞추지 못한 집밥은 시간이 지나 뼈와 장기에 문제를 일으킬 수 있다. 수의학 자료는 집밥 자체를 금지하기보다 "전문가가 설계한 레시피로" 먹일 것을 권한다.</p>
 
-<h2>가장 흔한 영양 불균형 문제</h2>
-<ul>
-<li><strong>칼슘 부족</strong>: 뼈 없이 육류만 급여하면 칼슘:인 비율이 심각하게 무너짐. 성장기 강아지에서 뼈 발달 장애.</li>
-<li><strong>아연 부족</strong>: 피부·면역 문제 유발</li>
-<li><strong>요오드 부족</strong>: 갑상선 기능 저하</li>
-<li><strong>비타민D·E 불균형</strong>: 근육·뼈·면역 문제</li>
-</ul>
+<h2>집밥에서 가장 자주 생기는 문제</h2>
+<table>
+<thead><tr><th>문제</th><th>설명</th></tr></thead>
+<tbody>
+<tr><td>칼슘 부족</td><td>코넬 소속 수의 영양 전문가는 집밥에서 가장 흔한 큰 결함으로 칼슘 부족을 꼽는다. 어린 강아지는 골절, 성견은 뼈 약화로 이어질 수 있다</td></tr>
+<tr><td>칼슘·인 비율 불균형</td><td>고기 위주 식단은 인이 많고 칼슘이 적어 뼈 질환의 원인이 될 수 있다</td></tr>
+<tr><td>비타민·미네랄 보충 누락</td><td>고기와 채소만으로는 필요한 미량 영양소를 채우기 어렵다</td></tr>
+<tr><td>레시피 고정</td><td>한 레시피를 오래 그대로 먹이면 부족한 영양소가 계속 쌓일 수 있다</td></tr>
+</tbody>
+</table>
+<p>온라인과 책에 있는 집밥 레시피를 분석한 연구에서 대부분이 필수 영양소를 하나 이상 충족하지 못했다는 결과가 소개된 바 있다. 수의사가 쓴 레시피가 비교적 기준을 충족한 편이었다는 것이 시사점이다.</p>
 
-<h2>강아지에게 안전한 재료</h2>
+<h2>안전하게 하려면</h2>
+<ol>
+<li>수의 영양 전문가(또는 영양을 전문으로 하는 수의사)에게 개의 나이, 체중, 건강 상태에 맞는 레시피를 받는다.</li>
+<li>레시피에 포함된 보충제를 빼지 않는다. 개용 종합 비타민·미네랄 믹스와 칼슘 급원이 필요할 수 있다.</li>
+<li>재료의 종류와 양을 정확히 계량하고, 임의로 바꾸지 않는다.</li>
+<li>건강한 개도 1년에 2회 정도 영양 평가와 체중 점검을 받는다.</li>
+<li>질환이 생기면 레시피를 다시 평가받는다.</li>
+</ol>
+
 <div class="callout-dog">
-<strong>사용 가능 재료</strong><br>
-• <strong>단백질</strong>: 닭·오리·소·돼지(지방 제거)·연어(익힌 것)<br>
-• <strong>탄수화물</strong>: 흰쌀·고구마·귀리<br>
-• <strong>채소</strong>: 당근·브로콜리·주키니·시금치(소량)<br>
-• <strong>과일</strong>: 블루베리·사과(씨 제거)·수박(씨 제거)<br><br>
-<strong>절대 사용 금지</strong><br>
-• 양파·마늘·파·부추 (적혈구 파괴)<br>
-• 포도·건포도 (신장 독성)<br>
-• 초콜릿·자일리톨·아보카도
+<strong>절대 넣지 말아야 할 재료</strong><br>
+• 양파, 마늘, 부추 등 파속 식물<br>
+• 포도, 건포도<br>
+• 초콜릿, 카페인, 자일리톨<br>
+• 익힌 뼈(쪼개져서 위장관을 다칠 수 있음), 마카다미아
 </div>
 
-<h2>칼슘·인 비율 맞추기</h2>
-<p>닭가슴살 100g의 칼슘:인 비율은 약 1:20 (칼슘이 극히 부족). 강아지 요구량은 1~2:1이다. 가공육 없이 집밥만 먹이려면 반드시 칼슘 보충이 필요하다. 방법:</p>
+<h2>시판 사료와 병행하기</h2>
 <ul>
-<li>생골(날뼈) 포함 — 뼈와 살의 비율 조정</li>
-<li>달걀 껍질 파우더 (건조·분쇄) — 식품 등급 칼슘원</li>
-<li>수의사 처방 칼슘 보충제</li>
+<li>주식은 완전·균형 사료로 두고, 집에서 만든 재료는 전체 열량의 일부 토핑으로 쓰면 영양 불균형 위험이 줄어든다.</li>
+<li>신선 급여를 늘릴 때는 소량부터 시작해 변이 묽어지지 않는지 본다.</li>
 </ul>
 
-<h2>전문가 검증 레시피 사용</h2>
-<p>무작위 레시피는 위험하다. 영양사 또는 수의영양사가 작성한 레시피를 사용해야 한다. 추천 방법:</p>
+<h2>이런 변화가 보이면 진료</h2>
 <ul>
-<li>BalanceIT.com — 수의영양사 검증 레시피 (영문)</li>
-<li>국내 수의영양 전문가와 상담</li>
-<li>홈쿡 + 상업 사료 병행 (50:50) — 영양 불균형 리스크 최소화</li>
+<li>털이 푸석해지거나 빠짐, 피부 문제</li>
+<li>체중이 갑자기 늘거나 줄어듦</li>
+<li>절뚝거림, 뼈가 약해 보임</li>
+<li>구토·설사가 계속됨</li>
 </ul>
 
 <h2>마지막으로</h2>
-<p>집밥을 줄 수 있다. 하지만 레시피 없이 냉장고에 있는 것들로 대충 만들면 안 된다. 전문가 검증 레시피를 기반으로, 필요한 보충제를 정확히 넣는 것이 집밥의 전제 조건이다.</p>`,
+<p>집밥은 사랑의 표현일 수 있지만, 영양 균형이 맞아야 건강에 도움이 된다. 레시피는 전문가와 함께 만들고 정기적으로 점검하자.</p>`,
     authorName: "펫지기 에디터",
     authorCredential: "반려동물 영양 정보 큐레이터",
     ymyl: false,
-    sources: JSON.stringify([
-      "Stockman, J. et al. — Evaluation of recipes for home-prepared diets. JAVMA 2013",
-      "BalanceIT.com — Veterinary Nutritionist Formulated Recipes",
-      "한국수의영양학회 자가조리식 가이드라인",
-    ]),
+    sources: [
+      "https://www.vet.cornell.edu/departments-centers-and-institutes/riney-canine-health-center/canine-health-topics/re-evaluating-your-dogs-diet — Cornell Riney Canine Health Center, Re-evaluating your dog's diet",
+      "https://vcahospitals.com/know-your-pet/nutrition---home-made-diets — VCA, Nutrition - Home Made Diets",
+      "https://www.merckvetmanual.com/management-and-nutrition/nutrition-small-animals/nutritional-requirements-of-small-animals — Merck Veterinary Manual, Nutritional Requirements of Small Animals",
+    ],
     disclaimer: null,
     status: "published",
     publishedAt: "2026-07-14T11:00:00.000Z",
@@ -86,39 +92,53 @@ const BLOG_POSTS: NewContent[] = [
     subtitle: "근육 감소증(사코페니아), 고단백 저인산 조합의 의미, 신장 문제 있을 때 단백질 조절 기준",
     metaTitle: "노령 고양이 단백질 영양 — 줄이면 안 되는 이유 완전 가이드 | 펫지기",
     metaDescription: "노령 고양이에게 단백질을 줄이면 근육 감소증이 생깁니다. 사코페니아 예방, 고단백 저인산 조합의 의미, 신장 문제 시 단백질 기준을 정리했습니다.",
-    body: `<p>'노령이니까 단백질을 줄여야 한다'는 인식이 있다. 그러나 이것은 잘못된 통념이다. 건강한 노령묘에게 단백질을 줄이는 것은 오히려 근육 소실을 가속화한다.</p>
+    body: `<p>나이 든 고양이에게 "신장이 걱정되니 단백질을 줄여야 한다"는 말을 들은 적이 있을 것이다. 하지만 건강한 노령묘에게 단백질을 줄이면 근육이 줄어들 위험이 있다. 핵심은 신장 질환이 진단되었는지, 어느 단계인지에 따라 달라진다는 점이다.</p>
 
-<h2>노령 고양이와 단백질 소화</h2>
-<p>7세 이상 고양이는 단백질과 지방의 소화 흡수율이 낮아진다. 같은 양을 먹어도 실제로 흡수되는 단백질이 적다는 의미다. 따라서 노령묘에게는 오히려 고품질 단백질을 충분히 공급해야 한다.</p>
+<h2>건강한 노령묘의 경우</h2>
+<ul>
+<li>수의학 자료는 단백질이 노화 과정에서 몸을 유지하는 데 중요한 영양소라고 설명한다.</li>
+<li>노령묘에게 맞는 단백질, 인, 나트륨의 정확한 비율은 아직 정해지지 않았다고 VCA는 안내한다. 즉 정해진 숫자를 단정할 수 없다.</li>
+<li>나이 든 고양이는 증상이 없어도 신장이나 간에 경미한 문제가 있을 수 있다고 가정하고, 인 섭취를 적당히 관리하라는 조언도 있다.</li>
+<li>그러므로 건강한 고양이에게 임의로 단백질을 줄이는 것은 권하지 않는다.</li>
+</ul>
 
-<h2>근육 감소증(사코페니아)</h2>
-<p>노령 고양이에서 근육량이 감소하는 현상이다. 갈비뼈가 두드러지고 등뼈가 느껴지는 것이 특징이다. 사코페니아는 체중계 숫자가 정상이어도 근육은 줄고 지방은 늘어난 상태일 수 있다. 충분한 단백질 섭취와 가벼운 운동이 예방 및 진행 둔화에 도움이 된다.</p>
-
-<h2>신장 질환이 있을 때는?</h2>
-<p>CKD(만성 신장 질환)가 있는 고양이에서는 단백질 제한이 필요할 수 있다. 그러나 무조건 줄이는 것이 아니라 IRIS 병기와 수치에 따라 조정한다.</p>
-
+<h2>신장 질환이 진단되었다면</h2>
 <table>
-<thead><tr><th>상태</th><th>단백질 전략</th></tr></thead>
+<thead><tr><th>상황</th><th>일반적인 접근</th></tr></thead>
 <tbody>
-<tr><td>건강한 시니어</td><td>고단백 유지 (최소 40% 건조 기준)</td></tr>
-<tr><td>CKD 1~2기</td><td>단백질 약간 제한 + 인 제한 시작</td></tr>
-<tr><td>CKD 3~4기</td><td>처방 신장식 (저인·제한 단백질)</td></tr>
+<tr><td>신장 질환 진단 전</td><td>정기 검진(혈액·소변·혈압)으로 확인하고, 식이 변경은 수의사와 상의</td></tr>
+<tr><td>신장 질환 진단 후</td><td>인을 조절한 신장 처방식이 주로 쓰인다. 단백질을 어느 정도 조정할지는 병기, 근육 상태, 식욕에 따라 수의사가 판단</td></tr>
+<tr><td>식욕이 떨어진 노령묘</td><td>먹는 것이 우선이다. 처방식을 거부하면 영양 부족이 더 큰 문제가 될 수 있어 수의사와 대안을 상의</td></tr>
 </tbody>
 </table>
+<p>사람의 만성 신장 질환에서도 단백질 제한은 근감소 위험과 균형을 봐야 하는 문제로 논의된다. 고양이 연구는 이보다 적어서, 진단 후 식이는 반드시 개체별로 정해야 한다.</p>
 
-<h2>고단백 저인산(Phosphorus) 조합</h2>
-<p>신장 부담 없이 근육을 유지하려면 단백질은 충분하면서 인은 제한하는 것이 이상적이다. 닭·칠면조 같은 흰살육류는 인이 상대적으로 낮다. 어류(참치·연어)는 단백질과 인이 모두 높아 신장 문제가 있는 노령묘에는 주의가 필요하다.</p>
+<div class="callout-cat">
+<strong>이런 변화는 진료 신호</strong><br>
+• 물을 많이 마시고 소변이 늘어남<br>
+• 체중이 줄고 등뼈와 엉덩이뼈가 도드라짐<br>
+• 식욕이 떨어지거나 구토가 반복됨<br>
+• 털이 거칠고 입 냄새가 심해짐
+</div>
+
+<h2>집에서 할 수 있는 일</h2>
+<ul>
+<li>6개월~1년마다 혈액·소변·혈압 검사를 받는다 (고령이면 더 자주).</li>
+<li>양질의 동물성 단백질이 첫 번째 원료인 사료를 고르되, 구체적인 기준은 수의사와 정한다.</li>
+<li>체중과 근육량(등뼈 만졌을 때 느낌)을 정기적으로 확인한다.</li>
+<li>수분 섭취를 늘리기 위해 습식 사료를 활용한다.</li>
+</ul>
 
 <h2>마지막으로</h2>
-<p>노령묘 식이의 핵심은 '줄이기'가 아니라 '질 높이기'다. 흡수 가능한 고품질 단백질을 충분히 공급하면서 인·나트륨을 관리하는 것이 목표다. 수의사의 혈액 검사 결과를 기반으로 개체별로 조정하는 것이 가장 정확하다.</p>`,
+<p>"노령묘는 단백질을 줄여라"는 말은 모든 고양이에게 맞지 않는다. 건강한 노령묘는 근육 유지를, 신장 질환이 있는 고양이는 병기에 맞는 식이를 목표로 하고, 어느 쪽이든 정기 검진 결과로 결정하자.</p>`,
     authorName: "펫지기 에디터",
     authorCredential: "반려동물 영양 정보 큐레이터",
     ymyl: false,
-    sources: JSON.stringify([
-      "Laflamme, D.P. & Hannah, S.S. — Increased dietary protein promotes fat loss and reduces loss of lean body mass during weight loss in cats. Int J Appl Res Vet Med 2005",
-      "IRIS Staging of CKD — Dietary Recommendations",
-      "한국수의영양학회 노령묘 영양 관리 가이드라인 2024",
-    ]),
+    sources: [
+      "https://vcahospitals.com/know-your-pet/feeding-mature-senior-and-geriatric-cats — VCA, Feeding Mature, Senior, and Geriatric Cats",
+      "https://www.vet.cornell.edu/departments-centers-and-institutes/cornell-feline-health-center/health-information/feline-health-topics/chronic-kidney-disease — Cornell Feline Health Center, Chronic Kidney Disease",
+      "https://icatcare.org/articles/chronic-kidney-disease-ckd-in-cats — International Cat Care, Chronic kidney disease (CKD) in cats",
+    ],
     disclaimer: null,
     status: "published",
     publishedAt: "2026-07-15T09:00:00.000Z",

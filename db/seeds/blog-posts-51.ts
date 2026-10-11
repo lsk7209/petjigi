@@ -266,51 +266,61 @@ const BLOG_POSTS: NewContent[] = [
     subtitle: "각 식이의 영양·위생·비용·편의성 비교, 혼합 급여 전략, 라이프스타일별 추천",
     metaTitle: "강아지·고양이 생식·자연식·건식 비교 — 어떤 선택이 맞는가 | 펫지기",
     metaDescription: "반려동물 생식, 자연식(홈쿡), 건식 사료의 영양, 위생, 비용, 편의성을 비교했습니다. 혼합 급여 전략과 라이프스타일별 추천을 정리했습니다.",
-    body: `<p>반려동물 식이에 대한 선택지가 많아졌다. 건식 사료만이 정답이던 시대에서, 생식·자연식·처방식 등 다양한 옵션이 생겼다. 각각의 장단점을 비교해 자신의 상황에 맞는 선택을 하는 것이 중요하다.</p>
+    body: `<p>반려동물 먹거리를 고를 때 생식, 자연식(조리), 건식 사료 중 무엇이 좋은지 고민하는 보호자가 많다. 정답은 하나가 아니다. 각 방식의 장단점을 알고, 안전과 영양 균형을 기준으로 선택하는 것이 중요하다.</p>
 
-<h2>세 가지 식이 비교</h2>
+<h2>한눈에 비교</h2>
 <table>
-<thead><tr><th>항목</th><th>건식 사료</th><th>자연식(홈쿡)</th><th>생식(로푸드)</th></tr></thead>
+<thead><tr><th>구분</th><th>생식</th><th>조리 자연식(집밥)</th><th>건식·시판 완전식</th></tr></thead>
 <tbody>
-<tr><td>영양 균형</td><td>AAFCO 기준 검증</td><td>레시피 의존 (불균형 위험)</td><td>상업용은 검증, 자가조리는 위험</td></tr>
-<tr><td>위생 위험</td><td>낮음</td><td>조리 위생 관리 필요</td><td>세균 오염 위험 있음</td></tr>
-<tr><td>비용</td><td>낮음~중간</td><td>재료비 + 시간</td><td>높음</td></tr>
-<tr><td>편의성</td><td>높음</td><td>낮음</td><td>중간~낮음</td></tr>
-<tr><td>수분 함량</td><td>낮음 (6~12%)</td><td>높음 (조리 방법에 따라)</td><td>높음 (60~70%)</td></tr>
-<tr><td>가공도</td><td>높음</td><td>낮음</td><td>없음</td></tr>
+<tr><td>위생 위험</td><td>세균 오염 위험이 가장 크다</td><td>충분히 익히면 낮다</td><td>상대적으로 낮다</td></tr>
+<tr><td>영양 균형</td><td>직접 맞추기 어렵다</td><td>레시피를 전문가가 설계해야 한다</td><td>완전·균형 표시 제품이면 설계되어 있다</td></tr>
+<tr><td>편의성</td><td>낮음</td><td>낮음</td><td>높음</td></tr>
+<tr><td>비용·시간</td><td>재료비와 손질 시간이 든다</td><td>재료비와 조리 시간이 든다</td><td>비교적 예측 가능</td></tr>
 </tbody>
 </table>
 
-<h2>라이프스타일별 추천</h2>
-<h3>바쁜 직장인·1인 가구</h3>
-<p>AAFCO 기준 충족 고품질 건식 사료 + 주 3~4회 습식 사료 혼합이 현실적이다. 균형도 좋고 편의성도 높다.</p>
-
-<h3>시간적 여유가 있고 요리를 즐기는 경우</h3>
-<p>검증된 레시피 기반 자연식을 일부 병행할 수 있다. 단, 전체 식이의 50% 이하로 제한하고 나머지는 건식으로 영양 보완.</p>
-
-<h3>특정 건강 문제(알레르기·소화기)가 있는 경우</h3>
-<p>수의 영양사와 상담해 특이 조건에 맞는 처방식 또는 맞춤 자연식 레시피를 받는 것이 최선.</p>
-
-<h2>혼합 급여 전략</h2>
-<p>건식과 다른 형태를 섞을 때 가장 중요한 것은 총 칼로리 계산이다. 습식 100%로 전환하는 것이 아니라면, 건식 급여량을 줄이고 다른 것을 더하는 방식으로 칼로리를 맞춘다.</p>
+<h2>생식에 대한 기관들의 입장</h2>
+<ul>
+<li>미국수의사회(AVMA)는 날것이나 덜 익힌 동물성 단백질을 개와 고양이에게 주지 말라는 입장이다. 겉보기에 건강한 동물도 병원균을 지니고 사람에게 옮길 수 있기 때문이다.</li>
+<li>미국 CDC도 반려동물에게 생식 사료나 간식을 먹이는 것을 권하지 않는다.</li>
+<li>FDA는 생식 사료가 다른 유형의 사료보다 병원성 세균에 오염될 가능성이 높다는 조사 결과를 발표했다.</li>
+<li>생식 사료는 시판 완제품 중에서도 회수 사례가 상대적으로 많다는 설명이 있다(메르크 수의학 매뉴얼).</li>
+<li>뼈를 주는 경우 치아 손상, 위장관 폐색·천공 위험이 있다.</li>
+</ul>
+<p>소화율이나 건강상 이점을 주장하는 연구도 있지만, 장기적인 위험과 이점을 평가한 연구는 부족하고 품질이 낮은 연구가 많다는 평가가 있다.</p>
 
 <div class="callout-dog">
-<strong>혼합 비율 예시 (칼로리 기준)</strong><br>
-• 건식 70% + 습식 30%<br>
-• 건식 50% + 자연식 50% (영양 검증 레시피)<br>
-• 건식 100% + 처방식 토퍼 (특정 건강 목적)
+<strong>생식을 하지 말아야 할 가정</strong><br>
+• 영유아, 임산부, 노약자, 면역이 약한 사람이 함께 사는 집<br>
+• 면역이 약하거나 장 질환이 있는 반려동물<br>
+• 어린 강아지·고양이, 노령 동물
 </div>
 
+<h2>선택 기준</h2>
+<ol>
+<li>안전: 병원균 위험을 줄일 수 있는 방식인가.</li>
+<li>영양: 라벨에 "완전 및 균형 영양" 표기가 있거나, 수의 영양 전문가의 레시피인가.</li>
+<li>건강 상태: 질환(신장, 췌장염, 알레르기)이 있으면 수의사와 식이를 정한다.</li>
+<li>생활 여건: 지속 가능한 방식인가. 중간에 자주 바꾸면 소화에 부담이 된다.</li>
+</ol>
+
+<h2>식이를 바꿀 때</h2>
+<ul>
+<li>7~14일에 걸쳐 새 음식 비율을 서서히 늘린다.</li>
+<li>구토·설사, 가려움, 식욕 변화가 있으면 이전 단계로 돌아가고 상담한다.</li>
+<li>체중과 배변 상태를 기록한다.</li>
+</ul>
+
 <h2>마지막으로</h2>
-<p>완벽한 식이는 없다. AAFCO 완전영양식 기준을 충족하고, 동물이 잘 먹고, 체중과 건강 상태가 유지된다면 — 그것이 그 동물에게 맞는 식이다. 식이 선택에 죄책감을 가질 필요가 없다.</p>`,
+<p>어느 방식이든 "안전하고 영양이 맞는가"가 기준이다. 생식은 위생 위험이 크므로 권하지 않는 기관이 많고, 집밥은 전문가 레시피가 필요하다. 가장 부담이 적은 선택은 완전·균형 영양을 갖춘 시판 사료를 기본으로 하는 것이다.</p>`,
     authorName: "펫지기 에디터",
     authorCredential: "반려동물 영양 정보 큐레이터",
     ymyl: false,
-    sources: JSON.stringify([
-      "AAFCO — Complete and Balanced Nutrition Standards",
-      "Tufts University Cummings Veterinary Medical Center — Petfoodology",
-      "한국수의영양학회 반려동물 식이 선택 가이드라인",
-    ]),
+    sources: [
+      "https://www.avma.org/resources-tools/avma-policies/raw-or-undercooked-animal-source-protein-cat-and-dog-diets — AVMA, Raw or undercooked animal-source protein in cat and dog diets",
+      "https://www.fda.gov/animal-veterinary/animal-health-literacy/get-facts-raw-pet-food-diets-can-be-dangerous-you-and-your-pet — FDA, Get the Facts! Raw Pet Food Diets can be Dangerous to You and Your Pet",
+      "https://www.cdc.gov/healthy-pets/about/pet-food-safety.html — CDC, About Pet Food Safety",
+    ],
     disclaimer: null,
     status: "published",
     publishedAt: "2026-07-24T09:00:00.000Z",
