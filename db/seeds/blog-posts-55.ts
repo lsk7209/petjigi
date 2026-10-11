@@ -190,55 +190,58 @@ const BLOG_POSTS: NewContent[] = [
     subtitle: "고양이 기침 원인 구분, 천식 발작 응급 대처, 코르티코스테로이드 vs 흡입기 치료",
     metaTitle: "고양이 천식·기관지염 — 기침 원인 구분과 치료 가이드 | 펫지기",
     metaDescription: "고양이 기침이 헤어볼인지 천식인지 구분하는 방법. 고양이 천식 발작 응급 대처, 코르티코스테로이드와 흡입기 치료를 비교했습니다.",
-    body: `<p>고양이가 무언가를 토하려는 듯 엎드려 목을 쭉 뻗고 기침하는 자세는 헤어볼 때와 비슷하다. 그러나 반복된다면 천식 또는 기관지염을 의심해야 한다.</p>
+    body: `<p>고양이가 기침을 하고 그 뒤에 헛구역질을 하면 헤어볼을 토하려는 것으로 오해하기 쉽다. 하지만 반복되는 기침은 고양이 천식(기관지염)의 대표적인 신호일 수 있다. 천식은 기도에 염증이 생겨 숨쉬기 힘들어지는 만성 질환으로, 평생 관리가 필요하지만 치료와 환경 관리로 상태를 조절할 수 있다.</p>
 
-<h2>고양이 기침 원인 구분</h2>
-<table>
-<thead><tr><th>원인</th><th>특징</th></tr></thead>
-<tbody>
-<tr><td>헤어볼</td><td>기침 후 털 덩어리 나옴, 주 1~2회</td></tr>
-<tr><td>천식</td><td>헐떡임, 입 벌리고 숨 쉼, 발작적 기침, 알레르기항원 연관</td></tr>
-<tr><td>기관지염</td><td>만성 기침, 천식과 유사하나 발작 없는 경우 많음</td></tr>
-<tr><td>상기도 감염</td><td>재채기·콧물 동반</td></tr>
-<tr><td>심장 문제</td><td>노령묘에서, 복수 또는 피로 동반</td></tr>
-</tbody>
-</table>
-
-<h2>천식 발작 응급 대처</h2>
-<div class="callout-cat">
-<strong>발작 중 보호자가 할 것</strong><br>
-• 고양이를 안정시키고 조용히 앉혀둠<br>
-• 스프레이·향수·청소 중이었다면 환기<br>
-• 입 벌리고 숨 쉰다면 즉시 응급 병원<br>
-• 5분 이상 지속되면 응급
-</div>
-
-<h2>천식 유발 요인 관리</h2>
+<h2>이런 모습이면 의심한다</h2>
 <ul>
-<li>향수·방향제·스프레이 사용 금지</li>
-<li>먼지 많은 모래 → 저분진 모래로 교체</li>
-<li>담배 연기 차단</li>
-<li>화분 꽃가루 관리</li>
-<li>공기청정기 사용</li>
+<li>마른 기침 후 목을 길게 빼고 헛구역질하는 행동(웅크린 자세)</li>
+<li>숨 쉴 때 쌕쌕거림, 특히 내쉴 때 소리가 남</li>
+<li>활동량 감소, 쉽게 지침</li>
+<li>증상이 심해지면 숨쉬기 힘들어하고 잇몸이 푸르스름해질 수 있음</li>
 </ul>
 
-<h2>치료 방법 비교</h2>
+<div class="callout-cat">
+<strong>바로 응급실로 가야 하는 경우</strong><br>
+• 입을 벌리고 숨을 쉼(개구호흡)<br>
+• 잇몸·혀가 푸르거나 창백함<br>
+• 배가 크게 오르내리며 힘겹게 숨 쉼<br>
+• 가만히 있는데도 숨이 가쁨<br>
+→ 집에서 약을 먹이며 지켜볼 상황이 아니다.
+</div>
+
+<h2>병원에서 하는 검사</h2>
+<p>천식은 증상, 신체검사, 흉부 방사선 같은 결과를 종합하고 다른 원인을 배제해 진단한다. 폐렴, 심장사상충, 폐 기생충, 폐 종양 등 기침을 일으키는 다른 병과 구분해야 하기 때문에 혈액검사와 분변검사부터 시작하고, 치료에 반응하지 않으면 기관지 내시경이나 세포 검사까지 하기도 한다.</p>
+
+<h2>치료와 관리</h2>
+<table>
+<thead><tr><th>방법</th><th>내용</th></tr></thead>
+<tbody>
+<tr><td>스테로이드</td><td>기도 염증을 줄이는 핵심 치료. 먹는 약과 흡입제가 있고, 흡입제가 증상 조절 면에서 더 나으며 전신 부작용이 적다고 알려져 있다</td></tr>
+<tr><td>기관지확장제</td><td>보조 치료로 쓰이며 단독 치료로는 권하지 않는다. 응급 시 병원에서 투여한다</td></tr>
+<tr><td>흡입 챔버·마스크</td><td>고양이용 흡입기와 챔버를 써서 약을 흡입시킨다. 사용법을 병원에서 배운다</td></tr>
+<tr><td>환경 관리</td><td>담배 연기, 향수·방향제, 먼지, 곰팡이, 꽃가루 같은 자극 요인을 줄인다</td></tr>
+</tbody>
+</table>
+<p>장기간 스테로이드를 먹이면 당뇨 같은 부작용이 생길 수 있으므로 정기 점검을 하며 가장 적은 양으로 조절한다. 약 종류와 용량은 수의사가 정한다.</p>
+
+<h2>집에서 해볼 수 있는 일</h2>
 <ul>
-<li><strong>경구 코르티코스테로이드 (프레드니솔론)</strong>: 빠른 효과, 장기 사용 시 당뇨·부신 억제 부작용</li>
-<li><strong>흡입 스테로이드 (플루티카손 + AeroCat 스페이서)</strong>: 전신 부작용 적음, 기술 습득 필요, 비용 높음. 장기 관리에 선호</li>
-<li><strong>기관지 확장제 (살부타몰/알부테롤)</strong>: 발작 시 구조 흡입기로 사용</li>
+<li>실내 흡연을 하지 않고 향이 강한 제품을 줄인다.</li>
+<li>먼지가 적은 모래로 바꿔 보고, 환기를 자주 한다.</li>
+<li>기침 횟수와 시점, 호흡 상태를 영상으로 남겨 진료 때 보여준다.</li>
+<li>가만히 쉴 때 1분 동안 가슴이 오르내리는 횟수를 세어 기록한다. 평소보다 늘어나면 진료 대상이다.</li>
 </ul>
 
 <h2>마지막으로</h2>
-<p>고양이 천식은 완치보다 조절이 목표다. 유발 요인을 파악하고 제거하는 것이 약물만큼 중요하다. 반복적인 기침이 있다면 흉부 X-ray와 기관지 분비물 검사로 확진하는 것을 권장한다.</p>`,
+<p>고양이는 아픈 것을 숨기는 동물이라 기침이 보일 때는 이미 진행된 경우가 많다. 반복되는 기침을 헤어볼로 넘기지 말고, 기침 영상과 함께 진료를 받는 것이 가장 정확한 출발점이다.</p>`,
     authorName: "펫지기 에디터",
     authorCredential: "반려동물 건강 정보 큐레이터",
     ymyl: true,
-    sources: JSON.stringify([
-      "Reinero, C.R. — Feline Allergic Bronchitis/Asthma: Management Strategies. JVIM 2011",
-      "한국고양이수의사회 호흡기 질환 임상 가이드라인",
-      "ISFM — Feline Respiratory Disease Management",
-    ]),
+    sources: [
+      "https://www.merckvetmanual.com/respiratory-system/respiratory-diseases-of-small-animals/feline-bronchial-asthma — Merck Veterinary Manual, Feline Bronchial Asthma",
+      "https://www.merckvetmanual.com/cat-owners/lung-and-airway-disorders-of-cats/tracheobronchitis-bronchitis-bronchial-asthma-in-cats — Merck Veterinary Manual, Tracheobronchitis (Bronchitis, Bronchial Asthma) in Cats",
+      "https://vcahospitals.com/know-your-pet/inhalant-treatment-for-feline-asthma-and-bronchitis — VCA, Asthma and Bronchitis in Cats",
+    ],
     disclaimer: "이 글은 정보 제공을 목적으로 하며 수의사 진료를 대체하지 않습니다.",
     status: "published",
     publishedAt: "2026-08-02T11:00:00.000Z",

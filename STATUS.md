@@ -3,6 +3,7 @@
 (1) 후속 안정화 R01~R06: R01~R04 구현·단위/통합 테스트 완료 → PR #23 병합·운영 배포 완료(main 7f300b4). R05(e2e·CI)·R06(DB 계측) 미착수.
 (2) 홈 시안: fix/stabilize-r01-r04에서 홈·헤더 코드 적용+로컬 브라우저 검증 완료(미커밋·미배포). 승인 시안 PNG 원본 미확인 → CODEX_HANDOFF §B 명세 기준 구현. 스크린샷: docs/design/home-verify/. 이미지 기록: docs/home-assets.md.
 ## 최근 변경
+- 10-11: 천식·비만세포종·임신 케어 보강 운영 반영(apply-content-update가 중복 시드는 운영 id 일치분만 사용). 남은 얇은 글: 펫로스 2·보험 2(공식 근거 필요)
 - 10-11: 건강 글 5건 추가 보강(FIV/FeLV·피부 혹·고양이 음식알레르기·간질환·참치) 운영 반영. 남은 얇은 글: 천식(시드 중복)·비만세포종(시드 중복)·임신·펫로스 2·보험 2
 - 10-11: 건강 글 7건 보강(운영 DB 반영, 백업 .backup-prod)·shelter 센터 1곳 지역 noindex — 남은 얇은 글 12건은 후속
 - 10-11: 4차 감사 — 이중 인코딩 sources 렌더 정규화(blog 326건 출처 미노출 해소), 사이트맵 shelter 404 6건·feed/sitemap 자기등재 제거 — docs/adsense-audit-4th-20261011.md

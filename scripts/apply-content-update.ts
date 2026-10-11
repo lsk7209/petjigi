@@ -126,7 +126,9 @@ async function main() {
       next = JSON.parse(fs.readFileSync(file, "utf8")) as Fields;
     } else {
       const seeds = seedRecords(slug);
-      if (seeds.length !== 1 || seeds[0].id !== id) {
+      // 같은 slug의 중복 시드가 있어도 운영 id와 일치하는 시드가 정확히 1개면 그것만 쓴다.
+      const matched = seeds.filter((x) => x.id === id);
+      if (matched.length !== 1) {
         results.push({
           slug,
           result: "skip_seed_ambiguous_or_id_mismatch",
@@ -134,7 +136,7 @@ async function main() {
         });
         continue;
       }
-      next = seeds[0];
+      next = matched[0];
     }
     if (String(row.status) !== "published") {
       results.push({ slug, id, result: "skip_not_published" });
