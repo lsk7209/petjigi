@@ -19,53 +19,61 @@ const BLOG_POSTS: NewContent[] = [
     subtitle: "전립선 비대·낭종·농양·종양 유형 차이, 증상, 중성화 수술 역할, 치료 방법",
     metaTitle: "강아지 전립선 질환 — 미중성화 수컷 위험·증상·치료 가이드 | 펫지기",
     metaDescription: "강아지 전립선 질환 원인과 치료. 미중성화 수컷 전립선 비대·낭종·농양·종양 유형별 증상, 배변·배뇨 문제, 중성화 수술 예방 효과, 치료 원칙을 정리했습니다.",
-    body: `<p>중성화하지 않은 수컷 강아지는 나이가 들수록 전립선 질환 위험이 높아진다. 배변이나 배뇨에 이상이 생기면 전립선을 확인해야 한다.</p>
+    body: `<p>중성화하지 않은 중년 이상의 수컷 강아지에서는 전립선 질환이 흔하다. 가장 흔한 것은 양성 전립선 비대(BPH)이며, 세균 감염, 낭종, 드물게 종양도 있다. 증상만으로는 구분이 어려우므로 진료가 필요하다.</p>
 
-<h2>전립선 질환 유형</h2>
-<ul>
-<li><strong>양성 전립선 비대(BPH)</strong>: 가장 흔함, 5살 이상 미중성화 수컷의 50% 이상에서 발생</li>
-<li><strong>전립선 낭종</strong>: BPH와 동반 가능, 요도 압박</li>
-<li><strong>전립선 농양</strong>: 세균 감염, 발열·복통·전신 증상</li>
-<li><strong>전립선 종양</strong>: 드물지만 예후 불량, 중성화견에서도 발생</li>
-</ul>
+<h2>전립선 질환의 종류</h2>
+<table>
+<thead><tr><th>질환</th><th>특징</th></tr></thead>
+<tbody>
+<tr><td>양성 전립선 비대(BPH)</td><td>고령의 미중성화 수컷에서 흔하며 호르몬에 의해 전립선이 커진다. 증상이 없을 수도 있다</td></tr>
+<tr><td>전립선염·농양</td><td>세균 감염. 열, 통증, 처짐이 나타날 수 있어 응급일 수 있다</td></tr>
+<tr><td>전립선 낭종</td><td>액체가 찬 주머니가 생기며, BPH와 함께 나타나기도 한다</td></tr>
+<tr><td>전립선 종양</td><td>드물지만 악성 경향이 있다. 중성화한 개에서도 생길 수 있다</td></tr>
+</tbody>
+</table>
 
 <h2>증상</h2>
+<ul>
+<li>소변에 피가 섞이거나 포피에서 피 섞인 분비물이 나온다 (BPH에서 가장 흔한 보고)</li>
+<li>배변 곤란, 변이 납작하거나 가늘다</li>
+<li>배뇨 곤란, 소변 줄기가 가늘다</li>
+<li>걸음이 뻣뻣하고 뒷다리를 불편해함 (통증)</li>
+<li>열, 구토, 식욕 부진 (감염을 의심)</li>
+</ul>
+
 <div class="callout-dog">
-<strong>전립선 질환 주요 증상</strong><br>
-• 변을 볼 때 힘줌, 납작한 변(리본 모양)<br>
-• 배뇨 곤란, 혈뇨, 요도 분비물<br>
-• 뒷다리 운동 이상(전립선 비대로 골반 내 압박)<br>
-• 전립선 농양: 발열, 복통, 식욕 저하, 무기력<br>
-• 증상 없는 경우도 많음 (건강검진으로 발견)
+<strong>바로 병원에 가야 하는 경우</strong><br>
+• 소변을 전혀 못 본다<br>
+• 열이 나고 처지며 구토한다<br>
+• 심한 복통으로 자세를 잡지 못한다
 </div>
 
 <h2>진단</h2>
-<ul>
-<li>직장 내 촉진: 전립선 크기·경도 확인</li>
-<li>복부 초음파: 전립선 내부 구조 평가</li>
-<li>소변 배양: 감염 확인</li>
-<li>의심 시 세침 흡인·생검: 종양 감별</li>
-</ul>
+<p>수의사가 직장 촉진으로 전립선 크기와 통증 여부를 확인한다. BPH에서는 대개 통증 없이 좌우 대칭으로 커져 있다. 이후 복부 초음파와 방사선, 소변 검사, 필요 시 세포·배양 검사로 감별한다.</p>
 
 <h2>치료</h2>
 <ul>
-<li><strong>BPH·낭종</strong>: 중성화 수술 → 수 주 내 전립선 크기 감소</li>
-<li><strong>농양</strong>: 항생제 치료 + 배농, 중증 시 수술</li>
-<li><strong>종양</strong>: 예후 불량, 팔리아티브 케어 위주</li>
+<li><strong>중성화 수술</strong>: 번식 계획이 없다면 BPH의 가장 확실한 치료이며, 수술 후 전립선이 줄어드는 것이 일반적이다. 머크 수의학 매뉴얼도 번식·전시용이 아닌 개에서는 거세를 선택 치료로 소개한다.</li>
+<li><strong>약물 치료</strong>: 번식견은 호르몬 조절 약물로 관리할 수 있으나 약을 지속해야 효과가 유지되고 약물 선택은 수의사가 한다.</li>
+<li><strong>감염 치료</strong>: 전립선염이면 전립선에 침투 가능한 항생제를 충분한 기간 사용한다. 농양은 수술이나 배농이 필요할 수 있다.</li>
 </ul>
 
-<h2>중성화 수술의 예방 효과</h2>
-<p>중성화는 BPH·전립선 낭종·농양을 거의 완전히 예방한다. 번식 계획이 없다면 전립선 건강 측면에서도 중성화가 권장된다.</p>
+<h2>예방과 관리</h2>
+<ul>
+<li>번식 계획이 없다면 중성화 시기를 수의사와 상의한다 (<a href="/blog/dog-neutering-timing-complete">중성화 시기 가이드</a>).</li>
+<li>중년 이후 정기 검진에서 전립선 상태를 확인한다.</li>
+<li>소변·대변 모양과 배변 자세 변화를 관찰한다.</li>
+</ul>
 
 <h2>마지막으로</h2>
-<p>미중성화 중·노령 수컷이 배변·배뇨에 이상이 생기면 전립선 검사를 요청하자. 조기 발견이 치료를 쉽게 만든다.</p>`,
+<p>혈뇨, 변 가늘어짐, 배변·배뇨 곤란은 방치하지 말고 진료를 받자. 대부분의 양성 전립선 질환은 중성화로 잘 조절된다.</p>`,
     authorName: "펫지기 에디터",
     authorCredential: "반려동물 건강 정보 큐레이터",
     ymyl: true,
-    sources: JSON.stringify([
-      "Christensen, B.W. — Canine prostate disease. Vet Clin North Am Small Anim Pract 2018",
-      "한국수의외과학회 전립선 질환 임상 가이드라인",
-    ]),
+    sources: [
+      "https://www.merckvetmanual.com/reproductive-system/prostatic-diseases-in-small-animals/benign-prostatic-hyperplasia-in-dogs — Merck Veterinary Manual, Benign Prostatic Hyperplasia in Dogs",
+      "https://www.merckvetmanual.com/reproductive-system/prostatic-diseases/benign-prostatic-hyperplasia-in-dogs-and-cats — Merck Veterinary Manual, Benign Prostatic Hyperplasia in Dogs and Cats",
+    ],
     disclaimer: "이 글은 정보 제공을 목적으로 하며 수의사 진료를 대체하지 않습니다.",
     status: "published",
     publishedAt: "2027-01-13T11:00:00.000Z",

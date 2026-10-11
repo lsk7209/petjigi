@@ -138,40 +138,60 @@ const BLOG_POSTS: NewContent[] = [
     subtitle: "체리 아이 원인, 수술 vs 비수술 선택 기준, 수술 후 관리, 고위험 품종",
     metaTitle: "강아지 체리 아이 — 원인·수술 기준·수술 후 관리 가이드 | 펫지기",
     metaDescription: "강아지 눈 안쪽에 빨간 덩어리가 생기는 체리 아이 원인과 치료. 제3안검 탈출 증상, 수술 기준, 집어넣기 vs 절제 비교, 수술 후 관리를 정리했습니다.",
-    body: `<p>강아지 눈 안쪽 모서리에 분홍·빨간 덩어리가 나타났다면 체리 아이(제3안검 탈출)다. 귀엽게 생겼지만 치료가 필요하다.</p>
+    body: `<p>체리아이(cherry eye)는 눈 안쪽 구석에서 붉은 덩어리가 튀어나오는 질환이다. 제3안검(순막)에 있는 눈물샘이 제자리를 벗어나 밖으로 빠져나온 상태다. 보기에는 단순한 혹 같지만, 방치하거나 잘못 처치하면 안구건조증으로 이어질 수 있어 치료 방향을 알아 두는 것이 좋다.</p>
 
-<h2>체리 아이란</h2>
-<p>제3안검(瞬膜) 내부에 있는 눈물샘 腺)이 제자리에서 탈출한 상태다. 제3안검 눈물샘은 전체 눈물 생산의 30~50%를 담당한다. 방치하면 눈물 생산 감소 → 건성안(KCS)으로 이어질 수 있다.</p>
+<h2>원인과 호발 견종</h2>
+<p>제3안검 눈물샘을 고정하는 결합 조직이 약해서 생기는 것으로 알려져 있다. 어린 강아지에서 흔하고, 코커 스패니얼, 불독, 비글, 시츄, 라사압소 등의 견종에서 많이 보고된다. 한쪽 눈에서 먼저 생기고 나중에 반대쪽에도 생길 수 있다.</p>
 
-<h2>고위험 품종</h2>
-<p>불독, 코커스패니얼, 비글, 바셋하운드, 차우차우, 샤페이 등에서 흔하다. 유전적으로 제3안검 인대가 약한 품종들이다.</p>
+<h2>증상</h2>
+<ul>
+<li>눈 안쪽 구석에서 분홍색~붉은색 덩어리가 보인다 (간헐적으로 들어갔다 나오기도 한다)</li>
+<li>눈곱, 눈물, 결막 충혈</li>
+<li>눈을 비비거나 앞발로 긁음</li>
+<li>덩어리가 오래 노출되면 건조, 염증, 궤양이 생길 수 있다</li>
+</ul>
 
-<h2>치료 선택</h2>
+<h2>치료: 제거하지 말고 제자리로</h2>
 <div class="callout-dog">
-<strong>체리 아이 치료 옵션</strong><br>
-• <strong>덮어 봉합술(Tucker technique)</strong>: 눈물샘을 제자리에 고정. 눈물 생산 보존. 권장 방법.<br>
-• <strong>절제</strong>: 탈출한 샘 제거 — 간단하지만 건성안 위험. 권장하지 않음.<br>
-• <strong>손으로 밀어 넣기</strong>: 초기 일시적 시도 가능, 대부분 재발<br>
-• <strong>점안 스테로이드</strong>: 경미한 초기 염증에 보조 활용
+<strong>왜 눈물샘을 제거하면 안 될까</strong><br>
+• 제3안검 눈물샘은 눈물 생산에 기여한다<br>
+• VCA 자료에 따르면 이 눈물샘을 제거한 개는 나중에 안구건조증(건성 각결막염)에 걸리기 쉽다<br>
+• 그래서 현재는 눈물샘을 제자리에 복원하는 수술이 기본이다
 </div>
+
+<table>
+<thead><tr><th>수술 방법</th><th>설명</th></tr></thead>
+<tbody>
+<tr><td>포켓(주머니) 법</td><td>제3안검 안쪽에 새 주머니를 만들어 눈물샘을 넣고 봉합한다. 안과 수의사가 선호하는 방법 중 하나로 소개된다</td></tr>
+<tr><td>고정(택킹) 법</td><td>눈물샘을 주변 조직에 봉합해 고정한다. 방법과 위치에 따라 눈 움직임에 영향을 줄 수 있어 술자 판단이 중요하다</td></tr>
+</tbody>
+</table>
+<p>재발하는 경우가 있어 다른 방법으로 다시 수술하기도 한다. 어느 방법이 맞는지는 개체의 상태와 수술 경험에 따라 달라지므로 안과 진료가 가능한 병원에서 상담한다.</p>
+
+<h2>수술 전 관리</h2>
+<ul>
+<li>덩어리를 손으로 밀어 넣거나 마사지하는 방법이 일시적으로 효과가 있다는 의견도 있지만, 수의사 지도 없이 하지 않는다.</li>
+<li>눈을 비비지 못하게 넥칼라를 씌우고, 건조·염증이 심하면 점안제를 처방받는다.</li>
+<li>덩어리가 커지고 붉게 부어 있다면 빠르게 진료를 받는 것이 좋다.</li>
+</ul>
 
 <h2>수술 후 관리</h2>
 <ul>
-<li>엘리자베스 칼라 착용 (1~2주)</li>
-<li>점안제 정기 투여</li>
-<li>재발 확인: 5~20%에서 재발 가능 → 재수술</li>
-<li>건성안 진행 여부 장기 모니터링</li>
+<li>처방받은 점안제와 항생제를 정해진 일정대로 사용한다.</li>
+<li>눈을 비비지 않도록 넥칼라를 유지한다.</li>
+<li>다시 튀어나오거나 부기, 분비물이 늘면 재진 받는다.</li>
 </ul>
 
 <h2>마지막으로</h2>
-<p>체리 아이는 발견하면 빨리 치료할수록 눈물샘 손상이 적다. 눈물샘 보존이 핵심이므로 절제가 아닌 덮어 봉합술을 선택하는 수의안과의를 선택하는 것이 중요하다.</p>`,
+<p>체리아이는 방치한다고 저절로 낫는 경우가 드물다. 눈물샘을 보존하는 방향으로 치료해야 나중에 안구건조증을 피할 수 있다. 증상이 보이면 안과 진료가 가능한 병원을 찾자.</p>`,
     authorName: "펫지기 에디터",
     authorCredential: "반려동물 건강 정보 큐레이터",
     ymyl: true,
-    sources: JSON.stringify([
-      "Grahn, B.H. & Storey, E.S. — Lacrimonasal Duct Anomalies in the Dog. Vet Ophthalmol 2004",
-      "한국수의안과학회 체리 아이 임상 가이드라인",
-    ]),
+    sources: [
+      "https://vcahospitals.com/-/media/2/vca/documents/hospitals/virginia/southpaws/prolapsed_gland_third_eyelid_cherryeye_southpaws.ashx — VCA SouthPaws, Prolapsed gland of the third eyelid (Cherry eye)",
+      "https://www.acvo.org/tips-treatments-tricks/zwylgfp4x7lp4gp8f87p934lewy2tg — ACVO, Cherry eye: should it stay or should it go?",
+      "https://vetmedbiosci.colostate.edu/vth/services/ophthalmology/cherry-eye/ — Colorado State University 수의대, Cherry Eye",
+    ],
     disclaimer: "이 글은 정보 제공을 목적으로 하며 수의사 진료를 대체하지 않습니다.",
     status: "published",
     publishedAt: "2026-11-17T11:00:00.000Z",
