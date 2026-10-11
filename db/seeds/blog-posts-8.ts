@@ -274,38 +274,58 @@ const BLOG_POSTS_8: NewContent[] = [
     title: "고양이 구내염 — 밥 안 먹고 침 흘린다면 확인해야 할 것",
     metaTitle: "고양이 구내염 증상·원인·치료 | 통증·침흘림·식욕감소 | 펫지기",
     metaDescription: "고양이 구내염(FCGS) 원인과 증상. 식욕 감소·침 흘림·그루밍 기피 신호, 발치 치료 선택, 집에서 할 수 있는 구강 관리법.",
-    body: `<p>고양이가 갑자기 밥을 잘 안 먹거나 먹다가 멈추거나, 입에서 침을 흘리기 시작했다면 구강 통증을 의심해야 한다. 고양이 구내염(FCGS, Feline Chronic Gingivostomatitis)은 잇몸과 구강 점막에 발생하는 심한 만성 염증으로, 고양이가 경험하는 가장 고통스러운 질환 중 하나로 꼽힌다.</p>
+    body: `<p>고양이가 밥그릇 앞에서 머뭇거리거나 먹다가 소리를 내고, 침을 흘리고 입 냄새가 심해졌다면 입안 통증을 의심한다. 구내염(만성 치은구내염)은 입안 점막과 잇몸에 심한 염증이 생기는 질환으로 매우 아프고, 치료가 쉽지 않은 편이다.</p>
 
-<h2>구내염 주요 증상</h2>
+<h2>이런 신호가 있다</h2>
 <ul>
-  <li>밥을 먹다가 갑자기 멈추거나, 한쪽으로만 씹거나, 음식을 흘리는 행동</li>
-  <li>평소보다 침을 많이 흘림 (때로 혈액이 섞인 침)</li>
-  <li>입 주변을 자꾸 발로 닦는 행동</li>
-  <li>그루밍을 중단하거나 급격히 줄임 (입이 아파서)</li>
-  <li>구강에서 심한 악취</li>
-  <li>무기력, 체중 감소</li>
+<li>침 흘림, 심한 입 냄새</li>
+<li>밥을 먹으려다 포기하거나 한쪽으로만 씹음</li>
+<li>체중 감소, 활동량 감소, 예민해짐</li>
+<li>아파서 그루밍을 못해 털이 거칠고 지저분해짐</li>
+<li>입 안쪽 잇몸이 붉게 붓고 궤양이 보일 수 있음</li>
 </ul>
 
-<h2>원인과 기전</h2>
-<p>정확한 원인은 아직 완전히 밝혀지지 않았다. 구강 내 세균·치석에 대한 면역계의 과도한 반응이 주요 메커니즘으로 보인다. FIV, FeLV, 칼리시바이러스 감염이 동반되거나 유발 인자가 되는 경우가 있다. 일부 고양이에서 발생하며, 조기 진단이 중요하다.</p>
+<div class="callout-cat">
+<strong>빨리 진료받아야 하는 경우</strong><br>
+• 하루 이상 거의 먹지 못함 — 고양이는 오래 굶으면 간에 문제가 생길 수 있다<br>
+• 입을 만지면 심하게 아파하거나 공격적으로 변함<br>
+• 입에서 피가 나거나 얼굴이 붓음
+</div>
 
-<h2>치료 선택지</h2>
-<p>구내염 치료는 수의사의 구강 검사와 치과 방사선 촬영을 기반으로 결정된다. 약물 치료(항생제, 스테로이드, 면역조절제)로 일시적 개선이 가능하지만 재발이 흔하다. 전체 발치 또는 후구치 발치 후 많은 고양이에서 증상이 크게 개선되지만, 일부는 지속적인 관리가 필요하다.</p>
+<h2>진단</h2>
+<p>입안 검사와 함께 마취하에 전체 입안 방사선 검사를 하는 경우가 많다. 치아 뿌리 문제를 확인해야 하고, 레트로바이러스(FeLV·FIV) 검사와 혈액검사로 다른 질환을 확인한다. 의심되는 병변은 조직검사를 한다.</p>
 
-<h2>집에서 할 수 있는 구강 관리</h2>
-<p>구내염이 없더라도 일상적인 구강 관리는 예방에 중요하다. 고양이가 허용한다면 하루 한 번 부드러운 고양이용 칫솔로 닦아주는 것이 가장 효과적이다. 칫솔질이 어렵다면 VOHC(수의구강건강위원회) 인증 덴탈 간식이 보조 방법이 될 수 있다. 덴탈 간식 선택 기준은 <a href="/blog/cat-snack-selection-guide">고양이 간식 선택 가이드</a>에서 확인하자.</p>
+<h2>치료 방향</h2>
+<table>
+<thead><tr><th>방법</th><th>내용</th></tr></thead>
+<tbody>
+<tr><td>발치</td><td>모든 또는 거의 모든 치아를 뽑는 것이 현재 권장되는 주요 치료다. 남은 치근 조각이 있으면 호전을 막으므로 방사선으로 확인한다</td></tr>
+<tr><td>약물 치료</td><td>통증 조절을 위한 진통제, 필요 시 항생제 등을 쓴다. 스테로이드는 장기 부작용이 있어 단기 증상 완화에 제한적으로 쓰는 추세로 소개된다</td></tr>
+<tr><td>면역 조절 치료</td><td>발치에 반응이 부족한 경우 인터페론, 사이클로스포린 같은 선택지를 검토한다</td></tr>
+</tbody>
+</table>
+<p>발치를 해도 모든 고양이가 호전되는 것은 아니다. 메르크 수의학 매뉴얼은 상당수가 발치만으로는 충분히 반응하지 않는다고 설명한다. 이 경우 지속적인 약물 관리가 필요하다.</p>
 
-<p>구내염 치료는 비용이 클 수 있다. <a href="/insurance/compare">펫보험</a>의 치과 치료 보장 여부를 미리 확인해 두자.</p>`,
+<h2>집에서 도울 수 있는 것</h2>
+<ul>
+<li>부드러운 습식 사료나 데운 사료로 먹기 쉽게 한다.</li>
+<li>체중과 식사량을 기록한다.</li>
+<li>처방받은 진통제를 시간에 맞춰 준다. 사람용 진통제는 고양이에게 위험할 수 있어 절대 임의로 주지 않는다.</li>
+<li>예방적으로 평소 치아 관리와 정기 구강 검진을 받는다.</li>
+</ul>
+
+<h2>마지막으로</h2>
+<p>입이 아프면 고양이는 소리를 내기보다 조용히 덜 먹는다. 식욕 변화와 침 흘림을 놓치지 말고, 구강 검진과 전체 방사선 검사를 포함해 원인을 확인하자.</p>`,
     ymyl: true,
-    disclaimer: YMYL_DISCLAIMER,
+    disclaimer: "이 글은 일반적인 정보 제공 목적으로 작성되었으며, 수의학적 진단·처방·치료를 대체하지 않습니다. 반려동물의 건강 이상이 의심될 경우 반드시 동물병원에서 수의사의 진료를 받으세요.",
     status: "published",
     publishedAt: scheduleDate(43),
     authorName: "펫지기 에디터",
-    sources: JSON.stringify([
-      "Cornell Feline Health Center — Stomatitis in Cats",
-      "Journal of Feline Medicine and Surgery — Feline Chronic Gingivostomatitis",
-      "WSAVA — Dental Disease Guidelines",
-    ]),
+    sources: [
+      "https://www.vet.cornell.edu/departments-centers-and-institutes/cornell-feline-health-center/health-information/feline-health-topics/gingivostomatitis — Cornell Feline Health Center, Gingivostomatitis",
+      "https://vcahospitals.com/know-your-pet/gingivitis-and-stomatitis-in-cats — VCA, Gingivitis and Stomatitis in Cats",
+      "https://www.merckvetmanual.com/digestive-system/diseases-of-the-mouth-in-small-animals/oral-inflammatory-and-ulcerative-disease-in-small-animals — Merck Veterinary Manual, Oral Inflammatory and Ulcerative Disease in Small Animals",
+    ],
     updatedAt: NOW,
     createdAt: NOW,
   },
@@ -425,46 +445,58 @@ const BLOG_POSTS_8: NewContent[] = [
     title: "고양이 결막염 — 눈이 빨갛고 눈곱이 심하다면",
     metaTitle: "고양이 결막염 원인·증상·치료 | 헤르페스·칼리시·클라미디아 | 펫지기",
     metaDescription: "고양이 결막염 주요 원인(헤르페스·칼리시바이러스·클라미디아)과 증상. 집에서 할 수 있는 눈 청소법, 동물병원 치료가 필요한 기준.",
-    body: `<p>고양이 눈이 빨개지거나 한쪽 눈이 자꾸 감기거나 눈곱이 갑자기 많아졌다면 결막염을 의심해 볼 수 있다. 고양이 결막염은 매우 흔하지만, 원인에 따라 치료 방향이 다르기 때문에 집에서 임의로 눈약을 넣는 것은 위험할 수 있다.</p>
+    body: `<p>고양이 눈이 빨갛고 눈곱이 끼면 결막염을 의심한다. 결막염은 눈꺼풀 안쪽과 안구 표면을 덮는 점막의 염증이다. 고양이에서는 바이러스나 세균 감염이 흔한 원인이라 원인에 따라 치료와 관리가 달라진다.</p>
+
+<h2>어떤 모습인가</h2>
+<ul>
+<li>눈이 붉고 결막이 부어 있음</li>
+<li>맑거나 끈적한 눈곱, 누런·녹색 분비물</li>
+<li>눈을 자주 깜빡이거나 반쯤 감음</li>
+<li>재채기, 콧물이 함께 나타나기도 함</li>
+</ul>
 
 <h2>주요 원인</h2>
+<table>
+<thead><tr><th>원인</th><th>특징</th></tr></thead>
+<tbody>
+<tr><td>고양이 헤르페스바이러스</td><td>고양이 결막염의 흔한 원인으로 알려져 있다. 스트레스(이사, 호텔, 병원)에 재발하기도 한다. 보통 일정 기간 뒤 좋아지지만 보균 상태가 될 수 있다</td></tr>
+<tr><td>클라미디아</td><td>어린 고양이에서 더 흔하다. 누런 분비물과 눈꺼풀 부종이 두드러질 수 있고 긴 기간의 항생제 치료가 필요하다. 함께 사는 고양이도 함께 치료하라고 안내한다</td></tr>
+<tr><td>칼리시바이러스·세균</td><td>상부 호흡기 증상과 함께 나타나는 경우가 많다</td></tr>
+<tr><td>이물·자극·눈물관 문제</td><td>한쪽 눈에만 반복될 때 의심한다</td></tr>
+</tbody>
+</table>
+
+<div class="callout-cat">
+<strong>당일 진료가 필요한 경우</strong><br>
+• 눈을 뜨지 못할 정도로 심하게 찡그림 (각막 궤양 가능성)<br>
+• 눈이 뿌옇게 보이거나 표면이 변함<br>
+• 한쪽 눈만 갑자기 심해짐<br>
+• 식욕 저하, 열, 무기력이 함께 있음
+</div>
+
+<h2>병원에서는</h2>
+<p>눈 검사와 형광 염색으로 각막 상처를 확인하고, 필요하면 결막 면봉이나 도말 검사로 원인을 찾는다. 원인에 따라 항생제 안약, 항바이러스제, 보조 치료를 쓴다. 약 종류와 기간은 수의사가 정한다.</p>
+
+<h2>집에서 해도 되는 것, 하면 안 되는 것</h2>
 <ul>
-  <li><strong>헤르페스바이러스(FHV-1)</strong>: WSAVA에 따르면 가장 흔한 원인. 스트레스로 재발하며, Cornell FHC가 강조하듯 각막 병변(각막궤양)을 유발할 수 있다.</li>
-  <li><strong>칼리시바이러스(FCV)</strong>: 상부호흡기 감염과 동반. 구강 궤양이 함께 나타나는 경우가 많다.</li>
-  <li><strong>클라미디아(Chlamydophila felis)</strong>: 주로 결막만 침범. 어린 고양이에서 더 흔하며, 사람에게 드물게 전염 가능한 인수공통 감염이다.</li>
-  <li><strong>이물질 또는 자극</strong>: 먼지, 연기, 샴푸 등 자극 물질에 의한 일시적 결막 충혈</li>
-  <li><strong>알러지</strong>: 계절성 또는 환경 알러지 반응</li>
+<li>눈곱은 미지근한 물에 적신 깨끗한 거즈로 부드럽게 닦는다. 한 번 쓴 거즈는 버리고 눈마다 따로 쓴다.</li>
+<li>사람용 안약이나 남은 안약을 임의로 넣지 않는다. 각막 궤양이 있으면 악화될 수 있다.</li>
+<li>다묘 가정은 전파 가능성이 있으므로 식기와 침구를 분리하고 손을 씻는다.</li>
+<li>처방받은 약은 증상이 좋아져도 정해진 기간 끝까지 쓴다.</li>
 </ul>
 
-<h2>증상</h2>
-<ul>
-  <li>눈 충혈 (흰자위가 빨개짐)</li>
-  <li>눈물이 과다하거나 눈곱이 많아짐 (색: 맑음~노란색·초록색)</li>
-  <li>한쪽 또는 양쪽 눈이 자꾸 감김</li>
-  <li>눈을 발로 비비는 행동</li>
-</ul>
-
-<h2>집에서 할 수 있는 눈 관리</h2>
-<p>눈 주변 눈곱은 청결한 면 거즈나 습한 면봉으로 부드럽게 닦아준다. 눈 안쪽에서 바깥쪽 방향으로 닦는다. 여러 고양이가 있다면 교차 감염 예방을 위해 각각의 도구를 사용한다. 사람용 눈약, 안약은 절대 사용하지 않는다.</p>
-
-<h2>동물병원 진료가 필요한 경우</h2>
-<ul>
-  <li>눈곱이 노란색·초록색이거나 양이 많은 경우</li>
-  <li>눈을 완전히 못 뜨는 경우</li>
-  <li>2~3일 이상 개선 없거나 악화되는 경우</li>
-  <li>각막이 뿌옇거나 눈에 궤양이 의심되는 경우</li>
-</ul>
-<p>FHV-1 결막염은 스트레스로 재발한다. 고양이 스트레스 관련 호흡기 문제는 <a href="/blog/cat-respiratory-problems-guide">고양이 호흡기 문제 가이드</a>에서 연관 정보를 확인하자. 강아지의 눈 문제 비교가 필요하다면 <a href="/blog/dog-eye-problems-guide">강아지 눈 문제 가이드</a>도 참고하자.</p>`,
+<h2>마지막으로</h2>
+<p>결막염은 흔하지만 원인에 따라 치료가 다르고, 각막 질환과 구분해야 한다. 이틀 이상 이어지거나 눈을 심하게 찡그리면 진료를 받자.</p>`,
     ymyl: true,
-    disclaimer: YMYL_DISCLAIMER,
+    disclaimer: "이 글은 일반적인 정보 제공 목적으로 작성되었으며, 수의학적 진단·처방·치료를 대체하지 않습니다. 반려동물의 건강 이상이 의심될 경우 반드시 동물병원에서 수의사의 진료를 받으세요.",
     status: "published",
     publishedAt: scheduleDate(45),
     authorName: "펫지기 에디터",
-    sources: JSON.stringify([
-      "WSAVA — Feline Upper Respiratory Disease Guidelines",
-      "Cornell Feline Health Center — Eye Infections in Cats",
-      "Merck Veterinary Manual — Conjunctivitis in Cats",
-    ]),
+    sources: [
+      "https://vcahospitals.com/know-your-pet/conjunctivitis-in-cats — VCA, Conjunctivitis in Cats",
+      "https://vcahospitals.com/know-your-pet/conjunctivitis-feline-herpes-viral — VCA, Conjunctivitis - Feline Herpes Viral",
+      "https://www.merckvetmanual.com/cat-owners/eye-disorders-of-cats/chlamydial-conjunctivitis-in-cats-feline-pneumonitis — Merck Veterinary Manual, Chlamydial Conjunctivitis in Cats",
+    ],
     updatedAt: NOW,
     createdAt: NOW,
   },
