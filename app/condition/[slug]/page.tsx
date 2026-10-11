@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { parseStoredSources } from "@/lib/content-sources";
 import { buildToc } from "@/lib/toc";
 import { publicContentCondition } from "@/lib/content-publication-sql";
 import Link from "next/link";
@@ -146,6 +147,7 @@ export default async function ConditionPage({
   const content = await getConditionContent(slug);
 
   if (!content) notFound();
+  const sources = parseStoredSources(content.sources);
 
   const { headings, html: bodyWithIds } = buildToc(content.body);
     const faqItems = extractFaq(content.body);
@@ -275,11 +277,11 @@ export default async function ConditionPage({
         />
         <OutboundLinkTracker />
 
-        {Array.isArray(content.sources) && content.sources.length > 0 && (
+        {sources.length > 0 && (
           <section className="mt-8 sm:mt-10 pt-5 sm:pt-6 border-t border-[var(--brand-border)]" aria-label="참고 자료">
             <h2 className="text-sm font-bold text-[var(--brand-text)] mb-3">📚 참고 자료</h2>
             <ul className="space-y-1.5">
-              {(content.sources as string[]).map((s, i) => (
+              {sources.map((s, i) => (
                 <li key={i} className="text-xs sm:text-sm text-[var(--brand-text-secondary)] flex gap-2">
                   <span className="shrink-0 text-[var(--brand-accent)]">·</span>
                   <span>{s}</span>

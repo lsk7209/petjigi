@@ -21,5 +21,13 @@ test("committed sitemap-0.xml omits ambiguous multi-sido region pages (noindex) 
   for (const slug of ["buk", "dong", "gangseo", "jung", "nam", "seo"]) {
     assert.equal(new RegExp(`<loc>https://petjigi\.kr/${slug}/`).test(xml), false, slug);
   }
+  for (const slug of ["buk", "dong", "gangseo", "jung", "nam", "seo"]) {
+    assert.equal(xml.includes(`<loc>https://petjigi.kr/shelter/${slug}</loc>`), false, `shelter/${slug}`);
+  }
   assert.equal(xml.includes("<lastmod>"), false, "빌드 시각 일괄 lastmod 금지");
+});
+
+test("committed sitemap-0.xml lists only pages, not feeds or other sitemaps", () => {
+  const xml = fs.readFileSync("public/sitemap-0.xml", "utf8");
+  assert.equal(/<loc>[^<]*\.xml<\/loc>/.test(xml), false);
 });

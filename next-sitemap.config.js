@@ -11,7 +11,7 @@ function ambiguousSigunguSlugs() {
   for (const m of src.matchAll(/sigunguSlug:\s*"([^"]+)"/g)) counts.set(m[1], (counts.get(m[1]) ?? 0) + 1);
   return [...counts].filter(([, n]) => n > 1).map(([slug]) => slug).sort();
 }
-const AMBIGUOUS_REGION_EXCLUDES = ambiguousSigunguSlugs().map((slug) => `/${slug}/*`);
+const AMBIGUOUS_REGION_EXCLUDES = ambiguousSigunguSlugs().flatMap((slug) => [`/${slug}/*`, `/shelter/${slug}`]);
 
 /** @type {import('next-sitemap').IConfig} */
 module.exports = {
@@ -58,6 +58,8 @@ module.exports = {
     "/rescue", "/rescue/*", "/search*", "/admin/*", "/*?page=*", "/*?cat=*",
     "/opengraph-image", "/**/opengraph-image", "/icon", "/apple-icon", "/manifest.webmanifest",
     "/guide/*", "/blog/*", "/condition/*", "/breed/*/*",
+    // 피드·콘텐츠 사이트맵은 페이지가 아니므로 URL 사이트맵에 넣지 않는다
+    "/feed.xml", "/sitemap-content.xml",
     ...AMBIGUOUS_REGION_EXCLUDES,
     "/sido/chungbuk", "/sido/chungnam", "/sido/gangwon", "/sido/gyeongbuk",
     "/sido/gyeongnam", "/sido/jeju", "/sido/jeonbuk", "/sido/jeonnam",
