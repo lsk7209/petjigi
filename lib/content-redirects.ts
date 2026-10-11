@@ -47,6 +47,11 @@ export const CONTENT_REDIRECTS: readonly ContentRedirect[] = [
     reason: "동일 검색 의도(강아지와 등산·하이킹 안전). 대표 문서가 준비물·과열·산행 후 점검을 모두 다룸",
   },
   {
+    from: "/blog/pet-death-registration-cancel",
+    to: "/blog/animal-registration-change-cancel-guide",
+    reason: "동일 검색 의도(반려동물 사망 시 동물등록 말소). 대표 문서가 변경·말소 절차를 모두 다룸",
+  },
+  {
     from: "/blog/pet-insurance-comparison-guide",
     to: "/blog/pet-insurance-comparison-method",
     reason: "동일 검색 의도(펫보험 비교 기준). 더 짧은 문서이며 비교 기준·한도·갱신 항목은 대표 문서가 모두 다룸",
