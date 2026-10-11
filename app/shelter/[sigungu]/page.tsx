@@ -9,6 +9,7 @@ import { breadcrumbSchema, faqSchema, collectionPageSchema } from "@/lib/seo/str
 import { CategoryCta } from "@/components/content/category-cta";
 import { AdSlot } from "@/components/ads/ad-slot";
 import { AdPolicyProvider } from "@/components/providers/ad-policy-provider";
+import { isThinShelterRegion } from "@/lib/shelter-index-policy";
 import { ShelterViewTracker } from "@/components/analytics/shelter-view-tracker";
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://petjigi.kr";
@@ -43,7 +44,7 @@ export async function generateMetadata({
 
   const shelterList = await getCachedSheltersBySigungu(region.sigungu);
 
-  if (shelterList.length === 0) {
+  if (isThinShelterRegion(shelterList.length)) {
     return {
       title: { absolute: `${region.sigungu} 동물보호센터 | 펫지기` },
       robots: { index: false, follow: true },
@@ -134,7 +135,7 @@ export default async function ShelterSigunguPage({
       />
     <main
       className="max-w-5xl mx-auto px-4 py-8 sm:py-12"
-      {...(shelterList.length === 0 ? { "data-ads-policy": "block" } : {})}
+      {...(isThinShelterRegion(shelterList.length) ? { "data-ads-policy": "block" } : {})}
     >
       {/* 브레드크럼 */}
       <nav className="text-xs text-[var(--brand-text-secondary)] mb-5 sm:mb-6 flex items-center gap-1.5 flex-wrap" aria-label="breadcrumb">

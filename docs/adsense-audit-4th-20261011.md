@@ -31,3 +31,8 @@
 
 ## E. 결론
 **2. 주요 위험 일부 잔존** — 출처 미노출·사이트맵 404는 수정, 얇은 본문(blog 49, shelter 27)은 결정 대기. AdSense 계정 상태 미확인.
+
+## 후속 조치 (2026-10-11)
+- 얇은 건강 글 7건 보강(귀혈종·전립선·콧물·발톱 파절·고양이 각막·에디슨병·퇴행성 척수병증): 미확인 수치·약물명 제거, Merck/VCA/PMC 출처 3건 이내 부착(array 리터럴). 운영 DB는 `apply-content-update.ts`로 반영(백업 `.backup-prod/`, 복구 `--restore`). `dog-mast-cell-tumor-guide`는 시드 slug 중복으로 제외.
+- shelter 센터 1곳 지역 10개: noindex+광고 차단+사이트맵 제거(`lib/shelter-index-policy.ts`).
+- 글 통합(308)은 보류: 겹침이 확인된 쌍이 없어 근거 없이 합치지 않음.
