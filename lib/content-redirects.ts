@@ -42,6 +42,11 @@ export const CONTENT_REDIRECTS: readonly ContentRedirect[] = [
     reason: "동일 검색 의도(비장 종괴의 양성·악성 구분). 대표 문서가 비장 종괴 감별·진단·치료를 모두 다룸",
   },
   {
+    from: "/blog/dog-hiking-safety-guide",
+    to: "/blog/dog-hiking-mountain-safety",
+    reason: "동일 검색 의도(강아지와 등산·하이킹 안전). 대표 문서가 준비물·과열·산행 후 점검을 모두 다룸",
+  },
+  {
     from: "/blog/pet-insurance-comparison-guide",
     to: "/blog/pet-insurance-comparison-method",
     reason: "동일 검색 의도(펫보험 비교 기준). 더 짧은 문서이며 비교 기준·한도·갱신 항목은 대표 문서가 모두 다룸",
