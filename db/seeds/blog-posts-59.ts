@@ -202,7 +202,7 @@ const BLOG_POSTS: NewContent[] = [
       "https://www.aspca.org/news/top-10-tips-camping-your-pet — ASPCA, Top 10 Tips for Camping with Your Pet",
       "https://www.akc.org/expert-advice/travel/camping-with-dogs/ — AKC, Camping With Dogs",
     ],
-    disclaimer: null,
+    disclaimer: "이 글은 일반적인 정보 제공 목적으로 작성되었으며, 수의학적 진단·처방·치료를 대체하지 않습니다. 반려동물의 건강 이상이 의심되거나 응급 상황이라면 즉시 동물병원에서 수의사의 진료를 받으세요.",
     status: "published",
     publishedAt: "2026-08-12T09:00:00.000Z",
     createdAt: NOW,
