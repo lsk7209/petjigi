@@ -5,7 +5,7 @@ import { contents, breeds } from "@/db/schema";
 import { eq, and, desc } from "drizzle-orm";
 import { sitemapUnavailableResponse } from "@/lib/seo/sitemap-response";
 import { resolveLastmod } from "@/lib/seo/lastmod";
-import { REDIRECTED_BLOG_SLUGS } from "@/lib/content-redirects";
+import { isRedirectedContent } from "@/lib/content-redirects";
 
 export const revalidate = 3600;
 
@@ -55,7 +55,7 @@ export async function GET() {
     ]);
 
     const contentUrls = contentRows
-      .filter((r) => !(r.type === "blog" && REDIRECTED_BLOG_SLUGS.has(r.slug)))
+      .filter((r) => !isRedirectedContent(r.type, r.slug))
       .map((r) => {
       const loc = contentUrl(r.type, r.slug);
       const lastmod = resolveLastmod(r.updatedAt, r.publishedAt);

@@ -36,8 +36,28 @@ export const CONTENT_REDIRECTS: readonly ContentRedirect[] = [
     to: "/blog/pet-registration-guide",
     reason: "동일 검색 의도(동물등록 방법). 구 과태료 상한 표현이 남은 문서이며 대표 문서가 정정된 기준을 사용",
   },
+  {
+    from: "/guide/pet-registration-guide-korea",
+    to: "/guide/microchip-registration-complete-guide",
+    reason: "동일 검색 의도(동물등록 방법). 구 과태료 상한 표현이 남은 문서이며 대표 문서가 지자체 안내로 확인한 부과 기준을 사용",
+  },
+  {
+    from: "/guide/pet-microchip-registration-guide",
+    to: "/guide/microchip-registration-complete-guide",
+    reason: "동일 검색 의도(마이크로칩 등록 절차). 더 짧은 문서이며 절차·조회·무료 등록은 대표 문서가 모두 다룸",
+  },
+  {
+    from: "/guide/pet-insurance-exclusions",
+    to: "/blog/pet-insurance-exclusions-guide",
+    reason: "동일 검색 의도(펫보험 면책). 확인되지 않은 면책 일수·출처가 많은 문서이며 거절 사례는 대표 문서에 병합",
+  },
 ];
 
-export const REDIRECTED_BLOG_SLUGS: ReadonlySet<string> = new Set(
-  CONTENT_REDIRECTS.filter((r) => r.from.startsWith("/blog/")).map((r) => r.from.slice("/blog/".length)),
+/** 리디렉션된 원본 문서의 "type/slug" 집합 (사이트맵 등에서 제외) */
+export const REDIRECTED_CONTENT_KEYS: ReadonlySet<string> = new Set(
+  CONTENT_REDIRECTS.map((r) => r.from.replace(/^\//, "")),
 );
+
+export function isRedirectedContent(type: string, slug: string): boolean {
+  return REDIRECTED_CONTENT_KEYS.has(`${type}/${slug}`);
+}
