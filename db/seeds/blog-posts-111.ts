@@ -156,51 +156,58 @@ const BLOG_POSTS: NewContent[] = [
     subtitle: "소음 공포 행동 패턴, 압박 조끼·앤티 칼름 활용, 둔감화 훈련 단계, 응급 처치",
     metaTitle: "강아지 천둥·소음 공포증 훈련 — 둔감화·압박 조끼·응급 대처 | 펫지기",
     metaDescription: "강아지 천둥·소음 공포증 해결 방법. 소음 공포 행동 패턴, 압박 조끼 효과, 단계별 둔감화 훈련, 폭죽·소방차 소리 응급 대처법을 정리했습니다.",
-    body: `<p>강아지가 천둥 소리에 심하게 떨거나, 폭죽 소리에 도망치거나, 청소기만 켜면 숨는다면 소음 공포증이다. 이것은 훈련으로 개선할 수 있다.</p>
+    body: `<p>천둥, 폭죽, 공사 소음을 심하게 무서워하는 강아지는 떨고, 숨고, 헐떡이고, 집 안을 파괴하기도 한다. 소음 공포증은 방치하면 점점 심해지는 경향이 있어 일찍 대응하는 것이 좋다. 훈련과 환경 조정, 필요하면 수의사의 약물 치료를 병행한다.</p>
 
-<h2>소음 공포 행동 패턴</h2>
+<h2>공포 신호</h2>
 <ul>
-<li>심한 떨림, 하악이나 보호자에게 붙기</li>
-<li>숨기 (침대 밑·화장실)</li>
-<li>파괴 행동 (문·창문 긁기)</li>
-<li>도피 시도 (펜스 탈출, 문 부수기)</li>
-<li>배변 실수</li>
+<li>떨림, 헐떡임, 침 흘림, 서성임</li>
+<li>숨기, 보호자에게 매달리기, 탈출 시도</li>
+<li>짖음, 낑낑거림, 배변 실수</li>
+<li>물건을 파괴하거나 문을 긁음</li>
 </ul>
 
-<h2>응급 상황 대처</h2>
+<h2>먼저 수의사 진료</h2>
+<p>갑자기 소음에 예민해졌다면 통증, 청각 변화, 신경 질환, 인지 기능 저하 같은 의학적 원인이 숨어 있을 수 있다. 수의사 검진으로 원인을 먼저 확인하고, 심한 경우 수의 행동 전문가에게 의뢰한다.</p>
+
+<h2>훈련: 둔감화와 역조건화</h2>
+<p>수의 행동 자료는 소음을 아주 작은 볼륨에서부터 시작해 서서히 키우는 둔감화 훈련과, 소리가 날 때 간식·놀이를 짝지어 소리를 좋은 일로 연결하는 역조건화를 함께 쓰라고 권한다.</p>
+<ol>
+<li>무서워하는 소리를 정확히 파악한다 (천둥, 폭죽 등). 녹음 파일을 준비한다.</li>
+<li>개가 반응하지 않을 만큼 아주 작은 볼륨으로 재생하며 간식을 준다.</li>
+<li>하루 짧게(약 10~20분) 반복하고, 개가 편안하면 볼륨을 조금씩 올린다.</li>
+<li>불안 신호(귀가 뒤로, 입술 핥기, 몸이 굳음)가 보이면 단계를 되돌린다.</li>
+<li>몇 주~몇 달에 걸쳐 진행한다. 실제 폭풍과 겹치면 훈련 진도가 깨질 수 있다.</li>
+</ol>
+
 <div class="callout-dog">
-<strong>소음 발생 중 즉각 대처</strong><br>
-• 숨고 싶어 하면 숨게 허용 (강제로 꺼내지 않기)<br>
-• 보호자가 불안해하면 강아지 불안 증폭<br>
-• 압박 조끼(Thundershirt): 일부에서 진정 효과<br>
-• 소음 차단: 창문 닫기, 백색 소음 활용<br>
-• 심한 공포: 수의사 처방 진정제 사전 준비 (폭죽·명절 등 예측 가능 때)
+<strong>하지 말아야 할 것</strong><br>
+• 벌을 주거나 소리를 지르기 — 공포가 더 커진다<br>
+• 억지로 소리에 노출시키기(홍수법)<br>
+• 공포 반응이 올 때 과도하게 안타까워하며 불안을 전달하기 (차분한 태도를 유지하되 위로를 거부하지는 않는다)
 </div>
 
-<h2>둔감화 훈련</h2>
+<h2>폭풍·폭죽이 올 때</h2>
 <ul>
-<li><strong>1단계</strong>: 천둥·폭죽 소리를 매우 작은 볼륨으로 재생 (강아지가 인식 못 할 정도)</li>
-<li><strong>2단계</strong>: 재생 중 간식·놀이 등 긍정 자극 제공</li>
-<li><strong>3단계</strong>: 반응 없이 넘어가면 볼륨을 아주 조금씩 증가</li>
-<li><strong>4단계</strong>: 실제 소음 발생 상황까지 점진적 적응</li>
+<li><strong>안전한 공간</strong>: 개가 평소 좋아하는 크레이트나 창이 없는 방을 마련한다.</li>
+<li><strong>소음 차단</strong>: 커튼을 치고 TV·음악·백색소음으로 소리를 덮는다.</li>
+<li><strong>보조 용품</strong>: 압박 조끼, 페로몬 제품 등이 일부 개에게 도움이 되기도 하지만 모든 개에게 효과가 있지는 않다.</li>
+<li><strong>산책 시간 조정</strong>: 폭죽 시즌에는 소리가 나기 전에 산책을 마친다. 줄과 하네스를 확실히 하고 이름표·마이크로칩을 확인한다. 놀라 도망치는 사고가 흔하다.</li>
+<li><strong>예측 가능한 일상</strong>: 평소 식사·놀이 일정을 유지한다.</li>
 </ul>
 
-<h2>훈련의 한계</h2>
-<ul>
-<li>중증 소음 공포증: 행동 훈련만으로 불충분, 약물 치료 병행 필요</li>
-<li>플루옥세틴·부스피론: 장기 복용으로 기저 불안 감소 (수의사 처방)</li>
-<li>명절 전 2~4주부터 복용 시작해야 효과</li>
-</ul>
+<h2>약물 치료</h2>
+<p>공포가 심하면 수의사가 훈련을 보조하는 약물을 처방할 수 있다. 약은 반드시 수의사의 처방과 용량을 따르고, 사람 약을 임의로 먹이지 않는다.</p>
 
 <h2>마지막으로</h2>
-<p>소음 공포증은 강아지에게 진짜 공포다. "겁쟁이"가 아니라 "도움이 필요한 것"임을 이해하는 것이 훈련의 시작이다.</p>`,
+<p>소음 공포증은 훈련과 환경, 필요하면 약물의 조합으로 호전될 수 있다. 심한 경우는 수의 행동 전문가와 상담하자.</p>`,
     authorName: "펫지기 에디터",
     authorCredential: "반려동물 행동·케어 정보 큐레이터",
     ymyl: false,
-    sources: JSON.stringify([
-      "Overall, K.L. & Dunham, A.E. — Clinical features and outcome of cases with noise phobia. JAVMA 2002",
-      "한국동물행동의학회 소음 공포증 행동 교정 프로토콜",
-    ]),
+    sources: [
+      "https://www.vetstreet.com/our-pet-experts/noise-phobia-tips-to-comfort-a-dog-who-fears-thunder-fireworks-and-other-sounds — Vetstreet, Noise phobia: tips to comfort a dog who fears thunder, fireworks, and other sounds",
+      "https://albertaanimalhealthsource.ca/node/211 — Alberta Animal Health Source, Noise phobia in dogs",
+      "https://askavet.dogster.com/vet-answers/how-can-i-help-my-dog-after-being-exposed-to-loud-noises — Dogster Ask a Vet, How can I help my dog after being exposed to loud noises?",
+    ],
     disclaimer: null,
     status: "published",
     publishedAt: "2026-12-20T09:00:00.000Z",

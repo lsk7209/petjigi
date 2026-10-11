@@ -145,53 +145,59 @@ const BLOG_POSTS: NewContent[] = [
     subtitle: "반려동물 동반 가능 여부 사전 확인, 현장 에티켓, 음식·음료 주의사항",
     metaTitle: "반려동물 동반 카페·식당 에티켓 완전 가이드 | 펫지기",
     metaDescription: "반려동물 동반 카페·식당 이용 방법. 사전 확인 방법, 현장 에티켓, 강아지·고양이에게 위험한 음식·음료 주의사항을 정리했습니다.",
-    body: `<p>반려동물 동반 카페와 식당이 늘고 있다. 함께 나가는 경험은 반려동물과의 유대를 높이는 좋은 방법이다. 에티켓을 알고 가면 모두가 즐거운 시간이 된다.</p>
+    body: `<p>반려동물 동반 카페와 식당이 늘고 있지만, 모든 매장이 같은 규칙을 가진 것은 아니다. 방문 전 확인할 것과 매장에서의 매너, 강아지의 준비도를 정리했다. 규정은 매장과 지자체에 따라 다를 수 있으므로 방문 전에 확인한다.</p>
 
-<h2>방문 전 확인사항</h2>
+<h2>방문 전 확인</h2>
 <ul>
-<li>반려동물 허용 여부 전화·SNS로 사전 확인 (표시되어 있어도 시즌·좌석별로 다를 수 있음)</li>
-<li>크기·종 제한 여부 (소형견만 가능한 곳 많음)</li>
-<li>케이지 필요 여부</li>
-<li>예방접종 증명서 요구 여부 (일부 펫카페)</li>
+<li><strong>동반 정책</strong>: 동반 가능한 구역(실내/테라스), 허용 크기, 이동장 필요 여부, 예약 필요 여부를 전화나 SNS로 확인한다.</li>
+<li><strong>추가 요건</strong>: 예방접종 증명, 매너벨트·기저귀, 배변 사고 시 정책을 확인한다.</li>
+<li><strong>좌석</strong>: 통로에서 떨어진 구석 자리가 좋다. 다른 테이블과 거리가 있어야 강아지가 편안하다.</li>
 </ul>
 
-<h2>방문 전 준비</h2>
+<h2>강아지가 준비되었는지 점검</h2>
+<table>
+<thead><tr><th>점검</th><th>기준</th></tr></thead>
+<tbody>
+<tr><td>짖음</td><td>낯선 소리와 사람에 크게 짖지 않는다</td></tr>
+<tr><td>기본 신호</td><td>'앉아', '엎드려', '기다려', '놔'를 따른다. 훈련사들은 떨어진 음식을 먹지 않게 하는 '놔'와 매트에 눕는 '자리' 신호를 권한다</td></tr>
+<tr><td>사회성</td><td>다른 개와 사람에 편안하다</td></tr>
+<tr><td>배변 습관</td><td>입장 전에 배변을 마친다</td></tr>
+<tr><td>건강</td><td>접종과 구충이 최신이고 아프지 않다</td></tr>
+</tbody>
+</table>
+
+<h2>매장에서의 매너</h2>
 <ul>
-<li>충분한 산책으로 에너지 소진 → 실내에서 차분하게</li>
-<li>휴대용 물그릇·간식·배변 봉투</li>
-<li>목줄·하네스 착용</li>
-<li>짧은 리드줄로 보호자 가까이 유지</li>
+<li>짧은 줄과 하네스를 쓰고 줄을 의자나 테이블에 묶지 않고 직접 잡는다. 늘어나는 줄은 걸려 넘어질 수 있다.</li>
+<li>개가 테이블이나 접시에 올라가지 않게 한다. 통로를 막지 않는다.</li>
+<li>음식을 직접 주지 않는다. 사람 음식에는 개에게 위험한 재료(양파, 초콜릿 등)가 있다.</li>
+<li>접이식 물그릇을 챙긴다.</li>
+<li>배변 사고에 대비해 배변 봉투와 물티슈를 챙기고, 사고가 나면 즉시 치운다.</li>
+<li>다른 손님 중에는 동물을 무서워하거나 알레르기가 있는 사람이 있다. 다가가지 않게 관리한다.</li>
+<li>개가 흥분하거나 스트레스를 받으면 잠시 밖에서 쉬거나 일찍 나선다.</li>
 </ul>
 
-<h2>현장 에티켓</h2>
 <div class="callout-dog">
-<strong>반려동물 동반 외출 에티켓</strong><br>
-• 테이블 위에 올려두지 않기<br>
-• 다른 테이블 방문·손님 식사에 방해되지 않게<br>
-• 배변 시 즉시 처리 및 직원에게 알림<br>
-• 과도한 짖음 시 잠시 밖으로<br>
-• 다른 반려동물과의 접촉은 상대 동의 후
+<strong>이런 강아지는 카페에 맞지 않을 수 있어요</strong><br>
+• 낯선 사람·개에게 짖거나 공격 반응<br>
+• 분리 불안이나 심한 겁<br>
+• 접종을 끝내지 않은 어린 강아지<br>
+• 열이 있거나 컨디션이 안 좋은 날
 </div>
 
-<h2>반려동물에게 위험한 카페 음식</h2>
-<ul>
-<li><strong>카페 음료</strong>: 커피·녹차·에너지 음료 — 카페인 독성</li>
-<li><strong>초콜릿 케이크·코코아</strong>: 테오브로민 독성</li>
-<li><strong>자일리톨 함유 식품</strong> (무설탕 껌·젤리): 극히 위험</li>
-<li><strong>포도·건포도</strong>: 신장 독성</li>
-<li><strong>양파·마늘</strong>: 적혈구 파괴</li>
-</ul>
+<h2>더운 날, 추운 날</h2>
+<p>여름에는 아스팔트가 뜨거울 수 있어 발바닥을 확인하고 (<a href="/blog/dog-hot-pavement-paw-burn">뜨거운 바닥 발바닥 화상</a>), 주차한 차 안에 두지 않는다. 겨울에는 실내외 온도 차에 주의한다.</p>
 
 <h2>마지막으로</h2>
-<p>반려동물 동반 외출은 준비가 전부다. 충분한 운동으로 에너지를 소진하고, 안전한 리드줄로 통제하며, 주변에 대한 배려를 갖추면 어디서든 환영받는 보호자와 반려동물이 될 수 있다.</p>`,
+<p>동반 가능 매장이라도 다른 손님과 공간을 함께 쓴다는 점을 기억하자. 개가 편안한지 살피며 짧게 즐기는 것이 좋다.</p>`,
     authorName: "펫지기 에디터",
     authorCredential: "반려동물 생활 정보 큐레이터",
     ymyl: false,
-    sources: JSON.stringify([
-      "ASPCA Animal Poison Control — Toxic Foods for Pets",
-      "한국반려동물협회 반려동물 동반 외출 에티켓 가이드",
-      "농림축산식품부 반려동물 동반 가능 시설 정책",
-    ]),
+    sources: [
+      "https://www.aarp.org/home-family/friends-family/info-2023/etiquette-tips-for-dining-out-with-dogs.html — AARP, Etiquette tips for dining out with dogs",
+      "https://petsafe.com/blog/tips-for-taking-your-dog-to-a-restaurant-or-bar-patio — PetSafe, Tips for taking your dog to a restaurant or bar patio",
+      "https://www.caninestyles.com/blogs/news/dog-and-owner-etiquette-at-restaurants-cafes — Canine Styles, Dog (and owner) etiquette at restaurants & cafés",
+    ],
     disclaimer: null,
     status: "published",
     publishedAt: "2026-08-14T11:00:00.000Z",
