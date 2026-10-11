@@ -10,7 +10,7 @@ on:
 jobs:
   verify:
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    timeout-minutes: 25
     steps:
       - uses: actions/checkout@v4
         with:
@@ -41,3 +41,9 @@ jobs:
       - name: Content gate (push)
         if: github.event_name == 'push' && github.event.before != '0000000000000000000000000000000000000000'
         run: pnpm audit:content:gate -- --base=${{ github.event.before }}
+
+      # 운영 DB·시크릿 없이 합성 SQLite fixture로 production build 후 브라우저 검증(광고 판정·본문·고지·비공개 보호).
+      - name: Isolated production build + browser e2e
+        env:
+          CHROME_PATH: /usr/bin/google-chrome
+        run: pnpm test:e2e

@@ -56,3 +56,15 @@ dog-walk-guide(메타 설명 포함), pet-insurance-guide(30일 면책·10~30%·
 - 크롤러 접근: `/robots.txt`가 Mediapartners-Google·`*` 모두 Allow(/api/, /admin/만 제외). Mediapartners-Google / Googlebot UA 모두 `/guide` 200 응답, UA별 콘텐츠 분기 없음(브라우저 검증과 일치).
 - 호스트: `www.petjigi.kr` → `https://petjigi.kr/` **307**(임시). 영구(308) 리디렉션이 더 적합 — Vercel 도메인 설정에서 변경 필요(운영 설정, 승인 대상).
 - 계정 쪽 확인 대기(코드·공개 응답으로 판단 불가): 실제 심사 사유, 자동광고 URL 제외 설정, CMP 적용 상태.
+
+## B01~B04 마무리 (2026-10-11, 브랜치 fix/adsense-b01-b04, 미push·미배포)
+| 항목 | 상태 |
+|---|---|
+| B00 심사 상태 | 계정 확인 필요 — 이 환경에서 AdSense 계정 접근 수단 없음. 신청 도메인·상태·사유 미확인(미신청/거절로 단정하지 않음) |
+| B01 동물등록 과태료 | 이번에 로컬 수정·검증 완료 / 운영 반영 준비 완료, 미반영 / 법령 원문 대조는 운영자 확인 필요. 근거·변경 전후: `docs/claim-verification/microchip-registration-guide.md` |
+| B02 제휴·광고 고지 | 이번에 로컬 수정·검증 완료. `lib/revenue-disclosure.ts` 공통 문구(현재 제휴 링크 없음 / 추모 광고 제한은 펫지기 자체 정책 / 향후 도입 시 고지). Google 광고 차단 로직 불변 |
+| B03 e2e·CI | 이번에 로컬 수정·검증 완료. `pnpm test:e2e`(합성 SQLite→격리 production build→ads-decision 12·smoke 42·content-claims 5). `.github/workflows/ci.yml`에 단계 추가(원격 실행은 미확인) |
+| B04 시설 찾기 연결 | 기존 경로 부재(도구 링크가 공식 사이트뿐)여서 최소 추가: 두 체크리스트에 "내 지역에서 시설 찾기"(`/#hm-local`, 기존 홈 시도 선택). 지역 고정·위치 권한 없음. 마우스·모바일 키보드 클릭 흐름 e2e 검증 |
+
+참고: 이번 요청에 적힌 서울시 2026 안내(`opengov.seoul.go.kr/analysis/35614351`)는 열어보니 과태료와 무관한 문서였고, `news.seoul.go.kr/.../565667`은 접근 오류로 리디렉션됐다. 대신 서울시 미디어허브(2021·2024)와 김포시 안내로 대조했다.
+`category/[slug]` 5번 CTA(서비스 찾기)는 `/sido/seoul`로 고정돼 있음 — 이번 범위 밖, 별도 판단 필요.

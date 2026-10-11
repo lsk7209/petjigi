@@ -72,6 +72,7 @@ export const PRACTICAL_TOOLS: Readonly<Record<string, PracticalToolData>> = {
       "이동 시간",
     ],
     links: [
+      { name: "내 지역에서 시설 찾기", href: "/#hm-local" },
       { name: "국가동물보호정보시스템", href: "https://www.animal.go.kr/" },
     ],
     note: "병원 정보는 변경될 수 있어 방문 전 병원에 직접 확인하세요. 이 표는 진단이나 치료 판단을 대신하지 않으며, 증상이 급하면 바로 가까운 동물병원에 연락하세요.",
@@ -102,6 +103,7 @@ export const PRACTICAL_TOOLS: Readonly<Record<string, PracticalToolData>> = {
       },
     ],
     links: [
+      { name: "내 지역에서 시설 찾기", href: "/#hm-local" },
       { name: "국가동물보호정보시스템", href: "https://www.animal.go.kr/" },
       { name: "농림축산식품부", href: "https://www.mafra.go.kr/" },
     ],

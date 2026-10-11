@@ -51,7 +51,7 @@ const CTA_MAP: Partial<Record<CategoryId, CtaConfig>> = {
     heading: "내 지역 반려동물 서비스 찾기",
     body: "펫미용·펫호텔·훈련소 등 반려동물 서비스 정보를 지역별로 찾아보세요.",
     label: "서비스 찾기",
-    href: "/sido/seoul",
+    href: "/#hm-local",
     affiliate: false,
     catVar: "var(--cat-5)",
     catSoftVar: "var(--cat-5-soft)",

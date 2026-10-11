@@ -1,8 +1,9 @@
-# Status | 마지막: 2026-10-10
+# Status | 마지막: 2026-10-11
 ## 현재 작업
 (1) 후속 안정화 R01~R06: R01~R04 구현·단위/통합 테스트 완료 → PR #23 병합·운영 배포 완료(main 7f300b4). R05(e2e·CI)·R06(DB 계측) 미착수.
 (2) 홈 시안: fix/stabilize-r01-r04에서 홈·헤더 코드 적용+로컬 브라우저 검증 완료(미커밋·미배포). 승인 시안 PNG 원본 미확인 → CODEX_HANDOFF §B 명세 기준 구현. 스크린샷: docs/design/home-verify/. 이미지 기록: docs/home-assets.md.
 ## 최근 변경
+- 10-11: B01~B04 로컬 완료(fix/adsense-b01-b04, 미push): 동물등록 과태료 정정(20/40/60·변경 10/20/40), 고지 공통 문구, pnpm test:e2e+CI 단계, 체크리스트→지역 선택 링크 — docs/adsense-readiness-20261010.md
 - 10-10: AdSense A01~A05 로컬 완료(fix/adsense-a01-claims, 미push·미배포): 주장 정정 3건, 광고 단일 판정, 실용 도구 3종+업체 데이터 범위, 제휴 고지 정정 — docs/adsense-readiness-20261010.md
 - 10-10: A01 dog-walk-guide 미확인 수치(43%·552만·AVMA 시간 등) 제거, 요약·표 단위 모순 해소(시드만, 운영 미반영) — docs/claim-verification
 - 10-10: 홈 재구성(components/home/*, lib/home-guides.ts)+공통 헤더(8메뉴·GET 검색·1100px 모바일 메뉴 Esc 포커스 복귀). hero-illustration 삭제, 헤더·홈 테스트 갱신

@@ -1,4 +1,5 @@
 import assert from "node:assert/strict";
+import fs from "node:fs";
 import test from "node:test";
 import { estimateInsurancePayout } from "./insurance-estimate";
 import { PRACTICAL_TOOLS } from "./practical-tools";
@@ -33,4 +34,13 @@ test("보험금 계산 예시: 빈 값·음수·범위 초과는 null", () => {
   assert.equal(estimateInsurancePayout({ cost: "-1", rate: "70", fixed: "0", cap: "1" }), null);
   assert.equal(estimateInsurancePayout({ cost: "1", rate: "101", fixed: "0", cap: "1" }), null);
   assert.equal(estimateInsurancePayout({ cost: "abc", rate: "70", fixed: "0", cap: "1" }), null);
+});
+
+test("병원·동물등록 도구는 기존 홈 지역 선택(#hm-local)으로 이어지고 특정 지역을 고정하지 않는다", () => {
+  for (const slug of ["animal-hospital-guide", "microchip-registration-complete-guide"]) {
+    const link = PRACTICAL_TOOLS[slug].links.find((l) => l.name === "내 지역에서 시설 찾기");
+    assert.equal(link?.href, "/#hm-local", slug);
+  }
+  assert.match(fs.readFileSync("components/home/region-panel.tsx", "utf8"), /id="hm-local"/);
+  assert.doesNotMatch(JSON.stringify(PRACTICAL_TOOLS), /\/sido\/|seoul/);
 });
