@@ -19,47 +19,53 @@ const BLOG_POSTS: NewContent[] = [
     subtitle: "물에 안전한 견종 vs 주의 견종, 익사 위험 신호, 해수 마심·이물 흡입, 귀 물 관리",
     metaTitle: "강아지 바다·계곡 물놀이 안전 가이드 | 펫지기",
     metaDescription: "강아지와 바다·계곡 물놀이 시 안전 주의사항. 익사 위험, 해수 마심, 귀 물 들어감, 구명조끼 필요성, 물 이후 케어를 정리했습니다.",
-    body: `<p>강아지와 여름 물놀이는 즐거운 추억이 된다. 그러나 안전 주의사항을 모르면 위험한 상황으로 이어질 수 있다.</p>
+    body: `<p>바다와 계곡은 강아지에게 즐거운 곳이지만 평소 집에서는 없는 위험이 있다. 바닷물, 모래, 햇볕, 유해 조류 같은 요소를 미리 알면 사고를 대부분 막을 수 있다.</p>
 
-<h2>모든 개가 수영을 잘하지는 않는다</h2>
-<ul>
-<li><strong>수영 잘하는 경향</strong>: 래브라도·골든 리트리버·포르투갈 워터 독·아이리시 세터 — 물과 친한 품종</li>
-<li><strong>주의가 필요한 견종</strong>: 단두종(불독·퍼그), 다리가 짧은 견종(닥스훈트·바셋), 소형견 — 체형상 수영이 어렵거나 금방 지침</li>
-</ul>
+<h2>장소별 위험과 대처</h2>
+<table>
+<thead><tr><th>위험</th><th>설명</th><th>대처</th></tr></thead>
+<tbody>
+<tr><td>바닷물 마시기</td><td>소량도 설사를 일으킬 수 있고, 많이 마시면 위험해질 수 있다(염분 중독)</td><td>깨끗한 물과 그릇을 챙겨 자주 마시게 한다</td></tr>
+<tr><td>모래</td><td>삼키면 장에 쌓여 막힐 수 있다</td><td>모래가 묻은 공을 물고 놀지 않게 하고, 먹는 모습을 관찰</td></tr>
+<tr><td>햇볕·열</td><td>털이 적은 코와 귀는 화상을 입을 수 있고, 한낮의 모래는 발바닥에 해롭다</td><td>그늘을 만들고 개용 자외선 차단제를 쓰며, 뜨거운 시간대는 피한다</td></tr>
+<tr><td>유해 남조류(녹조)</td><td>고인 담수에서 번식하는 일부는 독성이 있고 치명적일 수 있다. 페인트나 완두콩 수프처럼 보이기도 한다</td><td>녹색 막이 보이는 물에 들어가거나 마시지 못하게 하고, 접촉했다면 깨끗한 물로 씻고 병원에 연락</td></tr>
+<tr><td>물살·파도</td><td>당황하거나 지쳐도 알아채기 어렵다</td><td>구명조끼와 긴 줄을 쓰고, 보호자가 항상 지켜본다</td></tr>
+</tbody>
+</table>
 
-<h2>구명조끼 — 선택이 아닌 필수</h2>
-<p>수영을 잘하는 개에게도 구명조끼는 권장된다. 조류가 있는 바다, 깊은 계곡에서 갑작스러운 사고가 생길 수 있다. 밝은 색상의 반려동물 전용 구명조끼를 사용한다.</p>
-
-<h2>익사 위험 신호</h2>
 <div class="callout-dog">
-<strong>즉시 끌어내야 할 신호</strong><br>
-• 패닉 상태로 물을 격렬히 치며 앞으로 나아가지 못함<br>
-• 뒷다리가 물속으로 가라앉음<br>
-• 코와 입이 수면 아래로<br>
-• 물에서 나온 후 기침·헐떡임이 10분 이상 지속
+<strong>이런 증상이면 즉시 병원</strong><br>
+• 물놀이 후 반복 구토, 심한 설사, 처짐, 비틀거림<br>
+• 침을 과도하게 흘리거나 발작을 일으킴 (유해 조류 의심)<br>
+• 숨이 가쁘거나 기침을 함
 </div>
 
-<h2>해수 마심 주의</h2>
-<p>강아지가 바닷물을 마시면 과도한 나트륨 섭취로 소화불량·구토·드물게 전해질 이상이 생긴다. 물에서 나올 때마다 신선한 물을 제공해 해수를 마시지 않도록 한다.</p>
-
-<h2>물놀이 후 케어</h2>
+<h2>준비물</h2>
 <ul>
-<li>귀 세척: 물이 들어가면 중이염 위험. 흡수 솜으로 귀 입구 닦기 + 이어 드라이어 사용 가능.</li>
-<li>완전 건조: 털 사이까지 완전 건조. 젖은 상태로 자면 피부 문제 생길 수 있음.</li>
-<li>발바닥 확인: 자갈·산호 조각으로 상처 가능.</li>
-<li>기생충 확인: 자연 수계 후 기생충 노출 가능성.</li>
+<li>마실 물과 접이식 그릇</li>
+<li>구명조끼, 긴 줄(안전 줄)</li>
+<li>그늘막, 수건, 헹굴 물</li>
+<li>발바닥 보호용 신발(뜨거운 모래·날카로운 조개껍데기 대비)</li>
+<li>지역의 동반 가능 여부와 규정 확인</li>
+</ul>
+
+<h2>물놀이 후 관리</h2>
+<ul>
+<li>민물이나 바닷물에서 놀았다면 깨끗한 물로 털과 피부를 헹군다. 핥아서 독성 물질을 삼키는 것을 줄일 수 있다.</li>
+<li>귀를 말려 외이염을 예방한다.</li>
+<li>발바닥 상처, 조개에 베인 곳이 없는지 확인한다.</li>
 </ul>
 
 <h2>마지막으로</h2>
-<p>물놀이는 강아지에게 최고의 여름 경험이 될 수 있다. 구명조끼 착용, 눈을 떼지 않는 감시, 물놀이 후 완전 건조 — 이 세 가지로 대부분의 위험을 예방할 수 있다.</p>`,
+<p>물가에서는 개가 즐거워 보이는 것만 믿지 말고 마신 물의 양, 노출 시간, 컨디션을 계속 살피자. 물이 이상해 보이면 들어가지 않는 선택이 가장 안전하다.</p>`,
     authorName: "펫지기 에디터",
     authorCredential: "반려동물 생활 정보 큐레이터",
     ymyl: false,
-    sources: JSON.stringify([
-      "American Kennel Club — Water Safety for Dogs",
-      "Veterinary Partner — Water Intoxication and Salt Toxicity in Dogs",
-      "한국반려동물협회 물놀이 안전 가이드",
-    ]),
+    sources: [
+      "https://www.aspca.org/news/beach-day-safe-way-pet-safety-tips — ASPCA, Beach Day the Safe Way: Pet Safety Tips",
+      "https://www.aspca.org/news/pet-safety-alert-rising-dangers-blue-green-algae — ASPCA, Pet Safety Alert: The Rising Dangers of Blue-Green Algae",
+      "https://www.akc.org/expert-advice/travel/tips-for-taking-dog-to-beach/ — AKC, Taking Your Dog to the Beach: Tips & Safety",
+    ],
     disclaimer: null,
     status: "published",
     publishedAt: "2026-08-08T11:00:00.000Z",

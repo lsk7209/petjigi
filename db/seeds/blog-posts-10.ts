@@ -607,44 +607,61 @@ const BLOG_POSTS_10: NewContent[] = [
     metaTitle: "고양이 여름 열사병 예방 | 더위 신호·냉방·수분 관리 | 펫지기",
     metaDescription:
       "고양이 열사병 초기 신호와 응급 처치, 여름 실내 환경 관리법. 에어컨 온도 설정, 수분 보충 방법, 단두종 더위 취약성, 고온 주의 사항.",
-    body: `<p>고양이는 더위를 스스로 잘 견디는 것처럼 보이지만, 실제로 고온에 매우 취약한 동물이다. Cornell Feline Health Center에 따르면 기온이 32°C를 넘기 시작하면 열사병 위험이 급격히 올라간다. 실내 고양이도 에어컨 없이 방치되면 열사병으로 위험한 상황이 생길 수 있다.</p>
+    body: `<p>고양이는 개처럼 헐떡이며 열을 식히는 데 효율적이지 않고, 더워도 티를 잘 내지 않는다. 그래서 실내 고양이도 한여름에는 열사병 위험이 있다. 이 글은 고양이를 시원하게 지내게 하는 환경 만들기와 응급 신호를 정리한다. 개 대상 상세 응급 처치는 <a href="/guide/pet-heatstroke-prevention-complete-guide">반려동물 열사병 예방·응급 가이드</a>에서 다룬다.</p>
 
-<h2>고양이 열사병 신호</h2>
+<h2>열사병 신호</h2>
 <ul>
-  <li>과도한 헐떡거림 (고양이는 원래 헐떡이지 않으므로 이것 자체가 이상)</li>
-  <li>침을 심하게 흘림</li>
-  <li>잇몸이 붉어지거나 파랗게 변함</li>
-  <li>비틀거리거나 무기력함</li>
-  <li>구토 또는 발작</li>
+<li>입을 벌리고 헐떡임 (고양이에게는 이상 신호), 과도한 침 흘림</li>
+<li>구토나 설사, 무기력, 걸음이 비틀거림</li>
+<li>쓰러지거나 반응이 둔함, 체온 상승</li>
 </ul>
-<p>이 증상이 보이면 즉시 서늘한 곳으로 이동시키고 미지근한 물(차갑지 않게)로 몸을 적셔준 후 응급 동물병원으로 이동한다. 얼음물은 혈관 수축으로 오히려 위험하다.</p>
 
-<h2>단두종 고양이 — 더 주의가 필요하다</h2>
-<p>페르시안, 브리티시 숏헤어, 엑조틱 숏헤어 등 납작한 얼굴을 가진 단두종은 호흡 효율이 낮아 더위에 훨씬 취약하다. 이 품종들은 기온 28°C 이상에서도 열 스트레스가 쌓일 수 있으므로 실내 냉방 유지가 특히 중요하다. 단두종 호흡기 특성에 대해서는 <a href="/blog/cat-respiratory-problems-guide">고양이 호흡기 질환 가이드</a>도 함께 읽어보자.</p>
+<div class="callout-cat">
+<strong>의심되면 즉시</strong><br>
+• 시원하고 바람이 통하는 곳으로 옮기고 동물병원에 바로 연락한다<br>
+• 털을 시원한 물로 적시고 바람을 쐬어 열을 식힌다 — 찬물에 담그는 방법은 피하라고 메르크 수의학 매뉴얼이 안내한다<br>
+• 의식이 있어 마실 수 있을 때만 소량의 물을 준다<br>
+• 호전되어 보여도 병원 진료를 받는다
+</div>
 
-<h2>실내 환경 관리 — 여름철 핵심</h2>
+<h2>실내 환경 관리</h2>
+<table>
+<thead><tr><th>항목</th><th>방법</th></tr></thead>
+<tbody>
+<tr><td>온도</td><td>폭염이 예보되면 에어컨이 있는 방에서 지내게 하고, 어렵다면 창문을 열어 환기하고 선풍기를 쓴다(고양이가 줄에 얽히지 않게)</td></tr>
+<tr><td>물</td><td>신선한 물을 하루 여러 번 교체하고 여러 곳에 둔다. 흐르는 물을 좋아하는 고양이는 급수대가 도움이 된다</td></tr>
+<tr><td>시원한 자리</td><td>타일, 대리석판, 냉각 매트처럼 시원한 바닥을 마련한다. 얼음팩을 수건에 싸서 두는 방법도 있다</td></tr>
+<tr><td>갇힌 방 주의</td><td>햇빛이 드는 닫힌 방이나 베란다에 고양이가 갇히지 않게 한다</td></tr>
+<tr><td>털 관리</td><td>털을 밀지 않는다. 털이 햇빛과 열을 막는 역할을 하므로 평소보다 자주 빗어 주는 정도가 좋다</td></tr>
+<tr><td>식사</td><td>습식 사료로 수분 섭취를 늘린다</td></tr>
+</tbody>
+</table>
 
-<h3>에어컨 온도와 시원한 공간</h3>
-<p>고양이에게 적정한 실내 온도는 21~26°C다. 외출 시에도 에어컨이나 선풍기를 켜두어 실내가 과열되지 않도록 한다. 쿨매트(알루미늄 쿨패드)나 욕실 타일 바닥처럼 고양이가 스스로 찾을 수 있는 시원한 공간을 여러 곳에 마련해 둔다.</p>
-
-<h3>수분 보충</h3>
-<p>여름에는 수분 섭취가 특히 중요하다. <a href="/blog/cat-water-intake">고양이 물 섭취 늘리는 실전 방법</a>을 적극 활용해 물그릇 위치를 늘리고, 음수 분수대를 활용하며, 습식 사료 비중을 높인다.</p>
-
-<h2>절대 하지 말아야 할 것</h2>
+<h2>더 조심해야 하는 고양이</h2>
 <ul>
-  <li>고양이를 차 안에 혼자 두기 — 10분 만에 실내 온도가 치명적으로 올라간다</li>
-  <li>직사광선이 드는 창가에 이동장·켄넬을 두기</li>
-  <li>더운 날 야외 이동 시 환기가 안 되는 이동장 사용</li>
-</ul>`,
+<li>코가 납작한 품종(페르시안, 엑조틱 등): 효율적으로 헐떡이지 못해 더 취약하다.</li>
+<li>노령묘, 비만묘, 심장·호흡기 질환이 있는 고양이.</li>
+<li>야외 출입이 있는 고양이: 한낮 외출을 피하게 한다.</li>
+</ul>
+
+<h2>절대 하지 말 것</h2>
+<ul>
+<li>주차한 차 안에 고양이를 두기</li>
+<li>방충망 없는 열린 창문 — 더위 속 환기 중 추락 사고가 날 수 있다</li>
+<li>에어컨 없는 밀폐 공간에 장시간 두기</li>
+</ul>
+
+<h2>마지막으로</h2>
+<p>고양이 열사병은 빠르게 악화될 수 있다. 예방은 시원한 자리와 물, 그리고 환기이고, 의심되면 시간을 끌지 말고 병원에 가자. 고양이의 냉각 방법은 연구가 상대적으로 적으므로 수의사의 안내를 우선한다.</p>`,
     ymyl: false,
     status: "published",
     publishedAt: scheduleDate(68),
     authorName: "펫지기 에디터",
-    sources: JSON.stringify([
-      "Cornell Feline Health Center — Heat Stroke in Cats",
-      "WSAVA — Environmental and Preventive Healthcare Guidelines",
-      "American Veterinary Medical Association (AVMA) — Hot Weather Safety Tips",
-    ]),
+    sources: [
+      "https://www.vet.cornell.edu/departments-centers-and-institutes/cornell-feline-health-center/health-information/feline-health-topics/feline-heat-safety — Cornell Feline Health Center, Feline Heat Safety",
+      "https://icatcare.org/articles/hazardous-weather-and-your-cat — International Cat Care, Hazardous weather and your cat",
+      "https://www.merckvetmanual.com/special-pet-topics/emergencies/what-to-do-in-a-dog-or-cat-emergency — Merck Veterinary Manual, What to Do in a Dog or Cat Emergency",
+    ],
     updatedAt: NOW,
     createdAt: NOW,
   },
