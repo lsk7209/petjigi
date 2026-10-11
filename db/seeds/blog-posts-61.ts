@@ -138,52 +138,48 @@ const BLOG_POSTS: NewContent[] = [
     subtitle: "토퍼 종류, 칼로리 계산 원칙, 건강에 도움이 되는 토퍼 vs 단순 기호성 토퍼",
     metaTitle: "강아지 사료 토퍼 완전 가이드 — 종류·칼로리·활용법 | 펫지기",
     metaDescription: "강아지 사료 토퍼 종류와 활용 방법. 칼로리 계산 원칙, 건강에 도움이 되는 토퍼, 편식·노령견에게 활용하는 방법을 정리했습니다.",
-    body: `<p>편식이 심한 강아지, 식욕이 줄어든 노령견, 사료를 질려하는 개에게 '토퍼(topper)'는 효과적인 해결책이다. 사료 위에 올려주는 소량의 첨가물로 식사를 더 매력적으로 만든다.</p>
+    body: `<p>편식하는 강아지, 입맛이 줄어든 노령견, 늘 같은 사료에 질린 강아지에게 토퍼(사료 위에 올려 주는 소량의 첨가식)는 식사를 더 매력적으로 만드는 방법이다. 다만 토퍼는 완전한 식사가 아니므로 열량과 안전성을 먼저 따져야 한다.</p>
 
-<h2>토퍼 종류</h2>
-<h3>동물성 단백질 토퍼</h3>
-<ul>
-<li>삶은 닭가슴살 (간 없이 잘게 찢기)</li>
-<li>삶은 달걀 (흰자 위주)</li>
-<li>참치·연어 캔 (무염·무조미료)</li>
-<li>동결건조 고기</li>
-</ul>
+<h2>토퍼의 종류</h2>
+<table>
+<thead><tr><th>종류</th><th>예시</th><th>주의</th></tr></thead>
+<tbody>
+<tr><td>동물성 단백질</td><td>삶은 닭가슴살(껍질·양념 제외), 삶은 달걀, 무염 캔 참치 소량, 동결건조 육류</td><td>양념·소금·뼈 제외. 날것은 세균 위험</td></tr>
+<tr><td>채소·과일</td><td>찐 단호박, 당근, 블루베리</td><td>포도·건포도·양파·마늘 등 개에게 위험한 식품은 절대 금지</td></tr>
+<tr><td>수분 보충</td><td>양념 없는 사골·닭육수, 육수 얼음</td><td>소금·양파·마늘이 들어간 육수는 사용하지 않는다</td></tr>
+<tr><td>상업 제품</td><td>동결건조 토퍼, 습식 소량, 프로바이오틱스 가루</td><td>성분표와 열량 확인, 알레르기 원료 확인</td></tr>
+</tbody>
+</table>
 
-<h3>채소·과일 토퍼</h3>
-<ul>
-<li>찐 단호박·당근 (소화 잘 됨)</li>
-<li>블루베리 (항산화)</li>
-<li>수박 (수분 보충, 씨 제거)</li>
-</ul>
-
-<h3>상업용 토퍼 제품</h3>
-<ul>
-<li>동결건조 육류 토퍼 (전용 제품)</li>
-<li>고기 브로스(육수) 큐브</li>
-<li>프로바이오틱스 파우더 토퍼</li>
-</ul>
-
-<h2>칼로리 계산 원칙</h2>
+<h2>열량 관리: 10% 이하</h2>
+<p>UC 데이비스 수의영양 서비스는 간식과 추가 급여 식품이 하루 열량의 10%를 넘지 않아야 하고, 나머지 90% 이상은 완전하고 균형 잡힌 식사에서 나와야 한다고 안내한다. 토퍼도 여기에 포함된다. 토퍼를 올린 만큼 사료량을 줄이는 것이 기본이다.</p>
 <div class="callout-dog">
-<strong>10% 규칙 적용</strong><br>
-토퍼는 하루 총 칼로리의 10% 이내<br>
-토퍼를 추가한 만큼 기존 사료량 감량<br>
-예: 일일 400kcal 강아지 → 토퍼 40kcal 이내<br>
-삶은 닭가슴살 30g ≈ 33kcal
+<strong>계산 예시</strong><br>
+하루 필요 열량이 400kcal인 강아지 → 토퍼와 간식 합계 40kcal 이내<br>
+토퍼를 더한 날은 사료를 같은 열량만큼 줄인다<br>
+※ 개체별 필요 열량은 체중, 나이, 활동량에 따라 다르므로 수의사와 확인한다
 </div>
 
-<h2>편식 강아지에게 활용하기</h2>
-<p>사료를 안 먹는 강아지에게 토퍼를 올려주면 식욕을 자극할 수 있다. 단, 토퍼만 골라 먹고 사료를 거부하게 되는 경우도 있다. 토퍼를 사료와 잘 섞어주는 것이 효과적이다.</p>
+<h2>토퍼를 쓰기 전에 확인할 것</h2>
+<ul>
+<li><strong>식욕 저하의 원인</strong>: 갑자기 먹지 않는 것은 치과 질환, 위장 질환, 통증 등의 신호일 수 있다. 토퍼로 덮기 전에 진료를 받는다.</li>
+<li><strong>질환이 있는 경우</strong>: 신장·췌장·알레르기 질환이 있거나 처방식을 먹는 강아지는 토퍼가 치료식에 방해가 될 수 있다.</li>
+<li><strong>알레르기</strong>: 새 단백질을 한 번에 여러 가지 주지 말고 하나씩 시도한다.</li>
+</ul>
+
+<h2>편식하는 강아지에게 활용하기</h2>
+<p>토퍼만 골라 먹고 사료를 거부하는 습관이 생길 수 있다. 사료와 잘 섞어 주고, 먹지 않을 때 더 맛있는 토퍼를 계속 올려 주는 식으로 반응하지 않는 것이 좋다. 식사 시간을 정해 10~15분 후에 치우는 규칙도 도움이 된다.</p>
 
 <h2>마지막으로</h2>
-<p>토퍼는 식사를 풍요롭게 만드는 도구다. 칼로리 계산만 지키면 건강에 도움이 되는 좋은 습관이 된다.</p>`,
+<p>토퍼는 식사의 즐거움을 더해 주는 도구다. 10% 규칙과 안전한 재료만 지키면 건강한 습관이 된다. 식욕 변화가 계속되면 진료가 먼저다.</p>`,
     authorName: "펫지기 에디터",
     authorCredential: "반려동물 영양 정보 큐레이터",
     ymyl: false,
-    sources: JSON.stringify([
-      "Tufts University — Dog Food Toppers Guide",
-      "한국수의영양학회 보조 식품 급여 가이드라인",
-    ]),
+    sources: [
+      "https://healthtopics.vetmed.ucdavis.edu/node/916 — UC Davis 수의대, Treat guidelines for dogs",
+      "https://www.akc.org/expert-advice/nutrition/how-many-treats-can-dog-have/ — AKC, How many treats can a dog have",
+      "https://www.dogfoodadvisor.com/dog-feeding-tips/how-to-use-dog-food-toppers/ — Dog Food Advisor, How to use dog food toppers",
+    ],
     disclaimer: null,
     status: "published",
     publishedAt: "2026-08-17T09:00:00.000Z",
@@ -252,31 +248,51 @@ const BLOG_POSTS: NewContent[] = [
     subtitle: "털 색깔과 성격의 과학적 연관성, 삼색 암컷 유전학, 고양이 성격에 진짜 영향 미치는 요인",
     metaTitle: "고양이 털 색깔과 성격 — 삼색·고등어 오해와 진실 | 펫지기",
     metaDescription: "고양이 털 색깔과 성격의 관계를 과학적으로 살펴봤습니다. 삼색 고양이가 예민하다는 통념, 털 색깔 유전학, 성격에 진짜 영향을 미치는 요인을 정리했습니다.",
-    body: `<p>'삼색 고양이는 성격이 까다롭다', '오렌지 고양이는 순하다' — 이런 말을 들어본 적 있을 것이다. 이것이 얼마나 사실인지 살펴보자.</p>
+    body: `<p>'삼색 고양이는 성격이 까다롭다', '치즈 고양이는 순하다' — 이런 이야기를 들어 봤을 것이다. 털 색과 성격 사이에 정말 관계가 있는지, 연구가 말하는 것과 말하지 않는 것을 정리했다.</p>
 
-<h2>털 색깔과 성격의 연구</h2>
-<p>UC Davis 연구에서 삼색(Calico)·별갑(Tortoiseshell) 고양이 보호자들이 다른 색상 고양이 보호자보다 공격성·비타협성을 더 많이 보고했다는 결과가 있다. 그러나 이것은 보호자의 주관적 보고이며, 통제된 행동 실험이 아니다.</p>
+<h2>UC 데이비스 설문 연구</h2>
+<p>UC 데이비스 수의과대학 연구진은 1,200여 명의 고양이 보호자를 대상으로 설문을 했다. 그 결과 삼색(칼리코)과 별갑(토터셸) 고양이가 사람과 상호작용할 때 쉭쉭거리거나 물고 할퀴는 행동이 더 많다고 보호자들이 보고했다. 회색+흰색, 검정+흰색 고양이도 그런 행동이 약간 더 많다고 나타났다.</p>
 
-<h2>삼색·별갑의 유전학</h2>
-<p>삼색·별갑 고양이가 거의 전부 암컷인 이유는 X염색체에 오렌지/검정 색상 유전자가 있기 때문이다. 두 가지 색상을 표현하려면 두 개의 X염색체(암컷)가 필요하다. 수컷 삼색은 XXY 염색체 이상(클라인펠터)인 경우다.</p>
+<div class="callout-cat">
+<strong>이 결과를 해석할 때 주의할 점</strong><br>
+• 보호자가 직접 답한 설문이라 '삼색은 까칠하다'는 고정관념이 응답에 영향을 줬을 수 있다<br>
+• 표본이 제한적이고, 털 색과 성격 사이의 유전적 연결은 입증되지 않았다<br>
+• 연구진도 추가 연구가 필요하다고 밝혔다
+</div>
 
-<h2>성격에 실제로 영향을 미치는 요인</h2>
+<h2>삼색·별갑이 거의 암컷인 이유</h2>
+<p>삼색·별갑 고양이는 대부분 암컷이다. 털의 검정/주황 색소 유전자가 X 염색체에 있고, 암컷은 X 염색체가 2개이므로 두 가지 색이 한 몸에 나타날 수 있기 때문이다. 수컷 삼색은 염색체 이상 등으로 매우 드물다. 이것은 털 색의 유전학이지 성격의 유전학이 아니다.</p>
+
+<h2>성격에 영향을 주는 요소</h2>
+<table>
+<thead><tr><th>요소</th><th>설명</th></tr></thead>
+<tbody>
+<tr><td>어린 시기의 사회화</td><td>생후 초기(대략 2~7주)에 사람과 접촉한 경험이 이후 사람에 대한 태도에 큰 영향을 준다</td></tr>
+<tr><td>부모 고양이의 기질</td><td>유전적 기질이 일부 전달될 수 있다</td></tr>
+<tr><td>환경과 경험</td><td>입양 후 환경, 스트레스, 일과, 보호자와의 상호작용</td></tr>
+<tr><td>건강 상태</td><td>통증이나 질환이 있으면 예민해지거나 공격적으로 보일 수 있다</td></tr>
+<tr><td>중성화 여부</td><td>성호르몬과 관련된 행동에 영향</td></tr>
+</tbody>
+</table>
+
+<h2>입양할 때는 어떻게 고를까</h2>
 <ul>
-<li><strong>사회화 경험 (생후 2~7주)</strong>: 가장 결정적</li>
-<li><strong>어미 고양이의 성격</strong>: 유전적 기질 전달</li>
-<li><strong>입양 후 환경</strong>: 루틴·스트레스·사람과의 상호작용</li>
-<li><strong>중성화 여부</strong>: 수컷에서 공격성 영향</li>
+<li>색 대신 그 고양이를 직접 만나서 반응을 본다.</li>
+<li>보호소 직원에게 성격과 지내는 모습을 묻는다.</li>
+<li>낯선 사람에게 다가오는지, 만지면 어떻게 하는지 천천히 관찰한다.</li>
+<li>공격적으로 보인다면 먼저 통증이나 질환이 있는지 확인한다.</li>
 </ul>
 
 <h2>결론</h2>
-<p>털 색깔은 성격의 간접 지표가 될 수 있지만 결정적이지 않다. 같은 삼색 고양이도 사회화와 환경에 따라 완전히 다른 성격을 보인다. 고양이 개체를 직접 만나보는 것이 색깔 통계보다 훨씬 정확하다.</p>`,
+<p>털 색은 성격을 예측하는 믿을 만한 도구가 아니다. 같은 색이라도 사회화와 환경에 따라 성격은 크게 달라진다. 고양이를 색이 아니라 한 마리의 개체로 만나 보자.</p>`,
     authorName: "펫지기 에디터",
     authorCredential: "반려동물 생활 정보 큐레이터",
     ymyl: false,
-    sources: JSON.stringify([
-      "Stelow, E.A. et al. — The Relationship Between Coat Color and Aggressive Behaviors in the Domestic Cat. JAAWS 2015",
-      "International Cat Care — Cat Coat Color Genetics",
-    ]),
+    sources: [
+      "https://www.mentalfloss.com/animals/cats/why-tortoiseshell-and-calico-cats-are-extra-feisty — Mental Floss, Why Tortoiseshell and Calico Cats Are Extra Feisty",
+      "https://www.cattownoakland.org/cat-town-blog/2021/03/fascinating-facts-about-tortoiseshell-cats — Cat Town Oakland, Fascinating Facts About Tortoiseshell Cats",
+      "https://www.catster.com/guides/tortitude-unique-personality-tortoiseshell-cats-fact-fiction — Catster, Tortitude: fact or fiction",
+    ],
     disclaimer: null,
     status: "published",
     publishedAt: "2026-08-18T09:00:00.000Z",
