@@ -76,38 +76,52 @@ const BLOG_POSTS: NewContent[] = [
     subtitle: "알레르기 혈청 검사의 한계, 제거 식이가 유일한 진단, 검사 남용 문제",
     metaTitle: "강아지 알레르기 혈액 검사 신뢰성 — 진단의 한계와 올바른 방법 | 펫지기",
     metaDescription: "강아지 식이 알레르기 혈액 검사의 한계를 정리했습니다. 혈청 검사 신뢰성 문제, 제거 식이가 유일한 확진 방법인 이유, 올바른 알레르기 진단 방법을 알아보세요.",
-    body: `<p>강아지 알레르기 검사를 받고 "닭고기·쌀·고구마에 알레르기" 결과를 받았다. 이것을 믿고 사료를 바꿔야 할까? 답은 '반드시 그렇지 않다'이다.</p>
+    body: `<p>강아지의 가려움과 피부 문제가 식이 알레르기 때문이라는 의심이 들 때, 혈액·침·털로 알레르기를 검사해 준다는 상품이 많다. 하지만 이 검사들은 신뢰성이 낮다는 연구가 있다. 식이 알레르기를 진단하는 기준은 제한식 식이 시험이다.</p>
 
-<h2>혈청 알레르기 검사의 문제</h2>
-<p>식이 알레르기를 진단하는 혈청 IgE 검사는 피부과 전문의들 사이에서도 신뢰성 논란이 있다. 혈청 검사의 양성 반응이 실제 임상 알레르기와 일치하지 않는 경우도 있다.</p>
-
-<h2>왜 신뢰하기 어려운가</h2>
-<div class="callout-dog">
-<strong>혈청 알레르기 검사 한계</strong><br>
-• 식이 알레르기는 IgE보다 T세포 매개가 주요 기전 — IgE 검사와 불일치<br>
-• 위양성 높음 — 실제로 먹어도 반응 없는 식품이 양성 나옴<br>
-• 결과 해석 기준 표준화 부족<br>
-• 비용 대비 임상적 유용성 불명확
-</div>
-
-<h2>유일하게 신뢰되는 진단: 제거 식이</h2>
-<p>식이 알레르기의 진단 표준(Gold Standard)은 제거 식이 + 유발 검사다. 8~12주 동안 가수분해 또는 신단백질 식이 → 증상 개선 확인 → 기존 식이로 재유발 시 증상 재현.</p>
-
-<h2>혈청 검사가 유용한 경우</h2>
+<h2>왜 간편 검사가 믿을 만하지 않은가</h2>
 <ul>
-<li>환경 알레르겐 특이 면역요법(ASIT) 대상 선정 시</li>
-<li>피부과 전문 수의사가 환경 알레르기 평가 목적으로 사용</li>
+<li><strong>혈액(IgE)·침(IgA, IgM) 검사</strong>: 2019년 수의학 학술지의 연구는 침과 혈액의 음식 특이 항체 검사가 개의 이상 식이 반응을 진단하는 데 신뢰할 수 없다고 결론지었다. 건강한 개도 양성이 나올 수 있고, 알레르기가 있는 개가 음성이 나올 수도 있다.</li>
+<li><strong>털 검사</strong>: 일부 연구에서 물이나 가짜 털로 검사해도 비슷한 양성 결과가 나왔다는 보고가 있으며, 정확도를 검증한 자료를 제시하지 못한 업체가 많았다.</li>
+<li>혈청 검사는 반복 검사 시 결과가 달라지는 등 재현성과 정확도가 떨어지는 것으로 보고되었다.</li>
 </ul>
 
+<div class="callout-dog">
+<strong>결과표만 보고 사료를 바꾸지 마세요</strong><br>
+• 양성으로 나온 재료를 모두 끊으면 영양 불균형이 생길 수 있다<br>
+• 음성이라고 안심해서 진짜 원인(벼룩, 환경 알레르기)을 놓칠 수 있다<br>
+• 진단은 수의사와 함께 식이 시험으로 확인한다
+</div>
+
+<h2>제대로 된 진단: 제한식 식이 시험</h2>
+<ol>
+<li><strong>다른 원인 먼저 배제</strong>: 벼룩 알레르기, 환경 알레르기(아토피), 감염(세균·곰팡이), 옴 등 피부 질환을 먼저 확인·치료한다.</li>
+<li><strong>제한식 급여</strong>: 새로운 단백질 식이 또는 가수분해 단백질 처방식만 보통 8~12주 정도 먹인다. 이 기간에는 간식, 맛이 첨가된 약, 사람 음식, 영양제를 모두 중단한다.</li>
+<li><strong>증상 평가</strong>: 가려움이 호전되었는지 기록한다.</li>
+<li><strong>재도전</strong>: 이전 식사를 다시 먹여 증상이 재발하면 식이 알레르기로 확진한다.</li>
+<li><strong>장기 관리</strong>: 문제 재료를 확인해 피하는 식단을 정한다.</li>
+</ol>
+
+<h2>흔한 오해</h2>
+<table>
+<thead><tr><th>오해</th><th>사실</th></tr></thead>
+<tbody>
+<tr><td>곡물이 알레르기 원인이다</td><td>많은 연구에서 단백질 원(소고기, 유제품, 닭고기 등)이 흔한 원인으로 보고되며 곡물만의 문제로 단정할 수 없다</td></tr>
+<tr><td>한 번 검사하면 평생 피할 재료를 알 수 있다</td><td>간편 검사는 신뢰성이 낮아 식이 시험 없이는 확정할 수 없다</td></tr>
+<tr><td>알레르기는 어릴 때만 생긴다</td><td>나이에 상관없이 생길 수 있다</td></tr>
+<tr><td>가려우면 식이 알레르기다</td><td>벼룩·환경 알레르기가 더 흔한 경우가 많다</td></tr>
+</tbody>
+</table>
+
 <h2>마지막으로</h2>
-<p>혈청 검사 결과를 받았다면 수의 피부과 전문의와 상담해 의미를 해석하는 것이 좋다. 검사 결과만으로 식이를 완전히 바꾸는 것은 근거가 부족하다.</p>`,
+<p>식이 알레르기가 의심되면 검사 키트 대신 수의사와 함께 식이 시험을 계획하자. 시간이 걸리지만 가장 확실한 방법이다.</p>`,
     authorName: "펫지기 에디터",
     authorCredential: "반려동물 영양 정보 큐레이터",
     ymyl: false,
-    sources: JSON.stringify([
-      "Bethlehem, S. et al. — Evaluation of a commercial lymphocyte transformation test for the diagnosis of adverse food reactions in dogs. J Small Anim Pract 2012",
-      "한국수의피부학회 식이 알레르기 진단 가이드라인",
-    ]),
+    sources: [
+      "https://www.veterinarypracticenews.com/the-pros-and-cons-of-food-allergy-testing/ — Veterinary Practice News, The pros and cons of food allergy testing",
+      "https://academy.royalcanin.com/en/veterinary/testing-for-food-specific-antibodies-in-saliva-and-blood-of-food-allergic-and-healthy-dogs — Royal Canin Academy, Testing for food-specific antibodies in saliva and blood of food-allergic and healthy dogs",
+      "https://vethelpdirect.com/vetblog/2023/11/19/allergy-tests-on-dog-hair-do-they-work/ — VetHelpDirect, Allergy tests on dog hair: do they work?",
+    ],
     disclaimer: null,
     status: "published",
     publishedAt: "2026-11-19T11:00:00.000Z",

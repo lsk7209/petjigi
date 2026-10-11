@@ -285,53 +285,56 @@ const BLOG_POSTS: NewContent[] = [
     subtitle: "이유 시작 시기, 단계별 식이 전환, 고형식 거부 시 대처, 영양 기준",
     metaTitle: "키튼 이유 단계 — 4~8주 이유식·고형식 전환 완전 가이드 | 펫지기",
     metaDescription: "새끼 고양이 이유 과정과 고형식 전환 방법. 이유 시작 적정 시기, 4~8주 단계별 식이 전환, 고형식 거부 시 대처, 키튼 영양 요구량을 정리했습니다.",
-    body: `<p>새끼 고양이의 이유 과정은 자연스럽게 진행되지만, 인위적으로 도와야 하는 경우(구조 키튼 등)에는 올바른 방법이 중요하다.</p>
+    body: `<p>새끼 고양이는 어미젖을 먹다가 생후 4주 무렵부터 고형식에 관심을 보이기 시작한다. 이유 과정은 서서히 진행되며, 대개 6~7주 무렵 대부분의 영양을 고형식으로 섭취한다. 어미와 함께 있는 새끼와 사람이 키우는 고아 새끼의 접근법을 정리했다.</p>
 
-<h2>이유 시작 시기</h2>
-<ul>
-<li>자연 이유: 어미가 새끼에게 고형식 먹는 것을 보여주기 시작 (3~4주)</li>
-<li>인공 이유: 3~4주령부터 시작 가능</li>
-<li>너무 이른 이유 (2주 미만): 소화기 미성숙 → 설사·영양 불량</li>
-</ul>
-
-<h2>단계별 전환</h2>
+<h2>시기</h2>
 <table>
-<thead><tr><th>주령</th><th>식이</th></tr></thead>
+<thead><tr><th>상황</th><th>시작 시기</th></tr></thead>
 <tbody>
-<tr><td>3~4주</td><td>KMR(고양이 대용 모유) 위주, 고형 시도 시작</td></tr>
-<tr><td>4~5주</td><td>KMR + 고형 습식 사료 1:1 퓌레 형태</td></tr>
-<tr><td>5~6주</td><td>점차 고형식 비율 높이기</td></tr>
-<tr><td>7~8주</td><td>고형 습식 사료 주식, KMR 보완</td></tr>
-<tr><td>8주 이상</td><td>고형 사료 주식, KMR 중단</td></tr>
+<tr><td>어미와 함께 있는 새끼</td><td>생후 약 4주에 고형식에 관심을 보이기 시작한다</td></tr>
+<tr><td>어미 없이 분유로 키우는 새끼</td><td>생후 약 3주경부터 시도하는 경우가 많다</td></tr>
+<tr><td>이유 완료</td><td>대개 생후 6~7주 무렵</td></tr>
 </tbody>
 </table>
+<p>개체마다 속도가 다르므로 억지로 서두르지 않는다. 급하게 젖을 떼면 어미와 새끼 모두 스트레스를 받는다.</p>
 
-<h2>고형식 거부 시 대처</h2>
+<h2>단계별 진행</h2>
+<ol>
+<li><strong>죽(그루얼) 만들기</strong>: 새끼 고양이용 캔(습식)에 새끼고양이용 대체 분유 또는 따뜻한 물을 섞어 오트밀 정도의 묽기로 만든다. 한 자료는 캔 2 : 분유(물) 1 정도를 기준으로 제시한다.</li>
+<li><strong>납작한 접시에 주기</strong>: 낮고 넓은 접시에 담아 준다. 처음에는 손가락에 묻혀 맛을 보게 한다. 처음 며칠은 매우 지저분하다.</li>
+<li><strong>점차 되게</strong>: 물이나 분유 비율을 줄이고 질감을 서서히 되직하게 한다.</li>
+<li><strong>습식·소량의 건식 병행</strong>: 5~6주 이후 새끼 고양이용 건사료를 불려서 또는 그대로 접시에 둔다.</li>
+<li><strong>깨끗한 물</strong>: 고형식을 먹기 시작하면 항상 신선한 물을 준다.</li>
+</ol>
+
 <div class="callout-cat">
-<strong>이유 거부 대처 방법</strong><br>
-• 고형식을 따뜻하게 데우기<br>
-• 손가락에 묻혀서 핥게 하기<br>
-• 접시 여러 종류 시도<br>
-• 억지로 먹이지 않기 (거부감 형성)<br>
-• 48시간 이상 먹지 않으면 수의사 확인
+<strong>주의</strong><br>
+• 반드시 새끼 고양이용(성장기용) 식사를 준다 — 성묘 사료는 영양이 부족하다<br>
+• 소 또는 사람용 우유는 설사를 일으킬 수 있어 주지 않는다<br>
+• 억지로 입에 넣어 흡인하지 않게 한다<br>
+• 체중이 늘지 않거나 설사가 있으면 바로 병원에 간다
 </div>
 
-<h2>키튼 영양 기준</h2>
+<h2>체중과 건강 확인</h2>
 <ul>
-<li>키튼 전용 사료: 성묘보다 단백질·지방·칼슘 높음</li>
-<li>AAFCO "성장기" 인증 필수</li>
-<li>일반 성묘 사료로 키튼 먹이지 말 것 (영양 부족)</li>
+<li>이유기 새끼는 매일 또는 이틀에 한 번 체중을 잰다. 체중이 늘지 않거나 줄면 위험 신호다.</li>
+<li>배변이 정상인지(굳기·횟수), 눈곱·콧물이 없는지 본다.</li>
+<li>구충 일정과 첫 예방접종 시기를 수의사와 상의한다.</li>
 </ul>
 
+<h2>화장실 훈련</h2>
+<p>고형식을 먹기 시작할 무렵 얕은 화장실과 고운 모래(또는 덩어리지지 않는 모래)를 마련한다. 새끼가 모래를 먹으려 하면 안전한 제품으로 바꾸고 감독한다.</p>
+
 <h2>마지막으로</h2>
-<p>이유 과정은 천천히 진행하는 것이 원칙이다. 서두르면 소화 장애가 오고, 너무 늦으면 모유에만 의존하게 된다. 8주 이전 입양은 이 과정이 완성되지 않았을 가능성이 있다.</p>`,
+<p>이유는 며칠에 끝나는 과정이 아니라 몇 주에 걸쳐 새끼의 속도에 맞춰 진행하는 일이다. 어린 새끼나 고아 새끼는 반드시 수의사의 안내를 받으며 키우자.</p>`,
     authorName: "펫지기 에디터",
     authorCredential: "반려동물 영양 정보 큐레이터",
     ymyl: false,
-    sources: JSON.stringify([
-      "한국고양이수의사회 키튼 영양 가이드라인",
-      "Buffington, C.A.T. et al. — Nutrition assessment guidelines. J Vet Intern Med 2004",
-    ]),
+    sources: [
+      "https://www.maddiesfund.org/transitioning-kittens-and-puppies-to-solid-food/presentation_content/external_files/Transitioning%20Kittens%20and%20Puppies%20to%20Solid%20Food-%20Transcript.pdf — Maddie's Fund, Transitioning Kittens and Puppies to Solid Food",
+      "https://network.bestfriends.org/sites/default/files/inline-files/Weaning%20Kittens.pdf — Best Friends Animal Society, Weaning Kittens",
+      "https://cats.com/?p=74355 — cats.com, When Do Kittens Start Eating Food? A Vet Explains",
+    ],
     disclaimer: null,
     status: "published",
     publishedAt: "2026-12-08T11:00:00.000Z",

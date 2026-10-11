@@ -19,52 +19,62 @@ const BLOG_POSTS: NewContent[] = [
     subtitle: "피부 탄성 검사, 잇몸 수분 확인, 탈수 증상 단계, 즉시 병원 기준",
     metaTitle: "강아지 탈수 확인법 — 피부 탄성·잇몸 체크 30초 가이드 | 펫지기",
     metaDescription: "강아지 탈수 여부를 집에서 30초에 확인하는 방법. 피부 탄성 검사, 잇몸 수분 확인법, 탈수 정도별 증상, 즉시 동물병원에 가야 하는 기준을 정리했습니다.",
-    body: `<p>강아지 탈수는 빠르게 악화될 수 있다. 집에서 간단히 확인하는 방법을 알면 응급 여부를 빠르게 판단할 수 있다.</p>
+    body: `<p>강아지는 구토, 설사, 더위, 질병으로 쉽게 탈수될 수 있다. 심해지면 장기가 손상되므로 초기 신호를 알아채는 것이 중요하다. 집에서 확인하는 방법과 병원에 가야 하는 기준을 정리했다. 집 검사는 참고용이며 정확한 진단은 수의사가 한다.</p>
 
-<h2>피부 탄성 검사</h2>
-<p>목덜미 또는 어깨 사이 피부를 1~2초 잡아당긴 후 놓는다.</p>
+<h2>탈수의 신호</h2>
 <ul>
-<li><strong>정상</strong>: 즉시 원래 위치로 돌아옴</li>
-<li><strong>경도 탈수</strong>: 1~2초 지연</li>
-<li><strong>중도 이상</strong>: 3초 이상 지연 또는 주름이 남음</li>
+<li>잇몸이 끈적하거나 마르다</li>
+<li>기운이 없고 축 처진다</li>
+<li>눈이 움푹 들어간다</li>
+<li>코가 마르고 소변이 진하거나 적다</li>
+<li>헐떡임, 식욕 감소, 구토·설사 동반</li>
 </ul>
 
-<h2>잇몸 수분 확인</h2>
-<div class="callout-dog">
-<strong>잇몸 습도 검사</strong><br>
-1. 잇몸을 손가락으로 눌러 흰색 만들기<br>
-2. 손가락 뗀 후 분홍색 돌아오는 시간 확인<br>
-• 1~2초 이내: 정상 (모세혈관 충전 시간)<br>
-• 2초 이상: 탈수·순환 저하 의심<br>
-• 잇몸 끈적함(건조): 탈수 신호
-</div>
-
-<h2>탈수 정도별 증상</h2>
+<h2>집에서 해 보는 두 가지 확인</h2>
 <table>
-<thead><tr><th>정도</th><th>증상</th><th>대처</th></tr></thead>
+<thead><tr><th>방법</th><th>하는 법</th><th>해석</th></tr></thead>
 <tbody>
-<tr><td>경도(5%)</td><td>약간 무기력, 음수 감소</td><td>수분 공급 + 경과 관찰</td></tr>
-<tr><td>중도(7~9%)</td><td>무기력, 눈 침침, 피부 탄성 저하</td><td>당일 수의사 방문</td></tr>
-<tr><td>중증(10%+)</td><td>눈 꺼짐, 쇼크, 의식 저하</td><td>즉시 응급 병원</td></tr>
+<tr><td>피부 탄력(스킨 텐트)</td><td>어깨 뒤나 목덜미 피부를 가볍게 집어 올렸다 놓는다</td><td>바로 제자리로 돌아오면 정상. 천천히 돌아오거나 텐트처럼 서 있으면 탈수를 의심한다</td></tr>
+<tr><td>모세혈관 재충혈 시간</td><td>잇몸을 손가락으로 눌러 하얗게 만든 뒤 놓고, 분홍색이 돌아오는 시간을 잰다</td><td>대개 1~2초 안에 돌아오면 정상. 2초 이상 걸리면 탈수가 진행된 것일 수 있다</td></tr>
 </tbody>
 </table>
+<p>건강할 때 미리 연습해 두면 평소 상태와 비교하기 쉽다. 피부 탄력은 주름이 많은 견종(샤페이, 불독), 노령견, 털이 긴 개에서는 판단이 어렵다. 피부가 텐트처럼 서 있을 정도면 이미 상당히 탈수된 것일 수 있다.</p>
 
-<h2>집에서 수분 공급</h2>
+<div class="callout-dog">
+<strong>바로 병원에 가야 하는 경우</strong><br>
+• 눈이 움푹 들어가거나 매우 처져서 반응이 둔하다<br>
+• 물을 마셔도 토한다<br>
+• 잇몸이 창백·붉다, 재충혈 시간이 길다<br>
+• 구토·설사가 반복된다, 특히 어린 강아지·노령견<br>
+• 열사병이 의심된다 (헐떡임, 침 흘림)
+</div>
+
+<h2>가벼운 경우의 대처</h2>
 <ul>
-<li>경도 탈수: 소량씩 자주 물 제공</li>
-<li>전해질 용액(수의사 처방) 활용</li>
-<li>강제로 많이 마시게 하지 않기 (구토 유발 가능)</li>
+<li>신선한 물을 소량씩 자주 마시게 한다. 한꺼번에 많이 마시면 토할 수 있다.</li>
+<li>가능하면 시원하고 그늘진 곳에서 쉬게 한다.</li>
+<li>구토나 설사가 있다면 원인을 확인해야 하므로 반나절~하루 안에 호전되지 않으면 진료를 받는다.</li>
+<li>전해질 음료나 사람 약을 임의로 먹이지 않는다.</li>
+</ul>
+
+<h2>탈수를 막는 습관</h2>
+<ul>
+<li>물그릇을 항상 신선하게 유지하고 여러 곳에 둔다.</li>
+<li>더운 날 산책 중에도 물을 챙긴다.</li>
+<li>습식 사료를 섞으면 수분 섭취가 늘어난다.</li>
+<li>물 마시는 양이 갑자기 늘거나 줄면 질환의 신호일 수 있어 기록한다.</li>
 </ul>
 
 <h2>마지막으로</h2>
-<p>탈수는 원인이 있다. 단순 더위·운동 후 탈수는 수분 보충으로 회복되지만, 구토·설사·질환 동반 탈수는 즉시 수의사 방문이 필요하다.</p>`,
+<p>의심되면 집에서 오래 지켜보지 말고 병원에 연락하자. 소형견과 어린 강아지는 탈수 진행이 빠르다.</p>`,
     authorName: "펫지기 에디터",
     authorCredential: "반려동물 영양 정보 큐레이터",
     ymyl: false,
-    sources: JSON.stringify([
-      "한국수의응급의학회 탈수 임상 가이드라인",
-      "Dibartola, S.P. — Disorders of Sodium and Water. Fluid Therapy 2006",
-    ]),
+    sources: [
+      "https://www.webvet.com/dehydration-in-dogs/ — WebVet, Dehydration in dogs",
+      "https://www.zoetispetcare.com/blog/article/signs-dehydration-dogs — Zoetis Petcare, Signs of dehydration in dogs",
+      "https://www.hepper.com/dehydration-in-dogs/ — Hepper, Dehydration in dogs",
+    ],
     disclaimer: null,
     status: "published",
     publishedAt: "2026-12-04T09:00:00.000Z",
@@ -81,45 +91,50 @@ const BLOG_POSTS: NewContent[] = [
     subtitle: "요오드 제한 식이 원리, 효과와 한계, 완전 제한의 어려움, 사용 조건",
     metaTitle: "고양이 갑상선항진증 요오드 제한 식이 — y/d 효과와 한계 | 펫지기",
     metaDescription: "고양이 갑상선항진증 치료에 사용되는 요오드 제한 식이(힐스 y/d) 완전 해설. 원리, 효과와 한계, 완전 제한이 어려운 이유, 올바른 사용 조건을 정리했습니다.",
-    body: `<p>갑상선항진증 치료에 "약 없이 식이만으로" 가능한 방법이 있다 — 요오드 제한 식이다. 그러나 엄격한 조건이 필요하다.</p>
+    body: `<p>갑상선기능항진증은 노령 고양이에서 흔한 호르몬 질환이다. 치료는 약물, 방사성 요오드, 수술이 기본이고, 식이 요법으로 요오드를 제한한 처방식(예: 힐스 y/d)도 하나의 선택지로 쓰인다. 식이 요법의 장점과 한계를 정리했다.</p>
 
-<h2>요오드 제한 식이 원리</h2>
-<p>갑상선 호르몬은 요오드를 원료로 만들어진다. 식이에서 요오드를 극도로 제한하면 갑상선 호르몬 생산이 감소한다. 힐스 y/d가 국내에서 가장 알려진 요오드 제한 처방식이다.</p>
+<h2>요오드 제한 처방식이란</h2>
+<p>갑상선 호르몬은 요오드를 원료로 만든다. 먹이의 요오드를 엄격히 제한해 호르몬 생성을 줄이는 방식이다. 이 식단이 효과를 내려면 다른 음식을 일절 먹이지 않고 처방식만 먹여야 한다.</p>
 
-<h2>효과</h2>
+<h2>효과에 대한 연구</h2>
 <ul>
-<li>요오드를 철저히 제한하면 T4 수치 정상화 가능</li>
-<li>약물 부작용이 걱정되는 고양이에게 대안</li>
-<li>경증~중등도 갑상선항진증에서 효과 확인</li>
+<li>코넬대 연구진이 8마리의 갑상선기능항진증 고양이를 1년간 요오드 제한 식이로 관찰한 연구에서 6마리가 4주째 총 T4가 정상화되었다. 초기 수치가 가장 높았던 2마리는 정상화되지 않았다. 표본이 매우 작다.</li>
+<li>y/d만 먹인 49마리를 후향적으로 본 연구에서는 83%에서 총 T4가 정상화되었으나, 요약 평가는 유망하지만 아직 1차 치료로 권하기는 이르다는 것이다.</li>
+<li>제조사가 후원한 12주 무작위 시험에서는 처방식군 12마리 중 6마리가 정상 갑상선 상태가 되었다.</li>
 </ul>
 
-<h2>완전 제한의 어려움</h2>
+<h2>치료법 비교</h2>
+<table>
+<thead><tr><th>방법</th><th>장점</th><th>단점·주의</th></tr></thead>
+<tbody>
+<tr><td>항갑상선 약물(메티마졸 등)</td><td>비교적 접근이 쉽다</td><td>평생 매일 복용, 부작용 모니터링과 정기 혈액 검사 필요</td></tr>
+<tr><td>방사성 요오드</td><td>완치 가능성이 높다</td><td>전문 시설과 입원 필요</td></tr>
+<tr><td>수술(갑상선 절제)</td><td>완치 가능</td><td>마취 위험, 부갑상선 합병증</td></tr>
+<tr><td>요오드 제한 처방식</td><td>약이나 수술 없이 관리할 수 있다</td><td>다른 음식·간식·사냥 금지가 필수. 일부 고양이는 정상화되지 않을 수 있고 신장병이 동반된 고양이는 신중하게 모니터링해야 한다</td></tr>
+</tbody>
+</table>
+
 <div class="callout-cat">
-<strong>요오드 제한 식이의 현실적 제약</strong><br>
-• y/d 이외 모든 음식 완전 차단 필수<br>
-• 생선 냄새 나는 트릿 1개만 먹어도 효과 무효<br>
-• 다묘 가정: 다른 고양이 밥 접근 차단 필수<br>
-• 야외 접근 고양이 → 불가능<br>
-• 고양이가 y/d를 거부하면 대안 없음
+<strong>식이 요법을 쓰려면 지켜야 할 것</strong><br>
+• 처방식 외 간식·사람 음식·다른 고양이 사료를 일절 주지 않는다 (다묘 가정은 특히 어렵다)<br>
+• 실외 출입으로 다른 먹이를 먹는 고양이에게는 맞지 않는다<br>
+• 4주 후 T4, 이후 정기적으로 혈액 검사(신장 수치 포함)를 받는다<br>
+• 식이 요법만으로 조절이 안 되면 다른 치료로 바꾼다
 </div>
 
-<h2>요오드 제한 식이가 적합한 경우</h2>
-<ul>
-<li>완전 실내 고양이</li>
-<li>혼자 키우는 경우</li>
-<li>y/d를 잘 먹는 고양이</li>
-<li>약물 부작용 이력 있는 경우</li>
-</ul>
+<h2>신장 상태 확인이 중요</h2>
+<p>갑상선기능항진증은 신장 혈류를 늘려 신장병을 가릴 수 있다. 치료로 갑상선 수치가 내려가면 숨어 있던 신장 문제가 드러나기도 한다. 어떤 치료든 신장 수치를 함께 추적한다.</p>
 
 <h2>마지막으로</h2>
-<p>요오드 제한 식이는 조건이 충족되면 효과적인 대안이지만, 엄격한 관리 없이는 실패한다. 수의사와 함께 T4 모니터링을 유지하면서 진행하는 것이 필수다.</p>`,
+<p>요오드 제한 식이는 조건이 맞는 고양이에게 좋은 선택지가 될 수 있지만 모든 고양이에게 맞지는 않는다. 수의사와 상담해 고양이의 생활 환경에 맞는 치료를 고르자.</p>`,
     authorName: "펫지기 에디터",
     authorCredential: "반려동물 영양 정보 큐레이터",
     ymyl: false,
-    sources: JSON.stringify([
-      "van der Kooij, M. et al. — Iodine-restricted diet as treatment for feline hyperthyroidism. J Vet Intern Med 2014",
-      "한국수의영양학회 갑상선항진증 식이 처방 가이드라인",
-    ]),
+    sources: [
+      "https://www.dovepress.com/one-year-study-evaluating-efficacy-of-an-iodinerestricted-diet-for-the-peer-reviewed-fulltext-article-VMRR — Veterinary Medicine: Research and Reports, 요오드 제한 식이 1년 연구(Cornell)",
+      "https://dvm360.com/view/journal-scan-hyperthyroid-cats-iodine-restriction-enough — dvm360, Journal scan: Hyperthyroid cats: Is iodine restriction enough?",
+      "https://www.petfoodindustry.com/nutrition/article/15460626/effects-of-a-restricted-iodine-food-on-cats-with-hyperthyroidism — Petfood Industry, Effects of a restricted iodine food on cats with hyperthyroidism",
+    ],
     disclaimer: null,
     status: "published",
     publishedAt: "2026-12-04T11:00:00.000Z",
