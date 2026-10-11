@@ -143,37 +143,56 @@ const POSTS: NewContent[] = [
     title: "강아지 항문낭 문제 — 증상과 진료가 필요한 경우",
     metaTitle: "강아지 항문낭 문제 | 증상과 병원 방문 기준 | 펫지기",
     metaDescription: "강아지 항문낭 막힘·감염·농양에서 보일 수 있는 증상과 집에서 무리하게 짜지 말아야 할 상황을 안내합니다.",
-    body: `<h2>항문낭 표현이 필요한 이유</h2>
-<p>항문낭 질환에는 막힘, 염증, 농양과 종양 등이 포함됩니다. 바닥에 항문을 끄는 행동이나 핥기는 단서가 될 수 있지만 기생충·피부 질환 등 다른 원인도 있어 행동만으로 항문낭을 짜서는 안 됩니다. Merck Veterinary Manual은 진찰을 통해 상태를 구분한 뒤 수동 배출, 세척, 약물 또는 수술을 선택한다고 설명합니다.</p>
+    body: `<p>강아지가 엉덩이를 바닥에 끌거나 항문 주변을 핥고 물어뜯는다면 항문낭 문제일 수 있다. 항문낭은 항문 양옆에 있는 작은 주머니로 냄새가 강한 분비물이 들어 있다. 대부분의 개는 배변할 때 자연스럽게 비워지지만, 어떤 개는 분비물이 굳거나 감염되어 통증이 생긴다.</p>
 
-<h2>집에서 무리하게 짜지 마세요</h2>
-<p>증상이 없는 개에게 고정 주기로 항문낭을 표현해야 한다는 보편 기준은 확인되지 않습니다. 특히 통증, 단단한 부종, 피·고름, 피부 구멍이 있거나 분비물이 나오지 않는 상태에서 압박하면 손상과 통증을 키울 수 있습니다. 첫 증상, 재발 또는 이상 분비물이 있으면 수의사나 숙련된 동물병원 인력에게 평가받으세요.</p>
-
-<h2>병원에 가야 할 경우</h2>
+<h2>이런 신호가 있으면 의심한다</h2>
 <ul>
-  <li>항문 주변이 붓거나 빨갛게 변한 경우</li>
-  <li>항문 옆에 구멍(파열)이 생긴 경우</li>
-  <li>피 섞인 분비물 또는 고름</li>
-  <li>강아지가 극심하게 통증을 호소하는 경우</li>
-  <li>배변을 힘들어하거나 분비물이 나오지 않는 경우</li>
+<li>엉덩이를 바닥에 끌고 다님</li>
+<li>항문 주변을 자주 핥거나 물고 꼬리를 쫓음</li>
+<li>배변할 때 힘을 주고 아파하는 듯함</li>
+<li>생선 같은 강한 냄새</li>
+<li>항문 옆이 붓고 붉으며 열감이 있음 (농양 가능성)</li>
 </ul>
 
-<h3>항문낭을 자주 짜야 하면 문제가 있는 건가요?</h3>
-<p>반복적으로 필요하다면 막힘이 되풀이되는 원인과 다른 항문 주변 질환을 확인해야 합니다. 개별 관리 주기는 진찰 결과를 바탕으로 정하고 임의로 간격을 줄이지 마세요.</p>
+<div class="callout-dog">
+<strong>바로 병원에 가야 하는 경우</strong><br>
+• 항문 옆이 붉게 붓고 만지면 심하게 아파함<br>
+• 피나 고름이 나옴 (농양이 터진 상태일 수 있음)<br>
+• 열, 식욕 저하, 무기력이 함께 있음<br>
+• 짜 주었는데도 반복해서 다시 문제가 생김
+</div>
 
-<h3>항문낭 제거 수술은 어떤 경우에 하나요?</h3>
-<p>반복 감염, 농양 재발, 항문낭 종양이 있을 때 수술을 고려합니다. 수술 후 변실금 위험이 있으므로 전문 수의사와 충분히 상담하세요. <a href="/guide/dog-health-checkup">강아지 정기 건강검진 가이드</a>에서 항문낭 검진을 포함하는 방법을 확인하세요.</p>
+<h2>문제의 종류와 치료</h2>
+<table>
+<thead><tr><th>상태</th><th>내용</th><th>일반적인 치료</th></tr></thead>
+<tbody>
+<tr><td>막힘(임팩션)</td><td>분비물이 굳어 배출되지 않는다</td><td>수의사가 손으로 짜서 비운다. 너무 단단하면 부드럽게 하는 처치를 하기도 한다</td></tr>
+<tr><td>감염·농양</td><td>염증으로 붓고 아프며 터질 수 있다</td><td>고름을 빼고 세척하며 항생제 등을 사용한다. 따뜻한 찜질을 권하기도 한다</td></tr>
+<tr><td>종양</td><td>항문낭에 생기는 종양도 있어 증상이 비슷할 수 있다</td><td>직장 검사와 추가 검사로 구분한다</td></tr>
+</tbody>
+</table>
 
-<div style="background:#f8f9fa;border-left:4px solid #6c757d;padding:14px;margin:16px 0;font-size:0.95em;">
-  <strong>참고 자료</strong><br>
-  · Merck Veterinary Manual — Anal Sac Disease in Dogs and Cats
-</div>`,
+<h2>집에서 짜 줘도 되나</h2>
+<p><strong>집에서 무리하게 짜지 마세요.</strong> 항문낭은 문제가 없는 개에게는 정기적으로 짤 필요가 없다. 자주 짜면 오히려 자극이 되어 문제를 만들 수 있다는 의견도 있어서, 먼저 수의사에게 필요한지 확인하고 방법을 배우는 것이 안전하다. 증상이 있는데 집에서 억지로 짜다가 염증이 생기거나 아프게 해 물릴 수 있다.</p>
+
+<h2>재발을 줄이려면</h2>
+<ul>
+<li>변이 너무 묽거나 딱딱하지 않게 식이 섬유를 포함한 균형 잡힌 식사를 한다. 구체적인 식이 변경은 수의사와 상의한다.</li>
+<li>비만이면 체중을 줄인다.</li>
+<li>알레르기나 소화 문제로 반복되면 원인을 함께 치료한다.</li>
+<li>자주 재발하면 수의사가 항문낭 제거 수술을 논의할 수 있다.</li>
+</ul>
+
+<h2>마지막으로</h2>
+<p>엉덩이 끌기는 항문낭 외에도 기생충, 피부 질환 등으로 나타날 수 있다. 증상이 계속되거나 붓고 아파 보이면 직접 해결하려 하지 말고 진료받자.</p>`,
     authorName: "펫지기 에디터팀",
     status: "published",
     ymyl: true,
-    sources: JSON.stringify([
-      "https://www.merckvetmanual.com/digestive-system/diseases-of-the-rectum-and-anus/anal-sac-disease-in-dogs-and-cats — Merck Veterinary Manual, Anal Sac Disease in Dogs and Cats (reviewed 2025)",
-    ]),
+    sources: [
+      "https://vcahospitals.com/know-your-pet/anal-sac-disease-in-dogs — VCA, Anal Sac Disease in Dogs",
+      "https://www.merckvetmanual.com/digestive-system/diseases-of-the-rectum-and-anus/anal-sac-disease-in-dogs-and-cats — Merck Veterinary Manual, Anal Sac Disease in Dogs and Cats",
+      "https://vcahospitals.com/know-your-pet/anal-gland-tumors — VCA, Anal Sac Tumors",
+    ],
     disclaimer: "이 글은 일반적인 질환 정보를 제공하며 자가 처치 지시가 아닙니다. 항문 주변 통증·부종·출혈·고름·상처가 있으면 직접 짜지 말고 진료받으세요.",
     publishedAt: "2026-07-03T03:00:00.000Z",
     createdAt: NOW,

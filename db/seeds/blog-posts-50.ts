@@ -84,50 +84,58 @@ const BLOG_POSTS: NewContent[] = [
     subtitle: "방광염·요석증·특발성방광염·요도막힘 구분, 소변 못 보는 긴급 신호, 예방 식이",
     metaTitle: "고양이 FLUTD 하부 요로기 질환 — 증상·응급 신호·예방 | 펫지기",
     metaDescription: "고양이 FLUTD(하부 요로기 질환)는 수컷에서 요도 막힘으로 응급이 됩니다. 방광염·요석증·특발성 구분, 소변 못 보는 신호, 예방 식이를 정리했습니다.",
-    body: `<p>고양이가 화장실을 자주 들락거리면서 소변을 거의 못 보거나, 화장실 밖에서 소변을 본다면 — 하부 요로기 문제를 의심해야 한다. 특히 수컷 고양이에서 요도 막힘이 생기면 생명을 위협하는 응급 상황이 된다.</p>
+    body: `<p>고양이 하부 요로 질환(FLUTD)은 방광과 요도에 생기는 여러 문제를 묶어 부르는 이름이다. 화장실에 자주 가거나, 힘을 주는데 소변이 안 나오거나, 소변에 피가 섞이는 증상이 나타난다. 특히 수컷은 요도가 길고 좁아 막히기 쉬워서, 증상을 가볍게 보면 위험하다.</p>
 
-<h2>FLUTD란</h2>
-<p>Feline Lower Urinary Tract Disease. 방광·요도를 포함한 하부 요로기에 영향을 미치는 질환의 총칭이다. 여러 원인이 있다.</p>
+<div class="callout-cat">
+<strong>수컷 고양이가 소변을 못 보면 응급</strong><br>
+• 화장실에서 자꾸 힘을 주는데 소변이 거의 안 나옴<br>
+• 울음소리를 내거나 불안해하고 생식기를 계속 핥음<br>
+• 구토, 식욕 저하, 무기력<br>
+• 치료하지 않으면 신장 부전으로 이어질 수 있고 며칠 안에 생명이 위험해질 수 있다고 iCatCare는 설명한다<br>
+→ 기다리지 말고 바로 동물병원(24시 응급 포함)으로 간다.
+</div>
 
-<h2>FLUTD 원인 구분</h2>
+<h2>흔한 원인</h2>
 <table>
-<thead><tr><th>원인</th><th>특징</th><th>성별</th></tr></thead>
+<thead><tr><th>원인</th><th>특징</th></tr></thead>
 <tbody>
-<tr><td>특발성 방광염(FIC)</td><td>원인 불명, 스트레스 연관. 가장 흔함(50~60%)</td><td>양성 모두, 수컷이 더 위험</td></tr>
-<tr><td>요석증(Urolithiasis)</td><td>방광·요도 결석. 스트루바이트·옥살산칼슘</td><td>양성 모두</td></tr>
-<tr><td>세균성 방광염</td><td>고양이에서 비교적 드묾. 노령묘·면역저하에서</td><td>양성 모두</td></tr>
-<tr><td>요도 마개(Urethral Plug)</td><td>점액+결정+세포 덩어리. 수컷에서 막힘 위험</td><td>수컷</td></tr>
+<tr><td>특발성 방광염(FIC)</td><td>뚜렷한 원인을 찾지 못하는 경우가 많고 스트레스와 관련이 있는 것으로 알려져 있다</td></tr>
+<tr><td>요로 결석·결정</td><td>소변에서 결정이나 결석이 생겨 요도를 막거나 방광을 자극한다</td></tr>
+<tr><td>요도 폐쇄</td><td>결정과 점액 덩어리 등이 요도를 막는 상태. 수컷에서 더 위험하다</td></tr>
+<tr><td>세균 감염</td><td>상대적으로 드물고, 나이 든 고양이에서 더 흔하다</td></tr>
 </tbody>
 </table>
 
-<h2>즉시 응급실이 필요한 신호</h2>
-<div class="callout-cat">
-<strong>수컷 고양이 — 소변 못 보면 응급</strong><br>
-• 화장실에 자주 가지만 소변이 전혀 안 나옴<br>
-• 배에 힘을 주며 고통스러운 표정<br>
-• 페니스를 자꾸 핥음<br>
-• 무기력해지거나 구토<br>
-→ 요도 막힘 의심 — 24시간 내 치료 없으면 사망 가능
-</div>
-
-<h2>집에서 할 수 있는 예방</h2>
+<h2>폐쇄 전에 나타나는 초기 신호</h2>
 <ul>
-<li><strong>수분 섭취 늘리기</strong>: 습식 사료 비중 높이기, 워터파운틴 설치</li>
-<li><strong>스트레스 관리</strong>: 루틴 유지, 충분한 환경 풍요화 (FIC 예방)</li>
-<li><strong>요로 처방식</strong>: 요석증 이력이 있다면 수의사 처방 요로 케어 사료</li>
-<li><strong>복수 화장실</strong>: 고양이 수 + 1개 원칙, 항상 청결 유지</li>
+<li>화장실에 평소보다 자주 가고 소변량은 적다.</li>
+<li>배뇨할 때 아파하거나 울음소리를 낸다.</li>
+<li>화장실 밖에서 소변을 본다.</li>
+<li>소변에 피가 보인다.</li>
+</ul>
+<p>변비로 혼동하기도 한다. 화장실에서 힘을 주는 모습만으로는 소변 문제인지 배변 문제인지 구분하기 어려우므로, 소변 덩어리가 생기는지 확인하고 의심되면 진료받는다.</p>
+
+<h2>병원에서는</h2>
+<p>소변검사, 영상검사(방사선·초음파), 혈액검사로 원인과 신장 영향을 확인한다. 요도가 막혔다면 보통 진정이나 마취를 하고 요도를 뚫어 소변을 빼는 처치를 한다. 이후 입원 치료와 식이 관리를 하는 경우가 많다.</p>
+
+<h2>재발을 줄이는 관리</h2>
+<ul>
+<li><strong>물 섭취</strong>: 습식 사료와 여러 곳의 신선한 물, 급수대로 수분 섭취를 늘린다.</li>
+<li><strong>스트레스 줄이기</strong>: 숨을 곳, 높은 곳, 충분한 놀이 시간, 일정한 생활 리듬을 마련한다.</li>
+<li><strong>화장실 환경</strong>: 고양이 수 + 1개 이상을 두고 깨끗하게 관리한다.</li>
+<li><strong>처방식</strong>: 결석·결정 병력이 있으면 수의사가 지정한 식이를 지킨다.</li>
 </ul>
 
 <h2>마지막으로</h2>
-<p>FLUTD는 재발이 잦다. 한 번 경험했다면 수분 관리·스트레스 감소를 평생 지속해야 한다. 특히 수컷 중성화 고양이를 키운다면 소변 빈도와 양을 정기적으로 확인하는 습관이 생명을 구할 수 있다.</p>`,
+<p>배뇨 이상은 하루 이틀 지켜보는 병이 아니다. 특히 수컷이 소변을 거의 못 보면 몇 시간이 중요하니 바로 진료받자.</p>`,
     authorName: "펫지기 에디터",
     authorCredential: "반려동물 건강 정보 큐레이터",
     ymyl: true,
-    sources: JSON.stringify([
-      "Hostutler, R.A. et al. — Recent concepts in feline lower urinary tract disease. Vet Clin North Am 2005",
-      "ISFM — Feline Lower Urinary Tract Disease Guidelines",
-      "한국고양이수의사회 비뇨기 질환 임상 가이드라인",
-    ]),
+    sources: [
+      "https://icatcare.org/articles/urethral-obstruction-in-cats — International Cat Care, Urethral obstruction in cats",
+      "https://vcahospitals.com/know-your-pet/cystitis-and-lower-urinary-tract-disease-in-cats — VCA, Cystitis and Lower Urinary Tract Disease in Cats",
+      "https://www.vet.cornell.edu/departments-centers-and-institutes/cornell-feline-health-center/health-information/feline-health-topics/feline-lower-urinary-tract-disease — Cornell Feline Health Center, Feline Lower Urinary Tract Disease",
+    ],
     disclaimer: "이 글은 정보 제공을 목적으로 하며 소변 이상 시 즉시 수의사에게 연락하세요.",
     status: "published",
     publishedAt: "2026-07-20T09:00:00.000Z",

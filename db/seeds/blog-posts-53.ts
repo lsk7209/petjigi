@@ -154,61 +154,60 @@ const BLOG_POSTS: NewContent[] = [
     subtitle: "스트루바이트·옥살산칼슘 결석 차이, 혈뇨·빈뇨·배뇨 곤란 증상, 식이 용해 vs 수술 기준",
     metaTitle: "강아지 방광결석 증상·치료·예방 완전 가이드 | 펫지기",
     metaDescription: "강아지 방광결석의 스트루바이트·옥살산칼슘 차이, 혈뇨·빈뇨 증상, 식이 용해와 수술 기준, 재발 예방 방법을 정리했습니다.",
-    body: `<p>강아지가 자주 소변을 보거나 피가 섞인 소변을 본다면 방광결석이 원인일 수 있다. 결석의 종류에 따라 치료 방법이 완전히 달라진다.</p>
+    body: `<p>강아지가 소변에 피가 섞이거나 자주 화장실을 가고 힘을 주면 방광염으로 생각하기 쉽다. 그런데 방광결석도 증상이 비슷해서, 소변검사와 영상검사로 구분해야 한다. 결석의 종류에 따라 치료법이 완전히 달라지기 때문이다.</p>
 
-<h2>방광결석의 주요 종류</h2>
+<h2>흔한 증상</h2>
+<ul>
+<li>혈뇨 (가장 흔한 신호 중 하나)</li>
+<li>소변을 볼 때 힘을 주거나 소량씩 자주 봄</li>
+<li>배뇨 시 통증, 생식기 핥기</li>
+<li>화장실이 아닌 곳에서의 배뇨</li>
+</ul>
+
+<div class="callout-dog">
+<strong>응급 신호</strong><br>
+• 소변을 거의 보지 못하고 계속 시도함<br>
+• 배가 부풀고 아파함, 구토, 무기력<br>
+→ 결석이 요도를 막으면 방광이 터지거나 신장 기능이 나빠질 수 있다. 바로 응급 진료를 받는다.
+</div>
+
+<h2>결석 종류에 따른 차이</h2>
 <table>
-<thead><tr><th>종류</th><th>원인</th><th>특징</th></tr></thead>
+<thead><tr><th>종류</th><th>특징</th><th>치료 방향</th></tr></thead>
 <tbody>
-<tr><td>스트루바이트 (Struvite)</td><td>세균 감염 (요소분해균), 알칼리 소변</td><td>암컷에서 더 흔함. 처방식으로 용해 가능.</td></tr>
-<tr><td>옥살산칼슘 (Calcium Oxalate)</td><td>고칼슘혈증, 산성 소변, 유전</td><td>수술 필요. 달마시안·비숑·포메라니안에 흔함.</td></tr>
-<tr><td>요산 (Urate)</td><td>달마시안 유전 소인, 간문맥 단락</td><td>달마시안에서 특히 흔함.</td></tr>
+<tr><td>스트루바이트</td><td>세균 감염과 연관된 경우가 많다</td><td>처방식과 항생제로 녹이는 방법을 시도할 수 있다. 몇 주에서 몇 달까지 걸릴 수 있다</td></tr>
+<tr><td>칼슘옥살레이트</td><td>식이로 녹일 수 없다</td><td>물리적으로 제거해야 하며, 이후 재발 방지에 수분 섭취가 핵심이다</td></tr>
+<tr><td>요산염, 시스틴 등</td><td>드물고 특수 식이나 약물이 필요할 수 있다</td><td>종류 분석 후 수의사가 계획</td></tr>
 </tbody>
 </table>
 
-<h2>주요 증상</h2>
-<div class="callout-dog">
-<strong>방광결석 의심 증상</strong><br>
-• 자주 소변을 보려 하지만 양이 적음<br>
-• 소변에 피가 섞임 (혈뇨)<br>
-• 소변 볼 때 고통스러운 자세<br>
-• 집 안에서 소변 실수<br>
-• 소변을 전혀 못 보는 경우 (완전 폐색 — 응급)
-</div>
-
-<h2>진단 방법</h2>
+<h2>진단과 제거 방법</h2>
 <ul>
-<li>복부 X-ray: 스트루바이트·옥살산칼슘 결석은 X-ray에 보임</li>
-<li>복부 초음파: 모든 종류 결석 확인 가능</li>
-<li>소변 검사 (침전물·pH·세균)</li>
-<li>혈액검사: 신장 기능 확인</li>
+<li><strong>검사</strong>: 소변검사(산도, 결정, 세균), 소변 배양, 혈액검사, 방사선·초음파로 크기와 개수를 본다.</li>
+<li><strong>수술</strong>: 방광을 열어 결석을 제거하는 방법으로 가장 빠르게 해결되는 경우가 많다.</li>
+<li><strong>비수술 방법</strong>: 요도를 통해 작은 결석을 씻어내는 방법(요도수압추진법)이 있고 상황에 따라 선택한다.</li>
+<li><strong>식이 용해</strong>: 스트루바이트 등 일부에서 가능하며 감염 치료와 병행한다.</li>
 </ul>
+<p>제거한 결석은 성분 분석을 의뢰해야 재발 방지 계획을 세울 수 있다.</p>
 
-<h2>치료 기준</h2>
+<h2>재발을 줄이려면</h2>
 <ul>
-<li><strong>스트루바이트</strong>: 항생제 + 처방식 용해 식이 (2~3개월). 감염이 없는 경우 처방식만으로도 용해 가능.</li>
-<li><strong>옥살산칼슘</strong>: 자연 용해 불가 — 방광 세척(Water Urohydropulsion) 또는 수술로 제거.</li>
-<li><strong>요도 폐색</strong>: 즉시 응급 처치 (카테터 삽입 또는 수술)</li>
-</ul>
-
-<h2>재발 예방</h2>
-<ul>
-<li>수분 섭취 증가 (습식 사료 또는 음수량 늘리기)</li>
-<li>결석 종류에 따른 처방 예방식 유지</li>
-<li>정기 소변 검사 (3~6개월 마다)</li>
-<li>비만 관리 (비만이 결석 위험 높임)</li>
+<li>물을 충분히 마시게 한다. 습식 사료를 병행하거나 신선한 물그릇을 여러 곳에 둔다.</li>
+<li>수의사가 처방한 식이를 지키고 간식, 사람 음식을 임의로 더하지 않는다.</li>
+<li>배뇨를 참지 않도록 산책과 배뇨 기회를 충분히 준다.</li>
+<li>정기적으로 소변검사나 영상검사로 재발을 확인한다.</li>
 </ul>
 
 <h2>마지막으로</h2>
-<p>방광결석은 재발이 잦다. 한 번 경험했다면 결석 종류를 알고 그에 맞는 장기 관리 계획을 세우는 것이 중요하다. 수분 섭취를 늘리는 것이 모든 종류의 결석 예방에 도움이 된다.</p>`,
+<p>혈뇨와 배뇨 곤란은 단순 방광염 같아 보여도 결석일 수 있다. 증상이 반복되면 소변검사와 영상검사로 원인을 확인하고, 결석 종류에 맞는 치료와 재발 관리를 하자.</p>`,
     authorName: "펫지기 에디터",
     authorCredential: "반려동물 건강 정보 큐레이터",
     ymyl: true,
-    sources: JSON.stringify([
-      "Lulich, J.P. et al. — Worldwide prevalence of uroliths in dogs. Journal of Small Animal Practice 2016",
-      "WSAVA Urolith Management Guidelines",
-      "대한수의사회 비뇨기 질환 임상 가이드라인",
-    ]),
+    sources: [
+      "https://vcahospitals.com/know-your-pet/bladder-stones-in-dogs — VCA, Bladder Stones in Dogs",
+      "https://www.merckvetmanual.com/urinary-system/urolithiasis-in-small-animals/urolithiasis-in-dogs — Merck Veterinary Manual, Urolithiasis in Dogs",
+      "https://vcahospitals.com/know-your-pet/nutritional-concerns-for-dogs-with-bladder-stones — VCA, Nutritional Concerns for Dogs with Bladder Stones",
+    ],
     disclaimer: "이 글은 정보 제공을 목적으로 하며 수의사 진료를 대체하지 않습니다.",
     status: "published",
     publishedAt: "2026-07-28T09:00:00.000Z",

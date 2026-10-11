@@ -19,49 +19,60 @@ const BLOG_POSTS: NewContent[] = [
     subtitle: "IBD와 림프종의 차이, 식이 관리, 스테로이드 치료, 조직 검사 필요성",
     metaTitle: "고양이 IBD 염증성 장질환 — 증상·진단·치료 완전 가이드 | 펫지기",
     metaDescription: "고양이 IBD(염증성 장질환)의 증상과 치료. 반복되는 구토·설사·체중 감소, IBD와 림프종 차이, 스테로이드 치료, 식이 관리를 정리했습니다.",
-    body: `<p>만성 구토·설사·체중 감소가 반복되는 고양이에서 IBD(Inflammatory Bowel Disease)를 의심해야 한다. 완치보다 조절이 목표인 질환이지만, 적절히 관리하면 좋은 삶의 질을 유지할 수 있다.</p>
+    body: `<p>고양이가 구토나 설사를 몇 주 이상 반복하고 체중이 줄어든다면 염증성 장질환(IBD)을 포함해 여러 소화기 질환을 의심할 수 있다. IBD는 위나 장의 점막에 만성 염증이 생기는 질환으로, 증상만으로는 다른 병과 구분하기 어렵다. 그래서 검사로 다른 원인을 하나씩 배제하는 과정이 필요하다.</p>
 
-<h2>IBD란</h2>
-<p>소화관 벽에 만성 염증이 생기는 상태다. 정확한 원인은 불명확하지만 면역계의 비정상적인 반응, 장내 미생물 불균형, 식이 알레르기가 관여한다고 알려져 있다.</p>
-
-<h2>주요 증상</h2>
+<h2>어떤 증상이 나타나나</h2>
 <ul>
-<li>반복되는 구토 (주 2회 이상, 수개월)</li>
-<li>간헐적 설사 또는 연변</li>
-<li>체중 감소 (근육 소실)</li>
-<li>식욕 변동</li>
-<li>복부 통증 (만졌을 때 긴장)</li>
-</ul>
-
-<h2>IBD vs 림프종 — 구분이 중요하다</h2>
-<p>고양이 림프종(소화기)은 IBD와 증상이 매우 유사하다. 혈액검사·초음파로 의심할 수 있지만, 확진을 위해서는 조직 검사(생검)가 필요하다. 치료 방향이 완전히 다르기 때문에 정확한 진단이 중요하다.</p>
-
-<h2>치료</h2>
-<ul>
-<li><strong>식이 관리</strong>: 항원 제한식(novel protein) 또는 가수분해 단백질 사료로 전환</li>
-<li><strong>스테로이드 (프레드니솔론)</strong>: 염증 억제. 대부분의 IBD에 1차 치료.</li>
-<li><strong>면역억제제 (클로람부실)</strong>: 스테로이드 단독 효과가 불충분할 때 추가.</li>
-<li><strong>비타민B12 보충</strong>: IBD에서 코발라민 결핍이 흔함.</li>
+<li>만성 구토, 설사(혈변이 섞이기도 함)</li>
+<li>체중 감소, 식욕 저하, 무기력</li>
+<li>염증이 위나 소장 위쪽에 있으면 구토가 두드러지고, 대장에 있으면 설사가 두드러지는 경향이 있다.</li>
+<li>일부 고양이는 영양 흡수가 안 되어 오히려 식욕이 늘기도 하며, 이는 갑상선 기능항진증과 구분해야 한다.</li>
 </ul>
 
 <div class="callout-cat">
-<strong>IBD 관리 핵심</strong><br>
-• 식이 변화를 최소화 (자극 줄이기)<br>
-• 스트레스 환경 개선<br>
-• 정기 체중 측정 (근육 소실 모니터링)<br>
-• 스테로이드 테이퍼링 시 갑자기 끊지 않기
+<strong>빨리 진료받아야 하는 경우</strong><br>
+• 하루 이상 먹지 못하거나 물도 마시지 않음<br>
+• 반복 구토와 함께 처지고 탈수가 의심됨<br>
+• 혈변이나 검은 변, 혈토<br>
+• 체중이 눈에 띄게 줄고 있음
 </div>
 
+<h2>병원에서 하는 검사</h2>
+<table>
+<thead><tr><th>단계</th><th>목적</th></tr></thead>
+<tbody>
+<tr><td>혈액·분변 검사</td><td>대사 질환, 감염, 기생충, 갑상선 질환 등 다른 원인을 확인</td></tr>
+<tr><td>방사선·복부 초음파</td><td>장 두께, 종괴, 림프절 이상 확인</td></tr>
+<tr><td>식이 시험</td><td>음식 알레르기를 구분하기 위해 가수분해 단백질 식이나 새로운 단백질 식이를 일정 기간 급여</td></tr>
+<tr><td>조직검사</td><td>확진에 필요. 내시경이나 수술로 위·장 조직을 채취하며 전신마취가 필요하다</td></tr>
+</tbody>
+</table>
+<p>코넬 고양이건강센터는 장 림프종이 IBD와 감별하기 어려울 수 있다고 설명한다. 이 때문에 조직검사가 중요한 경우가 많다.</p>
+
+<h2>치료와 관리</h2>
+<ul>
+<li><strong>식이 관리</strong>: 식이 변경에 반응하는 고양이는 적합한 식이를 계속 유지할 수 있다.</li>
+<li><strong>약물</strong>: 필요하면 수의사가 항염증제나 항생제를 추가한다. 종류와 용량은 개체 상태에 따라 수의사가 정한다.</li>
+<li><strong>장기 관리</strong>: 메르크 수의학 매뉴얼은 IBD 고양이 대부분이 어떤 형태로든 장기 치료가 필요하다고 설명한다.</li>
+</ul>
+
+<h2>집에서 도움이 되는 기록</h2>
+<ul>
+<li>구토·설사 횟수와 사료 급여 내용을 날짜별로 기록한다.</li>
+<li>체중을 정기적으로 재서 변화를 본다.</li>
+<li>처방식 외에 간식, 사람 음식을 임의로 더하지 않는다.</li>
+</ul>
+
 <h2>마지막으로</h2>
-<p>IBD는 고양이에서 매우 흔한 만성 질환이다. 진단 후 적절한 식이와 약물 관리를 시작하면 증상을 크게 개선할 수 있다. 반복되는 소화기 문제가 있다면 조기에 내시경·조직 검사를 포함한 정밀 검진을 권장한다.</p>`,
+<p>만성 구토와 설사는 "예민한 장"으로 넘기기 쉽다. 증상이 몇 주 이어지면 원인 검사를 받고, 진단이 되면 식이와 약물을 꾸준히 조절하며 장기 관리하는 것이 중요하다.</p>`,
     authorName: "펫지기 에디터",
     authorCredential: "반려동물 건강 정보 큐레이터",
     ymyl: true,
-    sources: JSON.stringify([
-      "Simpson, K.W. & Jergens, A.E. — Pitfalls and Progress in the Diagnosis and Management of Canine Inflammatory Bowel Disease. Vet Clin North Am 2011",
-      "한국고양이수의사회 소화기 질환 임상 가이드라인",
-      "ISFM — Feline Inflammatory Bowel Disease Management",
-    ]),
+    sources: [
+      "https://www.vet.cornell.edu/departments-centers-and-institutes/cornell-feline-health-center/health-information/feline-health-topics/inflammatory-bowel-disease — Cornell Feline Health Center, Inflammatory Bowel Disease",
+      "https://vcahospitals.com/know-your-pet/inflammatory-bowel-disease-in-cats — VCA, Inflammatory Bowel Disease in Cats",
+      "https://www.merckvetmanual.com/cat-owners/digestive-disorders-of-cats/disorders-of-the-stomach-and-intestines-in-cats — Merck Veterinary Manual, Disorders of the Stomach and Intestines in Cats",
+    ],
     disclaimer: "이 글은 정보 제공을 목적으로 하며 수의사 진료를 대체하지 않습니다.",
     status: "published",
     publishedAt: "2026-08-13T11:00:00.000Z",
