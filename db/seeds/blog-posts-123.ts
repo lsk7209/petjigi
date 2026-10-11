@@ -19,53 +19,59 @@ const BLOG_POSTS: NewContent[] = [
     subtitle: "비강 종양 증상·고위험 품종, CT 진단, 방사선 치료 선택, 예후",
     metaTitle: "강아지 비강 종양 — 한쪽 코피·재채기 원인·진단·치료 가이드 | 펫지기",
     metaDescription: "강아지 비강 종양 증상과 치료. 한쪽 코피·재채기 반복 증상, 장두종 고위험, CT·비강 내시경 진단, 방사선 치료와 예후, 완화 치료 옵션을 정리했습니다.",
-    body: `<p>한쪽 코에서만 계속 피가 나거나 재채기가 반복된다면 비강 종양을 의심해야 한다. 일반적인 비염과 구별하는 것이 중요하다.</p>
+    body: `<p>강아지가 한쪽 콧구멍에서 피가 섞인 콧물을 흘리거나 재채기를 반복하고 얼굴이 변형된다면 비강 종양을 의심할 수 있다. 알레르기나 감염으로 오인되기 쉬워서 만성적이거나 한쪽에만 나타나는 증상은 검사가 필요하다.</p>
 
-<h2>비강 종양의 특징</h2>
-<p>비강 및 부비동에서 발생하는 종양으로, 강아지의 비강 종양 중 80%가 악성이다. 장두종(콜리·저먼셰퍼드·에어데일테리어·도베르만)에서 발생률이 높다. 주로 7살 이상에서 발생한다.</p>
-
-<h2>주요 증상</h2>
-<div class="callout-dog">
-<strong>비강 종양 의심 증상</strong><br>
-• 한쪽 코에서만 지속적인 코피(가장 특징적)<br>
-• 한쪽 코에서 점성 분비물(투명·황색·혈성)<br>
-• 반복적인 재채기<br>
-• 얼굴 비대칭 변형 (진행된 경우)<br>
-• 안구 돌출·눈물 과다<br>
-• 신경 증상(뇌 침범 시)
-</div>
-
-<h2>비강 종양 vs 비염 구분</h2>
+<h2>증상</h2>
 <ul>
-<li>비염: 양측 대칭 증상, 감염 치료에 반응</li>
-<li>비강 종양: 한쪽 치우침, 항생제에 반응 없음, 진행성</li>
-<li>지속적인 단측 증상 + 항생제 무반응 → CT 검사 필요</li>
+<li>재채기, 역재채기, 코 막힘, 코고는 듯한 숨소리</li>
+<li>콧물(고름 같거나 피가 섞임), 코피</li>
+<li>입 냄새, 식욕 감소, 체중 감소</li>
+<li>눈물, 안구 돌출, 얼굴 부종·변형</li>
+<li>진행하면 기침, 신경 증상(발작, 행동 변화)</li>
 </ul>
+<p>한쪽 코에서만 피 섞인 분비물이 나오거나 항생제로 낫지 않는 만성 콧물은 경고 신호다.</p>
+
+<h2>비슷한 증상을 보이는 다른 질환</h2>
+<table>
+<thead><tr><th>질환</th><th>특징</th></tr></thead>
+<tbody>
+<tr><td>이물 (풀 씨앗 등)</td><td>갑작스러운 격렬한 재채기, 한쪽 콧물</td></tr>
+<tr><td>진균 감염 (아스페르길루스)</td><td>한쪽 또는 양쪽 만성 콧물, 코 주변 피부 변화</td></tr>
+<tr><td>치아 질환</td><td>치근 농양이 비강으로 이어져 콧물</td></tr>
+<tr><td>알레르기·비염</td><td>양쪽 맑은 콧물, 계절성</td></tr>
+<tr><td>응고 이상</td><td>코피와 다른 부위 출혈</td></tr>
+</tbody>
+</table>
 
 <h2>진단</h2>
-<ul>
-<li>CT 또는 MRI: 종양 범위·주변 침범 평가 (X선으로는 불충분)</li>
-<li>비강 내시경 + 조직 생검: 확진</li>
-<li>흉부 방사선: 폐 전이 확인</li>
-</ul>
+<ol>
+<li>신체검사, 혈액 검사, 혈압·응고 검사</li>
+<li>흉부 방사선으로 폐 전이 확인</li>
+<li>CT (종양 범위와 뇌 침범 여부를 평가하는 가장 유용한 검사)</li>
+<li>비강경 검사와 조직 검사로 종양 종류 확정</li>
+</ol>
 
-<h2>치료 선택</h2>
-<ul>
-<li><strong>방사선 치료</strong>: 비강 종양 표준 치료, 증상 완화 및 생존 기간 연장</li>
-<li><strong>항암화학요법</strong>: 방사선 병행 또는 보조 치료</li>
-<li><strong>완화 치료</strong>: 방사선 치료 어려운 경우 증상 관리 중심</li>
-<li>중앙 생존 기간: 방사선 치료 시 약 12~19개월</li>
-</ul>
+<h2>치료와 예후</h2>
+<p>방사선 치료가 대부분의 비강 종양에서 우선 고려되는 치료이며, 종양 위치에 따라 방사선 방법과 횟수가 달라진다. 수술 단독은 효과가 제한적인 경우가 많고, 항암제는 병행하기도 한다. 완치는 어렵지만 치료를 하면 증상 완화와 생존 기간 연장이 기대된다는 보고가 있고, 치료하지 않으면 생존 기간이 짧은 경향이 있다. 정확한 예후는 종양 종류와 범위에 따라 다르므로 종양 전문의와 상의한다.</p>
+
+<div class="callout-dog">
+<strong>집에서 관리</strong><br>
+• 코피·콧물의 빈도와 양을 기록하고 사진을 남긴다<br>
+• 식욕, 체중, 호흡 상태를 관찰한다<br>
+• 처방받은 진통제·소염제를 임의로 조절하지 않는다<br>
+• 호흡이 힘들거나 코피가 멈추지 않으면 바로 병원
+</div>
 
 <h2>마지막으로</h2>
-<p>한쪽 코 증상이 수주 이상 지속되면 비강 종양 가능성을 배제하기 위해 CT 검사를 받는 것이 좋다. 조기 진단이 치료 선택의 폭을 넓힌다.</p>`,
+<p>만성적이거나 한쪽에만 나타나는 콧물·코피는 알레르기로 단정하지 말고 검사를 받자. 조기에 발견할수록 치료 선택지가 넓어진다.</p>`,
     authorName: "펫지기 에디터",
     authorCredential: "반려동물 건강 정보 큐레이터",
     ymyl: true,
-    sources: JSON.stringify([
-      "Adams, W.M. et al. — Outcome of accelerated radiotherapy alone or accelerated radiotherapy followed by exenteration of the nasal cavity in dogs. J Am Vet Med Assoc 2005",
-      "한국수의종양학회 비강 종양 임상 가이드라인",
-    ]),
+    sources: [
+      "https://www.petmd.com/dog/conditions/cancer/nasal-tumors-dogs — PetMD, Nasal Tumors in Dogs",
+      "https://www.amcny.org/pet_health_library/nasal-tumors-in-dogs/ — Animal Medical Center, Nasal Tumors in Dogs",
+      "https://emergencyvet.com.au/content/dam/aren-2024-/mvsc/oncology/Nasal_Tumours.pdf — 오스트레일리아 수의 응급센터, Nasal Tumours",
+    ],
     disclaimer: "이 글은 정보 제공을 목적으로 하며 수의사 진료를 대체하지 않습니다.",
     status: "published",
     publishedAt: "2027-01-18T11:00:00.000Z",

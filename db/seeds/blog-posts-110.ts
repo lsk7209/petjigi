@@ -82,55 +82,65 @@ const BLOG_POSTS: NewContent[] = [
     subtitle: "고양이 췌장염의 비전형 증상, fPLI 검사, 삼중염 연관, 지지 치료 원칙",
     metaTitle: "고양이 췌장염 — 비전형 증상·fPLI 진단·치료 가이드 | 펫지기",
     metaDescription: "고양이 췌장염 원인과 치료. 개와 다른 비전형 증상, fPLI 혈액 검사, 삼중염(췌장염+IBD+담관염) 연관성, 지지 치료 방법을 설명합니다.",
-    body: `<p>강아지의 췌장염은 구토·복통이 뚜렷하다. 그러나 고양이의 췌장염은 다르다. 증상이 불명확하고 비특이적이어서 진단이 어렵다.</p>
+    body: `<p>고양이 췌장염은 증상이 모호하고 진단이 까다로운 질환이다. 개처럼 극적인 구토가 없는 경우가 많고, 무기력과 식욕 부진만 나타나기도 한다. 증상이 며칠 이어지면 병원에서 확인해야 한다.</p>
 
-<h2>고양이 췌장염이 진단되기 어려운 이유</h2>
+<h2>증상</h2>
 <ul>
-<li>구토가 없거나 경미한 경우 많음</li>
-<li>주요 증상이 무기력·식욕 부진 뿐인 경우 흔함</li>
-<li>복통 표현을 잘 하지 않음 (웅크리기·자세 변화로만 나타남)</li>
-<li>혈액 lipase 검사가 고양이에서는 신뢰도 낮음</li>
+<li>기운이 없고 식욕이 떨어진다 (가장 흔함)</li>
+<li>탈수, 체온 저하</li>
+<li>구토, 설사 (모든 고양이에서 나타나는 것은 아님)</li>
+<li>복통, 웅크리고 있는 자세, 배를 만지면 싫어함</li>
 </ul>
+<p>식욕 부진이 며칠 이어지면 고양이는 지방간으로 악화될 수 있어서 방치하면 안 된다. 증상이 모호해도 이상이 오래가면 진료를 받는다.</p>
 
-<h2>주요 증상</h2>
-<div class="callout-cat">
-<strong>고양이 췌장염 의심 증상</strong><br>
-• 수일 이상 지속되는 식욕 저하<br>
-• 무기력, 기운 없음<br>
-• 구토 (없을 수도 있음)<br>
-• 체중 감소<br>
-• 황달 (심한 경우)<br>
-▶ 이 증상들은 다른 질환에서도 나타나므로 검사 없이는 감별 불가
-</div>
-
-<h2>삼중염(Triaditis) 연관</h2>
-<p>고양이는 췌장염이 동시에 IBD(염증성 장 질환)와 담관간염을 동반하는 "삼중염"이 흔하다. 이 세 질환은 공통 해부학적 구조로 연결되어 있다. 하나만 치료하면 나머지가 조절되지 않을 수 있다.</p>
-
-<h2>진단</h2>
-<ul>
-<li><strong>fPLI (고양이 췌장 특이 리파제)</strong>: 고양이 췌장염에 가장 민감한 혈액 검사</li>
-<li>복부 초음파: 췌장 부종·주변 지방 변화 확인</li>
-<li>CBC·생화학: 전반적 상태 평가, 동반 질환 확인</li>
-</ul>
+<h2>진단이 어려운 이유</h2>
+<p>코넬대 고양이건강센터는 췌장염을 확진할 단일 검사가 없다고 설명한다. 임상 증상, 여러 혈액 검사, 영상 검사를 종합해 판단한다.</p>
+<table>
+<thead><tr><th>검사</th><th>설명</th></tr></thead>
+<tbody>
+<tr><td>혈액·생화학 검사</td><td>비특이적 변화가 많다. 다른 질환 배제에도 쓴다</td></tr>
+<tr><td>fPLI (고양이 췌장 특이 리파아제)</td><td>가장 특이성 높은 혈액 검사. 가능한 병원이 한정적일 수 있다</td></tr>
+<tr><td>복부 초음파</td><td>췌장 변화를 확인한다. 정상 소견이어도 췌장염을 배제할 수는 없다</td></tr>
+<tr><td>조직 검사</td><td>확실하지만 마취·수술이 필요해 일반적으로 권하지 않는다</td></tr>
+</tbody>
+</table>
+<p>고양이 췌장염은 염증성 장질환, 담관염과 함께 나타나는 경우가 많아서(삼중 염증) 함께 평가한다.</p>
 
 <h2>치료</h2>
+<p>치료의 목표는 탈수, 메스꺼움, 통증, 영양 관리의 네 가지다.</p>
 <ul>
-<li>수액 치료: 탈수 교정, 순환 개선</li>
-<li>식이 지원: 식욕 회복이 핵심, 필요 시 비위관 수유</li>
-<li>오심·구토 조절: 마로피탄트(서레니아)</li>
-<li>통증 관리: 수의사 처방 진통제</li>
-<li>동반 질환 치료: IBD·담관간염 함께 관리</li>
+<li><strong>수액</strong>: 탈수 교정과 췌장 혈류 유지</li>
+<li><strong>구토 억제제</strong>: 메스꺼움을 줄여 먹을 수 있게 한다</li>
+<li><strong>진통제</strong>: 복통 조절 (통증 신호가 겉으로 잘 드러나지 않아 적극 관리)</li>
+<li><strong>영양 지원</strong>: 굶기지 않고 빠르게 영양을 공급하는 것이 중요하다. 경우에 따라 식도 튜브 등을 사용한다.</li>
+</ul>
+<p>경증은 통원·재택으로 관리하기도 하고, 급성 중증이면 입원해 수액과 집중 영양 치료를 한다.</p>
+
+<div class="callout-cat">
+<strong>집에서 하지 말아야 할 것</strong><br>
+• 24시간 이상 먹지 않는데 지켜보기만 한다<br>
+• 사람 약이나 남은 약을 먹인다<br>
+• 지방이 많은 간식을 갑자기 준다
+</div>
+
+<h2>재발 예방</h2>
+<ul>
+<li>비만을 피하고 급격한 체중 감량(굶는 다이어트)을 하지 않는다.</li>
+<li>식이 변화를 서서히 한다.</li>
+<li>동반 질환(장염, 당뇨, 담관염)을 함께 관리한다.</li>
+<li>정기 검진으로 체중과 식욕을 확인한다.</li>
 </ul>
 
 <h2>마지막으로</h2>
-<p>고양이가 2일 이상 잘 먹지 않고 무기력하다면, 판단을 미루지 말자. 고양이는 아픔을 숨기는 데 능하다.</p>`,
+<p>식욕 부진과 무기력이 이어지는 고양이는 췌장염을 포함해 여러 질환을 감별해야 한다. 이틀 이상 먹지 않으면 서둘러 진료받자.</p>`,
     authorName: "펫지기 에디터",
     authorCredential: "반려동물 건강 정보 큐레이터",
     ymyl: true,
-    sources: JSON.stringify([
-      "Steiner, J.M. — Feline exocrine pancreatic disease. Vet Clin North Am Small Anim Pract 2012",
-      "한국수의내과학회 고양이 췌장 질환 진단 및 치료 가이드라인",
-    ]),
+    sources: [
+      "https://www.vet.cornell.edu/departments-centers-and-institutes/cornell-feline-health-center/health-information/feline-health-topics/feline-pancreatitis — Cornell Feline Health Center, Feline Pancreatitis",
+      "https://www.hillspet.com/cat-care/healthcare/pancreatitis-in-cats-symptoms-treatment — Hill's Pet, Pancreatitis in Cats",
+      "https://www.dvm360.com/view/what-do-we-know-about-feline-pancreatitis-proceedings — dvm360, What do we know about feline pancreatitis?",
+    ],
     disclaimer: "이 글은 정보 제공을 목적으로 하며 수의사 진료를 대체하지 않습니다.",
     status: "published",
     publishedAt: "2026-12-17T09:00:00.000Z",
