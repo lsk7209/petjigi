@@ -189,7 +189,7 @@ const GUIDES: NewContent[] = [
   <li><strong>입양 신청서 제출</strong>: 보호자 신분증, 주거 환경 증빙(일부 단체), 가족 동의서 등을 제출합니다.</li>
   <li><strong>입양 심사</strong>: 공공 보호소는 당일 처리 가능한 경우가 많고, 민간 단체는 1~3일 심사 기간이 있습니다.</li>
   <li><strong>입양 완료 및 교육</strong>: 입양비 납부 후 기본 관리법, 주의사항을 안내받고 데려옵니다.</li>
-  <li><strong>동물등록 신청</strong>: 입양 후 30일 이내 <a href="/guide/pet-registration-guide-korea">동물등록</a>을 완료하세요.</li>
+  <li><strong>동물등록 신청</strong>: 입양 후 30일 이내 <a href="/guide/microchip-registration-complete-guide">동물등록</a>을 완료하세요.</li>
 </ol>
 
 <h2>입양 시 꼭 확인해야 할 사항</h2>

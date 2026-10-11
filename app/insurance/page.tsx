@@ -194,7 +194,7 @@ export default function InsurancePage() {
             {[
               { href: "/blog/pet-insurance-guide", label: "펫보험 처음 가입할 때 확인해야 할 5가지" },
               { href: "/blog/pet-insurance-claim-guide", label: "펫보험 보험금 청구 방법 완전 가이드" },
-              { href: "/guide/pet-insurance-exclusions", label: "펫보험 면책 사항 완전 정복" },
+              { href: "/blog/pet-insurance-exclusions-guide", label: "펫보험 면책 사항 완전 정복" },
               { href: "/guide/animal-protection-law-basics", label: "동물보호법 기초 — 보호자가 알아야 할 규정" },
               { href: "/guide/dog-bite-liability-guide", label: "반려견 사고 손해배상 책임 가이드" },
               { href: "/guide/animal-hospital-guide", label: "동물병원 선택 가이드" },

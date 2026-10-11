@@ -6,7 +6,7 @@ import { readSeeds } from "./audit-adsense-seeds";
 const seeds = readSeeds();
 
 test("리디렉션 대상은 실제 게시 시드 문서이다", () => {
-  const live = new Set(seeds.filter((s) => s.status === "published").map((s) => `/blog/${s.slug}`));
+  const live = new Set(seeds.filter((s) => s.status === "published").map((s) => `/${s.type}/${s.slug}`));
   for (const r of CONTENT_REDIRECTS) assert.ok(live.has(r.to), `${r.to} 대상 문서 없음`);
 });
 

@@ -38,4 +38,4 @@
 - 글 통합(308)은 보류: 겹침이 확인된 쌍이 없어 근거 없이 합치지 않음.
 
 ## 통합(308) 결과
-정규화 본문 유사도(6-gram Jaccard)는 0.12 이하였지만 검색 의도가 같은 쌍을 의도 기준으로 통합했다: pet-insurance-comparison-guide→-comparison-method, -deductible-fixed-vs-rate→-deductible-guide, -age-renewal-guide→senior-pet-insurance-guide, microchip-animal-registration-guide→pet-registration-guide(구 '최대 100만 원' 표현 문서 제거). 이들을 링크하던 본문 4건은 대표 문서로 교체(운영 반영, 백업). 보류: /guide 동물등록 3건(complete·korea·microchip)과 pet-insurance-exclusions(guide)↔exclusions-guide(blog) — 현재 리디렉션 체계가 /blog→/blog만 지원.
+정규화 본문 유사도(6-gram Jaccard)는 0.12 이하였지만 검색 의도가 같은 쌍을 의도 기준으로 통합했다: pet-insurance-comparison-guide→-comparison-method, -deductible-fixed-vs-rate→-deductible-guide, -age-renewal-guide→senior-pet-insurance-guide, microchip-animal-registration-guide→pet-registration-guide(구 '최대 100만 원' 표현 문서 제거). 이들을 링크하던 본문 4건은 대표 문서로 교체(운영 반영, 백업). 후속: 리디렉션 체계를 type 무관(`isRedirectedContent`)으로 확장해 /guide/pet-registration-guide-korea(구 '최대 100만 원' 표현)·/guide/pet-microchip-registration-guide→/guide/microchip-registration-complete-guide, /guide/pet-insurance-exclusions→/blog/pet-insurance-exclusions-guide(거절 사례 병합, 미확인 일수·금감원 귀속 문장 제거)로 통합.
