@@ -141,41 +141,58 @@ const BLOG_POSTS_12: NewContent[] = [
     title: "강아지 하울링 — 원인별로 다른 해결 접근법",
     metaTitle: "강아지 하울링 원인과 줄이는 법 | 분리불안·소리 반응·훈련 | 펫지기",
     metaDescription: "강아지 하울링 원인(분리불안·소리 반응·통증)과 원인별 해결 방법. 분리불안 하울링 vs 소리 유발 하울링 구별, 훈련으로 줄이는 방법.",
-    body: `<p>강아지 하울링은 보호자가 직접 듣는 것보다 이웃이 먼저 알려주는 경우가 많다. 아메리칸케넬클럽(AKC)에 따르면 강아지 하울링은 보호자 부재 시 더 심해지는 경우가 많으며, 분리 관련 행동 문제의 주요 증상 중 하나다. 하울링은 늑대에서 유래한 장거리 의사소통 방식으로 — 집단 결속, 위치 알림, 감정 표현 기능을 가진다. 원인을 파악하면 해결 접근법이 달라진다.</p>
+    body: `<p>강아지가 하울링(길게 울부짖는 소리)을 하는 데는 여러 이유가 있고, 과학자들도 모든 이유를 완전히 알지는 못한다. 원인에 따라 대처가 달라지므로 언제, 어떤 상황에서 하는지부터 관찰하는 것이 중요하다.</p>
 
-<h2>하울링 원인별 구별</h2>
+<h2>원인별 특징</h2>
+<table>
+<thead><tr><th>원인</th><th>특징</th><th>대처</th></tr></thead>
+<tbody>
+<tr><td>소리에 반응</td><td>사이렌, 음악, 다른 개의 소리에 따라 한다. 소리가 멈추면 대개 그친다</td><td>크게 문제 되지 않으면 지켜보고, 필요하면 둔감화 훈련</td></tr>
+<tr><td>관심 요구</td><td>하울링 뒤에 사람이 반응하면 학습된다</td><td>하울링 중에는 관심·간식을 주지 않고, 조용할 때 보상한다</td></tr>
+<tr><td>의사소통·영역</td><td>이웃 개와 소통하거나 영역을 알리는 행동</td><td>환경 노출을 줄이고 사회적 욕구를 채운다</td></tr>
+<tr><td>분리불안·외로움</td><td>혼자 있을 때만 나타나며 서성임, 파괴, 배변 실수 등이 함께 있기도 하다</td><td>수의사·행동 전문가와 상담. 처벌은 악화시킨다</td></tr>
+<tr><td>통증·질환</td><td>평소 조용하던 개가 갑자기 늘어난 울음</td><td>진료로 원인 확인</td></tr>
+</tbody>
+</table>
 
-<h3>분리불안</h3>
-<p>보호자가 외출한 직후부터 하울링이 시작되고, 파괴 행동이나 배변 실수가 동반된다면 분리불안이 원인이다. 소리가 사라져도 멈추지 않는 것이 소리 반응 하울링과의 차이다. <a href="/blog/dog-separation-anxiety">강아지 분리불안 가이드</a>에서 구체적인 대응법을 확인하자.</p>
+<div class="callout-dog">
+<strong>먼저 진료를 받아야 하는 경우</strong><br>
+• 갑자기 울음이 늘었다<br>
+• 식욕, 배변, 움직임에 변화가 함께 있다<br>
+• 노령견에서 밤에 울부짖고 방향 감각을 잃는다 (인지 기능 변화 가능성)<br>
+• 만지면 아파하는 부위가 있다
+</div>
 
-<h3>소리에 대한 반응</h3>
-<p>사이렌, 다른 개 짖음, 악기 소리에 반응해 하울링하는 것은 자연스러운 의사소통이다. 사이렌 주파수가 늑대 하울링과 유사해 반응하는 것으로 이 유형은 소리가 사라지면 멈춘다. 특정 소리에 반응하지 않을 때 간식을 주는 방식으로 줄일 수 있다.</p>
+<h2>줄이는 방법</h2>
+<ol>
+<li><strong>의학적 원인 배제</strong>: 먼저 건강 문제가 없는지 확인한다.</li>
+<li><strong>관심 요구 하울링</strong>: 소리를 내는 동안은 반응하지 않고, 조용해진 순간에 보상한다. 몇 초라도 조용할 때 간식과 칭찬을 준다.</li>
+<li><strong>활동·교감 늘리기</strong>: 산책, 놀이, 후각 놀이로 에너지를 소모시킨다.</li>
+<li><strong>소리 유발 요인</strong>: 낮은 소리에서 시작해 간식을 연결하는 둔감화·역조건화를 한다.</li>
+<li><strong>혼자 있을 때</strong>: 라디오나 TV를 켜 두고, 속을 채운 장난감 등으로 몰입할 거리를 준다.</li>
+<li><strong>분리불안</strong>: 심하면 수의 행동 전문가와 계획을 세우고 필요하면 약물 치료를 병행한다.</li>
+</ol>
 
-<h3>관심·욕구 표현</h3>
-<p>배고픔, 놀아달라는 요구, 화장실 욕구를 표현하는 하울링이다. 하울링할 때 반응하지 않고, 조용할 때 욕구를 충족시켜 주는 것이 원칙이다.</p>
-
-<h3>신체적 불편·통증</h3>
-<p>갑자기 하울링이 시작됐거나 특정 자세에서만 하울링한다면 통증 신호일 수 있다. 동물병원 진찰이 필요하다.</p>
-
-<h2>하울링 줄이는 훈련 원칙 (AVSAB)</h2>
+<h2>하지 말아야 할 것</h2>
 <ul>
-  <li>하울링할 때 반응하지 않는다 — 반응할수록 강화된다</li>
-  <li>조용한 순간을 포착해 즉시 칭찬·간식을 준다</li>
-  <li>"조용히" 명령 교육: 하울링→명령→2초 조용→즉시 보상, 점차 조용한 시간 연장</li>
-  <li>외출 전 충분한 운동으로 에너지 소모</li>
+<li>소리 지르거나 벌주기. 혼자 있을 때의 하울링은 대개 스트레스에 대한 대처 행동이어서 처벌하면 악화된다.</li>
+<li>짖음 방지 목걸이(전기·분사 등)를 임의로 쓰기. 공포와 불안을 키울 수 있다.</li>
 </ul>
 
-<h2>이웃 관계 관리</h2>
-<p>훈련을 시작하기 전 이웃에게 먼저 알리고 양해를 구하는 것이 관계 유지에 도움이 된다. 반려동물 관련 이웃 분쟁 예방은 <a href="/blog/apartment-pet-dispute-guide">아파트 반려동물 분쟁 가이드</a>에서 법적 기준도 확인하자.</p>`,
+<h2>이웃과의 관계</h2>
+<p>공동주택에서는 소음 민원이 생길 수 있다. 이웃에게 상황을 설명하고 개선 중임을 알리면 갈등을 줄이는 데 도움이 된다. 외출 시간대의 영상을 녹화해 하울링이 언제 시작되는지 확인하면 원인을 찾기 쉽다.</p>
+
+<h2>마지막으로</h2>
+<p>하울링은 습성일 수도, 불안이나 아픔의 신호일 수도 있다. 언제, 어떤 상황에서 하는지 기록하고, 원인에 맞게 대처하자.</p>`,
     ymyl: false,
     status: "published",
     publishedAt: scheduleDate(81),
     authorName: "펫지기 에디터",
-    sources: JSON.stringify([
-      "American Kennel Club (AKC) — Why Do Dogs Howl?",
-      "American Veterinary Society of Animal Behavior (AVSAB) — Behavior Management",
-      "WSAVA — Behavior and Mental Health Guidelines",
-    ]),
+    sources: [
+      "https://www.aspca.org/pet-care/dog-care/common-dog-behavior-issues/howling — ASPCA, Howling",
+      "https://vcahospitals.com/know-your-pet/why-do-dogs-howl — VCA, Why Do Dogs Howl?",
+      "https://vcahospitals.com/know-your-pet/separation-anxiety-in-dogs — VCA, Separation Anxiety in Dogs",
+    ],
     updatedAt: NOW,
     createdAt: NOW,
   },
@@ -304,46 +321,62 @@ const BLOG_POSTS_12: NewContent[] = [
     title: "강아지 공포 반응 — 천둥·폭죽·낯선 것에 떠는 강아지 돕는 법",
     metaTitle: "강아지 공포 관리 | 천둥·폭죽·소리 공포 줄이는 방법 | 펫지기",
     metaDescription: "강아지 천둥·폭죽 소리 공포와 낯선 자극 공포 관리. 즉각 도움법, 썬더셔츠·DAP 디퓨저 활용, 장기 둔감화 훈련, 껴안으면 공포가 강화되는지 팩트.",
-    body: `<p>설날·추석 폭죽 소리에 격렬히 떠는 강아지를 보면 보호자도 마음이 아프다. 강한 소리에 공포 반응(noise phobia)을 보이는 강아지가 적지 않으며, 방치하면 악화되는 경향이 있다. 공포는 강아지에게 실제 생리적 고통이다.</p>
+    body: `<p>천둥, 낯선 사람, 병원, 청소기처럼 특정한 것에 떨고 숨고 도망치는 강아지를 보면 어떻게 도와야 할지 막막하다. 공포는 혼내서 고쳐지지 않으며, 오히려 악화되기 쉽다. 안전한 거리에서 좋은 경험과 연결하는 방식이 기본이다.</p>
 
 <h2>공포 신호 알아보기</h2>
 <ul>
-  <li>떨기, 헐떡이기</li>
-  <li>은신처로 숨거나 보호자에게 찰싹 붙으려 함</li>
-  <li>꼬리를 다리 사이로 집어넣음</li>
-  <li>귀를 뒤로 납작하게 눕힘</li>
-  <li>침 흘림, 잦은 하품</li>
-  <li>통제 안 되는 배변</li>
-  <li>파괴적 행동 (탈출 시도, 물건 파괴)</li>
+<li>몸을 낮추고 꼬리를 말아 넣음, 귀를 뒤로 젖힘</li>
+<li>입술 핥기, 하품, 헐떡임, 몸 털기 같은 스트레스 신호</li>
+<li>얼어붙거나 숨거나 도망치려 함</li>
+<li>떨림, 침 흘림, 배변·배뇨 실수</li>
+<li>일부 개는 겁이 나서 오히려 짖거나 으르렁거리며 공격적으로 보인다. 공격 행동의 뿌리가 공포인 경우가 많다.</li>
 </ul>
 
-<h2>즉각 도움 — 공포 상황에서 할 것 (권장 순서)</h2>
-<ol>
-  <li>강아지가 선택하는 안전 은신처를 제공한다 (이동장, 소파 아래, 침대 아래)</li>
-  <li>창문을 닫고 커튼을 쳐 소리·빛을 줄인다</li>
-  <li>백색소음(선풍기, 클래식 음악)으로 외부 소리를 마스킹한다</li>
-  <li>껴안아 달라고 한다면 안아줘도 된다 — AVSAB 연구에 따르면 껴안기는 공포를 강화하지 않는다. 과도하게 걱정스러운 표정이나 목소리가 오히려 영향을 줄 수 있다</li>
-  <li>평소처럼 침착하게 행동한다</li>
-</ol>
+<h2>도와주는 기본 원칙</h2>
+<table>
+<thead><tr><th>방법</th><th>내용</th></tr></thead>
+<tbody>
+<tr><td>둔감화</td><td>반응하지 않는 아주 약한 강도부터 천천히 노출한다 (소리를 아주 작게, 사람과 멀리)</td></tr>
+<tr><td>역조건화</td><td>그 자극이 나타날 때마다 좋은 것(간식, 놀이)을 연결해 감정을 바꾼다</td></tr>
+<tr><td>역치 이하 유지</td><td>개가 반응하기 직전 단계에서 멈춘다. 반응이 나오면 강도를 낮춘다</td></tr>
+<tr><td>안전 공간</td><td>숨을 수 있는 조용한 공간(크레이트, 담요)을 항상 준비한다</td></tr>
+</tbody>
+</table>
 
-<h2>불안 완화 도구 비교</h2>
+<div class="callout-dog">
+<strong>하지 말아야 할 것</strong><br>
+• 억지로 다가가게 하거나 인사시키기 — 위협을 느끼면 물 수 있다<br>
+• 떨 때 혼내거나 처벌하기<br>
+• 한꺼번에 강하게 노출하기 ("익숙해지게 하겠다"며 계속 두기)<br>
+• 보호자가 같이 불안해하며 과하게 안아 주기보다, 차분한 태도를 유지하기
+</div>
+
+<h2>소리 공포의 경우</h2>
 <ul>
-  <li><strong>썬더셔츠(압박 조끼)</strong>: 전신 압박이 불안을 줄이는 효과. 즉각 착용 가능하며 일부 강아지에서 효과적이다</li>
-  <li><strong>DAP(개 진정 페로몬) 디퓨저</strong>: 모성 페로몬을 모방한 합성 물질. 환경에 지속적으로 영향을 준다. 썬더셔츠와 병용이 더 효과적이다</li>
-  <li><strong>약물</strong>: 극심한 공포반응에는 수의사가 상황에 맞는 약물을 처방할 수 있다. 임의로 사람용 진정제를 투여하면 안 된다</li>
+<li>천둥·폭죽 소리를 작은 음량으로 들려주며 간식을 주고, 몇 주에 걸쳐 조금씩 키운다.</li>
+<li>당일에는 창문을 닫고 음악이나 TV로 소음을 줄이며, 안전 공간을 마련한다.</li>
+<li>공포가 심하면 행동 수정과 함께 약물 치료가 도움이 될 수 있어 수의사와 상담한다.</li>
 </ul>
 
-<h2>장기적 둔감화 훈련</h2>
-<p>천둥소리를 녹음한 음원을 매우 낮은 볼륨으로 틀면서 간식이나 놀이를 연결한다. 강아지가 무반응일 때 즉시 보상하고, 며칠 후 볼륨을 조금씩 올린다. 이 과정은 수 주에 걸쳐 서서히 진행한다. <a href="/blog/dog-social-skills-training">강아지 사회성 훈련</a>의 둔감화 원칙과 동일하다. 공포 반응을 줄이는 가장 기본은 충분한 산책과 운동이다. <a href="/blog/dog-walk-guide">강아지 산책 완전 가이드</a>도 참고하자.</p>`,
+<h2>전문가와 함께해야 하는 경우</h2>
+<ul>
+<li>공포 반응이 과해서 자해, 심한 파괴, 도망 시도가 있다.</li>
+<li>공포 때문에 물거나 공격한 적이 있다.</li>
+<li>집에서 몇 주 해도 호전이 없다.</li>
+</ul>
+<p>둔감화·역조건화는 노출 강도를 잘못 맞추면 오히려 공포를 키울 수 있어서, 전문 행동 수의사나 보상 기반 훈련사와 진행하는 것을 권한다. 연구에서도 보호자가 하는 짧은 프로그램은 실천이 어려워 효과가 제한적일 수 있다고 보고되었다.</p>
+
+<h2>마지막으로</h2>
+<p>공포는 성격 탓이 아니라 감정 반응이다. 안전하다는 경험을 천천히 쌓아 주고, 필요하면 수의사의 도움을 받자.</p>`,
     ymyl: false,
     status: "published",
     publishedAt: scheduleDate(83),
     authorName: "펫지기 에디터",
-    sources: JSON.stringify([
-      "American Veterinary Society of Animal Behavior (AVSAB) — Fear and Anxiety in Dogs",
-      "American Kennel Club (AKC) — How to Help a Scared Dog",
-      "WSAVA — Behavior and Mental Health Guidelines",
-    ]),
+    sources: [
+      "https://vcahospitals.com/know-your-pet/fears-phobias-and-anxiety — VCA, Fears, Phobias, and Anxiety in Cats and Dogs",
+      "https://www.akc.org/expert-advice/training/how-to-train-fearful-dog/ — AKC, Training a Dog With Anxiety: How to Train a Fearful Dog",
+      "https://www.merckvetmanual.com/behavior/behavioral-medicine-introduction/treatment-of-behavior-problems-in-animals — Merck Veterinary Manual, Treatment of Behavior Problems in Animals",
+    ],
     updatedAt: NOW,
     createdAt: NOW,
   },

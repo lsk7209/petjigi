@@ -19,45 +19,60 @@ const BLOG_POSTS: NewContent[] = [
     subtitle: "양성 강화의 과학적 원리, 타이밍·간식 선택, 기초 5가지 훈련, 실패 없는 훈련 설계",
     metaTitle: "강아지 양성 강화 훈련 — 원리·간식·기초 훈련 완전 가이드 | 펫지기",
     metaDescription: "강아지 양성 강화 훈련의 원리와 방법. 처벌보다 빠른 이유, 타이밍·간식 선택, 앉아·엎드려·기다려 기초 훈련을 정리했습니다.",
-    body: `<p>양성 강화(Positive Reinforcement)는 원하는 행동을 할 때 보상을 주는 훈련 방식이다. 처벌 기반 훈련보다 빠르고, 부작용이 없으며, 보호자-강아지 신뢰를 강화한다.</p>
+    body: `<p>강아지 훈련법은 "혼내서 가르친다"와 "잘한 행동에 보상한다"로 크게 나뉜다. 수의 행동 전문가 단체인 AVSAB(미국수의행동학회)는 현재의 과학적 근거를 바탕으로 모든 개 훈련, 문제 행동 치료를 포함해 보상 기반 훈련만 쓰라고 권고한다. 이 글은 보상 기반 훈련이 무엇이고 어떻게 시작하는지 정리한다.</p>
 
-<h2>왜 양성 강화가 효과적인가</h2>
-<ul>
-<li>행동과 결과가 명확히 연결됨 → 빠른 학습</li>
-<li>스트레스 없는 학습 → 기억 고착이 좋음</li>
-<li>강아지가 훈련을 즐기게 됨 → 자발적 참여</li>
-<li>처벌 기반 방식의 부작용(공격성·공포)이 없음</li>
-</ul>
+<h2>용어부터 정리</h2>
+<table>
+<thead><tr><th>구분</th><th>의미</th><th>예시</th></tr></thead>
+<tbody>
+<tr><td>정적 강화 (보상 기반)</td><td>원하는 행동 뒤에 좋은 것을 주어 그 행동을 늘린다</td><td>앉았을 때 간식을 준다</td></tr>
+<tr><td>부적 처벌 (보상 기반에 포함)</td><td>원치 않는 행동 뒤에 좋은 것을 거둔다</td><td>점프하면 관심을 멈추고 앉으면 다시 준다</td></tr>
+<tr><td>혐오 기반 방법</td><td>불쾌한 자극으로 행동을 막는다</td><td>목줄 당기기, 전기·초크 도구, 큰 소리, 알파롤 등</td></tr>
+</tbody>
+</table>
+<p>AVSAB는 혐오 기반 방법이 단기적으로는 행동을 멈추게 할 수 있지만 공포와 공격성을 키울 위험이 있고, 훈련이 끝난 뒤에도 영향이 남을 수 있다고 설명한다.</p>
 
-<h2>핵심 원칙 — 타이밍</h2>
-<p>원하는 행동이 발생한 직후 0.5~1초 이내에 보상해야 한다. 늦으면 다른 행동과 연결된다. 클리커를 사용하면 정확한 타이밍 마킹에 도움이 된다.</p>
+<h2>시작하는 방법</h2>
+<ol>
+<li><strong>보상 정하기</strong>: 작은 간식, 장난감, 칭찬 등 그 개가 가장 좋아하는 것을 쓴다. 간식은 하루 식사량에서 일부를 빼서 비만을 막는다.</li>
+<li><strong>타이밍</strong>: 행동 직후 1~2초 안에 보상한다. 클리커나 "좋아" 같은 마커 신호를 일정하게 쓰면 도움이 된다.</li>
+<li><strong>쉬운 것부터</strong>: 앉아, 기다려, 이리 와처럼 한 번에 하나씩 짧은 세션(몇 분)으로 한다.</li>
+<li><strong>일관성</strong>: 가족이 같은 신호와 규칙을 쓴다.</li>
+<li><strong>점진적 난이도</strong>: 성공률이 높아지면 시간, 거리, 방해 요소를 조금씩 늘린다.</li>
+<li><strong>보상 줄이기</strong>: 익숙해지면 보상 빈도를 점차 줄이되 칭찬은 유지한다.</li>
+</ol>
 
-<h2>보상 선택</h2>
-<ul>
-<li><strong>식품 보상</strong>: 가장 효과적. 작은 크기(콩알 1/3), 빨리 먹을 수 있는 것.</li>
-<li><strong>놀이 보상</strong>: 공·터그 장난감. 일부 강아지에서 음식보다 동기 부여 높음.</li>
-<li><strong>칭찬</strong>: 단독으로는 효과 약함. 음식과 함께 사용.</li>
-</ul>
-
-<h2>기초 훈련 5가지</h2>
 <div class="callout-dog">
-<strong>기초 5가지 훈련 순서</strong><br>
-1. <strong>앉아(Sit)</strong>: 가장 먼저. 간식을 코 위로 올리면 자연스럽게 앉음.<br>
-2. <strong>엎드려(Down)</strong>: 앉은 상태에서 간식을 앞발 사이로 유도.<br>
-3. <strong>이리와(Come)</strong>: 안전을 위한 필수 훈련.<br>
-4. <strong>기다려(Stay)</strong>: 거리·시간 점진적 증가.<br>
-5. <strong>눈 마주침(Watch me)</strong>: 집중력 훈련의 기초.
+<strong>자주 하는 실수</strong><br>
+• 잘못한 뒤 한참 지나서 혼내기 — 개는 무엇 때문에 혼나는지 연결하지 못한다<br>
+• 불렀는데 오자마자 혼내기 — "오라"는 말이 나쁜 신호가 된다<br>
+• 훈련 시간을 길게 잡기 — 집중력이 떨어지면 짧게 끝낸다<br>
+• 문제 행동을 무시만 하고 대신할 행동을 가르치지 않기
 </div>
 
+<h2>문제 행동이 있을 때</h2>
+<ul>
+<li>짖음, 공격성, 분리불안처럼 심한 행동은 통증이나 질환이 원인일 수 있어 먼저 진료를 받는다.</li>
+<li>공포가 기반인 행동은 처벌하면 악화되므로 둔감화·역조건화를 전문가와 진행한다.</li>
+</ul>
+
+<h2>훈련사를 고를 때</h2>
+<ul>
+<li>보상 기반 방법을 쓰는지, 전기·초크·큰 소리 도구를 쓰지 않는지 확인한다.</li>
+<li>수업을 참관하거나 방법을 미리 설명해 달라고 요청한다.</li>
+<li>심한 행동 문제는 수의 행동학 전문가와 상담한다.</li>
+</ul>
+
 <h2>마지막으로</h2>
-<p>훈련 세션은 짧게(5~10분), 긍정적으로 끝낸다. 어떤 훈련도 강아지가 지치거나 실패 경험이 많은 날에는 중단하는 것이 좋다. '오늘도 잘 했어'라는 기억으로 마무리하는 것이 다음 세션의 성공을 결정한다.</p>`,
+<p>보상 기반 훈련은 단순히 "봐준다"는 뜻이 아니라, 개가 이해할 수 있는 방식으로 정확히 가르치는 방법이다. 짧고 즐겁게, 성공 경험을 쌓는 것이 핵심이다.</p>`,
     authorName: "펫지기 에디터",
     authorCredential: "반려동물 행동 정보 큐레이터",
     ymyl: false,
-    sources: JSON.stringify([
-      "Karen Pryor — Don't Shoot the Dog",
-      "American Veterinary Society of Animal Behavior — Position Statement on Training",
-    ]),
+    sources: [
+      "https://avsab.org/resources/position-statements/ — AVSAB, Position Statements (Humane Dog Training)",
+      "https://avsab.org/what-are-reward-based-training-methods-for-dogs-and-cats/ — AVSAB, What are Reward-Based Training Methods for Dogs (and Cats)?",
+      "https://avsab.org/talking-terms-positive-reinforcement/ — AVSAB, Talking Terms - Positive Reinforcement",
+    ],
     disclaimer: null,
     status: "published",
     publishedAt: "2026-08-26T09:00:00.000Z",
