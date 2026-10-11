@@ -144,43 +144,45 @@ const BLOG_POSTS: NewContent[] = [
     subtitle: "압박 효과의 원리, 효과 있는 개체 vs 없는 개체, 올바른 착용법, 보완 방법",
     metaTitle: "강아지 썬더셔츠·불안 조끼 효과 — 언제 사용하는가 가이드 | 펫지기",
     metaDescription: "강아지 불안 조끼(썬더셔츠) 효과와 사용법. 압박 효과 원리, 효과 있는 개체, 올바른 착용법, 불안 대처 보완 방법을 정리했습니다.",
-    body: `<p>천둥·폭죽·이사·병원 방문 등 불안 상황에서 강아지에게 불안 조끼(썬더셔츠)를 입히는 보호자가 많다. 효과가 있는 것인지, 어떻게 사용해야 하는지 알아보자.</p>
+    body: `<p>천둥이나 폭죽에 겁먹는 강아지를 위해 불안 조끼(압박 조끼, 썬더셔츠 형태)를 고민하는 보호자가 많다. 이런 조끼는 몸통을 부드럽게 눌러 안정감을 주려는 제품이지만, 효과에 대한 근거는 아직 충분하지 않다.</p>
 
-<h2>압박 효과의 원리</h2>
-<p>불안 조끼는 가슴·몸통에 지속적인 압박을 가해 신경계를 진정시키는 것을 목표로 한다. 사람의 심부 압박 요법(Deep Touch Pressure Therapy)에서 영감을 받은 제품이다.</p>
-
-<h2>연구에서의 효과</h2>
-<p>일부 연구에서 천둥·불꽃놀이 공포에 대한 불안 행동을 유의미하게 줄였다는 결과가 있다. 그러나 모든 강아지에게 효과적이지는 않으며, 약물 없이는 심한 불안에 충분하지 않다는 결론도 있다.</p>
-
-<div class="callout-dog">
-<strong>불안 조끼가 도움이 되는 경우</strong><br>
-• 경~중등도 불안<br>
-• 천둥·폭죽 등 특정 자극에 대한 반응<br>
-• 이동장·차 이동 중 스트레스<br>
-• 분리 불안 초기<br><br>
-<strong>단독으로는 부족한 경우</strong><br>
-• 심한 패닉 반응<br>
-• 자해·파괴 수준의 분리불안<br>
-→ 행동 수의사 상담 + 약물 병행 필요
-</div>
-
-<h2>올바른 착용법</h2>
+<h2>효과는 얼마나 확인되었나</h2>
 <ul>
-<li>불안 자극 발생 전 미리 착용 (자극과 함께 입히면 불안과 연결될 수 있음)</li>
-<li>몸통을 가볍게 감싸는 압박 (숨 막히지 않을 정도)</li>
-<li>최대 연속 2시간 착용 후 휴식</li>
-<li>처음엔 짧게 입혀 익숙하게 한 후 실제 사용</li>
+<li>압박 조끼의 효과를 정리한 체계적 문헌 고찰은 개의 불안을 줄인다는 근거가 제한적이라고 결론 내렸고, 보고된 부작용은 없었다.</li>
+<li>일부 연구는 보호자가 평가한 결과에서 천둥 공포 행동이 줄었다고 보고했지만, 대조군이 없거나 보호자의 주관 평가라는 한계가 있다.</li>
+<li>VCA는 조끼를 입히면 움직임이 제한되어 차분해 보일 수 있다는 점을 지적하며, 실제로 불안이 줄었는지는 별개라고 설명한다.</li>
+</ul>
+<p>정리하면 조끼는 위험이 낮아 시도해 볼 수는 있지만, 중증 공포를 해결하는 단독 방법으로 기대하기는 어렵다.</p>
+
+<h2>더 근거가 있는 방법</h2>
+<table>
+<thead><tr><th>방법</th><th>내용</th></tr></thead>
+<tbody>
+<tr><td>둔감화·역조건화</td><td>작은 소리부터 좋은 보상(간식·놀이)과 함께 들려주며 점차 소리에 익숙해지게 한다. 소음 공포 치료 연구에서 효과적인 방법으로 꼽힌다</td></tr>
+<tr><td>안전한 공간 만들기</td><td>소리가 덜 들리는 방, 크레이트, 담요가 있는 조용한 공간을 마련한다</td></tr>
+<tr><td>수의사 상담</td><td>공포가 심하면 약물 치료가 필요할 수 있다. 약 종류와 용량은 수의사가 결정한다</td></tr>
+</tbody>
+</table>
+
+<h2>사용할 때의 요령</h2>
+<ul>
+<li>천둥이나 불꽃놀이 같은 자극이 시작되기 전에 미리 입혀서 조끼와 불안이 연결되지 않게 한다.</li>
+<li>몸에 맞는 크기를 고르고 숨쉬기와 움직임을 방해하지 않는지 확인한다.</li>
+<li>처음에는 짧게, 집에서 편안한 상태일 때 입혀 익숙하게 한다.</li>
+<li>오래 입히지 않고 정기적으로 벗겨서 피부와 열 상태를 살핀다.</li>
+<li>떨림이 심하거나 숨어서 나오지 않거나 호흡이 가쁘면 조끼에 의존하지 말고 진료를 받는다.</li>
 </ul>
 
 <h2>마지막으로</h2>
-<p>불안 조끼는 만능 해결책이 아니다. 그러나 훈련과 함께 사용하면 불안 관리에 도움이 될 수 있는 도구다. 비용 대비 시도해볼 만한 방법이다.</p>`,
+<p>조끼는 보조 수단이다. 소리 공포가 계속된다면 훈련과 수의사 상담을 함께 진행하는 것이 가장 현실적인 접근이다.</p>`,
     authorName: "펫지기 에디터",
     authorCredential: "반려동물 행동 정보 큐레이터",
     ymyl: false,
-    sources: JSON.stringify([
-      "King, C. et al. — The Effect of a Pressure Wrap on the Behaviour of Dogs Experiencing Fear. JAVMA 2014",
-      "한국반려동물행동상담협회 불안 관리 가이드",
-    ]),
+    sources: [
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC11639916/ — A Systematic Review of the Efficacy of Compression Wraps as an Anxiolytic in Domesticated Dogs",
+      "https://vcahospitals.com/know-your-pet/anxiety-vests-for-dogs — VCA, Anxiety Vests for Dogs",
+      "https://vcahospitals.com/know-your-pet/treating-fear-of-storms-and-fireworks-in-dogs — VCA, Treating Fear of Storms and Fireworks in Dogs",
+    ],
     disclaimer: null,
     status: "published",
     publishedAt: "2026-08-27T09:00:00.000Z",
@@ -197,37 +199,51 @@ const BLOG_POSTS: NewContent[] = [
     subtitle: "은신처 본능, 체온 유지, 스트레스 완충 효과, 사각형 착시 실험",
     metaTitle: "고양이 박스 좋아하는 이유 — 과학적 심리 설명 | 펫지기",
     metaDescription: "고양이가 박스를 그토록 좋아하는 이유를 과학으로 설명했습니다. 은신처 본능, 체온 유지, 스트레스 완충 효과, 사각형 착시 실험 결과를 정리했습니다.",
-    body: `<p>택배가 오면 고양이는 박스에 먼저 들어간다. 비어있는 박스가 작을수록 더 좋아한다. 왜 그럴까.</p>
+    body: `<p>고양이가 새 택배 상자만 보면 바로 들어가 앉는 모습은 흔하다. 왜 그런지는 아직 완전히 밝혀지지 않았지만, 연구들은 숨을 곳이 고양이의 스트레스를 줄여 줄 수 있다는 방향을 가리킨다.</p>
 
-<h2>이유 1 — 은신처 본능</h2>
-<p>고양이는 야생에서 포식자이면서 동시에 더 큰 포식자의 먹이이기도 했다. 사방이 막힌 공간은 배후에서 공격받지 않는 안전한 위치다. 박스 안에서 나가는 것은 보이지만, 들어오는 것은 막히는 구조가 '안전'을 의미한다.</p>
+<h2>연구로 알려진 것</h2>
+<table>
+<thead><tr><th>연구</th><th>내용</th></tr></thead>
+<tbody>
+<tr><td>네덜란드 보호소 연구(Vinke 등, Applied Animal Behaviour Science)</td><td>새로 보호소에 온 고양이에게 숨을 상자를 주었더니 도착 직후 며칠 동안 스트레스 점수가 더 빨리 내려갔다</td></tr>
+<tr><td>이후 무작위 대조 시험</td><td>상자가 있는 고양이는 적응 속도가 더 빨랐지만 입양률이나 보호소 체류 기간의 차이는 없었다</td></tr>
+<tr><td>다른 연구</td><td>일부 연구에서는 상자 유무에 따른 스트레스 점수 차이가 뚜렷하지 않았다. 근거가 일관되지 않아 "효과가 확정"이라고 말하기는 어렵다</td></tr>
+</tbody>
+</table>
+<p>소심한 고양이가 숨는 상자를 더 많이 쓴다는 연구도 있다. 숨을 곳이 없으면 고양이가 가구 밑이나 다른 물건 뒤에 스스로 은신처를 만든다는 보고도 있어, 몸을 가릴 수 있는 공간에 대한 욕구가 강하다고 해석된다.</p>
 
-<h2>이유 2 — 체온 유지</h2>
-<p>골판지는 훌륭한 단열재다. 고양이의 이상 체온은 38.5~39.2°C로 사람보다 높다. 차가운 방바닥보다 골판지 안이 따뜻하고 편안하다.</p>
-
-<h2>이유 3 — 스트레스 완충 효과</h2>
-<p>네덜란드 연구에서 보호소 고양이에게 박스를 제공했을 때 스트레스 행동이 크게 줄었다는 결과가 있다. 박스는 단순한 장난감이 아니라 심리적 안전 공간이다.</p>
-
-<h2>이유 4 — 사각형 착시 실험</h2>
-<p>2021년 연구에서 고양이가 바닥에 테이프로 그린 사각형 안에도 앉으려 한다는 것이 밝혀졌다. 심지어 착시로 만든 사각형(카니자 사각형)에도 앉으려 했다. 사각형 자체가 고양이에게 '들어가야 할 것'처럼 보인다는 이론이다.</p>
-
-<h2>박스를 더 좋게 만들어주기</h2>
+<h2>보호자가 알아두면 좋은 점</h2>
 <ul>
-<li>위에 구멍을 내 고양이가 들여다볼 수 있게</li>
-<li>안에 평소 쓰던 담요 깔기</li>
-<li>여러 박스를 연결해 미로 만들기</li>
-<li>캣닙 소량 뿌리기</li>
+<li><strong>은신처</strong>: 낯선 환경, 병원, 새 가족이 오는 시기에는 상자나 은신처가 안정에 도움이 될 수 있다.</li>
+<li><strong>따뜻함</strong>: 좁고 둘러싸인 공간은 체온을 유지하기에 좋다는 설명이 흔하지만, 이를 직접 검증한 근거는 이번에 확인하지 못했다.</li>
+<li><strong>사각형 환상</strong>: 바닥에 테이프로 그린 사각형 안에 앉는 행동에 대한 시민 과학 연구도 있지만, 이유는 아직 알려지지 않았다고 연구자들은 말한다.</li>
+</ul>
+
+<div class="callout-cat">
+<strong>이럴 때는 상자 때문이 아닐 수 있다</strong><br>
+• 평소와 달리 계속 숨고 나오지 않는다<br>
+• 식욕이 떨어지고 화장실 사용이 바뀐다<br>
+• 만지면 아파하거나 공격적으로 변했다<br>
+→ 스트레스 외에 통증이나 질병이 원인일 수 있으니 진료를 받는다.
+</div>
+
+<h2>안전한 상자 활용</h2>
+<ul>
+<li>테이프, 스테이플러 핀, 비닐 끈 같은 이물질이 붙은 상자는 정리해서 준다.</li>
+<li>가족이 많은 집이나 다묘 가정이라면 상자를 여러 개 두어 각자 숨을 곳을 마련한다.</li>
+<li>낡은 상자는 교체하고, 아프거나 노령인 고양이는 낮은 입구로 만들어 준다.</li>
 </ul>
 
 <h2>마지막으로</h2>
-<p>택배 박스를 바로 버리지 말고 하루이틀 고양이에게 줘보자. 비용 0원의 최고 장난감이 된다.</p>`,
+<p>이유가 완전히 밝혀지지는 않았지만, 상자는 고양이에게 안심할 수 있는 작은 은신처다. 잘 쓰고 있다면 두고, 숨는 행동이 갑자기 늘면 건강과 환경을 함께 점검하자.</p>`,
     authorName: "펫지기 에디터",
     authorCredential: "반려동물 행동 정보 큐레이터",
     ymyl: false,
-    sources: JSON.stringify([
-      "Vinke, C.M. et al. — Will a hiding box provide stress reduction for shelter cats? Applied Animal Behaviour Science 2014",
-      "Smith, G.E. et al. — If I fits I sits: A citizen science investigation into illusory contour susceptibility in domestic cats. Applied Animal Behaviour Science 2021",
-    ]),
+    sources: [
+      "https://www.sciencedirect.com/science/article/abs/pii/S0168159114002366 — Will a hiding box provide stress reduction for shelter cats? (Applied Animal Behaviour Science)",
+      "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6791553/ — The effect of a hiding box on stress levels and body weight in Dutch shelter cats; a randomized controlled trial",
+      "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4494404/ — The Use of Refuges by Communally Housed Cats",
+    ],
     disclaimer: null,
     status: "published",
     publishedAt: "2026-08-27T11:00:00.000Z",

@@ -19,48 +19,48 @@ const BLOG_POSTS: NewContent[] = [
     subtitle: "사과·블루베리·수박 vs 포도·아보카도·체리 비교, 급여량 기준, 씨 위험성",
     metaTitle: "강아지 과일 급여 가이드 — 안전한 과일 vs 독성 과일 | 펫지기",
     metaDescription: "강아지에게 줄 수 있는 과일과 피해야 할 과일. 사과·블루베리·수박 급여 방법, 포도·아보카도·체리 독성 이유, 씨 위험성을 정리했습니다.",
-    body: `<p>과일은 달콤하고 영양도 있지만, 강아지에게 독성이 있는 종류도 많다. 어떤 것을 줄 수 있고, 어떻게 줘야 하는지 정확히 알아야 한다.</p>
+    body: `<p>과일은 간식으로 줄 수 있지만 모든 과일이 안전한 것은 아니다. 가장 중요한 것은 포도류를 절대 주지 않는 것과, 씨·속·두꺼운 껍질을 제거하는 것이다.</p>
 
-<h2>안전한 과일</h2>
-<ul>
-<li><strong>사과</strong>: 씨(청산가리 성분)와 심(코어) 제거 필수. 껍질째 줘도 됨.</li>
-<li><strong>블루베리</strong>: 항산화 좋은 간식. 소량 급여.</li>
-<li><strong>수박</strong>: 씨와 껍질 제거. 수분 보충 좋음.</li>
-<li><strong>딸기</strong>: 비타민C 풍부. 꼭지 제거.</li>
-<li><strong>바나나</strong>: 칼로리 높으므로 소량만.</li>
-<li><strong>복숭아(씨 제거)</strong>: 씨에 청산가리 성분. 반드시 제거.</li>
-</ul>
-
-<h2>독성·위험 과일</h2>
+<h2>절대 주면 안 되는 과일</h2>
 <div class="callout-dog">
-<strong>절대 금지 과일</strong><br>
-• <strong>포도·건포도</strong>: 소량도 신장 부전 유발 가능<br>
-• <strong>아보카도</strong>: 퍼신 성분 독성<br>
-• <strong>체리</strong>: 씨·잎·줄기에 청산가리 성분<br>
-• <strong>무화과</strong>: 피부·소화기 자극<br>
-• <strong>레몬·라임·자몽</strong>: 시트릭산·에센셜 오일 독성
+<strong>포도, 건포도, 커런트</strong><br>
+• 신장 손상(급성 신부전)과 연관된 것으로 알려져 있고, 소량으로도 문제가 될 수 있다고 AKC와 VCA가 경고한다<br>
+• 독성 성분은 확실히 밝혀지지 않았고 개체에 따라 반응이 달라 안전한 양이 정해져 있지 않다<br>
+• 먹었다면 증상이 없어도 즉시 동물병원에 연락한다 (ASPCA 동물독극물센터는 해외 번호이므로 국내에서는 가까운 동물병원이나 24시 응급병원을 이용)
 </div>
 
-<h2>씨 위험성</h2>
-<p>사과·복숭아·체리 씨에는 아미그달린(amygdalin)이 있어 소화 시 청산가리로 분해된다. 과일은 항상 씨를 제거하고 급여한다.</p>
+<h2>줄 수 있는 과일과 주의점</h2>
+<table>
+<thead><tr><th>과일</th><th>준비 방법</th><th>주의</th></tr></thead>
+<tbody>
+<tr><td>사과</td><td>씨와 속을 제거해 작게 자른다</td><td>씨에는 시안화물이 있어 먹이지 않는다</td></tr>
+<tr><td>블루베리</td><td>그대로 소량</td><td>목에 걸리지 않는 작은 개는 으깨서 준다</td></tr>
+<tr><td>바나나</td><td>껍질을 벗겨 소량</td><td>당분이 많아 자주 주지 않는다</td></tr>
+<tr><td>딸기, 수박, 멜론</td><td>씨와 껍질을 제거</td><td>수박 씨는 장 폐색 위험이 있어 뺀다</td></tr>
+<tr><td>복숭아, 체리 등 씨 있는 과일</td><td>씨(핵)를 완전히 제거</td><td>핵은 질식·장 폐색 위험이 있고 일부 핵에는 시안화물이 있다</td></tr>
+</tbody>
+</table>
+<p>VCA는 두꺼운 껍질, 줄기, 씨, 핵, 속은 치아 손상이나 질식, 위장관 폐색을 일으킬 수 있으니 제거하라고 안내한다.</p>
 
-<h2>급여량 기준</h2>
+<h2>급여 요령</h2>
 <ul>
-<li>과일은 하루 총 칼로리의 10% 이내</li>
-<li>처음 주는 과일은 소량씩 시작 (알레르기 반응 확인)</li>
-<li>당분이 높은 과일(바나나·포도 대체 안전 과일)은 특히 소량으로</li>
-<li>당뇨견은 당분 높은 과일 제한</li>
+<li>간식은 하루 섭취량의 일부로만 주고 주식은 균형 잡힌 사료로 유지한다.</li>
+<li>새로운 과일은 한 번에 한 종류, 아주 소량부터 시작한다.</li>
+<li>당뇨, 비만, 췌장염 병력이 있는 개는 과일 급여 전에 수의사와 상의한다.</li>
+<li>통조림 과일이나 시럽 절임, 가공 주스는 당분과 첨가물 때문에 주지 않는다.</li>
 </ul>
 
 <h2>마지막으로</h2>
-<p>과일은 영양 보충보다 기호성 간식으로 활용하는 것이 적절하다. 안전한 것만, 씨 제거 후, 소량으로 — 이 세 가지를 지키면 즐거운 간식 시간이 된다.</p>`,
+<p>과일은 포도류만 확실히 피하고 나머지는 씨와 껍질을 정리해 소량만 주면 된다. 먹은 뒤 구토나 설사가 있으면 다음에는 그 과일을 빼고 필요하면 진료받는다.</p>`,
     authorName: "펫지기 에디터",
     authorCredential: "반려동물 영양 정보 큐레이터",
     ymyl: false,
-    sources: JSON.stringify([
-      "ASPCA Animal Poison Control — Fruits Safe and Toxic for Dogs",
-      "한국수의영양학회 자연 식품 급여 가이드라인",
-    ]),
+    sources: [
+      "https://www.akc.org/expert-advice/nutrition/fruits-vegetables-dogs-can-and-cant-eat/ — AKC, Fruits and Vegetables Dogs Can or Can't Eat",
+      "https://vcahospitals.com/know-your-pet/grape-raisin-and-currant-poisoning-in-dogs — VCA, Grape, Raisin, and Currant Poisoning in Dogs",
+      "https://www.aspca.org/pet-care/aspca-poison-control/people-foods-avoid-feeding-your-pets — ASPCA, People Foods to Avoid Feeding Your Pets",
+      "https://vcahospitals.com/resources/preventive-dog/nutrition/can-you-feed-pets-certain-fruits-and-veggies — VCA, Can you feed pets certain fruits and veggies",
+    ],
     disclaimer: null,
     status: "published",
     publishedAt: "2026-08-28T11:00:00.000Z",
