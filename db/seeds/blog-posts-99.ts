@@ -124,51 +124,56 @@ const BLOG_POSTS: NewContent[] = [
     subtitle: "FeLV 전파 경로, 예후, FIV와의 차이, 관리 방법, 다묘 가정 위험",
     metaTitle: "고양이 FeLV(백혈병 바이러스) — 전파·예후·관리·다묘 가정 가이드 | 펫지기",
     metaDescription: "고양이 FeLV(고양이 백혈병 바이러스) 진단 후 알아야 할 것들. FIV와의 차이, 전파 경로, 예후와 수명, 다묘 가정 위험도, 관리 방법을 정리했습니다.",
-    body: `<p>FeLV(고양이 백혈병 바이러스)는 FIV보다 예후가 나쁜 경우가 많지만, 진단이 선고는 아니다.</p>
+    body: `<p>고양이 백혈병 바이러스(FeLV) 양성 진단을 받으면 막막하지만, 양성이라고 해서 곧바로 남은 시간이 짧은 것은 아니다. 감염 양상에 따라 경과가 다르고, 올바른 관리와 정기 검진으로 오랜 시간 건강하게 지내는 고양이도 있다. 진단 후 알아야 할 점을 정리했다.</p>
 
 <h2>FeLV란</h2>
-<p>레트로바이러스로, 주로 고양이 간 친밀한 접촉(그루밍·물기·공유 밥그릇·배설물)으로 전파된다. FIV보다 전파 가능성이 높다. 면역 억제 외에 림프종·빈혈 등 직접적인 질환을 유발한다.</p>
+<p>FeLV는 고양이 사이에서 침, 코 분비물, 그루밍, 밥그릇·물그릇 공유, 물림, 어미에서 새끼로의 수직 감염으로 전파되는 레트로바이러스다. 감염되면 면역 기능 저하, 빈혈, 림프종 같은 종양 위험이 높아질 수 있다. 감염 후 경과는 고양이의 면역 반응에 따라 달라 하나의 경로로 정해지지 않는다.</p>
 
-<h2>FIV와의 차이</h2>
+<h2>검사</h2>
+<ul>
+<li>1차 검사는 혈액 항원 검사(신속 키트)이며, 양성이면 확인 검사(다른 방법 또는 재검사)를 한다.</li>
+<li>감염 초기에는 음성이 나올 수 있어 몇 주 뒤 재검사를 권하는 경우가 있다.</li>
+<li>건강한 고양이에게 무작위로 검사하면 위양성이 나올 수 있어, 위험 요인이나 임상 증상이 있을 때 검사하도록 권하는 지침도 있다. 새로 입양한 고양이는 기존 고양이와 합사하기 전에 검사하는 것이 일반적이다.</li>
+</ul>
+
+<h2>양성 진단 후 관리</h2>
 <table>
-<thead><tr><th>구분</th><th>FeLV</th><th>FIV</th></tr></thead>
+<thead><tr><th>항목</th><th>내용</th></tr></thead>
 <tbody>
-<tr><td>전파</td><td>일상 접촉 가능</td><td>주로 깊은 물림</td></tr>
-<tr><td>예후</td><td>상대적으로 나쁨</td><td>관리하면 정상에 가까움</td></tr>
-<tr><td>백신</td><td>있음 (효과 있음)</td><td>국내 미승인</td></tr>
-<tr><td>주요 합병증</td><td>림프종·빈혈</td><td>이차 감염</td></tr>
+<tr><td>실내 생활</td><td>다른 고양이에게 옮기지 않고, 외부 병원체에 노출되지 않도록 실내에서만 지낸다</td></tr>
+<tr><td>정기 검진</td><td>6개월마다 또는 수의사가 권하는 간격으로 혈액 검사, 체중, 구강 검사를 한다</td></tr>
+<tr><td>식이</td><td>조리하지 않은 날고기·살균하지 않은 우유는 피하고 균형 잡힌 사료를 먹인다</td></tr>
+<tr><td>중성화</td><td>스트레스와 싸움, 도주를 줄이기 위해 권장된다</td></tr>
+<tr><td>백신 계획</td><td>면역이 저하된 고양이는 접종 계획을 수의사와 개체별로 상담한다</td></tr>
+<tr><td>항바이러스 치료</td><td>일부 약물이 바이러스 양을 줄일 수 있으나 부작용이 있고 모든 경우에 효과적이지는 않다. 수의사와 상의한다</td></tr>
 </tbody>
 </table>
 
-<h2>예후 현실</h2>
-<div class="callout-cat">
-<strong>FeLV 감염 결과</strong><br>
-• 일시 감염 후 자연 제거: 일부 고양이에서 가능<br>
-• 지속 감염: 대부분 진행, 평균 2~3년 생존<br>
-• 잠복 감염: 수년간 증상 없이 지낼 수 있음<br>
-▶ 개별 고양이마다 차이 큼 — 포기하지 말고 수의사와 상담
-</div>
-
-<h2>관리 방법</h2>
+<h2>다묘 가정</h2>
 <ul>
-<li>완전 실내 생활 (이차 감염·다른 고양이 전파 방지)</li>
-<li>3개월마다 혈액 검사·건강 검진</li>
-<li>예방 가능한 감염 차단 (정기 예방접종 유지)</li>
-<li>고영양 식이 (면역 지원)</li>
+<li>양성 고양이는 음성 고양이와 분리하는 것이 안전하다. 예방접종을 완료한 음성 고양이와 함께 지내는 방법은 위험을 완전히 없애지 못하므로 수의사와 상의한다.</li>
+<li>밥그릇, 물그릇, 화장실을 공유하지 않게 한다.</li>
+<li>FeLV 백신은 감염 위험이 있는 고양이에게 권장된다. 생활 환경에 따라 접종 여부를 수의사와 정한다.</li>
 </ul>
 
-<h2>다묘 가정</h2>
-<p>FeLV 양성 고양이는 음성 고양이와 격리하거나, 다른 고양이에게 FeLV 백신 접종이 필요하다.</p>
+<div class="callout-cat">
+<strong>이런 증상이면 바로 진료</strong><br>
+• 며칠 이상 식욕이 줄거나 체중이 빠진다<br>
+• 잇몸이 창백하고 처진다 (빈혈 가능성)<br>
+• 림프절이 붓거나 호흡이 가쁘다<br>
+• 구내염, 만성 설사, 반복되는 감염이 있다
+</div>
 
 <h2>마지막으로</h2>
-<p>FeLV 진단이 어렵다는 것은 안다. 그러나 많은 FeLV 양성 고양이가 진단 후에도 수년을 잘 산다. 충분한 지원과 관리가 삶의 질을 결정한다.</p>`,
+<p>FeLV 양성이어도 실내 생활, 정기 검진, 스트레스 관리로 삶의 질을 유지할 수 있다. 검사 결과가 나오면 수의사와 장기 관리 계획을 세우자.</p>`,
     authorName: "펫지기 에디터",
     authorCredential: "반려동물 건강 정보 큐레이터",
     ymyl: true,
-    sources: JSON.stringify([
-      "Hartmann, K. — Feline leukemia virus disease. Vet Clin North Am 2012",
-      "한국고양이수의사회 FeLV 임상 가이드라인",
-    ]),
+    sources: [
+      "https://www.aspcapro.org/sites/default/files/2023-11/felv-testing-management-2023.pdf — ASPCA Pro, FeLV testing and management (2023)",
+      "https://merck-animal-health-usa.com/offload-downloads/feline-leukemia-virus — Merck Animal Health, Feline Leukemia Virus",
+      "https://scienceinsights.org/is-there-a-cure-for-feline-leukemia-what-vets-say/ — Science Insights, Is there a cure for feline leukemia?",
+    ],
     disclaimer: "이 글은 정보 제공을 목적으로 하며 수의사 진료를 대체하지 않습니다.",
     status: "published",
     publishedAt: "2026-11-20T09:00:00.000Z",
