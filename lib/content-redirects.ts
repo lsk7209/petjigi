@@ -22,6 +22,11 @@ export const CONTENT_REDIRECTS: readonly ContentRedirect[] = [
     reason: "동일 검색 의도(여름 더위·열사병). 대표 가이드가 응급 처치·예방을 모두 다룸",
   },
   {
+    from: "/blog/pet-damage-neighbor-dispute",
+    to: "/blog/pet-bite-liability-guide",
+    reason: "동일 검색 의도(반려동물 피해 배상·교상 책임). 대표 문서가 이웃 피해 분쟁 절차까지 포함",
+  },
+  {
     from: "/blog/pet-insurance-comparison-guide",
     to: "/blog/pet-insurance-comparison-method",
     reason: "동일 검색 의도(펫보험 비교 기준). 더 짧은 문서이며 비교 기준·한도·갱신 항목은 대표 문서가 모두 다룸",
