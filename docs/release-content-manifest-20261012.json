@@ -442,5 +442,7 @@
     }
   ],
   "productionRowsUpdated": 26,
-  "productionVerification": "26/26 desired content and unchanged non-allowlisted fields; dry-run26noop"
+  "productionVerification": "26/26 desired content and unchanged non-allowlisted fields; dry-run26noop",
+  "productionDateCorrections": 3,
+  "correctedModificationTimestamp": "2026-10-11T15:24:29.000Z"
 }

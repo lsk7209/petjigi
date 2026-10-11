@@ -343,7 +343,7 @@ const BLOG_POSTS: NewContent[] = [
     status: "published",
     publishedAt: "2026-08-28T09:00:00.000Z",
     createdAt: NOW,
-    updatedAt: "2026-10-12T00:00:00.000Z",
+    updatedAt: "2026-10-11T15:24:29.000Z",
   },
 
 ];

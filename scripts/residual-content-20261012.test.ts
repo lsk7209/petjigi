@@ -47,7 +47,8 @@ test("three published health records retain identity and include sourced consult
     assert.equal(literal(props, "publishedAt"), target.publishedAt);
     assert.equal(literal(props, "authorCredential"), target.credential);
     assert.equal(props.get("ymyl")?.kind, ts.SyntaxKind.TrueKeyword);
-    assert.equal(literal(props, "updatedAt"), "2026-10-12T00:00:00.000Z");
+    assert.equal(literal(props, "updatedAt"), "2026-10-11T15:24:29.000Z");
+    assert.ok(Date.parse(literal(props, "updatedAt")) <= Date.now(), "modification time must not be in the future");
     assert.equal(props.has("reviewerName"), false);
     assert.equal(props.has("reviewedAt"), false);
 

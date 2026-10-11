@@ -141,7 +141,7 @@ const BLOG_POSTS: NewContent[] = [
     status: "published",
     publishedAt: "2026-08-06T11:00:00.000Z",
     createdAt: NOW,
-    updatedAt: "2026-10-12T00:00:00.000Z",
+    updatedAt: "2026-10-11T15:24:29.000Z",
   },
 
   {
@@ -293,7 +293,7 @@ const BLOG_POSTS: NewContent[] = [
     status: "published",
     publishedAt: "2026-08-07T11:00:00.000Z",
     createdAt: NOW,
-    updatedAt: "2026-10-12T00:00:00.000Z",
+    updatedAt: "2026-10-11T15:24:29.000Z",
   },
 
   {
