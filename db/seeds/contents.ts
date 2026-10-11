@@ -3946,7 +3946,7 @@ const SEED_CONTENTS: NewContent[] = [
   <li><strong>대상</strong>: 2개월령 이상의 반려견 (고양이는 자율 등록)</li>
   <li><strong>방법</strong>: 마이크로칩(내장형) 또는 등록인식표(외장형)</li>
   <li><strong>기한</strong>: 취득일로부터 30일 이내</li>
-  <li><strong>과태료</strong>: 미등록 시 최대 100만 원</li>
+  <li><strong>과태료</strong>: 미등록 시 위반 횟수별로 부과 (기준은 동물등록 가이드 참고)</li>
   <li><strong>사망 신고</strong>: 사망 후 30일 이내 말소 신고 의무</li>
 </ul>
 
