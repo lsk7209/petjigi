@@ -1,5 +1,6 @@
 // 공개 사이트 읽기 전용 감사: sitemap 인덱스 → 하위 sitemap → 각 URL의 HTTP 상태·canonical·robots·title·description.
 // 사용: node scripts/audit-live-site.mjs [--base=https://petjigi.kr] [--limit=200] [--out=reports/live-site-audit.json]
+// --base=http://localhost:3000 으로 로컬 production 빌드(next start)도 같은 기준으로 검사할 수 있다.
 // GET 요청만 사용하며 광고 클릭·양식 제출은 하지 않는다. 동시성 5 이하, 실패 시 최대 2회 재시도.
 import fs from 'node:fs';
 import path from 'node:path';
@@ -10,6 +11,7 @@ const LIMIT = Number(args.limit ?? 200);
 const OUT = args.out ?? 'reports/live-site-audit.json';
 const CONCURRENCY = Math.min(Number(args.concurrency ?? 3), 5);
 const MAX_RETRIES = 2;
+const BRAND_REPEATED = /펫지기\s*[|·\-–—:]\s*펫지기/; // 예: '강남구 동물병원 | 펫지기 | 펫지기'
 const UA = 'Mozilla/5.0 (compatible; PetjigiAudit/1.0; read-only)';
 
 async function get(url) {
@@ -63,6 +65,7 @@ function issuesFor(url, status, info, location) {
     if (!info.title) issues.push('title 없음');
     if (!info.description) issues.push('description 없음');
     if (info.h1Count !== 1) issues.push(`h1 ${info.h1Count}개`);
+    if (info.title && BRAND_REPEATED.test(info.title)) issues.push(`title 브랜드 중복: ${info.title}`);
   }
   return issues;
 }
@@ -89,8 +92,20 @@ const pages = await pool(urls, async url => {
 });
 
 const failing = pages.filter(p => p.issues.length > 0);
-const report = { generatedAt: new Date().toISOString(), base: BASE, sitemapUrlCount: entries.filter(e => e.url).length, checked: pages.length, sitemapErrors, failing, pages };
+
+// 같은 title·description을 쓰는 서로 다른 URL(중복 메타데이터) 묶음. 정보 제공용이며 종료 코드에는 반영하지 않는다.
+function duplicateGroups(field) {
+  const groups = new Map();
+  for (const p of pages) {
+    if (p.status !== 200 || !p[field]) continue;
+    groups.set(p[field], [...(groups.get(p[field]) ?? []), p.url]);
+  }
+  return [...groups].filter(([, list]) => list.length > 1).map(([value, list]) => ({ value, count: list.length, urls: list.slice(0, 5) }));
+}
+const duplicateTitles = duplicateGroups('title');
+const duplicateDescriptions = duplicateGroups('description');
+const report = { generatedAt: new Date().toISOString(), base: BASE, sitemapUrlCount: entries.filter(e => e.url).length, checked: pages.length, sitemapErrors, failing, duplicateTitles, duplicateDescriptions, pages };
 fs.mkdirSync(path.dirname(OUT), { recursive: true });
 fs.writeFileSync(OUT, JSON.stringify(report, null, 2));
-console.log(`checked=${pages.length} failing=${failing.length} sitemapErrors=${sitemapErrors.length} -> ${OUT}`);
+console.log(`checked=${pages.length} failing=${failing.length} sitemapErrors=${sitemapErrors.length} duplicateTitles=${duplicateTitles.length} duplicateDescriptions=${duplicateDescriptions.length} -> ${OUT}`);
 if (failing.length > 0 || sitemapErrors.length > 0) process.exitCode = 1;
