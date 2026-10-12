@@ -111,7 +111,7 @@ export function resolveHref(
 /** HTML 본문에서 <a href> 값 추출 */
 export function extractAnchorHrefs(html: string): string[] {
   const out: string[] = [];
-  for (const m of html.matchAll(/<a\b[^>]*?\bhref\s*=\s*(["'])(.*?)\1/gis))
+  for (const m of html.matchAll(/<a\b[^>]*?\bhref\s*=\s*(["'])([\s\S]*?)\1/gi))
     out.push(m[2]);
   return out;
 }
