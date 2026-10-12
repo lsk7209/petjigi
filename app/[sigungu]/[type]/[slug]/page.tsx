@@ -18,7 +18,7 @@ import { ShareButtons } from "@/components/content/share-buttons";
 import { AdSlot } from "@/components/ads/ad-slot";
 import { adsPolicyAttrs } from "@/lib/ads-policy";
 import { evaluateBusinessDetailEligibility } from "@/lib/seo/indexability-policy";
-import { LISTING_STALE_DAYS } from "@/lib/listing-state";
+import { classifyListing } from "@/lib/listing-state";
 import { DataCoverage } from "@/components/business/data-coverage";
 import { AdPolicyProvider } from "@/components/providers/ad-policy-provider";
 import { BusinessViewTracker } from "@/components/analytics/business-view-tracker";
@@ -167,8 +167,7 @@ export default async function BusinessDetailPage({
 
   const eligibility = evaluateBusinessDetailEligibility({ ambiguous: false, business, categoryId });
   const syncedAt = business.lastSyncedAt?.slice(0, 10) ?? null;
-  const staleAsOf =
-    syncedAt && Date.now() - Date.parse(syncedAt) > LISTING_STALE_DAYS * 86_400_000 ? syncedAt : null;
+  const staleAsOf = syncedAt && classifyListing(1, syncedAt).stale ? syncedAt : null;
   const schema = localBusinessSchema({ business, canonicalUrl: pageUrl });
   const breadcrumb = breadcrumbSchema([
     { name: "홈", url: SITE_URL },

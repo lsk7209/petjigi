@@ -17,12 +17,8 @@ test("기본 consent 4개 항목은 모두 denied", () => {
 
 test("consent default는 GA4 config보다 먼저 실행되도록 beforeInteractive로 로드", () => {
   const layout = readFileSync(new URL("../app/layout.tsx", import.meta.url), "utf8");
-  assert.ok(layout.indexOf("<GoogleConsentDefaults />") < layout.indexOf("<GA4 />"));
-  const component = readFileSync(
-    new URL("../components/privacy/google-consent-defaults.tsx", import.meta.url),
-    "utf8",
-  );
-  assert.match(component, /strategy="beforeInteractive"/);
+  assert.ok(layout.indexOf('id="google-consent-defaults"') < layout.indexOf("<GA4 />"));
+  assert.match(layout, /id="google-consent-defaults"\s+strategy="beforeInteractive"/);
 });
 
 test("GA4는 동의 없이 개인화 신호를 켜지 않음", () => {

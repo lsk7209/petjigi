@@ -3,7 +3,8 @@ import { Noto_Serif_KR } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
-import { GoogleConsentDefaults } from "@/components/privacy/google-consent-defaults";
+import Script from "next/script";
+import { buildConsentDefaultScript } from "@/lib/privacy/google-consent";
 import { GA4 } from "@/components/analytics/ga4";
 import { AdsenseLoader } from "@/components/ads/adsense-loader";
 import { currentThirdPartyRuntime } from "@/lib/privacy/third-party-runtime";
@@ -146,7 +147,10 @@ export default function RootLayout({
         />
       </head>
       <body className="min-h-full flex flex-col antialiased">
-        <GoogleConsentDefaults />
+        {/* Consent Mode v2 기본값(denied)은 GA4·AdSense 로더보다 먼저 실행되어야 한다 */}
+        <Script id="google-consent-defaults" strategy="beforeInteractive">
+          {buildConsentDefaultScript()}
+        </Script>
         <a
           href="#main-content"
           className="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-50 focus:px-4 focus:py-2 focus:bg-[var(--brand-accent)] focus:text-white focus:rounded-lg focus:text-sm"

@@ -150,7 +150,7 @@ function sourceChecks(): Check[] {
       "ga4-consent",
       "GA4/AdSense 전에 Consent Mode 기본 denied",
       allDenied &&
-        layout.indexOf("<GoogleConsentDefaults />") <
+        layout.indexOf('id="google-consent-defaults"') <
           layout.indexOf("<GA4 />") &&
         !/allow_(google_signals|ad_personalization_signals):\s*true/.test(ga4),
       "4개 항목 denied, 로드 순서, 개인화 신호 제거",

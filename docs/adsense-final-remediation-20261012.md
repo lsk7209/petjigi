@@ -27,7 +27,11 @@
 - `pnpm audit:content:gate -- --base=origin/main`: 변경 17건, 차단 0
 - `pnpm audit:adsense:readiness`: PASS 13 · BLOCKED 0 · UNKNOWN 11
 - `pnpm audit:internal-links`: 실패 0, scheduled 7(예약 글끼리의 링크)
-- NOT_RUN: `pnpm build`(next-sitemap 포함; 운영 DB 접속 정보 없음 — 격리 build로 대체), `pnpm lint`/`tsc`(Stop hook 담당), 390/768/1440/print 수동 뷰포트 확인, `audit:live`(배포 후 실행)
+- tsc(`--noEmit`): 종료 코드 0
+- eslint(`pnpm lint`): 종료 코드 0 (초기 오류 1건[렌더 중 Date.now]·경고 1건[beforeInteractive 위치] 수정 후)
+- 전체 빌드(next build + next-sitemap): 종료 코드 0. 합성 SQLite fixture DB 사용, 생성된 public/ 산출물은 되돌림
+- 브라우저(production start, 합성 fixture): 390/768/1440px + print 에뮬레이션 × 9개 경로(홈·guide·정상/0건 목록·업체 상세·about·privacy·advertising·404) 36건 — 가로 넘침 0, H1 중복 0, JSON-LD 파싱 오류 0, Google/GA 외부 요청 0, consent 기본 4개 denied, 0건 목록·404는 noindex + 광고 차단 마커 + 페이지 JSON-LD 없음
+- NOT_RUN: `audit:live`(배포 후), 운영 DB dry-run(접속 정보 없음)
 
 ## 운영 적용 준비 (미실행)
 - 코드 후보: 브랜치 HEAD
