@@ -115,8 +115,13 @@ export function auditPage(input: {
   } catch (e) {
     return [{ url: input.url, rule: "parse", detail: String(e) }];
   }
-  if (input.noindex && blocks.length > 0)
-    add("noindex-jsonld", `noindex 페이지에 JSON-LD ${blocks.length}개`);
+  // 사이트 공통(WebSite·Organization) 스키마는 layout에서 항상 출력되므로 페이지용 JSON-LD로 세지 않는다
+  const pageBlocks = blocks.filter(
+    (b) =>
+      !SITE_LEVEL_TYPES.includes(String((b as { "@type"?: string })["@type"])),
+  );
+  if (input.noindex && pageBlocks.length > 0)
+    add("noindex-jsonld", `noindex 페이지에 JSON-LD ${pageBlocks.length}개`);
   const ctx = {
     canonical: input.canonical,
     now: (input.now ?? new Date()).getTime(),

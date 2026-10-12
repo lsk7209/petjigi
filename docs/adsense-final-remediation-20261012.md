@@ -45,3 +45,12 @@
 ## 미실행
 push, merge, deploy, 운영 DB apply, DNS 변경, 메일 발송, AdSense 설정, CMP 계정 설정, 재심사 신청.
 UNKNOWN 11건은 `docs/adsense-account-manual-checklist.md` 참조. 재심사 준비 완료로 선언하지 않는다.
+
+
+## 운영 반영 결과 (2026-10-12, 사용자 승인 후)
+- 운영 DB: 17행 `--apply` 완료(14 + 백업 충돌로 건너뛴 3행은 별도 백업 폴더로 재적용), 재 dry-run `noop_identical` 17/17. 백업 `.backup-prod/final-20261012/`(gitignore).
+- 병합: PR #64(본 작업), #65(next-sitemap 0건 필터), #66(sitemap-0.xml에서 `/dongjak/sale` 제거). 운영 배포 READY 확인.
+- 배포 후 `audit:live`: 1,016개 sitemap URL 전수 문제 0건(HTTP/canonical/noindex/title/description/H1). 첫 실행에서 `/dongjak/sale`(sitemap+noindex) 1건이 발견되어 #66으로 해소.
+- 배포 후 `audit:structured-data` 8개 페이지(글·가이드·질환·목록·about·0건 목록·privacy) 이슈 0건. 삭제한 AAHA/APPA 문장이 운영 페이지에서 사라진 것, `/about#editorial-team` 노출 확인.
+- 참고: 운영 sitemap은 저장소의 `public/sitemap-0.xml`이 그대로 제공됨(빌드 산출물이 아님). 목록 페이지가 추가·삭제되면 이 파일을 갱신해야 함.
+- UNKNOWN 11건(AdSense 승인·CMP·메일·전문가 검토·색인)은 외부 확인 대상으로 남음.

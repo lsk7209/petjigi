@@ -60,3 +60,8 @@ test("깨진 JSON-LD는 parse 이슈", () => {
   const issues = auditPage({ url: "u", canonical: null, noindex: false, html });
   assert.equal(issues[0].rule, "parse");
 });
+
+test("noindex 페이지의 사이트 공통 JSON-LD(WebSite·Organization)는 위반이 아니다", () => {
+  const html = ld({ "@type": "WebSite", url: "https://petjigi.kr" }) + ld({ "@type": "Organization", url: "https://petjigi.kr" });
+  assert.deepEqual(auditPage({ url: "u", canonical: null, noindex: true, html, now: NOW }), []);
+});
