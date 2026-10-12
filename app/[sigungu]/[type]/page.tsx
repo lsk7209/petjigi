@@ -1,5 +1,6 @@
 import { VisitQuestions } from "@/components/business/visit-questions";
-import { faqCountAnswer, listingScopeWording } from "@/lib/business-status-wording";
+import { faqCountAnswer, listingScopeWording, staleNotice } from "@/lib/business-status-wording";
+import { evaluateListingEligibility } from "@/lib/seo/indexability-policy";
 import type { Metadata } from "next";
 import { notFound, redirect } from "next/navigation";
 import Link from "next/link";
@@ -137,15 +138,17 @@ export async function generateMetadata({
   const regionView = await getCachedRegionSlugView(sigungu);
   if (regionView.kind === "missing") notFound();
   const location = regionView.sigunguName ?? decodeURIComponent(sigungu);
-  const isAmbiguousRegion = regionView.ambiguousSidoNames.length > 1;
   const listing = await getCachedBusinessListing(location, type, page);
-  const isUnverified =
-    classifyListing(
+  const eligibility = evaluateListingEligibility({
+    ambiguousRegion: regionView.ambiguousSidoNames.length > 1,
+    status: classifyListing(
       listing.totalCount,
       await getCachedTypeSourceAsOf(type),
       new Date(),
       listing.sourceAsOf,
-    ).state === "not_collected";
+    ),
+    categoryId: meta.categoryId,
+  });
   const title = `${location} ${meta.label}${page > 1 ? ` ${page}페이지` : ""}`;
   const description = `${location} ${meta.label} 전체 목록. ${meta.desc} — 공공데이터 기반 업체 목록과 방문 전 확인 안내.`;
   const canonical = businessListingPath(sigungu, type, page);
@@ -154,9 +157,7 @@ export async function generateMetadata({
     title,
     description,
     alternates: { canonical },
-    ...(isAmbiguousRegion || isUnverified
-      ? { robots: { index: false, follow: true } }
-      : {}),
+    ...(eligibility.indexable ? {} : { robots: { index: false, follow: true } }),
     openGraph: {
       title: `${title} | 펫지기`,
       description,
@@ -179,11 +180,11 @@ export async function generateMetadata({
   };
 }
 
-function buildFaq(type: string, location: string, typeLabel: string, count: number) {
+function buildFaq(type: string, location: string, typeLabel: string, count: number, staleAsOf: string | null) {
   return [
     {
       question: `${location}에 ${typeLabel}이 몇 곳이나 있나요?`,
-      answer: faqCountAnswer(type, location, typeLabel, count),
+      answer: faqCountAnswer(type, location, typeLabel, count, staleAsOf),
     },
     {
       question: `${location} ${typeLabel} 정보는 어디서 가져오나요?`,
@@ -226,6 +227,13 @@ export default async function SigunguTypePage({
     new Date(),
     listing.sourceAsOf,
   );
+  const eligibility = evaluateListingEligibility({
+    ambiguousRegion: ambiguousSidoNames.length > 1,
+    status,
+    categoryId: meta.categoryId,
+  });
+  const asOfDate = (listing.sourceAsOf ?? status.asOf)?.slice(0, 10) ?? null;
+  const staleAsOf = status.stale ? asOfDate : null;
   const canonicalPath = businessListingPath(sigungu, type, listing.page);
   if (listing.page !== requestedPage) redirect(canonicalPath);
 
@@ -245,7 +253,7 @@ export default async function SigunguTypePage({
     },
   ]);
 
-  const faq = faqSchema(buildFaq(type, sigunguName, meta.label, listing.totalCount));
+  const faq = faqSchema(buildFaq(type, sigunguName, meta.label, listing.totalCount, staleAsOf));
 
   const itemList = itemListSchema(
     businessList.map((b, i) => ({
@@ -271,25 +279,31 @@ export default async function SigunguTypePage({
         sigungu={sigunguName}
         type={type}
       />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faq) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(itemList) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(collectionPage) }}
-      />
+      {eligibility.structuredDataEligible && (
+        <>
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb) }}
+          />
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(faq) }}
+          />
+          {businessList.length > 0 && (
+            <script
+              type="application/ld+json"
+              dangerouslySetInnerHTML={{ __html: JSON.stringify(itemList) }}
+            />
+          )}
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(collectionPage) }}
+          />
+        </>
+      )}
       <main
         className="max-w-5xl mx-auto px-4 py-10"
-        {...(businessList.length === 0 ? { "data-ads-policy": "block" } : adsPolicyAttrs(meta.categoryId))}
+        {...(eligibility.adEligible && businessList.length > 0 ? adsPolicyAttrs(meta.categoryId) : { "data-ads-policy": "block" })}
       >
         {/* 브레드크럼 */}
         <nav
@@ -355,7 +369,7 @@ export default async function SigunguTypePage({
                 ? "공공데이터에서 이 조건에 맞는 업체가 확인되지 않았습니다."
                 : "이 조건의 데이터 수집 여부를 확인하지 못했습니다."
               : `총 ${listing.totalCount}곳 중 ${listing.start}~${listing.end}곳을 표시합니다.`}{" "}
-            {meta.desc}. {listingScopeWording(type)}만 표시됩니다.
+            {meta.desc}. {listingScopeWording(type, staleAsOf)}만 표시됩니다.{staleAsOf ? ` ${staleNotice(staleAsOf)}` : ""}
           </p>
         </header>
 
@@ -510,7 +524,7 @@ export default async function SigunguTypePage({
             자주 묻는 질문
           </h2>
           <dl className="space-y-4">
-            {buildFaq(type, sigunguName, meta.label, listing.totalCount).map(
+            {buildFaq(type, sigunguName, meta.label, listing.totalCount, staleAsOf).map(
               (item, i) => (
                 <div
                   key={i}
@@ -538,7 +552,7 @@ export default async function SigunguTypePage({
 
         <p className="mt-8 text-xs text-[var(--brand-text-secondary)]">
           정보 기준: 공공데이터포털 · {status.scope === "type" ? "업종 전체 기준 갱신일" : "업체 정보 갱신일"}{" "}
-          {(listing.sourceAsOf ?? status.asOf)?.slice(0, 10) ?? "확인 불가"}
+          {asOfDate ?? "확인 불가"}
           {status.stale ? " (갱신 지연 가능성 있음)" : ""} &nbsp;·&nbsp;
           {region.sidoSlug && (
             <Link
