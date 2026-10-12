@@ -123,7 +123,7 @@ const POSTS: NewContent[] = [
 <h3>고양이가 항문을 자꾸 핥으면 무조건 항문낭 문제인가요?</h3>
 <p>항문낭 외에도 피부 알레르기, 기생충(촌충), 변비가 원인일 수 있습니다. 다른 증상을 함께 살펴보고 지속되면 수의사 진단을 받으세요.</p>
 
-<p>고양이 전반적인 건강 관리는 <a href="/guide/cat-health-guide">고양이 건강 관리 가이드</a>를 참고하세요. 강아지 항문낭 관리와 비교하고 싶다면 <a href="/blog/dog-anal-gland-express-guide">강아지 항문낭 짜기 완전 가이드</a>도 함께 확인하세요.</p>`,
+<p>고양이 전반적인 건강 정보는 <a href="/category/health">건강·의료 카테고리</a>를 참고하세요. 강아지 항문낭 관리와 비교하고 싶다면 <a href="/blog/dog-anal-gland-express-guide">강아지 항문낭 짜기 완전 가이드</a>도 함께 확인하세요.</p>`,
     authorName: "펫지기 에디터팀",
     status: "published",
     ymyl: true,
@@ -262,7 +262,7 @@ const POSTS: NewContent[] = [
   · AAAAI — 반려동물 알레르기 증상·진단·관리와 저알레르기 품종 근거
 </div>
 
-<p>반려동물 알레르기 증상을 줄이는 환경 관리법에 대해 더 알고 싶다면 <a href="/guide/pet-allergy-management-guide">반려동물 알레르기 실내 환경 관리 가이드</a>를 참고하세요. 신생아와 반려동물 알레르기의 관계는 <a href="/blog/newborn-and-pet-guide">신생아와 반려동물 공존 가이드</a>에서 확인하실 수 있습니다.</p>`,
+<p>신생아와 반려동물 알레르기의 관계는 <a href="/blog/newborn-and-pet-guide">신생아와 반려동물 공존 가이드</a>에서 확인하실 수 있습니다.</p>`,
     authorName: "펫지기 에디터팀",
     status: "published",
     ymyl: true,
@@ -320,7 +320,7 @@ const POSTS: NewContent[] = [
 <p>억지로 입히지 마세요. 적응 훈련을 2~4주 더 천천히 진행하거나, 야외 경험 자체를 창문·베란다 망 설치로 대체하세요. 모든 고양이가 산책에 적합한 것은 아닙니다.</p>
 
 <h3>외출을 시작하기 좋은 나이는?</h3>
-<p>어릴수록 적응이 쉽습니다. 예방접종이 완료된 4~6개월령부터 시작하면 성묘보다 빠르게 익숙해집니다. 성묘도 충분히 가능하지만 더 긴 적응 기간이 필요합니다. <a href="/guide/cat-indoor-vs-outdoor">실내묘 vs 실외묘 가이드</a>도 참고하세요.</p>
+<p>어릴수록 적응이 쉽습니다. 예방접종이 완료된 4~6개월령부터 시작하면 성묘보다 빠르게 익숙해집니다. 성묘도 충분히 가능하지만 더 긴 적응 기간이 필요합니다. <a href="/blog/cat-indoor-vs-outdoor">실내묘 vs 실외묘 가이드</a>도 참고하세요.</p>
 
 <div style="background:#f8f9fa;border-left:4px solid #6c757d;padding:14px;margin:16px 0;font-size:0.95em;">
   <strong>참고 자료</strong><br>

@@ -46,7 +46,7 @@ const POSTS: NewContent[] = [
   <li>실내 공기청정기 가동으로 실내 꽃가루 농도를 낮춘다.</li>
   <li>항히스타민제는 반드시 수의사 처방 후 사용한다.</li>
 </ul>
-<p>봄철에는 꽃가루로 인한 알레르기 증상이 늘 수 있다. 알레르기 관리에 대한 심층 정보는 <a href="/guide/pet-allergy-guide">반려동물 알레르기 완전 가이드</a>를 참고한다.</p>
+<p>봄철에는 꽃가루로 인한 알레르기 증상이 늘 수 있다. 증상이 반복되거나 심해지면 수의사와 상담한다.</p>
 
 <h2>환절기 건강 관리: 일교차 극복하기</h2>
 <p>봄철 일교차는 10°C를 넘는 날이 많다. 급격한 기온 변화는 면역 기능을 저하시켜 호흡기 감염·장염 위험을 높인다. 농림축산식품부가 발표한 반려동물 실태조사에 따르면 봄철 동물병원 방문 사유 중 환절기 호흡기 질환이 상위권을 차지한다.</p>
@@ -134,7 +134,7 @@ const POSTS: NewContent[] = [
   <li><strong>강아지 신발</strong>: 처음 신기면 거부반응이 있으므로 실내에서 며칠 적응 훈련 후 착용한다.</li>
   <li>잔디·흙길을 이용할 수 있다면 아스팔트 대신 선택한다.</li>
 </ul>
-<p>발바닥 보호에 대한 자세한 내용은 <a href="/guide/dog-summer-paw-protection">강아지 여름 발바닥 보호 가이드</a>를 참고한다.</p>
+<p>발바닥 보호에 대한 자세한 내용은 <a href="/blog/dog-summer-paw-protection">강아지 여름 발바닥 보호 가이드</a>를 참고한다.</p>
 
 <h2>심장사상충 예방: 모기 시즌 관리</h2>
 <p>심장사상충은 모기가 매개하는 기생충으로, 한국은 4월~11월이 감염 위험 시기다. 심장사상충 예방약을 수의사 지시에 따라 꾸준히 투여하면 감염을 예방할 수 있지만, 감염된 뒤의 치료는 오래 걸리고 심각한 부작용 위험도 따른다. 심장사상충에 걸리면 치료 비용이 수십만 원을 넘고, 중증 시 생명을 위협한다.</p>
@@ -309,7 +309,7 @@ const POSTS: NewContent[] = [
 <p>먹은 음식 종류와 양, 반려동물의 체중을 확인한 뒤 즉시 동물병원이나 반려동물 응급 콜센터에 전화한다. ASPCA 독성관리센터(1-888-426-4435)는 24시간 운영되며, 양파·마늘·포도·자일리톨·초콜릿은 소량도 위험하므로 증상이 없어도 바로 연락할 것을 권고한다. 구토를 유도하는 것은 일부 경우 역효과가 날 수 있으므로 전문가 지시 없이 하지 않는다.</p>
 
 <h3>명절 연휴에 동물병원이 문을 여나요?</h3>
-<p>설·추석 연휴에는 대부분의 동물병원이 문을 닫는다. 연휴 전에 24시간 응급 동물병원 위치와 연락처를 반드시 저장해둔다. 지역 동물병원 정보는 <a href="/guide/emergency-vet-guide">24시간 응급 동물병원 찾기 가이드</a>에서 확인할 수 있다.</p>
+<p>설·추석 연휴에는 대부분의 동물병원이 문을 닫는다. 연휴 전에 24시간 응급 동물병원 위치와 연락처를 반드시 저장해둔다. 지역 동물병원 정보는 <a href="/search">펫지기 검색</a>에서 지역명으로 확인할 수 있다.</p>
 
 <h2>명절 케어 준비 체크리스트</h2>
 <ul>
@@ -478,7 +478,7 @@ const POSTS: NewContent[] = [
   <li>습식 사료 비율 높여 수분 섭취 유도</li>
   <li>히터·라디에이터 주변 접근 제한</li>
 </ul>
-<p>겨울철 실내 고양이 케어와 함께 <a href="/guide/pet-first-aid-guide">반려동물 응급처치 가이드</a>를 미리 숙지해두면 긴급 상황에 도움이 된다. 독성 식물 위험은 <a href="/guide/pet-toxic-plants-cat-guide">고양이 독성 식물 완전 목록</a>에서도 확인한다.</p>`,
+<p>겨울철 실내 고양이 케어와 함께 <a href="/guide/pet-first-aid-guide">반려동물 응급처치 가이드</a>를 미리 숙지해두면 긴급 상황에 도움이 된다. 독성 식물 위험은 <a href="/blog/pet-toxic-plants-cat-guide">고양이 독성 식물 완전 목록</a>에서도 확인한다.</p>`,
   },
 
   /* ═══════════════════════════════════════════════════════
@@ -561,7 +561,7 @@ const POSTS: NewContent[] = [
   <li>환경 관리: 확인된 원인과 생활 환경에 맞게 조정</li>
   <li>중등증 이상: 동물병원 처방 치료</li>
 </ul>
-<p>봄철 전체 케어 전략은 <a href="/guide/spring-pet-care-guide">봄철 반려동물 케어 완전 가이드</a>에서도 확인할 수 있다.</p>`,
+<p>봄철 전체 케어 전략은 <a href="/blog/spring-pet-care-guide">봄철 반려동물 케어 완전 가이드</a>에서도 확인할 수 있다.</p>`,
     sources: JSON.stringify([
       "https://www.merckvetmanual.com/integumentary-system/atopic-skin-conditions-in-dogs-and-cats/atopic-dermatitis-in-dogs — Merck Veterinary Manual, Atopic Dermatitis in Dogs (reviewed 2026)",
       "https://www.merckvetmanual.com/integumentary-system/integumentary-system-introduction/diagnosis-of-skin-diseases-in-small-animals — Merck Veterinary Manual, Diagnosis of Skin Diseases in Small Animals",

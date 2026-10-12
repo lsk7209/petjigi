@@ -126,7 +126,7 @@ const POSTS: NewContent[] = [
 <h3>방충망에 별도 고정 장치를 달면 충분하지 않나요?</h3>
 <p>고정 장치로 방충망 이탈을 막더라도, 방충망 그물 자체가 고양이 발톱에 의해 찢어질 수 있다. 특히 오래된 방충망은 망 소재 자체가 약해져 있다. 보강 금속망을 덧대거나 캐티오로 교체하는 것이 근본 해결책이다.</p>
 
-<p>집 안 전반의 위험 요소를 정비하고 싶다면 <a href="/blog/dog-home-safety-guide">강아지를 위한 집 안 안전 점검 가이드</a>도 함께 확인하자. 실내 환경을 더욱 풍부하게 만들어 주는 방법은 <a href="/guide/cat-tower-guide">고양이 캣타워 고르는 법</a>에서 살펴볼 수 있다.</p>`,
+<p>집 안 전반의 위험 요소를 정비하고 싶다면 <a href="/blog/dog-home-safety-guide">강아지를 위한 집 안 안전 점검 가이드</a>도 함께 확인하자. 실내 환경을 더욱 풍부하게 만들어 주는 방법은 <a href="/blog/cat-tower-guide">고양이 캣타워 고르는 법</a>에서 살펴볼 수 있다.</p>`,
     authorName: "펫지기 에디터팀",
     status: "published",
     ymyl: false,
@@ -635,7 +635,7 @@ const POSTS: NewContent[] = [
 <h3>품종별로 옷이 필요한 기온 기준이 있나요?</h3>
 <p>대략적 기준이 있다. 소형 단모견(치와와, 닥스훈트)은 15℃ 이하에서 방한이 권장된다. 중형 이중모견(시바이누, 코기)은 5℃ 이하에서도 대부분 보온 없이 견딜 수 있다. 단, 개체 연령·건강 상태·코트 상태에 따라 달라지므로 기온보다는 강아지의 행동(떨림, 움츠림)을 기준으로 판단하는 것이 더 정확하다.</p>
 
-<p>강아지의 계절별 케어가 궁금하다면 <a href="/guide/dog-coat-care-guide">강아지 털 관리 완전 가이드</a>도 함께 확인하자. 외출 시 안전을 더 강화하고 싶다면 <a href="/blog/pet-gps-tracker-guide">반려동물 GPS 트래커 가이드</a>를 참고해 보자.</p>`,
+<p>강아지의 계절별 케어가 궁금하다면 <a href="/blog/dog-coat-care-guide">강아지 털 관리 완전 가이드</a>도 함께 확인하자. 외출 시 안전을 더 강화하고 싶다면 <a href="/blog/pet-gps-tracker-guide">반려동물 GPS 트래커 가이드</a>를 참고해 보자.</p>`,
     authorName: "펫지기 에디터팀",
     status: "published",
     ymyl: false,
