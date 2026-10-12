@@ -45,7 +45,6 @@ const articleJsonLd = articleSchema({
   authorName: "펫지기 편집팀",
   authorCredential: "반려동물 전문 콘텐츠 에디터",
   publishedAt: "2025-01-15",
-  isYmyl: true,
 });
 
 const faqJsonLd = faqSchema([

@@ -13,6 +13,7 @@ import { CATEGORIES } from "@/lib/category";
 import { YmylDisclaimer } from "@/components/content/ymyl-disclaimer";
 import { AdSlot } from "@/components/ads/ad-slot";
 import { AdPolicyProvider } from "@/components/providers/ad-policy-provider";
+import { resolveArticleDates } from "@/lib/seo/article-dates";
 import { articleSchema, breadcrumbSchema, faqSchema } from "@/lib/seo/structured-data";
 import { withoutUnverifiedReviewClaim } from "@/lib/content-review";
 import { documentTitle, socialTitle } from "@/lib/seo/title";
@@ -86,7 +87,7 @@ export async function generateMetadata({
       description,
       type: "article",
       publishedTime: content.publishedAt ?? undefined,
-      modifiedTime: content.updatedAt,
+      modifiedTime: resolveArticleDates({ publishedAt: content.publishedAt, updatedAt: content.updatedAt }).dateModified,
       authors: content.authorName ? [content.authorName] : undefined,
       section: CATEGORIES[content.category as CategoryId]?.name,
       images: [
@@ -225,9 +226,9 @@ export default async function BlogPostPage({
     authorName: content.authorName,
     authorCredential: content.authorCredential,
     publishedAt: content.publishedAt,
+    updatedAt: content.updatedAt,
     reviewedAt: content.reviewedAt,
     reviewerName: content.reviewerName,
-    isYmyl: content.ymyl,
     wordCount,
   });
 
@@ -240,6 +241,7 @@ export default async function BlogPostPage({
 
   const readingTime = Math.ceil((content.body?.length ?? 0) / 500);
   const reviewEvidence = getReviewEvidence(content);
+  const { dateModified } = resolveArticleDates({ publishedAt: content.publishedAt, updatedAt: content.updatedAt });
 
   return (
     <>
@@ -311,6 +313,12 @@ export default async function BlogPostPage({
               <time dateTime={content.publishedAt} className="flex items-center gap-1">
                 <span aria-hidden="true">📅</span>
                 {content.publishedAt.slice(0, 10)} 발행
+              </time>
+            )}
+            {dateModified && dateModified.slice(0, 10) !== content.publishedAt?.slice(0, 10) && (
+              <time dateTime={dateModified} className="flex items-center gap-1">
+                <span aria-hidden="true">🔄</span>
+                {dateModified.slice(0, 10)} 수정
               </time>
             )}
             {reviewEvidence && (

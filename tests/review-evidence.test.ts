@@ -40,7 +40,8 @@ test("structured data only emits reviewedBy for complete review evidence", () =>
     reviewedAt: "2026-09-02T00:00:00.000Z",
   });
   assert.equal("reviewedBy" in incomplete, false);
-  assert.equal(incomplete.dateModified, "2026-09-02T00:00:00.000Z");
+  // reviewedAt은 수정일 대체값이 아니다 — updatedAt이 없으면 발행일로 대체
+  assert.equal(incomplete.dateModified, "2026-09-01T00:00:00.000Z");
 
   const complete = articleSchema({
     title: "테스트",
@@ -56,7 +57,7 @@ test("structured data only emits reviewedBy for complete review evidence", () =>
     reviewerName: validReview.reviewerName,
     reviewedAt: offsetDate,
   });
-  assert.equal(offsetReview.dateModified, offsetDate);
+  assert.equal(offsetReview.dateModified, undefined);
   assert.deepEqual(offsetReview.reviewedBy, { "@type": "Person", name: validReview.reviewerName });
 });
 

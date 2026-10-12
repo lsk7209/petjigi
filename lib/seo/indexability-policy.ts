@@ -102,3 +102,8 @@ export function evaluateContentEligibility(input: {
 export function evaluateOperationalEligibility(): PageEligibility {
   return blocked("OPERATIONAL_PAGE");
 }
+
+/** 보호센터 지역 페이지. 센터 수가 부족하면 고유 정보 부족으로 제외 */
+export function evaluateShelterRegionEligibility(input: { thin: boolean }): PageEligibility {
+  return input.thin ? blocked("INSUFFICIENT_UNIQUE_DATA") : indexable(1);
+}

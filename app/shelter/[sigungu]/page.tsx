@@ -5,6 +5,7 @@ import { db } from "@/db/client";
 import { shelters, regions } from "@/db/schema";
 import { eq } from "drizzle-orm";
 import { getCachedResolvedRegion, getCachedSheltersBySigungu } from "@/lib/db-queries";
+import { evaluateShelterRegionEligibility } from "@/lib/seo/indexability-policy";
 import { breadcrumbSchema, faqSchema, collectionPageSchema } from "@/lib/seo/structured-data";
 import { CategoryCta } from "@/components/content/category-cta";
 import { AdSlot } from "@/components/ads/ad-slot";
@@ -88,6 +89,7 @@ export default async function ShelterSigunguPage({
 
   const shelterList = await getCachedSheltersBySigungu(region.sigungu);
 
+  const eligibility = evaluateShelterRegionEligibility({ thin: isThinShelterRegion(shelterList.length) });
   const breadcrumb = breadcrumbSchema([
     { name: "홈", url: SITE_URL },
     { name: `${region.sido} 반려동물`, url: `${SITE_URL}/sido/${region.sidoSlug}` },
@@ -121,18 +123,22 @@ export default async function ShelterSigunguPage({
   return (
     <AdPolicyProvider category={1}>
       <ShelterViewTracker sigungu={region.sigungu} count={shelterList.length} />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faq) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(collectionPage) }}
-      />
+      {eligibility.structuredDataEligible && (
+        <>
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb) }}
+          />
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(faq) }}
+          />
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(collectionPage) }}
+          />
+        </>
+      )}
     <main
       className="max-w-5xl mx-auto px-4 py-8 sm:py-12"
       {...(isThinShelterRegion(shelterList.length) ? { "data-ads-policy": "block" } : {})}

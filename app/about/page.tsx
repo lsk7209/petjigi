@@ -34,7 +34,6 @@ const ABOUT_SCHEMA = {
       contactType: "customer support",
       availableLanguage: "Korean",
     },
-    sameAs: [SITE_URL],
     knowsAbout: [
       "반려동물",
       "동물병원",

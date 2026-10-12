@@ -169,7 +169,7 @@ export default async function BusinessDetailPage({
   const syncedAt = business.lastSyncedAt?.slice(0, 10) ?? null;
   const staleAsOf =
     syncedAt && Date.now() - Date.parse(syncedAt) > LISTING_STALE_DAYS * 86_400_000 ? syncedAt : null;
-  const schema = localBusinessSchema(business);
+  const schema = localBusinessSchema({ business, canonicalUrl: pageUrl });
   const breadcrumb = breadcrumbSchema([
     { name: "홈", url: SITE_URL },
     ...(sidoName && region.sidoSlug
