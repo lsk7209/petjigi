@@ -3,8 +3,11 @@ import { Noto_Serif_KR } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
+import Script from "next/script";
+import { buildConsentDefaultScript } from "@/lib/privacy/google-consent";
 import { GA4 } from "@/components/analytics/ga4";
 import { AdsenseLoader } from "@/components/ads/adsense-loader";
+import { currentThirdPartyRuntime } from "@/lib/privacy/third-party-runtime";
 import { websiteSchema, organizationSchema } from "@/lib/seo/structured-data";
 
 const notoSerifKR = Noto_Serif_KR({
@@ -15,7 +18,13 @@ const notoSerifKR = Noto_Serif_KR({
   preload: true,
 });
 
-const ADSENSE_ID = process.env.NEXT_PUBLIC_ADSENSE_ID ?? "ca-pub-3050601904412736";
+const PRODUCTION_ADSENSE_ID = "ca-pub-3050601904412736";
+
+// 게시자 ID는 production 런타임에서만 사용한다 (preview·local에서 실광고 호출 방지)
+const ADSENSE_ID =
+  currentThirdPartyRuntime() === "production"
+    ? (process.env.NEXT_PUBLIC_ADSENSE_ID ?? PRODUCTION_ADSENSE_ID)
+    : "";
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://petjigi.kr";
 
@@ -83,7 +92,7 @@ export const metadata: Metadata = {
   other: {
     "google-extended": "allow",
     "mobile-web-app-capable": "yes",
-    "google-adsense-account": ADSENSE_ID,
+    ...(ADSENSE_ID ? { "google-adsense-account": ADSENSE_ID } : {}),
   },
   appleWebApp: {
     capable: true,
@@ -138,6 +147,10 @@ export default function RootLayout({
         />
       </head>
       <body className="min-h-full flex flex-col antialiased">
+        {/* Consent Mode v2 기본값(denied)은 GA4·AdSense 로더보다 먼저 실행되어야 한다 */}
+        <Script id="google-consent-defaults" strategy="beforeInteractive">
+          {buildConsentDefaultScript()}
+        </Script>
         <a
           href="#main-content"
           className="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-50 focus:px-4 focus:py-2 focus:bg-[var(--brand-accent)] focus:text-white focus:rounded-lg focus:text-sm"

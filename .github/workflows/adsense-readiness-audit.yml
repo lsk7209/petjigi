@@ -1,0 +1,52 @@
+name: AdSense readiness audit (read-only)
+
+# 수동 실행 전용. 배포·운영 DB 쓰기·AdSense/GA4/GSC 설정 변경 없음. 공개 URL GET만 사용한다.
+on:
+  workflow_dispatch:
+    inputs:
+      live:
+        description: "운영 사이트 sitemap 읽기 전용 점검 포함"
+        type: boolean
+        default: false
+      limit:
+        description: "점검할 sitemap URL 수"
+        default: "100"
+
+permissions:
+  contents: read
+
+concurrency:
+  group: adsense-readiness-audit
+  cancel-in-progress: true
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 10
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+
+      - name: Readiness audit (BLOCKED만 실패)
+        run: pnpm audit:adsense:readiness
+
+      - name: Internal link audit
+        run: pnpm audit:internal-links
+
+      - name: Live site audit (읽기 전용, 동시성 3)
+        if: inputs.live
+        continue-on-error: true
+        run: node scripts/audit-live-site.mjs --base=https://petjigi.kr --limit=${{ inputs.limit }}
+
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: adsense-readiness-reports
+          path: reports/

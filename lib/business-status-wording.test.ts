@@ -36,3 +36,10 @@ test("영업 상태를 제공하는 다른 업종의 기존 표현은 유지된�
 test("0건 FAQ는 업종과 무관하게 영업 단정 없이 확인되지 않았다고 안내한다", () => {
   assert.match(faqCountAnswer("registration", "부천시", "동물등록 대행기관", 0), /확인되지 않았습니다/);
 });
+
+test('stale 목록은 현재 영업 중이 아니라 기준일 당시 기록으로 표현', () => {
+  assert.match(listingScopeWording("vet", "2026-08-01"), /기준일\(2026-08-01\) 당시 영업 중으로 기록된/);
+  assert.match(regionCountSentence("vet", "노원구", "동물병원", 3, "2026-08-01"), /갱신이 지연/);
+  assert.doesNotMatch(faqCountAnswer("vet", "노원구", "동물병원", 3, "2026-08-01"), /현재 영업 중인/);
+  assert.match(listingScopeWording("registration", "2026-08-01"), /영업 여부는 원본에 없어/);
+});

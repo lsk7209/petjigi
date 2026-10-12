@@ -5,7 +5,7 @@ import { reviewQueue } from "@/db/schema";
 import { eq } from "drizzle-orm";
 import { revalidatePath, revalidateTag } from "next/cache";
 import { pingIndexNow } from "@/lib/seo/index-now";
-import { notifyGoogleIndexing, submitSitemapToGSC } from "@/lib/seo/google-indexing";
+import { submitSitemapToGSC } from "@/lib/seo/google-indexing";
 import { requireReviewFormKey } from "@/lib/admin-auth";
 import { approveReviewQueueItem } from "@/lib/review-queue";
 
@@ -17,7 +17,6 @@ export async function approveContent(id: string, formData: FormData): Promise<vo
 
   // Validation and both writes have committed before any external effect.
   await pingIndexNow([contentUrl, siteUrl]).catch(() => {});
-  await notifyGoogleIndexing(contentUrl).catch(() => {});
   await submitSitemapToGSC(`${siteUrl}/`, `${siteUrl}/sitemap-content.xml`).catch(() => {});
   try {
     revalidateTag("guides", { expire: 0 });

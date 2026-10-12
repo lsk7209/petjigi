@@ -9,6 +9,7 @@ import {
   REVENUE_DISCLOSURE_UPDATED,
   REVENUE_METHOD_TEXT,
 } from "@/lib/revenue-disclosure";
+import { AD_INDEPENDENCE_TEXT, AD_PERSONALIZATION_TEXT } from "@/lib/editorial-policy";
 import { AdsenseTrustSection } from "@/components/content/adsense-trust-section";
 
 export const revalidate = 86400;
@@ -36,10 +37,11 @@ export default function AdvertisingPage() {
       <p className="text-sm text-[var(--brand-text-secondary)]">최종 업데이트: {REVENUE_DISCLOSURE_UPDATED}</p>
 
       <h2>광고 게재 사실</h2>
-      <p>펫지기는 Google AdSense를 이용해 광고를 표시할 수 있습니다. 광고 승인·정책에 따라 광고가 표시되지 않는 페이지도 있으며, 표시되는 광고는 Google의 알고리즘에 따라 개인화될 수 있습니다.</p>
+      <p>펫지기는 Google AdSense를 이용해 광고를 표시할 수 있습니다. 광고 승인·정책에 따라 광고가 표시되지 않는 페이지도 있으며, </p>
+      <p>{AD_PERSONALIZATION_TEXT}</p>
 
       <h2>광고와 콘텐츠 구분</h2>
-      <p>광고는 &quot;광고&quot; 또는 &quot;Ads&quot; 라벨로 콘텐츠와 명확히 구분됩니다.</p>
+      <p>광고는 &quot;광고&quot; 또는 &quot;Ads&quot; 라벨로 콘텐츠와 명확히 구분됩니다. {AD_INDEPENDENCE_TEXT}</p>
 
       <h2>사용자 추적</h2>
       <p>광고 맞춤화를 위해 쿠키 및 유사 기술이 사용될 수 있습니다. 브라우저 설정에서 쿠키를 거부할 수 있습니다.</p>

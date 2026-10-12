@@ -1,0 +1,256 @@
+{
+  "scope": "internal link audit remediation (seed bodies). production apply NOT executed",
+  "generatedAt": "2026-10-12T04:58:41.523Z",
+  "entries": [
+    {
+      "file": "db/seeds/blog-posts-10.ts",
+      "id": "blog-pet-insurance-age-renewal-guide",
+      "slug": "pet-insurance-age-renewal-guide",
+      "type": "blog",
+      "changedFields": [
+        "body"
+      ],
+      "bodyBeforeSha256": "35668f48acd621b7d21d4af9556c6b1fea5bfbc4f4cd8353044c30756105b9cb",
+      "bodyAfterSha256": "b24c2a354293d0b4146704eb7b63ecd085ec2856d359f996b0d5bb8de728606e",
+      "linksRemoved": [
+        "/blog/senior-cat-nutrition"
+      ],
+      "linksAdded": []
+    },
+    {
+      "file": "db/seeds/blog-posts-15.ts",
+      "id": "blog-141",
+      "slug": "dog-barking-guide",
+      "type": "blog",
+      "changedFields": [
+        "body"
+      ],
+      "bodyBeforeSha256": "2d451527845a12fb589c02ecbfb5ad3609d1196a5b87fa682ae0ab7a3dba671f",
+      "bodyAfterSha256": "c154a5b7a6d8e11675547d64cdec23c18c674544343cfc46ec7c01cb8d844781",
+      "linksRemoved": [
+        "/guide/dog-separation-anxiety",
+        "/guide/dog-behavior-training-basics"
+      ],
+      "linksAdded": [
+        "/blog/dog-separation-anxiety"
+      ]
+    },
+    {
+      "file": "db/seeds/blog-posts-17.ts",
+      "id": "blog-167",
+      "slug": "dog-flea-tick-guide",
+      "type": "blog",
+      "changedFields": [
+        "body"
+      ],
+      "bodyBeforeSha256": "71ae2433f0fabf31073c59858a468271dc8b51279cb1f7cc5bf607eed53a0320",
+      "bodyAfterSha256": "2ffa8ad6fa91b5566d14d0c4fb965902d1e7773141e576898215cb94d7e2ed75",
+      "linksRemoved": [
+        "/dog-skin-care-guide"
+      ],
+      "linksAdded": [
+        "/blog/dog-skin-care-guide"
+      ]
+    },
+    {
+      "file": "db/seeds/blog-posts-17.ts",
+      "id": "blog-168",
+      "slug": "cat-flea-tick-prevention",
+      "type": "blog",
+      "changedFields": [
+        "body"
+      ],
+      "bodyBeforeSha256": "6bc4c00a7ec7d0fb4c860faf087effced0f5edfedd2afd057942e31f11c904ae",
+      "bodyAfterSha256": "3eb2a961d314dd92a34624ca2aa9b6aa56201fee8a59f6adae8b545061cb1ddb",
+      "linksRemoved": [
+        "/cat-grooming-basics-guide"
+      ],
+      "linksAdded": [
+        "/blog/cat-grooming-basics-guide"
+      ]
+    },
+    {
+      "file": "db/seeds/blog-posts-18.ts",
+      "id": "blog-172",
+      "slug": "cat-window-safety-guide",
+      "type": "blog",
+      "changedFields": [
+        "body"
+      ],
+      "bodyBeforeSha256": "01b723c87b30c0234da6abffaabc96b0874cc0a2de652b5523900fd113ec6e3b",
+      "bodyAfterSha256": "7c9b45173471eca0fedfa070e8f27d9c664ecbbf1b073c22975759927aaf6617",
+      "linksRemoved": [
+        "/guide/cat-tower-guide"
+      ],
+      "linksAdded": [
+        "/blog/cat-tower-guide"
+      ]
+    },
+    {
+      "file": "db/seeds/blog-posts-18.ts",
+      "id": "blog-179",
+      "slug": "dog-clothing-guide",
+      "type": "blog",
+      "changedFields": [
+        "body"
+      ],
+      "bodyBeforeSha256": "9566fe14b140179ae04d8d5fb6d00325cb90e0267bbbf15d04bc28dedd2e9174",
+      "bodyAfterSha256": "6fba57e3cb39397ee65473ab42317be587316d14ff7498a515dcd868df6a223f",
+      "linksRemoved": [
+        "/guide/dog-coat-care-guide"
+      ],
+      "linksAdded": [
+        "/blog/dog-coat-care-guide"
+      ]
+    },
+    {
+      "file": "db/seeds/blog-posts-20.ts",
+      "id": "blog-191",
+      "slug": "spring-pet-care-guide",
+      "type": "blog",
+      "changedFields": [
+        "body"
+      ],
+      "bodyBeforeSha256": "ae219e1f95e43066b25d42fffa2c4eee34577302bc9318f43f83e08f6a4a0a97",
+      "bodyAfterSha256": "13eb5c3b4a94c0b184c1c7184b1eb2ed51f76b41d77859e0278b7d292556e426",
+      "linksRemoved": [
+        "/guide/pet-allergy-guide"
+      ],
+      "linksAdded": []
+    },
+    {
+      "file": "db/seeds/blog-posts-20.ts",
+      "id": "blog-192",
+      "slug": "summer-dog-care-tips",
+      "type": "blog",
+      "changedFields": [
+        "body"
+      ],
+      "bodyBeforeSha256": "8124968ec30a36f69f3cdbfe0811c741b0bb5036039a1a9620b072f56cef56ad",
+      "bodyAfterSha256": "9d2227390b127286ca4015ce972d398fad75f9bfd789847ebff977c218ebaa4e",
+      "linksRemoved": [
+        "/guide/dog-summer-paw-protection"
+      ],
+      "linksAdded": [
+        "/blog/dog-summer-paw-protection"
+      ]
+    },
+    {
+      "file": "db/seeds/blog-posts-20.ts",
+      "id": "blog-194",
+      "slug": "holiday-pet-safety-guide",
+      "type": "blog",
+      "changedFields": [
+        "body"
+      ],
+      "bodyBeforeSha256": "95e497ec08a51957e30b992b0e73fe3e45db1c1ae4dd35009b2d0e4fc25b1aa7",
+      "bodyAfterSha256": "37aae6ed3aab562c3f72a5a6a8492d8ac68b09c7486952901eb55ab1b2551d45",
+      "linksRemoved": [
+        "/guide/emergency-vet-guide"
+      ],
+      "linksAdded": [
+        "/search"
+      ]
+    },
+    {
+      "file": "db/seeds/blog-posts-20.ts",
+      "id": "blog-196",
+      "slug": "cat-cold-weather-guide",
+      "type": "blog",
+      "changedFields": [
+        "body"
+      ],
+      "bodyBeforeSha256": "59f338b69e160592c41c2e135c84cccc3dfbe338cd761fd64fda5c6c171cceff",
+      "bodyAfterSha256": "6845ad8cee77dd06d7a59d41b060af99a0afeccff27fce3f71ba805bcc32f941",
+      "linksRemoved": [
+        "/guide/pet-toxic-plants-cat-guide"
+      ],
+      "linksAdded": [
+        "/blog/pet-toxic-plants-cat-guide"
+      ]
+    },
+    {
+      "file": "db/seeds/blog-posts-20.ts",
+      "id": "blog-197",
+      "slug": "pet-allergy-season-guide",
+      "type": "blog",
+      "changedFields": [
+        "body"
+      ],
+      "bodyBeforeSha256": "3d118e2dc97919ccbf518539b3169dd2878416b37d1bd80bb83254f6d185121d",
+      "bodyAfterSha256": "517e57f134fac37ca7ad0d9fcb9f45bfa09e787ee8918ab0d61c3407ba7fe877",
+      "linksRemoved": [
+        "/guide/spring-pet-care-guide"
+      ],
+      "linksAdded": [
+        "/blog/spring-pet-care-guide"
+      ]
+    },
+    {
+      "file": "db/seeds/blog-posts-24.ts",
+      "id": "blog-232",
+      "slug": "cat-anal-gland-guide",
+      "type": "blog",
+      "changedFields": [
+        "body"
+      ],
+      "bodyBeforeSha256": "054ec01afa0f0db02efed748bf920b0d3c7032383d42a1894b14054ed88e9d7b",
+      "bodyAfterSha256": "ee47febbef7f283782634ab33c15037129a22e410a1115dac4eacaa6e461abea",
+      "linksRemoved": [
+        "/guide/cat-health-guide"
+      ],
+      "linksAdded": [
+        "/category/health"
+      ]
+    },
+    {
+      "file": "db/seeds/blog-posts-24.ts",
+      "id": "blog-234",
+      "slug": "pet-human-allergy-guide",
+      "type": "blog",
+      "changedFields": [
+        "body"
+      ],
+      "bodyBeforeSha256": "4eb182e54fb82ba09eb4014e7ae949f0a3b7483cbcf9e254e7fc27ba61acfb01",
+      "bodyAfterSha256": "cf54624f55e21074b3d6ad6e43744aa5b42a34ff723bd1548bdedc91b23db1c8",
+      "linksRemoved": [
+        "/guide/pet-allergy-management-guide"
+      ],
+      "linksAdded": []
+    },
+    {
+      "file": "db/seeds/blog-posts-24.ts",
+      "id": "blog-235",
+      "slug": "cat-outdoor-safety-guide",
+      "type": "blog",
+      "changedFields": [
+        "body"
+      ],
+      "bodyBeforeSha256": "eaa2239d5cff73bc5bdb873fb637859d81eaa6639be5248679de175695c760d4",
+      "bodyAfterSha256": "cac55e24b72fe1e5100c03d6010e8711315a4ad0933635c52bbc49b37e77d7e8",
+      "linksRemoved": [
+        "/guide/cat-indoor-vs-outdoor"
+      ],
+      "linksAdded": [
+        "/blog/cat-indoor-vs-outdoor"
+      ]
+    },
+    {
+      "file": "db/seeds/guides-batch-1.ts",
+      "id": "guide-shelter-animal-adoption",
+      "slug": "shelter-animal-adoption-guide",
+      "type": "guide",
+      "changedFields": [
+        "body"
+      ],
+      "bodyBeforeSha256": "5ca69c240cd42c64d25a6fbf72b08a57dfcd70c74db13bc3ffdc88aff632f421",
+      "bodyAfterSha256": "42c2f7521340c068092fc0fbda3a51602609520f1d3930e629b127c110867ea8",
+      "linksRemoved": [
+        "/sido"
+      ],
+      "linksAdded": [
+        "/shelter"
+      ]
+    }
+  ]
+}

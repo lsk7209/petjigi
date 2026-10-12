@@ -1,0 +1,234 @@
+{
+ "mode": "dry-run",
+ "results": [
+  {
+   "slug": "puppy-first-week-guide",
+   "id": "blog-puppy-first-week-guide",
+   "result": "would_update",
+   "changes": [
+    {
+     "column": "body",
+     "fromLen": 1551,
+     "toLen": 1555
+    }
+   ]
+  },
+  {
+   "slug": "pet-insurance-age-renewal-guide",
+   "id": "blog-pet-insurance-age-renewal-guide",
+   "result": "would_update",
+   "changes": [
+    {
+     "column": "body",
+     "fromLen": 1112,
+     "toLen": 1059
+    }
+   ]
+  },
+  {
+   "slug": "dog-barking-guide",
+   "id": "blog-141",
+   "result": "would_update",
+   "changes": [
+    {
+     "column": "body",
+     "fromLen": 2663,
+     "toLen": 2608
+    }
+   ]
+  },
+  {
+   "slug": "dog-flea-tick-guide",
+   "id": "blog-167",
+   "result": "would_update",
+   "changes": [
+    {
+     "column": "body",
+     "fromLen": 1837,
+     "toLen": 1842
+    },
+    {
+     "column": "disclaimer",
+     "fromLen": null,
+     "toLen": 64
+    }
+   ]
+  },
+  {
+   "slug": "cat-flea-tick-prevention",
+   "id": "blog-168",
+   "result": "would_update",
+   "changes": [
+    {
+     "column": "body",
+     "fromLen": 1812,
+     "toLen": 1817
+    },
+    {
+     "column": "disclaimer",
+     "fromLen": null,
+     "toLen": 64
+    }
+   ]
+  },
+  {
+   "slug": "cat-window-safety-guide",
+   "id": "blog-172",
+   "result": "would_update",
+   "changes": [
+    {
+     "column": "body",
+     "fromLen": 2069,
+     "toLen": 2068
+    }
+   ]
+  },
+  {
+   "slug": "dog-clothing-guide",
+   "id": "blog-179",
+   "result": "would_update",
+   "changes": [
+    {
+     "column": "body",
+     "fromLen": 2426,
+     "toLen": 2425
+    }
+   ]
+  },
+  {
+   "slug": "spring-pet-care-guide",
+   "id": "blog-191",
+   "result": "would_update",
+   "changes": [
+    {
+     "column": "body",
+     "fromLen": 2712,
+     "toLen": 2656
+    }
+   ]
+  },
+  {
+   "slug": "summer-dog-care-tips",
+   "id": "blog-192",
+   "result": "would_update",
+   "changes": [
+    {
+     "column": "body",
+     "fromLen": 2520,
+     "toLen": 2519
+    }
+   ]
+  },
+  {
+   "slug": "holiday-pet-safety-guide",
+   "id": "blog-194",
+   "result": "would_update",
+   "changes": [
+    {
+     "column": "body",
+     "fromLen": 2656,
+     "toLen": 2630
+    }
+   ]
+  },
+  {
+   "slug": "cat-cold-weather-guide",
+   "id": "blog-196",
+   "result": "would_update",
+   "changes": [
+    {
+     "column": "body",
+     "fromLen": 2767,
+     "toLen": 2766
+    }
+   ]
+  },
+  {
+   "slug": "pet-allergy-season-guide",
+   "id": "blog-197",
+   "result": "would_update",
+   "changes": [
+    {
+     "column": "body",
+     "fromLen": 2437,
+     "toLen": 2436
+    },
+    {
+     "column": "disclaimer",
+     "fromLen": null,
+     "toLen": 92
+    }
+   ]
+  },
+  {
+   "slug": "pet-wearable-guide",
+   "id": "blog-212",
+   "result": "would_update",
+   "changes": [
+    {
+     "column": "body",
+     "fromLen": 2990,
+     "toLen": 2776
+    }
+   ]
+  },
+  {
+   "slug": "cat-anal-gland-guide",
+   "id": "blog-232",
+   "result": "would_update",
+   "changes": [
+    {
+     "column": "body",
+     "fromLen": 1839,
+     "toLen": 1829
+    },
+    {
+     "column": "disclaimer",
+     "fromLen": null,
+     "toLen": 79
+    }
+   ]
+  },
+  {
+   "slug": "pet-human-allergy-guide",
+   "id": "blog-234",
+   "result": "would_update",
+   "changes": [
+    {
+     "column": "body",
+     "fromLen": 2146,
+     "toLen": 2027
+    },
+    {
+     "column": "disclaimer",
+     "fromLen": null,
+     "toLen": 87
+    }
+   ]
+  },
+  {
+   "slug": "cat-outdoor-safety-guide",
+   "id": "blog-235",
+   "result": "would_update",
+   "changes": [
+    {
+     "column": "body",
+     "fromLen": 2096,
+     "toLen": 2095
+    }
+   ]
+  },
+  {
+   "slug": "shelter-animal-adoption-guide",
+   "id": "guide-shelter-animal-adoption",
+   "result": "would_update",
+   "changes": [
+    {
+     "column": "body",
+     "fromLen": 2363,
+     "toLen": 2366
+    }
+   ]
+  }
+ ]
+}

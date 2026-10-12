@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { AD_PERSONALIZATION_TEXT } from "@/lib/editorial-policy";
 import { SITE_IDENTITY } from "@/lib/site-identity";
 import { breadcrumbSchema } from "@/lib/seo/structured-data";
 
@@ -81,6 +82,8 @@ export default function PrivacyPage() {
         </a>
         에서 확인할 수 있습니다.
       </p>
+
+      <p>{AD_PERSONALIZATION_TEXT}</p>
 
       <h2>6. 개인정보의 국외 이전</h2>
       <p>

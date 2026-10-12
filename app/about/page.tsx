@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { SITE_CONTACT_MAILTO, SITE_IDENTITY } from "@/lib/site-identity";
 import { breadcrumbSchema } from "@/lib/seo/structured-data";
+import { AD_INDEPENDENCE_TEXT, AI_USAGE_TEXT, EDITORIAL_TEAM_NAME, EDITORIAL_TEAM_PRINCIPLES } from "@/lib/editorial-policy";
+import { AFFILIATE_STATUS_TEXT } from "@/lib/revenue-disclosure";
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://petjigi.kr";
 
@@ -34,7 +36,6 @@ const ABOUT_SCHEMA = {
       contactType: "customer support",
       availableLanguage: "Korean",
     },
-    sameAs: [SITE_URL],
     knowsAbout: [
       "반려동물",
       "동물병원",
@@ -68,8 +69,8 @@ export default function AboutPage() {
             공공데이터 기반의 신뢰할 수 있는 정보를 제공하는 서비스입니다.
           </p>
           <p className="text-[var(--brand-text-secondary)] leading-relaxed">
-            법률지기·금리지기에 이은 <strong>지기 시리즈 3호</strong>로, 광고가 아닌 정보로
-            반려동물 보호자를 돕는다는 철학을 이어갑니다.
+            법률지기·금리지기에 이은 <strong>지기 시리즈 3호</strong>입니다.{" "}
+            {AD_INDEPENDENCE_TEXT}
           </p>
         </section>
 
@@ -121,20 +122,33 @@ export default function AboutPage() {
             </div>
             <div>
               <p className="font-semibold text-[var(--brand-text)] mb-1">광고·어필리에이트 투명성</p>
-              <p>어필리에이트 링크가 포함된 페이지는 상단에 고지 배너를 표시하며, 링크에{" "}
+              <p>{AFFILIATE_STATUS_TEXT} 제휴 링크를 게재하게 되면 해당 페이지 상단과 링크 근처에 표시하고 링크에{" "}
                 <code className="text-xs bg-[var(--brand-border)] px-1 rounded">rel=&quot;sponsored nofollow&quot;</code>를 부여합니다.
                 수수료가 콘텐츠 방향성에 영향을 주지 않습니다.
               </p>
             </div>
             <div>
               <p className="font-semibold text-[var(--brand-text)] mb-1">AI·자동화 사용 범위</p>
-              <p>콘텐츠 초안 작성과 점검에 AI 도구와 자동화 스크립트를 사용합니다. 검토자 표시가 없는 글에는 외부 전문가가 확인한 기록이 없으며, 사이트에 쓰인 일러스트·이미지 중 AI로 만든 것은 실제 업체·반려동물·현장 사진이 아닙니다.</p>
+              <p>{AI_USAGE_TEXT}</p>
             </div>
             <div>
               <p className="font-semibold text-[var(--brand-text)] mb-1">금지 표현 자동 스캔</p>
               <p>약사법·동물의료법 금지 표현(&quot;치료를 보장한다&quot;, &quot;확실히 낫는다&quot; 등)은 자동 정규식 스캐너로 차단합니다.</p>
             </div>
           </div>
+        </section>
+
+        {/* 편집 책임 */}
+        <section id="editorial-team" className="scroll-mt-24">
+          <h2 className="text-xl font-bold text-[var(--brand-text)] mb-4">{EDITORIAL_TEAM_NAME}</h2>
+          <dl className="space-y-4 text-[var(--brand-text-secondary)] text-sm leading-relaxed">
+            {EDITORIAL_TEAM_PRINCIPLES.map(({ title, body }) => (
+              <div key={title}>
+                <dt className="font-semibold text-[var(--brand-text)] mb-1">{title}</dt>
+                <dd>{body}</dd>
+              </div>
+            ))}
+          </dl>
         </section>
 
         {/* 문의 */}

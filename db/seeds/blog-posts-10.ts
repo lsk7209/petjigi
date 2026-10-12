@@ -250,9 +250,10 @@ const BLOG_POSTS_10: NewContent[] = [
 <p>갱신이 거절된다면 다른 보험사 상품으로 전환을 시도할 수 있다. 단, 기존 질환이 생긴 상태에서 새 보험에 가입하면 해당 질환이 면책될 가능성이 높다. 갱신 거절 통보를 받으면 미리 다른 상품을 알아보는 것이 중요하다.</p>
 
 <h2>노령 반려동물이 이미 있다면</h2>
-<p>가입 가능한 상품을 찾기 어렵다면, 반려동물 전용 저축을 대안으로 활용할 수 있다. 월 일정 금액을 반려동물 전용으로 적립해 응급 상황에 대비하는 방법이다. 노령 반려동물 건강 관리는 <a href="/blog/senior-dog-health-management">노령견 건강 관리 가이드</a>와 <a href="/blog/senior-cat-nutrition">노령묘 영양 가이드</a>를 참고하자. 가입 가능한 상품 확인은 <a href="/insurance/compare">펫보험 비교 페이지</a>에서 직접 해볼 수 있다.</p>`,
+<p>가입 가능한 상품을 찾기 어렵다면, 반려동물 전용 저축을 대안으로 활용할 수 있다. 월 일정 금액을 반려동물 전용으로 적립해 응급 상황에 대비하는 방법이다. 노령 반려동물 건강 관리는 <a href="/blog/senior-dog-health-management">노령견 건강 관리 가이드</a>를 참고하자. 가입 가능한 상품 확인은 <a href="/insurance/compare">펫보험 비교 페이지</a>에서 직접 해볼 수 있다.</p>`,
     ymyl: true,
-    disclaimer: LEGAL_DISCLAIMER,
+    disclaimer:
+      "이 글은 일반적인 정보 제공 목적으로 작성되었으며, 법률·금융·보험 자문을 대체하지 않습니다. 구체적인 법률 해석이나 보험 선택은 전문가와 상담하시기 바랍니다.",
     status: "published",
     publishedAt: scheduleDate(62),
     authorName: "펫지기 에디터",

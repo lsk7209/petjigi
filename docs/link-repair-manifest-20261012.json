@@ -2448,8 +2448,8 @@
         "body"
       ],
       "bodyBeforeSha256": "8aea0bdb9aaacacbe39292695dbaf97abada605ebb837a334f116f6f8c2309c1",
-      "bodyAfterSha256": "0f534386f9ccc3a3bfdc12288706b4cc71d3d4569d9e931fee8f08fc3b56f728",
-      "bodyTextSha256": "8ce6389bbd8e627776cdd6fe7007647a2bee7697bb7904c25d3ca227013a5ad7",
+      "bodyAfterSha256": "5f3c714d75fa33e71b0b8cbfa0906183aeb3e3884d1661da794293a8959eb18e",
+      "bodyTextSha256": "ab8c9bd18228d26a958bdd41201adda5d48b48df66f04ef5a167d33c1ed46d8c",
       "replacements": [
         {
           "from": "/blog/dog-adoption-checklist",
@@ -2459,7 +2459,8 @@
         }
       ],
       "productionApplicable": true,
-      "publiclyVisibleAtRepair": true
+      "publiclyVisibleAtRepair": true,
+      "supersededNote": "본문이 2026-10-12 후속 수정(주장 검증·링크 감사)으로 갱신되어 해시 재계산. 링크 교체 내용은 불변."
     },
     {
       "file": "db/seeds/blog-posts-5.ts",

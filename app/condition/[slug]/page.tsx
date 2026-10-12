@@ -10,7 +10,9 @@ import { contents } from "@/db/schema";
 import { and, eq, ne, desc } from "drizzle-orm";
 import type { CategoryId } from "@/lib/category";
 import { YmylDisclaimer } from "@/components/content/ymyl-disclaimer";
-import { articleSchema, breadcrumbSchema, faqSchema, medicalConditionSchema } from "@/lib/seo/structured-data";
+import { EDITORIAL_TEAM_PATH } from "@/lib/editorial-policy";
+import { resolveArticleDates } from "@/lib/seo/article-dates";
+import { articleSchema, breadcrumbSchema, faqSchema, isOrganizationAuthor } from "@/lib/seo/structured-data";
 import { withoutUnverifiedReviewClaim } from "@/lib/content-review";
 import { socialTitle } from "@/lib/seo/title";
 import { adsPolicyAttrs } from "@/lib/ads-policy";
@@ -167,17 +169,12 @@ export default async function ConditionPage({
     authorName: content.authorName,
     authorCredential: content.authorCredential,
     publishedAt: content.publishedAt,
+    updatedAt: content.updatedAt,
     reviewedAt: content.reviewedAt,
     reviewerName: content.reviewerName,
-    isYmyl: content.ymyl,
   });
   const reviewEvidence = getReviewEvidence(content);
-
-  const conditionEntity = medicalConditionSchema({
-    name: content.title,
-    url: `${SITE_URL}/condition/${slug}`,
-    description: withoutUnverifiedReviewClaim(content.metaDescription),
-  });
+  const { dateModified } = resolveArticleDates({ publishedAt: content.publishedAt, updatedAt: content.updatedAt });
 
   const breadcrumb = breadcrumbSchema([
     { name: "홈", url: SITE_URL },
@@ -194,7 +191,6 @@ export default async function ConditionPage({
       <ScrollDepthTracker />
       <ConditionViewTracker slug={slug} title={content.title} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(conditionEntity) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb) }} />
       {faqItems.length > 0 && (
         <script
@@ -246,6 +242,12 @@ export default async function ConditionPage({
                 {content.publishedAt.slice(0, 10)} 발행
               </time>
             )}
+            {dateModified && dateModified.slice(0, 10) !== content.publishedAt?.slice(0, 10) && (
+              <time dateTime={dateModified} className="flex items-center gap-1">
+                <span aria-hidden="true">🔄</span>
+                {dateModified.slice(0, 10)} 수정
+              </time>
+            )}
             {reviewEvidence && (
               <span className="flex items-center gap-1">
                 <span aria-hidden="true">✅</span>
@@ -255,7 +257,11 @@ export default async function ConditionPage({
             {content.authorName && (
               <span className="flex items-center gap-1">
                 <span aria-hidden="true">✍️</span>
-                {content.authorName}
+                {isOrganizationAuthor(content.authorName) ? (
+                  <Link href={EDITORIAL_TEAM_PATH} className="hover:underline">{content.authorName}</Link>
+                ) : (
+                  content.authorName
+                )}
                 {content.authorCredential && ` (${content.authorCredential})`}
               </span>
             )}

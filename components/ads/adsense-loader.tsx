@@ -3,9 +3,11 @@
 import Script from "next/script";
 import { useEffect } from "react";
 import { usePageAdDecision } from "./use-page-ad-decision";
+import { useThirdPartyAllowed } from "./use-third-party-allowed";
 
 export function AdsenseLoader({ publisherId }: { publisherId: string }) {
   const decision = usePageAdDecision();
+  const thirdPartyAllowed = useThirdPartyAllowed();
 
   useEffect(() => {
     if (decision === "block" && document.getElementById("adsense-auto")) {
@@ -15,7 +17,7 @@ export function AdsenseLoader({ publisherId }: { publisherId: string }) {
     }
   }, [decision]);
 
-  if (decision !== "allow") return null;
+  if (!thirdPartyAllowed || decision !== "allow") return null;
 
   return (
     <Script

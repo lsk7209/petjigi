@@ -16,6 +16,21 @@ import { outcomeFromError, outcomeFromHttp, type NotifyOutcome } from "./notific
 
 const INDEXING_API = "https://indexing.googleapis.com/v3/urlNotifications:publish";
 
+/**
+ * Indexing API는 JobPosting 또는 BroadcastEvent가 포함된 VideoObject 페이지 전용이다.
+ * 일반 블로그·가이드·질환·지역 페이지는 sitemap과 Search Console 사이트맵 제출만 사용한다.
+ */
+export const INDEXING_API_ELIGIBLE_KINDS = ["job_posting", "broadcast_event"] as const;
+export type IndexingApiPageKind = (typeof INDEXING_API_ELIGIBLE_KINDS)[number];
+
+export class IndexingApiMisuseError extends Error {}
+
+export function assertIndexingApiEligible(pageKind: string): asserts pageKind is IndexingApiPageKind {
+  if (!(INDEXING_API_ELIGIBLE_KINDS as readonly string[]).includes(pageKind)) {
+    throw new IndexingApiMisuseError(`Indexing API는 ${INDEXING_API_ELIGIBLE_KINDS.join("/")} 페이지만 허용됩니다: ${pageKind}`);
+  }
+}
+
 interface ServiceAccount {
   client_email: string;
   private_key: string;
@@ -84,7 +99,12 @@ async function getAccessToken(sa: ServiceAccount, scope = "https://www.googleapi
  * Google Indexing API로 URL 전송
  * GOOGLE_SA_JSON 환경 변수가 없으면 조용히 skip
  */
-export async function notifyGoogleIndexing(url: string, type: "URL_UPDATED" | "URL_DELETED" = "URL_UPDATED"): Promise<void> {
+export async function notifyGoogleIndexing(
+  url: string,
+  pageKind: IndexingApiPageKind,
+  type: "URL_UPDATED" | "URL_DELETED" = "URL_UPDATED",
+): Promise<void> {
+  assertIndexingApiEligible(pageKind);
   const saJson = process.env.GOOGLE_SA_JSON;
   if (!saJson) return; // 서비스 계정 없으면 skip
 
@@ -121,8 +141,10 @@ export async function notifyGoogleIndexing(url: string, type: "URL_UPDATED" | "U
  */
 export async function notifyGoogleBatch(
   urls: string[],
+  pageKind: IndexingApiPageKind,
   maxPerDay = 200,
 ): Promise<{ sent: number; skipped: number }> {
+  assertIndexingApiEligible(pageKind);
   const saJson = process.env.GOOGLE_SA_JSON;
   if (!saJson) return { sent: 0, skipped: urls.length };
 

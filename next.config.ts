@@ -4,6 +4,8 @@ import { CONTENT_REDIRECTS } from "./lib/content-redirects";
 const nextConfig: NextConfig = {
   // 격리 검증 빌드용(운영 .next와 분리). 미설정이면 기본값.
   distDir: process.env.NEXT_DIST_DIR || ".next",
+  // 클라이언트에서 Vercel 배포 환경을 판별 (실제 광고·GA4 로드 게이트)
+  env: { NEXT_PUBLIC_VERCEL_ENV: process.env.VERCEL_ENV ?? "" },
   compress: true,
   poweredByHeader: false,
   images: {

@@ -1,0 +1,146 @@
+{
+  "scope": "internal-link + claim-verification body edits (+ missing disclaimer on 5 YMYL rows). production apply NOT executed",
+  "entries": [
+    {
+      "id": "blog-puppy-first-week-guide",
+      "slug": "puppy-first-week-guide",
+      "type": "blog",
+      "changedFields": [
+        "body"
+      ]
+    },
+    {
+      "id": "blog-pet-insurance-age-renewal-guide",
+      "slug": "pet-insurance-age-renewal-guide",
+      "type": "blog",
+      "changedFields": [
+        "body"
+      ]
+    },
+    {
+      "id": "blog-141",
+      "slug": "dog-barking-guide",
+      "type": "blog",
+      "changedFields": [
+        "body"
+      ]
+    },
+    {
+      "id": "blog-167",
+      "slug": "dog-flea-tick-guide",
+      "type": "blog",
+      "changedFields": [
+        "body",
+        "disclaimer"
+      ]
+    },
+    {
+      "id": "blog-168",
+      "slug": "cat-flea-tick-prevention",
+      "type": "blog",
+      "changedFields": [
+        "body",
+        "disclaimer"
+      ]
+    },
+    {
+      "id": "blog-172",
+      "slug": "cat-window-safety-guide",
+      "type": "blog",
+      "changedFields": [
+        "body"
+      ]
+    },
+    {
+      "id": "blog-179",
+      "slug": "dog-clothing-guide",
+      "type": "blog",
+      "changedFields": [
+        "body"
+      ]
+    },
+    {
+      "id": "blog-191",
+      "slug": "spring-pet-care-guide",
+      "type": "blog",
+      "changedFields": [
+        "body"
+      ]
+    },
+    {
+      "id": "blog-192",
+      "slug": "summer-dog-care-tips",
+      "type": "blog",
+      "changedFields": [
+        "body"
+      ]
+    },
+    {
+      "id": "blog-194",
+      "slug": "holiday-pet-safety-guide",
+      "type": "blog",
+      "changedFields": [
+        "body"
+      ]
+    },
+    {
+      "id": "blog-196",
+      "slug": "cat-cold-weather-guide",
+      "type": "blog",
+      "changedFields": [
+        "body"
+      ]
+    },
+    {
+      "id": "blog-197",
+      "slug": "pet-allergy-season-guide",
+      "type": "blog",
+      "changedFields": [
+        "body",
+        "disclaimer"
+      ]
+    },
+    {
+      "id": "blog-212",
+      "slug": "pet-wearable-guide",
+      "type": "blog",
+      "changedFields": [
+        "body"
+      ]
+    },
+    {
+      "id": "blog-232",
+      "slug": "cat-anal-gland-guide",
+      "type": "blog",
+      "changedFields": [
+        "body",
+        "disclaimer"
+      ]
+    },
+    {
+      "id": "blog-234",
+      "slug": "pet-human-allergy-guide",
+      "type": "blog",
+      "changedFields": [
+        "body",
+        "disclaimer"
+      ]
+    },
+    {
+      "id": "blog-235",
+      "slug": "cat-outdoor-safety-guide",
+      "type": "blog",
+      "changedFields": [
+        "body"
+      ]
+    },
+    {
+      "id": "guide-shelter-animal-adoption",
+      "slug": "shelter-animal-adoption-guide",
+      "type": "guide",
+      "changedFields": [
+        "body"
+      ]
+    }
+  ]
+}

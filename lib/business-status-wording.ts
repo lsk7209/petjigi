@@ -18,27 +18,53 @@ export function statusBasis(type: string, status: string): StatusBasis {
   return status === "active" ? "operating_confirmed" : "status_unverified";
 }
 
-export function listingScopeWording(type: string): string {
-  return STATUS_NOT_PROVIDED_TYPES.has(type)
-    ? "공공데이터에 등록된 업체(영업 여부는 원본에 없어 확인되지 않음)"
-    : "공공데이터 기준 영업 중인 업체";
+/** 수집이 오래된(stale) 목록의 '영업 중' 표현 — 현재 상태가 아니라 기준일 당시 기록임을 밝힌다 */
+export function staleBasisPhrase(asOf: string): string {
+  return `공공데이터 기준일(${asOf}) 당시 영업 중으로 기록된`;
+}
+
+/** 갱신 지연 경고 한 문장 */
+export function staleNotice(asOf: string): string {
+  return `이 정보는 공공데이터 기준일(${asOf}) 이후 갱신이 지연되어 현재 영업 여부와 다를 수 있습니다. 방문 전 전화로 확인해 주세요.`;
+}
+
+export function listingScopeWording(type: string, staleAsOf?: string | null): string {
+  if (STATUS_NOT_PROVIDED_TYPES.has(type)) return "공공데이터에 등록된 업체(영업 여부는 원본에 없어 확인되지 않음)";
+  return staleAsOf ? `${staleBasisPhrase(staleAsOf)} 업체` : "공공데이터 기준 영업 중인 업체";
 }
 
 /** 상세 페이지 '지역 현황' 한 문장 */
-export function regionCountSentence(type: string, location: string, typeLabel: string, count: number): string {
-  return STATUS_NOT_PROVIDED_TYPES.has(type)
-    ? `${location}에는 공공데이터에 등록된 ${typeLabel}가 ${count}개 있습니다. 영업 여부는 원본에 없어 확인되지 않습니다.`
+export function regionCountSentence(
+  type: string,
+  location: string,
+  typeLabel: string,
+  count: number,
+  staleAsOf?: string | null,
+): string {
+  if (STATUS_NOT_PROVIDED_TYPES.has(type)) {
+    return `${location}에는 공공데이터에 등록된 ${typeLabel}가 ${count}개 있습니다. 영업 여부는 원본에 없어 확인되지 않습니다.`;
+  }
+  return staleAsOf
+    ? `${location} 지역에는 ${staleBasisPhrase(staleAsOf)} ${typeLabel}가 ${count}개 있습니다. ${staleNotice(staleAsOf)}`
     : `${location} 지역에는 현재 ${count}개의 ${typeLabel}가 운영 중입니다.`;
 }
 
 /** 지역 목록 FAQ '몇 곳이나 있나요' 답변 */
-export function faqCountAnswer(type: string, location: string, typeLabel: string, count: number): string {
+export function faqCountAnswer(
+  type: string,
+  location: string,
+  typeLabel: string,
+  count: number,
+  staleAsOf?: string | null,
+): string {
   if (count === 0) {
     return `공공데이터에서 ${location}의 ${typeLabel}은 확인되지 않았습니다. 실제 영업 여부와 다를 수 있으니 관할 시·군·구청이나 인근 지역에서 확인해 주세요.`;
   }
   return STATUS_NOT_PROVIDED_TYPES.has(type)
     ? `공공데이터 기준으로 ${location}에는 ${typeLabel} ${count}곳이 등록되어 있습니다. 영업 여부는 원본에 없으므로 방문 전 확인이 필요합니다.`
-    : `공공데이터 기준으로 ${location}에는 현재 영업 중인 ${typeLabel} ${count}곳이 등록되어 있습니다.`;
+    : staleAsOf
+      ? `${location}에는 ${staleBasisPhrase(staleAsOf)} ${typeLabel} ${count}곳이 등록되어 있습니다. ${staleNotice(staleAsOf)}`
+      : `공공데이터 기준으로 ${location}에는 현재 영업 중인 ${typeLabel} ${count}곳이 등록되어 있습니다.`;
 }
 
 /** 이 기관 자체의 상태 안내(상세 상단). 근거가 약한 경우에만 문구를 반환한다. */

@@ -1,5 +1,7 @@
 import type { Business } from "@/db/schema";
-import { getReviewEvidence, hasValidReviewDate } from "@/lib/ymyl";
+import { getReviewEvidence } from "@/lib/ymyl";
+import { EDITORIAL_TEAM_URL } from "@/lib/editorial-policy";
+import { resolveArticleDates } from "@/lib/seo/article-dates";
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://petjigi.kr";
 
@@ -60,7 +62,14 @@ export function breadcrumbSchema(items: { name: string; url: string }[]) {
   };
 }
 
-export function localBusinessSchema(business: Business) {
+export function localBusinessSchema({
+  business,
+  canonicalUrl,
+}: {
+  business: Business;
+  /** 페이지 canonical URL과 정확히 같은 값 (route의 sigungu slug 기준) */
+  canonicalUrl: string;
+}) {
   const typeMap: Record<string, string> = {
     vet: "VeterinaryCare",
     grooming: "HealthAndBeautyBusiness",
@@ -73,27 +82,29 @@ export function localBusinessSchema(business: Business) {
     exhibition: "TouristAttraction",
   };
 
+  const address = compact({
+    streetAddress: nonBlank(business.address),
+    addressLocality: nonBlank(business.addressSigungu),
+    addressRegion: nonBlank(business.addressSido),
+  });
+  const hasCoords = Number.isFinite(business.lat) && Number.isFinite(business.lng) && business.lat != null && business.lng != null;
+
   return {
     "@context": "https://schema.org",
     "@type": typeMap[business.type] ?? "LocalBusiness",
     name: business.name,
-    address: {
-      "@type": "PostalAddress",
-      streetAddress: business.address,
-      addressLocality: business.addressSigungu,
-      addressRegion: business.addressSido,
-      addressCountry: "KR",
-    },
-    telephone: business.phone ?? undefined,
-    url: `${SITE_URL}/${business.type}/${business.addressSigungu ?? ""}/${encodeURIComponent(business.name)}`,
-    ...(business.lat && business.lng
+    ...(Object.keys(address).length > 0
+      ? { address: { "@type": "PostalAddress", ...address, addressCountry: "KR" } }
+      : {}),
+    ...(nonBlank(business.phone) ? { telephone: nonBlank(business.phone) } : {}),
+    url: canonicalUrl,
+    ...(hasCoords
       ? {
           geo: {
             "@type": "GeoCoordinates",
             latitude: business.lat,
             longitude: business.lng,
           },
-          hasMap: `https://map.kakao.com/?q=${encodeURIComponent(business.name + " " + (business.address ?? ""))}`,
         }
       : {}),
     speakable: {
@@ -101,6 +112,32 @@ export function localBusinessSchema(business: Business) {
       cssSelector: ["h1", "[data-speakable]"],
     },
   };
+}
+
+function nonBlank(v: string | null | undefined): string | undefined {
+  return v && v.trim() ? v.trim() : undefined;
+}
+
+function compact<T extends Record<string, string | undefined>>(obj: T): Record<string, string> {
+  return Object.fromEntries(Object.entries(obj).filter(([, v]) => v !== undefined)) as Record<string, string>;
+}
+
+/** 개인 저자명으로 볼 수 없는 조직·팀 표기 (Person으로 내보내지 않는다) */
+const ORGANIZATION_AUTHOR_PATTERN = /편집팀|에디터팀|편집부|에디터|편집|팀$|펫지기|editorial|team/i;
+
+export function isOrganizationAuthor(name: string): boolean {
+  return ORGANIZATION_AUTHOR_PATTERN.test(name.trim());
+}
+
+function authorNode(authorName?: string | null, authorCredential?: string | null) {
+  if (authorName && !isOrganizationAuthor(authorName)) {
+    return {
+      "@type": "Person",
+      name: authorName,
+      ...(authorCredential ? { description: authorCredential } : {}),
+    };
+  }
+  return { "@type": "Organization", name: authorName?.trim() || "펫지기", url: authorName ? EDITORIAL_TEAM_URL : SITE_URL };
 }
 
 export function articleSchema({
@@ -111,9 +148,9 @@ export function articleSchema({
   authorName,
   authorCredential,
   publishedAt,
+  updatedAt,
   reviewedAt,
   reviewerName,
-  isYmyl,
   imageUrl,
   wordCount,
 }: {
@@ -124,61 +161,39 @@ export function articleSchema({
   authorName?: string | null;
   authorCredential?: string | null;
   publishedAt?: string | null;
+  /** 실제 수정일(contents.updatedAt). reviewedAt으로 대체하지 않는다 */
+  updatedAt?: string | null;
   reviewedAt?: string | null;
   reviewerName?: string | null;
+  /** @deprecated 반려동물 건강 글도 Article로 표시하므로 사용하지 않는다 */
   isYmyl?: boolean;
   imageUrl?: string | null;
   wordCount?: number;
 }) {
   const effectiveDescription = subtitle ?? description;
   const reviewEvidence = getReviewEvidence({ reviewedAt, reviewerName });
-  const hasReviewDate = hasValidReviewDate(reviewedAt);
+  const { datePublished, dateModified } = resolveArticleDates({ publishedAt, updatedAt });
   return {
     "@context": "https://schema.org",
-    "@type": isYmyl ? "MedicalWebPage" : "Article",
+    "@type": "Article",
     headline: title,
     ...(subtitle ? { alternativeHeadline: subtitle } : {}),
     ...(effectiveDescription ? { description: effectiveDescription } : {}),
     url,
+    mainEntityOfPage: url,
     inLanguage: "ko-KR",
     isAccessibleForFree: true,
     ...(wordCount ? { wordCount } : {}),
     ...(imageUrl ? { image: imageUrl } : {}),
-    ...(isYmyl
-      ? {
-          audience: { "@type": "Patient" },
-          medicalAudience: { "@type": "MedicalAudience", audienceType: "Caregiver" },
-        }
-      : {}),
     speakable: {
       "@type": "SpeakableSpecification",
       cssSelector: ["h1", "h2", "[data-speakable]"],
     },
-    ...(authorName
-      ? {
-          author: {
-            "@type": "Person",
-            name: authorName,
-            ...(authorCredential ? { description: authorCredential } : {}),
-          },
-        }
-      : {
-          author: {
-            "@type": "Organization",
-            name: "펫지기",
-            url: SITE_URL,
-          },
-        }),
-    ...(publishedAt ? { datePublished: publishedAt } : {}),
-    ...(hasReviewDate
-      ? {
-          dateModified: reviewedAt,
-          ...(reviewEvidence
-            ? { reviewedBy: { "@type": "Person", name: reviewEvidence.reviewerName } }
-            : {}),
-        }
-      : publishedAt
-      ? { dateModified: publishedAt }
+    author: authorNode(authorName, authorCredential),
+    ...(datePublished ? { datePublished } : {}),
+    ...(dateModified ? { dateModified } : {}),
+    ...(reviewEvidence
+      ? { reviewedBy: { "@type": "Person", name: reviewEvidence.reviewerName } }
       : {}),
     publisher: {
       "@type": "Organization",
@@ -271,40 +286,6 @@ export function itemListSchema(
       url: item.url,
       ...(item.description ? { description: item.description } : {}),
     })),
-  };
-}
-
-/** MedicalCondition 엔티티 스키마 — 질환 페이지 AI 추출 최적화 (AEO/GEO) */
-export function medicalConditionSchema({
-  name,
-  url,
-  description,
-}: {
-  name: string;
-  url: string;
-  description?: string | null;
-}) {
-  return {
-    "@context": "https://schema.org",
-    "@type": "MedicalCondition",
-    name,
-    url,
-    inLanguage: "ko-KR",
-    ...(description ? { description } : {}),
-    recognizingAuthority: {
-      "@type": "Organization",
-      name: "펫지기",
-      url: SITE_URL,
-    },
-    legalStatus: "정보 제공 목적 — 진단·치료는 수의사에게 문의하세요",
-    medicineSystem: {
-      "@type": "MedicineSystem",
-      name: "수의학",
-    },
-    speakable: {
-      "@type": "SpeakableSpecification",
-      cssSelector: ["h1", "h2:first-of-type", "[data-speakable]"],
-    },
   };
 }
 

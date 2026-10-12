@@ -4,6 +4,8 @@ import Script from "next/script";
 import { useEffect, useRef } from "react";
 import { usePathname } from "next/navigation";
 import { useReportWebVitals } from "next/web-vitals";
+import { usePageAdDecision } from "@/components/ads/use-page-ad-decision";
+import { useThirdPartyAllowed } from "@/components/ads/use-third-party-allowed";
 
 const GA_ID = process.env.NEXT_PUBLIC_GA_ID;
 
@@ -69,7 +71,10 @@ function GA4Tracker() {
 }
 
 export function GA4() {
-  if (!GA_ID) return null;
+  const thirdPartyAllowed = useThirdPartyAllowed();
+  // 광고 제외 경로(404·noindex·정책·검색 등)에서는 분석 요청도 만들지 않는다.
+  const pageDecision = usePageAdDecision();
+  if (!GA_ID || !thirdPartyAllowed || pageDecision !== "allow") return null;
 
   return (
     <>
@@ -80,13 +85,12 @@ export function GA4() {
       <Script id="ga4-init" strategy="afterInteractive">
         {`
           window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
+          window.gtag = window.gtag || function(){dataLayer.push(arguments);};
+          var gtag = window.gtag;
           gtag('js', new Date());
           gtag('config', '${GA_ID}', {
             send_page_view: true,
             cookie_flags: 'SameSite=None;Secure',
-            allow_google_signals: true,
-            allow_ad_personalization_signals: true,
             custom_map: {
               dimension1: 'content_type',
               dimension2: 'category_id',

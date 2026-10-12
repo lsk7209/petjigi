@@ -1,0 +1,61 @@
+{
+  "generatedAt": "2026-10-12T05:15:37.281Z",
+  "remediation": [
+    {
+      "source": "blog/cat-dental-extraction-recovery (db/seeds/blog-posts-121.ts)",
+      "target": "/blog/cat-chronic-gingivitis-prevention",
+      "action": "remove-link-or-use-category-hub",
+      "replacement": null,
+      "autoApplicable": false,
+      "productionApplyRequired": false
+    },
+    {
+      "source": "blog/shelter-cat-adjustment-guide (db/seeds/blog-posts-107.ts)",
+      "target": "/blog/cat-dog-first-meeting-guide",
+      "action": "remove-link-or-use-category-hub",
+      "replacement": null,
+      "autoApplicable": false,
+      "productionApplyRequired": false
+    },
+    {
+      "source": "blog/dog-home-grooming-basics (db/seeds/blog-posts-98.ts)",
+      "target": "/blog/dog-nail-grinding-dremel-guide",
+      "action": "remove-link-or-use-category-hub",
+      "replacement": null,
+      "autoApplicable": false,
+      "productionApplyRequired": false
+    },
+    {
+      "source": "blog/pet-international-travel-microchip (db/seeds/blog-posts-106.ts)",
+      "target": "/blog/domestic-pet-travel-regulations",
+      "action": "remove-link-or-use-category-hub",
+      "replacement": null,
+      "autoApplicable": false,
+      "productionApplyRequired": false
+    },
+    {
+      "source": "blog/petshop-purchased-dog-consumer-rights (db/seeds/blog-posts-104.ts)",
+      "target": "/blog/pet-adoption-scam-prevention",
+      "action": "remove-link-or-use-category-hub",
+      "replacement": null,
+      "autoApplicable": false,
+      "productionApplyRequired": false
+    },
+    {
+      "source": "blog/domestic-pet-travel-regulations (db/seeds/blog-posts-101.ts)",
+      "target": "/blog/pet-international-travel-microchip",
+      "action": "remove-link-or-use-category-hub",
+      "replacement": null,
+      "autoApplicable": false,
+      "productionApplyRequired": false
+    },
+    {
+      "source": "blog/dog-aging-signs-recognition (db/seeds/blog-posts-102.ts)",
+      "target": "/blog/senior-dog-gentle-exercise-guide",
+      "action": "remove-link-or-use-category-hub",
+      "replacement": null,
+      "autoApplicable": false,
+      "productionApplyRequired": false
+    }
+  ]
+}

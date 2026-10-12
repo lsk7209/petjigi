@@ -62,3 +62,11 @@ test("decideAdPage: 차단 경로·마커는 렌더 완료 전에도 block", () 
   assert.equal(decideAdPage({ pathname: "/guide/x", marker: "block", renderComplete: false }), "block");
   assert.equal(decideAdPage({ pathname: "/funeral/a/b", marker: null, renderComplete: true }), "block");
 });
+
+test("소개·편집 책임·정책 페이지는 자동광고 제외", async () => {
+  const { isAutoAdsEligiblePath } = await import("./ads-policy");
+  for (const path of ["/about", "/privacy", "/advertising", "/disclosure", "/contact", "/terms", "/search", "/rescue", "/admin/x"]) {
+    assert.equal(isAutoAdsEligiblePath(path), false, path);
+  }
+  assert.equal(isAutoAdsEligiblePath("/guide/pet-heatstroke-prevention-complete-guide"), true);
+});

@@ -17,6 +17,8 @@ import { CategoryCta } from "@/components/content/category-cta";
 import { ShareButtons } from "@/components/content/share-buttons";
 import { AdSlot } from "@/components/ads/ad-slot";
 import { adsPolicyAttrs } from "@/lib/ads-policy";
+import { evaluateBusinessDetailEligibility } from "@/lib/seo/indexability-policy";
+import { classifyListing } from "@/lib/listing-state";
 import { DataCoverage } from "@/components/business/data-coverage";
 import { AdPolicyProvider } from "@/components/providers/ad-policy-provider";
 import { BusinessViewTracker } from "@/components/analytics/business-view-tracker";
@@ -79,7 +81,12 @@ export async function generateMetadata({
   const title = `${name} ${typeLabel} | ${location} | 펫지기`;
   const description = `${location} ${name} ${typeLabel} — 위치, 연락처, 주변 시설 정보. 공공데이터 기반.`;
   // URL만으로 지역이나 업체가 하나로 정해지지 않는 페이지는 색인하지 않는다(목록과 같은 정책).
-  const robots = region.kind === "ambiguous" || match.kind === "ambiguous" ? { index: false, follow: true } : undefined;
+  const eligibility = evaluateBusinessDetailEligibility({
+    ambiguous: region.kind === "ambiguous" || match.kind === "ambiguous",
+    business: match.kind === "resolved" ? match.business : {},
+    categoryId: TYPE_CATEGORY[type] ?? 1,
+  });
+  const robots = eligibility.indexable ? undefined : { index: false, follow: true };
 
   return {
     title,
@@ -158,7 +165,10 @@ export default async function BusinessDetailPage({
     .orderBy(desc(contents.publishedAt))
     .limit(3);
 
-  const schema = localBusinessSchema(business);
+  const eligibility = evaluateBusinessDetailEligibility({ ambiguous: false, business, categoryId });
+  const syncedAt = business.lastSyncedAt?.slice(0, 10) ?? null;
+  const staleAsOf = syncedAt && classifyListing(1, syncedAt).stale ? syncedAt : null;
+  const schema = localBusinessSchema({ business, canonicalUrl: pageUrl });
   const breadcrumb = breadcrumbSchema([
     { name: "홈", url: SITE_URL },
     ...(sidoName && region.sidoSlug
@@ -174,9 +184,16 @@ export default async function BusinessDetailPage({
   return (
     <AdPolicyProvider category={categoryId}>
       <BusinessViewTracker type={type} name={business.name} sigungu={locationName} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb) }} />
-      <main className="max-w-3xl mx-auto px-4 py-10" {...adsPolicyAttrs(categoryId)}>
+      {eligibility.structuredDataEligible && (
+        <>
+          <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
+          <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb) }} />
+        </>
+      )}
+      <main
+        className="max-w-3xl mx-auto px-4 py-10"
+        {...(eligibility.adEligible ? adsPolicyAttrs(categoryId) : { "data-ads-policy": "block" })}
+      >
         {/* 브레드크럼 */}
         <nav
           className="text-xs text-[var(--brand-text-secondary)] mb-6 flex items-center gap-1.5 flex-wrap"
@@ -290,7 +307,7 @@ export default async function BusinessDetailPage({
             📊 {locationName} 지역 현황
           </h2>
           <p className="text-[var(--brand-text-secondary)]">
-            {regionCountSentence(type, locationName, typeLabel, sameTypeCount?.count ?? 0)}
+            {regionCountSentence(type, locationName, typeLabel, sameTypeCount?.count ?? 0, staleAsOf)}
           </p>
           <Link
             href={`/${sigungu}/${type}`}
