@@ -1,5 +1,6 @@
 import type { Business } from "@/db/schema";
 import { getReviewEvidence } from "@/lib/ymyl";
+import { EDITORIAL_TEAM_URL } from "@/lib/editorial-policy";
 import { resolveArticleDates } from "@/lib/seo/article-dates";
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://petjigi.kr";
@@ -136,7 +137,7 @@ function authorNode(authorName?: string | null, authorCredential?: string | null
       ...(authorCredential ? { description: authorCredential } : {}),
     };
   }
-  return { "@type": "Organization", name: authorName?.trim() || "펫지기", url: SITE_URL };
+  return { "@type": "Organization", name: authorName?.trim() || "펫지기", url: authorName ? EDITORIAL_TEAM_URL : SITE_URL };
 }
 
 export function articleSchema({

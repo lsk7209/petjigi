@@ -13,8 +13,9 @@ import { CATEGORIES } from "@/lib/category";
 import { YmylDisclaimer } from "@/components/content/ymyl-disclaimer";
 import { AdSlot } from "@/components/ads/ad-slot";
 import { AdPolicyProvider } from "@/components/providers/ad-policy-provider";
+import { EDITORIAL_TEAM_PATH } from "@/lib/editorial-policy";
 import { resolveArticleDates } from "@/lib/seo/article-dates";
-import { articleSchema, breadcrumbSchema, faqSchema } from "@/lib/seo/structured-data";
+import { articleSchema, breadcrumbSchema, faqSchema, isOrganizationAuthor } from "@/lib/seo/structured-data";
 import { withoutUnverifiedReviewClaim } from "@/lib/content-review";
 import { documentTitle, socialTitle } from "@/lib/seo/title";
 import { TableOfContents } from "@/components/content/table-of-contents";
@@ -277,7 +278,11 @@ export default async function GuidePage({
             {content.authorName && (
               <span className="flex items-center gap-1">
                 <span aria-hidden="true">✍️</span>
-                {content.authorName}
+                {isOrganizationAuthor(content.authorName) ? (
+                  <Link href={EDITORIAL_TEAM_PATH} className="hover:underline">{content.authorName}</Link>
+                ) : (
+                  content.authorName
+                )}
                 {content.authorCredential && ` (${content.authorCredential})`}
               </span>
             )}
