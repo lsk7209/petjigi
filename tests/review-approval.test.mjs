@@ -178,7 +178,7 @@ function helperFixture(options = {}) {
     "@/db/schema": { contents, reviewQueue },
     "drizzle-orm": { and, eq },
     "@/lib/seo/index-now": { pingIndexNow: async (urls) => { fake.audit.notifications += 1; effects.push(["indexnow", urls]); } },
-    "@/lib/seo/google-indexing": { notifyGoogleIndexing: async (url) => { fake.audit.notifications += 1; effects.push(["google", url]); } },
+    "@/lib/seo/google-indexing": { notifyGoogleIndexing: async () => { throw new Error("Indexing API must not be called for general content"); } },
     "next/cache": { revalidatePath: (path) => { fake.audit.revalidations += 1; effects.push(["path", path]); }, revalidateTag: () => {} },
   });
   return { ...fake, effects, approvalModule };
@@ -198,7 +198,7 @@ function integrationFixture(options = {}, env = { CRON_SECRET: secret, NEXT_PUBL
       effects.push(["indexnow", urls]);
     } },
     "@/lib/seo/google-indexing": {
-      notifyGoogleIndexing: async (url) => { fake.audit.notifications += 1; effects.push(["google", url]); },
+      notifyGoogleIndexing: async () => { throw new Error("Indexing API must not be called for general content"); },
       submitSitemapToGSC: async () => { fake.audit.notifications += 1; effects.push(["sitemap"]); },
     },
     "next/cache": {
@@ -338,7 +338,7 @@ test("approval helper rolls back both records and produces no external effects i
 
 test("admin actions validate missing, wrong, and missing-configured keys before database access", async () => {
   const db = { select: () => { throw new Error("database must not be read"); } };
-  const stubs = { "@/db/client": { db }, "@/db/schema": { contents, reviewQueue }, "drizzle-orm": { eq }, "next/cache": { revalidatePath: () => {}, revalidateTag: () => {} }, "@/lib/seo/index-now": { pingIndexNow: async () => {} }, "@/lib/seo/google-indexing": { notifyGoogleIndexing: async () => {}, submitSitemapToGSC: async () => {} } };
+  const stubs = { "@/db/client": { db }, "@/db/schema": { contents, reviewQueue }, "drizzle-orm": { eq }, "next/cache": { revalidatePath: () => {}, revalidateTag: () => {} }, "@/lib/seo/index-now": { pingIndexNow: async () => {} }, "@/lib/seo/google-indexing": { notifyGoogleIndexing: async () => { throw new Error("Indexing API must not be called for general content"); }, submitSitemapToGSC: async () => {} } };
   for (const [env, form] of [
     [{ CRON_SECRET: secret }, new FormData()],
     [{ CRON_SECRET: secret }, formWithKey("wrong-key")],

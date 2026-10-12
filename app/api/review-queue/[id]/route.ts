@@ -3,7 +3,6 @@ import { db } from "@/db/client";
 import { reviewQueue } from "@/db/schema";
 import { eq } from "drizzle-orm";
 import { pingIndexNow } from "@/lib/seo/index-now";
-import { notifyGoogleIndexing } from "@/lib/seo/google-indexing";
 import { revalidatePath, revalidateTag } from "next/cache";
 import { isReviewRequestAuthorized } from "@/lib/admin-auth";
 import { approveReviewQueueItem, ReviewApprovalError } from "@/lib/review-queue";
@@ -69,7 +68,6 @@ export async function PATCH(
     // A failed notification does not undo an already committed approval.
     const indexNow = await pingIndexNow([contentUrl, `${SITE_URL}/`])
       .then((r) => (r.ok ? "pinged" : "failed") as "pinged" | "failed").catch(() => "failed" as const);
-    await notifyGoogleIndexing(contentUrl).catch(() => {});
     let cache: "revalidated" | "failed" = "revalidated";
     try {
       revalidateTag("guides", { expire: 0 });
