@@ -3,6 +3,7 @@ import { Noto_Serif_KR } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
+import { GoogleConsentDefaults } from "@/components/privacy/google-consent-defaults";
 import { GA4 } from "@/components/analytics/ga4";
 import { AdsenseLoader } from "@/components/ads/adsense-loader";
 import { websiteSchema, organizationSchema } from "@/lib/seo/structured-data";
@@ -138,6 +139,7 @@ export default function RootLayout({
         />
       </head>
       <body className="min-h-full flex flex-col antialiased">
+        <GoogleConsentDefaults />
         <a
           href="#main-content"
           className="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-50 focus:px-4 focus:py-2 focus:bg-[var(--brand-accent)] focus:text-white focus:rounded-lg focus:text-sm"

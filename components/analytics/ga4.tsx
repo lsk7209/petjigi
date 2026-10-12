@@ -80,13 +80,12 @@ export function GA4() {
       <Script id="ga4-init" strategy="afterInteractive">
         {`
           window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
+          window.gtag = window.gtag || function(){dataLayer.push(arguments);};
+          var gtag = window.gtag;
           gtag('js', new Date());
           gtag('config', '${GA_ID}', {
             send_page_view: true,
             cookie_flags: 'SameSite=None;Secure',
-            allow_google_signals: true,
-            allow_ad_personalization_signals: true,
             custom_map: {
               dimension1: 'content_type',
               dimension2: 'category_id',
