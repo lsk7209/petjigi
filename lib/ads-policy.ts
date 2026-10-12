@@ -4,7 +4,9 @@ const MEMORIAL_CATEGORY_ID = 6;
 
 const AUTO_ADS_EXCLUDED_PREFIXES = ["/category/memorial"] as const;
 
+// 정책·소개(저자·편집 책임 포함)·문의·검색 페이지는 게시자 콘텐츠가 아니므로 광고 제외
 const AUTO_ADS_EXCLUDED_EXACT_PATHS = new Set([
+  "/about",
   "/advertising",
   "/contact",
   "/disclosure",
