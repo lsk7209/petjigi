@@ -2,7 +2,9 @@ import fs from "node:fs";
 import path from "node:path";
 import { createHash } from "node:crypto";
 import ts from "typescript";
-import { evaluateChangedHighRiskContent, rangesOverlap } from "../lib/content-risk-gate";
+import { evaluateChangedHighRiskContent, isHighRiskContent, rangesOverlap } from "../lib/content-risk-gate";
+import { evaluateClaimEvidence } from "../lib/claim-evidence";
+import { loadManifest } from "./audit-claim-evidence";
 import { GateScopeError, gateVerdict, resolveGateScope, selectManifestRecords } from "../lib/content-gate-scope";
 import { sourceValues } from "../lib/content-seed-parser";
 import { MEMORIAL_AUTO_ADS_EXCLUDED_PATHS } from "../lib/memorial-auto-ads-paths";
@@ -127,6 +129,14 @@ function manifestSlugs(): string[] | null {
   return parsed;
 }
 
+/** 변경된 고위험 콘텐츠의 위험 주장은 manifest에 상태(verified/qualified/removed/needs_review)가 있어야 한다 */
+function claimEvidenceIssues(record: ContentRecord, manifest: ReturnType<typeof loadManifest>): string[] {
+  if (record.status !== "published" || !record.body || !isHighRiskContent(record)) return [];
+  const entry = manifest.entries.find((e) => e.slug === record.slug);
+  const { issues } = evaluateClaimEvidence({ bodyHtml: record.body, entry });
+  return [...new Set(issues.map((i) => `CLAIM_${i.code}`))];
+}
+
 function contentGate(records: ContentRecord[]) {
   const baseArg = process.argv.find((arg) => arg.startsWith("--base="))?.slice("--base=".length);
   const slugs = manifestSlugs();
@@ -137,9 +147,10 @@ function contentGate(records: ContentRecord[]) {
     : records.filter((record) =>
         rangesOverlap(record.startLine, record.endLine, scope?.rangesByFile.get(record.file) ?? [])
       );
+  const manifest = loadManifest();
   const evaluated = changedRecords.map((record) => ({
     record,
-    issues: evaluateChangedHighRiskContent(record),
+    issues: [...evaluateChangedHighRiskContent(record), ...claimEvidenceIssues(record, manifest)],
   }));
   const blockers = evaluated.filter((entry) => entry.issues.length > 0);
 

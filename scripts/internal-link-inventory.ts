@@ -31,6 +31,8 @@ export interface SeedContent {
   type: string;
   status: string;
   publishedAt: string | null;
+  category: number | null;
+  ymyl: boolean;
   body: string;
 }
 
@@ -43,6 +45,9 @@ const literalText = (node: ts.Expression | undefined): string | null => {
     );
   return null;
 };
+
+const numberLiteral = (node: ts.Expression | undefined): number | null =>
+  node && ts.isNumericLiteral(node) ? Number(node.text) : null;
 
 /** 시드 파일에서 slug·type·body가 있는 객체 추출. publishedAt이 리터럴이 아니면 null(공개로 간주) */
 export function readSeedContents(): SeedContent[] {
@@ -73,6 +78,8 @@ export function readSeedContents(): SeedContent[] {
             type,
             status: literalText(props.get("status")) ?? "published",
             publishedAt: literalText(props.get("publishedAt")),
+            category: numberLiteral(props.get("category")),
+            ymyl: props.get("ymyl")?.kind === ts.SyntaxKind.TrueKeyword,
             body,
           });
         }

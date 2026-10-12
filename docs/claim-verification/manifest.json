@@ -1,0 +1,88 @@
+{
+  "version": 1,
+  "entries": [
+    {
+      "slug": "pet-wearable-guide",
+      "claims": [
+        {
+          "claimId": "claim-001",
+          "snippet": "AAHA(미국동물병원협회)는 2023년 반려동물 예방의학 지침에서 웨어러블 데이터를 활용한 활동량·수면 기록을 노령 반려동물 정기 검진의 보조 자료로 활용하도록 권고했다.",
+          "sourceUrl": "https://www.aaha.org/aaha-guidelines/2023-aaha-senior-care-guidelines/",
+          "sourceType": "professional_guideline",
+          "status": "removed",
+          "checkedAt": "2026-10-12",
+          "notes": "2023 AAHA Senior Care Guidelines 요약·툴킷 검색에서 웨어러블 활용 권고를 확인하지 못함(전문 PDF 일부만 열람). 기관 권고로 단정할 수 없어 본문에서 삭제."
+        },
+        {
+          "claimId": "claim-002",
+          "snippet": "APPA 2024 반려동물 산업 보고서에서도 웨어러블 기기를 보유한 보호자의 동물병원 방문 빈도가 미보유 보호자 대비 높게 나타났다고 보고하고 있다.",
+          "sourceUrl": "https://americanpetproducts.org/docs/default-source/admin/appa-soi-2024_preview.pdf",
+          "sourceType": "secondary",
+          "status": "removed",
+          "checkedAt": "2026-10-12",
+          "notes": "공개된 미리보기·보도자료에서 웨어러블 보유와 병원 방문 빈도의 관계 수치를 확인하지 못함. 본문에서 삭제."
+        }
+      ]
+    },
+    {
+      "slug": "puppy-first-week-guide",
+      "claims": [
+        {
+          "claimId": "claim-001",
+          "snippet": "AKC는 어린 강아지가 하루 최대 18~20시간까지 잘 수 있다고 안내한다.",
+          "sourceUrl": "https://www.akc.org/expert-advice/health/how-much-do-puppies-sleep/",
+          "sourceType": "official",
+          "status": "qualified",
+          "checkedAt": "2026-10-12",
+          "notes": "AKC 해당 글은 18~20시간으로 안내하지만 다른 AKC 글은 15~20시간 범위. '생후 8주 필요 시간'이 아니라 '최대 18~20시간까지'로 표현 범위를 한정."
+        }
+      ]
+    },
+    {
+      "slug": "dog-flea-tick-guide",
+      "claims": [
+        {
+          "claimId": "claim-001",
+          "snippet": "미국 FDA와 EPA의 안전 지침을 바탕으로 제품 선택과 관리 원칙을 정리했다.",
+          "sourceUrl": null,
+          "sourceType": "unknown",
+          "status": "needs_review",
+          "checkedAt": null,
+          "notes": "원문 대조 전 — 자동 추출 후보"
+        }
+      ]
+    },
+    {
+      "slug": "pet-insurance-age-renewal-guide",
+      "claims": [
+        {
+          "claimId": "claim-001",
+          "snippet": "금융감독원 보험다모아 기준, 국내 대부분의 펫보험은 7~10세 이하를 신규 가입 상한으로 두고 있다.",
+          "sourceUrl": null,
+          "sourceType": "unknown",
+          "status": "needs_review",
+          "checkedAt": null,
+          "notes": "원문 대조 전 — 자동 추출 후보"
+        },
+        {
+          "claimId": "claim-002",
+          "snippet": "10세 이상의 반려동물은 가입 가능한 상품 자체가 적고, 보험료가 크게 높아진다.",
+          "sourceUrl": null,
+          "sourceType": "unknown",
+          "status": "needs_review",
+          "checkedAt": null,
+          "notes": "원문 대조 전 — 자동 추출 후보"
+        },
+        {
+          "claimId": "claim-003",
+          "snippet": "반려동물이 1~3세의 건강한 시기에 가입하는 것이 보험료·보장 범위 모두에서 가장 유리하다.",
+          "sourceUrl": null,
+          "sourceType": "unknown",
+          "status": "needs_review",
+          "checkedAt": null,
+          "notes": "원문 대조 전 — 자동 추출 후보"
+        }
+      ]
+    }
+  ]
+}
