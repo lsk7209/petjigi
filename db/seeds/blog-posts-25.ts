@@ -197,8 +197,8 @@ const BLOG_POSTS: NewContent[] = [
 
 <div style="margin:2rem 0;padding:1rem 1.25rem;background:var(--brand-accent-soft,#e6ecd9);border-radius:12px;">
 <strong>📚 관련 글</strong><br>
-<a href="/blog/pet-cremation-burial-compare">반려동물 화장 vs 장묘 — 비용·절차·선택 기준 완전 비교</a><br>
-<a href="/blog/petloss-recovery-guide">펫로스 증후군 극복 가이드 — 슬픔을 통과하는 법</a><br>
+<a href="/blog/pet-cremation-vs-burial">반려동물 화장 vs 장묘 — 비용·절차·선택 기준 완전 비교</a><br>
+<a href="/blog/pet-grief-recovery-guide">펫로스 증후군 극복 가이드 — 슬픔을 통과하는 법</a><br>
 <a href="/blog/pet-hospice-care-guide">반려동물 호스피스 케어 가이드 — 마지막 시간을 편안하게</a>
 </div>`,
     authorName: "펫지기 에디터",
@@ -300,7 +300,7 @@ BSAVA(영국 소동물 수의사협회) 가이드라인에 따르면 췌장염�
 
 <div style="margin:2rem 0;padding:1rem 1.25rem;background:var(--brand-accent-soft,#e6ecd9);border-radius:12px;">
 <strong>📚 관련 글</strong><br>
-<a href="/blog/dog-vomiting-home-vs-vet">강아지가 갑자기 구토했을 때 — 집에서 할 것 vs 병원 가야 할 때</a><br>
+<a href="/blog/dog-vomiting-when-to-vet">강아지가 갑자기 구토했을 때 — 집에서 할 것 vs 병원 가야 할 때</a><br>
 <a href="/blog/dog-diarrhea-guide">강아지 설사 — 지켜봐도 되는 경우 vs 즉시 병원 가야 하는 경우</a><br>
 <a href="/blog/dog-diabetes-management">강아지 당뇨병 관리 가이드 — 인슐린·식이·모니터링</a>
 </div>`,
@@ -404,8 +404,8 @@ BSAVA(영국 소동물 수의사협회) 가이드라인에 따르면 췌장염�
 
 <div style="margin:2rem 0;padding:1rem 1.25rem;background:var(--brand-accent-soft,#e6ecd9);border-radius:12px;">
 <strong>📚 관련 글</strong><br>
-<a href="/blog/animal-registration-complete-guide">동물등록 방법 완전 가이드 — 내장칩·외장칩·과태료까지</a><br>
-<a href="/blog/dog-first-adoption-checklist">강아지 처음 입양 준비물 체크리스트 — 첫 날 전에 갖춰야 할 것들</a><br>
+<a href="/blog/pet-registration-guide">동물등록 방법 완전 가이드 — 내장칩·외장칩·과태료까지</a><br>
+<a href="/blog/dog-first-adoption-kit">강아지 처음 입양 준비물 체크리스트 — 첫 날 전에 갖춰야 할 것들</a><br>
 <a href="/blog/pet-death-admin-checklist">반려동물이 떠난 후 행정 처리 — 동물등록 말소부터 보험금 청구까지</a>
 </div>
 <h2>함께 확인할 준비</h2>
@@ -524,8 +524,8 @@ BSAVA(영국 소동물 수의사협회) 가이드라인에 따르면 췌장염�
 
 <div style="margin:2rem 0;padding:1rem 1.25rem;background:var(--brand-accent-soft,#e6ecd9);border-radius:12px;">
 <strong>📚 관련 글</strong><br>
-<a href="/blog/dog-grain-free-complete-guide">강아지 그레인프리 사료 완전 가이드 — 효과·위험·선택 기준</a><br>
-<a href="/blog/dog-skin-health-guide">강아지 피부 건강 관리 — 빗질·목욕·환경 관리 완전 가이드</a><br>
+<a href="/blog/dog-grain-free-diet-guide">강아지 그레인프리 사료 완전 가이드 — 효과·위험·선택 기준</a><br>
+<a href="/blog/dog-skin-care-guide">강아지 피부 건강 관리 — 빗질·목욕·환경 관리 완전 가이드</a><br>
 <a href="/blog/dog-toxic-foods">강아지에게 줘도 되는 채소·과일 vs 위험한 것</a>
 </div>`,
     authorName: "펫지기 에디터",

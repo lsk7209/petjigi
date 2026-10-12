@@ -74,8 +74,8 @@ const BLOG_POSTS: NewContent[] = [
 <div style="margin:2rem 0;padding:1rem 1.25rem;background:var(--brand-accent-soft,#e6ecd9);border-radius:12px;">
 <strong>📚 관련 글</strong><br>
 <a href="/blog/cat-breed-selection-guide">고양이 품종 선택 가이드 — 성격과 환경에 맞는 품종 고르는 법</a><br>
-<a href="/blog/cat-first-adoption-checklist">고양이 처음 입양 전 준비물 체크리스트</a><br>
-<a href="/blog/shelter-cat-adoption-guide">유기묘 입양 완전 가이드</a>
+<a href="/blog/cat-first-adoption-kit">고양이 처음 입양 전 준비물 체크리스트</a><br>
+<a href="/blog/stray-cat-adoption-guide">유기묘 입양 완전 가이드</a>
 </div>`,
     authorName: "펫지기 에디터",
     authorCredential: "반려동물 생활 정보 큐레이터",
@@ -148,8 +148,8 @@ const BLOG_POSTS: NewContent[] = [
 
 <div style="margin:2rem 0;padding:1rem 1.25rem;background:var(--brand-accent-soft,#e6ecd9);border-radius:12px;">
 <strong>📚 관련 글</strong><br>
-<a href="/blog/dog-basic-training-guide">강아지 기본 훈련 가이드</a><br>
-<a href="/blog/dog-socialization-training">강아지 사회화 훈련 황금기 — 생후 3~14주 완벽 활용법</a><br>
+<a href="/blog/dog-basic-training">강아지 기본 훈련 가이드</a><br>
+<a href="/blog/dog-socialization-guide">강아지 사회화 훈련 황금기 — 생후 3~14주 완벽 활용법</a><br>
 <a href="/blog/dog-adoption-impulse-check-5-questions">강아지 입양 전 꼭 물어봐야 할 현실 질문 5가지</a>
 </div>`,
     authorName: "펫지기 에디터",
@@ -372,8 +372,8 @@ const BLOG_POSTS: NewContent[] = [
 <div style="margin:2rem 0;padding:1rem 1.25rem;background:var(--brand-accent-soft,#e6ecd9);border-radius:12px;">
 <strong>📚 관련 글</strong><br>
 <a href="/blog/dog-food-storage-guide">강아지 사료 올바른 보관법 — 산화·곰팡이 막는 실전 방법</a><br>
-<a href="/blog/dog-allergy-elimination-diet-test">강아지 알레르기 사료 찾는 법 — 식이 제거 테스트 8주 완전 가이드</a><br>
-<a href="/blog/dog-daily-calorie-guide">강아지 하루 칼로리 계산법 — 비만 예방의 첫걸음</a>
+<a href="/blog/dog-food-allergy-elimination-diet-test">강아지 알레르기 사료 찾는 법 — 식이 제거 테스트 8주 완전 가이드</a><br>
+<a href="/blog/dog-calorie-calculation">강아지 하루 칼로리 계산법 — 비만 예방의 첫걸음</a>
 </div>`,
     authorName: "펫지기 에디터",
     authorCredential: "반려동물 영양 정보 큐레이터",
@@ -450,9 +450,9 @@ const BLOG_POSTS: NewContent[] = [
 
 <div style="margin:2rem 0;padding:1rem 1.25rem;background:var(--brand-accent-soft,#e6ecd9);border-radius:12px;">
 <strong>📚 관련 글</strong><br>
-<a href="/blog/dog-water-intake-guide">강아지 물 얼마나 마셔야 할까 — 탈수 신호와 수분 관리</a><br>
+<a href="/blog/dog-hydration-guide">강아지 물 얼마나 마셔야 할까 — 탈수 신호와 수분 관리</a><br>
 <a href="/blog/dog-food-transition-method">강아지 사료 교체 방법 — 소화 문제 없이 새 사료로 바꾸는 7~10일 가이드</a><br>
-<a href="/blog/dog-daily-calorie-guide">강아지 하루 칼로리 계산법 — 비만 예방의 첫걸음</a>
+<a href="/blog/dog-calorie-calculation">강아지 하루 칼로리 계산법 — 비만 예방의 첫걸음</a>
 </div>`,
     authorName: "펫지기 에디터",
     authorCredential: "반려동물 영양 정보 큐레이터",
@@ -528,7 +528,7 @@ const BLOG_POSTS: NewContent[] = [
 
 <div style="margin:2rem 0;padding:1rem 1.25rem;background:var(--brand-accent-soft,#e6ecd9);border-radius:12px;">
 <strong>📚 관련 글</strong><br>
-<a href="/blog/cat-toxic-foods-list">고양이 먹으면 안 되는 음식 완전 목록 — 독성 원인까지</a><br>
+<a href="/blog/cat-toxic-foods">고양이 먹으면 안 되는 음식 완전 목록 — 독성 원인까지</a><br>
 <a href="/blog/cat-obesity-diet-management-guide">고양이 비만 관리 가이드 — 체중 측정부터 다이어트 사료 전환까지</a><br>
 <a href="/blog/cat-water-intake-guide">고양이 수분 섭취 늘리는 법</a>
 </div>`,

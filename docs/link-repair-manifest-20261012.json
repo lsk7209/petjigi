@@ -1,0 +1,2559 @@
+{
+  "sourceAudit": ".seo-cache/live-audit-20261012/summary.json",
+  "publicEvidence": ".seo-cache/live-audit-20261012/crawl.json",
+  "badTargetCount": 46,
+  "repairedAnchorCount": 107,
+  "changedPublicSeedRowCount": 78,
+  "mappings": [
+    {
+      "from": "/blog/animal-protection-law-2024",
+      "to": "/blog/animal-protection-law-guide",
+      "reason": "The source anchor wording matches the published title/topic of 2024 동물보호법 핵심 정리 | 등록·학대 처벌·외출 규정 | 펫지기; crawl returned HTTP 200.",
+      "occurrences": 3,
+      "destinations": [
+        "/blog/animal-protection-law-guide"
+      ],
+      "exceptions": []
+    },
+    {
+      "from": "/blog/child-pet-death-explanation",
+      "to": "/blog/petloss-children-explanation-guide",
+      "reason": "The source anchor wording matches the published title/topic of 아이에게 반려동물 죽음 설명하기 — 나이별 가이드 | 펫지기; crawl returned HTTP 200.",
+      "occurrences": 2,
+      "destinations": [
+        "/blog/petloss-children-explanation-guide"
+      ],
+      "exceptions": []
+    },
+    {
+      "from": "/blog/dog-adoption-checklist",
+      "to": "/blog/dog-first-adoption-kit",
+      "reason": "The source anchor wording matches the published title/topic of 강아지 첫 입양 준비물 체크리스트 | 첫 날 필수 용품 | 펫지기; crawl returned HTTP 200.",
+      "occurrences": 7,
+      "destinations": [
+        "/blog/dog-first-adoption-kit",
+        "/guide/dog-adoption-checklist"
+      ],
+      "exceptions": [
+        {
+          "linkText": "강아지 입양 체크리스트",
+          "to": "/guide/dog-adoption-checklist",
+          "action": "replace",
+          "reason": "The anchor specifies a narrower or broader topic matched by this HTTP 200 published page."
+        }
+      ]
+    },
+    {
+      "from": "/blog/dog-daily-calorie-guide",
+      "to": "/blog/dog-calorie-calculation",
+      "reason": "The source anchor wording matches the published title/topic of 강아지 하루 칼로리 계산 방법 | 체중별 급여량·RER·MER | 펫지기; crawl returned HTTP 200.",
+      "occurrences": 4,
+      "destinations": [
+        "/blog/dog-calorie-calculation"
+      ],
+      "exceptions": []
+    },
+    {
+      "from": "/blog/dog-first-adoption-checklist",
+      "to": "/blog/dog-first-adoption-kit",
+      "reason": "The source anchor wording matches the published title/topic of 강아지 첫 입양 준비물 체크리스트 | 첫 날 필수 용품 | 펫지기; crawl returned HTTP 200.",
+      "occurrences": 2,
+      "destinations": [
+        "/blog/dog-first-adoption-kit"
+      ],
+      "exceptions": []
+    },
+    {
+      "from": "/blog/dog-skin-health-guide",
+      "to": "/blog/dog-skin-care-guide",
+      "reason": "The source anchor wording matches the published title/topic of 강아지 피부 건강 관리 | 빗질·목욕·환경 관리 완전 가이드 | 펫지기; crawl returned HTTP 200.",
+      "occurrences": 2,
+      "destinations": [
+        "/blog/dog-skin-care-guide"
+      ],
+      "exceptions": []
+    },
+    {
+      "from": "/blog/dog-water-intake-guide",
+      "to": "/blog/dog-hydration-guide",
+      "reason": "The source anchor wording matches the published title/topic of 강아지 하루 물 섭취량 기준 | 탈수 증상·음수 늘리는 법 | 펫지기; crawl returned HTTP 200.",
+      "occurrences": 2,
+      "destinations": [
+        "/blog/dog-hydration-guide"
+      ],
+      "exceptions": []
+    },
+    {
+      "from": "/blog/pet-cremation-burial-compare",
+      "to": "/blog/pet-cremation-vs-burial",
+      "reason": "The source anchor wording matches the published title/topic of 반려동물 화장 vs 장묘 비교 | 비용·절차·법규 | 펫지기; crawl returned HTTP 200.",
+      "occurrences": 2,
+      "destinations": [
+        "/blog/pet-cremation-vs-burial"
+      ],
+      "exceptions": []
+    },
+    {
+      "from": "/blog/pet-memorial-15-ways",
+      "to": "/blog/pet-memorial-ideas",
+      "reason": "The source anchor wording matches the published title/topic of 반려동물 추모 아이디어 15가지 | 추모 물품·의식·온라인 추모 | 펫지기; crawl returned HTTP 200.",
+      "occurrences": 2,
+      "destinations": [
+        "/blog/pet-memorial-ideas"
+      ],
+      "exceptions": []
+    },
+    {
+      "from": "/blog/petloss-recovery-guide",
+      "to": "/blog/pet-grief-recovery-guide",
+      "reason": "The source anchor wording matches the published title/topic of 펫로스 증후군 극복 가이드 | 슬픔 단계·회복 방법 | 펫지기; crawl returned HTTP 200.",
+      "occurrences": 6,
+      "destinations": [
+        "/blog/pet-grief-recovery-guide"
+      ],
+      "exceptions": []
+    },
+    {
+      "from": "/blog/shelter-dog-adoption-guide",
+      "to": "/blog/stray-dog-adoption-guide",
+      "reason": "The source anchor wording matches the published title/topic of 유기견 입양 과정 완전 가이드 | 보호소 절차·비용·적응법 | 펫지기; crawl returned HTTP 200.",
+      "occurrences": 3,
+      "destinations": [
+        "/blog/stray-dog-adoption-guide"
+      ],
+      "exceptions": []
+    },
+    {
+      "from": "/guide/dog-cat-introduction",
+      "to": "/blog/dog-cat-introduction",
+      "reason": "The source anchor wording matches the published title/topic of 강아지 고양이 합사 방법 | 단계별 소개·훈련·갈등 해결 | 펫지기; crawl returned HTTP 200.",
+      "occurrences": 5,
+      "destinations": [
+        "/blog/dog-cat-introduction",
+        "/guide/multi-pet-household-guide"
+      ],
+      "exceptions": [
+        {
+          "linkText": "합사 가이드",
+          "to": "/guide/multi-pet-household-guide",
+          "action": "replace",
+          "reason": "The anchor specifies a narrower or broader topic matched by this HTTP 200 published page."
+        },
+        {
+          "linkText": "반려동물 합사 가이드",
+          "to": "/guide/multi-pet-household-guide",
+          "action": "replace",
+          "reason": "The anchor specifies a narrower or broader topic matched by this HTTP 200 published page."
+        }
+      ]
+    },
+    {
+      "from": "/guide/dog-food-by-age",
+      "to": "/blog/dog-food-by-age",
+      "reason": "The source anchor wording matches the published title/topic of 강아지 나이별 사료 선택 가이드 | 자견·성견·노령견 영양 차이 | 펫지기; crawl returned HTTP 200.",
+      "occurrences": 10,
+      "destinations": [
+        "/blog/dog-food-by-age",
+        null
+      ],
+      "exceptions": [
+        {
+          "linkText": "연령별 강아지 사료 선택 가이드",
+          "to": null,
+          "action": "unlink",
+          "reason": "The surrounding sentence promises allergy-specific food selection; the published age-based food page does not cover that claim."
+        },
+        {
+          "linkText": "강아지 연령별 사료 가이드",
+          "to": null,
+          "action": "unlink",
+          "reason": "The surrounding sentence promises dog hydration guidance; the published age-based food page does not cover that claim."
+        },
+        {
+          "linkText": "연령별 강아지 사료 가이드",
+          "to": null,
+          "action": "unlink",
+          "reason": "The surrounding sentence promises senior dog omega-3 dosage; the published age-based food page does not cover that claim."
+        },
+        {
+          "linkText": "강아지 연령별 사료 선택 가이드",
+          "to": null,
+          "action": "unlink",
+          "reason": "The surrounding sentence promises age-specific gut health diets; the published age-based food page does not cover that claim."
+        },
+        {
+          "linkText": "강아지 연령별 사료 가이드",
+          "to": null,
+          "action": "unlink",
+          "reason": "The surrounding sentence promises puppy dental-stage chew advice; the published age-based food page does not cover that claim."
+        },
+        {
+          "linkText": "강아지 시니어 사료 가이드",
+          "to": null,
+          "action": "unlink",
+          "reason": "The surrounding sentence promises senior cat food transition methods; the published senior dog nutrition page is a different species and topic."
+        }
+      ]
+    },
+    {
+      "from": "/guide/dog-health-checkup",
+      "to": "/blog/dog-health-checkup",
+      "reason": "The source anchor wording matches the published title/topic of 강아지 건강검진 주기·항목 완벽 정리 | 연령별 가이드 | 펫지기; crawl returned HTTP 200.",
+      "occurrences": 8,
+      "destinations": [
+        "/blog/dog-health-checkup",
+        "/guide/pet-health-checkup-guide",
+        null
+      ],
+      "exceptions": [
+        {
+          "linkText": "반려동물 정기 건강검진 가이드",
+          "to": null,
+          "action": "unlink",
+          "reason": "The surrounding sentence promises seasonal-care examination guidance; the published general pet checkup page does not cover that topic."
+        },
+        {
+          "linkText": "반려동물 정기 건강검진 가이드",
+          "to": "/guide/pet-health-checkup-guide",
+          "action": "replace",
+          "reason": "The anchor specifies a narrower or broader topic matched by this HTTP 200 published page."
+        },
+        {
+          "linkText": "반려동물 정기 건강검진 가이드",
+          "to": "/guide/pet-health-checkup-guide",
+          "action": "replace",
+          "reason": "The anchor specifies a narrower or broader topic matched by this HTTP 200 published page."
+        },
+        {
+          "linkText": "반려동물 정기 건강검진 가이드",
+          "to": "/guide/pet-health-checkup-guide",
+          "action": "replace",
+          "reason": "The anchor specifies a narrower or broader topic matched by this HTTP 200 published page."
+        },
+        {
+          "linkText": "강아지 정기 건강검진 가이드",
+          "to": null,
+          "action": "unlink",
+          "reason": "The surrounding sentence promises heartworm-treatment follow-up guidance; the published dog checkup page does not cover that topic."
+        }
+      ]
+    },
+    {
+      "from": "/guide/dog-nosework-guide",
+      "to": "/blog/dog-nosework-guide",
+      "reason": "The source anchor wording matches the published title/topic of 강아지 노즈워크 입문 가이드 | 훈련 단계·준비물·경기 참가 | 펫지기; crawl returned HTTP 200.",
+      "occurrences": 2,
+      "destinations": [
+        "/blog/dog-nosework-guide"
+      ],
+      "exceptions": []
+    },
+    {
+      "from": "/guide/dog-supplements-guide",
+      "to": "/blog/dog-supplements-guide",
+      "reason": "The source anchor wording matches the published title/topic of 강아지 영양제 종류·효과·주의사항 | 오메가3·관절·유산균 | 펫지기; crawl returned HTTP 200.",
+      "occurrences": 2,
+      "destinations": [
+        "/blog/dog-supplements-guide",
+        null
+      ],
+      "exceptions": [
+        {
+          "linkText": "강아지 영양제 선택 가이드",
+          "to": null,
+          "action": "unlink",
+          "reason": "The surrounding sentence promises oral health supplement advice; the published general supplement page does not cover that claim."
+        }
+      ]
+    },
+    {
+      "from": "/guide/multi-cat-introduction-guide",
+      "to": "/blog/multi-cat-introduction-guide",
+      "reason": "The source anchor wording matches the published title/topic of 고양이 합사 방법 완벽 가이드 | 단계별 소개법·갈등 해결 | 펫지기; crawl returned HTTP 200.",
+      "occurrences": 3,
+      "destinations": [
+        "/blog/multi-cat-introduction-guide"
+      ],
+      "exceptions": []
+    },
+    {
+      "from": "/guide/pet-insurance-guide",
+      "to": "/blog/pet-insurance-guide",
+      "reason": "The source anchor wording matches the published title/topic of 펫보험 가입 전 체크리스트 5가지 | 보장 범위·면책·자기부담금 | 펫지기; crawl returned HTTP 200.",
+      "occurrences": 6,
+      "destinations": [
+        "/blog/pet-insurance-guide"
+      ],
+      "exceptions": []
+    },
+    {
+      "from": "/guide/pet-travel-guide",
+      "to": "/guide/pet-travel-guide-korea",
+      "reason": "The source anchor wording matches the published title/topic of 반려동물 여행 가이드 | 이동·숙박·준비물 총정리 | 펫지기; crawl returned HTTP 200.",
+      "occurrences": 4,
+      "destinations": [
+        "/guide/pet-travel-guide-korea"
+      ],
+      "exceptions": []
+    },
+    {
+      "from": "/guide/vet-cost-saving-guide",
+      "to": "/blog/vet-bill-reduce-strategy",
+      "reason": "The source anchor wording matches the published title/topic of 동물병원 진료비 절감 방법 완전 가이드 | 펫지기; crawl returned HTTP 200.",
+      "occurrences": 5,
+      "destinations": [
+        "/blog/vet-bill-reduce-strategy"
+      ],
+      "exceptions": []
+    },
+    {
+      "from": "/blog/after-pet-new-family-timing",
+      "to": "/blog/when-to-get-new-pet-after-loss",
+      "reason": "The source anchor wording matches the published title/topic of 반려동물 사별 후 새 입양 시기 | 준비됐는지 확인하는 법 | 펫지기; crawl returned HTTP 200.",
+      "occurrences": 1,
+      "destinations": [
+        "/blog/when-to-get-new-pet-after-loss"
+      ],
+      "exceptions": []
+    },
+    {
+      "from": "/blog/animal-registration-complete-guide",
+      "to": "/blog/pet-registration-guide",
+      "reason": "The source anchor wording matches the published title/topic of 동물등록 방법 완전 가이드 | 내장칩·외장칩·비용·과태료 | 펫지기; crawl returned HTTP 200.",
+      "occurrences": 1,
+      "destinations": [
+        "/blog/pet-registration-guide"
+      ],
+      "exceptions": []
+    },
+    {
+      "from": "/blog/cat-chronic-kidney-disease-early",
+      "to": "/blog/cat-kidney-disease-early-signs",
+      "reason": "The source anchor wording matches the published title/topic of 고양이 신장 질환(CKD) 초기 신호·진단·관리 가이드 | 펫지기; crawl returned HTTP 200.",
+      "occurrences": 1,
+      "destinations": [
+        "/blog/cat-kidney-disease-early-signs"
+      ],
+      "exceptions": []
+    },
+    {
+      "from": "/blog/cat-dog-cohabitation-guide",
+      "to": "/blog/dog-cat-introduction",
+      "reason": "The source anchor wording matches the published title/topic of 강아지 고양이 합사 방법 | 단계별 소개·훈련·갈등 해결 | 펫지기; crawl returned HTTP 200.",
+      "occurrences": 1,
+      "destinations": [
+        "/blog/dog-cat-introduction"
+      ],
+      "exceptions": []
+    },
+    {
+      "from": "/blog/cat-first-adoption-checklist",
+      "to": "/blog/cat-first-adoption-kit",
+      "reason": "The source anchor wording matches the published title/topic of 고양이 처음 입양 준비물 체크리스트 — 필수 vs 선택 구분 | 펫지기; crawl returned HTTP 200.",
+      "occurrences": 1,
+      "destinations": [
+        "/blog/cat-first-adoption-kit"
+      ],
+      "exceptions": []
+    },
+    {
+      "from": "/blog/cat-hyperthyroidism-weight-loss",
+      "to": "/blog/cat-hyperthyroidism-guide",
+      "reason": "The source anchor wording matches the published title/topic of 고양이 갑상선 기능항진증 증상·치료 완전 가이드 | 펫지기; crawl returned HTTP 200.",
+      "occurrences": 1,
+      "destinations": [
+        "/blog/cat-hyperthyroidism-guide"
+      ],
+      "exceptions": []
+    },
+    {
+      "from": "/blog/cat-neuter-surgery-guide",
+      "to": "/blog/cat-neutering-guide",
+      "reason": "The source anchor wording matches the published title/topic of 고양이 중성화 수술 시기·비용·회복 완전 가이드 | 펫지기; crawl returned HTTP 200.",
+      "occurrences": 1,
+      "destinations": [
+        "/blog/cat-neutering-guide"
+      ],
+      "exceptions": []
+    },
+    {
+      "from": "/blog/cat-toxic-foods-list",
+      "to": "/blog/cat-toxic-foods",
+      "reason": "The source anchor wording matches the published title/topic of 고양이 먹으면 안 되는 음식 목록 | 양파·포도·초콜릿 독성 | 펫지기; crawl returned HTTP 200.",
+      "occurrences": 1,
+      "destinations": [
+        "/blog/cat-toxic-foods"
+      ],
+      "exceptions": []
+    },
+    {
+      "from": "/blog/cat-vaccination-schedule",
+      "to": "/guide/cat-vaccination-schedule",
+      "reason": "The source anchor wording matches the published title/topic of 고양이 예방접종 스케줄 | 시기·종류·실내외 차이 | 펫지기; crawl returned HTTP 200.",
+      "occurrences": 2,
+      "destinations": [
+        "/guide/cat-vaccination-schedule"
+      ],
+      "exceptions": []
+    },
+    {
+      "from": "/blog/cat-water-intake",
+      "to": "/blog/cat-hydration-tips",
+      "reason": "The source anchor wording matches the published title/topic of 고양이 수분 섭취 늘리는 법 | 물 안 마시는 고양이 해결책 | 펫지기; crawl returned HTTP 200.",
+      "occurrences": 1,
+      "destinations": [
+        "/blog/cat-hydration-tips"
+      ],
+      "exceptions": []
+    },
+    {
+      "from": "/blog/dog-allergy-elimination-diet-test",
+      "to": "/blog/dog-food-allergy-elimination-diet-test",
+      "reason": "The source anchor wording matches the published title/topic of 강아지 식품 알레르기 식이 제거 테스트 방법 완전 가이드 | 펫지기; crawl returned HTTP 200.",
+      "occurrences": 1,
+      "destinations": [
+        "/blog/dog-food-allergy-elimination-diet-test"
+      ],
+      "exceptions": []
+    },
+    {
+      "from": "/blog/dog-basic-training-guide",
+      "to": "/blog/dog-basic-training",
+      "reason": "The source anchor wording matches the published title/topic of 강아지 앉아·기다려·이리와 훈련 방법 — 초보 보호자 완벽 가이드 | 펫지기; crawl returned HTTP 200.",
+      "occurrences": 1,
+      "destinations": [
+        "/blog/dog-basic-training"
+      ],
+      "exceptions": []
+    },
+    {
+      "from": "/blog/dog-grain-free-complete-guide",
+      "to": "/blog/dog-grain-free-diet-guide",
+      "reason": "The source anchor wording matches the published title/topic of 강아지 그레인프리 사료 완전 가이드 | 효과·위험·선택 기준 | 펫지기; crawl returned HTTP 200.",
+      "occurrences": 1,
+      "destinations": [
+        "/blog/dog-grain-free-diet-guide"
+      ],
+      "exceptions": []
+    },
+    {
+      "from": "/blog/dog-grooming-basics",
+      "to": "/guide/dog-grooming-guide",
+      "reason": "The source anchor wording matches the published title/topic of 강아지 목욕 주기·방법·홈그루밍 | 품종별 미용 | 펫지기; crawl returned HTTP 200.",
+      "occurrences": 1,
+      "destinations": [
+        "/guide/dog-grooming-guide"
+      ],
+      "exceptions": []
+    },
+    {
+      "from": "/blog/dog-hot-pavement-paw-burn",
+      "to": "/blog/dog-summer-paw-protection",
+      "reason": "The source anchor wording matches the published title/topic of 강아지 여름 발바닥 보호 가이드 | 아스팔트 화상 예방 | 펫지기; crawl returned HTTP 200.",
+      "occurrences": 1,
+      "destinations": [
+        "/blog/dog-summer-paw-protection"
+      ],
+      "exceptions": []
+    },
+    {
+      "from": "/blog/dog-neuter-surgery-guide",
+      "to": "/blog/dog-neutering-guide",
+      "reason": "The source anchor wording matches the published title/topic of 강아지 중성화 수술 완전 가이드 | 시기·비용·회복·장단점 | 펫지기; crawl returned HTTP 200.",
+      "occurrences": 1,
+      "destinations": [
+        "/blog/dog-neutering-guide"
+      ],
+      "exceptions": []
+    },
+    {
+      "from": "/blog/dog-socialization-training",
+      "to": "/blog/dog-socialization-guide",
+      "reason": "The source anchor wording matches the published title/topic of 강아지 사회화 훈련 황금기 완벽 가이드 | 생후 3~14주 체크리스트 | 펫지기; crawl returned HTTP 200.",
+      "occurrences": 1,
+      "destinations": [
+        "/blog/dog-socialization-guide"
+      ],
+      "exceptions": []
+    },
+    {
+      "from": "/blog/dog-toxic-substance-emergency",
+      "to": "/blog/dog-poisoning-first-aid",
+      "reason": "The source anchor wording matches the published title/topic of 강아지 중독 응급 처치 | 독성 물질 섭취 시 대처법 | 펫지기; crawl returned HTTP 200.",
+      "occurrences": 1,
+      "destinations": [
+        "/blog/dog-poisoning-first-aid"
+      ],
+      "exceptions": []
+    },
+    {
+      "from": "/blog/dog-vomiting-home-vs-vet",
+      "to": "/blog/dog-vomiting-when-to-vet",
+      "reason": "The source anchor wording matches the published title/topic of 강아지 구토 대처법 | 병원 가야 할 때 vs 집에서 지켜볼 때 | 펫지기; crawl returned HTTP 200.",
+      "occurrences": 1,
+      "destinations": [
+        "/blog/dog-vomiting-when-to-vet"
+      ],
+      "exceptions": []
+    },
+    {
+      "from": "/blog/pet-car-sickness-guide",
+      "to": "/blog/dog-car-sickness-guide",
+      "reason": "The source anchor wording matches the published title/topic of 강아지 차 멀미 완전 가이드 — 원인·예방·해결법 | 펫지기; crawl returned HTTP 200.",
+      "occurrences": 1,
+      "destinations": [
+        "/blog/dog-car-sickness-guide"
+      ],
+      "exceptions": []
+    },
+    {
+      "from": "/blog/pet-dog-bite-liability",
+      "to": "/blog/pet-bite-liability-guide",
+      "reason": "The source anchor wording matches the published title/topic of 반려동물 교상 법적 책임 | 물림 사고 배상·처벌·보험 | 펫지기; crawl returned HTTP 200.",
+      "occurrences": 1,
+      "destinations": [
+        "/blog/pet-bite-liability-guide"
+      ],
+      "exceptions": []
+    },
+    {
+      "from": "/blog/pet-last-signs-guide",
+      "to": "/blog/pet-end-of-life-signs",
+      "reason": "The source anchor wording matches the published title/topic of 반려동물 마지막 징후 | 신체·행동 변화·임종 준비 | 펫지기; crawl returned HTTP 200.",
+      "occurrences": 1,
+      "destinations": [
+        "/blog/pet-end-of-life-signs"
+      ],
+      "exceptions": []
+    },
+    {
+      "from": "/blog/pet-will-guardian-guide",
+      "to": "/blog/pet-will-guide",
+      "reason": "The source anchor wording matches the published title/topic of 반려동물 유언장 작성법 | 보호자 사망 후 반려동물 보호 | 펫지기; crawl returned HTTP 200.",
+      "occurrences": 1,
+      "destinations": [
+        "/blog/pet-will-guide"
+      ],
+      "exceptions": []
+    },
+    {
+      "from": "/blog/petloss-support-community-guide",
+      "to": "/blog/petloss-grief-support-resources",
+      "reason": "The source anchor wording matches the published title/topic of 펫로스 슬픔 지원 — 도움 받을 수 있는 곳 안내 | 펫지기; crawl returned HTTP 200.",
+      "occurrences": 1,
+      "destinations": [
+        "/blog/petloss-grief-support-resources"
+      ],
+      "exceptions": []
+    },
+    {
+      "from": "/blog/senior-dog-health-guide",
+      "to": "/blog/senior-dog-health-management",
+      "reason": "The source anchor wording matches the published title/topic of 노령견 건강 관리 가이드 | 7세+ 검진·영양·관절·인지 기능 | 펫지기; crawl returned HTTP 200.",
+      "occurrences": 1,
+      "destinations": [
+        "/blog/senior-dog-health-management"
+      ],
+      "exceptions": []
+    },
+    {
+      "from": "/blog/shelter-cat-adoption-guide",
+      "to": "/blog/stray-cat-adoption-guide",
+      "reason": "The source anchor wording matches the published title/topic of 유기묘 입양 완전 가이드 | 보호소 절차·건강 확인·적응법 | 펫지기; crawl returned HTTP 200.",
+      "occurrences": 1,
+      "destinations": [
+        "/blog/stray-cat-adoption-guide"
+      ],
+      "exceptions": []
+    }
+  ],
+  "entries": [
+    {
+      "file": "db/seeds/blog-posts-10.ts",
+      "id": "blog-dog-nail-trimming-guide",
+      "slug": "dog-nail-trimming-guide",
+      "type": "blog",
+      "changedFields": [
+        "body"
+      ],
+      "bodyBeforeSha256": "9d0460e0a3fdb08ce46f1c9fdde7012defc0b3d10bf03d5b164f54b1bc734c63",
+      "bodyAfterSha256": "f551869203e56909e99c5deb49181eae26f66e3d52d4352ac386e1c802c1b35f",
+      "bodyTextSha256": "8e6d1f5e22db32b9cc034bce3782a133e99d5df5460fb7bbf48d8b7099b40cae",
+      "replacements": [
+        {
+          "from": "/blog/dog-grooming-basics",
+          "to": "/guide/dog-grooming-guide",
+          "linkText": "강아지 홈그루밍 기본 가이드",
+          "publishedTitle": "강아지 목욕 주기·방법·홈그루밍 | 품종별 미용 | 펫지기"
+        }
+      ],
+      "productionApplicable": true,
+      "publiclyVisibleAtRepair": true
+    },
+    {
+      "file": "db/seeds/blog-posts-10.ts",
+      "id": "blog-cat-shedding-management",
+      "slug": "cat-shedding-management",
+      "type": "blog",
+      "changedFields": [
+        "body"
+      ],
+      "bodyBeforeSha256": "89888aeb7adabe6e663591ad5091dd0b60d672834bc323cc25aee5b049c8c7e2",
+      "bodyAfterSha256": "6cb14d29b5cfde526635d23216be0e6c6e37d06f6885ec46ceaeb51713776a8a",
+      "bodyTextSha256": "41e452c4b2a95dd1f7a4c8f4229a5a2042833c2bd167c7d5a04445981a9d0ff3",
+      "replacements": [
+        {
+          "from": "/blog/cat-water-intake",
+          "to": "/blog/cat-hydration-tips",
+          "linkText": "고양이 물 섭취 늘리는 실전 방법",
+          "publishedTitle": "고양이 수분 섭취 늘리는 법 | 물 안 마시는 고양이 해결책 | 펫지기"
+        }
+      ],
+      "productionApplicable": true,
+      "publiclyVisibleAtRepair": true
+    },
+    {
+      "file": "db/seeds/blog-posts-101.ts",
+      "id": "blog-627",
+      "slug": "cat-vaccine-sarcoma-guide",
+      "type": "blog",
+      "changedFields": [
+        "body"
+      ],
+      "bodyBeforeSha256": "0882a27d8fe797ee5fea9f9b8c2f36fdf833bb8b3be638acb02b619e737e0523",
+      "bodyAfterSha256": "1c701e9d0fa9add1193eb0e52d0517606c9fbe3f8290f169e8518bf89d935f97",
+      "bodyTextSha256": "d25e7a574d23e6e1b835f24182df2d3b91fe28a90206e4ebf492c4d46b9e2c9f",
+      "replacements": [
+        {
+          "from": "/blog/cat-vaccination-schedule",
+          "to": "/guide/cat-vaccination-schedule",
+          "linkText": "고양이 예방접종 스케줄",
+          "publishedTitle": "고양이 예방접종 스케줄 | 시기·종류·실내외 차이 | 펫지기"
+        }
+      ],
+      "productionApplicable": true,
+      "publiclyVisibleAtRepair": false,
+      "scheduledPublishedAt": "2026-11-24T11:00:00.000Z"
+    },
+    {
+      "file": "db/seeds/blog-posts-13.ts",
+      "id": "blog-when-to-get-new-pet-after-loss",
+      "slug": "when-to-get-new-pet-after-loss",
+      "type": "blog",
+      "changedFields": [
+        "body",
+        "disclaimer"
+      ],
+      "bodyBeforeSha256": "27438c1a32365b31fb75a6bbe8b9824bcb241624061cf390245fb851de984968",
+      "bodyAfterSha256": "f2775656f270ff0465ce30a177b87bdeab2d292a6901cd8e9dd3b4f36d2ba281",
+      "bodyTextSha256": "6c88c3b503bc9466dd78a145e87d3c3b6c7ab0052a42619ee90fae13ea50f01f",
+      "replacements": [
+        {
+          "from": "/blog/dog-adoption-checklist",
+          "to": "/blog/dog-first-adoption-kit",
+          "linkText": "강아지 처음 입양 준비물 체크리스트",
+          "publishedTitle": "강아지 첫 입양 준비물 체크리스트 | 첫 날 필수 용품 | 펫지기"
+        }
+      ],
+      "disclaimerSourceBefore": "CAT6_DISCLAIMER",
+      "disclaimerValueBefore": "이 글은 반려동물을 떠나보내는 과정에서 참고할 수 있는 일반적인 정보를 제공합니다. 의학적 결정(안락사·호스피스·통증 관리 등)은 반드시 담당 수의사와 충분히 상담하세요. 법적·재정적 사항은 전문가의 조언을 구하시기 바랍니다.",
+      "disclaimerValueAfter": "이 글은 반려동물을 떠나보내는 과정에서 참고할 수 있는 일반적인 정보를 제공합니다. 의학적 결정(안락사·호스피스·통증 관리 등)은 반드시 담당 수의사와 충분히 상담하세요. 법적·재정적 사항은 전문가의 조언을 구하시기 바랍니다.",
+      "disclaimerValueSha256": "00f48f3204731e8abf7e73109aa95103ad144be69dde7618542d30ab0bcf7b72",
+      "productionApplicable": true,
+      "publiclyVisibleAtRepair": true
+    },
+    {
+      "file": "db/seeds/blog-posts-16.ts",
+      "id": "blog-151",
+      "slug": "dog-grain-free-diet-guide",
+      "type": "blog",
+      "changedFields": [
+        "body"
+      ],
+      "bodyBeforeSha256": "5ff81203cfa416d02a8c0b00f3def83917db6e070167473b0094913b019ea19f",
+      "bodyAfterSha256": "19c11cfb29ecb892c5fd8b6f95bfa809971002981953551b8dd45e91a5e16646",
+      "bodyTextSha256": "e283237fc9cc49c3166c41f02b5e8260ae2fbe57f334a9f84acd1060a7ac5c5e",
+      "replacements": [
+        {
+          "from": "/guide/dog-food-by-age",
+          "to": null,
+          "linkText": "연령별 강아지 사료 선택 가이드",
+          "publishedTitle": "강아지 나이별 사료 선택 가이드 | 자견·성견·노령견 영양 차이 | 펫지기",
+          "action": "unlink",
+          "reason": "The surrounding sentence promises allergy-specific food selection; the published age-based food page does not cover that claim."
+        }
+      ],
+      "productionApplicable": true,
+      "publiclyVisibleAtRepair": true
+    },
+    {
+      "file": "db/seeds/blog-posts-16.ts",
+      "id": "blog-152",
+      "slug": "cat-hydration-tips",
+      "type": "blog",
+      "changedFields": [
+        "body"
+      ],
+      "bodyBeforeSha256": "906a64327f4047bc6d2b27656efdff0b4cb724a45fc505472d6890d23fba8fcc",
+      "bodyAfterSha256": "a56ed98788eb6ef99b67ae19cb574b8b999d5edf7c13b4c3b3db9237126f4c63",
+      "bodyTextSha256": "d62cdc6fc9620a836a440e0eedc751199098e0da490a409ccab3a3e3c84ea59a",
+      "replacements": [
+        {
+          "from": "/guide/dog-food-by-age",
+          "to": null,
+          "linkText": "강아지 연령별 사료 가이드",
+          "publishedTitle": "강아지 나이별 사료 선택 가이드 | 자견·성견·노령견 영양 차이 | 펫지기",
+          "action": "unlink",
+          "reason": "The surrounding sentence promises dog hydration guidance; the published age-based food page does not cover that claim."
+        }
+      ],
+      "productionApplicable": true,
+      "publiclyVisibleAtRepair": true
+    },
+    {
+      "file": "db/seeds/blog-posts-16.ts",
+      "id": "blog-153",
+      "slug": "dog-joint-health-diet",
+      "type": "blog",
+      "changedFields": [
+        "body"
+      ],
+      "bodyBeforeSha256": "3ea2f5c5905a05e7a68b4d6b5dbeee6436638b4664055bc9a2281729f8225d9c",
+      "bodyAfterSha256": "9f30e4bc31276123f139a482bf678f2a77498f9c0e8925a5fee3e557aee07e26",
+      "bodyTextSha256": "6e81cdb61ca2cb0bad8e5b2bace828d74fa9301c0d7fddf92d905d04bbc989d7",
+      "replacements": [
+        {
+          "from": "/guide/dog-food-by-age",
+          "to": null,
+          "linkText": "연령별 강아지 사료 가이드",
+          "publishedTitle": "강아지 나이별 사료 선택 가이드 | 자견·성견·노령견 영양 차이 | 펫지기",
+          "action": "unlink",
+          "reason": "The surrounding sentence promises senior dog omega-3 dosage; the published age-based food page does not cover that claim."
+        }
+      ],
+      "productionApplicable": true,
+      "publiclyVisibleAtRepair": true
+    },
+    {
+      "file": "db/seeds/blog-posts-16.ts",
+      "id": "blog-154",
+      "slug": "cat-kidney-diet-guide",
+      "type": "blog",
+      "changedFields": [
+        "body"
+      ],
+      "bodyBeforeSha256": "aba5be419c941d42fcb5f046df005b97884df8a1790b7ede2232dfd3f01f406a",
+      "bodyAfterSha256": "e46461ba2dde35a9686bdf3a6dcd446d891beab1535a625659857d8f34d519a9",
+      "bodyTextSha256": "17f0d9901546afd8a0c315d261bea3d84b2f392849e0fe712caf44d408c76802",
+      "replacements": [
+        {
+          "from": "/guide/dog-food-by-age",
+          "to": "/blog/dog-food-by-age",
+          "linkText": "강아지 연령별 사료 가이드",
+          "publishedTitle": "강아지 나이별 사료 선택 가이드 | 자견·성견·노령견 영양 차이 | 펫지기"
+        }
+      ],
+      "productionApplicable": true,
+      "publiclyVisibleAtRepair": true
+    },
+    {
+      "file": "db/seeds/blog-posts-16.ts",
+      "id": "blog-155",
+      "slug": "pet-food-rotation-guide",
+      "type": "blog",
+      "changedFields": [
+        "body"
+      ],
+      "bodyBeforeSha256": "353c16c07e3613c16f68496841c37cfbdda79230c602cde4cf92d59491a5bc7a",
+      "bodyAfterSha256": "592094b2464fe604a375f4fd3f774fb4138c85b8190f33fffcd555a898194992",
+      "bodyTextSha256": "3c01f94f77d73f79f105204320875f2828d7a2f2f1632bad02f3cc045e2a758f",
+      "replacements": [
+        {
+          "from": "/guide/dog-food-by-age",
+          "to": "/blog/dog-food-by-age",
+          "linkText": "강아지 연령별 사료 선택 가이드",
+          "publishedTitle": "강아지 나이별 사료 선택 가이드 | 자견·성견·노령견 영양 차이 | 펫지기"
+        }
+      ],
+      "productionApplicable": true,
+      "publiclyVisibleAtRepair": true
+    },
+    {
+      "file": "db/seeds/blog-posts-16.ts",
+      "id": "blog-156",
+      "slug": "dog-probiotic-guide",
+      "type": "blog",
+      "changedFields": [
+        "body"
+      ],
+      "bodyBeforeSha256": "74967a8168266175f7434434668fdf7331bb4e64ee6b1d65f579bd0f9af92b4f",
+      "bodyAfterSha256": "32564e8b04ab313716c2af3dda132b3a3d4212c713057ad450e40e9b54fd53dd",
+      "bodyTextSha256": "e5212c7c09e45d0c2d26bfb38f827301dce7688755251572d9e6804766496f56",
+      "replacements": [
+        {
+          "from": "/guide/dog-food-by-age",
+          "to": null,
+          "linkText": "강아지 연령별 사료 선택 가이드",
+          "publishedTitle": "강아지 나이별 사료 선택 가이드 | 자견·성견·노령견 영양 차이 | 펫지기",
+          "action": "unlink",
+          "reason": "The surrounding sentence promises age-specific gut health diets; the published age-based food page does not cover that claim."
+        }
+      ],
+      "productionApplicable": true,
+      "publiclyVisibleAtRepair": true
+    },
+    {
+      "file": "db/seeds/blog-posts-16.ts",
+      "id": "blog-157",
+      "slug": "pet-homemade-diet-safety",
+      "type": "blog",
+      "changedFields": [
+        "body"
+      ],
+      "bodyBeforeSha256": "37dfe5e1bba46f32d7200d7b8a1831f34df0b634fb5b409d98446fb9a4df717d",
+      "bodyAfterSha256": "ae4342d8310a863953c1f7459d835207fab9ae637b14c7640c244250622d5a92",
+      "bodyTextSha256": "95ab18bd681f75867c2a0c167fd6dbd78a0c058cbcf87196f25cc0eeea52c1ec",
+      "replacements": [
+        {
+          "from": "/guide/dog-food-by-age",
+          "to": "/blog/dog-food-by-age",
+          "linkText": "강아지 연령별 사료 가이드",
+          "publishedTitle": "강아지 나이별 사료 선택 가이드 | 자견·성견·노령견 영양 차이 | 펫지기"
+        }
+      ],
+      "productionApplicable": true,
+      "publiclyVisibleAtRepair": true
+    },
+    {
+      "file": "db/seeds/blog-posts-16.ts",
+      "id": "blog-158",
+      "slug": "dog-bone-chew-guide",
+      "type": "blog",
+      "changedFields": [
+        "body"
+      ],
+      "bodyBeforeSha256": "10220571864c1213139b52078f4596cc0047a8743977a033f5566535e5c06927",
+      "bodyAfterSha256": "495d96bb676815ab8f8402fbae7217d87a80b6a18062d3492aead320f953df68",
+      "bodyTextSha256": "495d96bb676815ab8f8402fbae7217d87a80b6a18062d3492aead320f953df68",
+      "replacements": [
+        {
+          "from": "/guide/dog-food-by-age",
+          "to": null,
+          "linkText": "강아지 연령별 사료 가이드",
+          "publishedTitle": "강아지 나이별 사료 선택 가이드 | 자견·성견·노령견 영양 차이 | 펫지기",
+          "action": "unlink",
+          "reason": "The surrounding sentence promises puppy dental-stage chew advice; the published age-based food page does not cover that claim."
+        },
+        {
+          "from": "/guide/dog-supplements-guide",
+          "to": null,
+          "linkText": "강아지 영양제 선택 가이드",
+          "publishedTitle": "강아지 영양제 종류·효과·주의사항 | 오메가3·관절·유산균 | 펫지기",
+          "action": "unlink",
+          "reason": "The surrounding sentence promises oral health supplement advice; the published general supplement page does not cover that claim."
+        }
+      ],
+      "productionApplicable": true,
+      "publiclyVisibleAtRepair": true
+    },
+    {
+      "file": "db/seeds/blog-posts-16.ts",
+      "id": "blog-159",
+      "slug": "dog-puppy-nutrition-guide",
+      "type": "blog",
+      "changedFields": [
+        "body"
+      ],
+      "bodyBeforeSha256": "fba60372ebc75ff19c28f242f0e6b1f3540e5739f8f09bcd3338ff6de99fdd61",
+      "bodyAfterSha256": "5ff2d038d5496cfab104c2794eb381be6fb0055cf9860182eeaa5ff308b96a70",
+      "bodyTextSha256": "d24b3733ea3c6cc0df305ffbd0010290a3bfeed6570f76bbb1eeea1265775796",
+      "replacements": [
+        {
+          "from": "/guide/dog-food-by-age",
+          "to": "/blog/dog-food-by-age",
+          "linkText": "강아지 연령별 사료 선택 가이드",
+          "publishedTitle": "강아지 나이별 사료 선택 가이드 | 자견·성견·노령견 영양 차이 | 펫지기"
+        },
+        {
+          "from": "/guide/dog-supplements-guide",
+          "to": "/blog/dog-supplements-guide",
+          "linkText": "강아지 영양제 가이드",
+          "publishedTitle": "강아지 영양제 종류·효과·주의사항 | 오메가3·관절·유산균 | 펫지기"
+        }
+      ],
+      "productionApplicable": true,
+      "publiclyVisibleAtRepair": true
+    },
+    {
+      "file": "db/seeds/blog-posts-16.ts",
+      "id": "blog-160",
+      "slug": "cat-senior-diet-transition",
+      "type": "blog",
+      "changedFields": [
+        "body"
+      ],
+      "bodyBeforeSha256": "c2ef0f8fd1c1b64ce5736167ad99bb47dc3088f47609a6f4217d77efc7b10474",
+      "bodyAfterSha256": "7129d9edb6973ddcd6812ef126b3e60aee86c3b3a614f4431979023bfa01184f",
+      "bodyTextSha256": "5a749984c06621a8ded71da42723f1bf07bc21db4f35cf3bfe0c7a39df57183b",
+      "replacements": [
+        {
+          "from": "/guide/dog-food-by-age",
+          "to": null,
+          "linkText": "강아지 시니어 사료 가이드",
+          "publishedTitle": "노령 강아지 사료 선택·영양 관리 | 7세 이후 식이 | 펫지기",
+          "action": "unlink",
+          "reason": "The surrounding sentence promises senior cat food transition methods; the published senior dog nutrition page is a different species and topic."
+        }
+      ],
+      "productionApplicable": true,
+      "publiclyVisibleAtRepair": true
+    },
+    {
+      "file": "db/seeds/blog-posts-17.ts",
+      "id": "blog-161",
+      "slug": "dog-paw-care-guide",
+      "type": "blog",
+      "changedFields": [
+        "body"
+      ],
+      "bodyBeforeSha256": "b6273b6f6546d0b186040d103a1f04c7df62cde2601456af45ec9bc95cd3337d",
+      "bodyAfterSha256": "0ebb5d721a4d0ce46755724362677fde7fd6eb9a2b733f1a76872842be158cf2",
+      "bodyTextSha256": "ecc44fd5fa57da2f45458394603f85ed2635c4d82364f7329e9e938b49199dfa",
+      "replacements": [
+        {
+          "from": "/guide/dog-health-checkup",
+          "to": "/blog/dog-health-checkup",
+          "linkText": "강아지 정기 건강검진 가이드",
+          "publishedTitle": "강아지 건강검진 주기·항목 완벽 정리 | 연령별 가이드 | 펫지기"
+        }
+      ],
+      "productionApplicable": false,
+      "productionReason": "The published /blog/dog-paw-care-guide row has id blog-324 while this seed row is blog-161; live public body has none of the 46 audited bad anchors."
+    },
+    {
+      "file": "db/seeds/blog-posts-17.ts",
+      "id": "blog-162",
+      "slug": "cat-summer-safety-guide",
+      "type": "blog",
+      "changedFields": [
+        "body"
+      ],
+      "bodyBeforeSha256": "0e69fc30573ffb5cad18bf9bfa74fd109da860189015f23fe1bdf324e4723f6c",
+      "bodyAfterSha256": "2eb184c6d09deb87c7075ce0282a3a567ccd9de3c74152de1b67005416b48db1",
+      "bodyTextSha256": "1a8e17dc4565d6c4b4ff94e99b143568d7ae5be1ffdd85c366fb7832cf38b494",
+      "replacements": [
+        {
+          "from": "/guide/dog-health-checkup",
+          "to": null,
+          "linkText": "반려동물 정기 건강검진 가이드",
+          "publishedTitle": "반려동물 건강검진 준비 | 관찰 기록·검사 상담 | 펫지기",
+          "action": "unlink",
+          "reason": "The surrounding sentence promises seasonal-care examination guidance; the published general pet checkup page does not cover that topic."
+        }
+      ],
+      "productionApplicable": true,
+      "publiclyVisibleAtRepair": true
+    },
+    {
+      "file": "db/seeds/blog-posts-17.ts",
+      "id": "blog-163",
+      "slug": "dog-eye-care-guide",
+      "type": "blog",
+      "changedFields": [
+        "body"
+      ],
+      "bodyBeforeSha256": "33add1e746316a0f1ce0c012fcaf7163ce4903a5f916ade5b6c77335fa31511d",
+      "bodyAfterSha256": "9d23ab46c8aa1ded94b3a84c71d157fe97b6913c55b1421fdc070608d7e32ac3",
+      "bodyTextSha256": "be7aaec4e58184b458088dfb09e1b1defa255c143759278077ad638b7a79d68a",
+      "replacements": [
+        {
+          "from": "/guide/dog-health-checkup",
+          "to": "/blog/dog-health-checkup",
+          "linkText": "강아지 정기 건강검진 가이드",
+          "publishedTitle": "강아지 건강검진 주기·항목 완벽 정리 | 연령별 가이드 | 펫지기"
+        }
+      ],
+      "productionApplicable": true,
+      "publiclyVisibleAtRepair": true
+    },
+    {
+      "file": "db/seeds/blog-posts-17.ts",
+      "id": "blog-164",
+      "slug": "pet-emergency-kit-guide",
+      "type": "blog",
+      "changedFields": [
+        "body"
+      ],
+      "bodyBeforeSha256": "44585bb6c32c0be8e649ef76966aab4e94c712941a67a3f41713a5d4ca42a322",
+      "bodyAfterSha256": "a420ea87b172b821457ab51905970337f98f0356b3d1309a890bb0d082f0a70a",
+      "bodyTextSha256": "11375acb687c959a8c6bbc2b492780dce32ff4025e585affcd5b7c626b041942",
+      "replacements": [
+        {
+          "from": "/guide/dog-health-checkup",
+          "to": "/guide/pet-health-checkup-guide",
+          "linkText": "반려동물 정기 건강검진 가이드",
+          "publishedTitle": "반려동물 건강검진 준비 | 관찰 기록·검사 상담 | 펫지기"
+        }
+      ],
+      "productionApplicable": true,
+      "publiclyVisibleAtRepair": true
+    },
+    {
+      "file": "db/seeds/blog-posts-17.ts",
+      "id": "blog-165",
+      "slug": "dog-skin-care-guide",
+      "type": "blog",
+      "changedFields": [
+        "body"
+      ],
+      "bodyBeforeSha256": "8a7ed4b819ee3816f6f23f6a33d703929c456a36e69d2257e583c92bdc5ddeff",
+      "bodyAfterSha256": "89b9571d778d2e4283fc2a10e3163f2a8473128d39b204c082cb0069353a751d",
+      "bodyTextSha256": "62230e649297026e8237d2f5234b8436f3634c2c9fa44cd3ef8465157101384a",
+      "replacements": [
+        {
+          "from": "/guide/dog-health-checkup",
+          "to": "/blog/dog-health-checkup",
+          "linkText": "강아지 정기 건강검진 가이드",
+          "publishedTitle": "강아지 건강검진 주기·항목 완벽 정리 | 연령별 가이드 | 펫지기"
+        }
+      ],
+      "productionApplicable": true,
+      "publiclyVisibleAtRepair": true
+    },
+    {
+      "file": "db/seeds/blog-posts-17.ts",
+      "id": "blog-166",
+      "slug": "cat-grooming-basics-guide",
+      "type": "blog",
+      "changedFields": [
+        "body"
+      ],
+      "bodyBeforeSha256": "76d096ac3c9a24768563807e7217d86aff6ba0dd43e983b4fe2b260d5454f96e",
+      "bodyAfterSha256": "322f61c8be538e4c7a537248f02bbcb0964f06de76f18c530634d034a7960dae",
+      "bodyTextSha256": "29f6036ab5a70df160dfb07772bccb97735b1068c990deea82253234b15ceb87",
+      "replacements": [
+        {
+          "from": "/guide/dog-health-checkup",
+          "to": "/guide/pet-health-checkup-guide",
+          "linkText": "반려동물 정기 건강검진 가이드",
+          "publishedTitle": "반려동물 건강검진 준비 | 관찰 기록·검사 상담 | 펫지기"
+        }
+      ],
+      "productionApplicable": true,
+      "publiclyVisibleAtRepair": true
+    },
+    {
+      "file": "db/seeds/blog-posts-17.ts",
+      "id": "blog-169",
+      "slug": "pet-vet-visit-guide",
+      "type": "blog",
+      "changedFields": [
+        "body"
+      ],
+      "bodyBeforeSha256": "39200d2795ac8a12215efd41a4e167f8c696a8d888358a62274fb928969b7c23",
+      "bodyAfterSha256": "92e51287d6fdb0992b45beb5b56df256f1684e9f73e84213c5ffed905654a165",
+      "bodyTextSha256": "acae3290e4d12056b8f50e1faeb31ab8e2584a007e458ee08ce34a6429df7128",
+      "replacements": [
+        {
+          "from": "/guide/dog-health-checkup",
+          "to": "/guide/pet-health-checkup-guide",
+          "linkText": "반려동물 정기 건강검진 가이드",
+          "publishedTitle": "반려동물 건강검진 준비 | 관찰 기록·검사 상담 | 펫지기"
+        }
+      ],
+      "productionApplicable": true,
+      "publiclyVisibleAtRepair": true
+    },
+    {
+      "file": "db/seeds/blog-posts-17.ts",
+      "id": "blog-170",
+      "slug": "dog-heartworm-treatment-guide",
+      "type": "blog",
+      "changedFields": [
+        "body"
+      ],
+      "bodyBeforeSha256": "207643f53121ae7685f54b43ae258164d0054eca63287ca186cc7900cb7a0967",
+      "bodyAfterSha256": "d0e4fa67a8d9e9eabf49f89cb2cd99e8eb029d3016a7fb4bbd264bbb1eddf724",
+      "bodyTextSha256": "645660292b19a272032cd0801965b68a3db20777427c3bdb912d89bf455762cc",
+      "replacements": [
+        {
+          "from": "/guide/dog-health-checkup",
+          "to": null,
+          "linkText": "강아지 정기 건강검진 가이드",
+          "publishedTitle": "강아지 건강검진 주기·항목 완벽 정리 | 연령별 가이드 | 펫지기",
+          "action": "unlink",
+          "reason": "The surrounding sentence promises heartworm-treatment follow-up guidance; the published dog checkup page does not cover that topic."
+        }
+      ],
+      "productionApplicable": true,
+      "publiclyVisibleAtRepair": true
+    },
+    {
+      "file": "db/seeds/blog-posts-18.ts",
+      "id": "blog-174",
+      "slug": "pet-auto-feeder-guide",
+      "type": "blog",
+      "changedFields": [
+        "body"
+      ],
+      "bodyBeforeSha256": "9dfd5ac63452da46409b011e1f99f4d5b58cf036ca731c5c17bf2463f7a368b0",
+      "bodyAfterSha256": "8518f8a8c42cc13ecaf1088139e777609b7b62af272c62ad164ad63f7ecc4ec8",
+      "bodyTextSha256": "79197a68efb4f3fe59c9319c33799b6fc3212f799d07dda37fb032b1c2947393",
+      "replacements": [
+        {
+          "from": "/guide/pet-travel-guide",
+          "to": "/guide/pet-travel-guide-korea",
+          "linkText": "반려동물 여행 가이드",
+          "publishedTitle": "반려동물 여행 가이드 | 이동·숙박·준비물 총정리 | 펫지기"
+        }
+      ],
+      "productionApplicable": true,
+      "publiclyVisibleAtRepair": true
+    },
+    {
+      "file": "db/seeds/blog-posts-18.ts",
+      "id": "blog-175",
+      "slug": "dog-rainy-day-activities",
+      "type": "blog",
+      "changedFields": [
+        "body"
+      ],
+      "bodyBeforeSha256": "116196794742b5a78f40662845e607cb9f3a116b4bb604f1e271aa1ee2c2b849",
+      "bodyAfterSha256": "9e31670f9191632bf700781e7ca8a6778d849dc5159f8ea4564920553bcd81cb",
+      "bodyTextSha256": "1dd1ff0a626c333bd7909e1d2f5384011fed701dadc83b3b7b3540b2e4be7383",
+      "replacements": [
+        {
+          "from": "/guide/dog-nosework-guide",
+          "to": "/blog/dog-nosework-guide",
+          "linkText": "강아지 노즈워크 입문 가이드",
+          "publishedTitle": "강아지 노즈워크 입문 가이드 | 훈련 단계·준비물·경기 참가 | 펫지기"
+        }
+      ],
+      "productionApplicable": true,
+      "publiclyVisibleAtRepair": true
+    },
+    {
+      "file": "db/seeds/blog-posts-18.ts",
+      "id": "blog-176",
+      "slug": "pet-photo-tips",
+      "type": "blog",
+      "changedFields": [
+        "body"
+      ],
+      "bodyBeforeSha256": "a2cd66d7d7b45f3ae4fc2b575de2fd210fcb2d7d78747102b9913904e5af2f16",
+      "bodyAfterSha256": "c00b29e4f749513c16c17ec8ad11f9d718b6bb54eeebf6930c849183d014d7d4",
+      "bodyTextSha256": "7c1981bd878960946105cf36a0a7dc3cdf5bc566c9ab234f9d6b4b460b740b69",
+      "replacements": [
+        {
+          "from": "/guide/pet-travel-guide",
+          "to": "/guide/pet-travel-guide-korea",
+          "linkText": "반려동물 여행 가이드",
+          "publishedTitle": "반려동물 여행 가이드 | 이동·숙박·준비물 총정리 | 펫지기"
+        }
+      ],
+      "productionApplicable": true,
+      "publiclyVisibleAtRepair": true
+    },
+    {
+      "file": "db/seeds/blog-posts-18.ts",
+      "id": "blog-178",
+      "slug": "dog-car-sickness-guide",
+      "type": "blog",
+      "changedFields": [
+        "body"
+      ],
+      "bodyBeforeSha256": "d5ddf57151b98a7e692ba3d31fc328c0a711c86b82b09ae678986dd7db4b4fbc",
+      "bodyAfterSha256": "cb256378f557069bca6a2436b5d30040a7c5da1aa14b7315ec1cf4a27cfa279f",
+      "bodyTextSha256": "7a2693c7fd4caed77ecb5f9591328224023973ef06bba3c83cce68150bcca4b6",
+      "replacements": [
+        {
+          "from": "/guide/pet-travel-guide",
+          "to": "/guide/pet-travel-guide-korea",
+          "linkText": "반려동물 여행 가이드",
+          "publishedTitle": "반려동물 여행 가이드 | 이동·숙박·준비물 총정리 | 펫지기"
+        }
+      ],
+      "productionApplicable": true,
+      "publiclyVisibleAtRepair": true
+    },
+    {
+      "file": "db/seeds/blog-posts-18.ts",
+      "id": "blog-180",
+      "slug": "pet-gps-tracker-guide",
+      "type": "blog",
+      "changedFields": [
+        "body"
+      ],
+      "bodyBeforeSha256": "a0b0d7f8542b465d48589f713f9077f21a0150f59b7e0df93da319fb3346c9ba",
+      "bodyAfterSha256": "815a95b3ece1acddb59c8f645fa048d2bdf2534a698f35c28dd5d56d08e6d966",
+      "bodyTextSha256": "313489d2701da33760c71cc5f8336fcd03f506c13a2a6ae3db1baa7678ed6bc2",
+      "replacements": [
+        {
+          "from": "/guide/pet-travel-guide",
+          "to": "/guide/pet-travel-guide-korea",
+          "linkText": "반려동물 여행 가이드",
+          "publishedTitle": "반려동물 여행 가이드 | 이동·숙박·준비물 총정리 | 펫지기"
+        }
+      ],
+      "productionApplicable": true,
+      "publiclyVisibleAtRepair": true
+    },
+    {
+      "file": "db/seeds/blog-posts-21.ts",
+      "id": "blog-201",
+      "slug": "pet-insurance-cat-guide",
+      "type": "blog",
+      "changedFields": [
+        "body",
+        "disclaimer"
+      ],
+      "bodyBeforeSha256": "32249867f28c3b318c2f83704774cd9c5d2fbbda1e63ca1d875dafd321e9823f",
+      "bodyAfterSha256": "56f7cb84b5c637b6e94240919251d9dd6f1e072ef4ad2b0c5b86a4b8294a2e54",
+      "bodyTextSha256": "637a1b68581b431c294da2bef406bcb656a1db471be2d59ce290d186db9ee276",
+      "replacements": [
+        {
+          "from": "/guide/pet-insurance-guide",
+          "to": "/blog/pet-insurance-guide",
+          "linkText": "펫보험 완전 가이드",
+          "publishedTitle": "펫보험 가입 전 체크리스트 5가지 | 보장 범위·면책·자기부담금 | 펫지기"
+        },
+        {
+          "from": "/guide/vet-cost-saving-guide",
+          "to": "/blog/vet-bill-reduce-strategy",
+          "linkText": "동물병원 진료비 절약 가이드",
+          "publishedTitle": "동물병원 진료비 절감 방법 완전 가이드 | 펫지기"
+        }
+      ],
+      "disclaimerSourceBefore": "CAT4_DISCLAIMER",
+      "disclaimerValueBefore": "이 글은 일반적인 정보 제공 목적으로 작성되었습니다. 특정 보험 상품 추천이나 법률·계약 조언이 아니며, 구체적인 가입·해지 결정은 각 보험사 약관과 전문가 상담을 통해 직접 확인하시기 바랍니다.",
+      "disclaimerValueAfter": "이 글은 일반적인 정보 제공 목적으로 작성되었습니다. 특정 보험 상품 추천이나 법률·계약 조언이 아니며, 구체적인 가입·해지 결정은 각 보험사 약관과 전문가 상담을 통해 직접 확인하시기 바랍니다.",
+      "disclaimerValueSha256": "b55f3413a6f8311c3047e670f893f9e98e324b53740b354a937f23f157bfab82",
+      "productionApplicable": true,
+      "publiclyVisibleAtRepair": true
+    },
+    {
+      "file": "db/seeds/blog-posts-21.ts",
+      "id": "blog-202",
+      "slug": "pet-insurance-deductible-guide",
+      "type": "blog",
+      "changedFields": [
+        "body"
+      ],
+      "bodyBeforeSha256": "8196644d985840d893cf371c0a60958f76c438e2da5cdc4d2a9139c55ae02c4f",
+      "bodyAfterSha256": "a0174c2fa76d417908b31169c098e7191d3a5d992e2ef51bdd21fcfd28198817",
+      "bodyTextSha256": "a5753d3a8031dfd2c1697fe4bd2c3080fe7b9a622154ae66026a91bb7485c15a",
+      "replacements": [
+        {
+          "from": "/guide/pet-insurance-guide",
+          "to": "/blog/pet-insurance-guide",
+          "linkText": "펫보험 완전 가이드",
+          "publishedTitle": "펫보험 가입 전 체크리스트 5가지 | 보장 범위·면책·자기부담금 | 펫지기"
+        }
+      ],
+      "productionApplicable": true,
+      "publiclyVisibleAtRepair": true
+    },
+    {
+      "file": "db/seeds/blog-posts-21.ts",
+      "id": "blog-203",
+      "slug": "vet-second-opinion-guide",
+      "type": "blog",
+      "changedFields": [
+        "body",
+        "disclaimer"
+      ],
+      "bodyBeforeSha256": "de81843ce79db740ec7acf202d78c6ac8b25dcabdad3606f5ae8a95944823724",
+      "bodyAfterSha256": "e227c27f6bdf6de99e16b98ce0ab2d798ae92c5d330da6fcfe93c87815329268",
+      "bodyTextSha256": "dbd8dc82110eb991d174d18fdf3ab49b8d3651cb24def1dba5e3cf6c3dadd918",
+      "replacements": [
+        {
+          "from": "/guide/vet-cost-saving-guide",
+          "to": "/blog/vet-bill-reduce-strategy",
+          "linkText": "동물병원 진료비 절약 가이드",
+          "publishedTitle": "동물병원 진료비 절감 방법 완전 가이드 | 펫지기"
+        }
+      ],
+      "disclaimerSourceBefore": "CAT4_DISCLAIMER",
+      "disclaimerValueBefore": "이 글은 일반적인 정보 제공 목적으로 작성되었습니다. 특정 보험 상품 추천이나 법률·계약 조언이 아니며, 구체적인 가입·해지 결정은 각 보험사 약관과 전문가 상담을 통해 직접 확인하시기 바랍니다.",
+      "disclaimerValueAfter": "이 글은 일반적인 정보 제공 목적으로 작성되었습니다. 특정 보험 상품 추천이나 법률·계약 조언이 아니며, 구체적인 가입·해지 결정은 각 보험사 약관과 전문가 상담을 통해 직접 확인하시기 바랍니다.",
+      "disclaimerValueSha256": "b55f3413a6f8311c3047e670f893f9e98e324b53740b354a937f23f157bfab82",
+      "productionApplicable": true,
+      "publiclyVisibleAtRepair": true
+    },
+    {
+      "file": "db/seeds/blog-posts-21.ts",
+      "id": "blog-204",
+      "slug": "pet-dental-insurance-guide",
+      "type": "blog",
+      "changedFields": [
+        "body",
+        "disclaimer"
+      ],
+      "bodyBeforeSha256": "f6d931f3b29aa36aabee174a2cb83cbbedcf2b77ccab5d7f0074fbb17cece398",
+      "bodyAfterSha256": "c01a95c186d41e9892ab79664f52e636c6e357b0377d2f533c6f39dcd0af8027",
+      "bodyTextSha256": "a27a654c5f24a47b7bd35f00d7218b1e04ad48d390831f6c18dc9b57081c17b3",
+      "replacements": [
+        {
+          "from": "/guide/pet-insurance-guide",
+          "to": "/blog/pet-insurance-guide",
+          "linkText": "펫보험 완전 가이드",
+          "publishedTitle": "펫보험 가입 전 체크리스트 5가지 | 보장 범위·면책·자기부담금 | 펫지기"
+        },
+        {
+          "from": "/guide/vet-cost-saving-guide",
+          "to": "/blog/vet-bill-reduce-strategy",
+          "linkText": "동물병원 진료비 절약 가이드",
+          "publishedTitle": "동물병원 진료비 절감 방법 완전 가이드 | 펫지기"
+        }
+      ],
+      "disclaimerSourceBefore": "CAT4_DISCLAIMER",
+      "disclaimerValueBefore": "이 글은 일반적인 정보 제공 목적으로 작성되었습니다. 특정 보험 상품 추천이나 법률·계약 조언이 아니며, 구체적인 가입·해지 결정은 각 보험사 약관과 전문가 상담을 통해 직접 확인하시기 바랍니다.",
+      "disclaimerValueAfter": "이 글은 일반적인 정보 제공 목적으로 작성되었습니다. 특정 보험 상품 추천이나 법률·계약 조언이 아니며, 구체적인 가입·해지 결정은 각 보험사 약관과 전문가 상담을 통해 직접 확인하시기 바랍니다.",
+      "disclaimerValueSha256": "b55f3413a6f8311c3047e670f893f9e98e324b53740b354a937f23f157bfab82",
+      "productionApplicable": true,
+      "publiclyVisibleAtRepair": true
+    },
+    {
+      "file": "db/seeds/blog-posts-21.ts",
+      "id": "blog-205",
+      "slug": "pet-surgery-insurance-guide",
+      "type": "blog",
+      "changedFields": [
+        "body",
+        "disclaimer"
+      ],
+      "bodyBeforeSha256": "b1062ae32da49296a1f1270b6df2e39b07f11ca8a79eb4de8247bd61f1b1cfaf",
+      "bodyAfterSha256": "28029c6e5c639c0c902435b8f37792d205b929dbe4f6649c113f57e2f701860f",
+      "bodyTextSha256": "dcf06f739077a6f160416e193c9973e059e7a5e8958221875643dcf18e0d7035",
+      "replacements": [
+        {
+          "from": "/guide/vet-cost-saving-guide",
+          "to": "/blog/vet-bill-reduce-strategy",
+          "linkText": "동물병원 진료비 절약 가이드",
+          "publishedTitle": "동물병원 진료비 절감 방법 완전 가이드 | 펫지기"
+        }
+      ],
+      "disclaimerSourceBefore": "CAT4_DISCLAIMER",
+      "disclaimerValueBefore": "이 글은 일반적인 정보 제공 목적으로 작성되었습니다. 특정 보험 상품 추천이나 법률·계약 조언이 아니며, 구체적인 가입·해지 결정은 각 보험사 약관과 전문가 상담을 통해 직접 확인하시기 바랍니다.",
+      "disclaimerValueAfter": "이 글은 일반적인 정보 제공 목적으로 작성되었습니다. 특정 보험 상품 추천이나 법률·계약 조언이 아니며, 구체적인 가입·해지 결정은 각 보험사 약관과 전문가 상담을 통해 직접 확인하시기 바랍니다.",
+      "disclaimerValueSha256": "b55f3413a6f8311c3047e670f893f9e98e324b53740b354a937f23f157bfab82",
+      "productionApplicable": true,
+      "publiclyVisibleAtRepair": true
+    },
+    {
+      "file": "db/seeds/blog-posts-21.ts",
+      "id": "blog-206",
+      "slug": "senior-pet-insurance-guide",
+      "type": "blog",
+      "changedFields": [
+        "body",
+        "disclaimer"
+      ],
+      "bodyBeforeSha256": "3199ecb9587fef07aebe204216bb67ad54892d659704c6f6d727e95f17ebc478",
+      "bodyAfterSha256": "e9f2dde7bb4bdb8740452b8ba52402c894655ed591b2e14d70bdc27f9f5f2188",
+      "bodyTextSha256": "5d3056955285a3ef268c9d950a5fbe7c4b96d6fe1028817e6dc78f028d4e2210",
+      "replacements": [
+        {
+          "from": "/guide/pet-insurance-guide",
+          "to": "/blog/pet-insurance-guide",
+          "linkText": "펫보험 완전 가이드",
+          "publishedTitle": "펫보험 가입 전 체크리스트 5가지 | 보장 범위·면책·자기부담금 | 펫지기"
+        }
+      ],
+      "disclaimerSourceBefore": "CAT4_DISCLAIMER",
+      "disclaimerValueBefore": "이 글은 일반적인 정보 제공 목적으로 작성되었습니다. 특정 보험 상품 추천이나 법률·계약 조언이 아니며, 구체적인 가입·해지 결정은 각 보험사 약관과 전문가 상담을 통해 직접 확인하시기 바랍니다.",
+      "disclaimerValueAfter": "이 글은 일반적인 정보 제공 목적으로 작성되었습니다. 특정 보험 상품 추천이나 법률·계약 조언이 아니며, 구체적인 가입·해지 결정은 각 보험사 약관과 전문가 상담을 통해 직접 확인하시기 바랍니다.",
+      "disclaimerValueSha256": "b55f3413a6f8311c3047e670f893f9e98e324b53740b354a937f23f157bfab82",
+      "productionApplicable": true,
+      "publiclyVisibleAtRepair": true
+    },
+    {
+      "file": "db/seeds/blog-posts-21.ts",
+      "id": "blog-207",
+      "slug": "pet-insurance-waiting-period",
+      "type": "blog",
+      "changedFields": [
+        "body",
+        "disclaimer"
+      ],
+      "bodyBeforeSha256": "1543b6e454e2a425840420809485e8545dbffaf6599c519072ba83130c927069",
+      "bodyAfterSha256": "08cdfe06f6dc2bd9facca09921ad9b13ebf6c2bb6909a2820aa680e29a5b9ab5",
+      "bodyTextSha256": "8416c5468ba1fc2798fd1754d1965c2c261d8f57b50f554daedf3f1cce2f6553",
+      "replacements": [
+        {
+          "from": "/guide/pet-insurance-guide",
+          "to": "/blog/pet-insurance-guide",
+          "linkText": "펫보험 완전 가이드",
+          "publishedTitle": "펫보험 가입 전 체크리스트 5가지 | 보장 범위·면책·자기부담금 | 펫지기"
+        }
+      ],
+      "disclaimerSourceBefore": "CAT4_DISCLAIMER",
+      "disclaimerValueBefore": "이 글은 일반적인 정보 제공 목적으로 작성되었습니다. 특정 보험 상품 추천이나 법률·계약 조언이 아니며, 구체적인 가입·해지 결정은 각 보험사 약관과 전문가 상담을 통해 직접 확인하시기 바랍니다.",
+      "disclaimerValueAfter": "이 글은 일반적인 정보 제공 목적으로 작성되었습니다. 특정 보험 상품 추천이나 법률·계약 조언이 아니며, 구체적인 가입·해지 결정은 각 보험사 약관과 전문가 상담을 통해 직접 확인하시기 바랍니다.",
+      "disclaimerValueSha256": "b55f3413a6f8311c3047e670f893f9e98e324b53740b354a937f23f157bfab82",
+      "productionApplicable": true,
+      "publiclyVisibleAtRepair": true
+    },
+    {
+      "file": "db/seeds/blog-posts-21.ts",
+      "id": "blog-208",
+      "slug": "pet-consumer-rights-guide",
+      "type": "blog",
+      "changedFields": [
+        "body",
+        "disclaimer"
+      ],
+      "bodyBeforeSha256": "17877c80003b91d7780a499c0a4a94d4eb41a79674ff7afd7e6a4af8c2edd69f",
+      "bodyAfterSha256": "4c27ddbb7fdfcf03c4d7360791d390dc86356c39c438bd753db63654b6770ff0",
+      "bodyTextSha256": "93878b06e4cd4fe55ad3ebbbb739a1b57eef4c29bf2941e947921078f040b0fe",
+      "replacements": [
+        {
+          "from": "/guide/vet-cost-saving-guide",
+          "to": "/blog/vet-bill-reduce-strategy",
+          "linkText": "동물병원 진료비 절약 가이드",
+          "publishedTitle": "동물병원 진료비 절감 방법 완전 가이드 | 펫지기"
+        },
+        {
+          "from": "/guide/pet-insurance-guide",
+          "to": "/blog/pet-insurance-guide",
+          "linkText": "펫보험 완전 가이드",
+          "publishedTitle": "펫보험 가입 전 체크리스트 5가지 | 보장 범위·면책·자기부담금 | 펫지기"
+        }
+      ],
+      "disclaimerSourceBefore": "CAT4_DISCLAIMER",
+      "disclaimerValueBefore": "이 글은 일반적인 정보 제공 목적으로 작성되었습니다. 특정 보험 상품 추천이나 법률·계약 조언이 아니며, 구체적인 가입·해지 결정은 각 보험사 약관과 전문가 상담을 통해 직접 확인하시기 바랍니다.",
+      "disclaimerValueAfter": "이 글은 일반적인 정보 제공 목적으로 작성되었습니다. 특정 보험 상품 추천이나 법률·계약 조언이 아니며, 구체적인 가입·해지 결정은 각 보험사 약관과 전문가 상담을 통해 직접 확인하시기 바랍니다.",
+      "disclaimerValueSha256": "b55f3413a6f8311c3047e670f893f9e98e324b53740b354a937f23f157bfab82",
+      "productionApplicable": true,
+      "publiclyVisibleAtRepair": true
+    },
+    {
+      "file": "db/seeds/blog-posts-23.ts",
+      "id": "blog-221",
+      "slug": "newborn-and-pet-guide",
+      "type": "blog",
+      "changedFields": [
+        "body"
+      ],
+      "bodyBeforeSha256": "773ade733315c082d133eb6f879e9c8d5339fedc18fe68cbf10e40fca0cb9338",
+      "bodyAfterSha256": "03d4e470021a8eddb2cc94d355a40784406f698e122fea133c0dbc02a2158eec",
+      "bodyTextSha256": "ff49a39ab06a248b85bafc12e3fcee115681ee1381680886c77f91da2781f6b9",
+      "replacements": [
+        {
+          "from": "/guide/dog-cat-introduction",
+          "to": "/blog/dog-cat-introduction",
+          "linkText": "고양이·강아지 합사 가이드",
+          "publishedTitle": "강아지 고양이 합사 방법 | 단계별 소개·훈련·갈등 해결 | 펫지기"
+        }
+      ],
+      "productionApplicable": true,
+      "publiclyVisibleAtRepair": true
+    },
+    {
+      "file": "db/seeds/blog-posts-23.ts",
+      "id": "blog-222",
+      "slug": "senior-young-pet-introduction",
+      "type": "blog",
+      "changedFields": [
+        "body"
+      ],
+      "bodyBeforeSha256": "678a1da936332828e4e9af43c0f509c7534fc12b284496e35964f62aaa168bf9",
+      "bodyAfterSha256": "80576a2243d7f27110c9703ec4aa539fa918e63cf8886aec3cbf8961bcf3c048",
+      "bodyTextSha256": "81fba1d85908aef4f9538d594382678f8aefce97f18ca44b97017f4f60990468",
+      "replacements": [
+        {
+          "from": "/guide/multi-cat-introduction-guide",
+          "to": "/blog/multi-cat-introduction-guide",
+          "linkText": "다묘 합사 가이드",
+          "publishedTitle": "고양이 합사 방법 완벽 가이드 | 단계별 소개법·갈등 해결 | 펫지기"
+        }
+      ],
+      "productionApplicable": true,
+      "publiclyVisibleAtRepair": true
+    },
+    {
+      "file": "db/seeds/blog-posts-23.ts",
+      "id": "blog-223",
+      "slug": "pet-jealousy-management",
+      "type": "blog",
+      "changedFields": [
+        "body"
+      ],
+      "bodyBeforeSha256": "05ebe16bd18d5f3d3ef46a3efb193feb1e9a296688c30eb112ecb56ade86cefb",
+      "bodyAfterSha256": "195e3d082ff5f477b34c8426f7259ce120c548439c831a25ab769aef42336a31",
+      "bodyTextSha256": "b0cfd8b48d73735f414d3e5f7ac54d163b7a6d5920b517d42eaccfbc5aa3d9ee",
+      "replacements": [
+        {
+          "from": "/guide/dog-cat-introduction",
+          "to": "/blog/dog-cat-introduction",
+          "linkText": "고양이·강아지 합사 가이드",
+          "publishedTitle": "강아지 고양이 합사 방법 | 단계별 소개·훈련·갈등 해결 | 펫지기"
+        },
+        {
+          "from": "/guide/multi-cat-introduction-guide",
+          "to": "/blog/multi-cat-introduction-guide",
+          "linkText": "다묘 합사 가이드",
+          "publishedTitle": "고양이 합사 방법 완벽 가이드 | 단계별 소개법·갈등 해결 | 펫지기"
+        }
+      ],
+      "productionApplicable": true,
+      "publiclyVisibleAtRepair": true
+    },
+    {
+      "file": "db/seeds/blog-posts-23.ts",
+      "id": "blog-224",
+      "slug": "two-dogs-management-guide",
+      "type": "blog",
+      "changedFields": [
+        "body"
+      ],
+      "bodyBeforeSha256": "f6a2f79514f420e88f4fd3ecb0795d87f3e1364e24e295e0228e1825e4b4523b",
+      "bodyAfterSha256": "cb59ef94a214678962bd5305825777f0b0575fc7875a0e36cc50fac90e3e682f",
+      "bodyTextSha256": "a0a92be6d13433c0e99d36115771b6bcb301885103f1cd5b0865973e86a45a1f",
+      "replacements": [
+        {
+          "from": "/guide/dog-cat-introduction",
+          "to": "/guide/multi-pet-household-guide",
+          "linkText": "합사 가이드",
+          "publishedTitle": "다묘·다견 가정 합사 가이드 | 단계별 방법·주의사항 | 펫지기"
+        }
+      ],
+      "productionApplicable": true,
+      "publiclyVisibleAtRepair": true
+    },
+    {
+      "file": "db/seeds/blog-posts-23.ts",
+      "id": "blog-225",
+      "slug": "cat-dog-harmony-guide",
+      "type": "blog",
+      "changedFields": [
+        "body"
+      ],
+      "bodyBeforeSha256": "5f062047bce05c352f446acead4871b8ff7af9896967ae84f2219e46765cf2f7",
+      "bodyAfterSha256": "02740c17b630bb580c27629f0bb46e8e05e9ef93cfcc77f099fa5ab429029ac9",
+      "bodyTextSha256": "6199263d4a59b7a83883aedbceb56dac058c004a917c8a0b711fdf99fbee592e",
+      "replacements": [
+        {
+          "from": "/guide/dog-cat-introduction",
+          "to": "/blog/dog-cat-introduction",
+          "linkText": "고양이·강아지 합사 가이드",
+          "publishedTitle": "강아지 고양이 합사 방법 | 단계별 소개·훈련·갈등 해결 | 펫지기"
+        },
+        {
+          "from": "/guide/multi-cat-introduction-guide",
+          "to": "/blog/multi-cat-introduction-guide",
+          "linkText": "다묘 합사 가이드",
+          "publishedTitle": "고양이 합사 방법 완벽 가이드 | 단계별 소개법·갈등 해결 | 펫지기"
+        }
+      ],
+      "productionApplicable": true,
+      "publiclyVisibleAtRepair": true
+    },
+    {
+      "file": "db/seeds/blog-posts-23.ts",
+      "id": "blog-227",
+      "slug": "child-pet-relationship-guide",
+      "type": "blog",
+      "changedFields": [
+        "body"
+      ],
+      "bodyBeforeSha256": "79dafe44e37c3f917dc4d80035bd5f368091eca61bd45a7b7e317795ec2c086b",
+      "bodyAfterSha256": "3a4e5c7d5bc869a1c210c18d05defd2f67f890fdc52725c2a84951f5135af962",
+      "bodyTextSha256": "8d24cdc03cc272b9896875a765f8ca591af5a4d95dbd02f96de090da7fde47cb",
+      "replacements": [
+        {
+          "from": "/guide/dog-cat-introduction",
+          "to": "/guide/multi-pet-household-guide",
+          "linkText": "반려동물 합사 가이드",
+          "publishedTitle": "다묘·다견 가정 합사 가이드 | 단계별 방법·주의사항 | 펫지기"
+        }
+      ],
+      "productionApplicable": true,
+      "publiclyVisibleAtRepair": true
+    },
+    {
+      "file": "db/seeds/blog-posts-24.ts",
+      "id": "blog-238",
+      "slug": "dog-senior-enrichment-guide",
+      "type": "blog",
+      "changedFields": [
+        "body"
+      ],
+      "bodyBeforeSha256": "406f7094e5f2f103f0c5f4df3102aaed5e0d8a8466271a5e026bb7defacd18b1",
+      "bodyAfterSha256": "cfb31c723254d7e30bdffeb8e90163ddc1a34325c8b018dccbef665a2b26ec7f",
+      "bodyTextSha256": "90a03031a9766840320793beaa91a5896acf9f27e9514599587e4866a0454c2c",
+      "replacements": [
+        {
+          "from": "/guide/dog-nosework-guide",
+          "to": "/blog/dog-nosework-guide",
+          "linkText": "강아지 노즈워크 가이드",
+          "publishedTitle": "강아지 노즈워크 입문 가이드 | 훈련 단계·준비물·경기 참가 | 펫지기"
+        }
+      ],
+      "productionApplicable": true,
+      "publiclyVisibleAtRepair": true
+    },
+    {
+      "file": "db/seeds/blog-posts-25.ts",
+      "id": "blog-242",
+      "slug": "pet-death-admin-checklist",
+      "type": "blog",
+      "changedFields": [
+        "body"
+      ],
+      "bodyBeforeSha256": "18c6da045a32f66c715531b243d85970f90b5078196e5d41c2d4db0816e3df56",
+      "bodyAfterSha256": "edf9f18c1104ca09fa6eea65989a4b08f7fad788d196793d5355d662359ac19a",
+      "bodyTextSha256": "1c0fde7cdd43d867a3b4aab291e50440067178172b3caa161e78fb0689367f76",
+      "replacements": [
+        {
+          "from": "/blog/pet-cremation-burial-compare",
+          "to": "/blog/pet-cremation-vs-burial",
+          "linkText": "반려동물 화장 vs 장묘 — 비용·절차·선택 기준 완전 비교",
+          "publishedTitle": "반려동물 화장 vs 장묘 비교 | 비용·절차·법규 | 펫지기"
+        },
+        {
+          "from": "/blog/petloss-recovery-guide",
+          "to": "/blog/pet-grief-recovery-guide",
+          "linkText": "펫로스 증후군 극복 가이드 — 슬픔을 통과하는 법",
+          "publishedTitle": "펫로스 증후군 극복 가이드 | 슬픔 단계·회복 방법 | 펫지기"
+        }
+      ],
+      "productionApplicable": true,
+      "publiclyVisibleAtRepair": true
+    },
+    {
+      "file": "db/seeds/blog-posts-25.ts",
+      "id": "blog-243",
+      "slug": "dog-pancreatitis-symptoms-diet",
+      "type": "blog",
+      "changedFields": [
+        "body"
+      ],
+      "bodyBeforeSha256": "6783043403737a473099a7c35d22ae8f9bb59abaf55944af4d7561009fbc4355",
+      "bodyAfterSha256": "defde29fc990592107c2ef39f8d0581a6041954e8dacb40b5d82bd71fea1d65c",
+      "bodyTextSha256": "00242c66f4d0e5e41b41546d73cd068899faa4239705e8040286e88f89be3272",
+      "replacements": [
+        {
+          "from": "/blog/dog-vomiting-home-vs-vet",
+          "to": "/blog/dog-vomiting-when-to-vet",
+          "linkText": "강아지가 갑자기 구토했을 때 — 집에서 할 것 vs 병원 가야 할 때",
+          "publishedTitle": "강아지 구토 대처법 | 병원 가야 할 때 vs 집에서 지켜볼 때 | 펫지기"
+        }
+      ],
+      "productionApplicable": true,
+      "publiclyVisibleAtRepair": true
+    },
+    {
+      "file": "db/seeds/blog-posts-25.ts",
+      "id": "blog-244",
+      "slug": "animal-registration-change-cancel-guide",
+      "type": "blog",
+      "changedFields": [
+        "body"
+      ],
+      "bodyBeforeSha256": "3b23c7e9124bc0fa037e71df591aa3bd2a6e9f4116d79c3c968049a3df69c31d",
+      "bodyAfterSha256": "2b8cd525097f56813562eddf36c38e0d7ee1a4d3f36972acf7d0d4810acc87f0",
+      "bodyTextSha256": "e54c792715c5b18db2271c4d8fcad3913e74f0748c7eccab715ea39baad96bcf",
+      "replacements": [
+        {
+          "from": "/blog/animal-registration-complete-guide",
+          "to": "/blog/pet-registration-guide",
+          "linkText": "동물등록 방법 완전 가이드 — 내장칩·외장칩·과태료까지",
+          "publishedTitle": "동물등록 방법 완전 가이드 | 내장칩·외장칩·비용·과태료 | 펫지기"
+        },
+        {
+          "from": "/blog/dog-first-adoption-checklist",
+          "to": "/blog/dog-first-adoption-kit",
+          "linkText": "강아지 처음 입양 준비물 체크리스트 — 첫 날 전에 갖춰야 할 것들",
+          "publishedTitle": "강아지 첫 입양 준비물 체크리스트 | 첫 날 필수 용품 | 펫지기"
+        }
+      ],
+      "productionApplicable": true,
+      "publiclyVisibleAtRepair": true
+    },
+    {
+      "file": "db/seeds/blog-posts-25.ts",
+      "id": "blog-245",
+      "slug": "dog-food-allergy-elimination-diet-test",
+      "type": "blog",
+      "changedFields": [
+        "body"
+      ],
+      "bodyBeforeSha256": "122e696a188f8bb584c19026d6ec7cb4b400a93771633c50f5120693f461f6cc",
+      "bodyAfterSha256": "3f901d8c7a31467de4aa5036b34f9917f9aaf011d80bc2c1af0a3d30201ea87b",
+      "bodyTextSha256": "1fb4b9a004803fff402c315cac7a1c412c430258993c5d4fe04fae1f67ac3282",
+      "replacements": [
+        {
+          "from": "/blog/dog-grain-free-complete-guide",
+          "to": "/blog/dog-grain-free-diet-guide",
+          "linkText": "강아지 그레인프리 사료 완전 가이드 — 효과·위험·선택 기준",
+          "publishedTitle": "강아지 그레인프리 사료 완전 가이드 | 효과·위험·선택 기준 | 펫지기"
+        },
+        {
+          "from": "/blog/dog-skin-health-guide",
+          "to": "/blog/dog-skin-care-guide",
+          "linkText": "강아지 피부 건강 관리 — 빗질·목욕·환경 관리 완전 가이드",
+          "publishedTitle": "강아지 피부 건강 관리 | 빗질·목욕·환경 관리 완전 가이드 | 펫지기"
+        }
+      ],
+      "productionApplicable": true,
+      "publiclyVisibleAtRepair": true
+    },
+    {
+      "file": "db/seeds/blog-posts-26.ts",
+      "id": "blog-247",
+      "slug": "petloss-return-to-daily-life",
+      "type": "blog",
+      "changedFields": [
+        "body"
+      ],
+      "bodyBeforeSha256": "d627af267de815afb6d5df050789977523d9f6d3cbb1a36dd092317cee00a245",
+      "bodyAfterSha256": "f9ef5e0e838577ddda2c2155c203777bcf284de8bedfc0bde560dd9b8aa62913",
+      "bodyTextSha256": "294a2d81b4924f2baa22f553c14aa0c50c4009c36d5b8b59fb00b6eae6ee5056",
+      "replacements": [
+        {
+          "from": "/blog/petloss-recovery-guide",
+          "to": "/blog/pet-grief-recovery-guide",
+          "linkText": "펫로스 증후군 극복 가이드 — 슬픔을 통과하는 법",
+          "publishedTitle": "펫로스 증후군 극복 가이드 | 슬픔 단계·회복 방법 | 펫지기"
+        },
+        {
+          "from": "/blog/child-pet-death-explanation",
+          "to": "/blog/petloss-children-explanation-guide",
+          "linkText": "아이에게 반려동물의 죽음 설명하는 법 — 나이별 접근 가이드",
+          "publishedTitle": "아이에게 반려동물 죽음 설명하기 — 나이별 가이드 | 펫지기"
+        }
+      ],
+      "productionApplicable": true,
+      "publiclyVisibleAtRepair": true
+    },
+    {
+      "file": "db/seeds/blog-posts-26.ts",
+      "id": "blog-248",
+      "slug": "dog-adoption-impulse-check-5-questions",
+      "type": "blog",
+      "changedFields": [
+        "body"
+      ],
+      "bodyBeforeSha256": "9ec79abf4df331cc365a36ec068e83ed3a33ab752774ea249b4cb1c44417bf33",
+      "bodyAfterSha256": "5f648f5b01c5dbd0f5d9b12972016d851b5651341fda2dd308850ace4d4402be",
+      "bodyTextSha256": "84ff45ecfade60d49161c6b12046a90ff176d11ebf6b74fd2468b1334025d025",
+      "replacements": [
+        {
+          "from": "/blog/dog-first-adoption-checklist",
+          "to": "/blog/dog-first-adoption-kit",
+          "linkText": "강아지 처음 입양 준비물 체크리스트 — 첫 날 전에 갖춰야 할 것들",
+          "publishedTitle": "강아지 첫 입양 준비물 체크리스트 | 첫 날 필수 용품 | 펫지기"
+        },
+        {
+          "from": "/blog/shelter-dog-adoption-guide",
+          "to": "/blog/stray-dog-adoption-guide",
+          "linkText": "유기견 입양 과정 완전 가이드 — 보호소 방문부터 가정 적응까지",
+          "publishedTitle": "유기견 입양 과정 완전 가이드 | 보호소 절차·비용·적응법 | 펫지기"
+        }
+      ],
+      "productionApplicable": true,
+      "publiclyVisibleAtRepair": true
+    },
+    {
+      "file": "db/seeds/blog-posts-27.ts",
+      "id": "blog-254",
+      "slug": "animal-abuse-neglect-report-guide",
+      "type": "blog",
+      "changedFields": [
+        "body"
+      ],
+      "bodyBeforeSha256": "e17eded0de26ea110327101ab537102ac831f4a73bd45405fd404b184e92a6c3",
+      "bodyAfterSha256": "997fbbfddc4bbe7bb77c7fb5976eb378cf9daf3f2d1e7fdd1656a723c06371b5",
+      "bodyTextSha256": "1fc19934cde31c830220b20de4539caabe158a597c93d535b0795ae5443f7bfc",
+      "replacements": [
+        {
+          "from": "/blog/animal-protection-law-2024",
+          "to": "/blog/animal-protection-law-guide",
+          "linkText": "2024년 동물보호법 핵심 정리 — 보호자가 알아야 할 의무와 권리",
+          "publishedTitle": "2024 동물보호법 핵심 정리 | 등록·학대 처벌·외출 규정 | 펫지기"
+        },
+        {
+          "from": "/blog/shelter-dog-adoption-guide",
+          "to": "/blog/stray-dog-adoption-guide",
+          "linkText": "유기견 입양 과정 완전 가이드",
+          "publishedTitle": "유기견 입양 과정 완전 가이드 | 보호소 절차·비용·적응법 | 펫지기"
+        }
+      ],
+      "productionApplicable": true,
+      "publiclyVisibleAtRepair": true
+    },
+    {
+      "file": "db/seeds/blog-posts-27.ts",
+      "id": "blog-255",
+      "slug": "pet-neighbor-dispute-resolution",
+      "type": "blog",
+      "changedFields": [
+        "body"
+      ],
+      "bodyBeforeSha256": "4a8ceb1875678ff14b2faddc02d1e3a11c33fe84fbaa182962b888f4a95bbf59",
+      "bodyAfterSha256": "2e74816e9a33a495dc7eba3888805db24a2760c042c886660cb92ee327bb6ea0",
+      "bodyTextSha256": "2ef8f57a96364eac0727e2060cd3c1b59c2d66168882221f62abf1036024b1b6",
+      "replacements": [
+        {
+          "from": "/blog/pet-dog-bite-liability",
+          "to": "/blog/pet-bite-liability-guide",
+          "linkText": "반려동물이 사람을 물었을 때 — 법적 책임과 배상",
+          "publishedTitle": "반려동물 교상 법적 책임 | 물림 사고 배상·처벌·보험 | 펫지기"
+        },
+        {
+          "from": "/blog/animal-protection-law-2024",
+          "to": "/blog/animal-protection-law-guide",
+          "linkText": "2024년 동물보호법 핵심 정리",
+          "publishedTitle": "2024 동물보호법 핵심 정리 | 등록·학대 처벌·외출 규정 | 펫지기"
+        }
+      ],
+      "productionApplicable": true,
+      "publiclyVisibleAtRepair": true
+    },
+    {
+      "file": "db/seeds/blog-posts-27.ts",
+      "id": "blog-256",
+      "slug": "pet-anniversary-memorial-ideas",
+      "type": "blog",
+      "changedFields": [
+        "body"
+      ],
+      "bodyBeforeSha256": "df66e3847fad4c0e0dbcfa403636924ab14e8a89f026ebb5b91a0b41a525a172",
+      "bodyAfterSha256": "35c6758cc4d2874ba6783c12c9c80e74623a034ab9942cc22d43fae184a17d3a",
+      "bodyTextSha256": "97d88f1696d0a473410c5f26bab2b59bd855c8fa8389bf3442d1420f589b3344",
+      "replacements": [
+        {
+          "from": "/blog/pet-memorial-15-ways",
+          "to": "/blog/pet-memorial-ideas",
+          "linkText": "반려동물 추모 방법 15가지 — 마음을 담은 기억 방식",
+          "publishedTitle": "반려동물 추모 아이디어 15가지 | 추모 물품·의식·온라인 추모 | 펫지기"
+        },
+        {
+          "from": "/blog/petloss-recovery-guide",
+          "to": "/blog/pet-grief-recovery-guide",
+          "linkText": "펫로스 증후군 극복 가이드 — 슬픔을 통과하는 법",
+          "publishedTitle": "펫로스 증후군 극복 가이드 | 슬픔 단계·회복 방법 | 펫지기"
+        }
+      ],
+      "productionApplicable": true,
+      "publiclyVisibleAtRepair": true
+    },
+    {
+      "file": "db/seeds/blog-posts-27.ts",
+      "id": "blog-257",
+      "slug": "second-pet-right-timing-guide",
+      "type": "blog",
+      "changedFields": [
+        "body"
+      ],
+      "bodyBeforeSha256": "70fe872161fd2278e1dae95e9cb2933fdba0d87f7641b31f31fbd63b5e177e11",
+      "bodyAfterSha256": "073042aafdc4e7aa061553393d6b7fc095c210edcec1a85b9ccdcd653c598eba",
+      "bodyTextSha256": "c1340559b103291e57d851f5d2aa2e6745cbb7ba06234590eb4f3cc9e7052c10",
+      "replacements": [
+        {
+          "from": "/blog/after-pet-new-family-timing",
+          "to": "/blog/when-to-get-new-pet-after-loss",
+          "linkText": "반려동물을 잃은 후 새 가족을 맞이하는 적절한 시기",
+          "publishedTitle": "반려동물 사별 후 새 입양 시기 | 준비됐는지 확인하는 법 | 펫지기"
+        },
+        {
+          "from": "/blog/petloss-recovery-guide",
+          "to": "/blog/pet-grief-recovery-guide",
+          "linkText": "펫로스 증후군 극복 가이드 — 슬픔을 통과하는 법",
+          "publishedTitle": "펫로스 증후군 극복 가이드 | 슬픔 단계·회복 방법 | 펫지기"
+        },
+        {
+          "from": "/blog/shelter-dog-adoption-guide",
+          "to": "/blog/stray-dog-adoption-guide",
+          "linkText": "유기견 입양 과정 완전 가이드",
+          "publishedTitle": "유기견 입양 과정 완전 가이드 | 보호소 절차·비용·적응법 | 펫지기"
+        }
+      ],
+      "productionApplicable": true,
+      "publiclyVisibleAtRepair": true
+    },
+    {
+      "file": "db/seeds/blog-posts-28.ts",
+      "id": "blog-258",
+      "slug": "cat-breed-guide-personality-environment",
+      "type": "blog",
+      "changedFields": [
+        "body"
+      ],
+      "bodyBeforeSha256": "772b98b73d307d6462e802245fcbcca4b1a7eb1bdd46d430e6a7db3d443b34a2",
+      "bodyAfterSha256": "bfe94c399dc79d3b5da660b7d20ace7fda1b71f67fa23aa95384a5e375b5deb4",
+      "bodyTextSha256": "3d19927ba3d848d5f09b42fd85c1a661119d4b6a8ad4851237e81c67f220bb6e",
+      "replacements": [
+        {
+          "from": "/blog/cat-first-adoption-checklist",
+          "to": "/blog/cat-first-adoption-kit",
+          "linkText": "고양이 처음 입양 전 준비물 체크리스트",
+          "publishedTitle": "고양이 처음 입양 준비물 체크리스트 — 필수 vs 선택 구분 | 펫지기"
+        },
+        {
+          "from": "/blog/shelter-cat-adoption-guide",
+          "to": "/blog/stray-cat-adoption-guide",
+          "linkText": "유기묘 입양 완전 가이드",
+          "publishedTitle": "유기묘 입양 완전 가이드 | 보호소 절차·건강 확인·적응법 | 펫지기"
+        }
+      ],
+      "productionApplicable": true,
+      "publiclyVisibleAtRepair": true
+    },
+    {
+      "file": "db/seeds/blog-posts-28.ts",
+      "id": "blog-259",
+      "slug": "dog-separation-anxiety-prevention-guide",
+      "type": "blog",
+      "changedFields": [
+        "body"
+      ],
+      "bodyBeforeSha256": "18e3875c4dd05e00e458e0a2b988f7e2fe52e5078ad8dc0a450492df537fc8e9",
+      "bodyAfterSha256": "08437dfea9d6dc706e041144a13c3a3d2542996570fed6528f0d87442f663c13",
+      "bodyTextSha256": "4658d9e895d739e46d4313854e49445903f08e6b4de6648b106bbdc5b28e4af7",
+      "replacements": [
+        {
+          "from": "/blog/dog-basic-training-guide",
+          "to": "/blog/dog-basic-training",
+          "linkText": "강아지 기본 훈련 가이드",
+          "publishedTitle": "강아지 앉아·기다려·이리와 훈련 방법 — 초보 보호자 완벽 가이드 | 펫지기"
+        },
+        {
+          "from": "/blog/dog-socialization-training",
+          "to": "/blog/dog-socialization-guide",
+          "linkText": "강아지 사회화 훈련 황금기 — 생후 3~14주 완벽 활용법",
+          "publishedTitle": "강아지 사회화 훈련 황금기 완벽 가이드 | 생후 3~14주 체크리스트 | 펫지기"
+        }
+      ],
+      "productionApplicable": true,
+      "publiclyVisibleAtRepair": true
+    },
+    {
+      "file": "db/seeds/blog-posts-28.ts",
+      "id": "blog-262",
+      "slug": "dog-food-transition-method",
+      "type": "blog",
+      "changedFields": [
+        "body"
+      ],
+      "bodyBeforeSha256": "cb979d0cf4a06ec00909c72ba0b430325618d6f195aa9d730dfa4566770ca29d",
+      "bodyAfterSha256": "2242872ea22cbb932c8d7553d788ade7f5b04f63b629bde2d8ae5d42a633696c",
+      "bodyTextSha256": "20f37eef43005a0e6c01a6a39a7086644e612d1829389b71546e3340c861ac90",
+      "replacements": [
+        {
+          "from": "/blog/dog-allergy-elimination-diet-test",
+          "to": "/blog/dog-food-allergy-elimination-diet-test",
+          "linkText": "강아지 알레르기 사료 찾는 법 — 식이 제거 테스트 8주 완전 가이드",
+          "publishedTitle": "강아지 식품 알레르기 식이 제거 테스트 방법 완전 가이드 | 펫지기"
+        },
+        {
+          "from": "/blog/dog-daily-calorie-guide",
+          "to": "/blog/dog-calorie-calculation",
+          "linkText": "강아지 하루 칼로리 계산법 — 비만 예방의 첫걸음",
+          "publishedTitle": "강아지 하루 칼로리 계산 방법 | 체중별 급여량·RER·MER | 펫지기"
+        }
+      ],
+      "productionApplicable": true,
+      "publiclyVisibleAtRepair": true
+    },
+    {
+      "file": "db/seeds/blog-posts-28.ts",
+      "id": "blog-263",
+      "slug": "dog-wet-vs-dry-food-comparison",
+      "type": "blog",
+      "changedFields": [
+        "body"
+      ],
+      "bodyBeforeSha256": "4007a6b4eebadb11d7bf3c9de69aa9f8b20945f1acd785cb733d9aa0551d7094",
+      "bodyAfterSha256": "ca3b50fe9f56fedbfbcd84e676b89ae05ac943a9d3ea9e12acedf8edb982cf9b",
+      "bodyTextSha256": "188e38c2c34b1fa497a6e2fc1eba07a2552670f813da513422b220974ca49a1c",
+      "replacements": [
+        {
+          "from": "/blog/dog-water-intake-guide",
+          "to": "/blog/dog-hydration-guide",
+          "linkText": "강아지 물 얼마나 마셔야 할까 — 탈수 신호와 수분 관리",
+          "publishedTitle": "강아지 하루 물 섭취량 기준 | 탈수 증상·음수 늘리는 법 | 펫지기"
+        },
+        {
+          "from": "/blog/dog-daily-calorie-guide",
+          "to": "/blog/dog-calorie-calculation",
+          "linkText": "강아지 하루 칼로리 계산법 — 비만 예방의 첫걸음",
+          "publishedTitle": "강아지 하루 칼로리 계산 방법 | 체중별 급여량·RER·MER | 펫지기"
+        }
+      ],
+      "productionApplicable": true,
+      "publiclyVisibleAtRepair": true
+    },
+    {
+      "file": "db/seeds/blog-posts-28.ts",
+      "id": "blog-264",
+      "slug": "cat-snack-selection-guide",
+      "type": "blog",
+      "changedFields": [
+        "body"
+      ],
+      "bodyBeforeSha256": "352c96d7f8a9430d16652bc13f1a31d949a6e9c98b11518e2fd63aad4f5da62d",
+      "bodyAfterSha256": "c8e105a8e24b9c269efd8926b843f6909ad06f89cf2012786f01272d2cf1d757",
+      "bodyTextSha256": "650517cc434758fb6d486a332bbe669b3a595f5946d79608e7de2647e64ebc5a",
+      "replacements": [
+        {
+          "from": "/blog/cat-toxic-foods-list",
+          "to": "/blog/cat-toxic-foods",
+          "linkText": "고양이 먹으면 안 되는 음식 완전 목록 — 독성 원인까지",
+          "publishedTitle": "고양이 먹으면 안 되는 음식 목록 | 양파·포도·초콜릿 독성 | 펫지기"
+        }
+      ],
+      "productionApplicable": true,
+      "publiclyVisibleAtRepair": true
+    },
+    {
+      "file": "db/seeds/blog-posts-29.ts",
+      "id": "blog-266",
+      "slug": "dog-neuter-insurance-claim",
+      "type": "blog",
+      "changedFields": [
+        "body"
+      ],
+      "bodyBeforeSha256": "dcef46f340b26cc42fbe2014e3c28755aada1a754e5602869bac6993d9da8731",
+      "bodyAfterSha256": "6ee6fbdbb6e661e21fb7a773cbfb8a39b6320c3729d0f7fe839182a93c7905e4",
+      "bodyTextSha256": "e9a55ea3b63c8c3ecd511a762674f2f651e579cbf6943952eed311075e325e94",
+      "replacements": [
+        {
+          "from": "/blog/dog-neuter-surgery-guide",
+          "to": "/blog/dog-neutering-guide",
+          "linkText": "강아지 중성화 수술 완전 가이드 — 시기·비용·회복까지",
+          "publishedTitle": "강아지 중성화 수술 완전 가이드 | 시기·비용·회복·장단점 | 펫지기"
+        },
+        {
+          "from": "/blog/cat-neuter-surgery-guide",
+          "to": "/blog/cat-neutering-guide",
+          "linkText": "고양이 중성화 수술 — 시기·비용·회복까지 한 번에",
+          "publishedTitle": "고양이 중성화 수술 시기·비용·회복 완전 가이드 | 펫지기"
+        }
+      ],
+      "productionApplicable": true,
+      "publiclyVisibleAtRepair": true
+    },
+    {
+      "file": "db/seeds/blog-posts-29.ts",
+      "id": "blog-267",
+      "slug": "pet-legal-will-trust-guide",
+      "type": "blog",
+      "changedFields": [
+        "body"
+      ],
+      "bodyBeforeSha256": "48b15a8f8fc034964c6e24c30d951df4756e4c75aa01d3571a30713247d28918",
+      "bodyAfterSha256": "ed6f4a257393a540bc7c3a82ef8b76c295c184bcf2c533abcc54dc3ac4b8b349",
+      "bodyTextSha256": "30698327bdb7d73dbd642440374122f2356ea49f7c6c7ad169b48e813e57e685",
+      "replacements": [
+        {
+          "from": "/blog/pet-will-guardian-guide",
+          "to": "/blog/pet-will-guide",
+          "linkText": "반려동물을 위한 유언장 작성 가이드 — 내가 없을 때 아이를 지키는 법",
+          "publishedTitle": "반려동물 유언장 작성법 | 보호자 사망 후 반려동물 보호 | 펫지기"
+        },
+        {
+          "from": "/blog/animal-protection-law-2024",
+          "to": "/blog/animal-protection-law-guide",
+          "linkText": "2024년 동물보호법 핵심 정리",
+          "publishedTitle": "2024 동물보호법 핵심 정리 | 등록·학대 처벌·외출 규정 | 펫지기"
+        }
+      ],
+      "productionApplicable": true,
+      "publiclyVisibleAtRepair": true
+    },
+    {
+      "file": "db/seeds/blog-posts-29.ts",
+      "id": "blog-268",
+      "slug": "dog-cataract-eye-cloudy-guide",
+      "type": "blog",
+      "changedFields": [
+        "body"
+      ],
+      "bodyBeforeSha256": "3a033421a086041d10ea8e9f4727b67b35023af2cadd142f0b4020fc68b80100",
+      "bodyAfterSha256": "346eedef47c6df647983c80b741ed4804145dbe1ad5ef46936155446ff7d383b",
+      "bodyTextSha256": "ad078fa9fbf93ed50722b6c56227fc817106404a1a875f24bd8887fd8a935fc6",
+      "replacements": [
+        {
+          "from": "/blog/senior-dog-health-guide",
+          "to": "/blog/senior-dog-health-management",
+          "linkText": "노령견 건강 관리 — 7세부터 달라지는 돌봄의 기준",
+          "publishedTitle": "노령견 건강 관리 가이드 | 7세+ 검진·영양·관절·인지 기능 | 펫지기"
+        }
+      ],
+      "productionApplicable": true,
+      "publiclyVisibleAtRepair": true
+    },
+    {
+      "file": "db/seeds/blog-posts-29.ts",
+      "id": "blog-269",
+      "slug": "pet-memorial-photo-video-album",
+      "type": "blog",
+      "changedFields": [
+        "body"
+      ],
+      "bodyBeforeSha256": "2840c46f6445c590cab43bed590fc72d914e29edc347c5f07e306df0d8f2a372",
+      "bodyAfterSha256": "621634387835712d660ce16ec357803a79b8ba908c2509c3240d7dd221cccf14",
+      "bodyTextSha256": "5677ea66b300d910ae450b6c7b8aaa8e49b98bd2f729a87b316bc9f0619a3cdb",
+      "replacements": [
+        {
+          "from": "/blog/pet-memorial-15-ways",
+          "to": "/blog/pet-memorial-ideas",
+          "linkText": "반려동물 추모 방법 15가지 — 마음을 담은 기억 방식",
+          "publishedTitle": "반려동물 추모 아이디어 15가지 | 추모 물품·의식·온라인 추모 | 펫지기"
+        },
+        {
+          "from": "/blog/petloss-recovery-guide",
+          "to": "/blog/pet-grief-recovery-guide",
+          "linkText": "펫로스 증후군 극복 가이드",
+          "publishedTitle": "펫로스 증후군 극복 가이드 | 슬픔 단계·회복 방법 | 펫지기"
+        }
+      ],
+      "productionApplicable": true,
+      "publiclyVisibleAtRepair": true
+    },
+    {
+      "file": "db/seeds/blog-posts-29.ts",
+      "id": "blog-270",
+      "slug": "pet-hospice-vet-questions-guide",
+      "type": "blog",
+      "changedFields": [
+        "body"
+      ],
+      "bodyBeforeSha256": "61d8d02ac7e33794e269e7a893aea61dc32d5a73ca16e8ce0db58131f7d0a4a2",
+      "bodyAfterSha256": "b353961e5aa40d9766e3f0f44b7f071d8b96d15d32578ab090b2ab2558baf64b",
+      "bodyTextSha256": "c6d2c7ea35cf97d8aa6649c5de0bc015839f5dd156c62f1ec4bc7efbd380d0fc",
+      "replacements": [
+        {
+          "from": "/blog/pet-last-signs-guide",
+          "to": "/blog/pet-end-of-life-signs",
+          "linkText": "반려동물의 마지막 징후 — 곁에 있어줘야 할 때를 알아보는 법",
+          "publishedTitle": "반려동물 마지막 징후 | 신체·행동 변화·임종 준비 | 펫지기"
+        }
+      ],
+      "productionApplicable": true,
+      "publiclyVisibleAtRepair": true
+    },
+    {
+      "file": "db/seeds/blog-posts-30.ts",
+      "id": "blog-273",
+      "slug": "dog-forbidden-fruits-nuts-complete-list",
+      "type": "blog",
+      "changedFields": [
+        "body"
+      ],
+      "bodyBeforeSha256": "a21294f17d7518a467ebf8750a4ca68b3bb4159f6ae0e49f5aced22fa79fb007",
+      "bodyAfterSha256": "aa237eedc68a5d9a002358b0280cf7f9e7cea297fdc06917eae79145ebce8ded",
+      "bodyTextSha256": "245f7d7680aa76f0b87a8926f05e0d10710282835dc54ecd80b0619f2cf62b12",
+      "replacements": [
+        {
+          "from": "/blog/dog-toxic-substance-emergency",
+          "to": "/blog/dog-poisoning-first-aid",
+          "linkText": "강아지 독성 물질 섭취 — 응급 처치와 해서는 안 되는 것",
+          "publishedTitle": "강아지 중독 응급 처치 | 독성 물질 섭취 시 대처법 | 펫지기"
+        }
+      ],
+      "productionApplicable": true,
+      "publiclyVisibleAtRepair": true
+    },
+    {
+      "file": "db/seeds/blog-posts-30.ts",
+      "id": "blog-275",
+      "slug": "petloss-telling-others-how-to",
+      "type": "blog",
+      "changedFields": [
+        "body"
+      ],
+      "bodyBeforeSha256": "66551eb61a9a2f5aea143b022ded41d3ba3d8d33db36873a4f239f93b7bec6c5",
+      "bodyAfterSha256": "2c985179d823de88060f8499565fd49c13fdb8e7133e5548c1e5f5d7fb1ed622",
+      "bodyTextSha256": "cbade2015184e0c6a581321c9dc712deda50df5ce4daa582fc597473b555ef4f",
+      "replacements": [
+        {
+          "from": "/blog/petloss-recovery-guide",
+          "to": "/blog/pet-grief-recovery-guide",
+          "linkText": "펫로스 증후군 극복 가이드 — 슬픔을 통과하는 법",
+          "publishedTitle": "펫로스 증후군 극복 가이드 | 슬픔 단계·회복 방법 | 펫지기"
+        },
+        {
+          "from": "/blog/child-pet-death-explanation",
+          "to": "/blog/petloss-children-explanation-guide",
+          "linkText": "아이에게 반려동물의 죽음 설명하는 법",
+          "publishedTitle": "아이에게 반려동물 죽음 설명하기 — 나이별 가이드 | 펫지기"
+        }
+      ],
+      "productionApplicable": true,
+      "publiclyVisibleAtRepair": true
+    },
+    {
+      "file": "db/seeds/blog-posts-31.ts",
+      "id": "blog-276",
+      "slug": "dog-atopy-skin-allergy-guide",
+      "type": "blog",
+      "changedFields": [
+        "body"
+      ],
+      "bodyBeforeSha256": "7fd48d09f84abe69531eb0fb88493a6d3fd04d59e0875d6db6c9d105d881e06e",
+      "bodyAfterSha256": "a7dddf01870a8dff383f3f429d4399b262909cf2527ac36ea92c8fc45be3cd5f",
+      "bodyTextSha256": "c5fce259b61274f4aa5833a89d9f67dd4b3323fc6d2b116f1cbd9193a0ac2d63",
+      "replacements": [
+        {
+          "from": "/blog/dog-skin-health-guide",
+          "to": "/blog/dog-skin-care-guide",
+          "linkText": "강아지 피부 건강 관리 — 빗질·목욕·환경 관리 완전 가이드",
+          "publishedTitle": "강아지 피부 건강 관리 | 빗질·목욕·환경 관리 완전 가이드 | 펫지기"
+        }
+      ],
+      "productionApplicable": true,
+      "publiclyVisibleAtRepair": true
+    },
+    {
+      "file": "db/seeds/blog-posts-31.ts",
+      "id": "blog-277",
+      "slug": "cat-heart-disease-early-signs",
+      "type": "blog",
+      "changedFields": [
+        "body"
+      ],
+      "bodyBeforeSha256": "60d5fa2f57eb7b153bc9ec6ed56dafac9ffe34164c90dccabacf5e0d4882b1b3",
+      "bodyAfterSha256": "5aef0dd322e59ea333bf07bcd8a4d234200d3077cc0740256ee1d0770913ae2d",
+      "bodyTextSha256": "45e84b4ed26033bfee39b0441301013b0314d02b2e694fcb02dedbec340df93f",
+      "replacements": [
+        {
+          "from": "/blog/cat-hyperthyroidism-weight-loss",
+          "to": "/blog/cat-hyperthyroidism-guide",
+          "linkText": "고양이 갑상선 기능항진증 — 잘 먹어도 살이 빠진다면",
+          "publishedTitle": "고양이 갑상선 기능항진증 증상·치료 완전 가이드 | 펫지기"
+        },
+        {
+          "from": "/blog/cat-chronic-kidney-disease-early",
+          "to": "/blog/cat-kidney-disease-early-signs",
+          "linkText": "고양이 만성 신부전 초기 신호 — 조기 발견이 중요한 이유",
+          "publishedTitle": "고양이 신장 질환(CKD) 초기 신호·진단·관리 가이드 | 펫지기"
+        }
+      ],
+      "productionApplicable": true,
+      "publiclyVisibleAtRepair": true
+    },
+    {
+      "file": "db/seeds/blog-posts-31.ts",
+      "id": "blog-279",
+      "slug": "multi-dog-household-introduction-guide",
+      "type": "blog",
+      "changedFields": [
+        "body"
+      ],
+      "bodyBeforeSha256": "eae3fba04b06aed6b46dfdfa832f99c9cffadcb3b92730ebd38d173939f5509a",
+      "bodyAfterSha256": "f2e9a90609d800b41bece2406295037323327d3a60ac9d170069853d19e69e76",
+      "bodyTextSha256": "a806dfcff0849d166b92ed273fea0db8b0026eced43f62bdaf584ec20735187a",
+      "replacements": [
+        {
+          "from": "/blog/cat-dog-cohabitation-guide",
+          "to": "/blog/dog-cat-introduction",
+          "linkText": "강아지와 고양이 합사 — 첫 만남부터 공존까지 단계별 가이드",
+          "publishedTitle": "강아지 고양이 합사 방법 | 단계별 소개·훈련·갈등 해결 | 펫지기"
+        }
+      ],
+      "productionApplicable": true,
+      "publiclyVisibleAtRepair": true
+    },
+    {
+      "file": "db/seeds/blog-posts-32.ts",
+      "id": "blog-283",
+      "slug": "dog-summer-cooling-diet-tips",
+      "type": "blog",
+      "changedFields": [
+        "body"
+      ],
+      "bodyBeforeSha256": "1855c215a2a754df90fea6cd8edfbf51f2220e6214392613b19cb3e1330ff410",
+      "bodyAfterSha256": "3d2b222eb49fbe3bb9aeaeb33acc6f61a7e70b2373d895306e532cb565800bae",
+      "bodyTextSha256": "095234361384dfa77f6f71cbf6b4fb4ad58ecb51a8e3d0019b442f0ace5000f1",
+      "replacements": [
+        {
+          "from": "/blog/dog-water-intake-guide",
+          "to": "/blog/dog-hydration-guide",
+          "linkText": "강아지 물 얼마나 마셔야 할까 — 탈수 신호와 수분 관리",
+          "publishedTitle": "강아지 하루 물 섭취량 기준 | 탈수 증상·음수 늘리는 법 | 펫지기"
+        },
+        {
+          "from": "/blog/dog-daily-calorie-guide",
+          "to": "/blog/dog-calorie-calculation",
+          "linkText": "강아지 하루 칼로리 계산법 — 비만 예방의 첫걸음",
+          "publishedTitle": "강아지 하루 칼로리 계산 방법 | 체중별 급여량·RER·MER | 펫지기"
+        }
+      ],
+      "productionApplicable": true,
+      "publiclyVisibleAtRepair": true
+    },
+    {
+      "file": "db/seeds/blog-posts-32.ts",
+      "id": "blog-284",
+      "slug": "pet-funeral-self-preparation-guide",
+      "type": "blog",
+      "changedFields": [
+        "body"
+      ],
+      "bodyBeforeSha256": "36dc6af6e5d2c5e63d2bc0549a50b4b74aaf3a230b8acf6c569e82367c390f20",
+      "bodyAfterSha256": "24491c7123c3b53bcbfe95106911489f01eab0ac36adc4afdb7e4c54ad3ae93f",
+      "bodyTextSha256": "dac98f6714dafeaf876e152c5e5594d8d693e68918f1dc68a0570481f8a7c5ce",
+      "replacements": [
+        {
+          "from": "/blog/pet-cremation-burial-compare",
+          "to": "/blog/pet-cremation-vs-burial",
+          "linkText": "반려동물 화장 vs 장묘 — 비용·절차·선택 기준 완전 비교",
+          "publishedTitle": "반려동물 화장 vs 장묘 비교 | 비용·절차·법규 | 펫지기"
+        }
+      ],
+      "productionApplicable": true,
+      "publiclyVisibleAtRepair": true
+    },
+    {
+      "file": "db/seeds/blog-posts-33.ts",
+      "id": "blog-286",
+      "slug": "pet-travel-airline-rules-guide",
+      "type": "blog",
+      "changedFields": [
+        "body"
+      ],
+      "bodyBeforeSha256": "6c2906c5c8b29889267309ba6d614844ad759020781d0a8883328355bbc2e8b7",
+      "bodyAfterSha256": "a5da36758421521d9e7be0dd8acaf89e23d0092a76ce215fdf709733078e791d",
+      "bodyTextSha256": "2ec01088dc95562c7f3c068dc74fef98a7c1feac643a324532068978bd50bde6",
+      "replacements": [
+        {
+          "from": "/blog/pet-car-sickness-guide",
+          "to": "/blog/dog-car-sickness-guide",
+          "linkText": "강아지 차 멀미 — 원인과 예방 완전 가이드",
+          "publishedTitle": "강아지 차 멀미 완전 가이드 — 원인·예방·해결법 | 펫지기"
+        }
+      ],
+      "productionApplicable": true,
+      "publiclyVisibleAtRepair": true
+    },
+    {
+      "file": "db/seeds/blog-posts-33.ts",
+      "id": "blog-290",
+      "slug": "dog-obesity-prevention-activity-guide",
+      "type": "blog",
+      "changedFields": [
+        "body"
+      ],
+      "bodyBeforeSha256": "050b7c051fef33506fe3eb679c34452d2231c51663495ce99427ae7dbfe86e0b",
+      "bodyAfterSha256": "1f2e445112d7fb458dfa648ef29edb77bdb03795ba11b9ade3f3e724fe511c2c",
+      "bodyTextSha256": "7cbb7570b7c366e2084d7c9ed438f58982f72ef76a225d93a0e1f63f1cf66c45",
+      "replacements": [
+        {
+          "from": "/blog/dog-daily-calorie-guide",
+          "to": "/blog/dog-calorie-calculation",
+          "linkText": "강아지 하루 칼로리 계산법 — 비만 예방의 첫걸음",
+          "publishedTitle": "강아지 하루 칼로리 계산 방법 | 체중별 급여량·RER·MER | 펫지기"
+        }
+      ],
+      "productionApplicable": true,
+      "publiclyVisibleAtRepair": true
+    },
+    {
+      "file": "db/seeds/blog-posts-4.ts",
+      "id": "blog-dog-breed-selection-guide",
+      "slug": "dog-breed-selection-guide",
+      "type": "blog",
+      "changedFields": [
+        "body"
+      ],
+      "bodyBeforeSha256": "2ab3245daaa5072a196c59d698ed36d549a9fa9d0aa6152ac936ac7d1756e49a",
+      "bodyAfterSha256": "1067979982783c36ba2dec9421f559e33504fdd5c3231d9373a196997e8dae67",
+      "bodyTextSha256": "beb6870553ac18fef8b9e7aa46166d4a34bf92e469a88fd7f41fc2063031278b",
+      "replacements": [
+        {
+          "from": "/blog/dog-adoption-checklist",
+          "to": "/blog/dog-first-adoption-kit",
+          "linkText": "강아지 처음 입양 준비물 체크리스트",
+          "publishedTitle": "강아지 첫 입양 준비물 체크리스트 | 첫 날 필수 용품 | 펫지기"
+        }
+      ],
+      "productionApplicable": true,
+      "publiclyVisibleAtRepair": true
+    },
+    {
+      "file": "db/seeds/blog-posts-4.ts",
+      "id": "blog-stray-dog-adoption-guide",
+      "slug": "stray-dog-adoption-guide",
+      "type": "blog",
+      "changedFields": [
+        "body"
+      ],
+      "bodyBeforeSha256": "df7ead0448a3bc8309daab9589eaec6ccbf43490259f03210ef6f630706958a3",
+      "bodyAfterSha256": "e467a47fcceee8800370c22613912ecbd151d59507d997e68ff00ede471c8b7c",
+      "bodyTextSha256": "203d9fea9ba75dfc36b8ea0becb51cd45f7fa6adf8ba5091de7c99c1229ebe28",
+      "replacements": [
+        {
+          "from": "/blog/dog-adoption-checklist",
+          "to": "/blog/dog-first-adoption-kit",
+          "linkText": "강아지 처음 입양 준비물 체크리스트",
+          "publishedTitle": "강아지 첫 입양 준비물 체크리스트 | 첫 날 필수 용품 | 펫지기"
+        }
+      ],
+      "productionApplicable": true,
+      "publiclyVisibleAtRepair": true
+    },
+    {
+      "file": "db/seeds/blog-posts-4.ts",
+      "id": "blog-kitten-first-month-care",
+      "slug": "kitten-first-month-care",
+      "type": "blog",
+      "changedFields": [
+        "body"
+      ],
+      "bodyBeforeSha256": "72b2f78013cd9a622430888d558c612a9a128b2e87542c5e1ade9d156d44cad5",
+      "bodyAfterSha256": "8624617517f6bcca800a8e2edab2b3681df9751fe6a1306c8fc51a53e914876f",
+      "bodyTextSha256": "534f0c17f5656539311ee54c6bf6248aab6ba2dc22f9bb8830f5e4214e34d55d",
+      "replacements": [
+        {
+          "from": "/blog/cat-vaccination-schedule",
+          "to": "/guide/cat-vaccination-schedule",
+          "linkText": "고양이 예방접종 스케줄",
+          "publishedTitle": "고양이 예방접종 스케줄 | 시기·종류·실내외 차이 | 펫지기"
+        }
+      ],
+      "productionApplicable": true,
+      "publiclyVisibleAtRepair": true
+    },
+    {
+      "file": "db/seeds/blog-posts-4.ts",
+      "id": "blog-foster-pet-guide",
+      "slug": "foster-pet-guide",
+      "type": "blog",
+      "changedFields": [
+        "body"
+      ],
+      "bodyBeforeSha256": "47d909478cc6a537f34e42dd39532972a0821616c7b8b2db82f985df1ac331c7",
+      "bodyAfterSha256": "f8a7f6f3f6eda5038358bafb24d59b5728eeea0562665cae750995877c04dd2b",
+      "bodyTextSha256": "00047bac5d4f208e09d03dd7e8513086a115f4eb525eb019dee1795ce096e9ff",
+      "replacements": [
+        {
+          "from": "/blog/dog-adoption-checklist",
+          "to": "/blog/dog-first-adoption-kit",
+          "linkText": "강아지 처음 입양 준비물",
+          "publishedTitle": "강아지 첫 입양 준비물 체크리스트 | 첫 날 필수 용품 | 펫지기"
+        }
+      ],
+      "productionApplicable": true,
+      "publiclyVisibleAtRepair": true
+    },
+    {
+      "file": "db/seeds/blog-posts-5.ts",
+      "id": "blog-puppy-first-week-guide",
+      "slug": "puppy-first-week-guide",
+      "type": "blog",
+      "changedFields": [
+        "body"
+      ],
+      "bodyBeforeSha256": "8aea0bdb9aaacacbe39292695dbaf97abada605ebb837a334f116f6f8c2309c1",
+      "bodyAfterSha256": "0f534386f9ccc3a3bfdc12288706b4cc71d3d4569d9e931fee8f08fc3b56f728",
+      "bodyTextSha256": "8ce6389bbd8e627776cdd6fe7007647a2bee7697bb7904c25d3ca227013a5ad7",
+      "replacements": [
+        {
+          "from": "/blog/dog-adoption-checklist",
+          "to": "/blog/dog-first-adoption-kit",
+          "linkText": "강아지 처음 입양 준비물 체크리스트",
+          "publishedTitle": "강아지 첫 입양 준비물 체크리스트 | 첫 날 필수 용품 | 펫지기"
+        }
+      ],
+      "productionApplicable": true,
+      "publiclyVisibleAtRepair": true
+    },
+    {
+      "file": "db/seeds/blog-posts-5.ts",
+      "id": "blog-pet-adoption-vs-purchase",
+      "slug": "pet-adoption-vs-purchase",
+      "type": "blog",
+      "changedFields": [
+        "body"
+      ],
+      "bodyBeforeSha256": "669588ece3c007f2560ceff6f8be61a28e6dba855226af43a2ab38d06c5eb4a2",
+      "bodyAfterSha256": "a131607a6d5fa7abd9bc6e5633711e24b8a79d6032398c357d8f3e397ce568c9",
+      "bodyTextSha256": "71e900d47f1841a83a8d174b02ae118926f9db3117fe53729e82d007880e1f64",
+      "replacements": [
+        {
+          "from": "/blog/dog-adoption-checklist",
+          "to": "/blog/dog-first-adoption-kit",
+          "linkText": "강아지 처음 입양 준비물 체크리스트",
+          "publishedTitle": "강아지 첫 입양 준비물 체크리스트 | 첫 날 필수 용품 | 펫지기"
+        }
+      ],
+      "productionApplicable": true,
+      "publiclyVisibleAtRepair": true
+    },
+    {
+      "file": "db/seeds/blog-posts-53.ts",
+      "id": "blog-389",
+      "slug": "pet-memorial-tattoo-artwork-ideas",
+      "type": "blog",
+      "changedFields": [
+        "body"
+      ],
+      "bodyBeforeSha256": "a9b904df229477a263b898bbb08c82d0a2ae94f882f019330c2d48404256797e",
+      "bodyAfterSha256": "accf666a743653d776297244ae4446486e87fca8cc58d4151b3c47875a80cf88",
+      "bodyTextSha256": "b3f65c89b85fe7a7ccb31954d2851dfc169b25bceec8784c62d2374d584a407a",
+      "replacements": [
+        {
+          "from": "/blog/petloss-support-community-guide",
+          "to": "/blog/petloss-grief-support-resources",
+          "linkText": "펫로스 지원 모임",
+          "publishedTitle": "펫로스 슬픔 지원 — 도움 받을 수 있는 곳 안내 | 펫지기"
+        }
+      ],
+      "productionApplicable": true,
+      "publiclyVisibleAtRepair": true
+    },
+    {
+      "file": "db/seeds/blog-posts-60.ts",
+      "id": "blog-423",
+      "slug": "pet-friendly-cafe-restaurant-guide",
+      "type": "blog",
+      "changedFields": [
+        "body"
+      ],
+      "bodyBeforeSha256": "080f0f42a442e14d5037b16343bacabddd929dd53579d38343e2824558915b6d",
+      "bodyAfterSha256": "b418f923563455356187d60d7d312ecdc701ec5aedd44cd97fc9ed2080d991aa",
+      "bodyTextSha256": "1d56e9b20199f6925736ef8ea1b109a4df1cd729e722b32201d5b1f4d5906e1a",
+      "replacements": [
+        {
+          "from": "/blog/dog-hot-pavement-paw-burn",
+          "to": "/blog/dog-summer-paw-protection",
+          "linkText": "뜨거운 바닥 발바닥 화상",
+          "publishedTitle": "강아지 여름 발바닥 보호 가이드 | 아스팔트 화상 예방 | 펫지기"
+        }
+      ],
+      "productionApplicable": true,
+      "publiclyVisibleAtRepair": true
+    },
+    {
+      "file": "db/seeds/blog-posts-9.ts",
+      "id": "blog-pet-abandonment-law",
+      "slug": "pet-abandonment-law",
+      "type": "blog",
+      "changedFields": [
+        "body"
+      ],
+      "bodyBeforeSha256": "d26f626b01e495d183110a75cc1c0175b6ba372941aa197a960b4e4cd274150c",
+      "bodyAfterSha256": "47ed8b34539578fe5ca13d7232fe1d05a18a8929ac4da2527148c16c0a2da35c",
+      "bodyTextSha256": "9b3670bc4a039b775027f6a28607cbb5e2ad4498e40bb09e21ae2d83e80f072a",
+      "replacements": [
+        {
+          "from": "/blog/dog-adoption-checklist",
+          "to": "/guide/dog-adoption-checklist",
+          "linkText": "강아지 입양 체크리스트",
+          "publishedTitle": "강아지 입양 체크리스트 | 준비·비용·동물등록 | 펫지기"
+        }
+      ],
+      "productionApplicable": true,
+      "publiclyVisibleAtRepair": true
+    }
+  ],
+  "changedSeedRowCount": 80,
+  "redirectedAnchorCount": 98,
+  "unlinkedAnchorCount": 9,
+  "disclaimerLiteralizedRowCount": 8,
+  "changedProductionRowCount": 79,
+  "changedScheduledRowCount": 1
+}

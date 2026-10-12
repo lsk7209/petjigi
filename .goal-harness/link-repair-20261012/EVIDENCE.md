@@ -1,0 +1,3 @@
+Baseline .seo-cache/live-audit-20261012/crawl.json:1017 sitemap URLs200; supplementary500 URLs46 content targets404. Original body sources and live references remain preserved in prior audit evidence.
+
+Final local: unit462/E2E113/build/lint/typecheck/gate80/0, focused2/2, independent rereviewPASS. Production79 body-only CAS applied, full rows79/79 no protected changes, recheck79noop. Public verification126/126:78publicpages200 fixedanchors,1futurepage404 no articlebody (2026-11-24 date preserved),47destinations200. Source audit78referrersallcovered. Logs .seo-cache/link-repair-*-20261012.*; separatefullrow+fieldbackups .backup-prod/link-repair-20261012/production/.

@@ -773,7 +773,7 @@ const BLOG_POSTS_9: NewContent[] = [
 
 <h2>유기를 막는 준비</h2>
 <ul>
-<li>입양 전 평생 비용과 시간을 계산한다 — <a href="/blog/dog-adoption-checklist">강아지 입양 체크리스트</a></li>
+<li>입양 전 평생 비용과 시간을 계산한다 — <a href="/guide/dog-adoption-checklist">강아지 입양 체크리스트</a></li>
 <li>동물등록으로 유실 시 빨리 찾을 수 있게 한다 — <a href="/blog/pet-registration-guide">동물등록 방법 가이드</a></li>
 <li>행동 문제나 질병이 이유라면 훈련사·수의사 상담을 먼저 받는다.</li>
 <li>비용 부담이 이유라면 <a href="/blog/vet-cost-saving-guide">병원비 절약 가이드</a>와 지자체 지원 제도를 알아본다.</li>

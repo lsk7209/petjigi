@@ -466,7 +466,7 @@ const BLOG_POSTS_10: NewContent[] = [
   <li>클리퍼를 발톱에 대기만 하고 간식 — 실제로 자르지 않는다</li>
   <li>발톱 하나씩 자르며 간식을 준다</li>
 </ol>
-<p>각 단계를 며칠씩 반복하며 강아지가 충분히 익숙해질 때까지 서두르지 않는다. 발톱이 부러지거나 심하게 손상됐을 때 응급 처치는 <a href="/blog/dog-broken-nail-guide">강아지 발톱 부러짐 가이드</a>를 참고하자. 발톱 관리를 포함한 전체 그루밍 루틴은 <a href="/blog/dog-grooming-basics">강아지 홈그루밍 기본 가이드</a>에서 확인할 수 있다.</p>`,
+<p>각 단계를 며칠씩 반복하며 강아지가 충분히 익숙해질 때까지 서두르지 않는다. 발톱이 부러지거나 심하게 손상됐을 때 응급 처치는 <a href="/blog/dog-broken-nail-guide">강아지 발톱 부러짐 가이드</a>를 참고하자. 발톱 관리를 포함한 전체 그루밍 루틴은 <a href="/guide/dog-grooming-guide">강아지 홈그루밍 기본 가이드</a>에서 확인할 수 있다.</p>`,
     ymyl: false,
     status: "published",
     publishedAt: scheduleDate(65),
@@ -532,7 +532,7 @@ const BLOG_POSTS_10: NewContent[] = [
 </ul>
 
 <h2>영양 관리와 이상 신호</h2>
-<p>오메가-3 지방산이 풍부한 사료나 보조제는 피부 장벽을 강화하고 과도한 털 빠짐을 줄이는 데 도움이 된다. 수분 섭취 부족도 피부 건조로 연결된다. <a href="/blog/cat-water-intake">고양이 물 섭취 늘리는 실전 방법</a>을 활용해 보자. 환모 시기가 아닌데 갑자기 털이 심하게 빠지거나 특정 부위에 탈모가 생기면 알러지·스트레스·갑상선 이상·기생충의 신호일 수 있다. 이 경우 동물병원을 방문해 원인을 찾아야 한다. 고양이 피부 문제 전반은 <a href="/blog/cat-skin-problems-guide">고양이 피부 문제 가이드</a>를 참고하자.</p>`,
+<p>오메가-3 지방산이 풍부한 사료나 보조제는 피부 장벽을 강화하고 과도한 털 빠짐을 줄이는 데 도움이 된다. 수분 섭취 부족도 피부 건조로 연결된다. <a href="/blog/cat-hydration-tips">고양이 물 섭취 늘리는 실전 방법</a>을 활용해 보자. 환모 시기가 아닌데 갑자기 털이 심하게 빠지거나 특정 부위에 탈모가 생기면 알러지·스트레스·갑상선 이상·기생충의 신호일 수 있다. 이 경우 동물병원을 방문해 원인을 찾아야 한다. 고양이 피부 문제 전반은 <a href="/blog/cat-skin-problems-guide">고양이 피부 문제 가이드</a>를 참고하자.</p>`,
     ymyl: false,
     status: "published",
     publishedAt: scheduleDate(66),

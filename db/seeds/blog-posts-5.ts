@@ -155,7 +155,7 @@ const BLOG_POSTS_5: NewContent[] = [
   <li>한꺼번에 너무 많은 경험 노출</li>
 </ul>
 
-<p>첫 주는 가장 당황스러운 시간이지만, 이 시간이 지나면 서로를 아는 관계가 시작된다. 준비물 전반은 <a href="/blog/dog-adoption-checklist">강아지 처음 입양 준비물 체크리스트</a>에서, 사회화 훈련은 <a href="/blog/dog-socialization-guide">강아지 사회화 훈련 황금기 가이드</a>에서 확인하자.</p>`,
+<p>첫 주는 가장 당황스러운 시간이지만, 이 시간이 지나면 서로를 아는 관계가 시작된다. 준비물 전반은 <a href="/blog/dog-first-adoption-kit">강아지 처음 입양 준비물 체크리스트</a>에서, 사회화 훈련은 <a href="/blog/dog-socialization-guide">강아지 사회화 훈련 황금기 가이드</a>에서 확인하자.</p>`,
     ymyl: false,
     status: "published",
     publishedAt: scheduleDate(11),
@@ -233,7 +233,7 @@ const BLOG_POSTS_5: NewContent[] = [
   <li><strong>비용 부담 최소화, 생명 구하고 싶다면</strong>: 보호소 입양</li>
 </ul>
 
-<p>충동적 결정이 최악이다. 가족 합의, 15년 계획, 충분한 준비가 갖춰진 선택이라면 어떤 방법이든 좋은 출발이다. 입양 준비물은 <a href="/blog/dog-adoption-checklist">강아지 처음 입양 준비물 체크리스트</a>에서, 보호소 유기견 입양 절차는 <a href="/blog/stray-dog-adoption-guide">유기견 입양 단계별 가이드</a>에서 확인하자.</p>`,
+<p>충동적 결정이 최악이다. 가족 합의, 15년 계획, 충분한 준비가 갖춰진 선택이라면 어떤 방법이든 좋은 출발이다. 입양 준비물은 <a href="/blog/dog-first-adoption-kit">강아지 처음 입양 준비물 체크리스트</a>에서, 보호소 유기견 입양 절차는 <a href="/blog/stray-dog-adoption-guide">유기견 입양 단계별 가이드</a>에서 확인하자.</p>`,
     ymyl: false,
     status: "published",
     publishedAt: scheduleDate(12),

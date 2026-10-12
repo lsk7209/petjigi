@@ -135,8 +135,8 @@ const BLOG_POSTS: NewContent[] = [
 
 <div style="margin:2rem 0;padding:1rem 1.25rem;background:var(--brand-accent-soft,#e6ecd9);border-radius:12px;">
 <strong>📚 관련 글</strong><br>
-<a href="/blog/dog-neuter-surgery-guide">강아지 중성화 수술 완전 가이드 — 시기·비용·회복까지</a><br>
-<a href="/blog/cat-neuter-surgery-guide">고양이 중성화 수술 — 시기·비용·회복까지 한 번에</a><br>
+<a href="/blog/dog-neutering-guide">강아지 중성화 수술 완전 가이드 — 시기·비용·회복까지</a><br>
+<a href="/blog/cat-neutering-guide">고양이 중성화 수술 — 시기·비용·회복까지 한 번에</a><br>
 <a href="/blog/pet-insurance-claim-guide">펫보험 보험금 청구 방법</a>
 </div>`,
     authorName: "펫지기 에디터",
@@ -200,8 +200,8 @@ const BLOG_POSTS: NewContent[] = [
 
 <div style="margin:2rem 0;padding:1rem 1.25rem;background:var(--brand-accent-soft,#e6ecd9);border-radius:12px;">
 <strong>📚 관련 글</strong><br>
-<a href="/blog/pet-will-guardian-guide">반려동물을 위한 유언장 작성 가이드 — 내가 없을 때 아이를 지키는 법</a><br>
-<a href="/blog/animal-protection-law-2024">2024년 동물보호법 핵심 정리</a><br>
+<a href="/blog/pet-will-guide">반려동물을 위한 유언장 작성 가이드 — 내가 없을 때 아이를 지키는 법</a><br>
+<a href="/blog/animal-protection-law-guide">2024년 동물보호법 핵심 정리</a><br>
 <a href="/blog/pet-death-admin-checklist">반려동물이 떠난 후 행정 처리</a>
 </div>`,
     authorName: "펫지기 에디터",
@@ -283,7 +283,7 @@ const BLOG_POSTS: NewContent[] = [
 <div style="margin:2rem 0;padding:1rem 1.25rem;background:var(--brand-accent-soft,#e6ecd9);border-radius:12px;">
 <strong>📚 관련 글</strong><br>
 <a href="/blog/dog-eye-care-guide">강아지 눈 관리 완전 가이드 — 눈곱·눈물·충혈 원인과 대처법</a><br>
-<a href="/blog/senior-dog-health-guide">노령견 건강 관리 — 7세부터 달라지는 돌봄의 기준</a><br>
+<a href="/blog/senior-dog-health-management">노령견 건강 관리 — 7세부터 달라지는 돌봄의 기준</a><br>
 <a href="/blog/dog-health-checkup">강아지 건강검진 — 나이별 주기와 꼭 챙겨야 할 검사 항목</a>
 </div>`,
     authorName: "펫지기 에디터",
@@ -356,8 +356,8 @@ const BLOG_POSTS: NewContent[] = [
 <div style="margin:2rem 0;padding:1rem 1.25rem;background:var(--brand-accent-soft,#e6ecd9);border-radius:12px;">
 <strong>📚 관련 글</strong><br>
 <a href="/blog/pet-anniversary-memorial-ideas">반려동물 기일 추모 방법 — 1주기를 의미 있게 보내는 방식들</a><br>
-<a href="/blog/pet-memorial-15-ways">반려동물 추모 방법 15가지 — 마음을 담은 기억 방식</a><br>
-<a href="/blog/petloss-recovery-guide">펫로스 증후군 극복 가이드</a>
+<a href="/blog/pet-memorial-ideas">반려동물 추모 방법 15가지 — 마음을 담은 기억 방식</a><br>
+<a href="/blog/pet-grief-recovery-guide">펫로스 증후군 극복 가이드</a>
 </div>`,
     authorName: "펫지기 에디터",
     authorCredential: "반려동물 생활 정보 큐레이터",
@@ -441,7 +441,7 @@ const BLOG_POSTS: NewContent[] = [
 <strong>📚 관련 글</strong><br>
 <a href="/blog/pet-hospice-care-guide">반려동물 호스피스 케어 가이드 — 마지막 시간을 편안하게</a><br>
 <a href="/blog/pet-euthanasia-guide">반려동물 안락사 — 결정부터 이후까지, 알아야 할 모든 것</a><br>
-<a href="/blog/pet-last-signs-guide">반려동물의 마지막 징후 — 곁에 있어줘야 할 때를 알아보는 법</a>
+<a href="/blog/pet-end-of-life-signs">반려동물의 마지막 징후 — 곁에 있어줘야 할 때를 알아보는 법</a>
 </div>`,
     authorName: "펫지기 에디터",
     authorCredential: "반려동물 생활 정보 큐레이터",

@@ -186,8 +186,8 @@ const BLOG_POSTS: NewContent[] = [
 
 <div style="margin:2rem 0;padding:1rem 1.25rem;background:var(--brand-accent-soft,#e6ecd9);border-radius:12px;">
 <strong>📚 관련 글</strong><br>
-<a href="/blog/petloss-recovery-guide">펫로스 증후군 극복 가이드 — 슬픔을 통과하는 법</a><br>
-<a href="/blog/child-pet-death-explanation">아이에게 반려동물의 죽음 설명하는 법 — 나이별 접근 가이드</a><br>
+<a href="/blog/pet-grief-recovery-guide">펫로스 증후군 극복 가이드 — 슬픔을 통과하는 법</a><br>
+<a href="/blog/petloss-children-explanation-guide">아이에게 반려동물의 죽음 설명하는 법 — 나이별 접근 가이드</a><br>
 <a href="/blog/pet-death-admin-checklist">반려동물이 떠난 후 행정 처리 — 동물등록 말소부터 보험금 청구까지</a>
 </div>`,
     authorName: "펫지기 에디터",
@@ -268,8 +268,8 @@ const BLOG_POSTS: NewContent[] = [
 <div style="margin:2rem 0;padding:1rem 1.25rem;background:var(--brand-accent-soft,#e6ecd9);border-radius:12px;">
 <strong>📚 관련 글</strong><br>
 <a href="/blog/dog-breed-selection-guide">강아지 품종 선택 가이드 — 생활 환경에 맞는 견종 고르는 법</a><br>
-<a href="/blog/dog-first-adoption-checklist">강아지 처음 입양 준비물 체크리스트 — 첫 날 전에 갖춰야 할 것들</a><br>
-<a href="/blog/shelter-dog-adoption-guide">유기견 입양 과정 완전 가이드 — 보호소 방문부터 가정 적응까지</a>
+<a href="/blog/dog-first-adoption-kit">강아지 처음 입양 준비물 체크리스트 — 첫 날 전에 갖춰야 할 것들</a><br>
+<a href="/blog/stray-dog-adoption-guide">유기견 입양 과정 완전 가이드 — 보호소 방문부터 가정 적응까지</a>
 </div>`,
     authorName: "펫지기 에디터",
     authorCredential: "반려동물 생활 정보 큐레이터",

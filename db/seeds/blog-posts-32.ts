@@ -203,8 +203,8 @@ const BLOG_POSTS: NewContent[] = [
 <div style="margin:2rem 0;padding:1rem 1.25rem;background:var(--brand-accent-soft,#e6ecd9);border-radius:12px;">
 <strong>📚 관련 글</strong><br>
 <a href="/blog/dog-toxic-foods">강아지에게 줘도 되는 채소·과일 vs 위험한 것</a><br>
-<a href="/blog/dog-water-intake-guide">강아지 물 얼마나 마셔야 할까 — 탈수 신호와 수분 관리</a><br>
-<a href="/blog/dog-daily-calorie-guide">강아지 하루 칼로리 계산법 — 비만 예방의 첫걸음</a>
+<a href="/blog/dog-hydration-guide">강아지 물 얼마나 마셔야 할까 — 탈수 신호와 수분 관리</a><br>
+<a href="/blog/dog-calorie-calculation">강아지 하루 칼로리 계산법 — 비만 예방의 첫걸음</a>
 </div>`,
     authorName: "펫지기 에디터",
     authorCredential: "반려동물 영양 정보 큐레이터",
@@ -269,7 +269,7 @@ const BLOG_POSTS: NewContent[] = [
 
 <div style="margin:2rem 0;padding:1rem 1.25rem;background:var(--brand-accent-soft,#e6ecd9);border-radius:12px;">
 <strong>📚 관련 글</strong><br>
-<a href="/blog/pet-cremation-burial-compare">반려동물 화장 vs 장묘 — 비용·절차·선택 기준 완전 비교</a><br>
+<a href="/blog/pet-cremation-vs-burial">반려동물 화장 vs 장묘 — 비용·절차·선택 기준 완전 비교</a><br>
 <a href="/blog/pet-memorial-park-guide">반려동물 추모공원 이용 가이드</a><br>
 <a href="/blog/pet-anniversary-memorial-ideas">반려동물 기일 추모 방법 — 1주기를 의미 있게 보내는 방식들</a>
 </div>`,

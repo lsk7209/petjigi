@@ -81,7 +81,7 @@ const BLOG_POSTS: NewContent[] = [
 <div style="margin:2rem 0;padding:1rem 1.25rem;background:var(--brand-accent-soft,#e6ecd9);border-radius:12px;">
 <strong>📚 관련 글</strong><br>
 <a href="/blog/dog-food-allergy-elimination-diet-test">강아지 알레르기 사료 찾는 법 — 식이 제거 테스트 8주 완전 가이드</a><br>
-<a href="/blog/dog-skin-health-guide">강아지 피부 건강 관리 — 빗질·목욕·환경 관리 완전 가이드</a><br>
+<a href="/blog/dog-skin-care-guide">강아지 피부 건강 관리 — 빗질·목욕·환경 관리 완전 가이드</a><br>
 <a href="/blog/dog-health-checkup">강아지 건강검진 — 나이별 주기와 꼭 챙겨야 할 검사 항목</a>
 </div>`,
     authorName: "펫지기 에디터",
@@ -156,8 +156,8 @@ const BLOG_POSTS: NewContent[] = [
 
 <div style="margin:2rem 0;padding:1rem 1.25rem;background:var(--brand-accent-soft,#e6ecd9);border-radius:12px;">
 <strong>📚 관련 글</strong><br>
-<a href="/blog/cat-hyperthyroidism-weight-loss">고양이 갑상선 기능항진증 — 잘 먹어도 살이 빠진다면</a><br>
-<a href="/blog/cat-chronic-kidney-disease-early">고양이 만성 신부전 초기 신호 — 조기 발견이 중요한 이유</a><br>
+<a href="/blog/cat-hyperthyroidism-guide">고양이 갑상선 기능항진증 — 잘 먹어도 살이 빠진다면</a><br>
+<a href="/blog/cat-kidney-disease-early-signs">고양이 만성 신부전 초기 신호 — 조기 발견이 중요한 이유</a><br>
 <a href="/blog/senior-dog-health-management">노령견 건강 관리 — 7세부터 달라지는 돌봄의 기준</a>
 </div>`,
     authorName: "펫지기 에디터",
@@ -305,7 +305,7 @@ const BLOG_POSTS: NewContent[] = [
 
 <div style="margin:2rem 0;padding:1rem 1.25rem;background:var(--brand-accent-soft,#e6ecd9);border-radius:12px;">
 <strong>📚 관련 글</strong><br>
-<a href="/blog/cat-dog-cohabitation-guide">강아지와 고양이 합사 — 첫 만남부터 공존까지 단계별 가이드</a><br>
+<a href="/blog/dog-cat-introduction">강아지와 고양이 합사 — 첫 만남부터 공존까지 단계별 가이드</a><br>
 <a href="/blog/dog-separation-anxiety-prevention-guide">강아지 분리불안 예방 가이드</a><br>
 <a href="/blog/multi-pet-insurance-strategy">다묘·다견 가정 펫보험 전략</a>
 </div>`,

@@ -476,7 +476,7 @@ const POSTS: NewContent[] = [
 
 <h2>노령견에 맞는 두뇌 자극 활동</h2>
 <ul>
-  <li><strong>후각 탐색 (노즈워크)</strong>: 천에 간식 싸기, 낮은 레벨의 노즈워크 박스. 관절 부담 없이 집중력·후각 자극. <a href="/guide/dog-nosework-guide">강아지 노즈워크 가이드</a> 참고</li>
+  <li><strong>후각 탐색 (노즈워크)</strong>: 천에 간식 싸기, 낮은 레벨의 노즈워크 박스. 관절 부담 없이 집중력·후각 자극. <a href="/blog/dog-nosework-guide">강아지 노즈워크 가이드</a> 참고</li>
   <li><strong>느린 트릭 연습</strong>: 이미 아는 '앉아·엎드려' 복습. 새로운 트릭은 쉬운 것으로. 짧게(5분) 자주(하루 2회)</li>
   <li><strong>퍼즐 피더</strong>: 레벨 1의 쉬운 퍼즐로 식사 시간 활용. 관절에 부담되지 않는 바닥형 선택</li>
   <li><strong>냄새 탐색 산책</strong>: 거리보다 시간. 같은 장소를 천천히 냄새 맡으며 걷기</li>

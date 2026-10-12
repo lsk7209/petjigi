@@ -72,7 +72,7 @@ const BLOG_POSTS: NewContent[] = [
 <strong>📚 관련 글</strong><br>
 <a href="/blog/pet-moving-new-home-adaptation">반려동물과 이사하기 — 새 집 적응을 돕는 단계별 가이드</a><br>
 <a href="/blog/pet-rental-contract-guide">반려동물과 전세·월세 계약 — 특약·분쟁 예방 가이드</a><br>
-<a href="/blog/pet-car-sickness-guide">강아지 차 멀미 — 원인과 예방 완전 가이드</a>
+<a href="/blog/dog-car-sickness-guide">강아지 차 멀미 — 원인과 예방 완전 가이드</a>
 </div>`,
     authorName: "펫지기 에디터",
     authorCredential: "반려동물 법률·금융 정보 큐레이터",
@@ -383,7 +383,7 @@ const BLOG_POSTS: NewContent[] = [
 
 <div style="margin:2rem 0;padding:1rem 1.25rem;background:var(--brand-accent-soft,#e6ecd9);border-radius:12px;">
 <strong>📚 관련 글</strong><br>
-<a href="/blog/dog-daily-calorie-guide">강아지 하루 칼로리 계산법 — 비만 예방의 첫걸음</a><br>
+<a href="/blog/dog-calorie-calculation">강아지 하루 칼로리 계산법 — 비만 예방의 첫걸음</a><br>
 <a href="/blog/dog-walk-guide">강아지 산책 완전 가이드 — 거리·횟수·목줄 선택까지</a><br>
 <a href="/blog/dog-food-transition-method">강아지 사료 교체 방법 — 소화 문제 없이 새 사료로 바꾸는 7~10일 가이드</a>
 </div>`,

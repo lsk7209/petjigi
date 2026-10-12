@@ -654,10 +654,10 @@ const BLOG_POSTS_13: NewContent[] = [
 <h2>다른 반려동물이 있는 경우</h2>
 <p>함께 살던 다른 반려동물도 사별 스트레스를 받을 수 있다. 새 반려동물을 소개하기 전에 현재 반려동물의 상태가 안정됐는지 확인하고, 단계적으로 소개하는 것이 좋다.</p>
 
-<p>슬픔을 통과하는 과정에 대한 더 많은 정보는 <a href="/blog/pet-grief-recovery-guide">펫로스 증후군 극복 가이드</a>를 참고하고, 새 반려동물 입양 준비물은 <a href="/blog/dog-adoption-checklist">강아지 처음 입양 준비물 체크리스트</a>에서 확인할 수 있다.</p>`,
+<p>슬픔을 통과하는 과정에 대한 더 많은 정보는 <a href="/blog/pet-grief-recovery-guide">펫로스 증후군 극복 가이드</a>를 참고하고, 새 반려동물 입양 준비물은 <a href="/blog/dog-first-adoption-kit">강아지 처음 입양 준비물 체크리스트</a>에서 확인할 수 있다.</p>`,
     status: "published",
     ymyl: true,
-    disclaimer: CAT6_DISCLAIMER,
+    disclaimer: "이 글은 반려동물을 떠나보내는 과정에서 참고할 수 있는 일반적인 정보를 제공합니다. 의학적 결정(안락사·호스피스·통증 관리 등)은 반드시 담당 수의사와 충분히 상담하세요. 법적·재정적 사항은 전문가의 조언을 구하시기 바랍니다.",
     sources: JSON.stringify([
       "https://www.animalwelfare.or.kr",
       "https://www.kara.or.kr",

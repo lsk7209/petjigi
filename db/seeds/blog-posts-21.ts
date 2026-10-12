@@ -51,7 +51,7 @@ const POSTS: NewContent[] = [
     authorName: "펫지기 에디터팀",
     status: "published",
     ymyl: false,
-    disclaimer: CAT4_DISCLAIMER,
+    disclaimer: "이 글은 일반적인 정보 제공 목적으로 작성되었습니다. 특정 보험 상품 추천이나 법률·계약 조언이 아니며, 구체적인 가입·해지 결정은 각 보험사 약관과 전문가 상담을 통해 직접 확인하시기 바랍니다.",
     sources: JSON.stringify([
       "https://www.fss.or.kr",
       "https://www.vet.cornell.edu",
@@ -132,7 +132,7 @@ const POSTS: NewContent[] = [
   ① 통원 1회 한도·연간 횟수 ② 입원 일 한도·최대 일수 ③ 수술 1건 한도 ④ 자기부담율(20%·30%·정액) ⑤ 갱신 주기와 보험료 인상 조건 ⑥ 기왕증 고지 항목
 </div>
 
-<p>보험료 수준과 보장 범위를 한눈에 비교하려면 <a href="/insurance/compare">펫보험 비교</a> 페이지를 활용하고, 보험 가입 구조 전반은 <a href="/guide/pet-insurance-guide">펫보험 완전 가이드</a>에서 확인할 수 있다. 수술비 등 고액 진료비 실태는 <a href="/guide/vet-cost-saving-guide">동물병원 진료비 절약 가이드</a>를 참고하자.</p>`,
+<p>보험료 수준과 보장 범위를 한눈에 비교하려면 <a href="/insurance/compare">펫보험 비교</a> 페이지를 활용하고, 보험 가입 구조 전반은 <a href="/blog/pet-insurance-guide">펫보험 완전 가이드</a>에서 확인할 수 있다. 수술비 등 고액 진료비 실태는 <a href="/blog/vet-bill-reduce-strategy">동물병원 진료비 절약 가이드</a>를 참고하자.</p>`,
   },
 
   /* ══════════════════════════════════════════════════════════════════
@@ -241,7 +241,7 @@ const POSTS: NewContent[] = [
   ① 자기부담 방식(비율 vs 정액) ② 정액형의 경우 공제 금액 ③ 비율형의 경우 상한 금액 유무 ④ 통원·입원·수술별 자기부담율 동일 여부 ⑤ 보험료 차이 대비 실익 계산
 </div>
 
-<p>상품별 자기부담율 실제 수치는 <a href="/insurance/compare">펫보험 비교</a>에서 직접 확인하고, 보험 구조 전반의 이해가 필요하다면 <a href="/guide/pet-insurance-guide">펫보험 완전 가이드</a>를 참고하자.</p>
+<p>상품별 자기부담율 실제 수치는 <a href="/insurance/compare">펫보험 비교</a>에서 직접 확인하고, 보험 구조 전반의 이해가 필요하다면 <a href="/blog/pet-insurance-guide">펫보험 완전 가이드</a>를 참고하자.</p>
 <h2>함께 확인할 준비</h2>
 <ul><li><a href="/blog/pet-insurance-comparison-method">약관 항목별 보험 비교표</a></li></ul>`,
   },
@@ -276,7 +276,7 @@ const POSTS: NewContent[] = [
     authorName: "펫지기 에디터팀",
     status: "published",
     ymyl: false,
-    disclaimer: CAT4_DISCLAIMER,
+    disclaimer: "이 글은 일반적인 정보 제공 목적으로 작성되었습니다. 특정 보험 상품 추천이나 법률·계약 조언이 아니며, 구체적인 가입·해지 결정은 각 보험사 약관과 전문가 상담을 통해 직접 확인하시기 바랍니다.",
     sources: JSON.stringify([
       "https://www.avma.org",
       "https://www.vet.cornell.edu",
@@ -321,7 +321,7 @@ const POSTS: NewContent[] = [
   ① 진단명 및 진료 기록지 ② X-ray·초음파 영상(디지털 파일 또는 인화물) ③ 혈액·소변·조직검사 결과지 ④ 현재 처방 약물 목록 ⑤ 치료 경과 요약
 </div>
 
-<p>동물병원 진료비 구조와 합리적 이용 방법은 <a href="/guide/vet-cost-saving-guide">동물병원 진료비 절약 가이드</a>를 참고하고, 고액 진료비 대비를 위한 보험 선택은 <a href="/insurance/compare">펫보험 비교</a>에서 확인할 수 있다.</p>`,
+<p>동물병원 진료비 구조와 합리적 이용 방법은 <a href="/blog/vet-bill-reduce-strategy">동물병원 진료비 절약 가이드</a>를 참고하고, 고액 진료비 대비를 위한 보험 선택은 <a href="/insurance/compare">펫보험 비교</a>에서 확인할 수 있다.</p>`,
   },
 
   /* ══════════════════════════════════════════════════════════════════
@@ -352,7 +352,7 @@ const POSTS: NewContent[] = [
     authorName: "펫지기 에디터팀",
     status: "published",
     ymyl: false,
-    disclaimer: CAT4_DISCLAIMER,
+    disclaimer: "이 글은 일반적인 정보 제공 목적으로 작성되었습니다. 특정 보험 상품 추천이나 법률·계약 조언이 아니며, 구체적인 가입·해지 결정은 각 보험사 약관과 전문가 상담을 통해 직접 확인하시기 바랍니다.",
     sources: JSON.stringify([
       "https://www.avma.org",
       "https://www.fss.or.kr",
@@ -427,7 +427,7 @@ const POSTS: NewContent[] = [
   ① 스케일링·예방 발치 제외 여부 ② 치주염 진단 후 발치의 수술 특약 포함 여부 ③ 치아 관련 면책 조항 문구 ④ 기왕증(기존 치주질환) 고지 의무
 </div>
 
-<p>전체 보험 상품 비교는 <a href="/insurance/compare">펫보험 비교</a>에서, 일반 보험 구조 이해는 <a href="/guide/pet-insurance-guide">펫보험 완전 가이드</a>를 참고하자. 동물병원 진료비 전반은 <a href="/guide/vet-cost-saving-guide">동물병원 진료비 절약 가이드</a>에서 확인할 수 있다.</p>`,
+<p>전체 보험 상품 비교는 <a href="/insurance/compare">펫보험 비교</a>에서, 일반 보험 구조 이해는 <a href="/blog/pet-insurance-guide">펫보험 완전 가이드</a>를 참고하자. 동물병원 진료비 전반은 <a href="/blog/vet-bill-reduce-strategy">동물병원 진료비 절약 가이드</a>에서 확인할 수 있다.</p>`,
   },
 
   /* ══════════════════════════════════════════════════════════════════
@@ -459,7 +459,7 @@ const POSTS: NewContent[] = [
     authorName: "펫지기 에디터팀",
     status: "published",
     ymyl: false,
-    disclaimer: CAT4_DISCLAIMER,
+    disclaimer: "이 글은 일반적인 정보 제공 목적으로 작성되었습니다. 특정 보험 상품 추천이나 법률·계약 조언이 아니며, 구체적인 가입·해지 결정은 각 보험사 약관과 전문가 상담을 통해 직접 확인하시기 바랍니다.",
     sources: JSON.stringify([
       "https://www.mafra.go.kr",
       "https://www.fss.or.kr",
@@ -536,7 +536,7 @@ const POSTS: NewContent[] = [
   ① 수술 정의(약관 문구) ② 1건당 vs 연간 한도 방식 ③ 사전 승인 요구 여부 ④ 자기부담율 ⑤ 중성화·예방 수술 포함 여부 ⑥ 수술 후 입원 특약 연계 여부
 </div>
 
-<p>보험 상품별 수술 한도 비교는 <a href="/insurance/compare">펫보험 비교</a>에서, 진료비 구조 전반은 <a href="/guide/vet-cost-saving-guide">동물병원 진료비 절약 가이드</a>를 참고하자.</p>`,
+<p>보험 상품별 수술 한도 비교는 <a href="/insurance/compare">펫보험 비교</a>에서, 진료비 구조 전반은 <a href="/blog/vet-bill-reduce-strategy">동물병원 진료비 절약 가이드</a>를 참고하자.</p>`,
   },
 
   /* ══════════════════════════════════════════════════════════════════
@@ -568,7 +568,7 @@ const POSTS: NewContent[] = [
     authorName: "펫지기 에디터팀",
     status: "published",
     ymyl: false,
-    disclaimer: CAT4_DISCLAIMER,
+    disclaimer: "이 글은 일반적인 정보 제공 목적으로 작성되었습니다. 특정 보험 상품 추천이나 법률·계약 조언이 아니며, 구체적인 가입·해지 결정은 각 보험사 약관과 전문가 상담을 통해 직접 확인하시기 바랍니다.",
     sources: JSON.stringify([
       "https://www.fss.or.kr",
       "https://www.avma.org",
@@ -638,7 +638,7 @@ const POSTS: NewContent[] = [
   ① 가입 가능 연령 상한 확인 ② 기왕증 고지 범위·제외 항목 ③ 갱신 시 보험료 인상 조건 ④ 통원 한도·횟수 ⑤ 실질 보장 대상 질환 vs 제외 질환 비교
 </div>
 
-<p>현재 가입 가능한 상품의 연령별 조건은 <a href="/insurance/compare">펫보험 비교</a>에서 확인하고, 보험 구조 기초부터 이해하려면 <a href="/guide/pet-insurance-guide">펫보험 완전 가이드</a>를 참고하자.</p>`,
+<p>현재 가입 가능한 상품의 연령별 조건은 <a href="/insurance/compare">펫보험 비교</a>에서 확인하고, 보험 구조 기초부터 이해하려면 <a href="/blog/pet-insurance-guide">펫보험 완전 가이드</a>를 참고하자.</p>`,
   },
 
   /* ══════════════════════════════════════════════════════════════════
@@ -670,7 +670,7 @@ const POSTS: NewContent[] = [
     authorName: "펫지기 에디터팀",
     status: "published",
     ymyl: false,
-    disclaimer: CAT4_DISCLAIMER,
+    disclaimer: "이 글은 일반적인 정보 제공 목적으로 작성되었습니다. 특정 보험 상품 추천이나 법률·계약 조언이 아니며, 구체적인 가입·해지 결정은 각 보험사 약관과 전문가 상담을 통해 직접 확인하시기 바랍니다.",
     sources: JSON.stringify([
       "https://www.fss.or.kr",
       "https://www.knia.or.kr",
@@ -743,7 +743,7 @@ const POSTS: NewContent[] = [
   ① 질병 대기 기간(일) ② 관절·슬개골 대기 기간 ③ 암·유전 대기 기간 ④ 상해 즉시 보장 여부 ⑤ 갱신 시 대기 기간 재적용 여부
 </div>
 
-<p>상품별 대기 기간 조건은 <a href="/insurance/compare">펫보험 비교</a>에서 확인하고, 가입 구조 전반은 <a href="/guide/pet-insurance-guide">펫보험 완전 가이드</a>에서 살펴볼 수 있다.</p>`,
+<p>상품별 대기 기간 조건은 <a href="/insurance/compare">펫보험 비교</a>에서 확인하고, 가입 구조 전반은 <a href="/blog/pet-insurance-guide">펫보험 완전 가이드</a>에서 살펴볼 수 있다.</p>`,
   },
 
   /* ══════════════════════════════════════════════════════════════════
@@ -775,7 +775,7 @@ const POSTS: NewContent[] = [
     authorName: "펫지기 에디터팀",
     status: "published",
     ymyl: false,
-    disclaimer: CAT4_DISCLAIMER,
+    disclaimer: "이 글은 일반적인 정보 제공 목적으로 작성되었습니다. 특정 보험 상품 추천이나 법률·계약 조언이 아니며, 구체적인 가입·해지 결정은 각 보험사 약관과 전문가 상담을 통해 직접 확인하시기 바랍니다.",
     sources: JSON.stringify([
       "https://www.kca.go.kr",
       "https://www.law.go.kr",
@@ -832,7 +832,7 @@ const POSTS: NewContent[] = [
   ① 계약서·영수증 ② 문자·카카오톡 대화 내용(스크린샷) ③ 진단서·진료 기록 ④ 현장 사진·영상 ⑤ 결제 내역
 </div>
 
-<p>동물병원 진료비 구조와 합리적 이용법은 <a href="/guide/vet-cost-saving-guide">동물병원 진료비 절약 가이드</a>를, 펫보험으로 의료비 분쟁을 줄이는 방법은 <a href="/guide/pet-insurance-guide">펫보험 완전 가이드</a>를 참고하자.</p>`,
+<p>동물병원 진료비 구조와 합리적 이용법은 <a href="/blog/vet-bill-reduce-strategy">동물병원 진료비 절약 가이드</a>를, 펫보험으로 의료비 분쟁을 줄이는 방법은 <a href="/blog/pet-insurance-guide">펫보험 완전 가이드</a>를 참고하자.</p>`,
   },
 
   /* ══════════════════════════════════════════════════════════════════

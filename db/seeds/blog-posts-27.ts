@@ -289,9 +289,9 @@ const BLOG_POSTS: NewContent[] = [
 
 <div style="margin:2rem 0;padding:1rem 1.25rem;background:var(--brand-accent-soft,#e6ecd9);border-radius:12px;">
 <strong>📚 관련 글</strong><br>
-<a href="/blog/animal-protection-law-2024">2024년 동물보호법 핵심 정리 — 보호자가 알아야 할 의무와 권리</a><br>
+<a href="/blog/animal-protection-law-guide">2024년 동물보호법 핵심 정리 — 보호자가 알아야 할 의무와 권리</a><br>
 <a href="/blog/pet-abandonment-law">반려동물 유기하면 어떻게 되나 — 법적 처벌과 신고 방법</a><br>
-<a href="/blog/shelter-dog-adoption-guide">유기견 입양 과정 완전 가이드</a>
+<a href="/blog/stray-dog-adoption-guide">유기견 입양 과정 완전 가이드</a>
 </div>`,
     authorName: "펫지기 에디터",
     authorCredential: "반려동물 법률 정보 큐레이터",
@@ -356,8 +356,8 @@ const BLOG_POSTS: NewContent[] = [
 <div style="margin:2rem 0;padding:1rem 1.25rem;background:var(--brand-accent-soft,#e6ecd9);border-radius:12px;">
 <strong>📚 관련 글</strong><br>
 <a href="/blog/apartment-pet-dispute-guide">아파트에서 반려동물로 인한 분쟁 — 법적 기준과 해결 방법</a><br>
-<a href="/blog/pet-dog-bite-liability">반려동물이 사람을 물었을 때 — 법적 책임과 배상</a><br>
-<a href="/blog/animal-protection-law-2024">2024년 동물보호법 핵심 정리</a>
+<a href="/blog/pet-bite-liability-guide">반려동물이 사람을 물었을 때 — 법적 책임과 배상</a><br>
+<a href="/blog/animal-protection-law-guide">2024년 동물보호법 핵심 정리</a>
 </div>`,
     authorName: "펫지기 에디터",
     authorCredential: "반려동물 법률 정보 큐레이터",
@@ -422,8 +422,8 @@ const BLOG_POSTS: NewContent[] = [
 
 <div style="margin:2rem 0;padding:1rem 1.25rem;background:var(--brand-accent-soft,#e6ecd9);border-radius:12px;">
 <strong>📚 관련 글</strong><br>
-<a href="/blog/pet-memorial-15-ways">반려동물 추모 방법 15가지 — 마음을 담은 기억 방식</a><br>
-<a href="/blog/petloss-recovery-guide">펫로스 증후군 극복 가이드 — 슬픔을 통과하는 법</a><br>
+<a href="/blog/pet-memorial-ideas">반려동물 추모 방법 15가지 — 마음을 담은 기억 방식</a><br>
+<a href="/blog/pet-grief-recovery-guide">펫로스 증후군 극복 가이드 — 슬픔을 통과하는 법</a><br>
 <a href="/blog/petloss-return-to-daily-life">펫로스 후 일상으로 돌아가기 — 직장과 사회생활을 다시 시작하는 방법</a>
 </div>`,
     authorName: "펫지기 에디터",
@@ -484,9 +484,9 @@ const BLOG_POSTS: NewContent[] = [
 
 <div style="margin:2rem 0;padding:1rem 1.25rem;background:var(--brand-accent-soft,#e6ecd9);border-radius:12px;">
 <strong>📚 관련 글</strong><br>
-<a href="/blog/after-pet-new-family-timing">반려동물을 잃은 후 새 가족을 맞이하는 적절한 시기</a><br>
-<a href="/blog/petloss-recovery-guide">펫로스 증후군 극복 가이드 — 슬픔을 통과하는 법</a><br>
-<a href="/blog/shelter-dog-adoption-guide">유기견 입양 과정 완전 가이드</a>
+<a href="/blog/when-to-get-new-pet-after-loss">반려동물을 잃은 후 새 가족을 맞이하는 적절한 시기</a><br>
+<a href="/blog/pet-grief-recovery-guide">펫로스 증후군 극복 가이드 — 슬픔을 통과하는 법</a><br>
+<a href="/blog/stray-dog-adoption-guide">유기견 입양 과정 완전 가이드</a>
 </div>`,
     authorName: "펫지기 에디터",
     authorCredential: "반려동물 생활 정보 큐레이터",

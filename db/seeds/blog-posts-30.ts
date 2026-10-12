@@ -234,7 +234,7 @@ const BLOG_POSTS: NewContent[] = [
 <div style="margin:2rem 0;padding:1rem 1.25rem;background:var(--brand-accent-soft,#e6ecd9);border-radius:12px;">
 <strong>📚 관련 글</strong><br>
 <a href="/blog/dog-toxic-foods">강아지에게 줘도 되는 채소·과일 vs 위험한 것</a><br>
-<a href="/blog/dog-toxic-substance-emergency">강아지 독성 물질 섭취 — 응급 처치와 해서는 안 되는 것</a><br>
+<a href="/blog/dog-poisoning-first-aid">강아지 독성 물질 섭취 — 응급 처치와 해서는 안 되는 것</a><br>
 <a href="/blog/dog-pancreatitis-symptoms-diet">강아지 췌장염 — 기름진 음식 먹은 뒤 구토·복통이 계속된다면</a>
 </div>`,
     authorName: "펫지기 에디터",
@@ -367,8 +367,8 @@ const BLOG_POSTS: NewContent[] = [
 <div style="margin:2rem 0;padding:1rem 1.25rem;background:var(--brand-accent-soft,#e6ecd9);border-radius:12px;">
 <strong>📚 관련 글</strong><br>
 <a href="/blog/petloss-return-to-daily-life">펫로스 후 일상으로 돌아가기 — 직장과 사회생활을 다시 시작하는 방법</a><br>
-<a href="/blog/petloss-recovery-guide">펫로스 증후군 극복 가이드 — 슬픔을 통과하는 법</a><br>
-<a href="/blog/child-pet-death-explanation">아이에게 반려동물의 죽음 설명하는 법</a>
+<a href="/blog/pet-grief-recovery-guide">펫로스 증후군 극복 가이드 — 슬픔을 통과하는 법</a><br>
+<a href="/blog/petloss-children-explanation-guide">아이에게 반려동물의 죽음 설명하는 법</a>
 </div>`,
     authorName: "펫지기 에디터",
     authorCredential: "반려동물 생활 정보 큐레이터",
