@@ -29,8 +29,6 @@ const POSTS: NewContent[] = [
     updatedAt: NOW,
     body: `<p>혼자 있는 반려동물이 걱정되는 직장인 보호자에게 스마트 홈 기기는 든든한 보조 도구가 됐다. 자동 급식기부터 AI 카메라, 스마트 화장실까지 — 제대로 고르고 활용하면 반려동물의 일상이 더 안전하고 풍요로워진다.</p>
 
-<p>반려동물 스마트 홈 기기 시장은 성장하고 있으며, 자동 급식기·카메라가 대표적인 제품군이다. 국내에서도 반려동물을 키우는 가구가 늘면서 관련 기기 수요도 확대되고 있다.</p>
-
 <h2>스마트 홈 기기가 반려동물에게 주는 이점</h2>
 <p>스마트 홈 기기는 단순한 편의 도구를 넘어 반려동물의 건강과 안전을 직접적으로 지원한다. 보호자가 외출 중일 때 제때 밥을 먹이고, 이상 행동을 원격으로 감지하며, 실내 환경을 쾌적하게 유지할 수 있다. 반려동물을 홀로 두는 시간이 불안한 보호자에게 스마트 모니터링 기기는 상태를 확인하는 데 도움이 될 수 있다.</p>
 <ul>
@@ -85,7 +83,7 @@ const POSTS: NewContent[] = [
 </ul>
 
 <h2>앱 연동 루틴 설정 — 실전 예시</h2>
-<p>여러 기기를 하나의 앱(구글 홈, 네이버 클로바, SmartThings 등)으로 연동하면 시간별 자동화 루틴을 만들 수 있다. 스마트 펫 기기 시장이 성장하면서 앱 연동 기능은 제품 선택의 중요한 기준이 되고 있다.</p>
+<p>여러 기기를 하나의 앱(구글 홈, 네이버 클로바, SmartThings 등)으로 연동하면 시간별 자동화 루틴을 만들 수 있다. 앱 연동 기능은 제품을 고를 때 확인할 만한 기준이다.</p>
 <ul>
   <li>오전 7시: 자동 급식기 아침 식사 → 조명 자동 점등</li>
   <li>오후 12시: 급식기 점심 간식 소량 → 카메라 활동 모니터링</li>
@@ -93,14 +91,30 @@ const POSTS: NewContent[] = [
   <li>오후 11시: 조명 야간 모드 → 자동 급수기 필터 알림 점검</li>
 </ul>
 
+<h2>기기가 대신하지 못하는 것 — 분리불안과 혼자 있는 연습</h2>
+<p>카메라는 상태를 확인해 줄 뿐 분리불안을 해결하지 못한다. PetLink는 서성임, 문 긁기, 짖거나 낑낑댐, 집 안 배변, 파괴적인 씹기를 분리불안 신호로 들고, 혼자 두는 시간을 짧게 시작해 서서히 늘리는 연습과 보호자 냄새가 나는 안전한 자리 마련을 권한다. 증상이 심하면 수의 행동 전문가에게 상담하고, 진정 보조제나 약은 수의사 지시에 따라서만 쓴다. 카메라에서 이런 행동이 반복돼 보이면 기기 설정을 바꾸기보다 수의사나 행동 전문가에게 알리는 것이 먼저다.</p>
+
+<div style="background:#f8f9fa;border-left:4px solid #6c757d;padding:14px;margin:16px 0;font-size:0.95em;">
+  <strong>참고 자료</strong><br>
+  · PetLink — How to Ease Separation Anxiety in Pets When Returning to the Office<br>
+  · AARP — Returning to Work? Prevent Pet (and Human) Separation Anxiety
+</div>
+
 <h2>자주 묻는 질문</h2>
 <h3>스마트 급식기가 오작동하면 어떻게 되나요?</h3>
 <p>정전이나 앱 오류로 급식이 안 되거나 과급식되는 사고가 간혹 보고됩니다. 배터리 백업 기능이 있는 제품을 선택하고, 반드시 비상 연락 가능한 이웃이나 지인과 함께 대비 방안을 마련해두세요.</p>
 
 <h3>반려동물이 카메라 앞에서 다르게 행동하지 않나요?</h3>
-<p>초기에는 카메라를 의식할 수 있지만 대부분 2–3주 내에 익숙해집니다. 양방향 음성 기능을 너무 자주 사용하면 오히려 보호자를 더 기다리게 하는 분리불안 자극이 될 수 있으니 적당히 활용하는 것이 좋습니다.</p>
+<p>카메라에 적응하는 속도는 개체마다 다릅니다. 양방향 음성 기능을 너무 자주 사용하면 오히려 보호자를 더 기다리게 하는 분리불안 자극이 될 수 있으니 적당히 활용하는 것이 좋습니다.</p>
 
-<p>반려동물 건강 모니터링을 더 체계적으로 하고 싶다면 <a href="/blog/pet-wearable-guide">반려동물 웨어러블 기기 가이드</a>를, 일상 관리 앱 정보는 <a href="/blog/pet-app-recommendations">반려동물 앱 추천</a>을 참고하세요.</p>`,
+<p>반려동물 건강 모니터링을 더 체계적으로 하고 싶다면 <a href="/blog/pet-wearable-guide">반려동물 웨어러블 기기 가이드</a>를, 일상 관리 앱 정보는 <a href="/blog/pet-app-recommendations">반려동물 앱 추천</a>을 참고하세요.</p>
+
+<p class="text-sm">※ 이 글은 일반적인 정보이며 특정 제품을 보증하지 않습니다. 반려동물의 건강·행동 문제는 수의사와 상담하세요.</p>`,
+    sources: [
+      "https://www.petlink.net/blog/ease-separation-anxiety-pets-returning-office/ — PetLink, How to Ease Separation Anxiety in Pets When Returning to the Office",
+      "https://www.aarp.org/family-relationships/separation-anxiety-pets/ — AARP, Returning to Work? Prevent Pet (and Human) Separation Anxiety",
+    ],
+    disclaimer: "이 글은 정보 제공을 목적으로 하며 수의사·전문가 상담을 대체하지 않습니다.",
   },
 
   /* ═══════════════════════════════════════════════════════

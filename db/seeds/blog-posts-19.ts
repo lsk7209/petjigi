@@ -55,15 +55,15 @@ const POSTS: NewContent[] = [
   </tbody>
 </table>
 
-<p>언더코트가 없어 털 빠짐이 적다는 점은 알레르기가 있는 보호자에게 유리하다. 다만 털이 자라는 속도가 빠르므로 4–6주마다 미용이 필요하다. ASPCA는 말티즈를 사람과의 교감이 강하고 가족 중심적인 견종으로 분류하며, 이러한 특성 때문에 장시간 혼자 두면 분리불안이 심화될 수 있다고 안내하고 있다.</p>
+<p>언더코트가 없어 털 빠짐이 적다는 점은 알레르기가 있는 보호자에게 유리하다. 다만 털이 자라는 속도가 빠르므로 4–6주마다 미용이 필요하다. 애교 많고 보호자 곁에 있기를 좋아하는 편이라 장시간 혼자 두면 분리불안이 생길 수 있어, 혼자 있는 시간은 서서히 늘리는 연습이 필요하다.</p>
 
 <h2>건강 취약점과 정기 검진 포인트</h2>
-<p>말티즈에게 가장 흔한 질환은 <strong>슬개골 탈구(슬개골 이탈)</strong>다. 말티즈를 포함한 소형견에서 슬개골 탈구는 가장 흔한 정형외과 질환 중 하나이며, 뒷다리를 가끔 들고 걷거나 "깡충" 뛰듯 이동한다면 동물병원 검진이 필요하다. 소형견 전반에 걸쳐 나타나는 질환으로 조기 발견이 중요하다.</p>
+<p>AKC는 말티즈를 건강한 편이라고 설명하지만, VCA는 치과 질환이 말티즈에서 가장 흔한 문제 중 하나이며 일찍 시작되는 경우가 많다고 한다. 또 말티즈를 포함한 토이·소형견은 <strong>슬개골 탈구(무릎뼈 이탈)</strong>에 유전적으로 취약하다. 뒷다리를 가끔 들고 걷거나 "깡충" 뛰듯 이동한다면 동물병원 검진이 필요하다. AKC에 따르면 탈구는 1~4기로 나뉘며 등급이 높을수록 수술을 서두르는 것이 낫다. VCA는 몸집이 작아 강아지 때 저혈당, 나이가 들면서 기도 문제 위험도 있다고 덧붙인다.</p>
 <ul>
   <li><strong>슬개골 탈구</strong>: 계단 오르내리기·높은 곳 점프 최소화, 미끄러운 바닥에 매트 깔기</li>
-  <li><strong>눈물 착색(적눈물)</strong>: 포르피린 색소가 눈물에 포함돼 털이 붉게 변색. 매일 닦아줘야 한다</li>
+  <li><strong>눈물 착색</strong>: AKC는 말티즈를 눈물 착색이 생기기 쉬운 견종으로 들며, 매일 얼굴을 닦고 눈 주변 털을 다듬어 이물과 눈곱이 쌓이지 않게 하라고 한다. 갑자기 심해지면 눈 질환 여부를 확인한다</li>
   <li><strong>기관 허탈</strong>: 목줄 대신 하네스 사용 권장. 흥분 시 거위 울음 같은 기침이 반복되면 검진 필요</li>
-  <li><strong>치주질환</strong>: 소형견은 치아가 조밀해 치석이 빨리 쌓인다. 주 2–3회 양치 권장</li>
+  <li><strong>치주질환</strong>: Merck 수의학 매뉴얼은 소형견이 대형견보다 치주염이 더 흔하다고 하며, 말티즈를 치아가 늦게 나거나 덜 나는 문제가 생기기 쉬운 견종으로 든다. 양치 빈도와 스케일링 시기는 수의사와 정한다</li>
 </ul>
 
 <div style="background:#e8f4fd;border-left:4px solid #2196f3;padding:16px;margin:16px 0;">
@@ -72,7 +72,7 @@ const POSTS: NewContent[] = [
 </div>
 
 <h2>케어 가이드 — 털·목욕·눈 관리</h2>
-<p>말티즈 케어의 핵심은 <strong>매일 빗질</strong>이다. 언더코트가 없어도 실크 털은 엉킴이 잘 생긴다. 엉킨 채 방치하면 피부 짓무름과 피부염으로 이어진다. VCA Animal Hospitals에 따르면 말티즈의 피부와 털 건강은 정기 빗질 외에도 저알레르기 샴푸와 영양 균형 잡힌 식이에서 큰 영향을 받는다.</p>
+<p>말티즈 케어의 핵심은 <strong>매일 빗질</strong>이다. 언더코트가 없어도 실크 털은 엉킴이 잘 생긴다. 엉킨 채 방치하면 피부 짓무름과 피부염으로 이어진다. AKC도 말티즈는 매일 빗질과 빗질 후 코트 관리, 정기 목욕, 발톱·귀 점검, 치아 관리가 필요하다고 설명하며, VCA는 털이 눈을 찌르지 않게 정리하라고 한다.</p>
 <ol>
   <li><strong>매일 빗질</strong>: 슬리커 브러시로 결 방향 → 핀 브러시로 마무리</li>
   <li><strong>목욕 주기</strong>: 2주에 1회 권장. 잦은 목욕은 피지막을 손상시킨다</li>
@@ -82,7 +82,7 @@ const POSTS: NewContent[] = [
 </ol>
 
 <h2>훈련 특성</h2>
-<p>말티즈는 총명하고 보호자의 반응을 잘 읽는다. ASPCA 행동 가이드라인에서는 말티즈의 분리불안 경향을 강조하며, 처벌형 훈련보다 <strong>긍정 강화(간식+칭찬)</strong>가 효과적이라고 권고한다. 칭찬에 매우 민감하게 반응하므로 보상 기반 방식이 가장 빠른 결과를 낳는다.</p>
+<p>말티즈는 총명하고 보호자의 반응을 잘 읽는다. <strong>긍정 강화(간식+칭찬)</strong> 방식이 처벌형 훈련보다 안전하고 보호자와의 관계에도 좋다.</p>
 <ul>
   <li>배변 훈련은 생후 8주부터 일관된 장소·타이밍으로 시작</li>
   <li>분리불안 예방: 어릴 때부터 단독 시간을 점진적으로 늘리는 연습 필요</li>
@@ -90,7 +90,7 @@ const POSTS: NewContent[] = [
 </ul>
 
 <h2>생활 환경 — 아파트 적합성</h2>
-<p>말티즈는 <strong>아파트·소형 주거공간에 매우 적합</strong>한 견종이다. 활동량이 적고 실내 놀이로 에너지를 충분히 해소할 수 있다. WSAVA 브리더 가이드라인은 소형 반려견 구입 전 유전자 검사(슬개골·눈 관련)를 통해 건강한 개체를 선별하도록 권장하고 있다. 혼자 있는 시간이 길면 분리불안이 심해지므로 하루 4–5시간 이상 단독 시간이 매일 반복된다면 보조 장치(장난감·라디오)나 펫시터를 고려한다.</p>
+<p>말티즈는 <strong>아파트·소형 주거공간에 매우 적합</strong>한 견종이다. 활동량이 적고 실내 놀이로 에너지를 충분히 해소할 수 있다. 혼자 있는 시간이 길면 분리불안이 심해질 수 있으므로 단독 시간이 매일 길게 반복된다면 보조 장치(장난감·라디오)나 펫시터를 고려한다. 분양을 받을 때는 부모견의 슬개골·눈 검진 이력을 번식자에게 물어보는 것이 좋다.</p>
 
 <h2>자주 묻는 질문</h2>
 <h3>말티즈는 털이 안 빠지나요?</h3>
@@ -102,7 +102,23 @@ const POSTS: NewContent[] = [
 <h3>말티즈와 고양이를 함께 키워도 되나요?</h3>
 <p>사회화 시기(생후 3–14주)에 함께 노출되면 대체로 잘 지냅니다. 성견이 된 후 합사 시에는 독립 공간을 보장하고 점진적으로 접촉을 늘리는 것이 좋습니다.</p>
 
-<p>견종 선택 전 전반적인 비교가 필요하다면 <a href="/blog/dog-breed-selection-guide">강아지 품종 선택 가이드</a>를, 의료비 대비를 위한 보험 정보는 <a href="/blog/pet-insurance-guide">펫보험 완전 가이드</a>를 참고하세요.</p>`,
+<p>견종 선택 전 전반적인 비교가 필요하다면 <a href="/blog/dog-breed-selection-guide">강아지 품종 선택 가이드</a>를, 의료비 대비를 위한 보험 정보는 <a href="/blog/pet-insurance-guide">펫보험 완전 가이드</a>를 참고하세요.</p>
+
+<div style="background:#f8f9fa;border-left:4px solid #6c757d;padding:14px;margin:16px 0;font-size:0.95em;">
+  <strong>참고 자료</strong><br>
+  · VCA — Maltese / Luxating Patella in Dogs<br>
+  · AKC — Luxating patella, Tear stains, Maltese care<br>
+  · Merck Veterinary Manual — Dental Disorders of Dogs
+</div>
+
+<p class="text-sm">※ 이 글은 일반적인 정보이며 개별 반려견의 진단·치료를 대신하지 않습니다. 증상이 있으면 수의사와 상담하세요.</p>`,
+    sources: [
+      "https://vcahospitals.com/know-your-pet/maltese — VCA, Maltese",
+      "https://vcahospitals.com/know-your-pet/luxating-patella-in-dogs — VCA, Luxating Patella in Dogs",
+      "https://www.akc.org/expert-advice/health/tear-stains-prevent-and-clean/ — AKC, How to Prevent & Clean Tear Stains on Your Dog's Face",
+      "https://www.merckvetmanual.com/dog-owners/digestive-disorders-of-dogs/dental-disorders-of-dogs — Merck Veterinary Manual, Dental Disorders of Dogs",
+    ],
+    disclaimer: "이 글은 정보 제공을 목적으로 하며 수의사 진료를 대체하지 않습니다.",
   },
 
   /* ═══════════════════════════════════════════════════════

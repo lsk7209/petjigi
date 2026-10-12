@@ -671,8 +671,8 @@
         "body"
       ],
       "bodyBeforeSha256": "5ff81203cfa416d02a8c0b00f3def83917db6e070167473b0094913b019ea19f",
-      "bodyAfterSha256": "19c11cfb29ecb892c5fd8b6f95bfa809971002981953551b8dd45e91a5e16646",
-      "bodyTextSha256": "e283237fc9cc49c3166c41f02b5e8260ae2fbe57f334a9f84acd1060a7ac5c5e",
+      "bodyAfterSha256": "e3ba512f66fcfe90ff7a5a6a34a2fe1699fafc812375f761452ddb701711b15d",
+      "bodyTextSha256": "98d4cd9cc9d7f96d8690d04b663c0dd41baee49c82afec40f563bdbf4e5e2ba1",
       "replacements": [
         {
           "from": "/guide/dog-food-by-age",
@@ -893,8 +893,8 @@
         "body"
       ],
       "bodyBeforeSha256": "c2ef0f8fd1c1b64ce5736167ad99bb47dc3088f47609a6f4217d77efc7b10474",
-      "bodyAfterSha256": "7129d9edb6973ddcd6812ef126b3e60aee86c3b3a614f4431979023bfa01184f",
-      "bodyTextSha256": "5a749984c06621a8ded71da42723f1bf07bc21db4f35cf3bfe0c7a39df57183b",
+      "bodyAfterSha256": "cd1d5642961ee7f913392087c9a9d85ae350d963d3657bc978557fee91cd8fb0",
+      "bodyTextSha256": "0f0232515649cbc61070d564ec56dbcd9b82073c73c40af57b485cf1b9f689a3",
       "replacements": [
         {
           "from": "/guide/dog-food-by-age",
@@ -1436,8 +1436,8 @@
         "body"
       ],
       "bodyBeforeSha256": "773ade733315c082d133eb6f879e9c8d5339fedc18fe68cbf10e40fca0cb9338",
-      "bodyAfterSha256": "03d4e470021a8eddb2cc94d355a40784406f698e122fea133c0dbc02a2158eec",
-      "bodyTextSha256": "ff49a39ab06a248b85bafc12e3fcee115681ee1381680886c77f91da2781f6b9",
+      "bodyAfterSha256": "9e2d5d99b32692060c07d907f4215062c3675432d95a943a8d860d00d8310a76",
+      "bodyTextSha256": "a6b8112565bc15711a9b4fe441762f57ca899df105d8a09bb0f0658fd9af564f",
       "replacements": [
         {
           "from": "/guide/dog-cat-introduction",
@@ -1458,8 +1458,8 @@
         "body"
       ],
       "bodyBeforeSha256": "678a1da936332828e4e9af43c0f509c7534fc12b284496e35964f62aaa168bf9",
-      "bodyAfterSha256": "80576a2243d7f27110c9703ec4aa539fa918e63cf8886aec3cbf8961bcf3c048",
-      "bodyTextSha256": "81fba1d85908aef4f9538d594382678f8aefce97f18ca44b97017f4f60990468",
+      "bodyAfterSha256": "9005ba1ec80b5675051b0059e91b91754673761ac9dedc49106a4b9dc92c2373",
+      "bodyTextSha256": "ece16ddef379441d143538946f554cd08b8b3c38714544b0920657038b1d226c",
       "replacements": [
         {
           "from": "/guide/multi-cat-introduction-guide",
@@ -1530,8 +1530,8 @@
         "body"
       ],
       "bodyBeforeSha256": "5f062047bce05c352f446acead4871b8ff7af9896967ae84f2219e46765cf2f7",
-      "bodyAfterSha256": "02740c17b630bb580c27629f0bb46e8e05e9ef93cfcc77f099fa5ab429029ac9",
-      "bodyTextSha256": "6199263d4a59b7a83883aedbceb56dac058c004a917c8a0b711fdf99fbee592e",
+      "bodyAfterSha256": "3a2ffc0b198238ad1174cd463c000c1b8d90c9db93473ca807cc34acd7655fe9",
+      "bodyTextSha256": "7b9d53555032086402dea327b590ba0f96ceb4d6b7bee7d350c5b5bb0af292c3",
       "replacements": [
         {
           "from": "/guide/dog-cat-introduction",
@@ -1558,8 +1558,8 @@
         "body"
       ],
       "bodyBeforeSha256": "79dafe44e37c3f917dc4d80035bd5f368091eca61bd45a7b7e317795ec2c086b",
-      "bodyAfterSha256": "3a4e5c7d5bc869a1c210c18d05defd2f67f890fdc52725c2a84951f5135af962",
-      "bodyTextSha256": "8d24cdc03cc272b9896875a765f8ca591af5a4d95dbd02f96de090da7fde47cb",
+      "bodyAfterSha256": "c409997fa5ceece8865ed956293d6a65759618b7599da679c5a0a25c106f5969",
+      "bodyTextSha256": "5ff00828de4893ef8c9982923bc6ac679f535931f183a928233ada309288fe80",
       "replacements": [
         {
           "from": "/guide/dog-cat-introduction",
