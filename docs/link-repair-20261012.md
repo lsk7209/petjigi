@@ -19,8 +19,12 @@
 
 공개 검증126건 통과:공개78페이지200·깨진 앵커0·새 목적지 누락0,예약1페이지404·본문 비노출,새 목적지47개200. 증거는 `.seo-cache/link-repair-live-20261012.json`, DB 단계별 결과는 `link-repair-db-{preflight,dry-run,apply,reconcile,verify}-20261012.json`에 있다. Git 연동 배포 확인은 별도 배포 영수증에 보존한다.
 
+코드 커밋`c2d6525`를 origin/main에 push했다. 운영 배포`dpl_9uiTU6UNb9bvC3chuhkPnQNry7gZ` Ready·GitHub success·petjigi.kr/www 연결을 확인한 뒤 공개126건을 다시 검사해 통과했다. 배포 영수증은 `.seo-cache/link-repair-deployment-20261012.json`이다. 역할 분리는 executor 수정→code-reviewer 의미 검토→verifier 최종 증거 대조이며, 기존 하네스와 통과 결과를 재사용한다. 실제 비용 절감 수치는 측정하지 않았다.
+
 운영 본문은 HEAD 기준과 대조하고SELECT* 원본을 `.backup-prod/link-repair-20261012/production/`에 보존한다. 기존 CAS 업데이터로 목록에 있는 필드만 허용하고, 반영 후 본문 및 그 밖의 모든 컬럼을 재대조한다. 고지문은 동일하므로 실제 쓰기는 본문만 예상한다. 충돌이 발생하면 강제 덮어쓰지 않는다.
 
 복구는 별도 백업의 원문을 사용하되 현재 값이 이번 반영 후 본문과 같을 때만 CAS로 수행한다. 후속 운영 편집은 보존한다. 원래 없던46주소 자체에 억지 리디렉션을 추가하지 않으며, 수정된 글에서 잘못된 주소로 연결하지 않도록 한다.
 
 이전 감사에서 검사하지 않은 사이트맵 밖8878개 링크의 건전성이나 Google 실제 색인·AdSense 승인을 이번 결과로 추정하지 않는다.
+
+최종 독립 verifier 판정은 PASS다. 증거 로그의 종료 코드 공백을 보완해 lint와 직접 npx tsc --noEmit을 재실행했고 모두 종료0을 기록했다. 하네스는 DONE이며 최종 문서 커밋의 배포 상태는 별도 최종 배포 영수증으로 확인한다.
