@@ -79,7 +79,7 @@ module.exports = {
   exclude: [
     "/rescue", "/rescue/*", "/search*", "/admin/*", "/*?page=*", "/*?cat=*",
     "/opengraph-image", "/**/opengraph-image", "/icon", "/apple-icon", "/manifest.webmanifest",
-    "/guide/*", "/blog/*", "/condition/*", "/breed/*/*",
+    "/guide/*", "/blog/*", "/condition", "/condition/*", "/breed/*/*", // /condition: 공개 질환 글이 없는 동안 /category/health로 리디렉션
     // 피드·콘텐츠 사이트맵은 페이지가 아니므로 URL 사이트맵에 넣지 않는다
     "/feed.xml", "/sitemap-content.xml",
     ...AMBIGUOUS_REGION_EXCLUDES,

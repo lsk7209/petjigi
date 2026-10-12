@@ -38,19 +38,14 @@ const GUIDE_LINKS = [
     desc: "접수부터 안치·화장·봉안까지 단계별 절차를 설명합니다.",
   },
   {
-    href: "/guide/memorial-cost",
-    title: "장례 비용 가이드",
-    desc: "장례 견적의 포함 서비스와 추가 비용을 확인하는 방법을 안내합니다.",
-  },
-  {
     href: "/guide/pet-loss-care",
     title: "펫로스 케어 가이드",
     desc: "반려동물을 잃은 슬픔을 회복하는 데 도움이 되는 정보입니다.",
   },
   {
-    href: "/guide/petloss-faq",
-    title: "자주 묻는 질문",
-    desc: "장례 서류, 유해 처리, 가족 동반 참석 등 실무 Q&A입니다.",
+    href: "/blog/petloss-return-to-daily-life",
+    title: "일상으로 돌아가기",
+    desc: "반려동물을 잃은 뒤 직장과 사회생활을 다시 시작하는 방법을 안내합니다.",
   },
 ];
 

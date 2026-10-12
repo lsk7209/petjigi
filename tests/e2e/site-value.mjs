@@ -29,7 +29,7 @@ try {
           assert.ok(await section.isVisible());
           assert.equal(await section.locator('article').count(), path === '/' ? 6 : 1);
           const hrefs = await section.locator('a').evaluateAll(links => links.map(link => link.getAttribute('href')));
-          assert.equal(hrefs.length, path === '/' ? 18 : 3);
+          assert.equal(hrefs.length, path === '/' ? 17 : path === '/category/memorial' ? 2 : 3);
           for (const href of new Set(hrefs)) assert.equal((await fetch(base + href)).status, 200, href);
           const first = section.locator('a').first();
           await first.focus();

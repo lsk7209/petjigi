@@ -23,10 +23,10 @@ test("app/rescue/page.tsx links to verified existing adoption guides and shelter
   assert.ok(rescuePage.includes("/shelter"));
 });
 
-test("app/category/[slug]/page.tsx links to dog-patellar-luxation as a guide, not a non-existent condition", () => {
+test("app/category/[slug]/page.tsx links to dog-patella-luxation as a published blog post, not a non-existent condition", () => {
   const categoryPage = fs.readFileSync("app/category/[slug]/page.tsx", "utf8");
   assert.equal(categoryPage.includes("/condition/dog-patellar-luxation"), false);
-  assert.ok(categoryPage.includes("/guide/dog-patellar-luxation"));
+  assert.ok(categoryPage.includes("/blog/dog-patella-luxation"));
 });
 
 test("app/breed/[species]/page.tsx guards ads when breed inventory is empty", () => {

@@ -17,9 +17,8 @@
 ## 핵심 페이지
 
 - [홈](https://petjigi.kr/): 서비스 전체 개요 및 지역 검색
-- [블로그](https://petjigi.kr/blog): 집사 에디터 블로그 (카테고리별 290편+)
+- [블로그](https://petjigi.kr/blog): 집사 에디터 블로그 (엄선한 글만 공개 중)
 - [가이드 전체 목록](https://petjigi.kr/guide): 반려동물 가이드 허브
-- [질병·증상 정보](https://petjigi.kr/condition): 주요 반려동물 질환 (수의사 검토)
 - [견종·묘종 도감](https://petjigi.kr/breed): 품종별 특징 및 건강 정보
 - [강아지 품종](https://petjigi.kr/breed/dog): 강아지 품종 도감
 - [고양이 품종](https://petjigi.kr/breed/cat): 고양이 품종 도감
