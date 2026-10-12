@@ -69,8 +69,8 @@ export default function AboutPage() {
             공공데이터 기반의 신뢰할 수 있는 정보를 제공하는 서비스입니다.
           </p>
           <p className="text-[var(--brand-text-secondary)] leading-relaxed">
-            법률지기·금리지기에 이은 <strong>지기 시리즈 3호</strong>로, 광고가 아닌 정보로
-            반려동물 보호자를 돕는다는 철학을 이어갑니다.
+            법률지기·금리지기에 이은 <strong>지기 시리즈 3호</strong>입니다.{" "}
+            {AD_INDEPENDENCE_TEXT}
           </p>
         </section>
 
@@ -122,7 +122,7 @@ export default function AboutPage() {
             </div>
             <div>
               <p className="font-semibold text-[var(--brand-text)] mb-1">광고·어필리에이트 투명성</p>
-              <p>어필리에이트 링크가 포함된 페이지는 상단에 고지 배너를 표시하며, 링크에{" "}
+              <p>{AFFILIATE_STATUS_TEXT} 제휴 링크를 게재하게 되면 해당 페이지 상단과 링크 근처에 표시하고 링크에{" "}
                 <code className="text-xs bg-[var(--brand-border)] px-1 rounded">rel=&quot;sponsored nofollow&quot;</code>를 부여합니다.
                 수수료가 콘텐츠 방향성에 영향을 주지 않습니다.
               </p>
