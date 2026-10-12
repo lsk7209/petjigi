@@ -1,10 +1,11 @@
 # Status | 마지막: 2026-10-12
 ## 현재 작업
-(00) 애드센스 승인 전 콘텐츠 축소: 우수 30건만 공개·나머지 guide/blog/condition 비공개(draft) — PR #68(feat/unpublish-thin-contents-20261012) 생성·미병합. 다음: 병합·배포 → 운영 dry-run → 별도 승인 후 --apply. docs/unpublish-20261012.md
+(00) 애드센스 승인 전 콘텐츠 축소: PR #68~#70 병합·배포 완료. 2026-10-12 운영 --apply 완료(652건 draft: blog 557·guide 64·condition 31, 공개 30건). 스냅샷 .backup-prod/unpublish-contents/snapshot.json, 복구 --restore --yes. 다음: ISR 캐시 만료 후 /condition→/category/health·사이트맵 확인, audit:live, GSC 사이트맵 재제출. docs/unpublish-20261012.md
 (0) 애드센스 최종 보강: fix/adsense-readiness-final-20261012 로컬 완료(미push·미배포). 상세 docs/adsense-final-remediation-20261012.md. 남음: 운영 DB 본문 16건 반영 승인, 계정 측 수동 확인(UNKNOWN 11).
 (1) 후속 안정화 R01~R06: R01~R04 구현·단위/통합 테스트 완료 → PR #23 병합·운영 배포 완료(main 7f300b4). R05(e2e·CI)·R06(DB 계측) 미착수.
 (2) 홈 시안: fix/stabilize-r01-r04에서 홈·헤더 코드 적용+로컬 브라우저 검증 완료(미커밋·미배포). 승인 시안 PNG 원본 미확인 → CODEX_HANDOFF §B 명세 기준 구현. 스크린샷: docs/design/home-verify/. 이미지 기록: docs/home-assets.md.
 ## 최근 변경
+- 10-12: 운영 unpublish --apply 652건(공개 30건만). PR #68~70 병합, 감사 문서 docs/audits/petjigi-adsense-readiness-2026-10-12.md
 - 10-12: Consent Mode v2·운영 호스트 광고/GA4 제한·색인정책 공통화·JSON-LD 정합·내부링크 게이트·claim manifest·readiness 감사 추가(브랜치, 미배포)
 - 10-11: 얇은 글 배치 b15~b16(법·제도·이동 6 + 케어·안전 6 = 12건, PR #61~62), 중복 4건 308(사망 말소·크레이트·바닷물·카페 매너). 법·세제는 검증 불가 수치 제외하고 면책 추가. 잔여 blog 약 305
 - 10-11: 얇은 글 배치 b13~b14(영양·식이 7 + 입양 8 = 15건, PR #58~59). 간편 알레르기 검사 신뢰성·잡종강세 오해·분양 사기 신호 등 출처 부착. 잔여 blog 약 320 — 다음: 여행·법제도(c4)·케어(c5)·condition/guide
@@ -27,7 +28,7 @@
 - 10-10: R02 상세가 지역 판별(resolved/ambiguous/missing) 유지, 동명 업체는 주소·전화·지도 선택 안내(noindex), 주변 시설 시도 한정
 - 10-10: R03 등록대행 '운영 중' 제거(lib/business-status-wording.ts), R04 목차 빈 id·엔티티 id 처리
 ## TODO
-- [ ] PR #68 병합·배포 후 unpublish-contents.ts 운영 dry-run→--apply, 재공개 시 sitemap-0.xml /condition 복원; 미추적 .goal-harness/host-process-20260913/ 처리 결정
+- [ ] 재공개 시 sitemap-0.xml·next-sitemap.config.js /condition 복원; 미추적 .goal-harness/host-process-20260913/ 처리 결정
 - [ ] 결정: 얇은 YMYL blog 19건 증보 여부, 센터 1곳 shelter noindex 여부 (4차 감사 문서)
 - [ ] law.go.kr 과태료 조문·별표 원문 대조("최대 100만 원" 상한 표현 여러 글), AdSense 계정 심사 상태 확인, www 리디렉션 307→308
 - [x] 홈 AI 이미지 10종 생성·WebP 준비(내장 image_gen, 별도 API 키 미사용)
