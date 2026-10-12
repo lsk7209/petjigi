@@ -14,6 +14,9 @@ const env = {
   TURSO_DATABASE_URL: `file:${fixtureFile}`,
   TURSO_AUTH_TOKEN: '',
   NEXT_PUBLIC_ADSENSE_ID: 'ca-pub-fixture',
+  // 격리 fixture: 광고 요청은 Playwright 라우트가 가로채며 실제 Google로 나가지 않는다.
+  NEXT_PUBLIC_THIRD_PARTY_RUNTIME: 'production',
+  NEXT_PUBLIC_CANONICAL_HOSTS: '127.0.0.1,localhost',
   NEXT_PUBLIC_AD_SLOT_HORIZONTAL: '1',
   NEXT_PUBLIC_AD_SLOT_RECTANGLE: '2',
   NEXT_PUBLIC_AD_SLOT_AUTO: '3',

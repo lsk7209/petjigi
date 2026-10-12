@@ -14,7 +14,7 @@ const require = createRequire(import.meta.url);
 
 // Actual AdSlot + provider + policy matrix. Only framework rendering adapters
 // are stubbed; no live credentials, scripts, DB or network are used.
-function fixture(env = {}, decision = 'allow') {
+function fixture(env = {}, decision = 'allow', thirdParty = true) {
   const cache = new Map();
   function load(relative) {
     const filename = resolve(root, relative);
@@ -28,6 +28,7 @@ function fixture(env = {}, decision = 'allow') {
       module: fixtureModule, exports: fixtureModule.exports, process: { env },
       require: name => {
         if (name === '@/components/ads/use-page-ad-decision') return { usePageAdDecision: () => decision };
+        if (name === '@/components/ads/use-third-party-allowed') return { useThirdPartyAllowed: () => thirdParty };
         if (name === 'next/link') return function FixtureLink({ children, ...props }) { return React.createElement('a', props, children); };
         if (name === 'next/script') return function FixtureScript({ children, strategy, ...props }) { return React.createElement('script', { ...props, 'data-strategy': strategy }, children); };
         if (name.startsWith('@/components/')) return load(`${name.slice(2)}.tsx`);
@@ -107,4 +108,11 @@ test('판정 allow에서만 ins와 push가 생긴다', () => {
   const html = fixture(SLOT_ENV, 'allow')({ format: 'horizontal' });
   assert.match(html, /<ins class="adsbygoogle"/);
   assert.match(html, /adsbygoogle = window\.adsbygoogle/);
+});
+
+test('운영 canonical 호스트가 아니면 슬롯 ID가 있어도 실제 AdSense 슬롯 대신 하우스 추천만 표시', () => {
+  const render = fixture(SLOT_ENV, 'allow', false);
+  const html = render({ format: 'horizontal' });
+  assert.doesNotMatch(html, /adsbygoogle|data-ad-client|adsense-push/);
+  assert.match(html, /사이트 추천/);
 });

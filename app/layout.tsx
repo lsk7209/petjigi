@@ -6,6 +6,7 @@ import { Footer } from "@/components/layout/footer";
 import { GoogleConsentDefaults } from "@/components/privacy/google-consent-defaults";
 import { GA4 } from "@/components/analytics/ga4";
 import { AdsenseLoader } from "@/components/ads/adsense-loader";
+import { currentThirdPartyRuntime } from "@/lib/privacy/third-party-runtime";
 import { websiteSchema, organizationSchema } from "@/lib/seo/structured-data";
 
 const notoSerifKR = Noto_Serif_KR({
@@ -16,7 +17,13 @@ const notoSerifKR = Noto_Serif_KR({
   preload: true,
 });
 
-const ADSENSE_ID = process.env.NEXT_PUBLIC_ADSENSE_ID ?? "ca-pub-3050601904412736";
+const PRODUCTION_ADSENSE_ID = "ca-pub-3050601904412736";
+
+// 게시자 ID는 production 런타임에서만 사용한다 (preview·local에서 실광고 호출 방지)
+const ADSENSE_ID =
+  currentThirdPartyRuntime() === "production"
+    ? (process.env.NEXT_PUBLIC_ADSENSE_ID ?? PRODUCTION_ADSENSE_ID)
+    : "";
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://petjigi.kr";
 
@@ -84,7 +91,7 @@ export const metadata: Metadata = {
   other: {
     "google-extended": "allow",
     "mobile-web-app-capable": "yes",
-    "google-adsense-account": ADSENSE_ID,
+    ...(ADSENSE_ID ? { "google-adsense-account": ADSENSE_ID } : {}),
   },
   appleWebApp: {
     capable: true,

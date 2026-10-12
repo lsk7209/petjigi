@@ -4,6 +4,7 @@ import Link from "next/link";
 import Script from "next/script";
 import { useAdPolicy } from "@/components/providers/ad-policy-provider";
 import { usePageAdDecision } from "@/components/ads/use-page-ad-decision";
+import { useThirdPartyAllowed } from "@/components/ads/use-third-party-allowed";
 import type { AdType } from "@/db/schema/ad-policies";
 
 interface AdSlotProps {
@@ -61,6 +62,7 @@ export function AdSlot({ adType, slotId, format = "auto", className }: AdSlotPro
   const { getPolicy } = useAdPolicy();
   const policy = getPolicy(adType);
   const decision = usePageAdDecision();
+  const thirdPartyAllowed = useThirdPartyAllowed();
 
   if (policy === "block") return null;
 
@@ -81,7 +83,8 @@ export function AdSlot({ adType, slotId, format = "auto", className }: AdSlotPro
     const adsenseId = process.env.NEXT_PUBLIC_ADSENSE_ID;
     const resolvedSlotId = slotId ?? ENV_SLOT_IDS[format];
 
-    if (adsenseId && resolvedSlotId) {
+    // preview·local·비canonical 호스트에서는 실제 Google 슬롯을 만들지 않고 하우스 추천만 표시
+    if (thirdPartyAllowed && adsenseId && resolvedSlotId) {
       return (
         <div className={className}>
           <AdSenseSlot slotId={resolvedSlotId} format={format} />
