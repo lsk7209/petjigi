@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { parseStoredSources } from "@/lib/content-sources";
 import { buildToc } from "@/lib/toc";
+import { unlinkUnpublishedContentLinks } from "@/lib/seo/unlink-unpublished";
+import { getCachedPublicContentKeys } from "@/lib/seo/public-content-keys";
 import { publicContentCondition } from "@/lib/content-publication-sql";
 import { cache } from "react";
 import { notFound } from "next/navigation";
@@ -198,7 +200,8 @@ export default async function BlogPostPage({
     getRelatedGuides(content.category),
   ]);
 
-  const { headings, html: bodyWithIds } = buildToc(content.body ?? "");
+  const publicKeys = new Set(await getCachedPublicContentKeys());
+  const { headings, html: bodyWithIds } = buildToc(unlinkUnpublishedContentLinks(content.body ?? "", publicKeys));
   
   const plainText = (content.body ?? "").replace(/<[^>]+>/g, "");
   const wordCount = plainText.trim().length > 0

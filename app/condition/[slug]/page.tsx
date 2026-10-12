@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { parseStoredSources } from "@/lib/content-sources";
 import { buildToc } from "@/lib/toc";
+import { unlinkUnpublishedContentLinks } from "@/lib/seo/unlink-unpublished";
+import { getCachedPublicContentKeys } from "@/lib/seo/public-content-keys";
 import { publicContentCondition } from "@/lib/content-publication-sql";
 import Link from "next/link";
 import { notFound } from "next/navigation";
@@ -151,7 +153,8 @@ export default async function ConditionPage({
   if (!content) notFound();
   const sources = parseStoredSources(content.sources);
 
-  const { headings, html: bodyWithIds } = buildToc(content.body);
+  const publicKeys = new Set(await getCachedPublicContentKeys());
+  const { headings, html: bodyWithIds } = buildToc(unlinkUnpublishedContentLinks(content.body, publicKeys));
     const faqItems = extractFaq(content.body);
   const [relatedConditions, relatedGuides, relatedBlogs] = await Promise.all([
     getRelatedConditions(slug, content.category ?? 3),

@@ -24,12 +24,13 @@ function fixtureLoader(content = baseContent, conditions = []) {
   const query = { from: () => query, where: () => query, orderBy: () => query, limit: async () => [], get: async () => content };
   const stubs = {
     'next/link': ({ children, ...props }) => React.createElement('a', props, children),
-    'next/navigation': { notFound: () => { throw new Error('unexpected notFound'); } },
+    'next/navigation': { notFound: () => { throw new Error('unexpected notFound'); }, redirect: (to) => { throw new Error(`redirect:${to}`); } },
     'next/og': { ImageResponse: class ImageResponse { constructor(element, options) { this.element = element; this.options = options; } } },
     '@/db/client': { db: { select: () => query } }, '@/db/schema': { contents: {} },
     '@/lib/content-publication-sql': { publicContentCondition: () => undefined },
     'drizzle-orm': { or: () => undefined, and: () => undefined, desc: () => undefined, eq: () => undefined, lte: () => undefined, ne: () => undefined },
     '@/lib/db-queries': { getCachedAllConditions: async () => conditions },
+    '@/lib/seo/public-content-keys': { getCachedPublicContentKeys: async () => [] },
     '@/components/content/ymyl-disclaimer': { YmylDisclaimer: empty }, '@/components/ads/ad-slot': { AdSlot: empty },
     '@/components/providers/ad-policy-provider': { AdPolicyProvider: ({ children }) => children },
     '@/components/content/table-of-contents': { TableOfContents: empty }, '@/components/content/reading-progress': { ReadingProgress: empty },
@@ -129,12 +130,9 @@ test('condition popular links only include available records without changing ca
   assert.deepEqual(items.map(item => item.url), conditions.map(condition => `https://petjigi.kr/condition/${condition.slug}`));
 });
 
-test('condition empty list keeps preparation message without dangling popular navigation', async () => {
+test('condition empty list redirects to the health category instead of an empty hub', async () => {
   const page = fixtureLoader(baseContent, [])('app/condition/page.tsx');
-  const html = renderToStaticMarkup(await page.default());
-  assert.match(html, /질환 정보를 준비 중입니다\./);
-  assert.doesNotMatch(html, /aria-label="인기 질환"|href="\/condition\/|"@type":"ItemList"/);
-  assert.equal((html.match(/<h1[ >]/g) ?? []).length, 1);
+  await assert.rejects(() => page.default(), /redirect:\/category\/health/);
 });
 
 test('condition OG routes use neutral labels with unchanged PNG dimensions', async () => {

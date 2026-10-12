@@ -23,6 +23,9 @@ export interface SeedRecord {
   publishedAt: string;
   body: string;
   sources: string;
+  category: string;
+  ymyl: string;
+  disclaimer: string;
 }
 
 function text(e: ts.Expression | undefined): string {
@@ -65,6 +68,9 @@ export function readSeeds(dir = SEED_DIR): SeedRecord[] {
             publishedAt: text(m.get("publishedAt")),
             body: text(m.get("body")),
             sources: text(m.get("sources")),
+            category: text(m.get("category")) || (m.get("category")?.getText() ?? ""),
+            ymyl: m.get("ymyl")?.getText() ?? "",
+            disclaimer: text(m.get("disclaimer")),
           });
         }
       }

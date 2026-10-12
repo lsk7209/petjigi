@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { redirect } from "next/navigation";
 import { getCachedAllConditions } from "@/lib/db-queries";
 import { breadcrumbSchema, itemListSchema, collectionPageSchema } from "@/lib/seo/structured-data";
 import { AdSlot } from "@/components/ads/ad-slot";
@@ -56,6 +57,8 @@ const POPULAR_CONDITIONS = [
 
 export default async function ConditionIndexPage() {
   const conditions = await getCachedAllConditions();
+  // 공개된 질환 글이 없으면 빈 허브 대신 건강 카테고리로 보낸다(글이 다시 공개되면 자동 복귀).
+  if (conditions.length === 0) redirect("/category/health");
   const publishedSlugs = new Set(conditions.map((condition) => condition.slug));
   const popularConditions = POPULAR_CONDITIONS.filter(({ slug }) => publishedSlugs.has(slug));
 

@@ -22,6 +22,10 @@ const seedSlugs = new Set([
   'pet-insurance-deductible-guide', 'pet-insurance-exclusions-guide',
   'animal-registration-change-cancel-guide', 'dog-adoption-complete-guide', 'cat-indoor-enrichment-guide',
   'dog-liver-disease-early-signs', 'dog-skin-lump-guide', 'cat-food-allergy-elimination-diet',
+  // 독자 여정(lib/owner-journeys.ts)의 공개 유지 글
+  'dog-first-adoption-kit', 'cat-food-label-guide', 'dog-toxic-foods', 'dog-food-allergy-elimination-diet-test',
+  'cat-eye-discharge-guide', 'online-vet-consultation-guide', 'pet-bite-liability-guide', 'cat-litter-box-guide',
+  'cat-dog-harmony-guide', 'senior-young-pet-introduction', 'petloss-return-to-daily-life',
 ]);
 const literal = (node, source, constants) => {
   if (!node || node.kind === ts.SyntaxKind.NullKeyword) return null;

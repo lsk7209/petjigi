@@ -32,6 +32,7 @@ function renderFixture(relative, content) {
     'next/navigation': { notFound: () => { throw new Error('unexpected notFound'); } },
     '@/db/client': { db },
     '@/db/schema': { contents: {} },
+    '@/lib/seo/public-content-keys': { getCachedPublicContentKeys: async () => [] },
     '@/lib/content-publication-sql': { publicContentCondition: () => undefined },
     'drizzle-orm': { or: () => undefined,
       and: () => undefined, desc: () => undefined, eq: () => undefined,
