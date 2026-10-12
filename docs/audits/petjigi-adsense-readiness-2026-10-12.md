@@ -33,7 +33,7 @@
 | P1 | 사용처 없는 제휴 고지 컴포넌트가 현재 사실("제휴 링크 없음")과 반대되는 문구를 포함 | 삭제 | `components/layout/affiliate-notice.tsx` | 전체 grep 참조 0, `pnpm test` |
 
 ## 코드로 해결할 수 없는 항목 (수동 확인 필요)
-1. **문의 메일 수신 불가 가능성(P0)**: `petjigi.kr`에 MX·TXT(SPF)·`_dmarc` 레코드가 조회되지 않는다(8.8.8.8 기준). 문의 페이지와 구조화 데이터의 `cs@petjigi.kr`로 보낸 메일이 반송될 수 있다. 메일 서비스 선택과 DNS 등록은 운영자 결정.
+1. **문의 메일 수신 불가 가능성(P0)**: `petjigi.kr`에 MX·TXT(SPF)·`_dmarc` 레코드가 조회되지 않는다(8.8.8.8 기준). 문의 페이지와 구조화 데이터의 `cs@petjigi.kr`로 보낸 메일이 반송될 수 있다. **운영자 결정(2026-10-12): 메일 수신은 실제로 작동하지 않아도 되므로 보류.**
 2. **www 리디렉션 307 → 308**: Vercel 도메인 설정 `www.petjigi.kr`의 `redirectStatusCode`가 307(조회 확인). 영구 이전이므로 308이 적합하고, `http://www` → `https://www` → 대표 도메인으로 2단계다. Vercel 대시보드(Domains)에서 변경 필요. `www/ads.txt`도 같은 설정의 영향.
 3. 실제 법인명·사업자 정보, 제휴 링크 운영 여부, AdSense 사이트 연결·게시자 ID, Search Console 색인, 개인정보처리방침 법률 검토, Google 인증 CMP 필요 여부 → `docs/adsense-account-manual-checklist.md`의 UNKNOWN 11건.
 4. 우수 30건 외 비공개 전환(PR #68) 이후 `public/sitemap-0.xml`의 `/condition` 항목 복원 시점.
@@ -43,7 +43,7 @@ push, 병합, 배포, 운영 DB apply, DNS·Vercel·AdSense·GSC 설정 변경, 
 
 ## 배포 전 체크리스트
 1. PR #68(30건만 공개) 병합·배포 → 운영 `unpublish-contents.ts` dry-run → 승인 후 `--apply`
-2. 메일 DNS(MX·SPF·DMARC) 등록 또는 문의 주소 변경 결정
+2. (보류 결정됨) 메일 DNS
 3. Vercel 도메인 www 리디렉션을 308로 변경
 4. 배포 후 `node scripts/audit-live-site.mjs --limit=2000` 재실행(중복·브랜드 중복 0 확인)
 5. GSC 사이트맵 재제출
