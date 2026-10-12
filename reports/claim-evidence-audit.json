@@ -1,0 +1,3978 @@
+{
+  "generatedAt": "2026-10-12T05:07:17.030Z",
+  "summary": {
+    "highRiskWithRiskyClaims": 168,
+    "riskyClaims": 260,
+    "untracked": 256,
+    "verified": 0,
+    "qualified": 0,
+    "needsReview": 4,
+    "manifestIssues": 0
+  },
+  "rows": [
+    {
+      "slug": "apartment-pet-dispute-guide",
+      "type": "blog",
+      "file": "db/seeds/blog-posts-10.ts",
+      "riskyCount": 1,
+      "byStatus": {
+        "verified": 0,
+        "qualified": 0,
+        "removed": 0,
+        "needs_review": 0
+      },
+      "untracked": [
+        "층간 소음 — 개 짖는 소리 기준 환경부 「공동주택 층간소음의 범위와 기준에 관한 규칙」에 따르면 낮 시간대(06:00~22:00) 공기 전달 소음 기준은 45dB(1분 등가소음도)이다."
+      ],
+      "issues": [
+        {
+          "code": "UNTRACKED_RISKY_CLAIM",
+          "snippet": "층간 소음 — 개 짖는 소리 기준 환경부 「공동주택 층간소음의 범위와 기준에 관한 규칙」에 따르면 낮 시간대(06:00~22:00) 공기 전달 소음 기준은 45dB(1분 등가소음도)이다."
+        }
+      ]
+    },
+    {
+      "slug": "pet-insurance-age-renewal-guide",
+      "type": "blog",
+      "file": "db/seeds/blog-posts-10.ts",
+      "riskyCount": 3,
+      "byStatus": {
+        "verified": 0,
+        "qualified": 0,
+        "removed": 0,
+        "needs_review": 3
+      },
+      "untracked": [],
+      "issues": []
+    },
+    {
+      "slug": "pet-death-legal-guide",
+      "type": "blog",
+      "file": "db/seeds/blog-posts-10.ts",
+      "riskyCount": 2,
+      "byStatus": {
+        "verified": 0,
+        "qualified": 0,
+        "removed": 0,
+        "needs_review": 0
+      },
+      "untracked": [
+        "동물등록 정보 변경 신고 등록된 반려견이 사망하면 동물보호법에 따라 30일 이내에 동물등록 정보를 변경(사망 신고)해야 한다.",
+        "환경부 규정에 따르면 이는 불법이며 과태료 대상이다."
+      ],
+      "issues": [
+        {
+          "code": "UNTRACKED_RISKY_CLAIM",
+          "snippet": "동물등록 정보 변경 신고 등록된 반려견이 사망하면 동물보호법에 따라 30일 이내에 동물등록 정보를 변경(사망 신고)해야 한다."
+        },
+        {
+          "code": "UNTRACKED_RISKY_CLAIM",
+          "snippet": "환경부 규정에 따르면 이는 불법이며 과태료 대상이다."
+        }
+      ]
+    },
+    {
+      "slug": "pet-financial-products-guide",
+      "type": "blog",
+      "file": "db/seeds/blog-posts-10.ts",
+      "riskyCount": 2,
+      "byStatus": {
+        "verified": 0,
+        "qualified": 0,
+        "removed": 0,
+        "needs_review": 0
+      },
+      "untracked": [
+        "농림축산식품부 2023년 통계에 따르면 반려동물 양육 가구의 연간 반려동물 관련 지출은 가구당 약 151만 원이다.",
+        "4가지 반드시 확인할 항목: 할인 적용 가맹점 범위 (전체 동물병원인지, 특정 제휴 병원만인지) 월 혜택 한도 (예: 월 최대 3만 원 할인) 전월 실적 조건 (이 금액 이상 써야 혜택 적용) 연회비와 혜택의 실질 순이익 계산 동물병원비 할부·분할결제 대형 수술이나 장기 치료가 필요할 "
+      ],
+      "issues": [
+        {
+          "code": "UNTRACKED_RISKY_CLAIM",
+          "snippet": "농림축산식품부 2023년 통계에 따르면 반려동물 양육 가구의 연간 반려동물 관련 지출은 가구당 약 151만 원이다."
+        },
+        {
+          "code": "UNTRACKED_RISKY_CLAIM",
+          "snippet": "4가지 반드시 확인할 항목: 할인 적용 가맹점 범위 (전체 동물병원인지, 특정 제휴 병원만인지) 월 혜택 한도 (예: 월 최대 3만 원 할인) 전월 실적 조건 (이 금액 이상 써야 혜택 적용) 연회비와 혜택의 실질 순이익 계산 동물병원비 할부·분할결제 대형 수술이나 장기 치료가 필요할 "
+        }
+      ]
+    },
+    {
+      "slug": "cat-vaccine-sarcoma-guide",
+      "type": "blog",
+      "file": "db/seeds/blog-posts-101.ts",
+      "riskyCount": 2,
+      "byStatus": {
+        "verified": 0,
+        "qualified": 0,
+        "removed": 0,
+        "needs_review": 0
+      },
+      "untracked": [
+        "미국동물병원협회(AAHA)의 고양이 가이드라인도 의심되는 혹을 조사할 때 3-2-1 규칙을 따르라고 안내한다.",
+        "접종 부위 선택 AAHA는 종양이 생겼을 때 절제나 절단이 가능한 위치에 접종하도록 권고한다."
+      ],
+      "issues": [
+        {
+          "code": "UNTRACKED_RISKY_CLAIM",
+          "snippet": "미국동물병원협회(AAHA)의 고양이 가이드라인도 의심되는 혹을 조사할 때 3-2-1 규칙을 따르라고 안내한다."
+        },
+        {
+          "code": "UNTRACKED_RISKY_CLAIM",
+          "snippet": "접종 부위 선택 AAHA는 종양이 생겼을 때 절제나 절단이 가능한 위치에 접종하도록 권고한다."
+        }
+      ]
+    },
+    {
+      "slug": "petshop-purchased-dog-consumer-rights",
+      "type": "blog",
+      "file": "db/seeds/blog-posts-104.ts",
+      "riskyCount": 1,
+      "byStatus": {
+        "verified": 0,
+        "qualified": 0,
+        "removed": 0,
+        "needs_review": 0
+      },
+      "untracked": [
+        "계약서의 불리한 조항에 주의 • '생명체이므로 환불 불가', '3일 이내 폐사만 교환' 같은 조항은 기준보다 소비자에게 불리할 수 있다 • 서명했다는 이유로 권리를 포기한 것은 아닐 수 있으므로 소비자원에 상담한다 • 계약서에 업체 정보, 동물의 출생일, 접종 기록, 건강 상태가 적혀 "
+      ],
+      "issues": [
+        {
+          "code": "UNTRACKED_RISKY_CLAIM",
+          "snippet": "계약서의 불리한 조항에 주의 • '생명체이므로 환불 불가', '3일 이내 폐사만 교환' 같은 조항은 기준보다 소비자에게 불리할 수 있다 • 서명했다는 이유로 권리를 포기한 것은 아닐 수 있으므로 소비자원에 상담한다 • 계약서에 업체 정보, 동물의 출생일, 접종 기록, 건강 상태가 적혀 "
+        }
+      ]
+    },
+    {
+      "slug": "dog-meningoencephalitis-guide",
+      "type": "blog",
+      "file": "db/seeds/blog-posts-106.ts",
+      "riskyCount": 2,
+      "byStatus": {
+        "verified": 0,
+        "qualified": 0,
+        "removed": 0,
+        "needs_review": 0
+      },
+      "untracked": [
+        "MUO란 VCA 자료에 따르면 MUO는 MRI와 뇌척수액 검사로 의심되지만 조직 검사로 확진되지 않은 비감염성 염증성 뇌 질환의 총칭이다.",
+        "즉시 응급 진료 • 발작이 처음 나타났거나 5분 이상 지속, 연달아 반복된다 • 의식이 흐리거나 걷지 못한다 • 목을 만지면 심하게 아파한다 진단 신경학적 검사와 혈액 검사 MRI (뇌 병변 확인) 뇌척수액 검사 (염증 세포 확인, 감염 배제) 감염성 원인(세균, 바이러스, 곰팡이, 기"
+      ],
+      "issues": [
+        {
+          "code": "UNTRACKED_RISKY_CLAIM",
+          "snippet": "MUO란 VCA 자료에 따르면 MUO는 MRI와 뇌척수액 검사로 의심되지만 조직 검사로 확진되지 않은 비감염성 염증성 뇌 질환의 총칭이다."
+        },
+        {
+          "code": "UNTRACKED_RISKY_CLAIM",
+          "snippet": "즉시 응급 진료 • 발작이 처음 나타났거나 5분 이상 지속, 연달아 반복된다 • 의식이 흐리거나 걷지 못한다 • 목을 만지면 심하게 아파한다 진단 신경학적 검사와 혈액 검사 MRI (뇌 병변 확인) 뇌척수액 검사 (염증 세포 확인, 감염 배제) 감염성 원인(세균, 바이러스, 곰팡이, 기"
+        }
+      ]
+    },
+    {
+      "slug": "cat-corneal-ulcer-guide",
+      "type": "blog",
+      "file": "db/seeds/blog-posts-108.ts",
+      "riskyCount": 1,
+      "byStatus": {
+        "verified": 0,
+        "qualified": 0,
+        "removed": 0,
+        "needs_review": 0
+      },
+      "untracked": [
+        "흔한 원인 고양이 헤르페스바이러스(FHV-1): 가장 흔한 원인, 재발 가능 외상: 다른 고양이 발톱, 이물질 눈물 분비 부족(건성각결막염) 안검 이상 (속눈썹이 각막을 자극) 즉시 동물병원에 가야 하는 신호 지체 없이 내원해야 하는 눈 증상 • 눈을 완전히 감고 뜨지 못함 • 각막이 "
+      ],
+      "issues": [
+        {
+          "code": "UNTRACKED_RISKY_CLAIM",
+          "snippet": "흔한 원인 고양이 헤르페스바이러스(FHV-1): 가장 흔한 원인, 재발 가능 외상: 다른 고양이 발톱, 이물질 눈물 분비 부족(건성각결막염) 안검 이상 (속눈썹이 각막을 자극) 즉시 동물병원에 가야 하는 신호 지체 없이 내원해야 하는 눈 증상 • 눈을 완전히 감고 뜨지 못함 • 각막이 "
+        }
+      ]
+    },
+    {
+      "slug": "pet-death-registration-cancel",
+      "type": "blog",
+      "file": "db/seeds/blog-posts-108.ts",
+      "riskyCount": 2,
+      "byStatus": {
+        "verified": 0,
+        "qualified": 0,
+        "removed": 0,
+        "needs_review": 0
+      },
+      "untracked": [
+        "말소 신고 의무 동물보호법 제12조에 따라 등록 동물이 사망한 경우 보호자는 30일 이내에 말소 신고를 해야 한다.",
+        "말소 방법 3가지 동물등록 말소 신고 방법 • 온라인 : 동물보호관리시스템(APMS, www.animal.go.kr) 접속 → 로그인 → 동물등록 → 말소 신청 • 오프라인 : 주소지 관할 시·군·구청 방문 신청 • 동물병원 대행 : 등록 대행업체(동물병원)에서 말소 신고 대행 가능 필"
+      ],
+      "issues": [
+        {
+          "code": "UNTRACKED_RISKY_CLAIM",
+          "snippet": "말소 신고 의무 동물보호법 제12조에 따라 등록 동물이 사망한 경우 보호자는 30일 이내에 말소 신고를 해야 한다."
+        },
+        {
+          "code": "UNTRACKED_RISKY_CLAIM",
+          "snippet": "말소 방법 3가지 동물등록 말소 신고 방법 • 온라인 : 동물보호관리시스템(APMS, www.animal.go.kr) 접속 → 로그인 → 동물등록 → 말소 신청 • 오프라인 : 주소지 관할 시·군·구청 방문 신청 • 동물병원 대행 : 등록 대행업체(동물병원)에서 말소 신고 대행 가능 필"
+        }
+      ]
+    },
+    {
+      "slug": "pet-insurance-renewal-rejection",
+      "type": "blog",
+      "file": "db/seeds/blog-posts-110.ts",
+      "riskyCount": 1,
+      "byStatus": {
+        "verified": 0,
+        "qualified": 0,
+        "removed": 0,
+        "needs_review": 0
+      },
+      "untracked": [
+        "갱신 거절이 발생하는 주요 사유 고위험 질병 이력 : 암·심장 질환·만성 신장 질환 등 고비용 질환 발생 후 고령 : 일부 상품은 특정 나이(7~10세) 이후 갱신 제한 보험사 상품 단종 : 해당 상품 자체 판매 중단으로 갱신 불가 보험사 손해율 상승 : 전체 상품군 갱신 조건 강화 갱"
+      ],
+      "issues": [
+        {
+          "code": "UNTRACKED_RISKY_CLAIM",
+          "snippet": "갱신 거절이 발생하는 주요 사유 고위험 질병 이력 : 암·심장 질환·만성 신장 질환 등 고비용 질환 발생 후 고령 : 일부 상품은 특정 나이(7~10세) 이후 갱신 제한 보험사 상품 단종 : 해당 상품 자체 판매 중단으로 갱신 불가 보험사 손해율 상승 : 전체 상품군 갱신 조건 강화 갱"
+        }
+      ]
+    },
+    {
+      "slug": "dog-vestibular-disease-sudden-tilt",
+      "type": "blog",
+      "file": "db/seeds/blog-posts-111.ts",
+      "riskyCount": 1,
+      "byStatus": {
+        "verified": 0,
+        "qualified": 0,
+        "removed": 0,
+        "needs_review": 0
+      },
+      "untracked": [
+        "주요 원인 노령성(특발성) 전정증후군 : 가장 흔한 원인, 중·노령견에서 갑작스럽게 발생, 원인 불명 중이염·내이염: 귀 감염이 내이로 전파 뇌 병변: 뇌종양·뇌염·뇌졸중 — 덜 흔하지만 배제 필요 갑상선기능저하증: 드물게 전정 이상 연관 노령성 전정증후군 vs 뇌 문제 구분 노령성 전"
+      ],
+      "issues": [
+        {
+          "code": "UNTRACKED_RISKY_CLAIM",
+          "snippet": "주요 원인 노령성(특발성) 전정증후군 : 가장 흔한 원인, 중·노령견에서 갑작스럽게 발생, 원인 불명 중이염·내이염: 귀 감염이 내이로 전파 뇌 병변: 뇌종양·뇌염·뇌졸중 — 덜 흔하지만 배제 필요 갑상선기능저하증: 드물게 전정 이상 연관 노령성 전정증후군 vs 뇌 문제 구분 노령성 전"
+        }
+      ]
+    },
+    {
+      "slug": "dog-spleen-mass-benign-vs-malignant",
+      "type": "blog",
+      "file": "db/seeds/blog-posts-113.ts",
+      "riskyCount": 1,
+      "byStatus": {
+        "verified": 0,
+        "qualified": 0,
+        "removed": 0,
+        "needs_review": 0
+      },
+      "untracked": [
+        "비장 종괴의 두 가지 주요 유형 비장 혈관육종(HSA) : 가장 흔한 악성 비장 종양, 혈관에서 기원, 내부 출혈 위험 높음, 전이 빠름 양성 결절성 증식 / 혈종 : 악성 없는 혈액이 찬 낭성 구조, 더 좋은 예후 비장 종괴 발견 경로 비장 종괴 발견 3가지 상황 • 우연 발견 : 건"
+      ],
+      "issues": [
+        {
+          "code": "UNTRACKED_RISKY_CLAIM",
+          "snippet": "비장 종괴의 두 가지 주요 유형 비장 혈관육종(HSA) : 가장 흔한 악성 비장 종양, 혈관에서 기원, 내부 출혈 위험 높음, 전이 빠름 양성 결절성 증식 / 혈종 : 악성 없는 혈액이 찬 낭성 구조, 더 좋은 예후 비장 종괴 발견 경로 비장 종괴 발견 3가지 상황 • 우연 발견 : 건"
+        }
+      ]
+    },
+    {
+      "slug": "cat-conjunctivitis-home-vs-vet",
+      "type": "blog",
+      "file": "db/seeds/blog-posts-114.ts",
+      "riskyCount": 1,
+      "byStatus": {
+        "verified": 0,
+        "qualified": 0,
+        "removed": 0,
+        "needs_review": 0
+      },
+      "untracked": [
+        "고양이 결막염 원인 고양이 헤르페스바이러스(FHV-1) : 가장 흔한 원인, 스트레스·면역 저하 시 재발 클라미디아 felis : 세균성, 주로 편측 또는 양측 결막염 마이코플라스마 : 세균성 결막염 알레르기·자극 : 먼지, 담배 연기, 방향제 집에서 할 수 있는 것 경증 결막염 가정 "
+      ],
+      "issues": [
+        {
+          "code": "UNTRACKED_RISKY_CLAIM",
+          "snippet": "고양이 결막염 원인 고양이 헤르페스바이러스(FHV-1) : 가장 흔한 원인, 스트레스·면역 저하 시 재발 클라미디아 felis : 세균성, 주로 편측 또는 양측 결막염 마이코플라스마 : 세균성 결막염 알레르기·자극 : 먼지, 담배 연기, 방향제 집에서 할 수 있는 것 경증 결막염 가정 "
+        }
+      ]
+    },
+    {
+      "slug": "breed-specific-legislation-korea",
+      "type": "blog",
+      "file": "db/seeds/blog-posts-114.ts",
+      "riskyCount": 2,
+      "byStatus": {
+        "verified": 0,
+        "qualified": 0,
+        "removed": 0,
+        "needs_review": 0
+      },
+      "untracked": [
+        "기존 사육자는 시행 후 6개월 이내(2024년 10월 26일까지)였다 심사 전문가 위원회가 사전 설문과 기질평가를 거쳐 공공 안전 위험 여부를 판단한다.",
+        "기질평가 비용은 소유자 부담이다 중성화 예외 8개월 미만의 어린 개는 수술이 어렵다는 수의사 진단서가 있으면 연기할 수 있다 처벌 무허가 사육은 형사처벌 대상으로 안내된다 (구체적 형량은 현행 법령 확인) 외출 시 의무 맹견과 외출할 때는 목줄 및 입마개 등 안전장치를 하거나 탈출을 방"
+      ],
+      "issues": [
+        {
+          "code": "UNTRACKED_RISKY_CLAIM",
+          "snippet": "기존 사육자는 시행 후 6개월 이내(2024년 10월 26일까지)였다 심사 전문가 위원회가 사전 설문과 기질평가를 거쳐 공공 안전 위험 여부를 판단한다."
+        },
+        {
+          "code": "UNTRACKED_RISKY_CLAIM",
+          "snippet": "기질평가 비용은 소유자 부담이다 중성화 예외 8개월 미만의 어린 개는 수술이 어렵다는 수의사 진단서가 있으면 연기할 수 있다 처벌 무허가 사육은 형사처벌 대상으로 안내된다 (구체적 형량은 현행 법령 확인) 외출 시 의무 맹견과 외출할 때는 목줄 및 입마개 등 안전장치를 하거나 탈출을 방"
+        }
+      ]
+    },
+    {
+      "slug": "cat-hcm-daily-management",
+      "type": "blog",
+      "file": "db/seeds/blog-posts-115.ts",
+      "riskyCount": 1,
+      "byStatus": {
+        "verified": 0,
+        "qualified": 0,
+        "removed": 0,
+        "needs_review": 0
+      },
+      "untracked": [
+        "진단 후 처방약의 역할 HCM 고양이에게 처방되는 주요 약물 • 아테놀롤 : 심박수 조절, 심근 부담 감소 • 딜티아젬 : 심박수·심근 수축력 조절 • 후로세마이드(이뇨제) : 폐부종·흉수 시 액체 제거 • 클로피도그렐 : 혈전 예방 (혈전색전증 위험 있는 경우) ▶ 처방약은 임의로 중"
+      ],
+      "issues": [
+        {
+          "code": "UNTRACKED_RISKY_CLAIM",
+          "snippet": "진단 후 처방약의 역할 HCM 고양이에게 처방되는 주요 약물 • 아테놀롤 : 심박수 조절, 심근 부담 감소 • 딜티아젬 : 심박수·심근 수축력 조절 • 후로세마이드(이뇨제) : 폐부종·흉수 시 액체 제거 • 클로피도그렐 : 혈전 예방 (혈전색전증 위험 있는 경우) ▶ 처방약은 임의로 중"
+        }
+      ]
+    },
+    {
+      "slug": "dog-lyme-disease-tick-prevention",
+      "type": "blog",
+      "file": "db/seeds/blog-posts-116.ts",
+      "riskyCount": 1,
+      "byStatus": {
+        "verified": 0,
+        "qualified": 0,
+        "removed": 0,
+        "needs_review": 0
+      },
+      "untracked": [
+        "진드기가 피부에 붙어 있는 시간이 길수록(24~48시간 이상) 감염 위험이 높아진다."
+      ],
+      "issues": [
+        {
+          "code": "UNTRACKED_RISKY_CLAIM",
+          "snippet": "진드기가 피부에 붙어 있는 시간이 길수록(24~48시간 이상) 감염 위험이 높아진다."
+        }
+      ]
+    },
+    {
+      "slug": "cat-fip-new-treatment-guide",
+      "type": "blog",
+      "file": "db/seeds/blog-posts-116.ts",
+      "riskyCount": 1,
+      "byStatus": {
+        "verified": 0,
+        "qualified": 0,
+        "removed": 0,
+        "needs_review": 0
+      },
+      "untracked": [
+        "습성(삼출형) : 복강·흉강에 액체 축적, 진단 상대적으로 쉬움 건성(비삼출형) : 눈·신경·내부 장기 육아종, 진단 어려움 새로운 치료 옵션 항바이러스제 치료 현황 • GS-441524(뉴클레오사이드 유사체): 다수 연구에서 높은 관해율 보고 • 몰누피라비르 계열: 일부 프로토콜에서 "
+      ],
+      "issues": [
+        {
+          "code": "UNTRACKED_RISKY_CLAIM",
+          "snippet": "습성(삼출형) : 복강·흉강에 액체 축적, 진단 상대적으로 쉬움 건성(비삼출형) : 눈·신경·내부 장기 육아종, 진단 어려움 새로운 치료 옵션 항바이러스제 치료 현황 • GS-441524(뉴클레오사이드 유사체): 다수 연구에서 높은 관해율 보고 • 몰누피라비르 계열: 일부 프로토콜에서 "
+        }
+      ]
+    },
+    {
+      "slug": "pet-insurance-claim-rejection-reasons",
+      "type": "blog",
+      "file": "db/seeds/blog-posts-116.ts",
+      "riskyCount": 1,
+      "byStatus": {
+        "verified": 0,
+        "qualified": 0,
+        "removed": 0,
+        "needs_review": 0
+      },
+      "untracked": [
+        "1위 — 대기 기간 내 치료 대부분의 펫보험은 가입 후 30일(일부 질환은 90~180일)의 대기 기간이 있다."
+      ],
+      "issues": [
+        {
+          "code": "UNTRACKED_RISKY_CLAIM",
+          "snippet": "1위 — 대기 기간 내 치료 대부분의 펫보험은 가입 후 30일(일부 질환은 90~180일)의 대기 기간이 있다."
+        }
+      ]
+    },
+    {
+      "slug": "cat-polycystic-kidney-disease-pkd",
+      "type": "blog",
+      "file": "db/seeds/blog-posts-119.ts",
+      "riskyCount": 1,
+      "byStatus": {
+        "verified": 0,
+        "qualified": 0,
+        "removed": 0,
+        "needs_review": 0
+      },
+      "untracked": [
+        "증상과 진행 어린 나이(3~10세)에 신부전 증상 나타날 수 있음 초기: 무증상 (낭종만 존재) 중기: 다음다갈증, 식욕 저하, 체중 감소 말기: 만성 신부전과 동일한 경과 유전 검사 PKD 검사 방법 • DNA 검사(구강 도말 또는 혈액): PKD1 돌연변이 확인 • 초음파: 6~8개"
+      ],
+      "issues": [
+        {
+          "code": "UNTRACKED_RISKY_CLAIM",
+          "snippet": "증상과 진행 어린 나이(3~10세)에 신부전 증상 나타날 수 있음 초기: 무증상 (낭종만 존재) 중기: 다음다갈증, 식욕 저하, 체중 감소 말기: 만성 신부전과 동일한 경과 유전 검사 PKD 검사 방법 • DNA 검사(구강 도말 또는 혈액): PKD1 돌연변이 확인 • 초음파: 6~8개"
+        }
+      ]
+    },
+    {
+      "slug": "pet-insurance-waiting-period-guide",
+      "type": "blog",
+      "file": "db/seeds/blog-posts-119.ts",
+      "riskyCount": 1,
+      "byStatus": {
+        "verified": 0,
+        "qualified": 0,
+        "removed": 0,
+        "needs_review": 0
+      },
+      "untracked": [
+        "항목별 대기 기간 일반적인 대기 기간 구조 (상품별 다름) • 사고·외상: 1~3일 (가장 짧음) • 일반 질병: 30일 • 슬개골 탈구·십자인대: 90일~180일 (품종 위험 질환) • 피부 질환: 30~90일 • 치과·구강: 90일 (치과 특약 포함 상품) • 암(종양): 90일~1"
+      ],
+      "issues": [
+        {
+          "code": "UNTRACKED_RISKY_CLAIM",
+          "snippet": "항목별 대기 기간 일반적인 대기 기간 구조 (상품별 다름) • 사고·외상: 1~3일 (가장 짧음) • 일반 질병: 30일 • 슬개골 탈구·십자인대: 90일~180일 (품종 위험 질환) • 피부 질환: 30~90일 • 치과·구강: 90일 (치과 특약 포함 상품) • 암(종양): 90일~1"
+        }
+      ]
+    },
+    {
+      "slug": "dog-epilepsy-seizure-management",
+      "type": "blog",
+      "file": "db/seeds/blog-posts-120.ts",
+      "riskyCount": 1,
+      "byStatus": {
+        "verified": 0,
+        "qualified": 0,
+        "removed": 0,
+        "needs_review": 0
+      },
+      "untracked": [
+        "5분 이상 발작 지속 시 즉시 응급 병원 이동 (군발 발작·지속 발작은 응급) 절대 하지 말 것 입 안에 손·물건 넣지 않기 (혀를 삼키지 않음, 교상 위험) 강하게 잡거나 누르지 않기 물 먹이지 않기 장기 약물 관리 페노바르비탈 : 가장 많이 사용, 경구 투여 1일 2회 포타슘 브로마"
+      ],
+      "issues": [
+        {
+          "code": "UNTRACKED_RISKY_CLAIM",
+          "snippet": "5분 이상 발작 지속 시 즉시 응급 병원 이동 (군발 발작·지속 발작은 응급) 절대 하지 말 것 입 안에 손·물건 넣지 않기 (혀를 삼키지 않음, 교상 위험) 강하게 잡거나 누르지 않기 물 먹이지 않기 장기 약물 관리 페노바르비탈 : 가장 많이 사용, 경구 투여 1일 2회 포타슘 브로마"
+        }
+      ]
+    },
+    {
+      "slug": "stray-animal-rescue-legal-status",
+      "type": "blog",
+      "file": "db/seeds/blog-posts-121.ts",
+      "riskyCount": 1,
+      "byStatus": {
+        "verified": 0,
+        "qualified": 0,
+        "removed": 0,
+        "needs_review": 0
+      },
+      "untracked": [
+        "공고 기간 후 소유자 미나타나면 지자체 소유 이전 소유권 취득 요건 공고 기간(10일) 이후 원래 소유자가 나타나지 않은 경우 지자체 담당 공무원 또는 보호소 통해 입양 신청 입양 완료 시 등록·이름 변경 가능 마이크로칩 확인: 원래 소유자가 있을 경우 반환 의무 임시 보호 중 의료비 "
+      ],
+      "issues": [
+        {
+          "code": "UNTRACKED_RISKY_CLAIM",
+          "snippet": "공고 기간 후 소유자 미나타나면 지자체 소유 이전 소유권 취득 요건 공고 기간(10일) 이후 원래 소유자가 나타나지 않은 경우 지자체 담당 공무원 또는 보호소 통해 입양 신청 입양 완료 시 등록·이름 변경 가능 마이크로칩 확인: 원래 소유자가 있을 경우 반환 의무 임시 보호 중 의료비 "
+        }
+      ]
+    },
+    {
+      "slug": "dog-hypoglycemia-small-breed-puppy",
+      "type": "blog",
+      "file": "db/seeds/blog-posts-122.ts",
+      "riskyCount": 2,
+      "byStatus": {
+        "verified": 0,
+        "qualified": 0,
+        "removed": 0,
+        "needs_review": 0
+      },
+      "untracked": [
+        "생후 6개월 미만 어린 강아지에서 특히 위험하다.",
+        "증상 저혈당 증상 (빠른 인식이 중요) • 갑작스러운 무기력, 비틀거림 • 눈이 풀리거나 멍한 상태 • 떨림, 근육 경련 • 의식 저하, 반응 없음 • 심한 경우 발작·혼수 응급 처치 의식 있음: 꿀, 콘시럽, 포도당 용액을 잇몸에 소량 바르기 바른 후 혈당이 올라오면 증상 호전 → 즉"
+      ],
+      "issues": [
+        {
+          "code": "UNTRACKED_RISKY_CLAIM",
+          "snippet": "생후 6개월 미만 어린 강아지에서 특히 위험하다."
+        },
+        {
+          "code": "UNTRACKED_RISKY_CLAIM",
+          "snippet": "증상 저혈당 증상 (빠른 인식이 중요) • 갑작스러운 무기력, 비틀거림 • 눈이 풀리거나 멍한 상태 • 떨림, 근육 경련 • 의식 저하, 반응 없음 • 심한 경우 발작·혼수 응급 처치 의식 있음: 꿀, 콘시럽, 포도당 용액을 잇몸에 소량 바르기 바른 후 혈당이 올라오면 증상 호전 → 즉"
+        }
+      ]
+    },
+    {
+      "slug": "stray-dog-rescue-process-korea",
+      "type": "blog",
+      "file": "db/seeds/blog-posts-123.ts",
+      "riskyCount": 1,
+      "byStatus": {
+        "verified": 0,
+        "qualified": 0,
+        "removed": 0,
+        "needs_review": 0
+      },
+      "untracked": [
+        "유기견 발견 시 첫 단계 마이크로칩 확인: 인근 동물병원에서 스캔 요청 (무료 또는 소액) 원래 소유자 연락: 마이크로칩 있으면 등록 정보 확인 마이크로칩 없거나 소유자 불명: 지자체 신고 진행 공식 신고 방법 유기견 신고 채널 • 동물보호관리시스템(APMS): www.animal.go"
+      ],
+      "issues": [
+        {
+          "code": "UNTRACKED_RISKY_CLAIM",
+          "snippet": "유기견 발견 시 첫 단계 마이크로칩 확인: 인근 동물병원에서 스캔 요청 (무료 또는 소액) 원래 소유자 연락: 마이크로칩 있으면 등록 정보 확인 마이크로칩 없거나 소유자 불명: 지자체 신고 진행 공식 신고 방법 유기견 신고 채널 • 동물보호관리시스템(APMS): www.animal.go"
+        }
+      ]
+    },
+    {
+      "slug": "pet-cremation-vs-burial",
+      "type": "blog",
+      "file": "db/seeds/blog-posts-13.ts",
+      "riskyCount": 1,
+      "byStatus": {
+        "verified": 0,
+        "qualified": 0,
+        "removed": 0,
+        "needs_review": 0
+      },
+      "untracked": [
+        "선택 시 고려 사항 항목 개별 화장 합동 화장 자가 매장 비용 15~80만 원+ 5~15만 원 거의 무료 유골 수령 O X X 방문 추모 O (공원 안치 시) 공원에 따라 이사 시 불가 법적 제약 허가 업체 이용 허가 업체 이용 토지 조건 있음 화장 업체 선택 시 확인 사항 농림축산검역"
+      ],
+      "issues": [
+        {
+          "code": "UNTRACKED_RISKY_CLAIM",
+          "snippet": "선택 시 고려 사항 항목 개별 화장 합동 화장 자가 매장 비용 15~80만 원+ 5~15만 원 거의 무료 유골 수령 O X X 방문 추모 O (공원 안치 시) 공원에 따라 이사 시 불가 법적 제약 허가 업체 이용 허가 업체 이용 토지 조건 있음 화장 업체 선택 시 확인 사항 농림축산검역"
+        }
+      ]
+    },
+    {
+      "slug": "dog-neutering-guide",
+      "type": "blog",
+      "file": "db/seeds/blog-posts-14.ts",
+      "riskyCount": 2,
+      "byStatus": {
+        "verified": 0,
+        "qualified": 0,
+        "removed": 0,
+        "needs_review": 0
+      },
+      "untracked": [
+        "행동 변화 : 배회·마킹·마운팅 행동이 줄어드는 경향 회음부 탈장·항문 주위 샘종 위험 감소 암컷 중성화의 주요 효과 자궁축농증 예방 : 중성화하지 않은 암컷 중 25%가 10세 전에 발생하는 치명적 질환 유선 종양 위험 감소 : 첫 발정 전 수술 시 위험도 0.5% 수준으로 낮아짐 발",
+        "수술 후 즉시 내원이 필요한 신호 수술 부위 과도한 출혈·분비물, 48시간 이상 식욕 없음, 39.5℃ 이상 발열, 봉합 부위 개창 수술 전 건강 상태 확인과 마취 전 검사에 대한 내용은 강아지 정기 건강검진 가이드 를 참고하고, 수술비를 포함한 의료비 부담을 대비하려면 펫보험 비교 를"
+      ],
+      "issues": [
+        {
+          "code": "UNTRACKED_RISKY_CLAIM",
+          "snippet": "행동 변화 : 배회·마킹·마운팅 행동이 줄어드는 경향 회음부 탈장·항문 주위 샘종 위험 감소 암컷 중성화의 주요 효과 자궁축농증 예방 : 중성화하지 않은 암컷 중 25%가 10세 전에 발생하는 치명적 질환 유선 종양 위험 감소 : 첫 발정 전 수술 시 위험도 0.5% 수준으로 낮아짐 발"
+        },
+        {
+          "code": "UNTRACKED_RISKY_CLAIM",
+          "snippet": "수술 후 즉시 내원이 필요한 신호 수술 부위 과도한 출혈·분비물, 48시간 이상 식욕 없음, 39.5℃ 이상 발열, 봉합 부위 개창 수술 전 건강 상태 확인과 마취 전 검사에 대한 내용은 강아지 정기 건강검진 가이드 를 참고하고, 수술비를 포함한 의료비 부담을 대비하려면 펫보험 비교 를"
+        }
+      ]
+    },
+    {
+      "slug": "dog-diabetes-management",
+      "type": "blog",
+      "file": "db/seeds/blog-posts-14.ts",
+      "riskyCount": 1,
+      "byStatus": {
+        "verified": 0,
+        "qualified": 0,
+        "removed": 0,
+        "needs_review": 0
+      },
+      "untracked": [
+        "발병 평균 연령은 7-9세이며, 비만·췌장염 병력이 주요 위험 인자다."
+      ],
+      "issues": [
+        {
+          "code": "UNTRACKED_RISKY_CLAIM",
+          "snippet": "발병 평균 연령은 7-9세이며, 비만·췌장염 병력이 주요 위험 인자다."
+        }
+      ]
+    },
+    {
+      "slug": "dog-kennel-cough-guide",
+      "type": "blog",
+      "file": "db/seeds/blog-posts-14.ts",
+      "riskyCount": 1,
+      "byStatus": {
+        "verified": 0,
+        "qualified": 0,
+        "removed": 0,
+        "needs_review": 0
+      },
+      "untracked": [
+        "증상 정도별 대응 증상 대응 건성 기침만, 식욕·활력 정상 가정 격리, 7-21일 경과 관찰 기침+콧물+눈물, 식욕 약간 감소 수의사 진단 (처방 필요 여부 확인) 38.5℃ 이상 발열, 호흡 빠름, 녹색 콧물 즉시 내원 — 폐렴 진행 의심 새끼 강아지 또는 노령견 기침 초기부터 수의사"
+      ],
+      "issues": [
+        {
+          "code": "UNTRACKED_RISKY_CLAIM",
+          "snippet": "증상 정도별 대응 증상 대응 건성 기침만, 식욕·활력 정상 가정 격리, 7-21일 경과 관찰 기침+콧물+눈물, 식욕 약간 감소 수의사 진단 (처방 필요 여부 확인) 38.5℃ 이상 발열, 호흡 빠름, 녹색 콧물 즉시 내원 — 폐렴 진행 의심 새끼 강아지 또는 노령견 기침 초기부터 수의사"
+        }
+      ]
+    },
+    {
+      "slug": "pet-emergency-kit-guide",
+      "type": "blog",
+      "file": "db/seeds/blog-posts-17.ts",
+      "riskyCount": 1,
+      "byStatus": {
+        "verified": 0,
+        "qualified": 0,
+        "removed": 0,
+        "needs_review": 0
+      },
+      "untracked": [
+        "응급 처치 키트 필수 구성품 멸균 거즈·붕대 : 출혈 부위 압박 및 상처 보호용 무방부제 생리식염수 : 눈·상처 세척용 핀셋·둥근 가위 : 이물질 제거·붕대 절단 직장 체온계 : 정확한 체온 측정용 (정상 범위: 38-39.2℃) 엘리자베스 칼라 : 상처 핥기 방지 담요·수건 : 보온·"
+      ],
+      "issues": [
+        {
+          "code": "UNTRACKED_RISKY_CLAIM",
+          "snippet": "응급 처치 키트 필수 구성품 멸균 거즈·붕대 : 출혈 부위 압박 및 상처 보호용 무방부제 생리식염수 : 눈·상처 세척용 핀셋·둥근 가위 : 이물질 제거·붕대 절단 직장 체온계 : 정확한 체온 측정용 (정상 범위: 38-39.2℃) 엘리자베스 칼라 : 상처 핥기 방지 담요·수건 : 보온·"
+        }
+      ]
+    },
+    {
+      "slug": "dog-flea-tick-guide",
+      "type": "blog",
+      "file": "db/seeds/blog-posts-17.ts",
+      "riskyCount": 1,
+      "byStatus": {
+        "verified": 0,
+        "qualified": 0,
+        "removed": 0,
+        "needs_review": 1
+      },
+      "untracked": [],
+      "issues": []
+    },
+    {
+      "slug": "pet-insurance-guide",
+      "type": "blog",
+      "file": "db/seeds/blog-posts-2.ts",
+      "riskyCount": 3,
+      "byStatus": {
+        "verified": 0,
+        "qualified": 0,
+        "removed": 0,
+        "needs_review": 0
+      },
+      "untracked": [
+        "항목별로 보면: 통원 1회당 한도, 입원 1일당 한도, 수술 1회당 한도가 각각 설정돼 있다.",
+        "\"연간 한도 500만 원\"이라도 수술당 100만 원 상한이 있으면, 400만 원짜리 수술을 받아도 100만 원만 나온다.",
+        "계산 예시(가정): 정률 30% 자기부담, 최소 자기부담금·항목별 한도·면책 항목이 없다고 가정하면 진료비 50만 원 중 35만 원이 보장 대상이다."
+      ],
+      "issues": [
+        {
+          "code": "UNTRACKED_RISKY_CLAIM",
+          "snippet": "항목별로 보면: 통원 1회당 한도, 입원 1일당 한도, 수술 1회당 한도가 각각 설정돼 있다."
+        },
+        {
+          "code": "UNTRACKED_RISKY_CLAIM",
+          "snippet": "\"연간 한도 500만 원\"이라도 수술당 100만 원 상한이 있으면, 400만 원짜리 수술을 받아도 100만 원만 나온다."
+        },
+        {
+          "code": "UNTRACKED_RISKY_CLAIM",
+          "snippet": "계산 예시(가정): 정률 30% 자기부담, 최소 자기부담금·항목별 한도·면책 항목이 없다고 가정하면 진료비 50만 원 중 35만 원이 보장 대상이다."
+        }
+      ]
+    },
+    {
+      "slug": "cat-neutering-guide",
+      "type": "blog",
+      "file": "db/seeds/blog-posts-2.ts",
+      "riskyCount": 3,
+      "byStatus": {
+        "verified": 0,
+        "qualified": 0,
+        "removed": 0,
+        "needs_review": 0
+      },
+      "untracked": [
+        "미국동물병원협회(AAHA)와 ASPCA는 건강과 행동 측면에서 중성화를 권장한다.",
+        "2단계 — 권장 수술 시기 AAHA 기준으로 수컷은 생후 5~6개월, 암컷은 첫 발정이 오기 전인 생후 4~6개월이 권장 시기다.",
+        "⚠️ 수술 후 이 증상이 있으면 즉시 연락 봉합 부위에서 출혈·삼출물이 지속됨 수술 후 24시간이 지나도 전혀 먹지 않음 구토가 반복되거나 배가 팽팽해짐 체온이 높거나 극도로 무기력함 중성화 수술은 건강한 삶을 위한 예방적 선택이다."
+      ],
+      "issues": [
+        {
+          "code": "UNTRACKED_RISKY_CLAIM",
+          "snippet": "미국동물병원협회(AAHA)와 ASPCA는 건강과 행동 측면에서 중성화를 권장한다."
+        },
+        {
+          "code": "UNTRACKED_RISKY_CLAIM",
+          "snippet": "2단계 — 권장 수술 시기 AAHA 기준으로 수컷은 생후 5~6개월, 암컷은 첫 발정이 오기 전인 생후 4~6개월이 권장 시기다."
+        },
+        {
+          "code": "UNTRACKED_RISKY_CLAIM",
+          "snippet": "⚠️ 수술 후 이 증상이 있으면 즉시 연락 봉합 부위에서 출혈·삼출물이 지속됨 수술 후 24시간이 지나도 전혀 먹지 않음 구토가 반복되거나 배가 팽팽해짐 체온이 높거나 극도로 무기력함 중성화 수술은 건강한 삶을 위한 예방적 선택이다."
+        }
+      ]
+    },
+    {
+      "slug": "dog-heartworm-prevention",
+      "type": "blog",
+      "file": "db/seeds/blog-posts-2.ts",
+      "riskyCount": 1,
+      "byStatus": {
+        "verified": 0,
+        "qualified": 0,
+        "removed": 0,
+        "needs_review": 0
+      },
+      "untracked": [
+        "농림축산검역본부 모기 매개 질병 감시 데이터에 따르면, 심장사상충 감염 모기는 국내에서 매년 4월부터 10월 사이 활동이 집중된다."
+      ],
+      "issues": [
+        {
+          "code": "UNTRACKED_RISKY_CLAIM",
+          "snippet": "농림축산검역본부 모기 매개 질병 감시 데이터에 따르면, 심장사상충 감염 모기는 국내에서 매년 4월부터 10월 사이 활동이 집중된다."
+        }
+      ]
+    },
+    {
+      "slug": "pet-toxic-plants-cat-guide",
+      "type": "blog",
+      "file": "db/seeds/blog-posts-20.ts",
+      "riskyCount": 1,
+      "byStatus": {
+        "verified": 0,
+        "qualified": 0,
+        "removed": 0,
+        "needs_review": 0
+      },
+      "untracked": [
+        "24시간 응급 동물병원 번호를 미리 저장해둔다."
+      ],
+      "issues": [
+        {
+          "code": "UNTRACKED_RISKY_CLAIM",
+          "snippet": "24시간 응급 동물병원 번호를 미리 저장해둔다."
+        }
+      ]
+    },
+    {
+      "slug": "pet-insurance-cat-guide",
+      "type": "blog",
+      "file": "db/seeds/blog-posts-21.ts",
+      "riskyCount": 5,
+      "byStatus": {
+        "verified": 0,
+        "qualified": 0,
+        "removed": 0,
+        "needs_review": 0
+      },
+      "untracked": [
+        "월평균 보험료는 2.5만~4.5만 원 수준이다.",
+        "수술 1건당 한도 또는 연간 한도로 설정 세 특약을 모두 포함한 상품이 보장 범위가 넓지만, 보험료가 높다.",
+        "약물 또는 방사성요오드 치료 림프종·당뇨 : 치료비가 높고 장기 관리가 필요한 질환군 품종별 유전 리스크와 특약 선택 품종 주요 유전 질환 우선 확인 특약 페르시안·히말라얀 다낭성신장병(PKD) 통원 + 입원 메인쿤·래그돌 비대성심근증(HCM) 입원 + 수술 스코티시폴드 골연골이형성증(",
+        "일부 상품은 10세까지 허용하지만 보험료가 높고 보장 범위가 좁아진다.",
+        "핵심 체크리스트 ① 통원 1회 한도·연간 횟수 ② 입원 일 한도·최대 일수 ③ 수술 1건 한도 ④ 자기부담율(20%·30%·정액) ⑤ 갱신 주기와 보험료 인상 조건 ⑥ 기왕증 고지 항목 보험료 수준과 보장 범위를 한눈에 비교하려면 펫보험 비교 페이지를 활용하고, 보험 가입 구조 전반은 "
+      ],
+      "issues": [
+        {
+          "code": "UNTRACKED_RISKY_CLAIM",
+          "snippet": "월평균 보험료는 2.5만~4.5만 원 수준이다."
+        },
+        {
+          "code": "UNTRACKED_RISKY_CLAIM",
+          "snippet": "수술 1건당 한도 또는 연간 한도로 설정 세 특약을 모두 포함한 상품이 보장 범위가 넓지만, 보험료가 높다."
+        },
+        {
+          "code": "UNTRACKED_RISKY_CLAIM",
+          "snippet": "약물 또는 방사성요오드 치료 림프종·당뇨 : 치료비가 높고 장기 관리가 필요한 질환군 품종별 유전 리스크와 특약 선택 품종 주요 유전 질환 우선 확인 특약 페르시안·히말라얀 다낭성신장병(PKD) 통원 + 입원 메인쿤·래그돌 비대성심근증(HCM) 입원 + 수술 스코티시폴드 골연골이형성증("
+        },
+        {
+          "code": "UNTRACKED_RISKY_CLAIM",
+          "snippet": "일부 상품은 10세까지 허용하지만 보험료가 높고 보장 범위가 좁아진다."
+        },
+        {
+          "code": "UNTRACKED_RISKY_CLAIM",
+          "snippet": "핵심 체크리스트 ① 통원 1회 한도·연간 횟수 ② 입원 일 한도·최대 일수 ③ 수술 1건 한도 ④ 자기부담율(20%·30%·정액) ⑤ 갱신 주기와 보험료 인상 조건 ⑥ 기왕증 고지 항목 보험료 수준과 보장 범위를 한눈에 비교하려면 펫보험 비교 페이지를 활용하고, 보험 가입 구조 전반은 "
+        }
+      ]
+    },
+    {
+      "slug": "pet-insurance-deductible-guide",
+      "type": "blog",
+      "file": "db/seeds/blog-posts-21.ts",
+      "riskyCount": 2,
+      "byStatus": {
+        "verified": 0,
+        "qualified": 0,
+        "removed": 0,
+        "needs_review": 0
+      },
+      "untracked": [
+        "하지만 수술비 100만 원 청구 시 20%는 20만 원이다.",
+        "20%·30% 방식이 대부분 정액형 : 청구 건당 고정 금액(예: 1만·2만 원)을 공제 실수령액 계산 비교 상품마다 자기부담율은 다르며 10~30% 범위로 설정되는 경우가 많으므로 약관에서 직접 확인해야 한다."
+      ],
+      "issues": [
+        {
+          "code": "UNTRACKED_RISKY_CLAIM",
+          "snippet": "하지만 수술비 100만 원 청구 시 20%는 20만 원이다."
+        },
+        {
+          "code": "UNTRACKED_RISKY_CLAIM",
+          "snippet": "20%·30% 방식이 대부분 정액형 : 청구 건당 고정 금액(예: 1만·2만 원)을 공제 실수령액 계산 비교 상품마다 자기부담율은 다르며 10~30% 범위로 설정되는 경우가 많으므로 약관에서 직접 확인해야 한다."
+        }
+      ]
+    },
+    {
+      "slug": "pet-surgery-insurance-guide",
+      "type": "blog",
+      "file": "db/seeds/blog-posts-21.ts",
+      "riskyCount": 4,
+      "byStatus": {
+        "verified": 0,
+        "qualified": 0,
+        "removed": 0,
+        "needs_review": 0
+      },
+      "untracked": [
+        "농림축산식품부 2023년 자료에 따르면 반려동물 수술 1회 평균 비용은 80만~200만 원이며, 복강 수술·정형외과 수술의 경우 300만 원을 넘는 사례가 적지 않다.",
+        "단순 채혈·주사 시술 봉합 없는 상처 처치(세척·드레싱) 내시경 검사(절제 없는 경우) 스케일링·발치(예방 목적) 중성화 수술 — 대부분의 상품에서 제외(일부 상품은 포함) 1건당 한도 vs 연간 한도 구분 1건당 한도형 연간 한도형 구조 수술 1건당 최대 보장 금액 설정 연간 합산 한",
+        "긴급 수술의 경우는 사후 신고도 가능하나 약관 확인 필수 수술 후 서류 준비 : 진료비 영수증, 수술 확인서(수술명·수술일·마취 종류 기재), 진단서 청구 기한 준수 : 대부분 진료일로부터 30일~3년 이내 청구(상품별 상이) 보험금 수령 : 심사 후 통상 3~10 영업일 내 지급 수술",
+        "수술 특약 선택 전 점검 목록 ① 수술 정의(약관 문구) ② 1건당 vs 연간 한도 방식 ③ 사전 승인 요구 여부 ④ 자기부담율 ⑤ 중성화·예방 수술 포함 여부 ⑥ 수술 후 입원 특약 연계 여부 보험 상품별 수술 한도 비교는 펫보험 비교 에서, 진료비 구조 전반은 동물병원 진료비 절약 "
+      ],
+      "issues": [
+        {
+          "code": "UNTRACKED_RISKY_CLAIM",
+          "snippet": "농림축산식품부 2023년 자료에 따르면 반려동물 수술 1회 평균 비용은 80만~200만 원이며, 복강 수술·정형외과 수술의 경우 300만 원을 넘는 사례가 적지 않다."
+        },
+        {
+          "code": "UNTRACKED_RISKY_CLAIM",
+          "snippet": "단순 채혈·주사 시술 봉합 없는 상처 처치(세척·드레싱) 내시경 검사(절제 없는 경우) 스케일링·발치(예방 목적) 중성화 수술 — 대부분의 상품에서 제외(일부 상품은 포함) 1건당 한도 vs 연간 한도 구분 1건당 한도형 연간 한도형 구조 수술 1건당 최대 보장 금액 설정 연간 합산 한"
+        },
+        {
+          "code": "UNTRACKED_RISKY_CLAIM",
+          "snippet": "긴급 수술의 경우는 사후 신고도 가능하나 약관 확인 필수 수술 후 서류 준비 : 진료비 영수증, 수술 확인서(수술명·수술일·마취 종류 기재), 진단서 청구 기한 준수 : 대부분 진료일로부터 30일~3년 이내 청구(상품별 상이) 보험금 수령 : 심사 후 통상 3~10 영업일 내 지급 수술"
+        },
+        {
+          "code": "UNTRACKED_RISKY_CLAIM",
+          "snippet": "수술 특약 선택 전 점검 목록 ① 수술 정의(약관 문구) ② 1건당 vs 연간 한도 방식 ③ 사전 승인 요구 여부 ④ 자기부담율 ⑤ 중성화·예방 수술 포함 여부 ⑥ 수술 후 입원 특약 연계 여부 보험 상품별 수술 한도 비교는 펫보험 비교 에서, 진료비 구조 전반은 동물병원 진료비 절약 "
+        }
+      ]
+    },
+    {
+      "slug": "senior-pet-insurance-guide",
+      "type": "blog",
+      "file": "db/seeds/blog-posts-21.ts",
+      "riskyCount": 4,
+      "byStatus": {
+        "verified": 0,
+        "qualified": 0,
+        "removed": 0,
+        "needs_review": 0
+      },
+      "untracked": [
+        "보험료는 7세 이후부터 급격히 올라간다.",
+        "노령 가입, 보험 vs 의료비 적립 비교 방법 장점 단점 펫보험 가입 고액 발생 시 즉시 대응 가능 보험료 부담, 기왕증 제외로 실효 보장 축소 의료비 적립 제한 없이 사용 가능, 남으면 환급 초기 고액 발생 시 적립금 부족 가능 병행 (소액 보험 + 적립) 위험 분산 효과 관리 복잡 ",
+        "갱신형 보험의 보험료 인상 구조 갱신형 상품은 계약 나이 구간(예: 1~3세 / 4~6세 / 7~9세 / 10~12세)마다 보험료가 재산정된다.",
+        "7세, 10세 구간 진입 시 보험료가 크게 뛰는 경우가 있다."
+      ],
+      "issues": [
+        {
+          "code": "UNTRACKED_RISKY_CLAIM",
+          "snippet": "보험료는 7세 이후부터 급격히 올라간다."
+        },
+        {
+          "code": "UNTRACKED_RISKY_CLAIM",
+          "snippet": "노령 가입, 보험 vs 의료비 적립 비교 방법 장점 단점 펫보험 가입 고액 발생 시 즉시 대응 가능 보험료 부담, 기왕증 제외로 실효 보장 축소 의료비 적립 제한 없이 사용 가능, 남으면 환급 초기 고액 발생 시 적립금 부족 가능 병행 (소액 보험 + 적립) 위험 분산 효과 관리 복잡 "
+        },
+        {
+          "code": "UNTRACKED_RISKY_CLAIM",
+          "snippet": "갱신형 보험의 보험료 인상 구조 갱신형 상품은 계약 나이 구간(예: 1~3세 / 4~6세 / 7~9세 / 10~12세)마다 보험료가 재산정된다."
+        },
+        {
+          "code": "UNTRACKED_RISKY_CLAIM",
+          "snippet": "7세, 10세 구간 진입 시 보험료가 크게 뛰는 경우가 있다."
+        }
+      ]
+    },
+    {
+      "slug": "pet-insurance-waiting-period",
+      "type": "blog",
+      "file": "db/seeds/blog-posts-21.ts",
+      "riskyCount": 2,
+      "byStatus": {
+        "verified": 0,
+        "qualified": 0,
+        "removed": 0,
+        "needs_review": 0
+      },
+      "untracked": [
+        "보장 항목 대기 기간(일반) 비고 일반 질병 30일 가장 짧음 관절·슬개골 질환 90일 상품에 따라 180일 암·유전 질환 90~180일 상품별 차이 큼 상해(사고) 없음 (즉시) 대부분 가입 즉시 보장 대기 기간 중 발생한 질환은 어떻게 되나 대기 기간 안에 진단·치료를 받으면 해당 ",
+        "대기 기간을 고려한 가입 전략 건강할 때 미리 가입 : 관절 문제가 생기기 전에 가입하면 90일 대기 후 보장 시작 가능 대기 기간 중 건강관리 : 대기 기간 동안 질병이 발생하지 않도록 관리 암·유전 질환 대기 확인 : 가입 예정 품종에 유전 질환 위험이 높다면 해당 대기 기간을 먼저"
+      ],
+      "issues": [
+        {
+          "code": "UNTRACKED_RISKY_CLAIM",
+          "snippet": "보장 항목 대기 기간(일반) 비고 일반 질병 30일 가장 짧음 관절·슬개골 질환 90일 상품에 따라 180일 암·유전 질환 90~180일 상품별 차이 큼 상해(사고) 없음 (즉시) 대부분 가입 즉시 보장 대기 기간 중 발생한 질환은 어떻게 되나 대기 기간 안에 진단·치료를 받으면 해당 "
+        },
+        {
+          "code": "UNTRACKED_RISKY_CLAIM",
+          "snippet": "대기 기간을 고려한 가입 전략 건강할 때 미리 가입 : 관절 문제가 생기기 전에 가입하면 90일 대기 후 보장 시작 가능 대기 기간 중 건강관리 : 대기 기간 동안 질병이 발생하지 않도록 관리 암·유전 질환 대기 확인 : 가입 예정 품종에 유전 질환 위험이 높다면 해당 대기 기간을 먼저"
+        }
+      ]
+    },
+    {
+      "slug": "pet-consumer-rights-guide",
+      "type": "blog",
+      "file": "db/seeds/blog-posts-21.ts",
+      "riskyCount": 1,
+      "byStatus": {
+        "verified": 0,
+        "qualified": 0,
+        "removed": 0,
+        "needs_review": 0
+      },
+      "untracked": [
+        "한국소비자원 2023년 자료에 따르면 반려동물 관련 소비자 분쟁이 연간 약 1,200건 접수된다."
+      ],
+      "issues": [
+        {
+          "code": "UNTRACKED_RISKY_CLAIM",
+          "snippet": "한국소비자원 2023년 자료에 따르면 반려동물 관련 소비자 분쟁이 연간 약 1,200건 접수된다."
+        }
+      ]
+    },
+    {
+      "slug": "vet-cost-breakdown-guide",
+      "type": "blog",
+      "file": "db/seeds/blog-posts-21.ts",
+      "riskyCount": 2,
+      "byStatus": {
+        "verified": 0,
+        "qualified": 0,
+        "removed": 0,
+        "needs_review": 0
+      },
+      "untracked": [
+        "처치료 : 주사, 수액, 상처 처치, 수술 등 직접적인 의료 행위 비용 입원료 : 1일 단위로 청구.",
+        "1차·2차·수의대 병원 비교 구분 특징 비용 수준 적합한 상황 1차 동물병원 일반 진료·예방의학 낮음~중간 정기 검진, 경증 질환 2차 전문병원 과별 전문의, 고가 장비 중간~높음 중증·전문 진단·수술 수의대 부속병원 교육·연구 병원, 다양한 전문과 중간 희귀 질환, 2차 소견 야간·응"
+      ],
+      "issues": [
+        {
+          "code": "UNTRACKED_RISKY_CLAIM",
+          "snippet": "처치료 : 주사, 수액, 상처 처치, 수술 등 직접적인 의료 행위 비용 입원료 : 1일 단위로 청구."
+        },
+        {
+          "code": "UNTRACKED_RISKY_CLAIM",
+          "snippet": "1차·2차·수의대 병원 비교 구분 특징 비용 수준 적합한 상황 1차 동물병원 일반 진료·예방의학 낮음~중간 정기 검진, 경증 질환 2차 전문병원 과별 전문의, 고가 장비 중간~높음 중증·전문 진단·수술 수의대 부속병원 교육·연구 병원, 다양한 전문과 중간 희귀 질환, 2차 소견 야간·응"
+        }
+      ]
+    },
+    {
+      "slug": "pet-insurance-comparison-method",
+      "type": "blog",
+      "file": "db/seeds/blog-posts-21.ts",
+      "riskyCount": 2,
+      "byStatus": {
+        "verified": 0,
+        "qualified": 0,
+        "removed": 0,
+        "needs_review": 0
+      },
+      "untracked": [
+        "약관 위치까지 적는 비교표 상품 A·B의 조건을 같은 날짜 기준으로 적는 빈 양식 확인 항목 약관에서 찾을 내용 A / B·근거 페이지 보장 범위 통원·입원·수술, 특약과 제외 진료 _____ / _____ 한도 1일·1회·연간 제한, 횟수와 합산 방식 _____ / _____ 자기부담",
+        "계산할 때 가정을 먼저 적기 가상 교육용 예시 : 진료비 100,000원이 전부 보장 대상이고, 정액 부담 10,000원을 먼저 뺀 뒤 나머지의 70%를 지급하며, 지급 한도·추가 공제가 없다고 가정하면 (100,000 − 10,000) × 0.7 = 63,000원이다."
+      ],
+      "issues": [
+        {
+          "code": "UNTRACKED_RISKY_CLAIM",
+          "snippet": "약관 위치까지 적는 비교표 상품 A·B의 조건을 같은 날짜 기준으로 적는 빈 양식 확인 항목 약관에서 찾을 내용 A / B·근거 페이지 보장 범위 통원·입원·수술, 특약과 제외 진료 _____ / _____ 한도 1일·1회·연간 제한, 횟수와 합산 방식 _____ / _____ 자기부담"
+        },
+        {
+          "code": "UNTRACKED_RISKY_CLAIM",
+          "snippet": "계산할 때 가정을 먼저 적기 가상 교육용 예시 : 진료비 100,000원이 전부 보장 대상이고, 정액 부담 10,000원을 먼저 뺀 뒤 나머지의 70%를 지급하며, 지급 한도·추가 공제가 없다고 가정하면 (100,000 − 10,000) × 0.7 = 63,000원이다."
+        }
+      ]
+    },
+    {
+      "slug": "dog-dental-scaling-guide",
+      "type": "blog",
+      "file": "db/seeds/blog-posts-24.ts",
+      "riskyCount": 2,
+      "byStatus": {
+        "verified": 0,
+        "qualified": 0,
+        "removed": 0,
+        "needs_review": 0
+      },
+      "untracked": [
+        "AAHA 치과 진료 지침은 눈으로 보이는 치석만 긁는 처치가 아니라, 마취 상태의 구강 검사·치주 탐침·치과 방사선 촬영과 필요한 치료를 하나의 과정으로 설명합니다.",
+        "AAHA는 규칙적인 가정 구강 관리를 권장하지만, 통증이나 시술 부위가 있을 때는 시작 시점과 방법이 달라질 수 있습니다."
+      ],
+      "issues": [
+        {
+          "code": "UNTRACKED_RISKY_CLAIM",
+          "snippet": "AAHA 치과 진료 지침은 눈으로 보이는 치석만 긁는 처치가 아니라, 마취 상태의 구강 검사·치주 탐침·치과 방사선 촬영과 필요한 치료를 하나의 과정으로 설명합니다."
+        },
+        {
+          "code": "UNTRACKED_RISKY_CLAIM",
+          "snippet": "AAHA는 규칙적인 가정 구강 관리를 권장하지만, 통증이나 시술 부위가 있을 때는 시작 시점과 방법이 달라질 수 있습니다."
+        }
+      ]
+    },
+    {
+      "slug": "pet-insurance-refund-vs-loss-type",
+      "type": "blog",
+      "file": "db/seeds/blog-posts-25.ts",
+      "riskyCount": 5,
+      "byStatus": {
+        "verified": 0,
+        "qualified": 0,
+        "removed": 0,
+        "needs_review": 0
+      },
+      "untracked": [
+        "환급형 : 만기 시 납입액의 70~100%를 환급받지만 월 보험료가 소멸형 대비 2~4배 높다.",
+        "2023년 한국소비자원 반려동물 보험 실태조사에 따르면 국내 펫보험 평균 월 보험료는 3~8만 원 구간이며, 환급형은 동일 담보에서 월 2~4만 원이 더 부담된다.",
+        "5년 실비용 비교 — 숫자로 따져보자 📊 5년 만기 시뮬레이션 (동일 담보 기준) 항목 소멸형 환급형(80% 환급) 월 보험료 4만 원 7만 원 5년 납입 총액 240만 원 420만 원 만기 환급액 0원 336만 원 실질 비용 240만 원 84만 원 ※ 의료비 미발생 가정, 실제 환급",
+        "같은 기간 소멸형이라면 96만 원 납입에 환급은 없어도 단순 보장비 96만 원으로 마무리된다.",
+        "어떤 보호자에게 어떤 유형이 맞는가 소멸형이 유리한 경우 : 보험료 부담을 낮추고 차액을 의료비 적립에 활용하려는 보호자 / 반려동물이 기저 질환으로 보험료가 높게 책정되는 경우 / 장기 유지 계획이 불확실한 경우 환급형이 유리한 경우 : 5년 이상 만기까지 해지 없이 유지할 확신이 있"
+      ],
+      "issues": [
+        {
+          "code": "UNTRACKED_RISKY_CLAIM",
+          "snippet": "환급형 : 만기 시 납입액의 70~100%를 환급받지만 월 보험료가 소멸형 대비 2~4배 높다."
+        },
+        {
+          "code": "UNTRACKED_RISKY_CLAIM",
+          "snippet": "2023년 한국소비자원 반려동물 보험 실태조사에 따르면 국내 펫보험 평균 월 보험료는 3~8만 원 구간이며, 환급형은 동일 담보에서 월 2~4만 원이 더 부담된다."
+        },
+        {
+          "code": "UNTRACKED_RISKY_CLAIM",
+          "snippet": "5년 실비용 비교 — 숫자로 따져보자 📊 5년 만기 시뮬레이션 (동일 담보 기준) 항목 소멸형 환급형(80% 환급) 월 보험료 4만 원 7만 원 5년 납입 총액 240만 원 420만 원 만기 환급액 0원 336만 원 실질 비용 240만 원 84만 원 ※ 의료비 미발생 가정, 실제 환급"
+        },
+        {
+          "code": "UNTRACKED_RISKY_CLAIM",
+          "snippet": "같은 기간 소멸형이라면 96만 원 납입에 환급은 없어도 단순 보장비 96만 원으로 마무리된다."
+        },
+        {
+          "code": "UNTRACKED_RISKY_CLAIM",
+          "snippet": "어떤 보호자에게 어떤 유형이 맞는가 소멸형이 유리한 경우 : 보험료 부담을 낮추고 차액을 의료비 적립에 활용하려는 보호자 / 반려동물이 기저 질환으로 보험료가 높게 책정되는 경우 / 장기 유지 계획이 불확실한 경우 환급형이 유리한 경우 : 5년 이상 만기까지 해지 없이 유지할 확신이 있"
+        }
+      ]
+    },
+    {
+      "slug": "pet-death-admin-checklist",
+      "type": "blog",
+      "file": "db/seeds/blog-posts-25.ts",
+      "riskyCount": 2,
+      "byStatus": {
+        "verified": 0,
+        "qualified": 0,
+        "removed": 0,
+        "needs_review": 0
+      },
+      "untracked": [
+        "처리 기한 한눈에 보기 동물등록 말소: 사망 후 30일 이내 (동물보호법 제12조) 펫보험 사망 보험금: 보험사별 상이, 통상 사망일로부터 3년 이내 화장 증명서: 장례 업체에서 당일 또는 다음 날 발급 1.",
+        "동물등록 말소 신청 — 30일 이내 동물보호법 제12조에 따라 등록 동물이 사망한 경우 소유자는 사망일로부터 30일 이내에 말소 신고를 해야 한다."
+      ],
+      "issues": [
+        {
+          "code": "UNTRACKED_RISKY_CLAIM",
+          "snippet": "처리 기한 한눈에 보기 동물등록 말소: 사망 후 30일 이내 (동물보호법 제12조) 펫보험 사망 보험금: 보험사별 상이, 통상 사망일로부터 3년 이내 화장 증명서: 장례 업체에서 당일 또는 다음 날 발급 1."
+        },
+        {
+          "code": "UNTRACKED_RISKY_CLAIM",
+          "snippet": "동물등록 말소 신청 — 30일 이내 동물보호법 제12조에 따라 등록 동물이 사망한 경우 소유자는 사망일로부터 30일 이내에 말소 신고를 해야 한다."
+        }
+      ]
+    },
+    {
+      "slug": "dog-pancreatitis-symptoms-diet",
+      "type": "blog",
+      "file": "db/seeds/blog-posts-25.ts",
+      "riskyCount": 2,
+      "byStatus": {
+        "verified": 0,
+        "qualified": 0,
+        "removed": 0,
+        "needs_review": 0
+      },
+      "untracked": [
+        "즉시 동물병원에 가야 하는 신호 • 구토가 3회 이상 반복되거나 6시간 이상 지속 • 복부를 만지면 심하게 아파하거나 웅크림 • 식욕 완전 소실 + 심한 무기력 • 노란색·초록색 구토물 또는 혈액 섞임 ⚠ 위 증상이 있으면 지체 없이 수의사 진료를 받으세요.",
+        "대한수의사회 자료에 따르면 이 밖에도 비만, 고중성지방혈증, 특정 약물(스테로이드 등), 쿠싱 증후군이 위험 인자로 알려져 있다."
+      ],
+      "issues": [
+        {
+          "code": "UNTRACKED_RISKY_CLAIM",
+          "snippet": "즉시 동물병원에 가야 하는 신호 • 구토가 3회 이상 반복되거나 6시간 이상 지속 • 복부를 만지면 심하게 아파하거나 웅크림 • 식욕 완전 소실 + 심한 무기력 • 노란색·초록색 구토물 또는 혈액 섞임 ⚠ 위 증상이 있으면 지체 없이 수의사 진료를 받으세요."
+        },
+        {
+          "code": "UNTRACKED_RISKY_CLAIM",
+          "snippet": "대한수의사회 자료에 따르면 이 밖에도 비만, 고중성지방혈증, 특정 약물(스테로이드 등), 쿠싱 증후군이 위험 인자로 알려져 있다."
+        }
+      ]
+    },
+    {
+      "slug": "pet-insurance-renewal-rejection-guide",
+      "type": "blog",
+      "file": "db/seeds/blog-posts-26.ts",
+      "riskyCount": 3,
+      "byStatus": {
+        "verified": 0,
+        "qualified": 0,
+        "removed": 0,
+        "needs_review": 0
+      },
+      "untracked": [
+        "갱신 거절 통보를 받았다면 먼저 확인할 것 • 거절 사유를 보험사에 서면으로 요청한다 (구두 설명만으론 불충분) • 현재 계약의 만료일을 정확히 확인한다 — 공백 없이 대안을 준비해야 한다 • 금융감독원 금융소비자정보포털(fine.fss.or.kr) '보험 민원' 채널에 이의 제기 가능",
+        "💡 갱신 거절 전 미리 대비하는 방법 • 갱신 거절 가능성이 높은 상황(고령·수술 이력)이라면 갱신 6개월 전부터 타 보험사 조건을 비교해둔다 • 현재 계약의 갱신 거절 조건을 약관에서 확인해 기록해둔다 • 금융소비자정보포털에서 \"보험 계약 이전(포팅)\" 가능 여부를 확인한다 자주 묻",
+        "현재 보험 약관에서 '갱신 인수 거절 조건'을 확인하는 것 — 여기에 해당할 가능성이 있다면 갱신 6개월 전부터 타 보험사 비교를 시작하면 공백 없이 보장을 이어갈 수 있다."
+      ],
+      "issues": [
+        {
+          "code": "UNTRACKED_RISKY_CLAIM",
+          "snippet": "갱신 거절 통보를 받았다면 먼저 확인할 것 • 거절 사유를 보험사에 서면으로 요청한다 (구두 설명만으론 불충분) • 현재 계약의 만료일을 정확히 확인한다 — 공백 없이 대안을 준비해야 한다 • 금융감독원 금융소비자정보포털(fine.fss.or.kr) '보험 민원' 채널에 이의 제기 가능"
+        },
+        {
+          "code": "UNTRACKED_RISKY_CLAIM",
+          "snippet": "💡 갱신 거절 전 미리 대비하는 방법 • 갱신 거절 가능성이 높은 상황(고령·수술 이력)이라면 갱신 6개월 전부터 타 보험사 조건을 비교해둔다 • 현재 계약의 갱신 거절 조건을 약관에서 확인해 기록해둔다 • 금융소비자정보포털에서 \"보험 계약 이전(포팅)\" 가능 여부를 확인한다 자주 묻"
+        },
+        {
+          "code": "UNTRACKED_RISKY_CLAIM",
+          "snippet": "현재 보험 약관에서 '갱신 인수 거절 조건'을 확인하는 것 — 여기에 해당할 가능성이 있다면 갱신 6개월 전부터 타 보험사 비교를 시작하면 공백 없이 보장을 이어갈 수 있다."
+        }
+      ]
+    },
+    {
+      "slug": "multi-pet-insurance-strategy",
+      "type": "blog",
+      "file": "db/seeds/blog-posts-26.ts",
+      "riskyCount": 4,
+      "byStatus": {
+        "verified": 0,
+        "qualified": 0,
+        "removed": 0,
+        "needs_review": 0
+      },
+      "untracked": [
+        "동일 보험사에서 두 마리 가입 — 다두 할인 활용 일부 보험사는 동일 보호자가 2마리 이상 가입 시 5~10% 보험료 할인을 제공한다.",
+        "📊 다두 가정 보험 설계 시나리오 비교 시나리오 장점 단점 동일 보험사 다두 할인 5~10% / 관리 편의 갱신 거절 시 두 계약 동시 영향 다른 보험사 리스크 분산 / 상품별 장점 조합 할인 없음 / 관리 번거로움 한 마리만 가입 비용 최소화 미가입 쪽 의료비 리스크 노출 나이 차이",
+        "예를 들어 5세 고양이와 1세 강아지를 키운다면: 강아지는 지금 신규 가입(보험료 낮음, 조건 좋음), 고양이는 기존 계약이 있으면 그대로 유지·갱신하고 신규 가입은 신중하게 검토한다.",
+        "현재 시점에서는 없으나, 갱신 전 새 상품이 출시됐는지 금융감독원 보험 공시실에서 확인하는 것을 권장한다."
+      ],
+      "issues": [
+        {
+          "code": "UNTRACKED_RISKY_CLAIM",
+          "snippet": "동일 보험사에서 두 마리 가입 — 다두 할인 활용 일부 보험사는 동일 보호자가 2마리 이상 가입 시 5~10% 보험료 할인을 제공한다."
+        },
+        {
+          "code": "UNTRACKED_RISKY_CLAIM",
+          "snippet": "📊 다두 가정 보험 설계 시나리오 비교 시나리오 장점 단점 동일 보험사 다두 할인 5~10% / 관리 편의 갱신 거절 시 두 계약 동시 영향 다른 보험사 리스크 분산 / 상품별 장점 조합 할인 없음 / 관리 번거로움 한 마리만 가입 비용 최소화 미가입 쪽 의료비 리스크 노출 나이 차이"
+        },
+        {
+          "code": "UNTRACKED_RISKY_CLAIM",
+          "snippet": "예를 들어 5세 고양이와 1세 강아지를 키운다면: 강아지는 지금 신규 가입(보험료 낮음, 조건 좋음), 고양이는 기존 계약이 있으면 그대로 유지·갱신하고 신규 가입은 신중하게 검토한다."
+        },
+        {
+          "code": "UNTRACKED_RISKY_CLAIM",
+          "snippet": "현재 시점에서는 없으나, 갱신 전 새 상품이 출시됐는지 금융감독원 보험 공시실에서 확인하는 것을 권장한다."
+        }
+      ]
+    },
+    {
+      "slug": "vet-bill-reduce-strategy",
+      "type": "blog",
+      "file": "db/seeds/blog-posts-27.ts",
+      "riskyCount": 4,
+      "byStatus": {
+        "verified": 0,
+        "qualified": 0,
+        "removed": 0,
+        "needs_review": 0
+      },
+      "untracked": [
+        "대한수의사회는 복잡한 케이스는 전문 병원 진료를 권고하고 있다.",
+        "📋 비용 비교: 1차 병원 반복 vs 2차 전문 진료 시나리오 예상 비용 1차 병원 3회 반복 (원인 미파악) 15~30만 원 2차 전문 병원 1회 정밀 진단 10~20만 원 비용 절감 전략 2 — 펫보험 청구 최적화 펫보험이 있다면 보험사 고객센터에 먼저 문의해 보장 범위 확인 후 ",
+        "단, 보험금 청구를 위한 진단서 발급 시 별도 비용(5,000~2만 원)이 발생하므로, 소액 진료는 청구 비용 대비 실익을 따져봐야 한다.",
+        "대부분의 동물병원은 진단서 5,000~2만 원, 소견서 1~3만 원을 별도로 청구한다."
+      ],
+      "issues": [
+        {
+          "code": "UNTRACKED_RISKY_CLAIM",
+          "snippet": "대한수의사회는 복잡한 케이스는 전문 병원 진료를 권고하고 있다."
+        },
+        {
+          "code": "UNTRACKED_RISKY_CLAIM",
+          "snippet": "📋 비용 비교: 1차 병원 반복 vs 2차 전문 진료 시나리오 예상 비용 1차 병원 3회 반복 (원인 미파악) 15~30만 원 2차 전문 병원 1회 정밀 진단 10~20만 원 비용 절감 전략 2 — 펫보험 청구 최적화 펫보험이 있다면 보험사 고객센터에 먼저 문의해 보장 범위 확인 후 "
+        },
+        {
+          "code": "UNTRACKED_RISKY_CLAIM",
+          "snippet": "단, 보험금 청구를 위한 진단서 발급 시 별도 비용(5,000~2만 원)이 발생하므로, 소액 진료는 청구 비용 대비 실익을 따져봐야 한다."
+        },
+        {
+          "code": "UNTRACKED_RISKY_CLAIM",
+          "snippet": "대부분의 동물병원은 진단서 5,000~2만 원, 소견서 1~3만 원을 별도로 청구한다."
+        }
+      ]
+    },
+    {
+      "slug": "pet-insurance-deductible-fixed-vs-rate",
+      "type": "blog",
+      "file": "db/seeds/blog-posts-27.ts",
+      "riskyCount": 2,
+      "byStatus": {
+        "verified": 0,
+        "qualified": 0,
+        "removed": 0,
+        "needs_review": 0
+      },
+      "untracked": [
+        "정액제 vs 정률제 — 구조 차이 정액제는 진료비와 무관하게 매 청구마다 일정 금액(예: 5만 원)을 공제한다.",
+        "📊 진료비별 보호자 실부담액 비교 진료비 정액제 (5만 원) 정률제 (20%) 10만 원 5만 원 2만 원 30만 원 5만 원 6만 원 50만 원 5만 원 10만 원 100만 원 5만 원 20만 원 300만 원 5만 원 60만 원 ※ 25~30만 원 구간에서 손익분기점이 형성됨 (정액"
+      ],
+      "issues": [
+        {
+          "code": "UNTRACKED_RISKY_CLAIM",
+          "snippet": "정액제 vs 정률제 — 구조 차이 정액제는 진료비와 무관하게 매 청구마다 일정 금액(예: 5만 원)을 공제한다."
+        },
+        {
+          "code": "UNTRACKED_RISKY_CLAIM",
+          "snippet": "📊 진료비별 보호자 실부담액 비교 진료비 정액제 (5만 원) 정률제 (20%) 10만 원 5만 원 2만 원 30만 원 5만 원 6만 원 50만 원 5만 원 10만 원 100만 원 5만 원 20만 원 300만 원 5만 원 60만 원 ※ 25~30만 원 구간에서 손익분기점이 형성됨 (정액"
+        }
+      ]
+    },
+    {
+      "slug": "animal-abuse-neglect-report-guide",
+      "type": "blog",
+      "file": "db/seeds/blog-posts-27.ts",
+      "riskyCount": 2,
+      "byStatus": {
+        "verified": 0,
+        "qualified": 0,
+        "removed": 0,
+        "needs_review": 0
+      },
+      "untracked": [
+        "동물보호법 제8조에 따르면 동물 학대는 명백한 범죄다.",
+        "신고 내용 준비 학대 발생 장소 (주소 또는 위치 설명) 피해 동물의 외형 (종류, 색상, 크기) 학대 행위 구체적 내용 (언제, 어떻게) 가해자 특징 (확인 가능한 경우) 촬영 영상·사진 📋 신고 처리 과정 신고 접수 → 지자체 동물보호 담당자 현장 확인 학대 사실 확인 시 → 동물"
+      ],
+      "issues": [
+        {
+          "code": "UNTRACKED_RISKY_CLAIM",
+          "snippet": "동물보호법 제8조에 따르면 동물 학대는 명백한 범죄다."
+        },
+        {
+          "code": "UNTRACKED_RISKY_CLAIM",
+          "snippet": "신고 내용 준비 학대 발생 장소 (주소 또는 위치 설명) 피해 동물의 외형 (종류, 색상, 크기) 학대 행위 구체적 내용 (언제, 어떻게) 가해자 특징 (확인 가능한 경우) 촬영 영상·사진 📋 신고 처리 과정 신고 접수 → 지자체 동물보호 담당자 현장 확인 학대 사실 확인 시 → 동물"
+        }
+      ]
+    },
+    {
+      "slug": "second-pet-right-timing-guide",
+      "type": "blog",
+      "file": "db/seeds/blog-posts-27.ts",
+      "riskyCount": 1,
+      "byStatus": {
+        "verified": 0,
+        "qualified": 0,
+        "removed": 0,
+        "needs_review": 0
+      },
+      "untracked": [
+        "준비됐다는 신호들 이전 아이를 그리워하면서도 새 가족을 온전히 환영할 수 있는 마음 : 두 감정이 공존할 수 있다는 것을 느낄 때 새 반려동물을 이전 아이와 분리해서 볼 수 있을 때 : \"○○와는 다른 존재\"로 처음부터 받아들일 준비 입양 동기가 '공허함을 채우기 위해'가 아닐 때 : "
+      ],
+      "issues": [
+        {
+          "code": "UNTRACKED_RISKY_CLAIM",
+          "snippet": "준비됐다는 신호들 이전 아이를 그리워하면서도 새 가족을 온전히 환영할 수 있는 마음 : 두 감정이 공존할 수 있다는 것을 느낄 때 새 반려동물을 이전 아이와 분리해서 볼 수 있을 때 : \"○○와는 다른 존재\"로 처음부터 받아들일 준비 입양 동기가 '공허함을 채우기 위해'가 아닐 때 : "
+        }
+      ]
+    },
+    {
+      "slug": "pet-insurance-coverage-reduced-at-renewal",
+      "type": "blog",
+      "file": "db/seeds/blog-posts-29.ts",
+      "riskyCount": 2,
+      "byStatus": {
+        "verified": 0,
+        "qualified": 0,
+        "removed": 0,
+        "needs_review": 0
+      },
+      "untracked": [
+        "금융감독원에 따르면 갱신 조건 변경 관련 민원이 전체 보험 민원의 상위 유형에 포함된다.",
+        "금융소비자 보호에 관한 법률에 따라 갱신 30일 전까지 갱신 조건 변경 내용을 서면·전자문서로 통지할 의무가 있다."
+      ],
+      "issues": [
+        {
+          "code": "UNTRACKED_RISKY_CLAIM",
+          "snippet": "금융감독원에 따르면 갱신 조건 변경 관련 민원이 전체 보험 민원의 상위 유형에 포함된다."
+        },
+        {
+          "code": "UNTRACKED_RISKY_CLAIM",
+          "snippet": "금융소비자 보호에 관한 법률에 따라 갱신 30일 전까지 갱신 조건 변경 내용을 서면·전자문서로 통지할 의무가 있다."
+        }
+      ]
+    },
+    {
+      "slug": "dog-cataract-eye-cloudy-guide",
+      "type": "blog",
+      "file": "db/seeds/blog-posts-29.ts",
+      "riskyCount": 1,
+      "byStatus": {
+        "verified": 0,
+        "qualified": 0,
+        "removed": 0,
+        "needs_review": 0
+      },
+      "untracked": [
+        "즉시 수의사에게 가야 하는 신호 • 눈의 흐림이 갑자기 생겼거나 빠르게 진행되는 경우 • 한쪽 눈만 흐려지거나 붉어지는 경우 • 걷다가 물건에 자주 부딪히는 경우 • 눈의 흐림과 함께 눈물·눈곱이 많아진 경우 백내장 vs 핵경화 — 눈으로 구별하는 방법 📋 특징 비교 항목 백내장 핵경"
+      ],
+      "issues": [
+        {
+          "code": "UNTRACKED_RISKY_CLAIM",
+          "snippet": "즉시 수의사에게 가야 하는 신호 • 눈의 흐림이 갑자기 생겼거나 빠르게 진행되는 경우 • 한쪽 눈만 흐려지거나 붉어지는 경우 • 걷다가 물건에 자주 부딪히는 경우 • 눈의 흐림과 함께 눈물·눈곱이 많아진 경우 백내장 vs 핵경화 — 눈으로 구별하는 방법 📋 특징 비교 항목 백내장 핵경"
+        }
+      ]
+    },
+    {
+      "slug": "dog-health-checkup",
+      "type": "blog",
+      "file": "db/seeds/blog-posts-3.ts",
+      "riskyCount": 1,
+      "byStatus": {
+        "verified": 0,
+        "qualified": 0,
+        "removed": 0,
+        "needs_review": 0
+      },
+      "untracked": [
+        "세계소동물수의사회(WSAVA)는 성견에게 연 1회, 7세 이상 노령견에게 연 2회 건강검진을 권고한다."
+      ],
+      "issues": [
+        {
+          "code": "UNTRACKED_RISKY_CLAIM",
+          "snippet": "세계소동물수의사회(WSAVA)는 성견에게 연 1회, 7세 이상 노령견에게 연 2회 건강검진을 권고한다."
+        }
+      ]
+    },
+    {
+      "slug": "dog-vaccination-schedule",
+      "type": "blog",
+      "file": "db/seeds/blog-posts-3.ts",
+      "riskyCount": 2,
+      "byStatus": {
+        "verified": 0,
+        "qualified": 0,
+        "removed": 0,
+        "needs_review": 0
+      },
+      "untracked": [
+        "세계소동물수의사회(WSAVA) 가이드라인을 기준으로 정리한다.",
+        "핵심 백신 (Core Vaccines) — DHPPL DHPPL 5종 혼합 백신 D — 디스템퍼(홍역): 호흡기·신경계 침범, 치사율 높음 H — 전염성 간염(아데노바이러스): 간 손상 P — 파보바이러스: 출혈성 장염, 강아지 사망 주요 원인 P — 파라인플루엔자: 켄넬코프 원인 중 "
+      ],
+      "issues": [
+        {
+          "code": "UNTRACKED_RISKY_CLAIM",
+          "snippet": "세계소동물수의사회(WSAVA) 가이드라인을 기준으로 정리한다."
+        },
+        {
+          "code": "UNTRACKED_RISKY_CLAIM",
+          "snippet": "핵심 백신 (Core Vaccines) — DHPPL DHPPL 5종 혼합 백신 D — 디스템퍼(홍역): 호흡기·신경계 침범, 치사율 높음 H — 전염성 간염(아데노바이러스): 간 손상 P — 파보바이러스: 출혈성 장염, 강아지 사망 주요 원인 P — 파라인플루엔자: 켄넬코프 원인 중 "
+        }
+      ]
+    },
+    {
+      "slug": "pet-online-purchase-consumer-rights",
+      "type": "blog",
+      "file": "db/seeds/blog-posts-30.ts",
+      "riskyCount": 1,
+      "byStatus": {
+        "verified": 0,
+        "qualified": 0,
+        "removed": 0,
+        "needs_review": 0
+      },
+      "untracked": [
+        "📋 온라인 구매 전 체크리스트 ☐ 판매자 사업자 정보 확인 (통신판매업 신고 여부) ☐ 최근 1~3개월 구매 후기의 유통기한 관련 불만 확인 ☐ 반품·환불 정책 사전 확인 (식품류 개봉 후 환불 여부) ☐ 수령 직후 박스 개봉 전 상태 사진 촬영 (피해 증거) ☐ 유통기한 위치 확인 "
+      ],
+      "issues": [
+        {
+          "code": "UNTRACKED_RISKY_CLAIM",
+          "snippet": "📋 온라인 구매 전 체크리스트 ☐ 판매자 사업자 정보 확인 (통신판매업 신고 여부) ☐ 최근 1~3개월 구매 후기의 유통기한 관련 불만 확인 ☐ 반품·환불 정책 사전 확인 (식품류 개봉 후 환불 여부) ☐ 수령 직후 박스 개봉 전 상태 사진 촬영 (피해 증거) ☐ 유통기한 위치 확인 "
+        }
+      ]
+    },
+    {
+      "slug": "cat-heart-disease-early-signs",
+      "type": "blog",
+      "file": "db/seeds/blog-posts-31.ts",
+      "riskyCount": 1,
+      "byStatus": {
+        "verified": 0,
+        "qualified": 0,
+        "removed": 0,
+        "needs_review": 0
+      },
+      "untracked": [
+        "활동량 감소 : 점프를 피하거나 놀이를 거부하는 경우 숨는 시간 증가 : 불편감으로 숨어 있는 경우 많음 식욕 감소 : 심부전으로 대사 변화가 생길 때 발생 복부 팽창 : 흉수나 복수가 찼을 때 (후기) 📋 고양이 호흡수 체크 방법 고양이가 완전히 편안하게 잠든 상태에서 측정 가슴이 "
+      ],
+      "issues": [
+        {
+          "code": "UNTRACKED_RISKY_CLAIM",
+          "snippet": "활동량 감소 : 점프를 피하거나 놀이를 거부하는 경우 숨는 시간 증가 : 불편감으로 숨어 있는 경우 많음 식욕 감소 : 심부전으로 대사 변화가 생길 때 발생 복부 팽창 : 흉수나 복수가 찼을 때 (후기) 📋 고양이 호흡수 체크 방법 고양이가 완전히 편안하게 잠든 상태에서 측정 가슴이 "
+        }
+      ]
+    },
+    {
+      "slug": "pet-sitter-dogwalker-contract-guide",
+      "type": "blog",
+      "file": "db/seeds/blog-posts-33.ts",
+      "riskyCount": 2,
+      "byStatus": {
+        "verified": 0,
+        "qualified": 0,
+        "removed": 0,
+        "needs_review": 0
+      },
+      "untracked": [
+        "한국소비자원에 따르면 반려동물 위탁 관련 피해 상담은 연간 수백 건이며, 사고 발생 시 배상을 두고 분쟁이 잦다.",
+        "펫시터 vs 도그워커 — 역할과 책임 차이 📋 역할별 비교 구분 펫시터 도그워커 서비스 내용 댁 방문 또는 자택 위탁 돌봄 산책 대행 (1~2시간) 위험 상황 의료 응급, 이탈, 이물질 섭취 이탈, 다른 개와 싸움, 도로 사고 필요 자격 법정 자격 없음 (민간 자격증 있음) 법정 자격"
+      ],
+      "issues": [
+        {
+          "code": "UNTRACKED_RISKY_CLAIM",
+          "snippet": "한국소비자원에 따르면 반려동물 위탁 관련 피해 상담은 연간 수백 건이며, 사고 발생 시 배상을 두고 분쟁이 잦다."
+        },
+        {
+          "code": "UNTRACKED_RISKY_CLAIM",
+          "snippet": "펫시터 vs 도그워커 — 역할과 책임 차이 📋 역할별 비교 구분 펫시터 도그워커 서비스 내용 댁 방문 또는 자택 위탁 돌봄 산책 대행 (1~2시간) 위험 상황 의료 응급, 이탈, 이물질 섭취 이탈, 다른 개와 싸움, 도로 사고 필요 자격 법정 자격 없음 (민간 자격증 있음) 법정 자격"
+        }
+      ]
+    },
+    {
+      "slug": "cat-feline-hypertension-symptoms-management",
+      "type": "blog",
+      "file": "db/seeds/blog-posts-34.ts",
+      "riskyCount": 1,
+      "byStatus": {
+        "verified": 0,
+        "qualified": 0,
+        "removed": 0,
+        "needs_review": 0
+      },
+      "untracked": [
+        "혈압 단계 분류 (IRIS 가이드라인) 단계 수축기(mmHg) 위험도 정상 &lt;140 낮음 전고혈압 140~159 미미 고혈압 160~179 중등도 중증 ≥180 높음 치료 약물 치료 아믈로디핀(암로디핀) — 칼슘채널 차단제, 고양이 1차 선택약 텔미사르탄 — 안지오텐신 수용체 차단"
+      ],
+      "issues": [
+        {
+          "code": "UNTRACKED_RISKY_CLAIM",
+          "snippet": "혈압 단계 분류 (IRIS 가이드라인) 단계 수축기(mmHg) 위험도 정상 &lt;140 낮음 전고혈압 140~159 미미 고혈압 160~179 중등도 중증 ≥180 높음 치료 약물 치료 아믈로디핀(암로디핀) — 칼슘채널 차단제, 고양이 1차 선택약 텔미사르탄 — 안지오텐신 수용체 차단"
+        }
+      ]
+    },
+    {
+      "slug": "dog-dental-disease-prevention-guide",
+      "type": "blog",
+      "file": "db/seeds/blog-posts-34.ts",
+      "riskyCount": 1,
+      "byStatus": {
+        "verified": 0,
+        "qualified": 0,
+        "removed": 0,
+        "needs_review": 0
+      },
+      "untracked": [
+        "이닦기 훈련 단계 1단계(3~5일): 손가락에 강아지 치약 묻혀 핥게 하기 2단계(3~5일): 손가락으로 잇몸·치아를 가볍게 문지르기 3단계(3~5일): 실리콘 핑거브러시로 앞니부터 4단계: 부드러운 칫솔로 바깥쪽 치아부터 원을 그리며 닦기 주의사항 사람 치약 사용 금지 — 자일리톨, "
+      ],
+      "issues": [
+        {
+          "code": "UNTRACKED_RISKY_CLAIM",
+          "snippet": "이닦기 훈련 단계 1단계(3~5일): 손가락에 강아지 치약 묻혀 핥게 하기 2단계(3~5일): 손가락으로 잇몸·치아를 가볍게 문지르기 3단계(3~5일): 실리콘 핑거브러시로 앞니부터 4단계: 부드러운 칫솔로 바깥쪽 치아부터 원을 그리며 닦기 주의사항 사람 치약 사용 금지 — 자일리톨, "
+        }
+      ]
+    },
+    {
+      "slug": "senior-dog-arthritis-management-guide",
+      "type": "blog",
+      "file": "db/seeds/blog-posts-34.ts",
+      "riskyCount": 2,
+      "byStatus": {
+        "verified": 0,
+        "qualified": 0,
+        "removed": 0,
+        "needs_review": 0
+      },
+      "untracked": [
+        "관절염 조기 신호 — 이런 행동이 보이면 의심 관절염 행동 체크리스트 □ 계단을 올라가기 싫어하거나 올라가는 시간이 늘었다 □ 차에 타고 내리기 힘들어한다 □ 눕거나 일어날 때 힘겨워 보인다 □ 아침 기상 후 뻣뻣하게 움직인다 (5~10분 후 완화) □ 특정 다리를 자주 든다 □ 뒷다리",
+        "이상 체중 10% 초과 시 발병률 2배 과거 부상 — 십자인대 파열, 탈구 이력이 있는 관절에서 조기 진행 나이 — 연골 재생 능력 감소로 노화 자체가 위험인자 가정에서 할 수 있는 관리 1."
+      ],
+      "issues": [
+        {
+          "code": "UNTRACKED_RISKY_CLAIM",
+          "snippet": "관절염 조기 신호 — 이런 행동이 보이면 의심 관절염 행동 체크리스트 □ 계단을 올라가기 싫어하거나 올라가는 시간이 늘었다 □ 차에 타고 내리기 힘들어한다 □ 눕거나 일어날 때 힘겨워 보인다 □ 아침 기상 후 뻣뻣하게 움직인다 (5~10분 후 완화) □ 특정 다리를 자주 든다 □ 뒷다리"
+        },
+        {
+          "code": "UNTRACKED_RISKY_CLAIM",
+          "snippet": "이상 체중 10% 초과 시 발병률 2배 과거 부상 — 십자인대 파열, 탈구 이력이 있는 관절에서 조기 진행 나이 — 연골 재생 능력 감소로 노화 자체가 위험인자 가정에서 할 수 있는 관리 1."
+        }
+      ]
+    },
+    {
+      "slug": "pet-insurance-premium-saving-tips",
+      "type": "blog",
+      "file": "db/seeds/blog-posts-35.ts",
+      "riskyCount": 6,
+      "byStatus": {
+        "verified": 0,
+        "qualified": 0,
+        "removed": 0,
+        "needs_review": 0
+      },
+      "untracked": [
+        "실제로 4~5세 이상 중형견의 월 보험료는 5~8만 원이 넘는 경우도 있다.",
+        "그러나 같은 보장 수준에서도 가입 방식에 따라 연 20~40만 원의 차이가 날 수 있다.",
+        "나이별 보험료 예시 (소형견 기준, 실손형) • 1세 가입: 월 2~3만 원 수준 • 3세 가입: 월 3~4만 원 수준 • 5세 가입: 월 5~7만 원 수준 • 8세 이상: 가입 거절 또는 제한 상품만 가능 2.",
+        "자기부담금을 높여 보험료 낮추기 자기부담금(자부담)을 20%에서 30%로 올리면 보험료가 10~20% 낮아진다.",
+        "선택 기준 자부담 낮게 (10~20%) : 만성 질환 이력 있거나 병원을 자주 가는 경우 자부담 높게 (30~50%) : 건강 상태 양호, 경미한 질환 위주 청구 예상 3.",
+        "갱신 전 체크리스트 현재 가입된 보험의 갱신 보험료 고지 확인 (통보 30일 전) 동일 보장 수준 기준 타사 견적 비교 이전 보험에서 청구 이력이 있으면 가입 거절될 수 있으므로 주의 단, 기존 병력이 있는 경우 새 보험에서 해당 질환은 면책될 수 있음 피해야 할 실수 보험료만 보고 가"
+      ],
+      "issues": [
+        {
+          "code": "UNTRACKED_RISKY_CLAIM",
+          "snippet": "실제로 4~5세 이상 중형견의 월 보험료는 5~8만 원이 넘는 경우도 있다."
+        },
+        {
+          "code": "UNTRACKED_RISKY_CLAIM",
+          "snippet": "그러나 같은 보장 수준에서도 가입 방식에 따라 연 20~40만 원의 차이가 날 수 있다."
+        },
+        {
+          "code": "UNTRACKED_RISKY_CLAIM",
+          "snippet": "나이별 보험료 예시 (소형견 기준, 실손형) • 1세 가입: 월 2~3만 원 수준 • 3세 가입: 월 3~4만 원 수준 • 5세 가입: 월 5~7만 원 수준 • 8세 이상: 가입 거절 또는 제한 상품만 가능 2."
+        },
+        {
+          "code": "UNTRACKED_RISKY_CLAIM",
+          "snippet": "자기부담금을 높여 보험료 낮추기 자기부담금(자부담)을 20%에서 30%로 올리면 보험료가 10~20% 낮아진다."
+        },
+        {
+          "code": "UNTRACKED_RISKY_CLAIM",
+          "snippet": "선택 기준 자부담 낮게 (10~20%) : 만성 질환 이력 있거나 병원을 자주 가는 경우 자부담 높게 (30~50%) : 건강 상태 양호, 경미한 질환 위주 청구 예상 3."
+        },
+        {
+          "code": "UNTRACKED_RISKY_CLAIM",
+          "snippet": "갱신 전 체크리스트 현재 가입된 보험의 갱신 보험료 고지 확인 (통보 30일 전) 동일 보장 수준 기준 타사 견적 비교 이전 보험에서 청구 이력이 있으면 가입 거절될 수 있으므로 주의 단, 기존 병력이 있는 경우 새 보험에서 해당 질환은 면책될 수 있음 피해야 할 실수 보험료만 보고 가"
+        }
+      ]
+    },
+    {
+      "slug": "pet-medical-expense-tax-deduction-guide",
+      "type": "blog",
+      "file": "db/seeds/blog-posts-35.ts",
+      "riskyCount": 2,
+      "byStatus": {
+        "verified": 0,
+        "qualified": 0,
+        "removed": 0,
+        "needs_review": 0
+      },
+      "untracked": [
+        "세액공제 기본 개요 2024년 반려동물 의료비 세액공제 핵심 • 공제율: 의료비의 15% (세액 직접 차감) • 반려동물 의료비 한도: 연 100만 원까지 별도 포함 가능 • 적용 소득 요건: 근로소득자(근로자) 해당, 사업소득자는 별도 확인 • 적용 시작: 2024년 1월 1일 이후 ",
+        "국세청 현금영수증 서비스에서 조회 가능 간소화 서비스 — 국세청 홈택스 의료비 항목에 자동 포함 여부 확인 (2024년 이후 지출분) 누락 시 직접 입력 — 간소화에 없으면 의료비 영수증 직접 첨부 절세 효과 예시 연간 동물병원 지출 공제 가능 금액 절세 효과(15%) 50만 원 50만"
+      ],
+      "issues": [
+        {
+          "code": "UNTRACKED_RISKY_CLAIM",
+          "snippet": "세액공제 기본 개요 2024년 반려동물 의료비 세액공제 핵심 • 공제율: 의료비의 15% (세액 직접 차감) • 반려동물 의료비 한도: 연 100만 원까지 별도 포함 가능 • 적용 소득 요건: 근로소득자(근로자) 해당, 사업소득자는 별도 확인 • 적용 시작: 2024년 1월 1일 이후 "
+        },
+        {
+          "code": "UNTRACKED_RISKY_CLAIM",
+          "snippet": "국세청 현금영수증 서비스에서 조회 가능 간소화 서비스 — 국세청 홈택스 의료비 항목에 자동 포함 여부 확인 (2024년 이후 지출분) 누락 시 직접 입력 — 간소화에 없으면 의료비 영수증 직접 첨부 절세 효과 예시 연간 동물병원 지출 공제 가능 금액 절세 효과(15%) 50만 원 50만"
+        }
+      ]
+    },
+    {
+      "slug": "dog-dental-disease-prevention",
+      "type": "blog",
+      "file": "db/seeds/blog-posts-37.ts",
+      "riskyCount": 1,
+      "byStatus": {
+        "verified": 0,
+        "qualified": 0,
+        "removed": 0,
+        "needs_review": 0
+      },
+      "untracked": [
+        "스케일링 권장 주기 (상태에 따라 달라짐) • 소형견·단두종: 1~2년에 1회 • 중·대형견: 2~3년에 1회 • 이미 치석이 두꺼운 경우: 즉시 시행 후 주기 재설정 • 7세 이상 노령견: 사전 혈액검사 후 마취 안전성 확인 마지막으로 많은 보호자가 \"밥은 잘 먹으니까 괜찮겠지\"라고 "
+      ],
+      "issues": [
+        {
+          "code": "UNTRACKED_RISKY_CLAIM",
+          "snippet": "스케일링 권장 주기 (상태에 따라 달라짐) • 소형견·단두종: 1~2년에 1회 • 중·대형견: 2~3년에 1회 • 이미 치석이 두꺼운 경우: 즉시 시행 후 주기 재설정 • 7세 이상 노령견: 사전 혈액검사 후 마취 안전성 확인 마지막으로 많은 보호자가 \"밥은 잘 먹으니까 괜찮겠지\"라고 "
+        }
+      ]
+    },
+    {
+      "slug": "pet-insurance-waiting-period-guide",
+      "type": "blog",
+      "file": "db/seeds/blog-posts-38.ts",
+      "riskyCount": 2,
+      "byStatus": {
+        "verified": 0,
+        "qualified": 0,
+        "removed": 0,
+        "needs_review": 0
+      },
+      "untracked": [
+        "대기기간 유형별 비교 보장 항목 일반 대기기간 비고 사고·상해 3~7일 가장 짧음, 일부 즉시 보장 질병 일반 30일 대부분 보험사 공통 슬개골 탈구 90~180일 소형견 빈발 → 별도 긴 대기기간 구강·치과 질환 180일~1년 보험사에 따라 아예 미보장 선천성·유전성 질환 보험사별 상",
+        "예시 • 가입 후 15일 — 슬개골 1도 진단 → 대기기간 미충족, 비보장 • 이 진단 기록이 남아 가입 후 6개월이 지나도 '기존 질환'으로 면책될 수 있음 → 보험 가입 직후 정기검진은 신중하게 판단 필요 가입 전 건강검진과 대기기간의 관계 일부 보험사는 가입 시 건강검진서 제출을 "
+      ],
+      "issues": [
+        {
+          "code": "UNTRACKED_RISKY_CLAIM",
+          "snippet": "대기기간 유형별 비교 보장 항목 일반 대기기간 비고 사고·상해 3~7일 가장 짧음, 일부 즉시 보장 질병 일반 30일 대부분 보험사 공통 슬개골 탈구 90~180일 소형견 빈발 → 별도 긴 대기기간 구강·치과 질환 180일~1년 보험사에 따라 아예 미보장 선천성·유전성 질환 보험사별 상"
+        },
+        {
+          "code": "UNTRACKED_RISKY_CLAIM",
+          "snippet": "예시 • 가입 후 15일 — 슬개골 1도 진단 → 대기기간 미충족, 비보장 • 이 진단 기록이 남아 가입 후 6개월이 지나도 '기존 질환'으로 면책될 수 있음 → 보험 가입 직후 정기검진은 신중하게 판단 필요 가입 전 건강검진과 대기기간의 관계 일부 보험사는 가입 시 건강검진서 제출을 "
+        }
+      ]
+    },
+    {
+      "slug": "cat-vomiting-causes-guide",
+      "type": "blog",
+      "file": "db/seeds/blog-posts-40.ts",
+      "riskyCount": 1,
+      "byStatus": {
+        "verified": 0,
+        "qualified": 0,
+        "removed": 0,
+        "needs_review": 0
+      },
+      "untracked": [
+        "즉시 병원에 가야 하는 신호 이런 경우 즉시 병원으로 • 구토가 24시간 내 3회 이상 반복 • 구토물에 피(선홍색 또는 커피색)가 보임 • 구토와 함께 무기력·식욕 저하·발열 • 음식·물을 전혀 먹지 않으면서 구토 • 배가 딱딱하게 팽창한 느낌 • 구토하려는 자세는 취하지만 아무것도 "
+      ],
+      "issues": [
+        {
+          "code": "UNTRACKED_RISKY_CLAIM",
+          "snippet": "즉시 병원에 가야 하는 신호 이런 경우 즉시 병원으로 • 구토가 24시간 내 3회 이상 반복 • 구토물에 피(선홍색 또는 커피색)가 보임 • 구토와 함께 무기력·식욕 저하·발열 • 음식·물을 전혀 먹지 않으면서 구토 • 배가 딱딱하게 팽창한 느낌 • 구토하려는 자세는 취하지만 아무것도 "
+        }
+      ]
+    },
+    {
+      "slug": "animal-cruelty-reporting-guide",
+      "type": "blog",
+      "file": "db/seeds/blog-posts-40.ts",
+      "riskyCount": 1,
+      "byStatus": {
+        "verified": 0,
+        "qualified": 0,
+        "removed": 0,
+        "needs_review": 0
+      },
+      "untracked": [
+        "유기는 300만 원 이하 과태료."
+      ],
+      "issues": [
+        {
+          "code": "UNTRACKED_RISKY_CLAIM",
+          "snippet": "유기는 300만 원 이하 과태료."
+        }
+      ]
+    },
+    {
+      "slug": "dog-pancreatitis-guide",
+      "type": "blog",
+      "file": "db/seeds/blog-posts-41.ts",
+      "riskyCount": 1,
+      "byStatus": {
+        "verified": 0,
+        "qualified": 0,
+        "removed": 0,
+        "needs_review": 0
+      },
+      "untracked": [
+        "지방 함량 10% 이하 (건조 기준) 사료 선택 처방식 저지방 사료 (수의사 권장) 사람 음식·고지방 간식 철저히 금지 식사를 하루 2~3회로 나누어 급여 (한 번에 많이 먹으면 췌장 자극) 재발 예방 기름진 음식·간식 절대 금지 — 가족 전원 교육 필요 쓰레기통 접근 차단 체중 정상 "
+      ],
+      "issues": [
+        {
+          "code": "UNTRACKED_RISKY_CLAIM",
+          "snippet": "지방 함량 10% 이하 (건조 기준) 사료 선택 처방식 저지방 사료 (수의사 권장) 사람 음식·고지방 간식 철저히 금지 식사를 하루 2~3회로 나누어 급여 (한 번에 많이 먹으면 췌장 자극) 재발 예방 기름진 음식·간식 절대 금지 — 가족 전원 교육 필요 쓰레기통 접근 차단 체중 정상 "
+        }
+      ]
+    },
+    {
+      "slug": "pet-first-aid-basic-guide",
+      "type": "blog",
+      "file": "db/seeds/blog-posts-42.ts",
+      "riskyCount": 1,
+      "byStatus": {
+        "verified": 0,
+        "qualified": 0,
+        "removed": 0,
+        "needs_review": 0
+      },
+      "untracked": [
+        "응급 키트 구성 멸균 거즈·붕대·의료용 테이프 지혈분말 (퀵스탑) 소독용 생리식염수 이동용 장갑 (부상 동물 핸들링) 체온계 (반려동물용 또는 직장 체온계) 담당 동물병원·24시간 응급 동물병원 번호 마지막으로 응급처치를 알아두는 것은 중요하지만, 과신은 금물이다."
+      ],
+      "issues": [
+        {
+          "code": "UNTRACKED_RISKY_CLAIM",
+          "snippet": "응급 키트 구성 멸균 거즈·붕대·의료용 테이프 지혈분말 (퀵스탑) 소독용 생리식염수 이동용 장갑 (부상 동물 핸들링) 체온계 (반려동물용 또는 직장 체온계) 담당 동물병원·24시간 응급 동물병원 번호 마지막으로 응급처치를 알아두는 것은 중요하지만, 과신은 금물이다."
+        }
+      ]
+    },
+    {
+      "slug": "stray-cat-feeding-legal-guide",
+      "type": "blog",
+      "file": "db/seeds/blog-posts-42.ts",
+      "riskyCount": 1,
+      "byStatus": {
+        "verified": 0,
+        "qualified": 0,
+        "removed": 0,
+        "needs_review": 0
+      },
+      "untracked": [
+        "동물보호법 제10조에 따르면 동물에게 불필요한 고통·상해를 주는 행위, 유기·방치는 금지된다."
+      ],
+      "issues": [
+        {
+          "code": "UNTRACKED_RISKY_CLAIM",
+          "snippet": "동물보호법 제10조에 따르면 동물에게 불필요한 고통·상해를 주는 행위, 유기·방치는 금지된다."
+        }
+      ]
+    },
+    {
+      "slug": "dog-diarrhea-home-care",
+      "type": "blog",
+      "file": "db/seeds/blog-posts-43.ts",
+      "riskyCount": 2,
+      "byStatus": {
+        "verified": 0,
+        "qualified": 0,
+        "removed": 0,
+        "needs_review": 0
+      },
+      "untracked": [
+        "설사 원인 8가지 식이 변화 또는 과식 이물질 섭취 (쓰레기·풀·뼈 등) 음식 불내증·알레르기 세균성 감염 (살모넬라·캠필로박터) 바이러스성 감염 (파보·코로나 등) 기생충 (지아르디아·회충·구충) 스트레스 (이사·새 가족·여행) 췌장·간·신장 질환 (만성 설사) 설사 색깔로 원인 추정",
+        "즉시 병원이 필요한 신호 이런 경우 즉시 병원으로 • 설사에 피가 섞여 있다 (특히 검은색) • 48시간 이상 설사가 지속된다 • 구토가 동시에 있다 • 무기력하고 음식을 거부한다 • 복부가 팽창하거나 딱딱하다 • 새끼 강아지 (12주 미만) — 파보 의심 • 접종이 안 된 개 마지막으"
+      ],
+      "issues": [
+        {
+          "code": "UNTRACKED_RISKY_CLAIM",
+          "snippet": "설사 원인 8가지 식이 변화 또는 과식 이물질 섭취 (쓰레기·풀·뼈 등) 음식 불내증·알레르기 세균성 감염 (살모넬라·캠필로박터) 바이러스성 감염 (파보·코로나 등) 기생충 (지아르디아·회충·구충) 스트레스 (이사·새 가족·여행) 췌장·간·신장 질환 (만성 설사) 설사 색깔로 원인 추정"
+        },
+        {
+          "code": "UNTRACKED_RISKY_CLAIM",
+          "snippet": "즉시 병원이 필요한 신호 이런 경우 즉시 병원으로 • 설사에 피가 섞여 있다 (특히 검은색) • 48시간 이상 설사가 지속된다 • 구토가 동시에 있다 • 무기력하고 음식을 거부한다 • 복부가 팽창하거나 딱딱하다 • 새끼 강아지 (12주 미만) — 파보 의심 • 접종이 안 된 개 마지막으"
+        }
+      ]
+    },
+    {
+      "slug": "dog-summer-heat-care-guide",
+      "type": "blog",
+      "file": "db/seeds/blog-posts-46.ts",
+      "riskyCount": 1,
+      "byStatus": {
+        "verified": 0,
+        "qualified": 0,
+        "removed": 0,
+        "needs_review": 0
+      },
+      "untracked": [
+        "열사병 단계별 증상 단계 증상 대처 경증 (체온 39.5~41°C) 과도한 헐떡임, 침 흘림, 불안 시원한 곳 이동, 수분 공급 중등도 (41~42°C) 구토, 무기력, 잇몸 빨개짐 즉시 냉각 + 병원 중증 (42°C 이상) 의식 저하, 경련, 적자색 잇몸 즉시 병원 (생명 위협) 안전"
+      ],
+      "issues": [
+        {
+          "code": "UNTRACKED_RISKY_CLAIM",
+          "snippet": "열사병 단계별 증상 단계 증상 대처 경증 (체온 39.5~41°C) 과도한 헐떡임, 침 흘림, 불안 시원한 곳 이동, 수분 공급 중등도 (41~42°C) 구토, 무기력, 잇몸 빨개짐 즉시 냉각 + 병원 중증 (42°C 이상) 의식 저하, 경련, 적자색 잇몸 즉시 병원 (생명 위협) 안전"
+        }
+      ]
+    },
+    {
+      "slug": "dog-heartworm-prevention-guide",
+      "type": "blog",
+      "file": "db/seeds/blog-posts-47.ts",
+      "riskyCount": 1,
+      "byStatus": {
+        "verified": 0,
+        "qualified": 0,
+        "removed": 0,
+        "needs_review": 0
+      },
+      "untracked": [
+        "예방약 종류 비교 투여 방법 제품 예시 특징 경구 (매월) 밀베마이신·이버멕틴 계열 복용 편리, 내외부 기생충 동시 예방 제품 있음 피부 점적 (매월) 레볼루션·스트롱홀드 피부에 바름, 벼룩·진드기 동시 예방 주사 (6개월 또는 12개월) 프로하트6·프로하트12 6~12개월에 1번, 잊"
+      ],
+      "issues": [
+        {
+          "code": "UNTRACKED_RISKY_CLAIM",
+          "snippet": "예방약 종류 비교 투여 방법 제품 예시 특징 경구 (매월) 밀베마이신·이버멕틴 계열 복용 편리, 내외부 기생충 동시 예방 제품 있음 피부 점적 (매월) 레볼루션·스트롱홀드 피부에 바름, 벼룩·진드기 동시 예방 주사 (6개월 또는 12개월) 프로하트6·프로하트12 6~12개월에 1번, 잊"
+        }
+      ]
+    },
+    {
+      "slug": "dog-seizure-emergency-guide",
+      "type": "blog",
+      "file": "db/seeds/blog-posts-49.ts",
+      "riskyCount": 2,
+      "byStatus": {
+        "verified": 0,
+        "qualified": 0,
+        "removed": 0,
+        "needs_review": 0
+      },
+      "untracked": [
+        "5분이 넘으면 응급 상황.",
+        "5분이 넘으면 응급, 그 이하는 발작이 끝난 뒤 수의사에게 연락해 지시를 받는 것이 원칙이다."
+      ],
+      "issues": [
+        {
+          "code": "UNTRACKED_RISKY_CLAIM",
+          "snippet": "5분이 넘으면 응급 상황."
+        },
+        {
+          "code": "UNTRACKED_RISKY_CLAIM",
+          "snippet": "5분이 넘으면 응급, 그 이하는 발작이 끝난 뒤 수의사에게 연락해 지시를 받는 것이 원칙이다."
+        }
+      ]
+    },
+    {
+      "slug": "pet-damage-neighbor-dispute",
+      "type": "blog",
+      "file": "db/seeds/blog-posts-49.ts",
+      "riskyCount": 1,
+      "byStatus": {
+        "verified": 0,
+        "qualified": 0,
+        "removed": 0,
+        "needs_review": 0
+      },
+      "untracked": [
+        "개 물림 사고 — 형사 책임 개 물림으로 상해가 발생하면: 형법 제266조 (과실치상) : 2년 이하 금고 또는 500만 원 이하 벌금 목줄 미착용 등 동물보호법 위반 : 별도 과태료 맹견 미신고·안전관리 위반 : 500만 원 이하 과태료 맹견 특별 관리 의무 (동물보호법) • 도사견·"
+      ],
+      "issues": [
+        {
+          "code": "UNTRACKED_RISKY_CLAIM",
+          "snippet": "개 물림 사고 — 형사 책임 개 물림으로 상해가 발생하면: 형법 제266조 (과실치상) : 2년 이하 금고 또는 500만 원 이하 벌금 목줄 미착용 등 동물보호법 위반 : 별도 과태료 맹견 미신고·안전관리 위반 : 500만 원 이하 과태료 맹견 특별 관리 의무 (동물보호법) • 도사견·"
+        }
+      ]
+    },
+    {
+      "slug": "cat-fiv-felv-testing-guide",
+      "type": "blog",
+      "file": "db/seeds/blog-posts-52.ts",
+      "riskyCount": 1,
+      "byStatus": {
+        "verified": 0,
+        "qualified": 0,
+        "removed": 0,
+        "needs_review": 0
+      },
+      "untracked": [
+        "결과를 읽는 요령 미국고양이수의사회(AAFP) 지침은 새로 들인 고양이를 격리하고 도착 즉시 검사하라고 권한다."
+      ],
+      "issues": [
+        {
+          "code": "UNTRACKED_RISKY_CLAIM",
+          "snippet": "결과를 읽는 요령 미국고양이수의사회(AAFP) 지침은 새로 들인 고양이를 격리하고 도착 즉시 검사하라고 권한다."
+        }
+      ]
+    },
+    {
+      "slug": "pet-hotel-boarding-checklist",
+      "type": "blog",
+      "file": "db/seeds/blog-posts-53.ts",
+      "riskyCount": 1,
+      "byStatus": {
+        "verified": 0,
+        "qualified": 0,
+        "removed": 0,
+        "needs_review": 0
+      },
+      "untracked": [
+        "사전 방문 점검 포인트 현장 방문 시 확인 체크리스트 □ 케이지·공간이 충분히 넓은가 (최소 3배 체장) □ 환기·청결 상태 □ 다른 동물과의 분리 여부 (종별·크기별) □ 직원 수 대비 동물 수 (과밀 여부) □ CCTV 운영 여부 (원격 모니터링 가능 여부) □ 비상 시 연결된 동물"
+      ],
+      "issues": [
+        {
+          "code": "UNTRACKED_RISKY_CLAIM",
+          "snippet": "사전 방문 점검 포인트 현장 방문 시 확인 체크리스트 □ 케이지·공간이 충분히 넓은가 (최소 3배 체장) □ 환기·청결 상태 □ 다른 동물과의 분리 여부 (종별·크기별) □ 직원 수 대비 동물 수 (과밀 여부) □ CCTV 운영 여부 (원격 모니터링 가능 여부) □ 비상 시 연결된 동물"
+        }
+      ]
+    },
+    {
+      "slug": "pet-abroad-emigration-guide",
+      "type": "blog",
+      "file": "db/seeds/blog-posts-53.ts",
+      "riskyCount": 1,
+      "byStatus": {
+        "verified": 0,
+        "qualified": 0,
+        "removed": 0,
+        "needs_review": 0
+      },
+      "untracked": [
+        "검사 → 결과 통보 → 대기기간(6개월)까지 필요한 경우도 있다."
+      ],
+      "issues": [
+        {
+          "code": "UNTRACKED_RISKY_CLAIM",
+          "snippet": "검사 → 결과 통보 → 대기기간(6개월)까지 필요한 경우도 있다."
+        }
+      ]
+    },
+    {
+      "slug": "pet-insurance-renewal-cancel-guide",
+      "type": "blog",
+      "file": "db/seeds/blog-posts-55.ts",
+      "riskyCount": 2,
+      "byStatus": {
+        "verified": 0,
+        "qualified": 0,
+        "removed": 0,
+        "needs_review": 0
+      },
+      "untracked": [
+        "2025년 4월 보도에 따르면 금융감독원은 펫보험의 자기부담금을 최소 3만원, 자기부담률을 30% 이상으로 하고 재가입 주기를 기존 3~5년에서 1년으로 줄이도록 권고했다(시행 5월 1일).",
+        "정부 생활법령정보에 따르면 보장성 보험은 보험증권을 받은 날부터 15일과 청약한 날부터 30일 중 먼저 도래하는 기간 안에 철회할 수 있고(금융소비자 보호에 관한 법률 제46조), 이미 보험금 지급 사유가 발생한 뒤에는 효력이 제한될 수 있다."
+      ],
+      "issues": [
+        {
+          "code": "UNTRACKED_RISKY_CLAIM",
+          "snippet": "2025년 4월 보도에 따르면 금융감독원은 펫보험의 자기부담금을 최소 3만원, 자기부담률을 30% 이상으로 하고 재가입 주기를 기존 3~5년에서 1년으로 줄이도록 권고했다(시행 5월 1일)."
+        },
+        {
+          "code": "UNTRACKED_RISKY_CLAIM",
+          "snippet": "정부 생활법령정보에 따르면 보장성 보험은 보험증권을 받은 날부터 15일과 청약한 날부터 30일 중 먼저 도래하는 기간 안에 철회할 수 있고(금융소비자 보호에 관한 법률 제46조), 이미 보험금 지급 사유가 발생한 뒤에는 효력이 제한될 수 있다."
+        }
+      ]
+    },
+    {
+      "slug": "dog-addisons-disease-guide",
+      "type": "blog",
+      "file": "db/seeds/blog-posts-56.ts",
+      "riskyCount": 1,
+      "byStatus": {
+        "verified": 0,
+        "qualified": 0,
+        "removed": 0,
+        "needs_review": 0
+      },
+      "untracked": [
+        "VCA에 따르면 DOCP 주사(미국에서 개 에디슨병 치료용으로 승인)를 3~4주 간격으로 맞고 필요하면 경구 스테로이드를 병행한다."
+      ],
+      "issues": [
+        {
+          "code": "UNTRACKED_RISKY_CLAIM",
+          "snippet": "VCA에 따르면 DOCP 주사(미국에서 개 에디슨병 치료용으로 승인)를 3~4주 간격으로 맞고 필요하면 경구 스테로이드를 병행한다."
+        }
+      ]
+    },
+    {
+      "slug": "pet-insurance-comparison-hidden-tips",
+      "type": "blog",
+      "file": "db/seeds/blog-posts-57.ts",
+      "riskyCount": 2,
+      "byStatus": {
+        "verified": 0,
+        "qualified": 0,
+        "removed": 0,
+        "needs_review": 0
+      },
+      "untracked": [
+        "두 가지 방식이 있다: 정액 방식 : 매 청구마다 일정 금액(예: 10,000원) 공제 정률 방식 : 진료비의 일정 비율(예: 20%) 공제 고액 진료가 많을 것 같으면 정액 방식이 유리.",
+        "연간 한도 vs 항목별 한도 연간 보험금 한도가 500만 원이라도, 항목별 한도(예: 수술비 한도 100만 원)가 별도로 있으면 큰 수술 시 보장이 제한된다."
+      ],
+      "issues": [
+        {
+          "code": "UNTRACKED_RISKY_CLAIM",
+          "snippet": "두 가지 방식이 있다: 정액 방식 : 매 청구마다 일정 금액(예: 10,000원) 공제 정률 방식 : 진료비의 일정 비율(예: 20%) 공제 고액 진료가 많을 것 같으면 정액 방식이 유리."
+        },
+        {
+          "code": "UNTRACKED_RISKY_CLAIM",
+          "snippet": "연간 한도 vs 항목별 한도 연간 보험금 한도가 500만 원이라도, 항목별 한도(예: 수술비 한도 100만 원)가 별도로 있으면 큰 수술 시 보장이 제한된다."
+        }
+      ]
+    },
+    {
+      "slug": "cat-diabetes-management-guide",
+      "type": "blog",
+      "file": "db/seeds/blog-posts-58.ts",
+      "riskyCount": 1,
+      "byStatus": {
+        "verified": 0,
+        "qualified": 0,
+        "removed": 0,
+        "needs_review": 0
+      },
+      "untracked": [
+        "인슐린 투여 방법 인슐린 바이알을 손바닥 사이에서 부드럽게 굴리기 (흔들지 않음) 주사기에 처방된 용량 정확히 채우기 목덜미 또는 어깨 옆 피하 조직을 집어 올리기 45도 각도로 빠르게 삽입 → 서서히 주입 밥을 먹은 직후 투여 (공복 시 저혈당 위험) 저혈당 응급 대처 저혈당 증상 및"
+      ],
+      "issues": [
+        {
+          "code": "UNTRACKED_RISKY_CLAIM",
+          "snippet": "인슐린 투여 방법 인슐린 바이알을 손바닥 사이에서 부드럽게 굴리기 (흔들지 않음) 주사기에 처방된 용량 정확히 채우기 목덜미 또는 어깨 옆 피하 조직을 집어 올리기 45도 각도로 빠르게 삽입 → 서서히 주입 밥을 먹은 직후 투여 (공복 시 저혈당 위험) 저혈당 응급 대처 저혈당 증상 및"
+        }
+      ]
+    },
+    {
+      "slug": "dog-lyme-disease-tick-prevention",
+      "type": "blog",
+      "file": "db/seeds/blog-posts-59.ts",
+      "riskyCount": 1,
+      "byStatus": {
+        "verified": 0,
+        "qualified": 0,
+        "removed": 0,
+        "needs_review": 0
+      },
+      "untracked": [
+        "발열, 무기력, 출혈 경향 진드기 확인 및 제거 진드기는 흡혈을 시작한 후 24~48시간 이내에 제거하면 질환 전파 위험이 크게 낮아진다."
+      ],
+      "issues": [
+        {
+          "code": "UNTRACKED_RISKY_CLAIM",
+          "snippet": "발열, 무기력, 출혈 경향 진드기 확인 및 제거 진드기는 흡혈을 시작한 후 24~48시간 이내에 제거하면 질환 전파 위험이 크게 낮아진다."
+        }
+      ]
+    },
+    {
+      "slug": "microchip-info-update-guide",
+      "type": "blog",
+      "file": "db/seeds/blog-posts-62.ts",
+      "riskyCount": 1,
+      "byStatus": {
+        "verified": 0,
+        "qualified": 0,
+        "removed": 0,
+        "needs_review": 0
+      },
+      "untracked": [
+        "변경하지 않았을 때 문제 실종 시 구 연락처로 연락이 가서 돌아오지 못함 사망한 동물 정보가 살아있는 것으로 기록 법적으로 정보 변경 기한(30일 이내) 위반 시 과태료 가능성 마지막으로 마이크로칩 등록은 한 번이지만 관리는 평생이다."
+      ],
+      "issues": [
+        {
+          "code": "UNTRACKED_RISKY_CLAIM",
+          "snippet": "변경하지 않았을 때 문제 실종 시 구 연락처로 연락이 가서 돌아오지 못함 사망한 동물 정보가 살아있는 것으로 기록 법적으로 정보 변경 기한(30일 이내) 위반 시 과태료 가능성 마지막으로 마이크로칩 등록은 한 번이지만 관리는 평생이다."
+        }
+      ]
+    },
+    {
+      "slug": "cat-corneal-eye-injury-guide",
+      "type": "blog",
+      "file": "db/seeds/blog-posts-64.ts",
+      "riskyCount": 1,
+      "byStatus": {
+        "verified": 0,
+        "qualified": 0,
+        "removed": 0,
+        "needs_review": 0
+      },
+      "untracked": [
+        "VCA 안내에 따르면 깊은 궤양이나 각막 조직이 상당히 소실된 경우에는 안과 전문의 평가와 수술이 필요할 수 있다."
+      ],
+      "issues": [
+        {
+          "code": "UNTRACKED_RISKY_CLAIM",
+          "snippet": "VCA 안내에 따르면 깊은 궤양이나 각막 조직이 상당히 소실된 경우에는 안과 전문의 평가와 수술이 필요할 수 있다."
+        }
+      ]
+    },
+    {
+      "slug": "pregnant-pet-care-guide",
+      "type": "blog",
+      "file": "db/seeds/blog-posts-65.ts",
+      "riskyCount": 2,
+      "byStatus": {
+        "verified": 0,
+        "qualified": 0,
+        "removed": 0,
+        "needs_review": 0
+      },
+      "untracked": [
+        "VCA는 개의 체온이 약 37.2℃(99℉) 아래로 내려가면 24시간 안에 분만이 시작되는 경우가 많다고 설명한다.",
+        "즉시 병원에 연락해야 하는 경우 • 새끼 없이 녹색 분비물이 나옴 • 강한 진통이 1~2시간(고양이는 45~60분) 이어지는데 새끼가 나오지 않음 • 한 마리를 낳은 뒤 2시간 이상 힘을 주지 않거나, 남은 새끼가 있는 것 같은데 오래 진행이 없음 • 체온이 떨어진 뒤 하루가 지나도 진"
+      ],
+      "issues": [
+        {
+          "code": "UNTRACKED_RISKY_CLAIM",
+          "snippet": "VCA는 개의 체온이 약 37.2℃(99℉) 아래로 내려가면 24시간 안에 분만이 시작되는 경우가 많다고 설명한다."
+        },
+        {
+          "code": "UNTRACKED_RISKY_CLAIM",
+          "snippet": "즉시 병원에 연락해야 하는 경우 • 새끼 없이 녹색 분비물이 나옴 • 강한 진통이 1~2시간(고양이는 45~60분) 이어지는데 새끼가 나오지 않음 • 한 마리를 낳은 뒤 2시간 이상 힘을 주지 않거나, 남은 새끼가 있는 것 같은데 오래 진행이 없음 • 체온이 떨어진 뒤 하루가 지나도 진"
+        }
+      ]
+    },
+    {
+      "slug": "cat-tuna-addiction-risks",
+      "type": "blog",
+      "file": "db/seeds/blog-posts-66.ts",
+      "riskyCount": 2,
+      "byStatus": {
+        "verified": 0,
+        "qualified": 0,
+        "removed": 0,
+        "needs_review": 0
+      },
+      "untracked": [
+        "참치를 많이 먹이면 생길 수 있는 문제 문제 설명 영양 불균형 VCA는 참치가 고양이에게 필요한 영양소가 부족하고 불포화지방이 많다고 설명하며, 어떤 연령의 고양이에게도 참치를 급여하지 말라고 안내한다 비타민 E 결핍과 황색지방증(pansteatitis) 메르크 수의학 매뉴얼에 따르면 ",
+        "이런 변화가 보이면 진료 • 참치만 찾고 사료를 거부하는 날이 며칠 이어짐 • 만졌을 때 배를 아파함, 무기력, 털이 푸석해짐 • 걸음이 불안정하거나 떨림 • 24시간 이상 아무것도 먹지 않음 — 특히 비만 고양이는 식사를 거르면 위험할 수 있다 어떻게 줄이나 참치를 줄 때는 가끔 아주"
+      ],
+      "issues": [
+        {
+          "code": "UNTRACKED_RISKY_CLAIM",
+          "snippet": "참치를 많이 먹이면 생길 수 있는 문제 문제 설명 영양 불균형 VCA는 참치가 고양이에게 필요한 영양소가 부족하고 불포화지방이 많다고 설명하며, 어떤 연령의 고양이에게도 참치를 급여하지 말라고 안내한다 비타민 E 결핍과 황색지방증(pansteatitis) 메르크 수의학 매뉴얼에 따르면 "
+        },
+        {
+          "code": "UNTRACKED_RISKY_CLAIM",
+          "snippet": "이런 변화가 보이면 진료 • 참치만 찾고 사료를 거부하는 날이 며칠 이어짐 • 만졌을 때 배를 아파함, 무기력, 털이 푸석해짐 • 걸음이 불안정하거나 떨림 • 24시간 이상 아무것도 먹지 않음 — 특히 비만 고양이는 식사를 거르면 위험할 수 있다 어떻게 줄이나 참치를 줄 때는 가끔 아주"
+        }
+      ]
+    },
+    {
+      "slug": "pet-emergency-vet-preparation",
+      "type": "blog",
+      "file": "db/seeds/blog-posts-66.ts",
+      "riskyCount": 1,
+      "byStatus": {
+        "verified": 0,
+        "qualified": 0,
+        "removed": 0,
+        "needs_review": 0
+      },
+      "untracked": [
+        "지금 당장 해야 할 준비 24시간 응급 동물병원 파악 가까운 야간·응급 진료 가능 동물병원과 대체 병원을 미리 파악 전화번호를 스마트폰 즐겨찾기에 저장 운전 경로 미리 확인 (밤에도 찾을 수 있게) 주치 동물병원의 야간 응급 연계 병원 확인 병원 명칭만 보고 24시간 진료를 단정하지 말"
+      ],
+      "issues": [
+        {
+          "code": "UNTRACKED_RISKY_CLAIM",
+          "snippet": "지금 당장 해야 할 준비 24시간 응급 동물병원 파악 가까운 야간·응급 진료 가능 동물병원과 대체 병원을 미리 파악 전화번호를 스마트폰 즐겨찾기에 저장 운전 경로 미리 확인 (밤에도 찾을 수 있게) 주치 동물병원의 야간 응급 연계 병원 확인 병원 명칭만 보고 24시간 진료를 단정하지 말"
+        }
+      ]
+    },
+    {
+      "slug": "exotic-pet-legal-ownership-guide",
+      "type": "blog",
+      "file": "db/seeds/blog-posts-67.ts",
+      "riskyCount": 1,
+      "byStatus": {
+        "verified": 0,
+        "qualified": 0,
+        "removed": 0,
+        "needs_review": 0
+      },
+      "untracked": [
+        "불법 소유는 500만 원 이하 벌금 또는 2년 이하 징역이 될 수 있다."
+      ],
+      "issues": [
+        {
+          "code": "UNTRACKED_RISKY_CLAIM",
+          "snippet": "불법 소유는 500만 원 이하 벌금 또는 2년 이하 징역이 될 수 있다."
+        }
+      ]
+    },
+    {
+      "slug": "pet-insurance-waiting-period",
+      "type": "blog",
+      "file": "db/seeds/blog-posts-69.ts",
+      "riskyCount": 1,
+      "byStatus": {
+        "verified": 0,
+        "qualified": 0,
+        "removed": 0,
+        "needs_review": 0
+      },
+      "untracked": [
+        "항목별 대기기간 (국내 주요 보험사 기준) 항목 일반적 대기기간 사고(골절, 교통사고 등) 없음 또는 1~3일 일반 질병 15~30일 슬개골 탈구 90~180일 치과(치석·발치) 180일~1년 피부 질환 30~90일 선천성·유전성 질환 보상 제외(특약) 또는 180일+ 대기기간의 함정 "
+      ],
+      "issues": [
+        {
+          "code": "UNTRACKED_RISKY_CLAIM",
+          "snippet": "항목별 대기기간 (국내 주요 보험사 기준) 항목 일반적 대기기간 사고(골절, 교통사고 등) 없음 또는 1~3일 일반 질병 15~30일 슬개골 탈구 90~180일 치과(치석·발치) 180일~1년 피부 질환 30~90일 선천성·유전성 질환 보상 제외(특약) 또는 180일+ 대기기간의 함정 "
+        }
+      ]
+    },
+    {
+      "slug": "cat-megacolon-constipation",
+      "type": "blog",
+      "file": "db/seeds/blog-posts-69.ts",
+      "riskyCount": 1,
+      "byStatus": {
+        "verified": 0,
+        "qualified": 0,
+        "removed": 0,
+        "needs_review": 0
+      },
+      "untracked": [
+        "원인 만성 탈수 (건식 사료 위주, 음수량 부족) 비만 (운동 부족, 대장 기능 저하) 척수·신경 손상 골반 협착 (골절 후 변형) 메가콜론 특발성 (원인 불명) 증상 만성 변비·거대결장 주요 증상 • 3~4일 이상 배변 없음 • 화장실에서 힘을 주지만 변이 나오지 않음 • 딱딱하고 건"
+      ],
+      "issues": [
+        {
+          "code": "UNTRACKED_RISKY_CLAIM",
+          "snippet": "원인 만성 탈수 (건식 사료 위주, 음수량 부족) 비만 (운동 부족, 대장 기능 저하) 척수·신경 손상 골반 협착 (골절 후 변형) 메가콜론 특발성 (원인 불명) 증상 만성 변비·거대결장 주요 증상 • 3~4일 이상 배변 없음 • 화장실에서 힘을 주지만 변이 나오지 않음 • 딱딱하고 건"
+        }
+      ]
+    },
+    {
+      "slug": "pet-insurance-dental-coverage",
+      "type": "blog",
+      "file": "db/seeds/blog-posts-69.ts",
+      "riskyCount": 3,
+      "byStatus": {
+        "verified": 0,
+        "qualified": 0,
+        "removed": 0,
+        "needs_review": 0
+      },
+      "untracked": [
+        "동물병원에서 치석 제거 비용이 20~60만 원에 이른다는 것을 알고 펫보험 치과 보장을 찾아보는 분들이 많다.",
+        "특약 포함 시 대기기간은 보통 180일~1년으로 길다.",
+        "비용 현실 스케일링(치석 제거): 20~60만 원 (마취 필요) 단순 발치: 5~20만 원 (치아당) 치주 수술: 50~150만 원 구강 종양 제거: 100만 원 이상 마지막으로 치과 보장을 원한다면 반드시 특약 내용과 대기기간을 확인해야 한다."
+      ],
+      "issues": [
+        {
+          "code": "UNTRACKED_RISKY_CLAIM",
+          "snippet": "동물병원에서 치석 제거 비용이 20~60만 원에 이른다는 것을 알고 펫보험 치과 보장을 찾아보는 분들이 많다."
+        },
+        {
+          "code": "UNTRACKED_RISKY_CLAIM",
+          "snippet": "특약 포함 시 대기기간은 보통 180일~1년으로 길다."
+        },
+        {
+          "code": "UNTRACKED_RISKY_CLAIM",
+          "snippet": "비용 현실 스케일링(치석 제거): 20~60만 원 (마취 필요) 단순 발치: 5~20만 원 (치아당) 치주 수술: 50~150만 원 구강 종양 제거: 100만 원 이상 마지막으로 치과 보장을 원한다면 반드시 특약 내용과 대기기간을 확인해야 한다."
+        }
+      ]
+    },
+    {
+      "slug": "dog-diarrhea-guide",
+      "type": "blog",
+      "file": "db/seeds/blog-posts-7.ts",
+      "riskyCount": 3,
+      "byStatus": {
+        "verified": 0,
+        "qualified": 0,
+        "removed": 0,
+        "needs_review": 0
+      },
+      "untracked": [
+        "즉시 동물병원에 가야 하는 위험 신호 선홍색 또는 검은색 혈변 (흑변은 상부 소화관 출혈 가능성) 구토 + 설사 동반, 무기력, 식욕 완전 소실 복부 팽만 또는 복통 (숨을 쉴 때 불편해하거나 등을 구부림) 24시간 이상 설사가 지속되는 강아지 어린 강아지(6개월 미만), 노령견, 기저",
+        "Merck Veterinary Manual이 권고하는 단기 대처법: 12~24시간 금식 (물은 충분히 제공) — 어린 강아지·노령견은 저혈당 위험으로 금식 적용 주의 금식 후 소화하기 쉬운 음식(흰 쌀밥+닭가슴살 삶은 것 소량)으로 24~48시간 급여 증상이 개선되지 않거나 악화되면 즉",
+        "강아지 파보바이러스는 미접종 강아지에서 사망률이 최대 91%에 달하는 응급 질환으로 구토+혈성 설사+극심한 무기력이 특징이다."
+      ],
+      "issues": [
+        {
+          "code": "UNTRACKED_RISKY_CLAIM",
+          "snippet": "즉시 동물병원에 가야 하는 위험 신호 선홍색 또는 검은색 혈변 (흑변은 상부 소화관 출혈 가능성) 구토 + 설사 동반, 무기력, 식욕 완전 소실 복부 팽만 또는 복통 (숨을 쉴 때 불편해하거나 등을 구부림) 24시간 이상 설사가 지속되는 강아지 어린 강아지(6개월 미만), 노령견, 기저"
+        },
+        {
+          "code": "UNTRACKED_RISKY_CLAIM",
+          "snippet": "Merck Veterinary Manual이 권고하는 단기 대처법: 12~24시간 금식 (물은 충분히 제공) — 어린 강아지·노령견은 저혈당 위험으로 금식 적용 주의 금식 후 소화하기 쉬운 음식(흰 쌀밥+닭가슴살 삶은 것 소량)으로 24~48시간 급여 증상이 개선되지 않거나 악화되면 즉"
+        },
+        {
+          "code": "UNTRACKED_RISKY_CLAIM",
+          "snippet": "강아지 파보바이러스는 미접종 강아지에서 사망률이 최대 91%에 달하는 응급 질환으로 구토+혈성 설사+극심한 무기력이 특징이다."
+        }
+      ]
+    },
+    {
+      "slug": "cat-flutd-guide",
+      "type": "blog",
+      "file": "db/seeds/blog-posts-7.ts",
+      "riskyCount": 1,
+      "byStatus": {
+        "verified": 0,
+        "qualified": 0,
+        "removed": 0,
+        "needs_review": 0
+      },
+      "untracked": [
+        "습식 사료 비중 늘리기 (수분 함량 75~80%) 집 안 여러 곳에 물그릇 배치 유수형 급수기(분수대) 활용 스트레스 관리 — 환경 풍요화, 규칙적인 루틴, 화장실 청결 유지 화장실 관리도 중요하다 화장실이 더럽거나 개수가 부족하면 소변을 참게 되고 FLUTD 위험을 높인다."
+      ],
+      "issues": [
+        {
+          "code": "UNTRACKED_RISKY_CLAIM",
+          "snippet": "습식 사료 비중 늘리기 (수분 함량 75~80%) 집 안 여러 곳에 물그릇 배치 유수형 급수기(분수대) 활용 스트레스 관리 — 환경 풍요화, 규칙적인 루틴, 화장실 청결 유지 화장실 관리도 중요하다 화장실이 더럽거나 개수가 부족하면 소변을 참게 되고 FLUTD 위험을 높인다."
+        }
+      ]
+    },
+    {
+      "slug": "cat-kidney-disease-early-signs",
+      "type": "blog",
+      "file": "db/seeds/blog-posts-7.ts",
+      "riskyCount": 1,
+      "byStatus": {
+        "verified": 0,
+        "qualified": 0,
+        "removed": 0,
+        "needs_review": 0
+      },
+      "untracked": [
+        "WSAVA는 7세 이상 고양이에게 연 2회 혈액·소변 검사를 통한 신장 수치 모니터링을 권고한다."
+      ],
+      "issues": [
+        {
+          "code": "UNTRACKED_RISKY_CLAIM",
+          "snippet": "WSAVA는 7세 이상 고양이에게 연 2회 혈액·소변 검사를 통한 신장 수치 모니터링을 권고한다."
+        }
+      ]
+    },
+    {
+      "slug": "dog-baby-teeth-guide",
+      "type": "blog",
+      "file": "db/seeds/blog-posts-7.ts",
+      "riskyCount": 1,
+      "byStatus": {
+        "verified": 0,
+        "qualified": 0,
+        "removed": 0,
+        "needs_review": 0
+      },
+      "untracked": [
+        "강아지 치아 발달 타임라인 생후 2~4주 : 유치(28개) 순차적으로 출현 시작 생후 3~4개월 : 유치 빠지기 시작 — 절치(앞니)부터 생후 4~5개월 : 송곳니 교환 생후 5~7개월 : 대구치·소구치 교환 생후 6~8개월 : AKC는 보통 6개월 무렵 영구치(42개) 교환이 끝나며 "
+      ],
+      "issues": [
+        {
+          "code": "UNTRACKED_RISKY_CLAIM",
+          "snippet": "강아지 치아 발달 타임라인 생후 2~4주 : 유치(28개) 순차적으로 출현 시작 생후 3~4개월 : 유치 빠지기 시작 — 절치(앞니)부터 생후 4~5개월 : 송곳니 교환 생후 5~7개월 : 대구치·소구치 교환 생후 6~8개월 : AKC는 보통 6개월 무렵 영구치(42개) 교환이 끝나며 "
+        }
+      ]
+    },
+    {
+      "slug": "cat-hyperthyroidism-guide",
+      "type": "blog",
+      "file": "db/seeds/blog-posts-7.ts",
+      "riskyCount": 1,
+      "byStatus": {
+        "verified": 0,
+        "qualified": 0,
+        "removed": 0,
+        "needs_review": 0
+      },
+      "untracked": [
+        "정기 검진이 핵심이다 WSAVA는 10세 이상 고양이에게 연 2회 혈액검사(T4 포함)를 권고한다."
+      ],
+      "issues": [
+        {
+          "code": "UNTRACKED_RISKY_CLAIM",
+          "snippet": "정기 검진이 핵심이다 WSAVA는 10세 이상 고양이에게 연 2회 혈액검사(T4 포함)를 권고한다."
+        }
+      ]
+    },
+    {
+      "slug": "dog-epilepsy-seizure-guide",
+      "type": "blog",
+      "file": "db/seeds/blog-posts-70.ts",
+      "riskyCount": 3,
+      "byStatus": {
+        "verified": 0,
+        "qualified": 0,
+        "removed": 0,
+        "needs_review": 0
+      },
+      "untracked": [
+        "발작의 종류 대발작(Grand Mal) : 의식 소실, 사지 경련, 침·거품 흘림 — 가장 흔하고 눈에 띄는 형태 국소 발작(Focal) : 얼굴 씰룩임, 한쪽 다리만 경련 부재 발작 : 멍한 상태, 반응 없음 — 보호자가 놓치기 쉬움 발작 중 해야 할 것 발작 중 행동 수칙 ✅ 주변 ",
+        "몸을 강하게 누르거나 잡기 — 근육 경련에 저항하면 골절 위험 물 먹이기 — 흡인 위험 밝은 조명·큰 소리 — 자극이 발작을 연장할 수 있다 발작 후 회복기(Post-ictal period) 발작이 끝나도 5~30분 또는 그 이상 멍하거나 비틀거릴 수 있다.",
+        "월 2회 이상 발작, 5분 이상 발작, 발작 후 24시간 내 회복 실패 시 즉시 수의사 상담이 필요하다."
+      ],
+      "issues": [
+        {
+          "code": "UNTRACKED_RISKY_CLAIM",
+          "snippet": "발작의 종류 대발작(Grand Mal) : 의식 소실, 사지 경련, 침·거품 흘림 — 가장 흔하고 눈에 띄는 형태 국소 발작(Focal) : 얼굴 씰룩임, 한쪽 다리만 경련 부재 발작 : 멍한 상태, 반응 없음 — 보호자가 놓치기 쉬움 발작 중 해야 할 것 발작 중 행동 수칙 ✅ 주변 "
+        },
+        {
+          "code": "UNTRACKED_RISKY_CLAIM",
+          "snippet": "몸을 강하게 누르거나 잡기 — 근육 경련에 저항하면 골절 위험 물 먹이기 — 흡인 위험 밝은 조명·큰 소리 — 자극이 발작을 연장할 수 있다 발작 후 회복기(Post-ictal period) 발작이 끝나도 5~30분 또는 그 이상 멍하거나 비틀거릴 수 있다."
+        },
+        {
+          "code": "UNTRACKED_RISKY_CLAIM",
+          "snippet": "월 2회 이상 발작, 5분 이상 발작, 발작 후 24시간 내 회복 실패 시 즉시 수의사 상담이 필요하다."
+        }
+      ]
+    },
+    {
+      "slug": "cat-urinary-blockage-prevention",
+      "type": "blog",
+      "file": "db/seeds/blog-posts-71.ts",
+      "riskyCount": 2,
+      "byStatus": {
+        "verified": 0,
+        "qualified": 0,
+        "removed": 0,
+        "needs_review": 0
+      },
+      "untracked": [
+        "수컷 고양이의 요로폐색은 24시간 내에 사망에 이를 수 있는 응급 상황이다.",
+        "위험 요인 건식 사료만 급여 (수분 부족) 비만 스트레스 (이사, 새 동물 도입, 환경 변화) 마그네슘·인 과다 급여 과거 요로 질환 병력 예방 식이 요로 건강 유지 식이 전략 • 습식 사료 비중 높이기 (50% 이상 권장) • 흐르는 물 급수기 → 음수량 증가 • 마그네슘 함량 낮은 "
+      ],
+      "issues": [
+        {
+          "code": "UNTRACKED_RISKY_CLAIM",
+          "snippet": "수컷 고양이의 요로폐색은 24시간 내에 사망에 이를 수 있는 응급 상황이다."
+        },
+        {
+          "code": "UNTRACKED_RISKY_CLAIM",
+          "snippet": "위험 요인 건식 사료만 급여 (수분 부족) 비만 스트레스 (이사, 새 동물 도입, 환경 변화) 마그네슘·인 과다 급여 과거 요로 질환 병력 예방 식이 요로 건강 유지 식이 전략 • 습식 사료 비중 높이기 (50% 이상 권장) • 흐르는 물 급수기 → 음수량 증가 • 마그네슘 함량 낮은 "
+        }
+      ]
+    },
+    {
+      "slug": "dog-heartworm-prevention",
+      "type": "blog",
+      "file": "db/seeds/blog-posts-72.ts",
+      "riskyCount": 1,
+      "byStatus": {
+        "verified": 0,
+        "qualified": 0,
+        "removed": 0,
+        "needs_review": 0
+      },
+      "untracked": [
+        "예방이 치료보다 훨씬 쉬운 이유 예방약: 월 1회 투약, 비용 1만 원대 치료: 비소 기반 주사 처치, 수개월 엄격한 운동 제한, 50~200만 원 치료 과정에서 사상충 사멸 시 폐동맥 색전증 위험 예방약 종류 심장사상충 예방약 종류 • 경구형 : 하트가드(이버멕틴), 인터셉터(밀베마이"
+      ],
+      "issues": [
+        {
+          "code": "UNTRACKED_RISKY_CLAIM",
+          "snippet": "예방이 치료보다 훨씬 쉬운 이유 예방약: 월 1회 투약, 비용 1만 원대 치료: 비소 기반 주사 처치, 수개월 엄격한 운동 제한, 50~200만 원 치료 과정에서 사상충 사멸 시 폐동맥 색전증 위험 예방약 종류 심장사상충 예방약 종류 • 경구형 : 하트가드(이버멕틴), 인터셉터(밀베마이"
+        }
+      ]
+    },
+    {
+      "slug": "pet-airplane-travel-regulation",
+      "type": "blog",
+      "file": "db/seeds/blog-posts-72.ts",
+      "riskyCount": 1,
+      "byStatus": {
+        "verified": 0,
+        "qualified": 0,
+        "removed": 0,
+        "needs_review": 0
+      },
+      "untracked": [
+        "기내 반입 조건 (일반적 기준) 소형견·고양이 한정 (체중 기준 일반적으로 7~10kg 이하, 이동장 포함) 이동장 크기 기준 (좌석 아래 들어가는 크기 — 약 55×40×20cm) 이동장 안에서 편히 서고 돌 수 있을 것 항공사 사전 예약 필수 (1~2기 한정) 화물칸 위험성 화물칸 "
+      ],
+      "issues": [
+        {
+          "code": "UNTRACKED_RISKY_CLAIM",
+          "snippet": "기내 반입 조건 (일반적 기준) 소형견·고양이 한정 (체중 기준 일반적으로 7~10kg 이하, 이동장 포함) 이동장 크기 기준 (좌석 아래 들어가는 크기 — 약 55×40×20cm) 이동장 안에서 편히 서고 돌 수 있을 것 항공사 사전 예약 필수 (1~2기 한정) 화물칸 위험성 화물칸 "
+        }
+      ]
+    },
+    {
+      "slug": "dog-patella-surgery-recovery",
+      "type": "blog",
+      "file": "db/seeds/blog-posts-74.ts",
+      "riskyCount": 1,
+      "byStatus": {
+        "verified": 0,
+        "qualified": 0,
+        "removed": 0,
+        "needs_review": 0
+      },
+      "untracked": [
+        "재발 예방 이상 체중 유지 (과체중이면 재발 위험 높음) 수술 후 3·6개월 정기 X-ray 추적 반대쪽 다리 상태도 정기 확인 (양측 발생 가능성) 마지막으로 슬개골 수술 회복은 보호자의 인내가 핵심이다."
+      ],
+      "issues": [
+        {
+          "code": "UNTRACKED_RISKY_CLAIM",
+          "snippet": "재발 예방 이상 체중 유지 (과체중이면 재발 위험 높음) 수술 후 3·6개월 정기 X-ray 추적 반대쪽 다리 상태도 정기 확인 (양측 발생 가능성) 마지막으로 슬개골 수술 회복은 보호자의 인내가 핵심이다."
+        }
+      ]
+    },
+    {
+      "slug": "animal-registration-chip-guide",
+      "type": "blog",
+      "file": "db/seeds/blog-posts-74.ts",
+      "riskyCount": 3,
+      "byStatus": {
+        "verified": 0,
+        "qualified": 0,
+        "removed": 0,
+        "needs_review": 0
+      },
+      "untracked": [
+        "등록 의무 대상 동물보호법 기준: 2개월 이상 반려 목적으로 기르는 개.",
+        "미등록 시 과태료 최대 100만 원.",
+        "보호자 정보 변경 시 30일 이내 수정 의무 잃어버렸을 때 활용 보호소 입소 시 스캐너로 즉시 보호자 확인 가능 동물보호관리시스템(www.animal.go.kr)에서 실종 신고 인근 동물병원·보호소에 마이크로칩 번호 공유 마지막으로 마이크로칩 삽입은 5초짜리 시술이지만, 잃어버린 반려견"
+      ],
+      "issues": [
+        {
+          "code": "UNTRACKED_RISKY_CLAIM",
+          "snippet": "등록 의무 대상 동물보호법 기준: 2개월 이상 반려 목적으로 기르는 개."
+        },
+        {
+          "code": "UNTRACKED_RISKY_CLAIM",
+          "snippet": "미등록 시 과태료 최대 100만 원."
+        },
+        {
+          "code": "UNTRACKED_RISKY_CLAIM",
+          "snippet": "보호자 정보 변경 시 30일 이내 수정 의무 잃어버렸을 때 활용 보호소 입소 시 스캐너로 즉시 보호자 확인 가능 동물보호관리시스템(www.animal.go.kr)에서 실종 신고 인근 동물병원·보호소에 마이크로칩 번호 공유 마지막으로 마이크로칩 삽입은 5초짜리 시술이지만, 잃어버린 반려견"
+        }
+      ]
+    },
+    {
+      "slug": "dog-tick-prevention-guide",
+      "type": "blog",
+      "file": "db/seeds/blog-posts-75.ts",
+      "riskyCount": 1,
+      "byStatus": {
+        "verified": 0,
+        "qualified": 0,
+        "removed": 0,
+        "needs_review": 0
+      },
+      "untracked": [
+        "진드기 매개 주요 질환 라임병 : 보렐리아균 감염, 관절·신경·심장 침범, 국내 발생 증가 추세 중증열성혈소판감소증(SFTS) : 사람에게 치명적 (치사율 10~30%), 강아지는 보균 숙주 아나플라스마증 : 발열·식욕 감소·혈소판 감소 에를리키아증 : 발열·출혈 경향 진드기 예방약 종"
+      ],
+      "issues": [
+        {
+          "code": "UNTRACKED_RISKY_CLAIM",
+          "snippet": "진드기 매개 주요 질환 라임병 : 보렐리아균 감염, 관절·신경·심장 침범, 국내 발생 증가 추세 중증열성혈소판감소증(SFTS) : 사람에게 치명적 (치사율 10~30%), 강아지는 보균 숙주 아나플라스마증 : 발열·식욕 감소·혈소판 감소 에를리키아증 : 발열·출혈 경향 진드기 예방약 종"
+        }
+      ]
+    },
+    {
+      "slug": "dog-ivdd-disc-surgery-guide",
+      "type": "blog",
+      "file": "db/seeds/blog-posts-76.ts",
+      "riskyCount": 1,
+      "byStatus": {
+        "verified": 0,
+        "qualified": 0,
+        "removed": 0,
+        "needs_review": 0
+      },
+      "untracked": [
+        "추간판 탈출증 등급 등급 증상 권장 1 통증만, 신경학적 이상 없음 보존 치료 2 경미한 보행 장애, 통증 보존 또는 수술 (빠른 회복 원하면) 3 명확한 보행 장애, 서 있을 수 없음 수술 권장 4 마비, 통증 감각 있음 즉시 수술 5 완전 마비, 통증 감각 없음 긴급 수술 (48시간"
+      ],
+      "issues": [
+        {
+          "code": "UNTRACKED_RISKY_CLAIM",
+          "snippet": "추간판 탈출증 등급 등급 증상 권장 1 통증만, 신경학적 이상 없음 보존 치료 2 경미한 보행 장애, 통증 보존 또는 수술 (빠른 회복 원하면) 3 명확한 보행 장애, 서 있을 수 없음 수술 권장 4 마비, 통증 감각 있음 즉시 수술 5 완전 마비, 통증 감각 없음 긴급 수술 (48시간"
+        }
+      ]
+    },
+    {
+      "slug": "dog-heart-disease-guide",
+      "type": "blog",
+      "file": "db/seeds/blog-posts-8.ts",
+      "riskyCount": 1,
+      "byStatus": {
+        "verified": 0,
+        "qualified": 0,
+        "removed": 0,
+        "needs_review": 0
+      },
+      "untracked": [
+        "WSAVA는 소형 노령견에게 연 1~2회 정기 청진을 권고한다."
+      ],
+      "issues": [
+        {
+          "code": "UNTRACKED_RISKY_CLAIM",
+          "snippet": "WSAVA는 소형 노령견에게 연 1~2회 정기 청진을 권고한다."
+        }
+      ]
+    },
+    {
+      "slug": "dog-cancer-early-detection",
+      "type": "blog",
+      "file": "db/seeds/blog-posts-8.ts",
+      "riskyCount": 1,
+      "byStatus": {
+        "verified": 0,
+        "qualified": 0,
+        "removed": 0,
+        "needs_review": 0
+      },
+      "untracked": [
+        "정기 전신 검진의 중요성 AVMA는 7세 이상 노령견에게 연 2회 전신 검진(혈액검사·소변검사·흉부 방사선 포함)을 권고한다."
+      ],
+      "issues": [
+        {
+          "code": "UNTRACKED_RISKY_CLAIM",
+          "snippet": "정기 전신 검진의 중요성 AVMA는 7세 이상 노령견에게 연 2회 전신 검진(혈액검사·소변검사·흉부 방사선 포함)을 권고한다."
+        }
+      ]
+    },
+    {
+      "slug": "dog-allergic-rhinitis-guide",
+      "type": "blog",
+      "file": "db/seeds/blog-posts-8.ts",
+      "riskyCount": 1,
+      "byStatus": {
+        "verified": 0,
+        "qualified": 0,
+        "removed": 0,
+        "needs_review": 0
+      },
+      "untracked": [
+        "WSAVA가 권고하는 피부반응검사(intradermal test)나 혈청 알러지 검사로 원인 항원을 특정할 수 있다."
+      ],
+      "issues": [
+        {
+          "code": "UNTRACKED_RISKY_CLAIM",
+          "snippet": "WSAVA가 권고하는 피부반응검사(intradermal test)나 혈청 알러지 검사로 원인 항원을 특정할 수 있다."
+        }
+      ]
+    },
+    {
+      "slug": "cat-constipation-guide",
+      "type": "blog",
+      "file": "db/seeds/blog-posts-8.ts",
+      "riskyCount": 2,
+      "byStatus": {
+        "verified": 0,
+        "qualified": 0,
+        "removed": 0,
+        "needs_review": 0
+      },
+      "untracked": [
+        "건식 사료 위주 식단, 물 섭취 부족 헤어볼 과다 : 소화관 내 털 축적이 배변을 방해 스트레스 : 환경 변화, 화장실 청결 불량 운동 부족 : 실내 비활동적 생활 거대결장증(megacolon) : 결장 근육의 만성 이완으로 배변 능력 저하 — 반복되는 변비의 결과물인 경우가 많다 이물",
+        "즉시 동물병원 가야 하는 경우 48시간 이상 배변이 전혀 없는 경우 구토 동반 변비 — Merck VM 기준 장폐색 가능성 배에 딱딱한 덩어리가 만져지는 경우 극도의 무기력, 식욕 소실 변비가 반복되는 경우 (거대결장증 진단 필요) 수분 섭취 늘리는 방법은 고양이 물 섭취 늘리는 법 을"
+      ],
+      "issues": [
+        {
+          "code": "UNTRACKED_RISKY_CLAIM",
+          "snippet": "건식 사료 위주 식단, 물 섭취 부족 헤어볼 과다 : 소화관 내 털 축적이 배변을 방해 스트레스 : 환경 변화, 화장실 청결 불량 운동 부족 : 실내 비활동적 생활 거대결장증(megacolon) : 결장 근육의 만성 이완으로 배변 능력 저하 — 반복되는 변비의 결과물인 경우가 많다 이물"
+        },
+        {
+          "code": "UNTRACKED_RISKY_CLAIM",
+          "snippet": "즉시 동물병원 가야 하는 경우 48시간 이상 배변이 전혀 없는 경우 구토 동반 변비 — Merck VM 기준 장폐색 가능성 배에 딱딱한 덩어리가 만져지는 경우 극도의 무기력, 식욕 소실 변비가 반복되는 경우 (거대결장증 진단 필요) 수분 섭취 늘리는 방법은 고양이 물 섭취 늘리는 법 을"
+        }
+      ]
+    },
+    {
+      "slug": "dog-broken-nail-guide",
+      "type": "blog",
+      "file": "db/seeds/blog-posts-8.ts",
+      "riskyCount": 2,
+      "byStatus": {
+        "verified": 0,
+        "qualified": 0,
+        "removed": 0,
+        "needs_review": 0
+      },
+      "untracked": [
+        "출혈 지혈 AVMA 기본 응급처치 지침: 깨끗한 거즈나 수건으로 부상 부위를 부드럽게 5~10분 압박한다 지혈 파우더(지혈제)나 전분(콘스타치)을 소량 눌러대면 지혈에 도움이 된다 혈관이 노출된 경우 지혈 후에도 감염 예방이 필요하다 부러진 발톱 처리 발톱 끝만 갈라진 경우: 손질 가위",
+        "동물병원에 가야 하는 경우 발톱이 완전히 뽑혔거나 뿌리에서 부러진 경우 10분 이상 지혈을 해도 출혈이 멈추지 않는 경우 부상 부위에 붉음·부종·분비물 등 감염 신호가 있는 경우 강아지가 발에 체중을 전혀 못 싣는 경우 감염 신호 모니터링 응급 처치 후 2~3일은 매일 부상 부위를 확인"
+      ],
+      "issues": [
+        {
+          "code": "UNTRACKED_RISKY_CLAIM",
+          "snippet": "출혈 지혈 AVMA 기본 응급처치 지침: 깨끗한 거즈나 수건으로 부상 부위를 부드럽게 5~10분 압박한다 지혈 파우더(지혈제)나 전분(콘스타치)을 소량 눌러대면 지혈에 도움이 된다 혈관이 노출된 경우 지혈 후에도 감염 예방이 필요하다 부러진 발톱 처리 발톱 끝만 갈라진 경우: 손질 가위"
+        },
+        {
+          "code": "UNTRACKED_RISKY_CLAIM",
+          "snippet": "동물병원에 가야 하는 경우 발톱이 완전히 뽑혔거나 뿌리에서 부러진 경우 10분 이상 지혈을 해도 출혈이 멈추지 않는 경우 부상 부위에 붉음·부종·분비물 등 감염 신호가 있는 경우 강아지가 발에 체중을 전혀 못 싣는 경우 감염 신호 모니터링 응급 처치 후 2~3일은 매일 부상 부위를 확인"
+        }
+      ]
+    },
+    {
+      "slug": "senior-dog-health-management",
+      "type": "blog",
+      "file": "db/seeds/blog-posts-8.ts",
+      "riskyCount": 2,
+      "byStatus": {
+        "verified": 0,
+        "qualified": 0,
+        "removed": 0,
+        "needs_review": 0
+      },
+      "untracked": [
+        "미국동물병원협회(AAHA)에 따르면 소형견 기준 7세, 대형견은 5~6세면 노령에 접어든다.",
+        "연 2회 검진이 필수인 이유 AAHA와 WSAVA는 7세 이상 강아지에게 연 2회 전신 검진을 권고한다."
+      ],
+      "issues": [
+        {
+          "code": "UNTRACKED_RISKY_CLAIM",
+          "snippet": "미국동물병원협회(AAHA)에 따르면 소형견 기준 7세, 대형견은 5~6세면 노령에 접어든다."
+        },
+        {
+          "code": "UNTRACKED_RISKY_CLAIM",
+          "snippet": "연 2회 검진이 필수인 이유 AAHA와 WSAVA는 7세 이상 강아지에게 연 2회 전신 검진을 권고한다."
+        }
+      ]
+    },
+    {
+      "slug": "dog-mvd-mitral-valve-disease",
+      "type": "blog",
+      "file": "db/seeds/blog-posts-80.ts",
+      "riskyCount": 1,
+      "byStatus": {
+        "verified": 0,
+        "qualified": 0,
+        "removed": 0,
+        "needs_review": 0
+      },
+      "untracked": [
+        "ACVIM 단계별 분류 단계 특징 치료 A 위험 품종, 이상 없음 모니터링만 B1 심잡음 있음, 심장 비대 없음 모니터링 B2 심잡음 + 심장 비대 피모벤단 시작 C 심부전 증상 발현 적극 약물 치료 D 약물 저항성 심부전 고용량·복합 치료 심잡음 발견 후 체크리스트 심잡음 발견 시 권"
+      ],
+      "issues": [
+        {
+          "code": "UNTRACKED_RISKY_CLAIM",
+          "snippet": "ACVIM 단계별 분류 단계 특징 치료 A 위험 품종, 이상 없음 모니터링만 B1 심잡음 있음, 심장 비대 없음 모니터링 B2 심잡음 + 심장 비대 피모벤단 시작 C 심부전 증상 발현 적극 약물 치료 D 약물 저항성 심부전 고용량·복합 치료 심잡음 발견 후 체크리스트 심잡음 발견 시 권"
+        }
+      ]
+    },
+    {
+      "slug": "pet-owner-estate-planning",
+      "type": "blog",
+      "file": "db/seeds/blog-posts-80.ts",
+      "riskyCount": 1,
+      "byStatus": {
+        "verified": 0,
+        "qualified": 0,
+        "removed": 0,
+        "needs_review": 0
+      },
+      "untracked": [
+        "당장 할 수 있는 준비 임시 보호자 최소 2명 지정 및 동의 받기 반려동물 정보 문서 작성 (의료 기록·약·사료 정보·수의사 연락처) 보호자 지갑에 응급 카드 보관 마지막으로 \"내가 없어지면\"은 생각하기 싫은 주제지만, 반려동물을 진정으로 사랑한다면 그 이후를 준비하는 것도 사랑의 일부"
+      ],
+      "issues": [
+        {
+          "code": "UNTRACKED_RISKY_CLAIM",
+          "snippet": "당장 할 수 있는 준비 임시 보호자 최소 2명 지정 및 동의 받기 반려동물 정보 문서 작성 (의료 기록·약·사료 정보·수의사 연락처) 보호자 지갑에 응급 카드 보관 마지막으로 \"내가 없어지면\"은 생각하기 싫은 주제지만, 반려동물을 진정으로 사랑한다면 그 이후를 준비하는 것도 사랑의 일부"
+        }
+      ]
+    },
+    {
+      "slug": "dog-atopic-dermatitis-management",
+      "type": "blog",
+      "file": "db/seeds/blog-posts-80.ts",
+      "riskyCount": 1,
+      "byStatus": {
+        "verified": 0,
+        "qualified": 0,
+        "removed": 0,
+        "needs_review": 0
+      },
+      "untracked": [
+        "촉발 요인 관리 흔한 촉발 요인과 관리 • 집 먼지 진드기: 침구 주 2회 세탁, 강아지 침대 자주 청소 • 꽃가루: 산책 후 발·얼굴 닦기 • 곰팡이: 습도 50% 이하 유지 • 이차 세균·효모 감염: 증상 악화 시 즉시 수의사 치료 치료 옵션 비교 사이토포인트(Cytopoint) :"
+      ],
+      "issues": [
+        {
+          "code": "UNTRACKED_RISKY_CLAIM",
+          "snippet": "촉발 요인 관리 흔한 촉발 요인과 관리 • 집 먼지 진드기: 침구 주 2회 세탁, 강아지 침대 자주 청소 • 꽃가루: 산책 후 발·얼굴 닦기 • 곰팡이: 습도 50% 이하 유지 • 이차 세균·효모 감염: 증상 악화 시 즉시 수의사 치료 치료 옵션 비교 사이토포인트(Cytopoint) :"
+        }
+      ]
+    },
+    {
+      "slug": "dog-diabetes-management",
+      "type": "blog",
+      "file": "db/seeds/blog-posts-82.ts",
+      "riskyCount": 1,
+      "byStatus": {
+        "verified": 0,
+        "qualified": 0,
+        "removed": 0,
+        "needs_review": 0
+      },
+      "untracked": [
+        "인슐린 투여 방법 인슐린 투여 기본 원칙 • 식사 후 즉시 투여 (식욕 확인 후) • 주사 부위: 목덜미 또는 옆구리 피하 • 매 투여 위치를 약간씩 변경 (피부 경화 예방) • 먹지 않으면 투여 전 수의사 상담 • 개봉 인슐린은 냉장 보관, 흔들지 않기 (서서히 굴리기) 혈당 모니터링"
+      ],
+      "issues": [
+        {
+          "code": "UNTRACKED_RISKY_CLAIM",
+          "snippet": "인슐린 투여 방법 인슐린 투여 기본 원칙 • 식사 후 즉시 투여 (식욕 확인 후) • 주사 부위: 목덜미 또는 옆구리 피하 • 매 투여 위치를 약간씩 변경 (피부 경화 예방) • 먹지 않으면 투여 전 수의사 상담 • 개봉 인슐린은 냉장 보관, 흔들지 않기 (서서히 굴리기) 혈당 모니터링"
+        }
+      ]
+    },
+    {
+      "slug": "cat-diabetes-insulin-guide",
+      "type": "blog",
+      "file": "db/seeds/blog-posts-82.ts",
+      "riskyCount": 1,
+      "byStatus": {
+        "verified": 0,
+        "qualified": 0,
+        "removed": 0,
+        "needs_review": 0
+      },
+      "untracked": [
+        "관해를 위한 핵심 전략 관해 가능성을 높이는 방법 • 진단 직후 집중 인슐린 치료 (혈당 빠르게 정상화) • 저탄수화물·고단백 식이로 즉시 전환 (탄수화물 10% 이하 DM 기준) • 체중 감량 (비만이 인슐린 저항성의 원인) • 주 1회 이상 혈당 모니터링 저탄수화물 식이 습식 사료 "
+      ],
+      "issues": [
+        {
+          "code": "UNTRACKED_RISKY_CLAIM",
+          "snippet": "관해를 위한 핵심 전략 관해 가능성을 높이는 방법 • 진단 직후 집중 인슐린 치료 (혈당 빠르게 정상화) • 저탄수화물·고단백 식이로 즉시 전환 (탄수화물 10% 이하 DM 기준) • 체중 감량 (비만이 인슐린 저항성의 원인) • 주 1회 이상 혈당 모니터링 저탄수화물 식이 습식 사료 "
+        }
+      ]
+    },
+    {
+      "slug": "pet-apartment-rules-dispute",
+      "type": "blog",
+      "file": "db/seeds/blog-posts-82.ts",
+      "riskyCount": 1,
+      "byStatus": {
+        "verified": 0,
+        "qualified": 0,
+        "removed": 0,
+        "needs_review": 0
+      },
+      "untracked": [
+        "규약으로 규제 가능한 것 엘리베이터 이동 시 이동장 사용 의무 공용 시설 사용 제한 (어린이 놀이터 등) 목줄 의무 착용 배설물 즉시 처리 의무 규약으로 규제가 어려운 것 관리 규약의 한계 • 절대적 반려동물 사육 금지 → 주거권 침해 소지 있음 • 특정 품종 일방적 금지 → 과도한 제"
+      ],
+      "issues": [
+        {
+          "code": "UNTRACKED_RISKY_CLAIM",
+          "snippet": "규약으로 규제 가능한 것 엘리베이터 이동 시 이동장 사용 의무 공용 시설 사용 제한 (어린이 놀이터 등) 목줄 의무 착용 배설물 즉시 처리 의무 규약으로 규제가 어려운 것 관리 규약의 한계 • 절대적 반려동물 사육 금지 → 주거권 침해 소지 있음 • 특정 품종 일방적 금지 → 과도한 제"
+        }
+      ]
+    },
+    {
+      "slug": "dog-hypoglycemia-small-breeds",
+      "type": "blog",
+      "file": "db/seeds/blog-posts-84.ts",
+      "riskyCount": 1,
+      "byStatus": {
+        "verified": 0,
+        "qualified": 0,
+        "removed": 0,
+        "needs_review": 0
+      },
+      "untracked": [
+        "의식 없으면 수건에 감싸 체온 유지 + 즉시 응급병원 ⚠️ 강제로 물 먹이지 않기 — 흡인 위험 예방 소형견 어린 강아지: 하루 4~5회 소량 급식 (3개월 미만) 여행·스트레스 상황 전 간식 제공 수술 전 금식은 수의사 지시 준수 (소형견은 더 짧게) 당뇨견 저혈당과의 차이 당뇨 치료"
+      ],
+      "issues": [
+        {
+          "code": "UNTRACKED_RISKY_CLAIM",
+          "snippet": "의식 없으면 수건에 감싸 체온 유지 + 즉시 응급병원 ⚠️ 강제로 물 먹이지 않기 — 흡인 위험 예방 소형견 어린 강아지: 하루 4~5회 소량 급식 (3개월 미만) 여행·스트레스 상황 전 간식 제공 수술 전 금식은 수의사 지시 준수 (소형견은 더 짧게) 당뇨견 저혈당과의 차이 당뇨 치료"
+        }
+      ]
+    },
+    {
+      "slug": "cat-hypertension-management",
+      "type": "blog",
+      "file": "db/seeds/blog-posts-84.ts",
+      "riskyCount": 1,
+      "byStatus": {
+        "verified": 0,
+        "qualified": 0,
+        "removed": 0,
+        "needs_review": 0
+      },
+      "untracked": [
+        "주요 원인 만성 신장병(CKD): 가장 흔한 원인 갑상선 기능항진증: 심박수 증가 → 혈압 상승 당뇨: 혈관 손상 특발성 고혈압 (원인 불명) 즉시 병원이 필요한 신호 고혈압 긴급 신호 • 눈이 빨개짐 (결막·홍채 충혈) • 동공이 극도로 확장, 반응 없음 • 갑자기 잘 보이지 않는 것"
+      ],
+      "issues": [
+        {
+          "code": "UNTRACKED_RISKY_CLAIM",
+          "snippet": "주요 원인 만성 신장병(CKD): 가장 흔한 원인 갑상선 기능항진증: 심박수 증가 → 혈압 상승 당뇨: 혈관 손상 특발성 고혈압 (원인 불명) 즉시 병원이 필요한 신호 고혈압 긴급 신호 • 눈이 빨개짐 (결막·홍채 충혈) • 동공이 극도로 확장, 반응 없음 • 갑자기 잘 보이지 않는 것"
+        }
+      ]
+    },
+    {
+      "slug": "pet-insurance-exclusion-clauses",
+      "type": "blog",
+      "file": "db/seeds/blog-posts-84.ts",
+      "riskyCount": 1,
+      "byStatus": {
+        "verified": 0,
+        "qualified": 0,
+        "removed": 0,
+        "needs_review": 0
+      },
+      "untracked": [
+        "흔한 면책 조항 유형 선천성·유전성 질환 : 슬개골 탈구(일부), PKD, 심장 선천성 기형 — 기존 정밀 검사 여부에 따라 예방적 처치 : 예방접종, 예방 구충, 정기 스케일링, 중성화 수술 임신·분만 : 대부분 보장 제외 대기기간 중 발생 : 가입 후 15~180일 내 질환 기존 질"
+      ],
+      "issues": [
+        {
+          "code": "UNTRACKED_RISKY_CLAIM",
+          "snippet": "흔한 면책 조항 유형 선천성·유전성 질환 : 슬개골 탈구(일부), PKD, 심장 선천성 기형 — 기존 정밀 검사 여부에 따라 예방적 처치 : 예방접종, 예방 구충, 정기 스케일링, 중성화 수술 임신·분만 : 대부분 보장 제외 대기기간 중 발생 : 가입 후 15~180일 내 질환 기존 질"
+        }
+      ]
+    },
+    {
+      "slug": "dog-gastric-dilatation-volvulus",
+      "type": "blog",
+      "file": "db/seeds/blog-posts-85.ts",
+      "riskyCount": 1,
+      "byStatus": {
+        "verified": 0,
+        "qualified": 0,
+        "removed": 0,
+        "needs_review": 0
+      },
+      "untracked": [
+        "위염전 발생 원인 식후 격렬한 운동 한 번에 많은 양의 식사 물을 과도하게 빠르게 마심 고령, 단일견 가정, 기질이 겁 많은 개 경고 신호 (즉시 응급병원) 위염전 긴급 신호 • 배가 갑자기 빵빵하게 부풀어오름 • 구역질하는데 아무것도 안 나옴 (건구역) • 극도의 불안·안절부절 • 침"
+      ],
+      "issues": [
+        {
+          "code": "UNTRACKED_RISKY_CLAIM",
+          "snippet": "위염전 발생 원인 식후 격렬한 운동 한 번에 많은 양의 식사 물을 과도하게 빠르게 마심 고령, 단일견 가정, 기질이 겁 많은 개 경고 신호 (즉시 응급병원) 위염전 긴급 신호 • 배가 갑자기 빵빵하게 부풀어오름 • 구역질하는데 아무것도 안 나옴 (건구역) • 극도의 불안·안절부절 • 침"
+        }
+      ]
+    },
+    {
+      "slug": "dog-leash-law-and-vicious-dogs",
+      "type": "blog",
+      "file": "db/seeds/blog-posts-89.ts",
+      "riskyCount": 1,
+      "byStatus": {
+        "verified": 0,
+        "qualified": 0,
+        "removed": 0,
+        "needs_review": 0
+      },
+      "untracked": [
+        "맹견 5종과 추가 의무 동물보호법상 맹견 (2024년 기준) • 도사견, 핏불테리어, 아메리칸 스태퍼드셔 테리어 • 스태퍼드셔 불 테리어, 로트와일러 맹견 의무 사항 • 외출 시 목줄 + 입마개 착용 필수 • 맹견 책임보험 가입 의무 • 맹견 소유자 교육 이수 의무 • 맹견 입양 시 신"
+      ],
+      "issues": [
+        {
+          "code": "UNTRACKED_RISKY_CLAIM",
+          "snippet": "맹견 5종과 추가 의무 동물보호법상 맹견 (2024년 기준) • 도사견, 핏불테리어, 아메리칸 스태퍼드셔 테리어 • 스태퍼드셔 불 테리어, 로트와일러 맹견 의무 사항 • 외출 시 목줄 + 입마개 착용 필수 • 맹견 책임보험 가입 의무 • 맹견 소유자 교육 이수 의무 • 맹견 입양 시 신"
+        }
+      ]
+    },
+    {
+      "slug": "cat-felv-guide",
+      "type": "blog",
+      "file": "db/seeds/blog-posts-9.ts",
+      "riskyCount": 1,
+      "byStatus": {
+        "verified": 0,
+        "qualified": 0,
+        "removed": 0,
+        "needs_review": 0
+      },
+      "untracked": [
+        "WSAVA는 실외 활동을 하는 모든 고양이에게 FeLV 예방접종을 핵심 백신으로 권고한다."
+      ],
+      "issues": [
+        {
+          "code": "UNTRACKED_RISKY_CLAIM",
+          "snippet": "WSAVA는 실외 활동을 하는 모든 고양이에게 FeLV 예방접종을 핵심 백신으로 권고한다."
+        }
+      ]
+    },
+    {
+      "slug": "dog-fracture-guide",
+      "type": "blog",
+      "file": "db/seeds/blog-posts-9.ts",
+      "riskyCount": 1,
+      "byStatus": {
+        "verified": 0,
+        "qualified": 0,
+        "removed": 0,
+        "needs_review": 0
+      },
+      "untracked": [
+        "부상 부위를 건드리지 않는다 AVMA 가이드라인에 따르면 집에서 직접 부목을 대거나 뼈를 맞추려는 시도는 오히려 추가 손상, 신경 압박, 혈관 손상을 유발할 수 있다."
+      ],
+      "issues": [
+        {
+          "code": "UNTRACKED_RISKY_CLAIM",
+          "snippet": "부상 부위를 건드리지 않는다 AVMA 가이드라인에 따르면 집에서 직접 부목을 대거나 뼈를 맞추려는 시도는 오히려 추가 손상, 신경 압박, 혈관 손상을 유발할 수 있다."
+        }
+      ]
+    },
+    {
+      "slug": "cat-fiv-guide",
+      "type": "blog",
+      "file": "db/seeds/blog-posts-9.ts",
+      "riskyCount": 1,
+      "byStatus": {
+        "verified": 0,
+        "qualified": 0,
+        "removed": 0,
+        "needs_review": 0
+      },
+      "untracked": [
+        "FIV 양성 고양이 관리 5원칙: 완전 실내 사육 — 면역 저하 상태에서 외부 병원체 노출 최소화 연 1~2회 이상 건강검진 — 반복 감염 조기 발견 완전 영양 사료 급여, 생식 금지 (식중독 위험) 스트레스 최소화 — 면역 기능 유지에 직결 예방접종 유지 — 단, 생백신은 수의사 지도"
+      ],
+      "issues": [
+        {
+          "code": "UNTRACKED_RISKY_CLAIM",
+          "snippet": "FIV 양성 고양이 관리 5원칙: 완전 실내 사육 — 면역 저하 상태에서 외부 병원체 노출 최소화 연 1~2회 이상 건강검진 — 반복 감염 조기 발견 완전 영양 사료 급여, 생식 금지 (식중독 위험) 스트레스 최소화 — 면역 기능 유지에 직결 예방접종 유지 — 단, 생백신은 수의사 지도"
+        }
+      ]
+    },
+    {
+      "slug": "dog-poisoning-first-aid",
+      "type": "blog",
+      "file": "db/seeds/blog-posts-9.ts",
+      "riskyCount": 3,
+      "byStatus": {
+        "verified": 0,
+        "qualified": 0,
+        "removed": 0,
+        "needs_review": 0
+      },
+      "untracked": [
+        "ASPCA는 반드시 수의사 지시 후에만 구토를 유발하라고 권고한다.",
+        "주요 독성 물질별 특징 자일리톨 (무설탕 껌·일부 땅콩버터) 섭취 후 30분~1시간 이내에 저혈당을 유발한다.",
+        "응급 병원과 사전 준비 야간·주말에는 24시간 응급 동물병원을 미리 파악해 두는 것이 중요하다."
+      ],
+      "issues": [
+        {
+          "code": "UNTRACKED_RISKY_CLAIM",
+          "snippet": "ASPCA는 반드시 수의사 지시 후에만 구토를 유발하라고 권고한다."
+        },
+        {
+          "code": "UNTRACKED_RISKY_CLAIM",
+          "snippet": "주요 독성 물질별 특징 자일리톨 (무설탕 껌·일부 땅콩버터) 섭취 후 30분~1시간 이내에 저혈당을 유발한다."
+        },
+        {
+          "code": "UNTRACKED_RISKY_CLAIM",
+          "snippet": "응급 병원과 사전 준비 야간·주말에는 24시간 응급 동물병원을 미리 파악해 두는 것이 중요하다."
+        }
+      ]
+    },
+    {
+      "slug": "cat-fip-guide",
+      "type": "blog",
+      "file": "db/seeds/blog-posts-9.ts",
+      "riskyCount": 2,
+      "byStatus": {
+        "verified": 0,
+        "qualified": 0,
+        "removed": 0,
+        "needs_review": 0
+      },
+      "untracked": [
+        "발생 위험 요소 2세 미만 어린 고양이에서 발생률 가장 높음 5마리 이상 다묘 환경에서 FCoV 노출 빈도 증가 순종 고양이에서 발생률 더 높다는 보고 있음 스트레스·이사·수술 등 면역 저하 이후 발병하는 경우 많음 10세 이상 노령묘에서도 두 번째 발생률 피크 두 가지 형태 — 습식과",
+        "주요 증상 — 형태별 정리 즉시 동물병원에 가야 할 증상 • 배가 급격히 불어오름 (복수) • 호흡 곤란 (흉수) • 갑작스러운 실명 또는 눈 색 변화 • 경련·발작 • 황달 (잇몸·눈 흰자가 노래짐) 공통 증상 지속적인 발열 (38.5°C 이상, 항생제에 반응하지 않음) 식욕 감소, "
+      ],
+      "issues": [
+        {
+          "code": "UNTRACKED_RISKY_CLAIM",
+          "snippet": "발생 위험 요소 2세 미만 어린 고양이에서 발생률 가장 높음 5마리 이상 다묘 환경에서 FCoV 노출 빈도 증가 순종 고양이에서 발생률 더 높다는 보고 있음 스트레스·이사·수술 등 면역 저하 이후 발병하는 경우 많음 10세 이상 노령묘에서도 두 번째 발생률 피크 두 가지 형태 — 습식과"
+        },
+        {
+          "code": "UNTRACKED_RISKY_CLAIM",
+          "snippet": "주요 증상 — 형태별 정리 즉시 동물병원에 가야 할 증상 • 배가 급격히 불어오름 (복수) • 호흡 곤란 (흉수) • 갑작스러운 실명 또는 눈 색 변화 • 경련·발작 • 황달 (잇몸·눈 흰자가 노래짐) 공통 증상 지속적인 발열 (38.5°C 이상, 항생제에 반응하지 않음) 식욕 감소, "
+        }
+      ]
+    },
+    {
+      "slug": "animal-protection-law-guide",
+      "type": "blog",
+      "file": "db/seeds/blog-posts-9.ts",
+      "riskyCount": 3,
+      "byStatus": {
+        "verified": 0,
+        "qualified": 0,
+        "removed": 0,
+        "needs_review": 0
+      },
+      "untracked": [
+        "동물등록 의무 생후 2개월 이상 반려견(개)은 동물등록이 법적 의무다.",
+        "외출 시 의무 — 목줄·인식표 반려견 외출 시 목줄 또는 가슴줄 착용 의무 — 미착용 시 과태료 인식표(동물등록번호·보호자 연락처) 부착 의무 맹견(도사견·아메리칸 핏불 테리어·로트와일러 등 5종 + 지정 품종): 입마개 + 2m 이내 목줄 의무 — 위반 시 형사처벌 반려견이 타인에게 ",
+        "2023년 개정으로 처벌이 강화됐다: 동물 죽임·심각한 학대: 최대 3년 이하 징역 또는 3,000만 원 이하 벌금 유기: 최대 300만 원 이하 과태료 (동물보호법 제10조) 반려동물 관련 기타 의무 사망한 반려동물 신고: 동물등록 정보 변경 신고 의무 (시군구청 또는 동물보호관리시스"
+      ],
+      "issues": [
+        {
+          "code": "UNTRACKED_RISKY_CLAIM",
+          "snippet": "동물등록 의무 생후 2개월 이상 반려견(개)은 동물등록이 법적 의무다."
+        },
+        {
+          "code": "UNTRACKED_RISKY_CLAIM",
+          "snippet": "외출 시 의무 — 목줄·인식표 반려견 외출 시 목줄 또는 가슴줄 착용 의무 — 미착용 시 과태료 인식표(동물등록번호·보호자 연락처) 부착 의무 맹견(도사견·아메리칸 핏불 테리어·로트와일러 등 5종 + 지정 품종): 입마개 + 2m 이내 목줄 의무 — 위반 시 형사처벌 반려견이 타인에게 "
+        },
+        {
+          "code": "UNTRACKED_RISKY_CLAIM",
+          "snippet": "2023년 개정으로 처벌이 강화됐다: 동물 죽임·심각한 학대: 최대 3년 이하 징역 또는 3,000만 원 이하 벌금 유기: 최대 300만 원 이하 과태료 (동물보호법 제10조) 반려동물 관련 기타 의무 사망한 반려동물 신고: 동물등록 정보 변경 신고 의무 (시군구청 또는 동물보호관리시스"
+        }
+      ]
+    },
+    {
+      "slug": "pet-insurance-comparison-guide",
+      "type": "blog",
+      "file": "db/seeds/blog-posts-9.ts",
+      "riskyCount": 1,
+      "byStatus": {
+        "verified": 0,
+        "qualified": 0,
+        "removed": 0,
+        "needs_review": 0
+      },
+      "untracked": [
+        "면책 사항 — 무엇을 안 커버하는가 금융감독원 보험다모아에 따르면 치과 치료(스케일링·발치)는 대부분의 펫보험 상품에서 면책 처리된다."
+      ],
+      "issues": [
+        {
+          "code": "UNTRACKED_RISKY_CLAIM",
+          "snippet": "면책 사항 — 무엇을 안 커버하는가 금융감독원 보험다모아에 따르면 치과 치료(스케일링·발치)는 대부분의 펫보험 상품에서 면책 처리된다."
+        }
+      ]
+    },
+    {
+      "slug": "vet-cost-saving-guide",
+      "type": "blog",
+      "file": "db/seeds/blog-posts-9.ts",
+      "riskyCount": 1,
+      "byStatus": {
+        "verified": 0,
+        "qualified": 0,
+        "removed": 0,
+        "needs_review": 0
+      },
+      "untracked": [
+        "한국소비자원이 발표한 동물병원 서비스 실태 조사에 따르면 동일한 진료 항목이 병원마다 최대 수십 배까지 차이가 나는 경우도 있다."
+      ],
+      "issues": [
+        {
+          "code": "UNTRACKED_RISKY_CLAIM",
+          "snippet": "한국소비자원이 발표한 동물병원 서비스 실태 조사에 따르면 동일한 진료 항목이 병원마다 최대 수십 배까지 차이가 나는 경우도 있다."
+        }
+      ]
+    },
+    {
+      "slug": "cat-toxoplasmosis-guide",
+      "type": "blog",
+      "file": "db/seeds/blog-posts-92.ts",
+      "riskyCount": 1,
+      "byStatus": {
+        "verified": 0,
+        "qualified": 0,
+        "removed": 0,
+        "needs_review": 0
+      },
+      "untracked": [
+        "실제 감염 경로와 확률 주요 감염 경로 (순위) 1위: 덜 익힌 육류 섭취 — 압도적으로 가장 흔한 경로 2위: 정원 흙·오염된 토양 접촉 3위: 고양이 변 청소 — 오염된 분변 48시간 이내 처리 시 난포낭 미성숙으로 위험 낮음 ▶ 실내 생활 고양이 + 사료만 먹이는 경우 오염 가능성"
+      ],
+      "issues": [
+        {
+          "code": "UNTRACKED_RISKY_CLAIM",
+          "snippet": "실제 감염 경로와 확률 주요 감염 경로 (순위) 1위: 덜 익힌 육류 섭취 — 압도적으로 가장 흔한 경로 2위: 정원 흙·오염된 토양 접촉 3위: 고양이 변 청소 — 오염된 분변 48시간 이내 처리 시 난포낭 미성숙으로 위험 낮음 ▶ 실내 생활 고양이 + 사료만 먹이는 경우 오염 가능성"
+        }
+      ]
+    },
+    {
+      "slug": "dog-bee-sting-allergic-reaction",
+      "type": "blog",
+      "file": "db/seeds/blog-posts-93.ts",
+      "riskyCount": 1,
+      "byStatus": {
+        "verified": 0,
+        "qualified": 0,
+        "removed": 0,
+        "needs_review": 0
+      },
+      "untracked": [
+        "쏘인 직후 확인할 것 벌침이 남아있다면 신용카드 등으로 긁어서 제거 (집지 않기 — 독 쥐어짜짐) 쏘인 부위 냉찜질로 부종·통증 완화 반응 수준 관찰 시작 경증 반응 vs 아나필락시스 구분 구분 증상 대처 경증 쏘인 부위 부종·통증·가려움 냉찜질·경과 관찰 중증(아나필락시스) 전신 두드"
+      ],
+      "issues": [
+        {
+          "code": "UNTRACKED_RISKY_CLAIM",
+          "snippet": "쏘인 직후 확인할 것 벌침이 남아있다면 신용카드 등으로 긁어서 제거 (집지 않기 — 독 쥐어짜짐) 쏘인 부위 냉찜질로 부종·통증 완화 반응 수준 관찰 시작 경증 반응 vs 아나필락시스 구분 구분 증상 대처 경증 쏘인 부위 부종·통증·가려움 냉찜질·경과 관찰 중증(아나필락시스) 전신 두드"
+        }
+      ]
+    },
+    {
+      "slug": "cat-panleukopenia-prevention",
+      "type": "blog",
+      "file": "db/seeds/blog-posts-93.ts",
+      "riskyCount": 2,
+      "byStatus": {
+        "verified": 0,
+        "qualified": 0,
+        "removed": 0,
+        "needs_review": 0
+      },
+      "untracked": [
+        "범백혈구 감소증(범백)은 치료를 해도 어린 고양이에서 50~90%의 치사율을 보이는 치명적인 질환이다.",
+        "증상 고열, 식욕 완전 소실 심한 구토·혈변 극도의 무기력 (머리를 들지 못하는 수준) 탈수 급격히 진행 빠른 악화 — 증상 발현 후 48~72시간 내 사망 가능 치사율이 높은 이유 범백 치사율 • 키튼(6개월 미만): 미치료 시 90% 이상 • 성묘: 25~60% • 집중 치료(입원 "
+      ],
+      "issues": [
+        {
+          "code": "UNTRACKED_RISKY_CLAIM",
+          "snippet": "범백혈구 감소증(범백)은 치료를 해도 어린 고양이에서 50~90%의 치사율을 보이는 치명적인 질환이다."
+        },
+        {
+          "code": "UNTRACKED_RISKY_CLAIM",
+          "snippet": "증상 고열, 식욕 완전 소실 심한 구토·혈변 극도의 무기력 (머리를 들지 못하는 수준) 탈수 급격히 진행 빠른 악화 — 증상 발현 후 48~72시간 내 사망 가능 치사율이 높은 이유 범백 치사율 • 키튼(6개월 미만): 미치료 시 90% 이상 • 성묘: 25~60% • 집중 치료(입원 "
+        }
+      ]
+    },
+    {
+      "slug": "dog-vomiting-cause-guide",
+      "type": "blog",
+      "file": "db/seeds/blog-posts-96.ts",
+      "riskyCount": 1,
+      "byStatus": {
+        "verified": 0,
+        "qualified": 0,
+        "removed": 0,
+        "needs_review": 0
+      },
+      "untracked": [
+        "즉시 병원이 필요한 구토 즉시 병원 신호 • 구토에 혈액 포함 • 24시간 내 3회 이상 반복 • 구토 후에도 계속 헛구역질 • 무기력·복부 팽만 동반 (위염전 가능성) • 이물질 삼킨 것이 의심됨 • 어린 강아지·노령견에서 반복 원인별 분류 식이 관련: 과식·빠른 식사·사료 전환·이물"
+      ],
+      "issues": [
+        {
+          "code": "UNTRACKED_RISKY_CLAIM",
+          "snippet": "즉시 병원이 필요한 구토 즉시 병원 신호 • 구토에 혈액 포함 • 24시간 내 3회 이상 반복 • 구토 후에도 계속 헛구역질 • 무기력·복부 팽만 동반 (위염전 가능성) • 이물질 삼킨 것이 의심됨 • 어린 강아지·노령견에서 반복 원인별 분류 식이 관련: 과식·빠른 식사·사료 전환·이물"
+        }
+      ]
+    },
+    {
+      "slug": "pet-insurance-premium-comparison",
+      "type": "blog",
+      "file": "db/seeds/blog-posts-96.ts",
+      "riskyCount": 1,
+      "byStatus": {
+        "verified": 0,
+        "qualified": 0,
+        "removed": 0,
+        "needs_review": 0
+      },
+      "untracked": [
+        "같은 품종인데 보험료가 2배 차이가 난다."
+      ],
+      "issues": [
+        {
+          "code": "UNTRACKED_RISKY_CLAIM",
+          "snippet": "같은 품종인데 보험료가 2배 차이가 난다."
+        }
+      ]
+    },
+    {
+      "slug": "dog-obesity-health-risks",
+      "type": "blog",
+      "file": "db/seeds/blog-posts-97.ts",
+      "riskyCount": 1,
+      "byStatus": {
+        "verified": 0,
+        "qualified": 0,
+        "removed": 0,
+        "needs_review": 0
+      },
+      "untracked": [
+        "과체중의 건강 위험 관절 질환 악화 (슬개골·관절염 조기 발생) 당뇨 위험 증가 심장·호흡기 부담 증가 수술 위험 증가 (마취 합병증) 면역 기능 저하 종양 발생률 증가 BCS(신체충실지수) 자가 진단 BCS 자가 확인 방법 • 갈비뼈 : 쉽게 만져지면 정상, 안 만져지면 과체중 • 허"
+      ],
+      "issues": [
+        {
+          "code": "UNTRACKED_RISKY_CLAIM",
+          "snippet": "과체중의 건강 위험 관절 질환 악화 (슬개골·관절염 조기 발생) 당뇨 위험 증가 심장·호흡기 부담 증가 수술 위험 증가 (마취 합병증) 면역 기능 저하 종양 발생률 증가 BCS(신체충실지수) 자가 진단 BCS 자가 확인 방법 • 갈비뼈 : 쉽게 만져지면 정상, 안 만져지면 과체중 • 허"
+        }
+      ]
+    },
+    {
+      "slug": "dog-cherry-eye-guide",
+      "type": "blog",
+      "file": "db/seeds/blog-posts-98.ts",
+      "riskyCount": 1,
+      "byStatus": {
+        "verified": 0,
+        "qualified": 0,
+        "removed": 0,
+        "needs_review": 0
+      },
+      "untracked": [
+        "증상 눈 안쪽 구석에서 분홍색~붉은색 덩어리가 보인다 (간헐적으로 들어갔다 나오기도 한다) 눈곱, 눈물, 결막 충혈 눈을 비비거나 앞발로 긁음 덩어리가 오래 노출되면 건조, 염증, 궤양이 생길 수 있다 치료: 제거하지 말고 제자리로 왜 눈물샘을 제거하면 안 될까 • 제3안검 눈물샘은 눈"
+      ],
+      "issues": [
+        {
+          "code": "UNTRACKED_RISKY_CLAIM",
+          "snippet": "증상 눈 안쪽 구석에서 분홍색~붉은색 덩어리가 보인다 (간헐적으로 들어갔다 나오기도 한다) 눈곱, 눈물, 결막 충혈 눈을 비비거나 앞발로 긁음 덩어리가 오래 노출되면 건조, 염증, 궤양이 생길 수 있다 치료: 제거하지 말고 제자리로 왜 눈물샘을 제거하면 안 될까 • 제3안검 눈물샘은 눈"
+        }
+      ]
+    },
+    {
+      "slug": "dog-bath-guide",
+      "type": "blog",
+      "file": "db/seeds/blog-posts.ts",
+      "riskyCount": 2,
+      "byStatus": {
+        "verified": 0,
+        "qualified": 0,
+        "removed": 0,
+        "needs_review": 0
+      },
+      "untracked": [
+        "ASPCA는 건강한 성견의 목욕 주기를 3~4주에 1회로 권장한다.",
+        "품종별 권장 목욕 주기 단모종 (비글, 퍼그 등) : 6~8주에 1회 장모종 (말티즈, 시추 등) : 1~2주에 1회 이중모 (허스키, 골든 리트리버 등) : 4~6주에 1회 건강한 성견 기본값 : 3~4주에 1회 (ASPCA 권장) 1단계 — 목욕 전 빗질 먼저 물에 젖으면 엉킨 털은"
+      ],
+      "issues": [
+        {
+          "code": "UNTRACKED_RISKY_CLAIM",
+          "snippet": "ASPCA는 건강한 성견의 목욕 주기를 3~4주에 1회로 권장한다."
+        },
+        {
+          "code": "UNTRACKED_RISKY_CLAIM",
+          "snippet": "품종별 권장 목욕 주기 단모종 (비글, 퍼그 등) : 6~8주에 1회 장모종 (말티즈, 시추 등) : 1~2주에 1회 이중모 (허스키, 골든 리트리버 등) : 4~6주에 1회 건강한 성견 기본값 : 3~4주에 1회 (ASPCA 권장) 1단계 — 목욕 전 빗질 먼저 물에 젖으면 엉킨 털은"
+        }
+      ]
+    },
+    {
+      "slug": "dog-vomiting-when-to-vet",
+      "type": "blog",
+      "file": "db/seeds/blog-posts.ts",
+      "riskyCount": 2,
+      "byStatus": {
+        "verified": 0,
+        "qualified": 0,
+        "removed": 0,
+        "needs_review": 0
+      },
+      "untracked": [
+        "강아지가 한 번 구토했다면 대부분 12~24시간 경과 관찰이 가능하지만, 혈액·이물질이 보이거나 2시간 안에 3회 이상 반복되거나 무기력이 동반되면 즉시 동물병원을 방문해야 한다.",
+        "⚠️ 즉시 동물병원 — 이 신호 중 하나라도 있으면 구토물에 혈액(붉거나 커피찌꺼기 색) 이 섞인 경우 2시간 내 3회 이상 반복 구토 구토 + 심한 무기력, 쓰러짐 배가 팽팽하게 부풀었을 때 (위 염전 의심) 독성 물질·이물질(장난감, 뼈 조각) 섭취가 의심될 때 구토 + 혈변 또는 "
+      ],
+      "issues": [
+        {
+          "code": "UNTRACKED_RISKY_CLAIM",
+          "snippet": "강아지가 한 번 구토했다면 대부분 12~24시간 경과 관찰이 가능하지만, 혈액·이물질이 보이거나 2시간 안에 3회 이상 반복되거나 무기력이 동반되면 즉시 동물병원을 방문해야 한다."
+        },
+        {
+          "code": "UNTRACKED_RISKY_CLAIM",
+          "snippet": "⚠️ 즉시 동물병원 — 이 신호 중 하나라도 있으면 구토물에 혈액(붉거나 커피찌꺼기 색) 이 섞인 경우 2시간 내 3회 이상 반복 구토 구토 + 심한 무기력, 쓰러짐 배가 팽팽하게 부풀었을 때 (위 염전 의심) 독성 물질·이물질(장난감, 뼈 조각) 섭취가 의심될 때 구토 + 혈변 또는 "
+        }
+      ]
+    },
+    {
+      "slug": "petloss-care-guide",
+      "type": "guide",
+      "file": "db/seeds/contents.ts",
+      "riskyCount": 1,
+      "byStatus": {
+        "verified": 0,
+        "qualified": 0,
+        "removed": 0,
+        "needs_review": 0
+      },
+      "untracked": [
+        "정신건강복지센터 : 무료 전화 상담 1577-0199 자살예방 상담전화(보건복지부) : 24시간 109 펫로스 온라인 커뮤니티나 자조 모임 참여 4단계 — 새 반려동물 입양 결정 충분한 애도 기간 없이 서둘러 새 동물을 입양하면 비교·죄책감이 생길 수 있습니다."
+      ],
+      "issues": [
+        {
+          "code": "UNTRACKED_RISKY_CLAIM",
+          "snippet": "정신건강복지센터 : 무료 전화 상담 1577-0199 자살예방 상담전화(보건복지부) : 24시간 109 펫로스 온라인 커뮤니티나 자조 모임 참여 4단계 — 새 반려동물 입양 결정 충분한 애도 기간 없이 서둘러 새 동물을 입양하면 비교·죄책감이 생길 수 있습니다."
+        }
+      ]
+    },
+    {
+      "slug": "cat-vaccination-schedule",
+      "type": "guide",
+      "file": "db/seeds/contents.ts",
+      "riskyCount": 3,
+      "byStatus": {
+        "verified": 0,
+        "qualified": 0,
+        "removed": 0,
+        "needs_review": 0
+      },
+      "untracked": [
+        "핵심 3종 백신 (Core Vaccine) WSAVA(세계소동물수의사회)는 아래 3종을 모든 고양이에게 필수 접종으로 권고합니다.",
+        "새끼 고양이 치사율 최대 90%.",
+        "접종 전후 주의사항 접종 당일: 목욕·이동 스트레스 최소화 접종 후 15~20분: 동물병원 내 대기 (아나필락시스 반응 관찰) 이상 반응: 안면 부종, 구토, 호흡 이상 발생 시 즉시 병원 방문 발열(39.5°C 이상), 식욕 부진, 기력 저하 상태에서는 접종 연기"
+      ],
+      "issues": [
+        {
+          "code": "UNTRACKED_RISKY_CLAIM",
+          "snippet": "핵심 3종 백신 (Core Vaccine) WSAVA(세계소동물수의사회)는 아래 3종을 모든 고양이에게 필수 접종으로 권고합니다."
+        },
+        {
+          "code": "UNTRACKED_RISKY_CLAIM",
+          "snippet": "새끼 고양이 치사율 최대 90%."
+        },
+        {
+          "code": "UNTRACKED_RISKY_CLAIM",
+          "snippet": "접종 전후 주의사항 접종 당일: 목욕·이동 스트레스 최소화 접종 후 15~20분: 동물병원 내 대기 (아나필락시스 반응 관찰) 이상 반응: 안면 부종, 구토, 호흡 이상 발생 시 즉시 병원 방문 발열(39.5°C 이상), 식욕 부진, 기력 저하 상태에서는 접종 연기"
+        }
+      ]
+    },
+    {
+      "slug": "dog-patellar-luxation",
+      "type": "guide",
+      "file": "db/seeds/contents.ts",
+      "riskyCount": 1,
+      "byStatus": {
+        "verified": 0,
+        "qualified": 0,
+        "removed": 0,
+        "needs_review": 0
+      },
+      "untracked": [
+        "수동 복위 불가, 심각한 보행 장애 복위 불가 주요 증상 다리 들어올리기 : 걷다가 갑자기 한쪽 뒷다리를 들고 깽깽이 걸음 까치발 걷기 : 발 끝으로만 걷는 자세, 무릎 구부림 감소 관절 소리 : 슬개골 이동 시 '뚝' 또는 '딸깍' 소리 앉기 거부·계단 회피 : 통증으로 인한 행동 변"
+      ],
+      "issues": [
+        {
+          "code": "UNTRACKED_RISKY_CLAIM",
+          "snippet": "수동 복위 불가, 심각한 보행 장애 복위 불가 주요 증상 다리 들어올리기 : 걷다가 갑자기 한쪽 뒷다리를 들고 깽깽이 걸음 까치발 걷기 : 발 끝으로만 걷는 자세, 무릎 구부림 감소 관절 소리 : 슬개골 이동 시 '뚝' 또는 '딸깍' 소리 앉기 거부·계단 회피 : 통증으로 인한 행동 변"
+        }
+      ]
+    },
+    {
+      "slug": "cat-flutd",
+      "type": "condition",
+      "file": "db/seeds/contents.ts",
+      "riskyCount": 2,
+      "byStatus": {
+        "verified": 0,
+        "qualified": 0,
+        "removed": 0,
+        "needs_review": 0
+      },
+      "untracked": [
+        "고양이에게 가장 흔한 질환 중 하나로, 특히 요도 막힘(요도 폐색)은 즉시 진료가 필요한 응급 상황이며, 치료가 늦어지면 24~48시간 이내에 생명이 위험해질 수 있습니다(수컷 고양이는 요도가 길고 좁아 위험이 더 높습니다).",
+        "요도 폐색이 의심되면 특정 시간이 지나기를 기다리지 마세요 복부 통증, 무기력, 식욕 저하, 구토 (요도 폐색 시 빠르게 악화) 진단 소변 검사 (분석·배양): 결정·세균·혈구 확인 복부 방사선·초음파: 결석·방광벽 두께 확인 혈액 검사: 신부전 동반 여부 확인 치료 요도 폐색 (응급)"
+      ],
+      "issues": [
+        {
+          "code": "UNTRACKED_RISKY_CLAIM",
+          "snippet": "고양이에게 가장 흔한 질환 중 하나로, 특히 요도 막힘(요도 폐색)은 즉시 진료가 필요한 응급 상황이며, 치료가 늦어지면 24~48시간 이내에 생명이 위험해질 수 있습니다(수컷 고양이는 요도가 길고 좁아 위험이 더 높습니다)."
+        },
+        {
+          "code": "UNTRACKED_RISKY_CLAIM",
+          "snippet": "요도 폐색이 의심되면 특정 시간이 지나기를 기다리지 마세요 복부 통증, 무기력, 식욕 저하, 구토 (요도 폐색 시 빠르게 악화) 진단 소변 검사 (분석·배양): 결정·세균·혈구 확인 복부 방사선·초음파: 결석·방광벽 두께 확인 혈액 검사: 신부전 동반 여부 확인 치료 요도 폐색 (응급)"
+        }
+      ]
+    },
+    {
+      "slug": "dog-heartworm",
+      "type": "condition",
+      "file": "db/seeds/contents.ts",
+      "riskyCount": 1,
+      "byStatus": {
+        "verified": 0,
+        "qualified": 0,
+        "removed": 0,
+        "needs_review": 0
+      },
+      "untracked": [
+        "예방약 유형 투여 방법 주기 추가 예방 먹는 약 (이버멕틴 계열) 경구 월 1회 일부는 내부 기생충도 예방 바르는 약 (스폿온) 등에 도포 월 1회 외부 기생충 동시 예방 주사형 (예방 지속성) 수의사 주사 6개월~1년 수의사 처방 필수 예방약 투여 전 주의사항 처음 예방약 투여 전 혈"
+      ],
+      "issues": [
+        {
+          "code": "UNTRACKED_RISKY_CLAIM",
+          "snippet": "예방약 유형 투여 방법 주기 추가 예방 먹는 약 (이버멕틴 계열) 경구 월 1회 일부는 내부 기생충도 예방 바르는 약 (스폿온) 등에 도포 월 1회 외부 기생충 동시 예방 주사형 (예방 지속성) 수의사 주사 6개월~1년 수의사 처방 필수 예방약 투여 전 주의사항 처음 예방약 투여 전 혈"
+        }
+      ]
+    },
+    {
+      "slug": "dog-kennel-cough",
+      "type": "condition",
+      "file": "db/seeds/contents.ts",
+      "riskyCount": 1,
+      "byStatus": {
+        "verified": 0,
+        "qualified": 0,
+        "removed": 0,
+        "needs_review": 0
+      },
+      "untracked": [
+        "켄넬코프 예방 백신의 주 타겟 개 파라인플루엔자 바이러스 : 종합 백신(DHPPL)에 포함 개 아데노바이러스 2형 : 종합 백신으로 예방 가능 개 호흡기 코로나바이러스, 개 인플루엔자 등도 복합 감염 원인 증상 특징적인 기침 : '거위 울음 소리', '꽥꽥', '혹혹' 하는 반복적인 건"
+      ],
+      "issues": [
+        {
+          "code": "UNTRACKED_RISKY_CLAIM",
+          "snippet": "켄넬코프 예방 백신의 주 타겟 개 파라인플루엔자 바이러스 : 종합 백신(DHPPL)에 포함 개 아데노바이러스 2형 : 종합 백신으로 예방 가능 개 호흡기 코로나바이러스, 개 인플루엔자 등도 복합 감염 원인 증상 특징적인 기침 : '거위 울음 소리', '꽥꽥', '혹혹' 하는 반복적인 건"
+        }
+      ]
+    },
+    {
+      "slug": "cat-chronic-kidney-disease",
+      "type": "condition",
+      "file": "db/seeds/contents.ts",
+      "riskyCount": 1,
+      "byStatus": {
+        "verified": 0,
+        "qualified": 0,
+        "removed": 0,
+        "needs_review": 0
+      },
+      "untracked": [
+        "집중 치료 필요 진단 혈액 검사: BUN, 크레아티닌, SDMA (조기 마커), 전해질 소변 검사: 단백뇨, 비중, 세균 유무 혈압 측정: CKD와 고혈압 동반 흔함 복부 초음파: 신장 크기·에코 확인 관리·치료 식이 관리 (가장 중요) 신장 처방식 : 인(Phosphorus) 제한, "
+      ],
+      "issues": [
+        {
+          "code": "UNTRACKED_RISKY_CLAIM",
+          "snippet": "집중 치료 필요 진단 혈액 검사: BUN, 크레아티닌, SDMA (조기 마커), 전해질 소변 검사: 단백뇨, 비중, 세균 유무 혈압 측정: CKD와 고혈압 동반 흔함 복부 초음파: 신장 크기·에코 확인 관리·치료 식이 관리 (가장 중요) 신장 처방식 : 인(Phosphorus) 제한, "
+        }
+      ]
+    },
+    {
+      "slug": "dog-ear-infection",
+      "type": "condition",
+      "file": "db/seeds/contents.ts",
+      "riskyCount": 1,
+      "byStatus": {
+        "verified": 0,
+        "qualified": 0,
+        "removed": 0,
+        "needs_review": 0
+      },
+      "untracked": [
+        "증상이 2~3일 이상 지속되거나, 귀에서 피가 나거나, 머리를 한쪽으로 심하게 기울이는 경우, 평형 감각 이상(빙글빙글 도는 행동)이 보이는 경우 즉시 수의사를 방문하세요."
+      ],
+      "issues": [
+        {
+          "code": "UNTRACKED_RISKY_CLAIM",
+          "snippet": "증상이 2~3일 이상 지속되거나, 귀에서 피가 나거나, 머리를 한쪽으로 심하게 기울이는 경우, 평형 감각 이상(빙글빙글 도는 행동)이 보이는 경우 즉시 수의사를 방문하세요."
+        }
+      ]
+    },
+    {
+      "slug": "dog-hip-dysplasia",
+      "type": "condition",
+      "file": "db/seeds/contents.ts",
+      "riskyCount": 1,
+      "byStatus": {
+        "verified": 0,
+        "qualified": 0,
+        "removed": 0,
+        "needs_review": 0
+      },
+      "untracked": [
+        "PennHIP 검사는 2세 미만에서도 발생 위험을 예측할 수 있습니다."
+      ],
+      "issues": [
+        {
+          "code": "UNTRACKED_RISKY_CLAIM",
+          "snippet": "PennHIP 검사는 2세 미만에서도 발생 위험을 예측할 수 있습니다."
+        }
+      ]
+    },
+    {
+      "slug": "dog-epilepsy",
+      "type": "condition",
+      "file": "db/seeds/contents.ts",
+      "riskyCount": 3,
+      "byStatus": {
+        "verified": 0,
+        "qualified": 0,
+        "removed": 0,
+        "needs_review": 0
+      },
+      "untracked": [
+        "유전적 성향이 강하며 1~5세 사이에 첫 발작이 시작되는 경우 많음 (비글, 보더 콜리, 골든 리트리버 등에서 발생률 높음) 구조적/대사성 원인 : 뇌종양, 뇌염, 뇌 외상, 간질환(간성 뇌증), 저혈당, 신부전, 납·독소 중독 반응성 발작 : 독소·약물·저혈당·전해질 불균형에 의한 일",
+        "5분 이상 지속되면 즉시 응급 병원으로.",
+        "즉시 응급실을 가야 하는 경우 발작이 5분 이상 지속됨 (중적 발작 — Status Epilepticus) 24시간 이내에 발작이 2회 이상 발생 발작 후 30분 이상 지나도 의식이 돌아오지 않음 발작 중 부상이 발생한 경우 진단 및 치료 방향 혈액 검사, 소변 검사, 뇌 MRI·CT,"
+      ],
+      "issues": [
+        {
+          "code": "UNTRACKED_RISKY_CLAIM",
+          "snippet": "유전적 성향이 강하며 1~5세 사이에 첫 발작이 시작되는 경우 많음 (비글, 보더 콜리, 골든 리트리버 등에서 발생률 높음) 구조적/대사성 원인 : 뇌종양, 뇌염, 뇌 외상, 간질환(간성 뇌증), 저혈당, 신부전, 납·독소 중독 반응성 발작 : 독소·약물·저혈당·전해질 불균형에 의한 일"
+        },
+        {
+          "code": "UNTRACKED_RISKY_CLAIM",
+          "snippet": "5분 이상 지속되면 즉시 응급 병원으로."
+        },
+        {
+          "code": "UNTRACKED_RISKY_CLAIM",
+          "snippet": "즉시 응급실을 가야 하는 경우 발작이 5분 이상 지속됨 (중적 발작 — Status Epilepticus) 24시간 이내에 발작이 2회 이상 발생 발작 후 30분 이상 지나도 의식이 돌아오지 않음 발작 중 부상이 발생한 경우 진단 및 치료 방향 혈액 검사, 소변 검사, 뇌 MRI·CT,"
+        }
+      ]
+    },
+    {
+      "slug": "dog-vaccination-schedule",
+      "type": "guide",
+      "file": "db/seeds/contents.ts",
+      "riskyCount": 2,
+      "byStatus": {
+        "verified": 0,
+        "qualified": 0,
+        "removed": 0,
+        "needs_review": 0
+      },
+      "untracked": [
+        "1차 : 생후 6~8주 2차 : 생후 10~12주 (1차 후 3~4주 간격) 3차 : 생후 14~16주 (2차 후 3~4주 간격) 4~5차 : 수의사 권고에 따라 (일부 프로토콜은 4~5차까지) 추가 접종 : 1차 접종 완료 1년 후, 이후 1~3년마다 코로나장염 (CCV) 1차: 생후",
+        "2회 초기 접종 후 연 1회 라임병 (Borrelia) : 진드기 노출 위험 지역에서 생활하는 경우 수의사 상담 주의사항 접종 당일과 다음날은 격렬한 운동과 목욕 자제 접종 후 15~30분 병원에서 이상반응 관찰 후 귀가 접종 후 구토·안면 부종·호흡 곤란·갑작스러운 쇄약이 나타나면 즉"
+      ],
+      "issues": [
+        {
+          "code": "UNTRACKED_RISKY_CLAIM",
+          "snippet": "1차 : 생후 6~8주 2차 : 생후 10~12주 (1차 후 3~4주 간격) 3차 : 생후 14~16주 (2차 후 3~4주 간격) 4~5차 : 수의사 권고에 따라 (일부 프로토콜은 4~5차까지) 추가 접종 : 1차 접종 완료 1년 후, 이후 1~3년마다 코로나장염 (CCV) 1차: 생후"
+        },
+        {
+          "code": "UNTRACKED_RISKY_CLAIM",
+          "snippet": "2회 초기 접종 후 연 1회 라임병 (Borrelia) : 진드기 노출 위험 지역에서 생활하는 경우 수의사 상담 주의사항 접종 당일과 다음날은 격렬한 운동과 목욕 자제 접종 후 15~30분 병원에서 이상반응 관찰 후 귀가 접종 후 구토·안면 부종·호흡 곤란·갑작스러운 쇄약이 나타나면 즉"
+        }
+      ]
+    },
+    {
+      "slug": "dog-pancreatitis",
+      "type": "condition",
+      "file": "db/seeds/contents.ts",
+      "riskyCount": 1,
+      "byStatus": {
+        "verified": 0,
+        "qualified": 0,
+        "removed": 0,
+        "needs_review": 0
+      },
+      "untracked": [
+        "식이 관리 — 핵심 저지방 식이 : 지방 함량 10% 이하(건조 중량 기준)의 처방식 또는 저지방 사료 사용 고지방 음식(삼겹살, 버터, 기름진 간식, 사람 음식 부스러기) 완전 차단 회복 초기에는 소량씩 자주(하루 3~4회) 급여 만성 췌장염 강아지는 평생 저지방 식이 유지 즉시 병원"
+      ],
+      "issues": [
+        {
+          "code": "UNTRACKED_RISKY_CLAIM",
+          "snippet": "식이 관리 — 핵심 저지방 식이 : 지방 함량 10% 이하(건조 중량 기준)의 처방식 또는 저지방 사료 사용 고지방 음식(삼겹살, 버터, 기름진 간식, 사람 음식 부스러기) 완전 차단 회복 초기에는 소량씩 자주(하루 3~4회) 급여 만성 췌장염 강아지는 평생 저지방 식이 유지 즉시 병원"
+        }
+      ]
+    },
+    {
+      "slug": "cat-asthma",
+      "type": "condition",
+      "file": "db/seeds/contents.ts",
+      "riskyCount": 1,
+      "byStatus": {
+        "verified": 0,
+        "qualified": 0,
+        "removed": 0,
+        "needs_review": 0
+      },
+      "untracked": [
+        "환경 관리 — 재발 예방 화장실 모래 교체 : 먼지 적은 모래 (두부·목재·실리카 모래 등)로 바꾸기 향기 제품 사용 금지 : 방향제, 향초, 에센셜 오일 디퓨저, 담배 연기 완전 차단 청소 중 환기 : 청소 스프레이 사용 시 고양이를 다른 방으로 이동 공기청정기 : HEPA 필터 공기"
+      ],
+      "issues": [
+        {
+          "code": "UNTRACKED_RISKY_CLAIM",
+          "snippet": "환경 관리 — 재발 예방 화장실 모래 교체 : 먼지 적은 모래 (두부·목재·실리카 모래 등)로 바꾸기 향기 제품 사용 금지 : 방향제, 향초, 에센셜 오일 디퓨저, 담배 연기 완전 차단 청소 중 환기 : 청소 스프레이 사용 시 고양이를 다른 방으로 이동 공기청정기 : HEPA 필터 공기"
+        }
+      ]
+    },
+    {
+      "slug": "dog-heat-stroke-guide",
+      "type": "guide",
+      "file": "db/seeds/contents.ts",
+      "riskyCount": 1,
+      "byStatus": {
+        "verified": 0,
+        "qualified": 0,
+        "removed": 0,
+        "needs_review": 0
+      },
+      "untracked": [
+        "고위험 상황 🚗 뜨거운 차 안 : 외부 25℃에서 차량 실내는 10분 이내 40℃ 돌파 ☀️ 직사광선 아래 야외 운동·훈련 🏠 통풍이 없는 실내(비닐하우스, 베란다) 습도가 높은 환경 — 습도가 높으면 헐떡임 효율이 급감 고위험 품종 단두종(불독, 퍼그, 프렌치불독, 시추, 페키니즈"
+      ],
+      "issues": [
+        {
+          "code": "UNTRACKED_RISKY_CLAIM",
+          "snippet": "고위험 상황 🚗 뜨거운 차 안 : 외부 25℃에서 차량 실내는 10분 이내 40℃ 돌파 ☀️ 직사광선 아래 야외 운동·훈련 🏠 통풍이 없는 실내(비닐하우스, 베란다) 습도가 높은 환경 — 습도가 높으면 헐떡임 효율이 급감 고위험 품종 단두종(불독, 퍼그, 프렌치불독, 시추, 페키니즈"
+        }
+      ]
+    },
+    {
+      "slug": "cat-vomiting",
+      "type": "condition",
+      "file": "db/seeds/contents.ts",
+      "riskyCount": 1,
+      "byStatus": {
+        "verified": 0,
+        "qualified": 0,
+        "removed": 0,
+        "needs_review": 0
+      },
+      "untracked": [
+        "흔한 원인 비교적 양성 원인 헤어볼(毛球) : 그루밍 중 삼킨 털이 위장에 쌓여 주기적으로 배출 (원통형 황갈색 덩어리) 식이 관련 : 너무 빠르게 먹기, 사료 급격 변경, 과식 공복 구토 : 노란 담즙 구토 — 공복 시간이 너무 길 때 주의가 필요한 원인 이물질 섭취 (끈·고무줄·플라"
+      ],
+      "issues": [
+        {
+          "code": "UNTRACKED_RISKY_CLAIM",
+          "snippet": "흔한 원인 비교적 양성 원인 헤어볼(毛球) : 그루밍 중 삼킨 털이 위장에 쌓여 주기적으로 배출 (원통형 황갈색 덩어리) 식이 관련 : 너무 빠르게 먹기, 사료 급격 변경, 과식 공복 구토 : 노란 담즙 구토 — 공복 시간이 너무 길 때 주의가 필요한 원인 이물질 섭취 (끈·고무줄·플라"
+        }
+      ]
+    },
+    {
+      "slug": "dog-diarrhea",
+      "type": "condition",
+      "file": "db/seeds/contents.ts",
+      "riskyCount": 1,
+      "byStatus": {
+        "verified": 0,
+        "qualified": 0,
+        "removed": 0,
+        "needs_review": 0
+      },
+      "untracked": [
+        "흔한 원인 식이성 원인 사료 급격 변경 (1~2주에 걸쳐 서서히 교체해야 함) 과식, 지방이 많은 음식 섭취 쓰레기통 뒤지기, 낯선 음식 섭취 유제품·글루텐 등 음식 불내증 감염성 원인 세균 감염 (살모넬라, 캄필로박터) 바이러스 감염 (파보 바이러스 — 접종 미완 강아지 고위험) 기생"
+      ],
+      "issues": [
+        {
+          "code": "UNTRACKED_RISKY_CLAIM",
+          "snippet": "흔한 원인 식이성 원인 사료 급격 변경 (1~2주에 걸쳐 서서히 교체해야 함) 과식, 지방이 많은 음식 섭취 쓰레기통 뒤지기, 낯선 음식 섭취 유제품·글루텐 등 음식 불내증 감염성 원인 세균 감염 (살모넬라, 캄필로박터) 바이러스 감염 (파보 바이러스 — 접종 미완 강아지 고위험) 기생"
+        }
+      ]
+    },
+    {
+      "slug": "pet-health-checkup-guide",
+      "type": "guide",
+      "file": "db/seeds/contents.ts",
+      "riskyCount": 1,
+      "byStatus": {
+        "verified": 0,
+        "qualified": 0,
+        "removed": 0,
+        "needs_review": 0
+      },
+      "untracked": [
+        "AAHA 노령 진료 지침은 개·고양이 생활 단계 및 환자별 검사 계획을 설명하는 자료입니다."
+      ],
+      "issues": [
+        {
+          "code": "UNTRACKED_RISKY_CLAIM",
+          "snippet": "AAHA 노령 진료 지침은 개·고양이 생활 단계 및 환자별 검사 계획을 설명하는 자료입니다."
+        }
+      ]
+    },
+    {
+      "slug": "animal-protection-law-basics",
+      "type": "guide",
+      "file": "db/seeds/contents.ts",
+      "riskyCount": 2,
+      "byStatus": {
+        "verified": 0,
+        "qualified": 0,
+        "removed": 0,
+        "needs_review": 0
+      },
+      "untracked": [
+        "동물등록 의무 대상 : 2개월령 이상의 반려견 (고양이는 자율 등록) 방법 : 마이크로칩(내장형) 또는 등록인식표(외장형) 기한 : 취득일로부터 30일 이내 과태료 : 미등록 시 위반 횟수별로 부과 (기준은 동물등록 가이드 참고) 사망 신고 : 사망 후 30일 이내 말소 신고 의무 외출",
+        "동물학대 처벌 잔인한 방법으로 죽이거나 다치게 한 경우 : 3년 이하 징역 또는 3천만 원 이하 벌금 정당한 사유 없이 신체적 고통을 주는 행위 : 2년 이하 징역 또는 2천만 원 이하 벌금 촬영물 유포 : 동물학대 영상물 배포·공유도 처벌 대상 동물학대 신고 방법 동물보호 신고전화 1"
+      ],
+      "issues": [
+        {
+          "code": "UNTRACKED_RISKY_CLAIM",
+          "snippet": "동물등록 의무 대상 : 2개월령 이상의 반려견 (고양이는 자율 등록) 방법 : 마이크로칩(내장형) 또는 등록인식표(외장형) 기한 : 취득일로부터 30일 이내 과태료 : 미등록 시 위반 횟수별로 부과 (기준은 동물등록 가이드 참고) 사망 신고 : 사망 후 30일 이내 말소 신고 의무 외출"
+        },
+        {
+          "code": "UNTRACKED_RISKY_CLAIM",
+          "snippet": "동물학대 처벌 잔인한 방법으로 죽이거나 다치게 한 경우 : 3년 이하 징역 또는 3천만 원 이하 벌금 정당한 사유 없이 신체적 고통을 주는 행위 : 2년 이하 징역 또는 2천만 원 이하 벌금 촬영물 유포 : 동물학대 영상물 배포·공유도 처벌 대상 동물학대 신고 방법 동물보호 신고전화 1"
+        }
+      ]
+    },
+    {
+      "slug": "dog-vomiting",
+      "type": "condition",
+      "file": "db/seeds/contents.ts",
+      "riskyCount": 2,
+      "byStatus": {
+        "verified": 0,
+        "qualified": 0,
+        "removed": 0,
+        "needs_review": 0
+      },
+      "untracked": [
+        "즉시 병원에 가야 하는 응급 신호 24시간 이내 3회 이상 반복 구토 혈액이 섞인 구토물 (선홍색 또는 커피색) 복부 팽창 + 비생산적 구역질 — 위확장·염전(GDV) 의심, 생명 위험 의식 저하·쇠약·경련 동반 독성 물질 섭취 의심 (포도, 자일리톨, 초콜릿 등) 이물질 삼킴 의심 —",
+        "물은 소량씩 계속 제공 소량씩 부드러운 음식 : 증상이 가라앉으면 삶은 닭고기(무염)·쌀죽 소량 급여 사료는 서서히 재급여 : 24~48시간 후 일반 사료로 천천히 전환 2~4시간 후 구토가 재발하거나 상태가 나빠지면 병원 방문 구토 예방 팁 슬로우 피더 사용 (빠른 식사 방지) 사료 "
+      ],
+      "issues": [
+        {
+          "code": "UNTRACKED_RISKY_CLAIM",
+          "snippet": "즉시 병원에 가야 하는 응급 신호 24시간 이내 3회 이상 반복 구토 혈액이 섞인 구토물 (선홍색 또는 커피색) 복부 팽창 + 비생산적 구역질 — 위확장·염전(GDV) 의심, 생명 위험 의식 저하·쇠약·경련 동반 독성 물질 섭취 의심 (포도, 자일리톨, 초콜릿 등) 이물질 삼킴 의심 —"
+        },
+        {
+          "code": "UNTRACKED_RISKY_CLAIM",
+          "snippet": "물은 소량씩 계속 제공 소량씩 부드러운 음식 : 증상이 가라앉으면 삶은 닭고기(무염)·쌀죽 소량 급여 사료는 서서히 재급여 : 24~48시간 후 일반 사료로 천천히 전환 2~4시간 후 구토가 재발하거나 상태가 나빠지면 병원 방문 구토 예방 팁 슬로우 피더 사용 (빠른 식사 방지) 사료 "
+        }
+      ]
+    },
+    {
+      "slug": "dog-urinary-tract-infection",
+      "type": "condition",
+      "file": "db/seeds/contents.ts",
+      "riskyCount": 1,
+      "byStatus": {
+        "verified": 0,
+        "qualified": 0,
+        "removed": 0,
+        "needs_review": 0
+      },
+      "untracked": [
+        "재발 예방 충분한 수분 섭취 : 습식 사료 혼합 또는 별도 수분 보충 권장 배변 기회 증가 : 소변을 오래 참으면 세균 번식 위험 증가 — 규칙적인 산책 생식기 주변 청결 : 목욕 및 위생 관리 당뇨·쿠싱 등 기저 질환 관리 : 전신 건강 유지 3개월마다 소변 검사 : 재발성 UTI 강"
+      ],
+      "issues": [
+        {
+          "code": "UNTRACKED_RISKY_CLAIM",
+          "snippet": "재발 예방 충분한 수분 섭취 : 습식 사료 혼합 또는 별도 수분 보충 권장 배변 기회 증가 : 소변을 오래 참으면 세균 번식 위험 증가 — 규칙적인 산책 생식기 주변 청결 : 목욕 및 위생 관리 당뇨·쿠싱 등 기저 질환 관리 : 전신 건강 유지 3개월마다 소변 검사 : 재발성 UTI 강"
+        }
+      ]
+    },
+    {
+      "slug": "senior-cat-care-guide",
+      "type": "guide",
+      "file": "db/seeds/contents.ts",
+      "riskyCount": 2,
+      "byStatus": {
+        "verified": 0,
+        "qualified": 0,
+        "removed": 0,
+        "needs_review": 0
+      },
+      "untracked": [
+        "조기 발견이 핵심 갑상선 기능 항진증(Hyperthyroidism) : 체중 감소 + 식욕 증가 + 다음·다뇨 고혈압 : 종종 신부전·갑상선 기능 항진증과 동반 관절염 : 점프 회피, 그루밍 감소 당뇨병 : 다음·다뇨·체중 감소 치주 질환 : 통증으로 식욕 감소 인지 기능 장애(CDS)",
+        "급격한 체중 감소는 즉시 수의사 상담 환경 개선 화장실 접근성 : 관절염 고양이를 위해 입구가 낮은 화장실 사용 침대·쉼터 : 따뜻하고 쉽게 오르내릴 수 있는 낮은 위치 배치 계단·경사로 : 높은 곳 접근을 위한 경사로 설치 그루밍 지원 : 등·꼬리 주변은 스스로 닦기 어려우므로 보호자"
+      ],
+      "issues": [
+        {
+          "code": "UNTRACKED_RISKY_CLAIM",
+          "snippet": "조기 발견이 핵심 갑상선 기능 항진증(Hyperthyroidism) : 체중 감소 + 식욕 증가 + 다음·다뇨 고혈압 : 종종 신부전·갑상선 기능 항진증과 동반 관절염 : 점프 회피, 그루밍 감소 당뇨병 : 다음·다뇨·체중 감소 치주 질환 : 통증으로 식욕 감소 인지 기능 장애(CDS)"
+        },
+        {
+          "code": "UNTRACKED_RISKY_CLAIM",
+          "snippet": "급격한 체중 감소는 즉시 수의사 상담 환경 개선 화장실 접근성 : 관절염 고양이를 위해 입구가 낮은 화장실 사용 침대·쉼터 : 따뜻하고 쉽게 오르내릴 수 있는 낮은 위치 배치 계단·경사로 : 높은 곳 접근을 위한 경사로 설치 그루밍 지원 : 등·꼬리 주변은 스스로 닦기 어려우므로 보호자"
+        }
+      ]
+    },
+    {
+      "slug": "dog-parvovirus",
+      "type": "condition",
+      "file": "db/seeds/contents.ts",
+      "riskyCount": 1,
+      "byStatus": {
+        "verified": 0,
+        "qualified": 0,
+        "removed": 0,
+        "needs_review": 0
+      },
+      "untracked": [
+        "감염 경로 분변-구강 경로 : 감염된 강아지의 대변 접촉 — 직접 또는 오염된 토양·물건 통해 바이러스는 환경에서 수개월~1년 이상 생존 가능 (일반 세제로는 불활성화 안 됨) 사람의 신발·옷·손 : 오염된 환경 접촉 후 집으로 바이러스 전파 가능 야외 산책, 강아지 집단 시설(펫숍·브"
+      ],
+      "issues": [
+        {
+          "code": "UNTRACKED_RISKY_CLAIM",
+          "snippet": "감염 경로 분변-구강 경로 : 감염된 강아지의 대변 접촉 — 직접 또는 오염된 토양·물건 통해 바이러스는 환경에서 수개월~1년 이상 생존 가능 (일반 세제로는 불활성화 안 됨) 사람의 신발·옷·손 : 오염된 환경 접촉 후 집으로 바이러스 전파 가능 야외 산책, 강아지 집단 시설(펫숍·브"
+        }
+      ]
+    },
+    {
+      "slug": "dog-bite-liability-guide",
+      "type": "guide",
+      "file": "db/seeds/contents.ts",
+      "riskyCount": 1,
+      "byStatus": {
+        "verified": 0,
+        "qualified": 0,
+        "removed": 0,
+        "needs_review": 0
+      },
+      "untracked": [
+        "단, 동물 관리에 상당한 주의를 기울였거나 그 주의를 다하여도 손해가 발생할 경우 책임 면제 가능 동물보호법 제13조 : 소유자 등은 맹견을 동반 외출 시 목줄·입마개 착용 의무 — 위반 시 300만 원 이하 과태료 형사 책임 : 과실치상(형법 제266조) 또는 과실치사(제267조) 적"
+      ],
+      "issues": [
+        {
+          "code": "UNTRACKED_RISKY_CLAIM",
+          "snippet": "단, 동물 관리에 상당한 주의를 기울였거나 그 주의를 다하여도 손해가 발생할 경우 책임 면제 가능 동물보호법 제13조 : 소유자 등은 맹견을 동반 외출 시 목줄·입마개 착용 의무 — 위반 시 300만 원 이하 과태료 형사 책임 : 과실치상(형법 제266조) 또는 과실치사(제267조) 적"
+        }
+      ]
+    },
+    {
+      "slug": "cat-ringworm",
+      "type": "condition",
+      "file": "db/seeds/contents.ts",
+      "riskyCount": 1,
+      "byStatus": {
+        "verified": 0,
+        "qualified": 0,
+        "removed": 0,
+        "needs_review": 0
+      },
+      "untracked": [
+        "외용 항진균제 : 크림·로션·샴푸 (국소 감염 시 주로 사용) 전신 항진균제 (경구) : 광범위 감염 또는 보균 고양이 치료에 사용 — 수의사 처방 필수 치료 기간은 최소 4~6주 이상, 배양 결과 2회 연속 음성 확인 후 종료 사람·다른 반려동물 전염 예방 감염 고양이 만진 후 즉시 "
+      ],
+      "issues": [
+        {
+          "code": "UNTRACKED_RISKY_CLAIM",
+          "snippet": "외용 항진균제 : 크림·로션·샴푸 (국소 감염 시 주로 사용) 전신 항진균제 (경구) : 광범위 감염 또는 보균 고양이 치료에 사용 — 수의사 처방 필수 치료 기간은 최소 4~6주 이상, 배양 결과 2회 연속 음성 확인 후 종료 사람·다른 반려동물 전염 예방 감염 고양이 만진 후 즉시 "
+        }
+      ]
+    },
+    {
+      "slug": "cat-constipation",
+      "type": "condition",
+      "file": "db/seeds/contents.ts",
+      "riskyCount": 1,
+      "byStatus": {
+        "verified": 0,
+        "qualified": 0,
+        "removed": 0,
+        "needs_review": 0
+      },
+      "untracked": [
+        "주요 원인 수분 섭취 부족 : 건식 사료만 먹거나 물그릇 위치가 좋지 않을 때 헤어볼(모구) : 장내 헤어볼이 장 운동을 방해 비만·운동 부족 : 복부 근육 약화로 장 운동 저하 스트레스·환경 변화 : 이사·새 동물 입양 후 발생 골반 협착·통증 : 낙상 후 골반 골절 병력이 있는 경우"
+      ],
+      "issues": [
+        {
+          "code": "UNTRACKED_RISKY_CLAIM",
+          "snippet": "주요 원인 수분 섭취 부족 : 건식 사료만 먹거나 물그릇 위치가 좋지 않을 때 헤어볼(모구) : 장내 헤어볼이 장 운동을 방해 비만·운동 부족 : 복부 근육 약화로 장 운동 저하 스트레스·환경 변화 : 이사·새 동물 입양 후 발생 골반 협착·통증 : 낙상 후 골반 골절 병력이 있는 경우"
+        }
+      ]
+    },
+    {
+      "slug": "dog-disc-disease",
+      "type": "condition",
+      "file": "db/seeds/contents.ts",
+      "riskyCount": 1,
+      "byStatus": {
+        "verified": 0,
+        "qualified": 0,
+        "removed": 0,
+        "needs_review": 0
+      },
+      "untracked": [
+        "잘 걸리는 품종 연골이형성증 품종 : 닥스훈트, 웰시 코기, 바셋 하운드, 비글, 시츄, 페키니즈 연골이형성증 품종은 3~7세에 발병률이 높음 대형견은 만성 퇴행성 디스크(Hansen Type II)가 더 흔함 증상 (등급별) 등급 증상 1등급 통증만 있음, 마비 없음 — 등을 구부리거"
+      ],
+      "issues": [
+        {
+          "code": "UNTRACKED_RISKY_CLAIM",
+          "snippet": "잘 걸리는 품종 연골이형성증 품종 : 닥스훈트, 웰시 코기, 바셋 하운드, 비글, 시츄, 페키니즈 연골이형성증 품종은 3~7세에 발병률이 높음 대형견은 만성 퇴행성 디스크(Hansen Type II)가 더 흔함 증상 (등급별) 등급 증상 1등급 통증만 있음, 마비 없음 — 등을 구부리거"
+        }
+      ]
+    },
+    {
+      "slug": "senior-dog-nutrition-guide",
+      "type": "guide",
+      "file": "db/seeds/contents.ts",
+      "riskyCount": 1,
+      "byStatus": {
+        "verified": 0,
+        "qualified": 0,
+        "removed": 0,
+        "needs_review": 0
+      },
+      "untracked": [
+        "노령 강아지의 달라지는 영양 요구 칼로리 감소 : 신진대사 저하·활동량 감소로 성견 대비 20~30% 칼로리 낮춰야 함 단백질 유지 또는 증가 : 근육 유지를 위해 고품질 단백질 필요 (노령=저단백이라는 오해 주의) 인·나트륨 제한 : 신장 기능 저하 시 인 과잉은 신부전 가속 — 신장"
+      ],
+      "issues": [
+        {
+          "code": "UNTRACKED_RISKY_CLAIM",
+          "snippet": "노령 강아지의 달라지는 영양 요구 칼로리 감소 : 신진대사 저하·활동량 감소로 성견 대비 20~30% 칼로리 낮춰야 함 단백질 유지 또는 증가 : 근육 유지를 위해 고품질 단백질 필요 (노령=저단백이라는 오해 주의) 인·나트륨 제한 : 신장 기능 저하 시 인 과잉은 신부전 가속 — 신장"
+        }
+      ]
+    },
+    {
+      "slug": "pet-insurance-exclusions",
+      "type": "guide",
+      "file": "db/seeds/contents.ts",
+      "riskyCount": 2,
+      "byStatus": {
+        "verified": 0,
+        "qualified": 0,
+        "removed": 0,
+        "needs_review": 0
+      },
+      "untracked": [
+        "예방 처치 정기 예방접종·심장사상충 예방약 중성화 수술 (일부 보험사는 특약으로 보장) 정기 건강검진 비용 미용·위생 처치 목욕·클리핑 등 미용 비용 항문낭 일상 짜기 발톱 관리 치과 치료 (조건부) 스케일링·치석 제거 (예방 목적) 일부 보험사는 발치·치주질환 치료를 특약으로 보장 면",
+        "90일?) 선천성 질환 보장 여부 치과 치료 특약 포함 여부 갱신 거절 조건"
+      ],
+      "issues": [
+        {
+          "code": "UNTRACKED_RISKY_CLAIM",
+          "snippet": "예방 처치 정기 예방접종·심장사상충 예방약 중성화 수술 (일부 보험사는 특약으로 보장) 정기 건강검진 비용 미용·위생 처치 목욕·클리핑 등 미용 비용 항문낭 일상 짜기 발톱 관리 치과 치료 (조건부) 스케일링·치석 제거 (예방 목적) 일부 보험사는 발치·치주질환 치료를 특약으로 보장 면"
+        },
+        {
+          "code": "UNTRACKED_RISKY_CLAIM",
+          "snippet": "90일?) 선천성 질환 보장 여부 치과 치료 특약 포함 여부 갱신 거절 조건"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,154 @@
+{
+  "generatedAt": "2026-10-12T05:10:45.133Z",
+  "counts": {
+    "PASS": 13,
+    "BLOCKED": 0,
+    "UNKNOWN": 11
+  },
+  "checks": [
+    {
+      "id": "ads-txt",
+      "title": "ads.txt 존재 및 게시자 ID 일치",
+      "status": "PASS",
+      "detail": "ads.txt=3050601904412736 layout=3050601904412736"
+    },
+    {
+      "id": "head-publisher-id",
+      "title": "head 게시자 ID가 production 런타임에서만 사용됨",
+      "status": "PASS",
+      "detail": "app/layout.tsx 런타임 게이트"
+    },
+    {
+      "id": "policy-pages",
+      "title": "필수 정책 페이지 존재",
+      "status": "PASS",
+      "detail": "about, privacy, advertising, disclosure, contact, terms"
+    },
+    {
+      "id": "footer-links",
+      "title": "푸터에서 정책 페이지 접근 가능",
+      "status": "PASS",
+      "detail": "모두 연결"
+    },
+    {
+      "id": "indexability-invariant",
+      "title": "noindex 페이지는 sitemap·광고·JSON-LD 제외",
+      "status": "PASS",
+      "detail": "9개 조합 검사"
+    },
+    {
+      "id": "structured-data",
+      "title": "JSON-LD canonical·날짜·자기권위 정합",
+      "status": "PASS",
+      "detail": "localBusiness canonicalUrl, Article 날짜 헬퍼, 자기권위 제거"
+    },
+    {
+      "id": "ga4-consent",
+      "title": "GA4/AdSense 전에 Consent Mode 기본 denied",
+      "status": "PASS",
+      "detail": "4개 항목 denied, 로드 순서, 개인화 신호 제거"
+    },
+    {
+      "id": "preview-ads-off",
+      "title": "preview/local에서 실제 광고·GA4 차단",
+      "status": "PASS",
+      "detail": "런타임+호스트 게이트"
+    },
+    {
+      "id": "zero-result-ad-block",
+      "title": "0건·오류 페이지 광고 차단",
+      "status": "PASS",
+      "detail": "목록 eligibility 마커 + 404 마커"
+    },
+    {
+      "id": "indexing-api",
+      "title": "일반 콘텐츠의 Indexing API 호출 경로 없음",
+      "status": "PASS",
+      "detail": "호출처 없음"
+    },
+    {
+      "id": "internal-links",
+      "title": "로컬 시드·코드 내부 링크 오류 0건",
+      "status": "PASS",
+      "detail": "실패 0건"
+    },
+    {
+      "id": "claim-manifest",
+      "title": "claim manifest 정합(verified 근거·stale·removed)",
+      "status": "PASS",
+      "detail": "manifest 이슈 0, 위험 문구 0"
+    },
+    {
+      "id": "claim-review",
+      "title": "YMYL 주장 원문 대조·전문가 검토",
+      "status": "UNKNOWN",
+      "detail": "미검증 위험 주장 260건(untracked/needs_review) — 별도 검토 필요"
+    },
+    {
+      "id": "newsletter-fixture",
+      "title": "뉴스레터 구독·해지 fixture 테스트 존재",
+      "status": "PASS",
+      "detail": "tests/newsletter-flow.test.ts"
+    },
+    {
+      "id": "adsense-site-status",
+      "title": "AdSense 사이트 등록·심사 상태",
+      "status": "UNKNOWN",
+      "detail": "코드로 확인 불가 — docs/adsense-account-manual-checklist.md 참조"
+    },
+    {
+      "id": "adsense-reject-reason",
+      "title": "거절 또는 주의 사유 원문",
+      "status": "UNKNOWN",
+      "detail": "코드로 확인 불가 — docs/adsense-account-manual-checklist.md 참조"
+    },
+    {
+      "id": "policy-center",
+      "title": "Policy Center 상태",
+      "status": "UNKNOWN",
+      "detail": "코드로 확인 불가 — docs/adsense-account-manual-checklist.md 참조"
+    },
+    {
+      "id": "cmp-activation",
+      "title": "Google 인증 CMP 계정 활성화",
+      "status": "UNKNOWN",
+      "detail": "코드로 확인 불가 — docs/adsense-account-manual-checklist.md 참조"
+    },
+    {
+      "id": "ads-txt-recognized",
+      "title": "ads.txt 계정 인식 상태",
+      "status": "UNKNOWN",
+      "detail": "코드로 확인 불가 — docs/adsense-account-manual-checklist.md 참조"
+    },
+    {
+      "id": "mailbox",
+      "title": "cs@petjigi.kr 실제 수신 가능 여부",
+      "status": "UNKNOWN",
+      "detail": "코드로 확인 불가 — docs/adsense-account-manual-checklist.md 참조"
+    },
+    {
+      "id": "resend-prod",
+      "title": "Resend 운영 발송 성공",
+      "status": "UNKNOWN",
+      "detail": "코드로 확인 불가 — docs/adsense-account-manual-checklist.md 참조"
+    },
+    {
+      "id": "expert-review",
+      "title": "의학·법률·보험 전문가 검토",
+      "status": "UNKNOWN",
+      "detail": "코드로 확인 불가 — docs/adsense-account-manual-checklist.md 참조"
+    },
+    {
+      "id": "google-index-state",
+      "title": "실제 Google URL 색인 상태",
+      "status": "UNKNOWN",
+      "detail": "코드로 확인 불가 — docs/adsense-account-manual-checklist.md 참조"
+    },
+    {
+      "id": "sitemap-live",
+      "title": "운영 sitemap HTTP/canonical/noindex 정합 (pnpm audit:live 실행 필요)",
+      "status": "UNKNOWN",
+      "detail": "코드로 확인 불가 — docs/adsense-account-manual-checklist.md 참조"
+    }
+  ]
+}

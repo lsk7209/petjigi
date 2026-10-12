@@ -13,6 +13,7 @@
     "audit:structured-data": "tsx scripts/audit-structured-data.ts",
     "audit:live": "node scripts/audit-live-site.mjs",
     "audit:claims": "tsx scripts/audit-claim-evidence.ts",
+    "audit:adsense:readiness": "tsx scripts/audit-adsense-readiness.ts",
     "audit:content": "tsx scripts/audit-quality.ts content",
     "audit:content:gate": "tsx scripts/audit-quality.ts content-gate",
     "audit:sources": "tsx scripts/audit-quality.ts sources",
