@@ -20,9 +20,9 @@ UNKNOWN은 코드로 확인할 수 없는 외부 상태이며 재심사 준비 �
 | PASS | claim manifest 정합(verified 근거·stale·removed) | manifest 이슈 0, 검토 표현·요도 대기 문구 0 |
 | UNKNOWN | YMYL 주장 원문 대조·전문가 검토 | 미검증 위험 주장 260건(untracked/needs_review) — 별도 검토 필요 |
 | PASS | 뉴스레터 구독·해지 fixture 테스트 존재 | tests/newsletter-flow.test.ts |
-| UNKNOWN | AdSense 사이트 등록·심사 상태 | 코드로 확인 불가 — docs/adsense-account-manual-checklist.md 참조 |
+| UNKNOWN | AdSense 사이트 등록·심사 상태 (2026-10-12 읽기 전용 API: petjigi.kr = GETTING_READY, 승인 완료 아님) | 코드로 확인 불가 — docs/adsense-account-manual-checklist.md 참조 |
 | UNKNOWN | 거절 또는 주의 사유 원문 | 코드로 확인 불가 — docs/adsense-account-manual-checklist.md 참조 |
-| UNKNOWN | Policy Center 상태 | 코드로 확인 불가 — docs/adsense-account-manual-checklist.md 참조 |
+| UNKNOWN | Policy Center 상태 (API policyIssues 비어 있음, 계정 경고 SEVERE ads-txt-issues 1건 — 대상 사이트 확인 필요) | 코드로 확인 불가 — docs/adsense-account-manual-checklist.md 참조 |
 | UNKNOWN | Google 인증 CMP 계정 활성화 | 코드로 확인 불가 — docs/adsense-account-manual-checklist.md 참조 |
 | UNKNOWN | ads.txt 계정 인식 상태 | 코드로 확인 불가 — docs/adsense-account-manual-checklist.md 참조 |
 | UNKNOWN | cs@petjigi.kr 실제 수신 가능 여부 (2026-10-12 읽기 전용 DNS 조회: MX·SPF·DMARC 레코드 없음 — 수신·발신 설정 확인 필요) | 코드로 확인 불가 — docs/adsense-account-manual-checklist.md 참조 |

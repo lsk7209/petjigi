@@ -31,11 +31,15 @@
 - eslint(`pnpm lint`): 종료 코드 0 (초기 오류 1건[렌더 중 Date.now]·경고 1건[beforeInteractive 위치] 수정 후)
 - 전체 빌드(next build + next-sitemap): 종료 코드 0. 합성 SQLite fixture DB 사용, 생성된 public/ 산출물은 되돌림
 - 브라우저(production start, 합성 fixture): 390/768/1440px + print 에뮬레이션 × 9개 경로(홈·guide·정상/0건 목록·업체 상세·about·privacy·advertising·404) 36건 — 가로 넘침 0, H1 중복 0, JSON-LD 파싱 오류 0, Google/GA 외부 요청 0, consent 기본 4개 denied, 0건 목록·404는 noindex + 광고 차단 마커 + 페이지 JSON-LD 없음
-- NOT_RUN: `audit:live`(배포 후), 운영 DB dry-run(접속 정보 없음)
+- NOT_RUN: `audit:live`(배포 후)
+- 외부 상태(읽기 전용 AdSense API 관측, 2026-10-12): petjigi.kr = GETTING_READY(승인 아님), policyIssues 없음, 계정 경고 SEVERE ads-txt-issues. `www.petjigi.kr/ads.txt`가 307 리디렉션
 
 ## 운영 적용 준비 (미실행)
 - 코드 후보: 브랜치 HEAD
-- 운영 DB: `docs/internal-link-remediation-manifest-20261012.json`(본문 해시 전/후, 15행). 실제 dry-run은 운영 접속 정보가 필요해 **미실행**. 적용 시 `tsx scripts/apply-content-update.ts <slug...>`(dry-run) → 승인 후 `--apply`, 복구 `--restore --yes`
+- 운영 DB **dry-run 실행 완료(읽기 전용, 쓰기 없음)**: 17행 `would_update`, 충돌 0. 결과 `docs/final-production-dryrun-20261012.json`, 허용 컬럼 manifest `docs/final-production-manifest-20261012.json`(본문 17행 + YMYL 5행의 누락 고지문), 변경 전 스냅샷 `.backup-prod/final-20261012/expected-snapshot.json`(gitignore). 시드↔운영 drift인 meta_title 변경 2건은 manifest 밖이라 적용되지 않음.
+- 적용(승인 후): `tsx scripts/apply-content-update.ts --apply --expected-snapshot .backup-prod/final-20261012/expected-snapshot.json --manifest docs/final-production-manifest-20261012.json <slug 17개>` (적용 전 `.backup-prod/`에 자동 백업)
+- 복구: 같은 인자로 `--restore --yes`
+- 예상 변경 행: 17 (body 17, disclaimer 5)
 - 배포 후: `pnpm audit:live`, `pnpm audit:structured-data -- --base=https://petjigi.kr /blog/... `
 
 ## 미실행

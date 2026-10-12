@@ -4,13 +4,13 @@
 
 | 항목 | 상태 | 확인 방법 | 비고 |
 |---|---|---|---|
-| AdSense 사이트 심사 상태 | UNKNOWN | AdSense > 사이트 | 준비 중/검토 중/주의 필요 |
+| AdSense 사이트 심사 상태 | UNKNOWN (관측: GETTING_READY) | AdSense > 사이트 | 2026-10-12 읽기 전용 API(`adsense.readonly`)에서 `petjigi.kr` state=GETTING_READY. 승인 완료(READY)가 아니며 거절 사유는 API로 얻지 못함 |
 | 거절 또는 주의 사유 원문 | UNKNOWN | AdSense 알림·이메일 원문 | 원문 없이 사유를 추정하지 않음 |
 | Google 인증 CMP 활성화 여부 | UNKNOWN | AdSense > 개인정보 보호 및 메시지 | 코드는 Consent Mode v2 기본 denied만 설정. 자체 배너를 "인증 CMP"로 표기하지 않음 |
 | EEA·영국·스위스 메시지 설정 | UNKNOWN | 동일 | 동의 결과를 `updateGoogleConsent`(lib/privacy/google-consent.ts)로 전달하는 연결이 필요 |
 | 개인 맞춤/비개인 맞춤 광고 설정 | UNKNOWN | AdSense > 개인정보 보호 및 메시지 | /advertising·/privacy 문구와 일치시킬 것 |
-| Policy Center 상태 | UNKNOWN | AdSense > 정책 센터 | |
-| ads.txt 계정 인식 상태 | UNKNOWN | AdSense > 사이트 > ads.txt | 파일은 `public/ads.txt`, 게시자 ID 코드 일치 확인됨 |
+| Policy Center 상태 | UNKNOWN | AdSense > 정책 센터 | API policyIssues 응답 비어 있음. 계정 경고: SEVERE `ads-txt-issues`(어느 사이트인지 API로 불명), WARNING `ua-conflict-policy-update` |
+| ads.txt 계정 인식 상태 | UNKNOWN | AdSense > 사이트 > ads.txt | 파일은 `public/ads.txt`, 운영 `https://petjigi.kr/ads.txt` 200에 게시자 ID 일치 확인. 단 `www.petjigi.kr/ads.txt`는 307(→petjigi.kr) — Google이 www를 리디렉션으로 보고 문제 삼을 수 있음(memory 기록의 307→308 TODO와 동일). 계정 SEVERE ads-txt-issues 경고와의 관계는 미확인 |
 | cs@petjigi.kr 수신 가능 여부 | UNKNOWN | 테스트 메일(사람이 직접) | 2026-10-12 읽기 전용 DNS 조회에서 petjigi.kr MX·SPF·DMARC 레코드가 조회되지 않음. 운영자가 설정을 보류한 상태이므로 수신을 가정하지 말 것 |
 | Resend 운영 발송 성공 | UNKNOWN | 도메인 인증 후 사람이 확인 | 코드는 키 미설정/실패 시 "메일 발송 완료"라고 표시하지 않음 |
 | 전문가의 의학·법률·보험 검토 | UNKNOWN | 외부 전문가 | `docs/claim-verification/manifest.json`의 needs_review 항목이 대상 |
