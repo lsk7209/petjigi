@@ -13,6 +13,28 @@ function ambiguousSigunguSlugs() {
 }
 const AMBIGUOUS_REGION_EXCLUDES = ambiguousSigunguSlugs().flatMap((slug) => [`/${slug}/*`, `/shelter/${slug}`]);
 
+let indexableListings;
+const BUSINESS_TYPES = ["vet", "grooming", "boarding", "funeral", "sale", "registration", "breeder", "transport", "exhibition"];
+const LISTING_PATH = new RegExp(`^/([a-z0-9-]+)/(${BUSINESS_TYPES.join("|")})$`);
+
+// 업체가 1곳 이상 있는 (시군구 slug, 업종) 조합. 0건 목록은 noindex이므로 사이트맵에서 제외한다.
+// DB를 읽지 못하면 null을 반환하고 필터를 적용하지 않는다(기존 동작 유지).
+async function loadIndexableListings() {
+  if (!process.env.TURSO_DATABASE_URL) return null;
+  try {
+    // eslint-disable-next-line @typescript-eslint/no-require-imports
+    const { createClient } = require("@libsql/client");
+    const client = createClient({ url: process.env.TURSO_DATABASE_URL, authToken: process.env.TURSO_AUTH_TOKEN });
+    const rows = (await client.execute(
+      "SELECT r.sigungu_slug AS slug, b.type AS type FROM businesses b JOIN regions r ON b.address_sigungu = r.sigungu WHERE b.status = 'active' GROUP BY r.sigungu_slug, b.type",
+    )).rows;
+    client.close?.();
+    return new Set(rows.map((r) => `${r.slug}/${r.type}`));
+  } catch {
+    return null;
+  }
+}
+
 /** @type {import('next-sitemap').IConfig} */
 module.exports = {
   // 빌드 시각을 lastmod로 일괄 기록하지 않는다(신뢰할 수정일이 없으면 생략)
@@ -67,6 +89,11 @@ module.exports = {
   changefreq: "daily",
   priority: 0.7,
   transform: async (config, path) => {
+    const listing = LISTING_PATH.exec(path);
+    if (listing) {
+      indexableListings ??= await loadIndexableListings();
+      if (indexableListings && !indexableListings.has(`${listing[1]}/${listing[2]}`)) return null;
+    }
     // 최상위 허브 — 홈·카테고리·블로그·가이드·질병·보험·품종 인덱스
     if (
       path === "/" ||
