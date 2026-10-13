@@ -50,3 +50,23 @@ export const getCachedRegionSummary = unstable_cache(
   ["businesses", "region-summary", "v3"],
   { revalidate: 86400, tags: ["businesses"] },
 );
+
+// 같은 시군구에서 업체가 있는 업종과 수(같은 지역의 다른 업종 링크용)
+export const getCachedRegionTypeCounts = unstable_cache(
+  async (sigunguName: string) => {
+    const rows = await db
+      .select({ type: businesses.type, count: sql<number>`count(*)` })
+      .from(businesses)
+      .where(
+        and(
+          eq(businesses.addressSigungu, sigunguName),
+          eq(businesses.status, "active"),
+          notDuplicateListing,
+        ),
+      )
+      .groupBy(businesses.type);
+    return rows;
+  },
+  ["businesses", "region-type-counts", "v1"],
+  { revalidate: 86400, tags: ["businesses"] },
+);

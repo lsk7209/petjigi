@@ -10,7 +10,9 @@ import {
   getCachedTypeSourceAsOf,
 } from "@/lib/db-queries";
 import { classifyListing } from "@/lib/listing-state";
-import { getCachedRegionSummary } from "@/lib/region-summary-query";
+import { getCachedRegionSummary, getCachedRegionTypeCounts } from "@/lib/region-summary-query";
+import { RegionCrossLinks } from "@/components/business/region-cross-links";
+import { findCompareType } from "@/lib/business-types";
 import { RegionSummaryBlock } from "@/components/business/region-summary";
 import {
   breadcrumbSchema,
@@ -248,6 +250,10 @@ export default async function SigunguTypePage({
           new Date().getFullYear(),
         )
       : null;
+
+  const typeCounts =
+    // 장례·추모(카테고리 6)에는 다른 서비스 업종 링크를 노출하지 않는다
+    ambiguousSidoNames.length > 1 || listing.totalCount === 0 || meta.categoryId === 6 ? [] : await getCachedRegionTypeCounts(sigunguName);
 
   const breadcrumb = breadcrumbSchema([
     { name: "홈", url: SITE_URL },
@@ -563,6 +569,17 @@ export default async function SigunguTypePage({
             )}
           </dl>
         </section>
+
+        {listing.totalCount > 0 && (
+          <RegionCrossLinks
+            sigunguSlug={sigungu}
+            location={sigunguName}
+            currentType={type}
+            typeLabel={meta.label}
+            typeCounts={typeCounts}
+            compareType={Boolean(findCompareType(type))}
+          />
+        )}
 
         <CategoryCta categoryId={meta.categoryId} className="mt-10" />
 
