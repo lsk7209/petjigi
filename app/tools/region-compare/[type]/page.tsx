@@ -1,0 +1,192 @@
+import type { Metadata } from "next";
+import Link from "next/link";
+import { notFound } from "next/navigation";
+import { COMPARE_TYPES, findCompareType } from "@/lib/business-types";
+import { getCachedRegionCompare } from "@/lib/region-compare-query";
+import { groupBySido } from "@/lib/region-compare";
+
+export const revalidate = 86400;
+
+export function generateStaticParams() {
+  return COMPARE_TYPES.map((t) => ({ type: t.type }));
+}
+
+type Props = { params: Promise<{ type: string }> };
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const meta = findCompareType((await params).type);
+  if (!meta) return {};
+  const title = `시도·시군구별 ${meta.label} 수 비교`;
+  const description = `전국 시도·시군구별 ${meta.label} 등록 수와 전화번호 기재율을 공공데이터로 비교한 표입니다.`;
+  const canonical = `/tools/region-compare/${meta.type}`;
+  return {
+    title,
+    description,
+    alternates: { canonical },
+    openGraph: { title: `${title} | 펫지기`, description, url: canonical },
+  };
+}
+
+export default async function RegionComparePage({ params }: Props) {
+  const meta = findCompareType((await params).type);
+  if (!meta) notFound();
+
+  const groups = groupBySido(await getCachedRegionCompare(meta.type));
+  const nationalTotal = groups.reduce((sum, g) => sum + g.total, 0);
+
+  return (
+    <main className="max-w-5xl mx-auto px-4 py-10">
+      <nav
+        className="text-xs text-[var(--brand-text-secondary)] mb-6"
+        aria-label="breadcrumb"
+      >
+        <Link href="/" className="hover:text-[var(--brand-accent)]">
+          홈
+        </Link>
+        <span aria-hidden="true"> › </span>
+        <Link href="/tools" className="hover:text-[var(--brand-accent)]">
+          도구
+        </Link>
+        <span aria-hidden="true"> › </span>
+        <span aria-current="page">{meta.label} 지역 비교</span>
+      </nav>
+
+      <header className="mb-6">
+        <h1 className="text-xl sm:text-3xl font-extrabold text-[var(--brand-text)] tracking-tight">
+          시도·시군구별 {meta.label} 수 비교
+        </h1>
+        <p
+          className="mt-2 text-sm text-[var(--brand-text-secondary)] leading-relaxed"
+          style={{ wordBreak: "keep-all" }}
+        >
+          공공데이터에서 영업 중으로 표시된 {meta.label}은 전국{" "}
+          {nationalTotal.toLocaleString("ko-KR")}곳입니다. 시도별로 시·군·구의
+          업체 수와 전화번호가 기재된 비율을 비교할 수 있습니다. 업체의 품질이나
+          추천 순위가 아니라 등록 현황 수치입니다.
+        </p>
+        <ul
+          className="mt-4 flex flex-wrap gap-2 text-sm"
+          aria-label="업종 선택"
+        >
+          {COMPARE_TYPES.map((t) => (
+            <li key={t.type}>
+              <Link
+                href={`/tools/region-compare/${t.type}`}
+                aria-current={t.type === meta.type ? "page" : undefined}
+                className={`rounded-full border px-3 py-1 ${
+                  t.type === meta.type
+                    ? "border-[var(--brand-accent)] font-semibold text-[var(--brand-accent)]"
+                    : "border-[var(--brand-border)]"
+                }`}
+              >
+                {t.label}
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </header>
+
+      <section aria-label="시도별 합계" className="mb-10 overflow-x-auto">
+        <h2 className="text-base font-bold text-[var(--brand-text)] mb-2">
+          시도별 합계
+        </h2>
+        <table className="w-full text-sm border-collapse">
+          <thead>
+            <tr className="text-left text-xs text-[var(--brand-text-secondary)] border-b border-[var(--brand-border)]">
+              <th scope="col" className="py-2 pr-4 font-medium">
+                시도
+              </th>
+              <th scope="col" className="py-2 pr-4 font-medium">
+                업체 수
+              </th>
+              <th scope="col" className="py-2 pr-4 font-medium">
+                전화번호 기재율
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            {groups.map((g, i) => (
+              <tr
+                key={g.sido}
+                className="border-b border-[var(--brand-border)]"
+              >
+                <th scope="row" className="py-2 pr-4 text-left font-medium">
+                  <a
+                    href={`#sido-${i}`}
+                    className="hover:text-[var(--brand-accent)]"
+                  >
+                    {g.sido}
+                  </a>
+                </th>
+                <td className="py-2 pr-4">
+                  {g.total.toLocaleString("ko-KR")}곳
+                </td>
+                <td className="py-2 pr-4">{g.phonePercent}%</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </section>
+
+      {groups.map((g, i) => (
+        <section
+          key={g.sido}
+          id={`sido-${i}`}
+          className="mb-10 overflow-x-auto"
+          aria-label={`${g.sido} 시군구별`}
+        >
+          <h2 className="text-base font-bold text-[var(--brand-text)] mb-2">
+            {g.sido}{" "}
+            <span className="font-normal text-[var(--brand-text-secondary)]">
+              ({g.total.toLocaleString("ko-KR")}곳)
+            </span>
+          </h2>
+          <table className="w-full text-sm border-collapse">
+            <thead>
+              <tr className="text-left text-xs text-[var(--brand-text-secondary)] border-b border-[var(--brand-border)]">
+                <th scope="col" className="py-2 pr-4 font-medium">
+                  시·군·구
+                </th>
+                <th scope="col" className="py-2 pr-4 font-medium">
+                  업체 수
+                </th>
+                <th scope="col" className="py-2 pr-4 font-medium">
+                  전화번호 기재
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              {g.sigungus.map((s) => (
+                <tr
+                  key={s.sigungu}
+                  className="border-b border-[var(--brand-border)]"
+                >
+                  <th scope="row" className="py-2 pr-4 text-left font-medium">
+                    {s.sigunguSlug ? (
+                      <Link
+                        href={`/${s.sigunguSlug}/${meta.type}`}
+                        className="hover:text-[var(--brand-accent)]"
+                      >
+                        {s.sigungu}
+                      </Link>
+                    ) : (
+                      s.sigungu
+                    )}
+                  </th>
+                  <td className="py-2 pr-4">{s.count}곳</td>
+                  <td className="py-2 pr-4">{s.phoneCount}곳</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </section>
+      ))}
+
+      <p className="text-xs text-[var(--brand-text-secondary)]">
+        출처: 공공데이터포털 등 공공 인허가·등록 데이터. 원본 수집 일정에 따라
+        갱신 시점이 업종마다 다르며 실제 영업 여부와 차이가 있을 수 있어 방문 전
+        확인이 필요합니다. 같은 업체가 출처 두 곳에 있으면 한 곳으로 셉니다.
+      </p>
+    </main>
+  );
+}
