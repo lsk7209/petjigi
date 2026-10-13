@@ -1,6 +1,6 @@
 # Status | 마지막: 2026-10-13
 ## 현재 작업
-(000) 애드센스 재점검(사유=가치 별로 없는 콘텐츠): 로컬 완료·미커밋. 사이트맵 지역/센터 398건 누락 수정, 시드 22건 보강(운영 반영 승인 대기), deploy.yml 상태검증. 보고서 docs/audits/petjigi-adsense-remediation-20261013.md. 결정 대기: 운영 DB 반영, push/배포, Consent 기본값, 얇은 지역 53건.
+(000) 애드센스 재점검: PR #71 병합, 운영 DB 22건 반영 완료(10-13, 시드=운영 30/30, 백업 .backup-prod). petjigi.kr은 OVH VPS(ssh -F ~/.ssh/ovh1_config ovh1, Coolify 컨테이너)가 서빙(Vercel 아님). 10-13 de35b5b 이미지(ovh-petjigi-production:de35b5b-20261013-v1)로 교체 완료, 사이트맵 453건 라이브. 롤백: /data/coolify/services/zlpoefjoahqbwf0dswhrvc7w/docker-compose.yml.before-de35b5b 복원 후 compose up -d web. 빌드는 가용메모리 5GiB 필요(NODE_OPTIONS 힙 2GiB). 이전 메모: 사이트맵 지역/센터 398건 누락 수정, 시드 22건 보강(운영 반영 승인 대기), deploy.yml 상태검증. 보고서 docs/audits/petjigi-adsense-remediation-20261013.md. 결정 대기: 운영 DB 반영, push/배포, Consent 기본값, 얇은 지역 53건.
 (00) 애드센스 승인 전 콘텐츠 축소: PR #68~#70 병합·배포 완료. 2026-10-12 운영 --apply 완료(652건 draft: blog 557·guide 64·condition 31, 공개 30건). 스냅샷 .backup-prod/unpublish-contents/snapshot.json, 복구 --restore --yes. 다음: ISR 캐시 만료 후 /condition→/category/health·사이트맵 확인, audit:live, GSC 사이트맵 재제출. docs/unpublish-20261012.md
 (0) 애드센스 최종 보강: fix/adsense-readiness-final-20261012 로컬 완료(미push·미배포). 상세 docs/adsense-final-remediation-20261012.md. 남음: 운영 DB 본문 16건 반영 승인, 계정 측 수동 확인(UNKNOWN 11).
 (1) 후속 안정화 R01~R06: R01~R04 구현·단위/통합 테스트 완료 → PR #23 병합·운영 배포 완료(main 7f300b4). R05(e2e·CI)·R06(DB 계측) 미착수.
