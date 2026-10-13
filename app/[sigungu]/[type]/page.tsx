@@ -10,6 +10,8 @@ import {
   getCachedTypeSourceAsOf,
 } from "@/lib/db-queries";
 import { classifyListing } from "@/lib/listing-state";
+import { getCachedRegionSummary } from "@/lib/region-summary-query";
+import { RegionSummaryBlock } from "@/components/business/region-summary";
 import {
   breadcrumbSchema,
   faqSchema,
@@ -237,6 +239,16 @@ export default async function SigunguTypePage({
   const canonicalPath = businessListingPath(sigungu, type, listing.page);
   if (listing.page !== requestedPage) redirect(canonicalPath);
 
+  const summary =
+    listing.totalCount > 0
+      ? await getCachedRegionSummary(
+          sigunguName,
+          type,
+          ambiguousSidoNames.length > 1 ? null : sidoName,
+          new Date().getFullYear(),
+        )
+      : null;
+
   const breadcrumb = breadcrumbSchema([
     { name: "홈", url: SITE_URL },
     ...(sidoName && region.sidoSlug
@@ -391,6 +403,16 @@ export default async function SigunguTypePage({
             </p>
           </div>
         </div>
+
+        {summary && listing.page === 1 && (
+          <RegionSummaryBlock
+            summary={summary}
+            location={sigunguName}
+            typeLabel={meta.label}
+            sidoName={ambiguousSidoNames.length > 1 ? null : sidoName}
+            asOfDate={asOfDate}
+          />
+        )}
 
         {businessList.length > 0 && (
           <AdSlot adType="adsense" format="horizontal" className="mb-6" />
