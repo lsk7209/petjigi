@@ -8,7 +8,7 @@
 import { createHash } from "crypto";
 import { db } from "../../db/client";
 import { businesses } from "../../db/schema";
-import { inArray } from "drizzle-orm";
+import { eq, inArray } from "drizzle-orm";
 import { geocodeAddress } from "../geocoding/kakao";
 import { pingIndexNow } from "../../lib/seo/index-now";
 
@@ -16,6 +16,7 @@ const API_KEY = process.env.APMS_API_KEY ?? "";
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://petjigi.kr";
 const API_URL = "https://apis.data.go.kr/1741000/animal_hospitals/info";
 const CHUNK = 900; // SQLite 바인딩 변수 한도 999 이하
+const PAGE_SIZE = 100; // 포털 API는 numOfRows를 최대 100건으로 제한한다(초과 요청해도 100건만 응답)
 
 interface HospitalRow {
   BPLC_NM?: string;          // 업소명
@@ -54,7 +55,26 @@ function makeId(row: HospitalRow): string {
   return `mois-vet-${row.MNG_NO ?? hashRow(row)}`;
 }
 
-async function fetchPage(pageNo: number, numOfRows = 1000): Promise<{ items: HospitalRow[]; total: number }> {
+/** 같은 관리번호로 CSV 일괄 적재(ld-vet-)된 행 id — 폐업 상태를 함께 반영하기 위해 사용 */
+const csvTwinId = (row: HospitalRow): string | null => (row.MNG_NO ? `ld-vet-${row.MNG_NO}` : null);
+
+interface CsvTwin { id: string; status: string; phone: string | null }
+
+/** 같은 관리번호의 CSV 행을 id로 조회 (중복 행을 만들지 않고 이 행을 정본으로 갱신) */
+async function loadCsvTwins(items: HospitalRow[]): Promise<Map<string, CsvTwin>> {
+  const ids = items.map(csvTwinId).filter((v): v is string => v !== null);
+  const twins = new Map<string, CsvTwin>();
+  for (let i = 0; i < ids.length; i += CHUNK) {
+    const rows = await db
+      .select({ id: businesses.id, status: businesses.status, phone: businesses.phone })
+      .from(businesses)
+      .where(inArray(businesses.id, ids.slice(i, i + CHUNK)));
+    for (const r of rows) twins.set(r.id, r);
+  }
+  return twins;
+}
+
+async function fetchPage(pageNo: number, numOfRows = PAGE_SIZE): Promise<{ items: HospitalRow[]; total: number }> {
   const url = `${API_URL}?serviceKey=${encodeURIComponent(API_KEY)}&pageNo=${pageNo}&numOfRows=${numOfRows}&type=json`;
   const res = await fetch(url, { signal: AbortSignal.timeout(30000) });
   if (!res.ok) throw new Error(`동물병원 API 오류: ${res.status} ${await res.text()}`);
@@ -68,8 +88,9 @@ async function fetchPage(pageNo: number, numOfRows = 1000): Promise<{ items: Hos
   return { items, total };
 }
 
-async function processPage(items: HospitalRow[], processed: { count: number }, changedUrls: string[]): Promise<void> {
+async function processPage(items: HospitalRow[], processed: { count: number; closedTwins: number }, changedUrls: string[]): Promise<void> {
   const now = new Date().toISOString();
+  const twins = await loadCsvTwins(items);
 
   // 배치 SELECT — 페이지 내 모든 ID를 한 번에 조회 (N+1 방지)
   const pageIds = items.map(makeId);
@@ -88,6 +109,21 @@ async function processPage(items: HospitalRow[], processed: { count: number }, c
     const addr = row.ROAD_NM_ADDR ?? row.LOTNO_ADDR ?? "";
     if (!name || !addr) continue;
 
+    const status = (row.SALS_STTS_CD ?? "01") === "01" ? "active" : "closed"; // 01=영업중, 그 외(휴업·폐업·말소)는 노출 제외
+
+    // CSV로 적재된 같은 업체가 있으면 중복 행을 만들지 않고 영업 상태·전화만 갱신한다
+    const twinId = csvTwinId(row);
+    const twin = twinId ? twins.get(twinId) : undefined;
+    if (twin && twinId) {
+      const phone = row.TELNO || twin.phone;
+      if (twin.status !== status || phone !== twin.phone) {
+        await db.update(businesses).set({ status, phone, lastSyncedAt: now, updatedAt: now }).where(eq(businesses.id, twinId));
+        if (twin.status === "active" && status === "closed") processed.closedTwins++;
+        processed.count++;
+      }
+      continue;
+    }
+
     const id = makeId(row);
     const hash = hashRow(row);
     const existing = existingMap.get(id) ?? null;
@@ -96,8 +132,8 @@ async function processPage(items: HospitalRow[], processed: { count: number }, c
     const existingHash = (existing?.rawData as { hash?: string } | null)?.hash;
     if (existingHash === hash) continue;
 
-    const stateCode = row.SALS_STTS_CD ?? "01";
-    const status = stateCode === "02" || stateCode === "03" ? "closed" : "active";
+    // 신규이면서 영업 중이 아닌 업체는 노출 대상이 아니므로 적재하지 않는다
+    if (!existing && status === "closed") continue;
     const { sido, sigungu, dong } = parseAddress(addr);
 
     // 기존 좌표 있으면 재사용 (영구 캐싱) — 카카오 API 호출 최소화
@@ -164,22 +200,22 @@ export async function syncAnimalHospitals(): Promise<void> {
     process.exit(1);
   }
 
-  const first = await fetchPage(1, 1000);
+  const first = await fetchPage(1);
   console.log(`[ETL:animal-hospitals] 총 ${first.total}건`);
 
-  const processed = { count: 0 };
+  const processed = { count: 0, closedTwins: 0 };
   const changedUrls: string[] = [];
   await processPage(first.items, processed, changedUrls);
 
-  const totalPages = Math.ceil(first.total / 1000);
+  const totalPages = Math.ceil(first.total / PAGE_SIZE);
   for (let pageNo = 2; pageNo <= totalPages; pageNo++) {
-    const { items } = await fetchPage(pageNo, 1000);
+    const { items } = await fetchPage(pageNo);
     if (items.length === 0) break;
     await processPage(items, processed, changedUrls);
     console.log(`[ETL:animal-hospitals] ${pageNo}/${totalPages} 페이지 처리 중 (${processed.count}건 변경)`);
   }
 
-  console.log(`[ETL:animal-hospitals] 완료 — ${processed.count}건 upsert, ${changedUrls.length}건 IndexNow ping`);
+  console.log(`[ETL:animal-hospitals] 완료 — ${processed.count}건 upsert, CSV 폐업 반영 ${processed.closedTwins}건, ${changedUrls.length}건 IndexNow ping`);
 
   // IndexNow ping (변경된 URL만, 배치로)
   if (changedUrls.length > 0) {
