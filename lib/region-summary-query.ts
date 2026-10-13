@@ -1,11 +1,12 @@
 import { unstable_cache } from "next/cache";
-import { and, eq, sql } from "drizzle-orm";
+import { and, eq, inArray, sql } from "drizzle-orm";
 import { db } from "@/db/client";
-import { businesses } from "@/db/schema";
+import { businesses, regions } from "@/db/schema";
 import { notDuplicateListing } from "@/lib/db-queries";
 import { summarizeRegion } from "@/lib/region-summary";
 
-// 시도 안의 시군구별 업체 수는 시도가 하나로 확정될 때(동명 시군구가 아닐 때)만 비교한다
+// 시도 안의 시군구별 업체 수는 시도가 하나로 확정될 때만 비교한다. 구·신 시도명(강원도/강원특별자치도)이 섞여 있어
+// 시도명이 아니라 지역 목록의 시군구 이름으로 모은다(목록 페이지와 같은 기준).
 export const getCachedRegionSummary = unstable_cache(
   async (
     sigunguName: string,
@@ -33,11 +34,19 @@ export const getCachedRegionSummary = unstable_cache(
             count: sql<number>`count(*)`,
           })
           .from(businesses)
-          .where(and(base, eq(businesses.addressSido, sidoName)))
+          .where(
+            and(
+              base,
+              inArray(
+                businesses.addressSigungu,
+                db.select({ name: regions.sigungu }).from(regions).where(eq(regions.sido, sidoName)),
+              ),
+            ),
+          )
           .groupBy(businesses.addressSigungu)
       : [];
     return summarizeRegion(rows, sidoCounts, sigunguName, nowYear);
   },
-  ["businesses", "region-summary", "v2"],
+  ["businesses", "region-summary", "v3"],
   { revalidate: 86400, tags: ["businesses"] },
 );
