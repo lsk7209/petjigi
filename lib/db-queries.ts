@@ -64,6 +64,10 @@ export const getCachedAllGuides = unstable_cache(
   { revalidate: 3600, tags: ["guides"] }
 );
 
+// 같은 업체(종류·이름·주소 동일)가 출처 두 곳(CSV·공공데이터포털)에서 중복 적재된 경우 id가 가장 작은 1건만 노출
+// (원본 행은 삭제하지 않는다 — 목록·건수·페이지네이션에만 적용)
+export const notDuplicateListing = sql`NOT EXISTS (SELECT 1 FROM businesses d WHERE d.type = ${businesses.type} AND d.name = ${businesses.name} AND d.address = ${businesses.address} AND d.status = 'active' AND d.id < ${businesses.id})`;
+
 // ── 지역×업종 영업장 목록 ──────────────────────────────────────────────────────
 // unstable_cache는 args를 자동으로 키에 포함시킴
 export const getCachedBusinessListing = unstable_cache(
@@ -71,7 +75,8 @@ export const getCachedBusinessListing = unstable_cache(
     const where = and(
       eq(businesses.type, type),
       eq(businesses.addressSigungu, sigunguName),
-      eq(businesses.status, "active")
+      eq(businesses.status, "active"),
+      notDuplicateListing
     );
     const totalRow = await db
       .select({
