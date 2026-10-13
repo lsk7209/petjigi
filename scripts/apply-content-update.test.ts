@@ -231,3 +231,11 @@ test("CLI refuses old or stale backup files without modifying local SQLite or ev
     assert.equal(run()[0].result, "noop_identical", "idempotent apply skips stale backup validation");
   } finally { rmSync(dir, { recursive: true, force: true, maxRetries: 5, retryDelay: 100 }); }
 });
+
+test("shortHash는 값이 같으면 같고 null은 null이다", async () => {
+  const { shortHash } = await import("./apply-content-update");
+  assert.equal(shortHash(null), null);
+  assert.equal(shortHash("a"), shortHash("a"));
+  assert.notEqual(shortHash("a"), shortHash("b"));
+  assert.equal(shortHash("a")?.length, 12);
+});

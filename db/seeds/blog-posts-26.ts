@@ -133,13 +133,13 @@ const BLOG_POSTS: NewContent[] = [
 
 <h2>왜 펫로스 슬픔은 직장에서 숨겨야 한다고 느껴지나</h2>
 
-<p>사람을 잃었을 때는 회사에서 조의를 표하고, 경조사 휴가도 주어진다. 그러나 반려동물의 죽음은 많은 직장에서 공식적인 슬픔으로 인정받지 못한다. 한국애도상담학회 자료에 따르면 반려동물과의 유대는 가족 관계에 준하는 정서적 결속감을 형성하는 경우가 많다. 슬픔의 깊이는 대상이 사람이냐 동물이냐로 결정되지 않는다.</p>
+<p>사람을 잃었을 때는 회사에서 조의를 표하고, 경조사 휴가도 주어진다. 그러나 반려동물의 죽음은 많은 직장에서 공식적인 슬픔으로 인정받지 못한다. 반려동물과의 유대는 가족 관계에 준하는 정서적 결속감을 형성하는 경우가 많다. 슬픔의 깊이는 대상이 사람이냐 동물이냐로 결정되지 않는다.</p>
 
 <p>결국 이 격차에서 오는 것은 "내 슬픔이 과한 것 같다"는 자기 검열이다. 그 검열이 슬픔을 억누르게 하고, 억눌린 슬픔이 집중력과 정서적 여유를 빼앗는다.</p>
 
 <h2>동료에게 알릴 것인가, 말 것인가</h2>
 
-<p>반드시 알려야 하는 의무는 없다. 그러나 가까운 동료 1~2명에게만이라도 간단히 알리는 것이 실제로는 스트레스를 줄이는 데 도움이 된다는 연구가 있다(American Journal of Hospice and Palliative Medicine, 2018). 설명하는 대화 자체가 부담스럽다면 짧게 문자나 메시지로 "최근 반려동물을 잃어서 좀 힘든 시간을 보내고 있어요"라고만 해도 충분하다.</p>
+<p>반드시 알려야 하는 의무는 없다. 그러나 가까운 동료 1~2명에게만이라도 간단히 알리는 것이 스트레스를 줄이는 데 도움이 되는 경우가 많다. 설명하는 대화 자체가 부담스럽다면 짧게 문자나 메시지로 "최근 반려동물을 잃어서 좀 힘든 시간을 보내고 있어요"라고만 해도 충분하다.</p>
 
 <div class="key-summary">
 <strong>📋 동료에게 알릴 때 쓸 수 있는 표현</strong>
@@ -180,7 +180,7 @@ const BLOG_POSTS: NewContent[] = [
 <p>직속 상사에게 간단히 상황을 알리고, 중요한 업무에서 이중 확인이 필요한 시기임을 인지하도록 요청하는 것이 현실적이다. 모든 실수를 숨기려 할수록 스트레스가 가중된다.</p>
 
 <h3>펫로스로 인한 심리적 어려움이 오래 지속된다면?</h3>
-<p>보건복지부 정신건강복지센터(1577-0199)에서 무료 심리 상담을 받을 수 있다. 전문 애도 상담사를 통한 상담은 혼자 감당하는 것보다 회복 속도를 높여준다는 연구가 있다.</p>
+<p>보건복지부 정신건강복지센터(1577-0199)에서 무료 심리 상담을 받을 수 있다. 혼자 감당하기 어렵다면 전문 상담을 받는 것도 방법이다.</p>
 
 <p>당신이 느끼는 슬픔은 사랑의 크기만큼이다. 그것이 충분히 유효한 슬픔이라는 것을, 그리고 일상으로 돌아가는 것이 아이를 잊는 것이 아니라는 것을 — 어느 보호자에게 먼저 들려주고 싶다.</p>
 
@@ -193,11 +193,9 @@ const BLOG_POSTS: NewContent[] = [
     authorName: "펫지기 에디터",
     authorCredential: "반려동물 생활 정보 큐레이터",
     ymyl: true,
-    sources: JSON.stringify([
-      "한국애도상담학회 — 반려동물 상실과 애도 반응 자료",
-      "American Journal of Hospice and Palliative Medicine (2018) — 펫로스 후 사회적 지지와 회복",
+    sources: [
       "보건복지부 정신건강복지센터 정신건강 위기상담 1577-0199",
-    ]),
+    ],
     disclaimer: "본 콘텐츠는 정보 제공 및 회복 지원 목적이며, 전문 심리상담을 대체하지 않습니다. 펫로스로 일상이 어렵다면 전문 심리상담사 도움을 받으세요.",
     status: "published",
     publishedAt: "2026-06-02T15:00:00.000Z",
@@ -333,10 +331,10 @@ const BLOG_POSTS: NewContent[] = [
 <th style="padding:8px;border:1px solid var(--brand-border);">감량 칼로리(80%)</th>
 </tr></thead>
 <tbody>
-<tr><td style="padding:8px;border:1px solid var(--brand-border);">3 kg</td><td style="padding:8px;border:1px solid var(--brand-border);">180 kcal</td><td style="padding:8px;border:1px solid var(--brand-border);">144 kcal</td></tr>
-<tr><td style="padding:8px;border:1px solid var(--brand-border);">4 kg</td><td style="padding:8px;border:1px solid var(--brand-border);">228 kcal</td><td style="padding:8px;border:1px solid var(--brand-border);">182 kcal</td></tr>
-<tr><td style="padding:8px;border:1px solid var(--brand-border);">5 kg</td><td style="padding:8px;border:1px solid var(--brand-border);">272 kcal</td><td style="padding:8px;border:1px solid var(--brand-border);">218 kcal</td></tr>
-<tr><td style="padding:8px;border:1px solid var(--brand-border);">6 kg</td><td style="padding:8px;border:1px solid var(--brand-border);">315 kcal</td><td style="padding:8px;border:1px solid var(--brand-border);">252 kcal</td></tr>
+<tr><td style="padding:8px;border:1px solid var(--brand-border);">3 kg</td><td style="padding:8px;border:1px solid var(--brand-border);">191 kcal</td><td style="padding:8px;border:1px solid var(--brand-border);">153 kcal</td></tr>
+<tr><td style="padding:8px;border:1px solid var(--brand-border);">4 kg</td><td style="padding:8px;border:1px solid var(--brand-border);">238 kcal</td><td style="padding:8px;border:1px solid var(--brand-border);">190 kcal</td></tr>
+<tr><td style="padding:8px;border:1px solid var(--brand-border);">5 kg</td><td style="padding:8px;border:1px solid var(--brand-border);">281 kcal</td><td style="padding:8px;border:1px solid var(--brand-border);">225 kcal</td></tr>
+<tr><td style="padding:8px;border:1px solid var(--brand-border);">6 kg</td><td style="padding:8px;border:1px solid var(--brand-border);">322 kcal</td><td style="padding:8px;border:1px solid var(--brand-border);">258 kcal</td></tr>
 </tbody></table>
 <p style="font-size:0.85rem;color:var(--brand-text-secondary);margin-top:0.5rem;">※ 공식: 유지 칼로리 = 70 × (체중kg)^0.75 × 1.2 (거세묘). 감량 목표는 유지의 80%. 수의사 확인 권장.</p>
 </div>
@@ -379,11 +377,10 @@ const BLOG_POSTS: NewContent[] = [
     authorName: "펫지기 에디터",
     authorCredential: "반려동물 영양 정보 큐레이터",
     ymyl: false,
-    sources: JSON.stringify([
+    sources: [
       "WSAVA(세계소동물수의사협회) 영양 가이드라인 — BCS 체형 상태 점수 기준",
       "ISFM(국제고양이의학협회) — 고양이 비만과 건강 위험 자료",
-      "대한수의사회 소동물 임상 영양 가이드",
-    ]),
+    ],
     disclaimer: null,
     status: "published",
     publishedAt: "2026-06-02T17:00:00.000Z",

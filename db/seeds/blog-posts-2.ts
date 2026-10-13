@@ -141,14 +141,14 @@ const BLOG_POSTS_2: NewContent[] = [
     title: "강아지 슬개골 탈구 — 증상·등급·수술 기준 완전 가이드",
     metaTitle: "강아지 슬개골 탈구 증상·등급·수술 기준 | 펫지기",
     metaDescription: "소형견에 흔한 슬개골 탈구, 어느 등급부터 수술해야 할까요? 증상, 1~4등급 기준, 보존 치료와 수술 차이를 정리했습니다.",
-    body: `<p>슬개골 탈구는 별거 아니라고 들었는데 수술이 필요하다고 한다 — 이런 말을 동물병원에서 처음 들으면 당황스럽다. 슬개골 탈구는 소형견에서 가장 흔한 정형외과 질환으로, 한국동물병원협회에 따르면 소형견 정형외과 내원의 주요 원인 1위다. 그러나 모든 탈구가 수술로 이어지는 것은 아니다. 등급에 따라 접근 방법이 달라진다.</p>
+    body: `<p>슬개골 탈구는 별거 아니라고 들었는데 수술이 필요하다고 한다 — 이런 말을 동물병원에서 처음 들으면 당황스럽다. 슬개골 탈구는 소형견에서 흔한 정형외과 질환 중 하나다. 그러나 모든 탈구가 수술로 이어지는 것은 아니다. 등급에 따라 접근 방법이 달라진다.</p>
 
 <h2>슬개골 탈구란</h2>
 <p>슬개골(무릎뼈)은 허벅지뼈 홈(도르래 홈)을 따라 움직인다. 탈구는 슬개골이 이 홈을 벗어나 안쪽(내측)이나 바깥쪽(외측)으로 이동하는 상태다. 소형견은 대부분 내측 탈구(MPL, Medial Patellar Luxation)로 나타난다.</p>
 <p>원인은 크게 유전적 요인과 환경 요인으로 나뉜다. 말티즈, 포메라니안, 푸들, 치와와 등 소형견 품종은 유전적 소인이 높다. 여기에 과체중, 미끄러운 바닥에서의 반복 활동, 과도한 점프가 발병을 앞당기거나 악화시키는 환경 요인으로 작용한다.</p>
 
 <h2>1~4등급 기준과 증상</h2>
-<p>슬개골 탈구는 국제 기준(Veterinary Surgery)에 따라 4등급으로 분류된다.</p>
+<p>슬개골 탈구는 널리 쓰이는 Singleton 분류에 따라 1~4등급으로 나뉜다.</p>
 
 <div style="background:#f0f4ff;border:1px solid #c5cff5;border-radius:12px;padding:16px 20px;margin:20px 0;">
   <p style="font-weight:700;margin:0 0 8px;">슬개골 탈구 등급 기준</p>
@@ -187,10 +187,8 @@ const BLOG_POSTS_2: NewContent[] = [
     disclaimer:
       "본 콘텐츠는 정보 제공 목적으로 작성되었으며, 수의학적 진단·치료를 대체하지 않습니다. 반려동물의 건강 문제는 반드시 수의사와 상담하세요.",
     sources: [
-      "Veterinary Surgery — Classification and Surgical Management of Patellar Luxation (2016)",
-      "한국동물병원협회 — 소형견 정형외과 질환 현황",
       "Tobias KM, Johnston SA — Veterinary Surgery: Small Animal (2012)",
-      "WSAVA — Musculoskeletal Disease Guidelines",
+      "ACVS(미국수의외과학회) — Patellar Luxation (원문 대조 대기)",
     ],
     status: "published",
     publishedAt: "2026-05-22T11:00:00.000Z",

@@ -8,6 +8,7 @@
  *   UPDATE는 id·slug·status='published'와 조회 시점의 기본 컬럼, 정의된 추가 컬럼 값이 같을 때만 적용(CAS).
  */
 import fs from "node:fs";
+import { createHash } from "node:crypto";
 import path from "node:path";
 import { createClient } from "@libsql/client";
 import ts from "typescript";
@@ -123,6 +124,10 @@ export function buildUpdate(keys: Key[], current: Fields, next: Partial<Fields>,
     args: [...values, id, slug, ...snapshots],
   };
 }
+
+/** 변경 전후 값 검증용 짧은 SHA-256. null은 null 그대로 둔다. */
+export const shortHash = (value: string | null | undefined) =>
+  value == null ? null : createHash("sha256").update(value).digest("hex").slice(0, 12);
 
 const backupFile = (dir: string, slug: string, id: string) =>
   path.join(dir, `${slug}.${id}.content.json`);
@@ -263,6 +268,8 @@ async function main() {
       column: COLUMNS[k],
       fromLen: current[k]?.length ?? null,
       toLen: next[k]?.length ?? null,
+      fromHash: shortHash(current[k]),
+      toHash: shortHash(next[k]),
     }));
     if ((!APPLY && !RESTORE) || (RESTORE && !args.includes("--yes"))) {
       results.push({

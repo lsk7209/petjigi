@@ -2,7 +2,7 @@ import assert from "node:assert/strict";
 import fs from "node:fs";
 import test from "node:test";
 
-// 운영은 커밋된 public/sitemap-0.xml을 그대로 서빙하므로, next-sitemap.config.js의 exclude와 어긋나면 안 된다.
+// 빌드(next-sitemap)가 sitemap-0.xml을 재생성한다. 커밋본은 그 결과의 기준선이므로 config exclude와 어긋나면 안 된다.
 test("committed sitemap-0.xml omits every sido page that the sitemap config excludes", () => {
   const config = fs.readFileSync("next-sitemap.config.js", "utf8");
   const xml = fs.readFileSync("public/sitemap-0.xml", "utf8");
