@@ -31,6 +31,10 @@
 - 10-10: R02 상세가 지역 판별(resolved/ambiguous/missing) 유지, 동명 업체는 주소·전화·지도 선택 안내(noindex), 주변 시설 시도 한정
 - 10-10: R03 등록대행 '운영 중' 제거(lib/business-status-wording.ts), R04 목차 빈 id·엔티티 id 처리
 ## TODO
+- [ ] 사용자 작업: data.go.kr에서 1741000 계열 API(판매업·위탁관리업·생산업·운송업·전시업·수입업) 활용신청 → 나머지 7업종 갱신(LOCALDATA 불통). 미용·장묘업 API명 미확인
+- [ ] 카카오 REST 키 403 → 교체 후 신규 동물병원 538곳 지오코딩
+- [ ] 10-20경 GSC URL 검사로 색인 재확인(0이면 추가 조사), 애드센스 재신청은 색인·데이터 신선도 개선 후
+- [ ] 출처 3건 원문 대조(ACVS, WSAVA 2016, Mueller 2016), petjigi OVH 자동배포 poller 미설정(main 병합마다 수동 빌드), deploy.yml(Vercel 기준) 정리
 - [ ] 재공개 시 sitemap-0.xml·next-sitemap.config.js /condition 복원; 미추적 .goal-harness/host-process-20260913/ 처리 결정
 - [ ] 결정: 얇은 YMYL blog 19건 증보 여부, 센터 1곳 shelter noindex 여부 (4차 감사 문서)
 - [ ] law.go.kr 과태료 조문·별표 원문 대조("최대 100만 원" 상한 표현 여러 글), AdSense 계정 심사 상태 확인, www 리디렉션 307→308
