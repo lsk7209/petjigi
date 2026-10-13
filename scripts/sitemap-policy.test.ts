@@ -37,3 +37,17 @@ test("sido pages without registered regions are noindex and kept out of the site
 test("a pending noindex page is not also blocked by robots.txt Disallow", () => {
   assert.equal(/disallow:\s*\[[^\]]*\/sido/.test(config), false);
 });
+
+test("force-dynamic 지역 목록·보호센터는 DB 기준 additionalPaths로 사이트맵에 넣고, 조회 실패를 삼키지 않는다", () => {
+  assert.match(config, /additionalPaths:\s*async/);
+  assert.match(config, /HAVING COUNT\(DISTINCT s\.id\) >= \?/);
+  assert.match(config, /SHELTER_PATH\.exec\(path\)/);
+  assert.equal(/catch\s*\{\s*return null/.test(config), false, "DB 오류를 null로 삼키면 색인 URL이 조용히 사라진다");
+});
+
+test("보호센터 사이트맵 최소 센터 수가 색인 정책과 같다", () => {
+  const policy = fs.readFileSync("lib/shelter-index-policy.ts", "utf8");
+  const min = /MIN_INDEXABLE_SHELTERS = (\d+)/.exec(policy)?.[1];
+  assert.ok(min);
+  assert.match(config, new RegExp(`SHELTER_MIN_INDEXABLE = ${min};`));
+});

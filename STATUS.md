@@ -1,10 +1,12 @@
-# Status | 마지막: 2026-10-12
+# Status | 마지막: 2026-10-13
 ## 현재 작업
+(000) 애드센스 재점검(사유=가치 별로 없는 콘텐츠): 로컬 완료·미커밋. 사이트맵 지역/센터 398건 누락 수정, 시드 22건 보강(운영 반영 승인 대기), deploy.yml 상태검증. 보고서 docs/audits/petjigi-adsense-remediation-20261013.md. 결정 대기: 운영 DB 반영, push/배포, Consent 기본값, 얇은 지역 53건.
 (00) 애드센스 승인 전 콘텐츠 축소: PR #68~#70 병합·배포 완료. 2026-10-12 운영 --apply 완료(652건 draft: blog 557·guide 64·condition 31, 공개 30건). 스냅샷 .backup-prod/unpublish-contents/snapshot.json, 복구 --restore --yes. 다음: ISR 캐시 만료 후 /condition→/category/health·사이트맵 확인, audit:live, GSC 사이트맵 재제출. docs/unpublish-20261012.md
 (0) 애드센스 최종 보강: fix/adsense-readiness-final-20261012 로컬 완료(미push·미배포). 상세 docs/adsense-final-remediation-20261012.md. 남음: 운영 DB 본문 16건 반영 승인, 계정 측 수동 확인(UNKNOWN 11).
 (1) 후속 안정화 R01~R06: R01~R04 구현·단위/통합 테스트 완료 → PR #23 병합·운영 배포 완료(main 7f300b4). R05(e2e·CI)·R06(DB 계측) 미착수.
 (2) 홈 시안: fix/stabilize-r01-r04에서 홈·헤더 코드 적용+로컬 브라우저 검증 완료(미커밋·미배포). 승인 시안 PNG 원본 미확인 → CODEX_HANDOFF §B 명세 기준 구현. 스크린샷: docs/design/home-verify/. 이미지 기록: docs/home-assets.md.
 ## 최근 변경
+- 10-13: 운영 sitemap-0가 65건으로 재생성되는 결함 재현·수정(additionalPaths), 30건 중 22건 시드 보강, audit-keep30-drift 추가
 - 10-12: 운영 unpublish --apply 652건(공개 30건만). PR #68~70 병합, 감사 문서 docs/audits/petjigi-adsense-readiness-2026-10-12.md
 - 10-12: Consent Mode v2·운영 호스트 광고/GA4 제한·색인정책 공통화·JSON-LD 정합·내부링크 게이트·claim manifest·readiness 감사 추가(브랜치, 미배포)
 - 10-11: 얇은 글 배치 b15~b16(법·제도·이동 6 + 케어·안전 6 = 12건, PR #61~62), 중복 4건 308(사망 말소·크레이트·바닷물·카페 매너). 법·세제는 검증 불가 수치 제외하고 면책 추가. 잔여 blog 약 305

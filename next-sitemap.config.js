@@ -13,30 +13,59 @@ function ambiguousSigunguSlugs() {
 }
 const AMBIGUOUS_REGION_EXCLUDES = ambiguousSigunguSlugs().flatMap((slug) => [`/${slug}/*`, `/shelter/${slug}`]);
 
-let indexableListings;
 const BUSINESS_TYPES = ["vet", "grooming", "boarding", "funeral", "sale", "registration", "breeder", "transport", "exhibition"];
 const LISTING_PATH = new RegExp(`^/([a-z0-9-]+)/(${BUSINESS_TYPES.join("|")})$`);
+const SHELTER_PATH = /^\/shelter\/([a-z0-9-]+)$/;
+const LISTING_CHANGEFREQ = "daily";
+const SHELTER_CHANGEFREQ = "weekly";
+// 등록대행 목록은 기존 사이트맵 정책대로 제외한다(R01 paused 의미 변경 승인 후 재검토).
+const SITEMAP_EXCLUDED_TYPES = new Set(["registration"]);
+const SHELTER_MIN_INDEXABLE = 2; // lib/shelter-index-policy.ts MIN_INDEXABLE_SHELTERS와 동일
 
-// 업체가 1곳 이상 있는 (시군구 slug, 업종) 조합. 0건 목록은 noindex이므로 사이트맵에서 제외한다.
-// DB를 읽지 못하면 null을 반환하고 필터를 적용하지 않는다(기존 동작 유지).
-async function loadIndexableListings() {
+// 지역 목록·보호센터 페이지는 force-dynamic이라 빌드 산출물(prerender manifest)에 안정적으로 잡히지 않는다.
+// 빌드마다 sitemap-0.xml이 재생성되므로 색인 대상(업체 1곳 이상 / 센터 2곳 이상)을 DB 기준으로 직접 만든다.
+// 조회 실패 시 조용히 비우면 색인 URL 수백 건이 사라지므로 빌드를 실패시킨다(이전 배포 유지).
+let dynamicSets;
+async function loadDynamicSets() {
   if (!process.env.TURSO_DATABASE_URL) return null;
+  // eslint-disable-next-line @typescript-eslint/no-require-imports
+  const { createClient } = require("@libsql/client");
+  const client = createClient({ url: process.env.TURSO_DATABASE_URL, authToken: process.env.TURSO_AUTH_TOKEN });
   try {
-    // eslint-disable-next-line @typescript-eslint/no-require-imports
-    const { createClient } = require("@libsql/client");
-    const client = createClient({ url: process.env.TURSO_DATABASE_URL, authToken: process.env.TURSO_AUTH_TOKEN });
-    const rows = (await client.execute(
+    const listings = (await client.execute(
       "SELECT r.sigungu_slug AS slug, b.type AS type FROM businesses b JOIN regions r ON b.address_sigungu = r.sigungu WHERE b.status = 'active' GROUP BY r.sigungu_slug, b.type",
     )).rows;
+    const shelters = (await client.execute({
+      sql: "SELECT r.sigungu_slug AS slug FROM shelters s JOIN regions r ON s.sigungu = r.sigungu GROUP BY r.sigungu_slug HAVING COUNT(DISTINCT s.id) >= ?",
+      args: [SHELTER_MIN_INDEXABLE],
+    })).rows;
+    return {
+      listings: new Set(listings.filter((r) => !SITEMAP_EXCLUDED_TYPES.has(String(r.type))).map((r) => `${r.slug}/${r.type}`)),
+      shelters: new Set(shelters.map((r) => String(r.slug))),
+    };
+  } finally {
     client.close?.();
-    return new Set(rows.map((r) => `${r.slug}/${r.type}`));
-  } catch {
-    return null;
   }
+}
+const getDynamicSets = async () => (dynamicSets ??= await loadDynamicSets());
+
+async function dynamicPaths() {
+  const sets = await getDynamicSets();
+  if (!sets) return [];
+  const ambiguous = new Set(ambiguousSigunguSlugs());
+  return [
+    ...[...sets.listings].filter((k) => !ambiguous.has(k.split("/")[0])).map((k) => ({
+      loc: `/${k}`, changefreq: LISTING_CHANGEFREQ, priority: 0.6,
+    })),
+    ...[...sets.shelters].filter((k) => !ambiguous.has(k)).map((k) => ({
+      loc: `/shelter/${k}`, changefreq: SHELTER_CHANGEFREQ, priority: 0.7,
+    })),
+  ];
 }
 
 /** @type {import('next-sitemap').IConfig} */
 module.exports = {
+  additionalPaths: async () => dynamicPaths(),
   // 빌드 시각을 lastmod로 일괄 기록하지 않는다(신뢰할 수정일이 없으면 생략)
   autoLastmod: false,
   siteUrl: process.env.NEXT_PUBLIC_SITE_URL || "https://petjigi.kr",
@@ -89,10 +118,12 @@ module.exports = {
   changefreq: "daily",
   priority: 0.7,
   transform: async (config, path) => {
-    const listing = LISTING_PATH.exec(path);
-    if (listing) {
-      indexableListings ??= await loadIndexableListings();
-      if (indexableListings && !indexableListings.has(`${listing[1]}/${listing[2]}`)) return null;
+    const sets = await getDynamicSets();
+    if (sets) {
+      const listing = LISTING_PATH.exec(path);
+      if (listing && !sets.listings.has(`${listing[1]}/${listing[2]}`)) return null;
+      const shelter = SHELTER_PATH.exec(path);
+      if (shelter && !sets.shelters.has(shelter[1])) return null;
     }
     // 최상위 허브 — 홈·카테고리·블로그·가이드·질병·보험·품종 인덱스
     if (

@@ -1680,8 +1680,8 @@
         "body"
       ],
       "bodyBeforeSha256": "122e696a188f8bb584c19026d6ec7cb4b400a93771633c50f5120693f461f6cc",
-      "bodyAfterSha256": "3f901d8c7a31467de4aa5036b34f9917f9aaf011d80bc2c1af0a3d30201ea87b",
-      "bodyTextSha256": "1fb4b9a004803fff402c315cac7a1c412c430258993c5d4fe04fae1f67ac3282",
+      "bodyAfterSha256": "70ec50b56eb87d61b5a8f5a861d956a9434f3dd7a1e9c5120039d47b5454ce08",
+      "bodyTextSha256": "a0dd38d15f4f273c1e9ac3c6451cbe79598edff4f82d5d2e5320c339864c3ea8",
       "replacements": [
         {
           "from": "/blog/dog-grain-free-complete-guide",
@@ -1708,8 +1708,8 @@
         "body"
       ],
       "bodyBeforeSha256": "d627af267de815afb6d5df050789977523d9f6d3cbb1a36dd092317cee00a245",
-      "bodyAfterSha256": "f9ef5e0e838577ddda2c2155c203777bcf284de8bedfc0bde560dd9b8aa62913",
-      "bodyTextSha256": "294a2d81b4924f2baa22f553c14aa0c50c4009c36d5b8b59fb00b6eae6ee5056",
+      "bodyAfterSha256": "25e6edcef4d27dbfb7cbb4ce14e94b8f9c548665143a66917d56983184d01e11",
+      "bodyTextSha256": "af614f22fb98a492c15ed19c6899988773f4bf126df4550f1d4821b66c6570f7",
       "replacements": [
         {
           "from": "/blog/petloss-recovery-guide",

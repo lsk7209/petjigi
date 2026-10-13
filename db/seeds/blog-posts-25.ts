@@ -445,7 +445,7 @@ BSAVA(영국 소동물 수의사협회) 가이드라인에 따르면 췌장염�
 <strong>식이 제거 테스트 전 확인 사항</strong><br>
 • 수의사에게 식품 알레르기 가능성 확인을 받은 뒤 시작 권장<br>
 • 아토피·접촉성 알레르기와 동시에 진행되면 결과 해석이 어렵다<br>
-• WSAVA 권장 기간 최소 8주 동안 엄격하게 유지해야 의미 있는 결과가 나온다
+• 보통 8주 안팎(수의사가 기간을 조정)을 엄격하게 유지해야 의미 있는 결과가 나온다
 </div>
 
 <h2>1. 원인 식재료 TOP 5 — 무엇을 제거할 것인가</h2>
@@ -531,12 +531,11 @@ BSAVA(영국 소동물 수의사협회) 가이드라인에 따르면 췌장염�
     authorName: "펫지기 에디터",
     authorCredential: "반려동물 영양 정보 큐레이터",
     ymyl: false,
-    sources: JSON.stringify([
-      "Veterinary Dermatology (2016) — 강아지 식품 알레르기 원인 식재료 빈도 리뷰",
-      "WSAVA(세계소동물수의사협회) 피부과 가이드라인 — 식이 제거 테스트 권장 기간",
+    sources: [
+      "Mueller RS 외 (2016) — Critically appraised topic on adverse food reactions of companion animals (2): common food allergen sources in dogs and cats, BMC Veterinary Research (원문 대조 대기)",
       "농림축산검역본부 반려동물 건강관리 정보 qia.go.kr",
-    ]),
-    disclaimer: null,
+    ],
+    disclaimer: "이 글은 정보 제공을 목적으로 하며 수의사 진료를 대체하지 않습니다. 식이 제거 테스트는 수의사와 상의해 진행하세요.",
     status: "published",
     publishedAt: "2026-06-02T13:00:00.000Z",
     createdAt: NOW,
