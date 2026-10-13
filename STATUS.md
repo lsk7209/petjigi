@@ -6,6 +6,7 @@
 (1) 후속 안정화 R01~R06: R01~R04 구현·단위/통합 테스트 완료 → PR #23 병합·운영 배포 완료(main 7f300b4). R05(e2e·CI)·R06(DB 계측) 미착수.
 (2) 홈 시안: fix/stabilize-r01-r04에서 홈·헤더 코드 적용+로컬 브라우저 검증 완료(미커밋·미배포). 승인 시안 PNG 원본 미확인 → CODEX_HANDOFF §B 명세 기준 구현. 스크린샷: docs/design/home-verify/. 이미지 기록: docs/home-assets.md.
 ## 최근 변경
+- 10-13: 사이트 재설계 1~4 배포(OVH 6c9be00): 지역 데이터 요약 블록, /tools 허브+지역 비교표, regions 146행 추가(사이트맵 453→1,034, 업체 3곳 이상만), 지역 목록 내부 링크. GSC sitemap.xml 재제출
 - 10-13: PR #72~74 병합. ETL 실패 은폐 제거, 지역 목록 중복 제거(OVH 586db12 배포), 동물병원 ETL 전체수집(1,100→10,648건)·운영 반영·주간 워크플로. 나머지 7업종은 LOCALDATA 불통으로 5월 스냅샷
 - 10-13: 운영 sitemap-0가 65건으로 재생성되는 결함 재현·수정(additionalPaths), 30건 중 22건 시드 보강, audit-keep30-drift 추가
 - 10-12: 운영 unpublish --apply 652건(공개 30건만). PR #68~70 병합, 감사 문서 docs/audits/petjigi-adsense-readiness-2026-10-12.md
