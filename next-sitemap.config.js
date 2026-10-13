@@ -20,6 +20,8 @@ const LISTING_CHANGEFREQ = "daily";
 const SHELTER_CHANGEFREQ = "weekly";
 // 등록대행 목록은 기존 사이트맵 정책대로 제외한다(R01 paused 의미 변경 승인 후 재검토).
 const SITEMAP_EXCLUDED_TYPES = new Set(["registration"]);
+// 지역×업종 목록은 업체가 이 수 이상일 때만 사이트맵에 넣는다(1~2곳짜리 얇은 목록은 색인 제안에서 제외, 페이지 자체는 유지)
+const LISTING_MIN_SITEMAP = 3;
 const SHELTER_MIN_INDEXABLE = 2; // lib/shelter-index-policy.ts MIN_INDEXABLE_SHELTERS와 동일
 
 // 지역 목록·보호센터 페이지는 force-dynamic이라 빌드 산출물(prerender manifest)에 안정적으로 잡히지 않는다.
@@ -32,9 +34,10 @@ async function loadDynamicSets() {
   const { createClient } = require("@libsql/client");
   const client = createClient({ url: process.env.TURSO_DATABASE_URL, authToken: process.env.TURSO_AUTH_TOKEN });
   try {
-    const listings = (await client.execute(
-      "SELECT r.sigungu_slug AS slug, b.type AS type FROM businesses b JOIN regions r ON b.address_sigungu = r.sigungu WHERE b.status = 'active' GROUP BY r.sigungu_slug, b.type",
-    )).rows;
+    const listings = (await client.execute({
+      sql: "SELECT r.sigungu_slug AS slug, b.type AS type FROM businesses b JOIN regions r ON b.address_sigungu = r.sigungu WHERE b.status = 'active' GROUP BY r.sigungu_slug, b.type HAVING COUNT(DISTINCT b.id) >= ?",
+      args: [LISTING_MIN_SITEMAP],
+    })).rows;
     const shelters = (await client.execute({
       sql: "SELECT r.sigungu_slug AS slug FROM shelters s JOIN regions r ON s.sigungu = r.sigungu GROUP BY r.sigungu_slug HAVING COUNT(DISTINCT s.id) >= ?",
       args: [SHELTER_MIN_INDEXABLE],

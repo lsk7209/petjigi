@@ -51,3 +51,18 @@ test("보호센터 사이트맵 최소 센터 수가 색인 정책과 같다", (
   assert.ok(min);
   assert.match(config, new RegExp(`SHELTER_MIN_INDEXABLE = ${min};`));
 });
+
+test("지역×업종 목록은 업체 수 하한 이상일 때만 사이트맵에 들어간다", () => {
+  assert.match(config, /LISTING_MIN_SITEMAP = 3;/);
+  assert.match(config, /HAVING COUNT\(DISTINCT b\.id\) >= \?/);
+});
+
+test("regions 시드의 시군구 slug는 같은 이름끼리만 공유한다(다른 이름이 같은 slug를 쓰면 목록이 섞인다)", () => {
+  const src = fs.readFileSync("db/seeds/regions.ts", "utf8");
+  const bySlug = new Map<string, Set<string>>();
+  for (const m of src.matchAll(/sigungu: "([^"]+)", sigunguSlug: "([^"]+)"/g)) {
+    bySlug.set(m[2], (bySlug.get(m[2]) ?? new Set()).add(m[1]));
+  }
+  const mixed = [...bySlug].filter(([, names]) => names.size > 1).map(([slug]) => slug);
+  assert.deepEqual(mixed, []);
+});
