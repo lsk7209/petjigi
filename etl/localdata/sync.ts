@@ -83,6 +83,7 @@ export async function syncLocaldata(): Promise<void> {
   console.log("[ETL:businesses] 시작");
   const changedUrls: string[] = [];
   let totalProcessed = 0;
+  let failedPages = 0; // 원본 API 실패는 조용히 넘기지 않고 종료 코드로 알린다
 
   for (const [bsshCode, { type, category }] of Object.entries(BSSH_CODE_MAP)) {
     console.log(`[ETL:businesses] 업종 ${bsshCode} (${type}) 동기화 중...`);
@@ -95,6 +96,7 @@ export async function syncLocaldata(): Promise<void> {
         rows = await fetchLocaldataPage(bsshCode, pageNo);
       } catch (e) {
         console.error(`[ETL:businesses] 업종 ${bsshCode} 페이지 ${pageNo} 실패:`, e);
+        failedPages++;
         break;
       }
 
@@ -213,6 +215,10 @@ export async function syncLocaldata(): Promise<void> {
       },
       body: JSON.stringify({ tags: ["businesses", "stats"] }),
     }).catch((e) => console.error("[ETL:businesses] 캐시 무효화 실패:", e));
+  }
+
+  if (failedPages > 0) {
+    throw new Error(`[ETL:businesses] 원본 API 실패 ${failedPages}건 — 데이터가 갱신되지 않았을 수 있음`);
   }
 }
 
