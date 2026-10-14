@@ -13,6 +13,7 @@ import { RegionPanel } from "@/components/home/region-panel";
 import { HealthPanel } from "@/components/home/health-panel";
 import { GuideFeed } from "@/components/home/guide-feed";
 import { MemorialCard, MessageCard } from "@/components/home/side-cards";
+import { ToolsStrip } from "@/components/home/tools-strip";
 import { TrustStrip } from "@/components/home/trust-strip";
 import { OwnerJourneys } from "@/components/content/owner-journeys";
 import "./home.css";
@@ -44,6 +45,8 @@ export default async function HomePage() {
           <RegionPanel />
           <HealthPanel />
         </div>
+
+        <div className="hm-wrap"><ToolsStrip /></div>
 
         <div className="hm-wrap hm-editorial">
           <GuideFeed cards={cards} />

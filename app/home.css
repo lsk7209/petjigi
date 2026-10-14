@@ -169,3 +169,7 @@
 @media (prefers-reduced-motion: no-preference) {
   .hm-btn, .hm-tile, .hm-chips a, .hm-gcard, .hm-ref a { transition: background-color 0.15s, border-color 0.15s, box-shadow 0.15s, color 0.15s; }
 }
+
+.hm-tools { padding: 28px 0 4px; }
+.hm-tools-desc { margin: 0 0 14px; font-size: 14px; line-height: 1.6; color: var(--hm-muted); }
+.hm-tools-list { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 10px; }
