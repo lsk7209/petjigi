@@ -1,10 +1,12 @@
 import assert from "node:assert/strict";
 import test from "node:test";
+import fs from "node:fs";
 import { classifyListing } from "../listing-state";
 import {
   evaluateBusinessDetailEligibility,
   evaluateContentEligibility,
   evaluateListingEligibility,
+  LISTING_MIN_INDEXABLE,
   evaluateOperationalEligibility,
   type PageEligibility,
 } from "./indexability-policy";
@@ -127,4 +129,19 @@ test("콘텐츠: 리디렉션(404/308)·비공개·운영 페이지", () => {
   const op = evaluateOperationalEligibility();
   assert.deepEqual(op.reasons, ["OPERATIONAL_PAGE"]);
   for (const e of [redirected, hidden, op]) assertInvariant(e);
+});
+
+test("업체 3곳 미만 목록은 noindex·sitemap·광고·JSON-LD 제외, 3곳은 색인", () => {
+  const status = classifyListing(2, "2026-10-01", NOW);
+  const thin = evaluateListingEligibility({ ambiguousRegion: false, status, categoryId: 3, businessCount: 2 });
+  assert.deepEqual(thin.reasons, ["THIN_LISTING"]);
+  assertInvariant(thin);
+  assert.equal(thin.indexable, false);
+  const ok = evaluateListingEligibility({ ambiguousRegion: false, status, categoryId: 3, businessCount: 3 });
+  assert.equal(ok.indexable, true);
+});
+
+test("색인 하한이 사이트맵 하한과 같다", () => {
+  const cfg = fs.readFileSync("next-sitemap.config.js", "utf8");
+  assert.match(cfg, new RegExp(`LISTING_MIN_SITEMAP = ${LISTING_MIN_INDEXABLE};`));
 });

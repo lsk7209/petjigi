@@ -10,6 +10,7 @@ export type IndexabilityReason =
   | "AMBIGUOUS_REGION"
   | "NOT_COLLECTED"
   | "EMPTY_CONFIRMED"
+  | "THIN_LISTING"
   | "INSUFFICIENT_UNIQUE_DATA"
   | "OPERATIONAL_PAGE"
   | "CONTENT_NOT_PUBLIC"
@@ -25,6 +26,8 @@ export interface PageEligibility {
 }
 
 const MEMORIAL_CATEGORY_ID = 6;
+// 사이트맵 하한(next-sitemap.config.js LISTING_MIN_SITEMAP)과 같아야 한다(테스트로 고정)
+export const LISTING_MIN_INDEXABLE = 3;
 
 const NOT_ELIGIBLE = {
   indexable: false,
@@ -48,15 +51,17 @@ function indexable(categoryId: number | null): PageEligibility {
   };
 }
 
-/** 지역×업종 목록. 업체 0건(수집 이력 유무 무관)과 모호한 지역은 색인·광고·JSON-LD 모두 제외 */
+/** 지역×업종 목록. 업체 0건(수집 이력 유무 무관)·모호한 지역·업체 3곳 미만은 색인·광고·JSON-LD 모두 제외 */
 export function evaluateListingEligibility(input: {
   ambiguousRegion: boolean;
   status: Pick<ListingStatus, "state">;
   categoryId: number;
+  businessCount?: number;
 }): PageEligibility {
   if (input.ambiguousRegion) return blocked("AMBIGUOUS_REGION");
   if (input.status.state === "not_collected") return blocked("NOT_COLLECTED");
   if (input.status.state === "empty_confirmed") return blocked("EMPTY_CONFIRMED");
+  if (input.businessCount !== undefined && input.businessCount < LISTING_MIN_INDEXABLE) return blocked("THIN_LISTING");
   return indexable(input.categoryId);
 }
 
