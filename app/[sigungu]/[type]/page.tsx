@@ -152,6 +152,7 @@ export async function generateMetadata({
       listing.sourceAsOf,
     ),
     categoryId: meta.categoryId,
+    businessCount: listing.totalCount,
   });
   const title = `${location} ${meta.label}${page > 1 ? ` ${page}페이지` : ""}`;
   const description = `${location} ${meta.label} 전체 목록. ${meta.desc} — 공공데이터 기반 업체 목록과 방문 전 확인 안내.`;
@@ -235,6 +236,7 @@ export default async function SigunguTypePage({
     ambiguousRegion: ambiguousSidoNames.length > 1,
     status,
     categoryId: meta.categoryId,
+    businessCount: listing.totalCount,
   });
   const asOfDate = (listing.sourceAsOf ?? status.asOf)?.slice(0, 10) ?? null;
   const staleAsOf = status.stale ? asOfDate : null;

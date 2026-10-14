@@ -88,7 +88,7 @@ try {
     sql: 'INSERT INTO regions (code, sido, sido_slug, sigungu, sigungu_slug, full_name) VALUES (?,?,?,?,?,?)',
     args: ['41590', '경기도', 'gyeonggi', '화성시', 'hwaseong', '경기도 화성시'],
   });
-  for (const [id, type, category, name] of [['b-funeral', 'funeral', 6, '합성추모'], ['b-vet', 'vet', 3, '합성병원']]) {
+  for (const [id, type, category, name] of [['b-funeral', 'funeral', 6, '합성추모'], ['b-vet', 'vet', 3, '합성병원'], ['b-vet-2', 'vet', 3, '합성병원둘'], ['b-vet-3', 'vet', 3, '합성병원셋']]) {
     await client.execute({
       sql: 'INSERT INTO businesses (id,type,category,name,address,address_sido,address_sigungu,status,source,last_synced_at,created_at,updated_at) VALUES (?,?,?,?,?,?,?,?,?,?,?,?)',
       args: [id, type, category, name, '경기도 화성시 합성로 1', '경기도', '화성시', 'active', 'fixture', d, d, d],

@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import { COMPARE_TYPES, findCompareType } from "@/lib/business-types";
 import { getCachedRegionCompare } from "@/lib/region-compare-query";
 import { groupBySido } from "@/lib/region-compare";
+import { LISTING_MIN_INDEXABLE } from "@/lib/seo/indexability-policy";
 
 export const revalidate = 86400;
 
@@ -162,7 +163,7 @@ export default async function RegionComparePage({ params }: Props) {
                   className="border-b border-[var(--brand-border)]"
                 >
                   <th scope="row" className="py-2 pr-4 text-left font-medium">
-                    {s.sigunguSlug ? (
+                    {s.sigunguSlug && s.count >= LISTING_MIN_INDEXABLE ? (
                       <Link
                         href={`/${s.sigunguSlug}/${meta.type}`}
                         className="hover:text-[var(--brand-accent)]"
