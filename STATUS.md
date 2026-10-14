@@ -36,7 +36,7 @@
 - [ ] 사용자 작업: data.go.kr에서 1741000 계열 API(판매업·위탁관리업·생산업·운송업·전시업·수입업) 활용신청 → 나머지 7업종 갱신(LOCALDATA 불통). 미용·장묘업 API명 미확인
 - [ ] 카카오 REST 키 403 → 교체 후 신규 동물병원 538곳 지오코딩
 - [ ] 10-20경 GSC URL 검사로 색인 재확인(0이면 추가 조사), 애드센스 재신청은 색인·데이터 신선도 개선 후
-- [ ] 출처 3건 원문 대조(ACVS, WSAVA 2016, Mueller 2016), petjigi OVH 자동배포 poller 미설정(main 병합마다 수동 빌드), deploy.yml(Vercel 기준) 정리
+- [ ] 출처 3건 원문 대조(ACVS, WSAVA 2016, Mueller 2016), deploy.yml(Vercel 기준) 정리
 - [ ] 재공개 시 sitemap-0.xml·next-sitemap.config.js /condition 복원; 미추적 .goal-harness/host-process-20260913/ 처리 결정
 - [ ] 결정: 얇은 YMYL blog 19건 증보 여부, 센터 1곳 shelter noindex 여부 (4차 감사 문서)
 - [ ] law.go.kr 과태료 조문·별표 원문 대조("최대 100만 원" 상한 표현 여러 글), AdSense 계정 심사 상태 확인, www 리디렉션 307→308
@@ -52,6 +52,7 @@
 - 검색 slug 맵: 동명 시군구도 같은 slug면 포함(상세가 저장된 시군구명으로 확정)
 - 전역 푸터는 유지(정책 링크 이미 존재), 헤더만 시안 반영 예정
 ## 주의
+- 자동배포(2026-10-14): 서버 `petjigi-auto-deploy.timer`(5분)가 main을 읽기전용 deploy key(GitHub key 166413866)로 fetch→OVH 오버레이→빌드→compose 교체(실패 시 롤백). 문서만 바뀐 커밋은 건너뜀. 스크립트 E:\server-ovhcloud\deployuto-deploy\petjigi_updater.py. 끄기: `systemctl disable --now petjigi-auto-deploy.timer`. 실제 빌드·교체 경로는 첫 런타임 변경 병합 때 검증 필요
 - 가드 테스트 2건 수정(og-runtime, region-page-integration): 공통 resolver 지연 import 허용, 의도 유지
 - Gemini 키 2종 모두 사용 불가(AQ. 토큰 401, AIzaSy 만료)
 - Turso 토큰(turso2.txt) 폐기 필요(기존). 키파일 일부가 이번 세션 화면에 출력됨 → Anthropic·바이낸스 키 교체 권장
