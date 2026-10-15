@@ -93,3 +93,30 @@ test("시도 표기 변형은 개명 전후만 묶고 다른 시도와 섞지 �
   assert.deepEqual(sidoNameVariants("강원특별자치도").sort(), ["강원도", "강원특별자치도"].sort());
   assert.deepEqual(sidoNameVariants("서울특별시"), ["서울특별시"]);
 });
+
+test("시도 개명·통합 전후 표기 행은 같은 업체로 보고 최신 행만 남긴다", async () => {
+  const c = await setup([
+    { id: "ld-1", name: "가", address: "전라남도 목포시 영산로 503 (상동)", synced: MAY },
+    { id: "mois-1", name: "가", address: "전남광주통합특별시 목포시 영산로 503 (상동)", synced: OCT },
+    { id: "ld-2", name: "나", address: "광주광역시 동구 독립로 292", synced: MAY },
+    { id: "mois-2", name: "나", address: "전남광주통합특별시 동구 독립로 292", synced: OCT },
+    { id: "gw-1", name: "다", address: "강원도 춘천시 중앙로 1", synced: MAY },
+    { id: "gw-2", name: "다", address: "강원특별자치도 춘천시 중앙로 1", synced: OCT },
+  ]);
+  assert.deepEqual(await listed(c), ["gw-2", "mois-1", "mois-2"]);
+  assert.deepEqual(
+    collapseListingDuplicates([
+      { id: "a", type: "vet", name: "가", address: "전라남도 목포시 1", status: "active", lastSyncedAt: MAY },
+      { id: "b", type: "vet", name: "가", address: "전남광주통합특별시 목포시 1", status: "active", lastSyncedAt: OCT },
+    ]).map((r) => r.id),
+    ["b"],
+  );
+});
+
+test("다른 시도의 같은 이름·같은 나머지 주소는 합치지 않는다", async () => {
+  const c = await setup([
+    { id: "s", name: "가", address: "서울특별시 중구 세종대로 1" },
+    { id: "b", name: "가", address: "부산광역시 중구 세종대로 1" },
+  ]);
+  assert.deepEqual(await listed(c), ["b", "s"]);
+});
