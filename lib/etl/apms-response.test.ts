@@ -61,3 +61,12 @@ test("single item object (not array) is normalized to a one-element array", () =
   assert.equal(result.kind, "ok");
   if (result.kind === "ok") assert.deepEqual(result.items, [{ id: "solo" }]);
 });
+for (const totalCount of [undefined, null, '', 'not-a-number', -1, 1.5]) {
+ test(`invalid totalCount ${String(totalCount)} cannot become successful zero`, () => {
+  assert.equal(parseApmsResponse({httpOk:true,httpStatus:200,json:{response:{header:{resultCode:'00'},body:{totalCount,items:''}}}}).kind,'failed');
+ });
+}
+test('decimal digit totalCount string is accepted without inventing zero', () => {
+ const r=parseApmsResponse({httpOk:true,httpStatus:200,json:{response:{header:{resultCode:'00'},body:{totalCount:'1',items:{item:{id:'a'}}}}}});
+ assert.equal(r.kind,'ok'); if(r.kind==='ok')assert.equal(r.totalCount,1);
+});

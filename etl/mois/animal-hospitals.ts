@@ -9,6 +9,7 @@ import { createHash } from "crypto";
 import { db } from "../../db/client";
 import { businesses, etlSyncState } from "../../db/schema";
 import { eq, inArray } from "drizzle-orm";
+import { retainedCoordinates } from "../../lib/etl/coordinates";
 import { geocodeAddress } from "../geocoding/kakao";
 import { pingIndexNow } from "../../lib/seo/index-now";
 import { classifyEtlRun, type PageOutcome } from "../../lib/etl/run-outcome";
@@ -96,10 +97,10 @@ async function processPage(items: HospitalRow[], processed: { count: number; clo
 
   // 배치 SELECT — 페이지 내 모든 ID를 한 번에 조회 (N+1 방지)
   const pageIds = items.map(makeId);
-  const existingRows: { id: string; rawData: unknown; lat: number | null; lng: number | null; createdAt: string }[] = [];
+  const existingRows: { id: string; rawData: unknown; address: string; lat: number | null; lng: number | null; createdAt: string }[] = [];
   for (let i = 0; i < pageIds.length; i += CHUNK) {
     const batch = await db
-      .select({ id: businesses.id, rawData: businesses.rawData, lat: businesses.lat, lng: businesses.lng, createdAt: businesses.createdAt })
+      .select({ id: businesses.id, rawData: businesses.rawData, address: businesses.address, lat: businesses.lat, lng: businesses.lng, createdAt: businesses.createdAt })
       .from(businesses)
       .where(inArray(businesses.id, pageIds.slice(i, i + CHUNK)));
     existingRows.push(...batch);
@@ -139,9 +140,8 @@ async function processPage(items: HospitalRow[], processed: { count: number; clo
     const { sido, sigungu, dong } = parseAddress(addr);
 
     // 기존 좌표 있으면 재사용 (영구 캐싱) — 카카오 API 호출 최소화
-    let lat = existing?.lat ?? null;
-    let lng = existing?.lng ?? null;
-    if (!lat && !lng && status === "active") {
+    let { lat, lng } = retainedCoordinates(existing, addr);
+    if (lat === null && lng === null && status === "active") {
       const geo = await geocodeAddress(addr);
       if (geo) { lat = geo.lat; lng = geo.lng; }
     }

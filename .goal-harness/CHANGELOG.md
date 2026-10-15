@@ -17,3 +17,6 @@
 | `lib/admin-auth.ts`, `lib/review-workflow.ts`, admin pages and review mutations | Added fail-closed authentication and review-state transition checks | Prevent direct server-action invocation, missing-secret authentication and re-approval of resolved items |
 | `db/seeds/conditions-batch-1.ts`, `db/seeds/conditions-batch-2.ts`, `scripts/review-queue-condition-content.test.ts` | Added authoritative sources and removed sampled unsupported fixed claims from 11 condition drafts | Eliminate machine-readable source gaps while keeping expert semantic approval pending |
 | `db/seeds/blog-posts-20.ts`, `db/seeds/blog-posts-22.ts`, `db/seeds/blog-posts-24.ts`, `scripts/remaining-published-content.test.ts` | Corrected the final three published source-missing high-risk guides | Remove stale market claims, unsupported prevalence and efficacy figures, fixed treatment rules and remote-care overreach |
+
+## 2026-10-16
+지역scope/사이트맵/비교/상세 정합, APMS완전성/좌표·hash/LOCALDATA응답검증, source URL 링크, 외부connection hint제거, 보험금액검증. 세부파일/영향은 production-plan-20261016.md. 원격·운영변경0.

@@ -29,7 +29,7 @@ const run = (label, args) => {
 try {
   run('fixture', ['tests/e2e/create-ads-fixture.mjs']);
   run('build', ['node_modules/next/dist/bin/next', 'build']);
-  for (const t of ['ads-decision', 'smoke', 'content-claims', 'core-guides', 'site-value']) run(t, [`tests/e2e/${t}.mjs`]);
+  for (const t of ['ads-decision', 'smoke', 'content-claims', 'core-guides', 'site-value', 'region-consistency']) run(t, [`tests/e2e/${t}.mjs`]);
   console.log('\nE2E 전체 통과');
 } catch (error) {
   console.error(error.message);

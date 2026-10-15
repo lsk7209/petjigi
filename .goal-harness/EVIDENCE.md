@@ -43,3 +43,22 @@ Level: 2 (local tests/type/lint plus production compile; runtime/account proof i
 
 - `docs/petjigi-improvement/validation-report.md`
 - `docs/HANDOFF.md`
+
+## 2026-10-16 final audit
+Remote ls-remote/fetch: 73767e3. Original worktree clean and unchanged. Isolated worktree created. Prior 10-15 report is historical, not authority for current defects.
+
+## Final 2026-10-16
+- origin/main73767e3; original main73e25ba clean; remote/production mutations0.
+- test-final.log:608pass/0fail. Final compare aggregate repair additionally verified by latest build and region-final-build.log (list3/compare3/detail3/unclassified1).
+- e2e-final.log:original5suites137pass; added region case initiallyFAIL4vs3, repaired/rebuilt affectedflowPASS. Failure retained; full6suite command not claimed rerun green after repair.
+- lint-final.log/typecheck-final.log PASS. Next16.3.8 latest fixture build PASS.
+- sitemap-build.log PASS outDir=.seo-cache/final-sitemap; public/dependencies/lockfile unchanged.
+- consistency JSON13fixtures/mismatch0; production counts BLOCKED/null.
+- links failing0; live structured5/0issues; claims260risky256untracked4review/0manifestissues; readiness13PASS11UNKNOWN coarse structural only.
+- keep30exact/30HTTP200; sitemap1032+60; public policy6/home/ambiguous/error samples; runtimeexplicitproduction/pubmatch. No DB/image/overlay/account/ad-serving proof.
+- content30screen/source labels82; full primary-source/expert review incomplete. Body corrections2 proposed only.
+- reviewer HIGH fallbackhash/mergedprovince reproduced/repaired/reconfirmed. Final browser caught mixed mapped/unmapped GROUP BY defect, repaired with actual-route proof.
+- ETL applies remain per-row/idempotent, not transaction atomicity. No production ETL run. Detailed limits and approval/rollback in current audit and production plan.
+
+## Final complete E2E rerun
+Final code pnpm test:e2e: all six suites PASS, command exit0; e2e-complete-20261016.log. GA4 ID blank. Prior partial-rerun gap resolved. Remote/production mutations0.

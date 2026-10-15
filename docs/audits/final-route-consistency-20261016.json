@@ -1,0 +1,10 @@
+{
+  "at": "2026-10-15T23:14:44.669Z",
+  "scope": "isolated fixture production build and browser, not live production",
+  "listingCards": 3,
+  "comparisonCount": 3,
+  "detailRegionCount": 3,
+  "unclassifiedCount": 1,
+  "mismatches": 0,
+  "externalRequests": "mocked"
+}

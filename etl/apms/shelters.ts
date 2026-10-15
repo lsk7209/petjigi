@@ -5,10 +5,12 @@
  */
 
 import { db } from "../../db/client";
-import { shelters } from "../../db/schema";
+import { eq } from "drizzle-orm";
+import { shelters, etlSyncState } from "../../db/schema";
 import { geocodeAddress } from "../geocoding/kakao";
 import { pingIndexNow } from "../../lib/seo/index-now";
 import { buildShelterUpsertValues } from "../../lib/etl/shelter-upsert";
+import { collectApmsPages } from "../../lib/etl/apms-collection";
 import { parseApmsResponse } from "../../lib/etl/apms-response";
 
 const API_KEY = process.env.APMS_API_KEY ?? "";
@@ -16,6 +18,7 @@ const API_URL = "https://apis.data.go.kr/1543061/abandonmentPublicService_v2/aba
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://petjigi.kr";
 
 interface AnimalRow {
+  desertionNo: string;
   careRegNo: string;
   careNm: string;
   careTel: string;
@@ -38,32 +41,14 @@ async function fetchPage(pageNo: number, numOfRows = 1000) {
 export async function syncShelters(): Promise<void> {
   console.log("[ETL:shelters] 시작 (abandonmentPublic_v2에서 보호센터 추출)");
 
-  // 전체 페이지 수집 + careRegNo 기준 dedup
-  const firstPage = await fetchPage(1, 1);
-  if (firstPage.kind === "failed") {
-    console.error(`[ETL:shelters] 첫 페이지 조회 실패 — ${firstPage.reason}. 중단`);
-    return;
-  }
-  const total = firstPage.totalCount;
-  const totalPages = Math.max(1, Math.ceil(total / 1000));
-  console.log(`[ETL:shelters] 구조동물 ${total}건 → 최대 ${totalPages}페이지`);
-
+  const attemptAt = new Date().toISOString();
+  await db.insert(etlSyncState).values({jobName: "shelters", lastAttemptAt: attemptAt, updatedAt: attemptAt})
+    .onConflictDoUpdate({target: etlSyncState.jobName, set: {lastAttemptAt: attemptAt, updatedAt: attemptAt}});
+  // 원본 구조동물 ID로 페이지 반복을 검사한다. 센터 ID는 여러 동물에 반복되는 정상 값이다.
+  const items = await collectApmsPages(fetchPage, row => row.desertionNo);
   const seen = new Map<string, AnimalRow>();
-  let sawFailedPage = false;
-
-  for (let page = 1; page <= totalPages; page++) {
-    const result = await fetchPage(page, 1000);
-    if (result.kind === "failed") {
-      console.error(`[ETL:shelters] ${page}페이지 조회 실패 — ${result.reason}. 지금까지 수집된 ${seen.size}건만 반영`);
-      sawFailedPage = true;
-      break;
-    }
-    for (const item of result.items) {
-      if (item.careRegNo && !seen.has(item.careRegNo)) {
-        seen.set(item.careRegNo, item);
-      }
-    }
-    if (result.items.length < 1000) break;
+  for (const item of items) {
+    if (item.careRegNo && !seen.has(item.careRegNo)) seen.set(item.careRegNo, item);
   }
 
   console.log(`[ETL:shelters] 고유 보호센터 ${seen.size}개 처리 중...`);
@@ -106,8 +91,12 @@ export async function syncShelters(): Promise<void> {
   }
 
   console.log(
-    `[ETL:shelters] 완료 — ${total2}건 처리${sawFailedPage ? " (일부 페이지 조회 실패로 부분 수집)" : ""}`
+    `[ETL:shelters] 완료 — ${total2}건 처리`
   );
+
+  const successfulAt = new Date().toISOString();
+  await db.update(etlSyncState).set({lastSuccessfulAt: successfulAt, updatedAt: successfulAt})
+    .where(eq(etlSyncState.jobName, "shelters"));
 
   if (total2 > 0) {
     await pingIndexNow([`${SITE_URL}/sido/seoul`, SITE_URL]).catch(() => {});

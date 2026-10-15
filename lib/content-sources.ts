@@ -23,3 +23,14 @@ export function parseStoredSources(value: unknown): string[] {
   }
   return [];
 }
+/** 이미 저장된 HTTP(S) 출처 URL만 링크한다. 출처 주소를 추측해서 만들지 않는다. */
+export function sourceLinkParts(source: string): {before:string;href:string|null;after:string} {
+  const match = /https?:\/\/[^\s<>"'()]+/.exec(source);
+  if (!match) return {before:source,href:null,after:''};
+  const href = match[0].replace(/[.,;]+$/, '');
+  try {
+    const url = new URL(href);
+    if (url.username || url.password || !['http:','https:'].includes(url.protocol)) return {before:source,href:null,after:''};
+  } catch {return {before:source,href:null,after:''};}
+  return {before:source.slice(0,match.index),href,after:source.slice(match.index+href.length)};
+}

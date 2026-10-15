@@ -1,0 +1,46 @@
+{
+  "localStatus": "LOCAL_READY (repaired code only)",
+  "productionStatus": "NOT_VERIFIED",
+  "reviewCandidate": "NOT_READY",
+  "unit": {
+    "passed": 608,
+    "failed": 0,
+    "evidence": ".goal-harness/test-final.log",
+    "lastComparisonRepair": "separately verified by final build/browser"
+  },
+  "lint": "PASS",
+  "typecheck": "PASS",
+  "finalFixtureBuild": "PASS",
+  "e2e": {
+    "originalFiveSuitesPassed": 137,
+    "additionalRegionCase": "FAIL before repair; PASS after final rebuild",
+    "allSixSuitesRerunAfterRepair": true,
+    "fullSixSuites": "PASS",
+    "evidence": ".goal-harness/e2e-complete-20261016.log"
+  },
+  "fixtureConsistency": {
+    "cases": 13,
+    "mismatches": 0
+  },
+  "productionDb": "BLOCKED",
+  "runtimeServerEnvOverlayImage": "BLOCKED/UNKNOWN",
+  "publicEditorialKeep": {
+    "expected": 30,
+    "observedSitemap": 30,
+    "http200": 30,
+    "extra": 0,
+    "missing": 0
+  },
+  "draft652CurrentDb": "BLOCKED",
+  "remotePush": false,
+  "productionWrites": false,
+  "bodySeedChanges": false,
+  "productionArtifactOverwrite": false,
+  "continuation": {
+    "fullSixSuiteE2e": "PASS",
+    "log": ".goal-harness/e2e-complete-20261016.log",
+    "runtimeGaId": "explicitly blank",
+    "remoteScope": "pending user clarification; no remote mutation",
+    "ovhDefaultAliasConfigured": false
+  }
+}

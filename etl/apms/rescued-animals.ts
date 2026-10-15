@@ -7,6 +7,7 @@
 import { db } from "../../db/client";
 import { etlSyncState, rescuedAnimals } from "../../db/schema";
 import { eq } from "drizzle-orm";
+import { collectApmsPages } from "../../lib/etl/apms-collection";
 import { parseApmsResponse } from "../../lib/etl/apms-response";
 import { classifyEtlRun, type PageOutcome } from "../../lib/etl/run-outcome";
 
@@ -66,13 +67,9 @@ export async function syncRescuedAnimals(): Promise<void> {
       set: { lastAttemptAt: attemptAt, updatedAt: attemptAt },
     });
 
-  const firstPage = await fetchPage(1, 1);
-  if (firstPage.kind === "failed") {
-    console.error(`[ETL:rescued-animals] 첫 페이지 조회 실패 — ${firstPage.reason}. 성공 시각을 갱신하지 않음`);
-    return;
-  }
-
-  const total = firstPage.totalCount;
+  // 수집을 전부 검증한 후에만 DB 반영을 시작한다. 실패는 호출부까지 전파해 exit 1.
+  const collected = await collectApmsPages(fetchPage, row => row.desertionNo);
+  const total = collected.length;
   const totalPages = Math.max(1, Math.ceil(total / 1000));
   console.log(`[ETL:rescued-animals] 총 ${total}건 (${totalPages}페이지)`);
 
@@ -81,14 +78,7 @@ export async function syncRescuedAnimals(): Promise<void> {
   const BATCH_SIZE = 200;
 
   for (let page = 1; page <= totalPages; page++) {
-    const result = await fetchPage(page, 1000);
-    if (result.kind === "failed") {
-      pageOutcomes.push({ kind: "failed", reason: result.reason });
-      console.error(`[ETL:rescued-animals] ${page}페이지 조회 실패 — ${result.reason}`);
-      break;
-    }
-
-    const items = result.items;
+    const items = collected.slice((page - 1) * 1000, page * 1000);
     pageOutcomes.push({ kind: "ok", itemCount: items.length });
 
     if (items.length === 0) {
@@ -166,7 +156,7 @@ export async function syncRescuedAnimals(): Promise<void> {
     }
   }
 
-  const classification = classifyEtlRun(pageOutcomes, { expectedPages: totalPages });
+  const classification = classifyEtlRun(pageOutcomes, { expectedPages: totalPages, expectedItems: total });
   console.log(
     `[ETL:rescued-animals] 실행 결과: ${classification.outcome} (처리 ${classification.pagesProcessed}/${totalPages}페이지, upsert ${upserted}건)`
   );
@@ -175,7 +165,7 @@ export async function syncRescuedAnimals(): Promise<void> {
     console.warn(
       `[ETL:rescued-animals] 완전 성공이 아님(${classification.outcome}) — lastSuccessfulAt을 갱신하지 않음`
     );
-    return;
+    throw new Error("APMS incomplete run");
   }
 
   // 성공 시각은 수집·검증이 모두 끝난 이 시점에 기록한다 (수집 도중 계산하지 않음).

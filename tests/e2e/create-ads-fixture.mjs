@@ -98,6 +98,11 @@ try {
     sql: 'INSERT INTO businesses (id,type,category,name,address,address_sido,address_sigungu,status,source,last_synced_at,created_at,updated_at) VALUES (?,?,?,?,?,?,?,?,?,?,?,?)',
     args: ['b-sale-mismatch', 'sale', 1, '합성주소확인', '경기도 수원시 확인로 1', '경기도', '화성시', 'active', 'fixture', '', d, d],
   });
+  await client.execute({sql:'INSERT INTO regions (code,sido,sido_slug,sigungu,sigungu_slug,full_name) VALUES (?,?,?,?,?,?)',args:['46110','전라남도','jeonnam','목포시','mokpo','전라남도 목포시']});
+  for(let i=1;i<=4;i++) for(const era of (i<=3 ? ['old','new'] : ['new'])) {
+    const sido=era==='old'?'전라남도':'전남광주통합특별시';
+    await client.execute({sql:'INSERT INTO businesses (id,type,category,name,address,address_sido,address_sigungu,status,source,last_synced_at,created_at,updated_at) VALUES (?,?,?,?,?,?,?,?,?,?,?,?)',args:[`mokpo-${i}-${era}`,'vet',3,`합성목포${i}`,`${sido} 목포시 합성로 ${i}`,sido,'목포시','active','fixture',era==='old'?'2026-05-01':d,d,d]});
+  }
   await client.execute({
     sql: 'INSERT INTO contents (id,slug,type,category,title,body,author_name,status,ymyl,published_at,created_at,updated_at) VALUES (?,?,?,?,?,?,?,?,?,?,?,?)',
     args: ['c-guide', 'fixture-guide', 'guide', 5, 'QA 합성 가이드', '<h2>합성</h2><p>합성 본문입니다.</p>', 'QA', 'published', 0, d, d, d],

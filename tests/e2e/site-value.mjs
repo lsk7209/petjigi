@@ -17,7 +17,7 @@ const contexts = [];
 try {
   const browser = await launch();
   try {
-    for (const width of [1440, 390]) {
+    for (const width of [360, 390, 768, 1440]) {
       const context = await browser.newContext({ viewport: { width, height: 900 } });
       contexts.push(context);
       const page = await context.newPage();

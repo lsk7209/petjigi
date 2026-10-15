@@ -5,6 +5,7 @@ import { businesses, contents, shelters, rescuedAnimals, regions, etlSyncState }
 import { eq, and, asc, desc, count, ne } from "drizzle-orm";
 import { sql } from "drizzle-orm";
 import { DEFAULT_BUSINESS_PAGE_SIZE, getPageWindow } from "@/lib/business-listing";
+import { businessRegionCondition } from "@/lib/business-region";
 import { notDuplicateListingSql } from "@/lib/listing-identity";
 import { describeRegionSlug, resolveRegionIdentity } from "@/lib/region-identity";
 
@@ -72,17 +73,17 @@ export const notDuplicateListing = sql.raw(notDuplicateListingSql("businesses"))
 // ── 지역×업종 영업장 목록 ──────────────────────────────────────────────────────
 // unstable_cache는 args를 자동으로 키에 포함시킴
 export const getCachedBusinessListing = unstable_cache(
-  async (sigunguName: string, type: string, requestedPage = 1) => {
+  async (sigunguName: string, type: string, requestedPage = 1, sidoName: string | null = null) => {
     const where = and(
       eq(businesses.type, type),
-      eq(businesses.addressSigungu, sigunguName),
+      businessRegionCondition(sigunguName, sidoName),
       eq(businesses.status, "active"),
       notDuplicateListing
     );
     const totalRow = await db
       .select({
         count: count(),
-        sourceAsOf: sql<string | null>`max(${businesses.lastSyncedAt})`,
+        sourceAsOf: sql<string | null>`min(${businesses.lastSyncedAt})`,
       })
       .from(businesses)
       .where(where)
@@ -103,7 +104,7 @@ export const getCachedBusinessListing = unstable_cache(
 
     return { items, totalCount, sourceAsOf: totalRow?.sourceAsOf ?? null, ...pageWindow };
   },
-  ["businesses", "listing", "v2"],
+  ["businesses", "listing", "v3"],
   { revalidate: 86400, tags: ["businesses"] }
 );
 
@@ -115,7 +116,7 @@ const TYPE_SYNC_JOB: Record<string, string> = { vet: "animal-hospitals" };
 export const getCachedTypeSourceAsOf = unstable_cache(
   async (type: string) => {
     const row = await db
-      .select({ asOf: sql<string | null>`max(${businesses.lastSyncedAt})` })
+      .select({ asOf: sql<string | null>`min(${businesses.lastSyncedAt})` })
       .from(businesses)
       .where(and(eq(businesses.type, type), eq(businesses.status, "active")))
       .get();
@@ -126,7 +127,7 @@ export const getCachedTypeSourceAsOf = unstable_cache(
     const rowAsOf = row?.asOf ?? null;
     return state?.at && (!rowAsOf || state.at > rowAsOf) ? state.at : rowAsOf;
   },
-  ["businesses", "type-as-of", "v2"],
+  ["businesses", "type-as-of", "v3"],
   { revalidate: 86400, tags: ["businesses"] }
 );
 

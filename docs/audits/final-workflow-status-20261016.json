@@ -1,0 +1,13 @@
+{
+  "conclusion": "failure",
+  "createdAt": "2026-10-15T20:50:15Z",
+  "event": "schedule",
+  "updatedAt": "2026-10-15T20:51:47Z",
+  "workflowName": "ETL — Businesses (LOCALDATA 18종)",
+  "runId": "38805150471",
+  "evidenceTokens": [
+    "ConnectTimeoutError",
+    "UND_ERR_CONNECT_TIMEOUT"
+  ],
+  "rawLogStored": false
+}

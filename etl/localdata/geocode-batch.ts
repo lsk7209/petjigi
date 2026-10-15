@@ -8,7 +8,7 @@
 import { db } from "../../db/client";
 import { businesses } from "../../db/schema";
 import { geocodeAddress } from "../geocoding/kakao";
-import { isNull, and, eq } from "drizzle-orm";
+import { isNull, and, or, eq } from "drizzle-orm";
 
 const BATCH = 50;
 const DELAY_MS = 100;
@@ -23,7 +23,7 @@ async function main() {
   const rows = await db
     .select({ id: businesses.id, address: businesses.address, name: businesses.name })
     .from(businesses)
-    .where(and(isNull(businesses.lat), eq(businesses.status, "active")))
+    .where(and(or(isNull(businesses.lat), isNull(businesses.lng)), eq(businesses.status, "active")))
     .all();
 
   console.log(`[geocode-batch] 대상 ${rows.length}건`);
@@ -56,6 +56,7 @@ async function main() {
   }
 
   console.log(`[geocode-batch] 완료 — 성공 ${success}건, 실패 ${fail}건`);
+  if (fail > 0) throw new Error(`지오코딩 부분 실패: ${fail}건`);
 }
 
 main().catch((err) => {

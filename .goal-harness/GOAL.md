@@ -1,15 +1,4 @@
-# GOAL
-
-## Final Deliverable
-
-petjigi.kr 공개 서비스와 저장소를 검증하고 AdSense 대비 데이터 정확성, 출처 추적성, 사용자 동선, 기술 SEO, 광고 정책 및 재발 방지 검사를 안전하게 구현·검증한다
-
-## User Value
-
-## Required Features
-
-## Non-Goals
-
-## Done Conditions
-
-## User-Visible Result
+# GOAL — 2026-10-16
+petjigi 최신 main의 원본→대표 업체→지역/비교/상세→색인/사이트맵/광고 계약을 재현·최소수정·로컬검증하고 콘텐츠/운영 외부확인의 한계를 남긴다.
+원격 반영·운영 DB/ETL·설정 변경은 금지. 브랜드·URL·keep30/draft보존·3곳 및 기존 차단 정책 유지.
+최종 산출물은 현재 감사 보고서·일관성JSON·30행검수CSV·미적용본문diff·운영반영계획이다. 로컬검증을 운영완료나 승인으로 쓰지 않는다.

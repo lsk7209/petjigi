@@ -58,7 +58,12 @@ export function parseApmsResponse<T = Record<string, unknown>>(
     return { kind: "failed", reason: "resultCode ok but body missing" };
   }
 
-  const totalCount = typeof body.totalCount === "number" ? body.totalCount : 0;
+  const rawTotal = body.totalCount;
+  const totalCount = typeof rawTotal === "number" ? rawTotal
+    : typeof rawTotal === "string" && /^\d+$/.test(rawTotal) ? Number(rawTotal) : Number.NaN;
+  if (!Number.isSafeInteger(totalCount) || totalCount < 0) {
+    return { kind: "failed", reason: "invalid or missing totalCount" };
+  }
   const itemsContainer = isRecord(body.items) ? body.items.item : body.items;
   const items: T[] =
     itemsContainer === undefined || itemsContainer === null || itemsContainer === ""

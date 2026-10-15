@@ -1,3 +1,9 @@
+## 2026-10-16 현재 감사
+- 최신 GitHub main73767e3 기준 격리 작업 D:/web/petjigi-audit-20261016. 원본 로컬은 보존. push/PR/배포/운영DB·ETL 변경 없음.
+- 지역·중복/사이트맵 정합 및 APMS/좌표/출처·도구 개선 LOCAL_READY(608회귀·최종빌드·영향브라우저 검증). 현재 정본 PROJECT_STATE.md와 docs/audits/petjigi-consistency-audit-20261015.md 상단10-16 갱신 참조.
+- 운영 DB·현재 이미지·오버레이·계정 UNKNOWN/BLOCKED. 공개30 현재 일치. 본문교정2건 제안만. 재신청 NOT_READY.
+- 아래 기존 상태는 이력이며 미완료/미push 표현을 최신 main 사실로 재사용하지 않는다.
+
 # Status | 마지막: 2026-10-15
 ## 현재 작업
 (0000) 일관성 감사 10-15: fix/consistency-audit-20261015 로컬 완료(미push·미배포, 병합=자동배포). 업체 중복 제거 공통화(사이트맵 포함)·상세 색인 판정 단일화·비교표 미분류·동물병원 ETL 완전수집 판정. 보고서 docs/audits/petjigi-consistency-audit-20261015.md, 콘텐츠 정정 제안 CSV 동일 폴더(ACVS 90%=만족도, ASPCA 수치 부재 등). 결정 대기: 병합/배포, 콘텐츠 정정 반영.

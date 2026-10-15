@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-10-12T05:15:37.281Z",
+  "generatedAt": "2026-10-15T15:57:13.352Z",
   "seeds": 864,
-  "inventory": 1501,
+  "inventory": 2966,
   "findings": [
     {
       "source": "blog/cat-dental-extraction-recovery (db/seeds/blog-posts-121.ts)",

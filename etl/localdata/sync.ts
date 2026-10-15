@@ -16,6 +16,7 @@ import { createHash } from "crypto";
 import { db } from "../../db/client";
 import { businesses } from "../../db/schema";
 import { inArray } from "drizzle-orm";
+import { retainedCoordinates } from "../../lib/etl/coordinates";
 import { geocodeAddress } from "../geocoding/kakao";
 import { pingIndexNow } from "../../lib/seo/index-now";
 
@@ -47,7 +48,7 @@ interface LocaldataRow {
 function hashRow(row: LocaldataRow): string {
   const str = JSON.stringify({
     bplcNm: row.bplcNm,
-    rdnWhlAddr: row.rdnWhlAddr,
+    rdnWhlAddr: row.rdnWhlAddr || row.siteWhlAddr,
     siteTel: row.siteTel,
     dtlStateGbn: row.dtlStateGbn,
   });
@@ -76,7 +77,9 @@ async function fetchLocaldataPage(
   if (!res.ok) throw new Error(`LOCALDATA API 오류: ${res.status}`);
 
   const json = await res.json();
-  return json?.result?.body?.items ?? [];
+  const items: unknown = json?.result?.body?.items;
+  if (!Array.isArray(items)) throw new Error("LOCALDATA 응답 items 배열 누락/형식 오류");
+  return items as LocaldataRow[];
 }
 
 export async function syncLocaldata(): Promise<void> {
@@ -105,10 +108,10 @@ export async function syncLocaldata(): Promise<void> {
       // 배치 SELECT: N+1 방지 — 페이지 단위 단일 쿼리로 기존 레코드 일괄 조회
       const pageIds = rows.map((row) => `${bsshCode}-${row.mgtNo}`);
       const CHUNK = 900; // SQLite 바인딩 변수 한도 999 이하 유지
-      const existingRows: { id: string; rawData: unknown; lat: number | null; lng: number | null; createdAt: string }[] = [];
+      const existingRows: { id: string; rawData: unknown; address: string; lat: number | null; lng: number | null; createdAt: string }[] = [];
       for (let i = 0; i < pageIds.length; i += CHUNK) {
         const batch = await db
-          .select({ id: businesses.id, rawData: businesses.rawData, lat: businesses.lat, lng: businesses.lng, createdAt: businesses.createdAt })
+          .select({ id: businesses.id, rawData: businesses.rawData, address: businesses.address, lat: businesses.lat, lng: businesses.lng, createdAt: businesses.createdAt })
           .from(businesses)
           .where(inArray(businesses.id, pageIds.slice(i, i + CHUNK)));
         existingRows.push(...batch);
@@ -129,9 +132,8 @@ export async function syncLocaldata(): Promise<void> {
         if (existingHash === hash) continue;
 
         // 좌표 처리 — 기존 좌표 있으면 재사용 (영구 캐싱), 없으면 지오코딩
-        let lat = existing?.lat ?? null;
-        let lng = existing?.lng ?? null;
-        if (!lat && !lng && (row.rdnWhlAddr || row.siteWhlAddr)) {
+        let { lat, lng } = retainedCoordinates(existing, row.rdnWhlAddr || row.siteWhlAddr);
+        if (lat === null && lng === null && (row.rdnWhlAddr || row.siteWhlAddr)) {
           const geo = await geocodeAddress(row.rdnWhlAddr || row.siteWhlAddr);
           if (geo) { lat = geo.lat; lng = geo.lng; }
         }

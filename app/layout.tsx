@@ -117,11 +117,6 @@ export default function RootLayout({
   return (
     <html lang="ko" className={`h-full scroll-smooth ${notoSerifKR.variable}`} suppressHydrationWarning>
       <head>
-        {/* Preconnect for third-party performance */}
-        <link rel="preconnect" href="https://pagead2.googlesyndication.com" crossOrigin="anonymous" />
-        <link rel="preconnect" href="https://www.googletagmanager.com" crossOrigin="anonymous" />
-        <link rel="preconnect" href="https://www.google-analytics.com" crossOrigin="anonymous" />
-        <link rel="dns-prefetch" href="https://dapi.kakao.com" />
         {/* GSC verification */}
         {process.env.NEXT_PUBLIC_GSC_VERIFICATION && (
           <meta

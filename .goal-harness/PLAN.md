@@ -1,33 +1,7 @@
-# PLAN
-
-## Classification
-
-- Size: large
-- Domain Profile: adsense-audit
-
-## Phase 1
-
-- Objective: Separate environment absence from source/build defects.
-- Tasks: Create a disposable local libSQL DB, apply the real schema, run the full build.
-- Expected Files: No persistent fixture DB; validation documents only.
-- Completion Criteria: Full build result is attributable to code rather than missing credentials.
-- Test Point: `drizzle-kit push`, `pnpm build`.
-- Rollback/Recovery: Remove the disposable DB and restore generated sitemap output.
-
-## Phase 2
-
-- Objective: Repair runtime-only Next.js 16 failures while preserving public URLs.
-- Tasks: Defer Edge OG DB imports, merge conflicting dynamic route trees, mark listing runtime dynamic.
-- Expected Files: Dynamic OG routes, listing/detail route tree, regression test.
-- Completion Criteria: Full build and local server start without route conflict or listing 500.
-- Test Point: Unit tests, typecheck, lint, production HTTP smoke.
-- Rollback/Recovery: Revert the route-tree move and request-time import changes as one local diff.
-
-## Phase 3
-
-- Objective: Reconcile evidence and leave no running or generated test artifacts.
-- Tasks: Restore generated sitemap, stop the server, delete the disposable DB, update handoff.
-- Expected Files: Harness and improvement reports.
-- Completion Criteria: No listener/temp DB remains; repository checks are green.
-- Test Point: Git status/diff check and process/temp-path checks.
-- Rollback/Recovery: Documentation-only rollback if evidence changes.
+# PLAN — 2026-10-16
+1. clean 원본·최신 origin/main·이력/문서·운영 snapshot 분리 (완료).
+2. A/B/C 남은 결함 실패fixture 후 공통조회·정책 최소수정 (완료).
+3. 독립 D/G와 E/F 읽기 검토2개; 확인된 APMS/좌표/도구/렌더 결함 수정 (완료).
+4. 원본관할 연결 및 지번주소hash HIGH 재현·수리·리뷰 (완료).
+5. 합성 DB 전수회귀·격리 production build/start·mock 브라우저·공개 저부하샘플 (최종 집계중).
+6. 현재 정본·산출물·리스크/승인·복구 기록 후 종료. push/운영반영은 수행하지 않음.

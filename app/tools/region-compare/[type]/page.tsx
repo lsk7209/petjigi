@@ -170,7 +170,7 @@ export default async function RegionComparePage({ params }: Props) {
                   className="border-b border-[var(--brand-border)]"
                 >
                   <th scope="row" className="py-2 pr-4 text-left font-medium">
-                    {s.sigunguSlug && s.count >= LISTING_MIN_INDEXABLE ? (
+                    {s.sigunguSlug && s.listingLinkable !== false && s.count >= LISTING_MIN_INDEXABLE ? (
                       <Link
                         href={`/${s.sigunguSlug}/${meta.type}`}
                         className="hover:text-[var(--brand-accent)]"
@@ -191,12 +191,13 @@ export default async function RegionComparePage({ params }: Props) {
       ))}
 
       <p className="text-xs text-[var(--brand-text-secondary)]">
-        출처: 공공데이터포털 등 공공 인허가·등록 데이터. 이 업종의 마지막 수집일은{" "}
+        출처: 공공데이터포털 등 공공 인허가·등록 데이터. 이 업종의 완전 수집 기록(없으면 가장 오래된 업체 행 수집일)은{" "}
         {collectedDate ?? "확인 불가"}이며, 원본 갱신 시점은 업종마다 달라 실제 영업
         여부와 차이가 있을 수 있으니 방문 전 확인이 필요합니다. 종류·이름·주소가
         같은 업체가 출처 두 곳에 있으면 한 곳으로 세고, 주소가 비어 있거나 가려진
         업체는 같은 업체로 합치지 않습니다. 전화번호 기재는 공공데이터에 번호가
         적혀 있다는 뜻이며 실제 연락 가능 여부를 확인한 것은 아닙니다.
+        수집일은 원본 자료의 기준일이나 현재 영업 확인일을 뜻하지 않습니다.
         {unclassified.count > 0
           ? ` 주소에서 시·군·구를 확인할 수 없어 표에서 제외한 업체가 ${unclassified.count.toLocaleString("ko-KR")}곳 있습니다.`
           : ""}

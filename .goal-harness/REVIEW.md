@@ -1,42 +1,6 @@
-# REVIEW
-
-## Diff Review
-
-- Shared query predicate prevents count/list drift; stable ID tie-breaker prevents page duplication from equal names.
-- Existing dirty files were preserved and recorded.
-
-## Regression Risk
-
-- Local DB-backed build and production HTTP behavior are proven with a disposable schema-complete database; production data remains unproven.
-- Seed copy changes do not mutate the production DB.
-
-## Security Risk
-
-- Audit commands perform no network request, so SSRF input is not exposed.
-- No environment values, credentials, production writes, email sends, or account changes were performed.
-
-## User Flow Check
-
-- Listing navigation and truthful empty/range states covered locally; post-deploy browser proof remains blocked.
-
-## Acceptance Criteria Check
-
-- Local safe work is complete. External/account/expert claims remain explicitly incomplete.
-
-## Completion Gate
-
-- [x] Acceptance criteria are satisfied or explicitly marked N/A with reasons.
-- [x] Validation evidence exists in `EVIDENCE.md`.
-- [x] Failed checks are fixed or clearly documented.
-- [x] Regression risks were considered.
-- [x] Security and risky-operation notes were recorded when applicable.
-- [x] Known limitations are stated in the final report.
-- [x] It is accurate to set `STATUS.md` to `DONE_WITH_EXTERNAL_GAPS`.
-
-## Remaining Limitations
-
-- Deployed real-data browser E2E.
-- Qualified medical/legal/insurance review and AdSense/GSC/CMP account verification.
-- The earlier verifier identified full lint debt, which was subsequently resolved. The remaining release gates are DB-backed build/runtime proof, qualified content review, account evidence, and separately authorized deployment; this harness therefore claims local scoped completion only.
-- The initial Spark build-boundary subagent could not start because of quota. The identical read-only assignment was retried once with Luna under the repository fallback contract and its findings were verified against the code and build output.
-- A proposed empty-data build fallback was rejected because it would misrepresent a database failure as a legitimate zero-result response.
+# REVIEW — 2026-10-16
+읽기전용 subagent2개 gpt-6-luna/max; 현재 주 모델 유지. 토큰/비용/전체경과 미측정.
+ETL 검토: APMS source snapshot 검증경로 BLOCKER없음. HIGH fallback지번주소 hash누락을 실제hashRow 실패시험후 수리; reviewer 재확인.
+지역/렌더 검토: HIGH 통합표기 대표행 legacy필터 누락을 재현후 원본행근거 대응으로 수리; reviewer 재확인 BLOCKER/HIGH없음. 지적된 직접 비교query 검증공백은 실제라우트 browser회귀로 확인중.
+유지한 한계: 행별 적용은 DB트랜잭션 원자성 아님. 이후 geocode/DB오류시 일부upsert는 남으나 완전성성공일 안바뀜. 운영source/date/중복빈도는 미확인. 콘텐츠주장2건 수정은 승인전제안.
+검증실패기록: junction루트/offline cache환경, SSRfixture import지원, 통합fixture최소스키마 보완. 실패검사를 없애거나 운영키로 통과시키지 않음.

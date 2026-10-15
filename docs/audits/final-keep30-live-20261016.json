@@ -1,0 +1,310 @@
+{
+  "at": "2026-10-15T15:46:22.701Z",
+  "scope": "public HTTP/SSR only; no DB count or browser claims",
+  "keepCount": 30,
+  "sitemapEditorialCount": 30,
+  "missing": [],
+  "extra": [],
+  "pages": [
+    {
+      "url": "https://petjigi.kr/blog/pet-insurance-comparison-method",
+      "at": "2026-10-15T15:46:13.510Z",
+      "status": 200,
+      "noindex": false,
+      "canonical": "https://petjigi.kr/blog/pet-insurance-comparison-method",
+      "h1": 1,
+      "adBlocked": false,
+      "jsonLd": 8
+    },
+    {
+      "url": "https://petjigi.kr/guide/dog-adoption-checklist",
+      "at": "2026-10-15T15:46:13.909Z",
+      "status": 200,
+      "noindex": false,
+      "canonical": "https://petjigi.kr/guide/dog-adoption-checklist",
+      "h1": 1,
+      "adBlocked": false,
+      "jsonLd": 8
+    },
+    {
+      "url": "https://petjigi.kr/guide/animal-hospital-guide",
+      "at": "2026-10-15T15:46:14.288Z",
+      "status": 200,
+      "noindex": false,
+      "canonical": "https://petjigi.kr/guide/animal-hospital-guide",
+      "h1": 1,
+      "adBlocked": false,
+      "jsonLd": 8
+    },
+    {
+      "url": "https://petjigi.kr/blog/dog-toxic-foods",
+      "at": "2026-10-15T15:46:14.671Z",
+      "status": 200,
+      "noindex": false,
+      "canonical": "https://petjigi.kr/blog/dog-toxic-foods",
+      "h1": 1,
+      "adBlocked": false,
+      "jsonLd": 8
+    },
+    {
+      "url": "https://petjigi.kr/blog/cat-litter-box-guide",
+      "at": "2026-10-15T15:46:14.972Z",
+      "status": 200,
+      "noindex": false,
+      "canonical": "https://petjigi.kr/blog/cat-litter-box-guide",
+      "h1": 1,
+      "adBlocked": false,
+      "jsonLd": 8
+    },
+    {
+      "url": "https://petjigi.kr/blog/cat-food-label-guide",
+      "at": "2026-10-15T15:46:15.302Z",
+      "status": 200,
+      "noindex": false,
+      "canonical": "https://petjigi.kr/blog/cat-food-label-guide",
+      "h1": 1,
+      "adBlocked": false,
+      "jsonLd": 8
+    },
+    {
+      "url": "https://petjigi.kr/blog/cat-eye-discharge-guide",
+      "at": "2026-10-15T15:46:15.602Z",
+      "status": 200,
+      "noindex": false,
+      "canonical": "https://petjigi.kr/blog/cat-eye-discharge-guide",
+      "h1": 1,
+      "adBlocked": false,
+      "jsonLd": 8
+    },
+    {
+      "url": "https://petjigi.kr/blog/dog-patella-luxation",
+      "at": "2026-10-15T15:46:15.898Z",
+      "status": 200,
+      "noindex": false,
+      "canonical": "https://petjigi.kr/blog/dog-patella-luxation",
+      "h1": 1,
+      "adBlocked": false,
+      "jsonLd": 8
+    },
+    {
+      "url": "https://petjigi.kr/blog/dog-food-allergy-elimination-diet-test",
+      "at": "2026-10-15T15:46:16.225Z",
+      "status": 200,
+      "noindex": false,
+      "canonical": "https://petjigi.kr/blog/dog-food-allergy-elimination-diet-test",
+      "h1": 1,
+      "adBlocked": false,
+      "jsonLd": 10
+    },
+    {
+      "url": "https://petjigi.kr/guide/microchip-registration-complete-guide",
+      "at": "2026-10-15T15:46:16.615Z",
+      "status": 200,
+      "noindex": false,
+      "canonical": "https://petjigi.kr/guide/microchip-registration-complete-guide",
+      "h1": 1,
+      "adBlocked": false,
+      "jsonLd": 8
+    },
+    {
+      "url": "https://petjigi.kr/blog/petloss-return-to-daily-life",
+      "at": "2026-10-15T15:46:16.907Z",
+      "status": 200,
+      "noindex": false,
+      "canonical": "https://petjigi.kr/blog/petloss-return-to-daily-life",
+      "h1": 1,
+      "adBlocked": true,
+      "jsonLd": 10
+    },
+    {
+      "url": "https://petjigi.kr/blog/dog-first-adoption-kit",
+      "at": "2026-10-15T15:46:17.208Z",
+      "status": 200,
+      "noindex": false,
+      "canonical": "https://petjigi.kr/blog/dog-first-adoption-kit",
+      "h1": 1,
+      "adBlocked": false,
+      "jsonLd": 8
+    },
+    {
+      "url": "https://petjigi.kr/blog/pet-bite-liability-guide",
+      "at": "2026-10-15T15:46:17.514Z",
+      "status": 200,
+      "noindex": false,
+      "canonical": "https://petjigi.kr/blog/pet-bite-liability-guide",
+      "h1": 1,
+      "adBlocked": false,
+      "jsonLd": 8
+    },
+    {
+      "url": "https://petjigi.kr/guide/memorial-ceremony",
+      "at": "2026-10-15T15:46:17.827Z",
+      "status": 200,
+      "noindex": false,
+      "canonical": "https://petjigi.kr/guide/memorial-ceremony",
+      "h1": 1,
+      "adBlocked": true,
+      "jsonLd": 8
+    },
+    {
+      "url": "https://petjigi.kr/blog/online-vet-consultation-guide",
+      "at": "2026-10-15T15:46:18.120Z",
+      "status": 200,
+      "noindex": false,
+      "canonical": "https://petjigi.kr/blog/online-vet-consultation-guide",
+      "h1": 1,
+      "adBlocked": false,
+      "jsonLd": 10
+    },
+    {
+      "url": "https://petjigi.kr/blog/senior-young-pet-introduction",
+      "at": "2026-10-15T15:46:18.404Z",
+      "status": 200,
+      "noindex": false,
+      "canonical": "https://petjigi.kr/blog/senior-young-pet-introduction",
+      "h1": 1,
+      "adBlocked": false,
+      "jsonLd": 10
+    },
+    {
+      "url": "https://petjigi.kr/blog/pet-insurance-claim-guide",
+      "at": "2026-10-15T15:46:18.702Z",
+      "status": 200,
+      "noindex": false,
+      "canonical": "https://petjigi.kr/blog/pet-insurance-claim-guide",
+      "h1": 1,
+      "adBlocked": false,
+      "jsonLd": 8
+    },
+    {
+      "url": "https://petjigi.kr/blog/cat-dog-harmony-guide",
+      "at": "2026-10-15T15:46:18.990Z",
+      "status": 200,
+      "noindex": false,
+      "canonical": "https://petjigi.kr/blog/cat-dog-harmony-guide",
+      "h1": 1,
+      "adBlocked": false,
+      "jsonLd": 10
+    },
+    {
+      "url": "https://petjigi.kr/guide/senior-pet-adoption-complete-guide",
+      "at": "2026-10-15T15:46:19.269Z",
+      "status": 200,
+      "noindex": false,
+      "canonical": "https://petjigi.kr/guide/senior-pet-adoption-complete-guide",
+      "h1": 1,
+      "adBlocked": false,
+      "jsonLd": 8
+    },
+    {
+      "url": "https://petjigi.kr/blog/dog-homemade-treats",
+      "at": "2026-10-15T15:46:19.552Z",
+      "status": 200,
+      "noindex": false,
+      "canonical": "https://petjigi.kr/blog/dog-homemade-treats",
+      "h1": 1,
+      "adBlocked": false,
+      "jsonLd": 8
+    },
+    {
+      "url": "https://petjigi.kr/blog/cat-obesity-diet-management-guide",
+      "at": "2026-10-15T15:46:19.846Z",
+      "status": 200,
+      "noindex": false,
+      "canonical": "https://petjigi.kr/blog/cat-obesity-diet-management-guide",
+      "h1": 1,
+      "adBlocked": false,
+      "jsonLd": 10
+    },
+    {
+      "url": "https://petjigi.kr/blog/dog-walk-guide",
+      "at": "2026-10-15T15:46:20.135Z",
+      "status": 200,
+      "noindex": false,
+      "canonical": "https://petjigi.kr/blog/dog-walk-guide",
+      "h1": 1,
+      "adBlocked": false,
+      "jsonLd": 8
+    },
+    {
+      "url": "https://petjigi.kr/blog/newborn-and-pet-guide",
+      "at": "2026-10-15T15:46:20.425Z",
+      "status": 200,
+      "noindex": false,
+      "canonical": "https://petjigi.kr/blog/newborn-and-pet-guide",
+      "h1": 1,
+      "adBlocked": false,
+      "jsonLd": 10
+    },
+    {
+      "url": "https://petjigi.kr/blog/child-pet-relationship-guide",
+      "at": "2026-10-15T15:46:20.727Z",
+      "status": 200,
+      "noindex": false,
+      "canonical": "https://petjigi.kr/blog/child-pet-relationship-guide",
+      "h1": 1,
+      "adBlocked": false,
+      "jsonLd": 10
+    },
+    {
+      "url": "https://petjigi.kr/blog/dog-grain-free-diet-guide",
+      "at": "2026-10-15T15:46:21.017Z",
+      "status": 200,
+      "noindex": false,
+      "canonical": "https://petjigi.kr/blog/dog-grain-free-diet-guide",
+      "h1": 1,
+      "adBlocked": false,
+      "jsonLd": 10
+    },
+    {
+      "url": "https://petjigi.kr/blog/dog-camping-guide",
+      "at": "2026-10-15T15:46:21.514Z",
+      "status": 200,
+      "noindex": false,
+      "canonical": "https://petjigi.kr/blog/dog-camping-guide",
+      "h1": 1,
+      "adBlocked": false,
+      "jsonLd": 10
+    },
+    {
+      "url": "https://petjigi.kr/blog/maltese-care-guide",
+      "at": "2026-10-15T15:46:21.813Z",
+      "status": 200,
+      "noindex": false,
+      "canonical": "https://petjigi.kr/blog/maltese-care-guide",
+      "h1": 1,
+      "adBlocked": false,
+      "jsonLd": 10
+    },
+    {
+      "url": "https://petjigi.kr/blog/smart-home-pet-guide",
+      "at": "2026-10-15T15:46:22.108Z",
+      "status": 200,
+      "noindex": false,
+      "canonical": "https://petjigi.kr/blog/smart-home-pet-guide",
+      "h1": 1,
+      "adBlocked": false,
+      "jsonLd": 10
+    },
+    {
+      "url": "https://petjigi.kr/blog/working-from-home-pet-guide",
+      "at": "2026-10-15T15:46:22.421Z",
+      "status": 200,
+      "noindex": false,
+      "canonical": "https://petjigi.kr/blog/working-from-home-pet-guide",
+      "h1": 1,
+      "adBlocked": false,
+      "jsonLd": 10
+    },
+    {
+      "url": "https://petjigi.kr/blog/cat-senior-diet-transition",
+      "at": "2026-10-15T15:46:22.701Z",
+      "status": 200,
+      "noindex": false,
+      "canonical": "https://petjigi.kr/blog/cat-senior-diet-transition",
+      "h1": 1,
+      "adBlocked": false,
+      "jsonLd": 10
+    }
+  ]
+}

@@ -1,3 +1,4 @@
+import { SourceReference } from "@/components/content/source-reference";
 import type { Metadata } from "next";
 import { parseStoredSources } from "@/lib/content-sources";
 import { buildToc } from "@/lib/toc";
@@ -293,7 +294,7 @@ export default async function ConditionPage({
               {sources.map((s, i) => (
                 <li key={i} className="text-xs sm:text-sm text-[var(--brand-text-secondary)] flex gap-2">
                   <span className="shrink-0 text-[var(--brand-accent)]">·</span>
-                  <span>{s}</span>
+                  <SourceReference source={s} />
                 </li>
               ))}
             </ul>

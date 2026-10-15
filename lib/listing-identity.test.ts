@@ -12,13 +12,13 @@ const OCT = "2026-10-13T00:00:00.000Z";
 
 async function setup(rows: Row[]): Promise<Client> {
   const c = createClient({ url: ":memory:" });
-  await c.execute("CREATE TABLE businesses (id TEXT PRIMARY KEY, type TEXT NOT NULL, name TEXT NOT NULL, address TEXT, address_sigungu TEXT, status TEXT NOT NULL, last_synced_at TEXT NOT NULL)");
-  await c.execute("CREATE TABLE regions (sigungu TEXT, sigungu_slug TEXT)");
-  await c.execute({ sql: "INSERT INTO regions VALUES (?, ?)", args: ["테스트구", "test-gu"] });
+  await c.execute("CREATE TABLE businesses (id TEXT PRIMARY KEY, type TEXT NOT NULL, name TEXT NOT NULL, address TEXT, address_sigungu TEXT, address_sido TEXT, status TEXT NOT NULL, last_synced_at TEXT NOT NULL)");
+  await c.execute("CREATE TABLE regions (sigungu TEXT, sigungu_slug TEXT, sido TEXT)");
+  await c.execute({ sql: "INSERT INTO regions VALUES (?, ?, ?)", args: ["테스트구", "test-gu", "서울특별시"] });
   for (const r of rows) {
     await c.execute({
-      sql: "INSERT INTO businesses VALUES (?,?,?,?,?,?,?)",
-      args: [r.id, r.type ?? "vet", r.name, r.address, r.sigungu ?? "테스트구", r.status ?? "active", r.synced ?? OCT],
+      sql: "INSERT INTO businesses VALUES (?,?,?,?,?,?,?,?)",
+      args: [r.id, r.type ?? "vet", r.name, r.address, r.sigungu ?? "테스트구", "서울특별시", r.status ?? "active", r.synced ?? OCT],
     });
   }
   return c;
@@ -119,4 +119,39 @@ test("다른 시도의 같은 이름·같은 나머지 주소는 합치지 않�
     { id: "b", name: "가", address: "부산광역시 중구 세종대로 1" },
   ]);
   assert.deepEqual(await listed(c), ["b", "s"]);
+});
+
+
+test("사이트맵은 같은 시군구 이름의 타 시도 업체를 확정 지역에 더하지 않는다", async () => {
+ const c = await setup([{id:"a",name:"가",address:"서울 1"},{id:"b",name:"나",address:"서울 2"},{id:"c",name:"다",address:"부산 3"}]);
+ try {
+  await c.execute("UPDATE businesses SET address_sido='부산광역시' WHERE id='c'");
+  assert.equal(await sitemapHas(c),false);
+ } finally {c.close();}
+});
+test("사이트맵은 DB에만 추가된 모호 slug도 제외한다", async()=>{
+ const c=await setup([{id:'a',name:'가',address:'1'},{id:'b',name:'나',address:'2'},{id:'c',name:'다',address:'3'}]);
+ try{await c.execute("INSERT INTO regions VALUES ('테스트구','test-gu','부산광역시')");assert.equal(await sitemapHas(c),false);}finally{c.close();}
+});
+import { hasListingStatusConflict } from './listing-identity';
+test('active/closed source conflict is disclosed without inventing a current status',()=>{
+ const a={id:'a',type:'vet',name:'가',address:'서울 1',status:'active',lastSyncedAt:MAY};
+ const closed={...a,id:'c',status:'closed',lastSyncedAt:OCT};
+ assert.equal(hasListingStatusConflict([a,closed],a),true);
+ assert.equal(hasListingStatusConflict([a,{...closed,address:'서울 2'}],a),false);
+ assert.equal(hasListingStatusConflict([{...a,address:'*'},{...closed,address:'*'}],{...a,address:'*'}),false);
+});
+test('evidenced merged-source representatives keep legacy sitemap routes; unsupported rows do not inflate them',async()=>{
+ const c=await setup([
+  {id:'a-old',name:'가',address:'전라남도 목포시 1',synced:MAY},{id:'a-new',name:'가',address:'전남광주통합특별시 목포시 1'},
+  {id:'b-old',name:'나',address:'전라남도 목포시 2',synced:MAY},{id:'b-new',name:'나',address:'전남광주통합특별시 목포시 2'},
+  {id:'c-new',name:'다',address:'전남광주통합특별시 목포시 3'},
+ ]);
+ try{
+  await c.execute("UPDATE regions SET sido='전라남도',sigungu='목포시'");
+  await c.execute("UPDATE businesses SET address_sigungu='목포시',address_sido=case when id like '%old' then '전라남도' else '전남광주통합특별시' end");
+  assert.equal(await sitemapHas(c),false); // only 2 mapped identities, not the unmapped third
+  await c.execute("INSERT INTO businesses VALUES ('c-old','vet','다','전라남도 목포시 3','목포시','전라남도','active','2026-05-01')");
+  assert.equal(await sitemapHas(c),true);
+ }finally{c.close();}
 });

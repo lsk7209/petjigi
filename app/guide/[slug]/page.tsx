@@ -1,3 +1,4 @@
+import { SourceReference } from "@/components/content/source-reference";
 import type { Metadata } from "next";
 import { parseStoredSources } from "@/lib/content-sources";
 import { buildToc } from "@/lib/toc";
@@ -168,7 +169,7 @@ export default async function GuidePage({
 
   const publicKeys = new Set(await getCachedPublicContentKeys());
   const { headings, html: bodyWithIds } = buildToc(unlinkUnpublishedContentLinks(content.body ?? "", publicKeys));
-  
+
   const plainText = (content.body ?? "").replace(/<[^>]+>/g, "");
   const wordCount = plainText.trim().length > 0
     ? Math.max(1, Math.round(plainText.replace(/\s+/g, "").length / 2))
@@ -342,7 +343,7 @@ export default async function GuidePage({
               {sources.map((s, i) => (
                 <li key={i} className="text-xs sm:text-sm text-[var(--brand-text-secondary)] flex gap-2">
                   <span className="shrink-0 text-[var(--brand-accent)]">·</span>
-                  <span>{s}</span>
+                  <SourceReference source={s} />
                 </li>
               ))}
             </ul>

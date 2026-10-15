@@ -60,10 +60,11 @@ function renderFixture(relative, content) {
     } });
     const fixtureModule = { exports: {} };
     runInNewContext(outputText, {
-      module: fixtureModule, exports: fixtureModule.exports,
+      module: fixtureModule, exports: fixtureModule.exports, URL,
       process: { env: { NEXT_PUBLIC_SITE_URL: 'https://petjigi.kr' } },
       require: name => {
         if (Object.hasOwn(stubs, name)) return stubs[name];
+        if (name === '@/components/content/source-reference') return load('components/content/source-reference.tsx');
         if (name.startsWith('@/lib/')) return load(`${name.slice(2)}.ts`);
         if (name.startsWith('.')) return load(`${resolve(dirname(filename), name)}.ts`);
         if (name === 'react/jsx-runtime' || name === 'react') return require(name);
@@ -121,3 +122,11 @@ for (const [kind, review] of reviewCases) {
     });
   }
 }
+
+for (const type of ['blog','guide']) test(`${type} SSR source URLs become usable safe links without inventing missing URLs`,async()=>{
+ const page=renderFixture(`app/${type}/[slug]/page.tsx`,{...baseContent,type,sources:JSON.stringify(['https://www.law.go.kr/LSW/lsInfoP.do?lsiSeq=1 — 법령','책 제목만 있음','javascript:alert(1)'])});
+ const html=renderToStaticMarkup(await page.default({params:Promise.resolve({slug:'fixture'})}));
+ assert.ok(html.includes('href="https://www.law.go.kr/LSW/lsInfoP.do?lsiSeq=1"'));
+ assert.ok(html.includes('책 제목만 있음'));
+ assert.ok(!html.includes('href="javascript:'));
+});

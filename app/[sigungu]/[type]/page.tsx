@@ -142,7 +142,7 @@ export async function generateMetadata({
   const regionView = await getCachedRegionSlugView(sigungu);
   if (regionView.kind === "missing") notFound();
   const location = regionView.sigunguName ?? decodeURIComponent(sigungu);
-  const listing = await getCachedBusinessListing(location, type, page);
+  const listing = await getCachedBusinessListing(location, type, page, regionView.sidoName || null);
   const eligibility = evaluateListingEligibility({
     ambiguousRegion: regionView.ambiguousSidoNames.length > 1,
     status: classifyListing(
@@ -224,6 +224,7 @@ export default async function SigunguTypePage({
     sigunguName,
     type,
     requestedPage,
+    sidoName || null,
   );
   const businessList = listing.items;
   const status = classifyListing(
@@ -255,7 +256,7 @@ export default async function SigunguTypePage({
 
   const typeCounts =
     // 장례·추모(카테고리 6)에는 다른 서비스 업종 링크를 노출하지 않는다
-    ambiguousSidoNames.length > 1 || listing.totalCount === 0 || meta.categoryId === 6 ? [] : await getCachedRegionTypeCounts(sigunguName);
+    ambiguousSidoNames.length > 1 || listing.totalCount === 0 || meta.categoryId === 6 ? [] : await getCachedRegionTypeCounts(sigunguName, sidoName || null);
 
   const breadcrumb = breadcrumbSchema([
     { name: "홈", url: SITE_URL },
@@ -408,6 +409,9 @@ export default async function SigunguTypePage({
                 {listing.totalCount}곳
               </strong>
               입니다.
+            </p>
+            <p className="mt-2 text-xs text-[var(--brand-text-secondary)]">
+              표시 날짜는 선택된 업체 행 중 가장 오래된 수집 기록입니다. 원본 기준일과 현재 영업 확인일은 별도이며, 일부 행의 최근 갱신이 전체 업체의 최신성을 뜻하지 않습니다.
             </p>
           </div>
         </div>

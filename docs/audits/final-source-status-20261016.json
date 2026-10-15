@@ -1,0 +1,77 @@
+{
+  "at": "2026-10-15T16:03:33.664Z",
+  "rows": [
+    {
+      "type": "vet",
+      "scope": "live displayed collection date; not original source date or verified complete ETL state",
+      "displayedCollection": "2026-10-13",
+      "lastAttempt": "BLOCKED",
+      "lastFullSuccess": "BLOCKED",
+      "originalAsOf": "UNKNOWN",
+      "historicalRecord": "2026-10-13 expanded import recorded; not freshly DB verified"
+    },
+    {
+      "type": "grooming",
+      "scope": "live displayed collection date; not original source date or verified complete ETL state",
+      "displayedCollection": "2026-05-21",
+      "lastAttempt": "BLOCKED",
+      "lastFullSuccess": "BLOCKED",
+      "originalAsOf": "UNKNOWN",
+      "historicalRecord": "May snapshot / LOCALDATA failure historically recorded; present cause not retested"
+    },
+    {
+      "type": "boarding",
+      "scope": "live displayed collection date; not original source date or verified complete ETL state",
+      "displayedCollection": "2026-05-21",
+      "lastAttempt": "BLOCKED",
+      "lastFullSuccess": "BLOCKED",
+      "originalAsOf": "UNKNOWN",
+      "historicalRecord": "May snapshot / LOCALDATA failure historically recorded; present cause not retested"
+    },
+    {
+      "type": "funeral",
+      "scope": "live displayed collection date; not original source date or verified complete ETL state",
+      "displayedCollection": "2026-05-21",
+      "lastAttempt": "BLOCKED",
+      "lastFullSuccess": "BLOCKED",
+      "originalAsOf": "UNKNOWN",
+      "historicalRecord": "May snapshot / LOCALDATA failure historically recorded; present cause not retested"
+    },
+    {
+      "type": "sale",
+      "scope": "live displayed collection date; not original source date or verified complete ETL state",
+      "displayedCollection": "2026-05-21",
+      "lastAttempt": "BLOCKED",
+      "lastFullSuccess": "BLOCKED",
+      "originalAsOf": "UNKNOWN",
+      "historicalRecord": "May snapshot / LOCALDATA failure historically recorded; present cause not retested"
+    },
+    {
+      "type": "breeder",
+      "scope": "live displayed collection date; not original source date or verified complete ETL state",
+      "displayedCollection": "2026-05-21",
+      "lastAttempt": "BLOCKED",
+      "lastFullSuccess": "BLOCKED",
+      "originalAsOf": "UNKNOWN",
+      "historicalRecord": "May snapshot / LOCALDATA failure historically recorded; present cause not retested"
+    },
+    {
+      "type": "transport",
+      "scope": "live displayed collection date; not original source date or verified complete ETL state",
+      "displayedCollection": "2026-05-21",
+      "lastAttempt": "BLOCKED",
+      "lastFullSuccess": "BLOCKED",
+      "originalAsOf": "UNKNOWN",
+      "historicalRecord": "May snapshot / LOCALDATA failure historically recorded; present cause not retested"
+    },
+    {
+      "type": "exhibition",
+      "scope": "live displayed collection date; not original source date or verified complete ETL state",
+      "displayedCollection": "2026-05-21",
+      "lastAttempt": "BLOCKED",
+      "lastFullSuccess": "BLOCKED",
+      "originalAsOf": "UNKNOWN",
+      "historicalRecord": "May snapshot / LOCALDATA failure historically recorded; present cause not retested"
+    }
+  ]
+}

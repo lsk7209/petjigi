@@ -138,18 +138,20 @@ export default async function BusinessDetailPage({
   const nearby = await db
     .select()
     .from(businesses)
-    .where(and(sameRegionCondition(business), eq(businesses.status, "active"), notDuplicateListing, ne(businesses.id, business.id)))
+    .where(and(sameRegionCondition(business, region.sidoName || business.addressSido), eq(businesses.status, "active"), notDuplicateListing, ne(businesses.id, business.id)))
     .limit(6);
 
   const sameTypeCount = await db
     .select({ count: sql<number>`count(*)` })
     .from(businesses)
     .where(
-      and(eq(businesses.type, type), sameRegionCondition(business), eq(businesses.status, "active"), notDuplicateListing)
+      and(eq(businesses.type, type), sameRegionCondition(business, region.sidoName || business.addressSido), eq(businesses.status, "active"), notDuplicateListing)
     )
     .get();
 
-  const statusNotice = businessStatusNotice(type, business.status);
+  const statusNotice = target.statusConflict
+    ? "같은 업체의 출처별 영업·폐업 기록이 서로 다릅니다. 현재 영업 여부는 확인되지 않았으니 방문 전 업체 또는 관할 기관에 확인해 주세요."
+    : businessStatusNotice(type, business.status);
   const categoryId = TYPE_CATEGORY[type] ?? 1;
   const typeLabel = TYPE_LABEL[type] ?? type;
   const typeEmoji = TYPE_EMOJI[type] ?? "📍";

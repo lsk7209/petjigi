@@ -1,10 +1,13 @@
-# STATUS
+# STATUS — 2026-10-16
+Current State: DONE_LOCAL_WITH_EXTERNAL_GAPS
+Result: LOCAL_READY for repaired code; PRODUCTION_VERIFIED=false; REVIEW_CANDIDATE=NOT_READY.
+Evidence:608unit pass; final lint/typecheck/build PASS; original5E2Esuites137pass; repaired affected region browserPASS3/3/3+unclassified1;13synthetic cases mismatch0.
+Preserved: original clean main73e25ba; origin/main73767e3; no push/PR/deploy/productionwrites/ETL/config changes; keep30 and URL/3threshold/ad policies. Seed/body/public/dependency diff0.
+Artifacts: current top of docs/audits/petjigi-consistency-audit-20261015.md, currentCSV/JSON/bodyproposal/productionplan, PROJECT_STATE.md.
+Gaps: productionDB/image/overlay/accounts/ad-serving, full primary-source/expert content review. Seven business types still displayMay21. Medical source corrections proposed only.
+Next: report local result; external mutations require separate scoped approval. Automatic main deploy untouched.
 
-Current State: DONE_WITH_EXTERNAL_GAPS
-Current Phase: Safe local implementation and verification complete
-Completed: Baseline, code fixes, five read-only audits, all required artifacts, 102 regression tests, typecheck, full lint, dependency audit, schema-complete 72-page build, local HTTP smoke, public host/canonical inspection, crawler-readable rescue noindex policy, metadata-route sitemap exclusions, and deployment-header policy repair
-In Progress: Qualified semantic review and original public-data record review
-Remaining: Real-data production runtime proof, expert content review, account/operator verification, migration and deployment
-Blocked: Production/account/expert evidence and deployment authority unavailable
-Last Verification: 2026-09-13 - 102 tests, TypeScript, lint, diff check, five audits, production dependency audit with 0 findings, and a warning-free 72-page Next.js 16.3.5 build PASS. Vercel headers no longer force global indexing or duplicate hashed-static caching; rescue root/details retain explicit noindex. Public redirects/static files pass, while deployed page-2 and memorial canonicals remain stale until deployment.
-Next Action: Obtain qualified veterinary review for the 11 sourced unpublished condition records; migration, deployment, and post-deploy smoke remain separately approval-gated.
+## Continuation
+User requested continue. Final complete six-suite E2E rerun started with production GA4 ID explicitly blank. Remote scope clarification pending; original separate-approval restrictions remain until answered.
+
+Final continuation: all six E2E suites PASS, command exit0. Remote scope pending; no remote mutation.

@@ -1,0 +1,11 @@
+{
+  "at": "2026-10-15T15:59:24.782Z",
+  "scope": "SSR and publicly served JS; no ad clicks/impressions or account queries",
+  "checkedChunks": 12,
+  "inlineExplicitProduction": true,
+  "publisherTagPresent": true,
+  "publisherMatchesAdsTxt": true,
+  "serverEnvironment": "UNKNOWN",
+  "overlay": "BLOCKED: SSH configuration unavailable",
+  "actualAdServing": "NOT_RUN"
+}

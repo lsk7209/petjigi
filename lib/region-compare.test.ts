@@ -45,8 +45,8 @@ test("세종 도로명처럼 시·군·구가 아닌 시군구 값은 미분류�
     { sido: "", sigungu: "중구", sigunguSlug: null, count: 2, phoneCount: 0 },
   ];
   const { classified, unclassified } = splitUnclassified(rows);
-  assert.deepEqual(classified.map((r) => r.sigungu), ["세종특별자치시", "신설구"]);
-  assert.deepEqual(unclassified, { rows: 2, count: 6, phoneCount: 2 });
+  assert.deepEqual(classified.map((r) => r.sigungu), ["세종특별자치시"]);
+  assert.deepEqual(unclassified, { rows: 3, count: 7, phoneCount: 2 });
 });
 
 test("개명 전후 시도 표기는 한 시도로 합치고 슬러그는 보존한다", () => {
