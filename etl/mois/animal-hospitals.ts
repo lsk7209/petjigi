@@ -7,15 +7,17 @@
 
 import { createHash } from "crypto";
 import { db } from "../../db/client";
-import { businesses } from "../../db/schema";
+import { businesses, etlSyncState } from "../../db/schema";
 import { eq, inArray } from "drizzle-orm";
 import { geocodeAddress } from "../geocoding/kakao";
 import { pingIndexNow } from "../../lib/seo/index-now";
+import { classifyEtlRun, type PageOutcome } from "../../lib/etl/run-outcome";
 
 const API_KEY = process.env.APMS_API_KEY ?? "";
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://petjigi.kr";
 const API_URL = "https://apis.data.go.kr/1741000/animal_hospitals/info";
 const CHUNK = 900; // SQLite 바인딩 변수 한도 999 이하
+const JOB_NAME = "animal-hospitals";
 const PAGE_SIZE = 100; // 포털 API는 numOfRows를 최대 100건으로 제한한다(초과 요청해도 100건만 응답)
 
 interface HospitalRow {
@@ -192,6 +194,18 @@ async function processPage(items: HospitalRow[], processed: { count: number; clo
   }
 }
 
+async function recordAttempt(at: string): Promise<void> {
+  await db
+    .insert(etlSyncState)
+    .values({ jobName: JOB_NAME, lastAttemptAt: at, updatedAt: at })
+    .onConflictDoUpdate({ target: etlSyncState.jobName, set: { lastAttemptAt: at, updatedAt: at } });
+}
+
+// 해당 수집 범위(전국 동물병원 전체 페이지)를 모두 읽었을 때만 호출한다
+async function recordSuccess(at: string): Promise<void> {
+  await db.update(etlSyncState).set({ lastSuccessfulAt: at, updatedAt: at }).where(eq(etlSyncState.jobName, JOB_NAME));
+}
+
 export async function syncAnimalHospitals(): Promise<void> {
   console.log("[ETL:animal-hospitals] 시작");
 
@@ -200,19 +214,44 @@ export async function syncAnimalHospitals(): Promise<void> {
     process.exit(1);
   }
 
+  const attemptAt = new Date().toISOString();
+  await recordAttempt(attemptAt);
+
   const first = await fetchPage(1);
   console.log(`[ETL:animal-hospitals] 총 ${first.total}건`);
+  // 전국 목록이 0건이면 정상 0건이 아니라 응답 파싱·인증 문제로 본다(기존 행은 건드리지 않는다)
+  if (first.total <= 0) {
+    console.error("[ETL:animal-hospitals] totalCount 0 — 성공 시각을 갱신하지 않음");
+    process.exit(1);
+  }
 
   const processed = { count: 0, closedTwins: 0 };
   const changedUrls: string[] = [];
+  const outcomes: PageOutcome[] = [{ kind: "ok", itemCount: first.items.length }];
   await processPage(first.items, processed, changedUrls);
 
   const totalPages = Math.ceil(first.total / PAGE_SIZE);
   for (let pageNo = 2; pageNo <= totalPages; pageNo++) {
-    const { items } = await fetchPage(pageNo);
-    if (items.length === 0) break;
+    let items: HospitalRow[];
+    try {
+      ({ items } = await fetchPage(pageNo));
+    } catch (err) {
+      outcomes.push({ kind: "failed", reason: String(err) });
+      console.error(`[ETL:animal-hospitals] ${pageNo}페이지 조회 실패 — ${String(err)}`);
+      break;
+    }
+    outcomes.push({ kind: "ok", itemCount: items.length });
+    if (items.length === 0) break; // 예상보다 일찍 끝남 — 아래 classifyEtlRun이 partial로 판정
     await processPage(items, processed, changedUrls);
     console.log(`[ETL:animal-hospitals] ${pageNo}/${totalPages} 페이지 처리 중 (${processed.count}건 변경)`);
+  }
+
+  const run = classifyEtlRun(outcomes, { expectedPages: totalPages, expectedItems: first.total });
+  if (run.outcome !== "complete") {
+    console.error(`[ETL:animal-hospitals] 불완전 수집(${run.outcome}): ${run.totalItems}/${first.total}건, ${run.pagesProcessed}/${totalPages}페이지 — 성공 시각을 갱신하지 않음`);
+    process.exitCode = 1;
+  } else {
+    await recordSuccess(new Date().toISOString());
   }
 
   console.log(`[ETL:animal-hospitals] 완료 — ${processed.count}건 upsert, CSV 폐업 반영 ${processed.closedTwins}건, ${changedUrls.length}건 IndexNow ping`);

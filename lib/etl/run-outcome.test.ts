@@ -56,3 +56,11 @@ test("only a 'complete' outcome should be allowed to update lastSuccessfulAt", (
 function shouldRecordSuccess(outcome: string): boolean {
   return outcome === "complete";
 }
+
+import { classifyEtlRun as classifyWithItems } from "./run-outcome";
+
+test("expectedItems보다 적게 읽으면 페이지 수가 맞아도 partial", () => {
+  const pages = [{ kind: "ok" as const, itemCount: 100 }, { kind: "ok" as const, itemCount: 60 }];
+  assert.equal(classifyWithItems(pages, { expectedPages: 2, expectedItems: 200 }).outcome, "partial");
+  assert.equal(classifyWithItems(pages, { expectedPages: 2, expectedItems: 160 }).outcome, "complete");
+});

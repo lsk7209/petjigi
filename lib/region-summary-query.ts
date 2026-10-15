@@ -4,6 +4,7 @@ import { db } from "@/db/client";
 import { businesses, regions } from "@/db/schema";
 import { notDuplicateListing } from "@/lib/db-queries";
 import { summarizeRegion } from "@/lib/region-summary";
+import { sidoNameVariants } from "@/lib/sido-names";
 
 // 시도 안의 시군구별 업체 수는 시도가 하나로 확정될 때만 비교한다. 구·신 시도명(강원도/강원특별자치도)이 섞여 있어
 // 시도명이 아니라 지역 목록의 시군구 이름으로 모은다(목록 페이지와 같은 기준).
@@ -37,6 +38,8 @@ export const getCachedRegionSummary = unstable_cache(
           .where(
             and(
               base,
+              // 같은 시군구 이름이 다른 시도에도 있으므로(중구·동구 등) 업체 원본의 시도도 함께 확인한다
+              inArray(businesses.addressSido, sidoNameVariants(sidoName)),
               inArray(
                 businesses.addressSigungu,
                 db.select({ name: regions.sigungu }).from(regions).where(eq(regions.sido, sidoName)),
@@ -47,7 +50,7 @@ export const getCachedRegionSummary = unstable_cache(
       : [];
     return summarizeRegion(rows, sidoCounts, sigunguName, nowYear);
   },
-  ["businesses", "region-summary", "v3"],
+  ["businesses", "region-summary", "v4"],
   { revalidate: 86400, tags: ["businesses"] },
 );
 
@@ -67,6 +70,6 @@ export const getCachedRegionTypeCounts = unstable_cache(
       .groupBy(businesses.type);
     return rows;
   },
-  ["businesses", "region-type-counts", "v1"],
+  ["businesses", "region-type-counts", "v2"],
   { revalidate: 86400, tags: ["businesses"] },
 );

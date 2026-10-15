@@ -8,6 +8,7 @@ import { and, eq, type SQL } from "drizzle-orm";
 import { db } from "@/db/client";
 import { businesses } from "@/db/schema";
 import { getCachedRegionSlugView } from "@/lib/db-queries";
+import { collapseListingDuplicates } from "@/lib/listing-identity";
 import { matchBusinessInRegion, type BusinessMatchResult } from "@/lib/business-detail-match";
 import type { RegionSlugView } from "@/lib/region-identity";
 
@@ -26,7 +27,8 @@ export const resolveBusinessDetail = cache(
       .select()
       .from(businesses)
       .where(and(eq(businesses.type, type), eq(businesses.name, name), eq(businesses.addressSigungu, region.sigunguName)));
-    return { region, match: matchBusinessInRegion(region, candidates) };
+    // 출처 두 곳에 중복 적재된 같은 업체는 목록처럼 대표 1건으로 본다(동명 안내는 서로 다른 업체에만)
+    return { region, match: matchBusinessInRegion(region, collapseListingDuplicates(candidates)) };
   }
 );
 

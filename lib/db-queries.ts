@@ -5,13 +5,14 @@ import { businesses, contents, shelters, rescuedAnimals, regions, etlSyncState }
 import { eq, and, asc, desc, count, ne } from "drizzle-orm";
 import { sql } from "drizzle-orm";
 import { DEFAULT_BUSINESS_PAGE_SIZE, getPageWindow } from "@/lib/business-listing";
+import { notDuplicateListingSql } from "@/lib/listing-identity";
 import { describeRegionSlug, resolveRegionIdentity } from "@/lib/region-identity";
 
 // ── 홈 통계 카운트 ──────────────────────────────────────────────────────────
 export const getCachedStats = unstable_cache(
   async () => {
     const [bizCount, shelterCount, rescuedCount] = await Promise.all([
-      db.select({ count: count() }).from(businesses).where(eq(businesses.status, "active")).get(),
+      db.select({ count: count() }).from(businesses).where(and(eq(businesses.status, "active"), notDuplicateListing)).get(),
       db.select({ count: count() }).from(shelters).get(),
       db.select({ count: count() }).from(rescuedAnimals).get(),
     ]);
@@ -21,7 +22,7 @@ export const getCachedStats = unstable_cache(
       rescued: rescuedCount?.count ?? 0,
     };
   },
-  ["stats"],
+  ["stats", "v2"],
   { revalidate: 3600, tags: ["stats", "businesses", "rescue"] }
 );
 
@@ -64,9 +65,9 @@ export const getCachedAllGuides = unstable_cache(
   { revalidate: 3600, tags: ["guides"] }
 );
 
-// 같은 업체(종류·이름·주소 동일)가 출처 두 곳(CSV·공공데이터포털)에서 중복 적재된 경우 id가 가장 작은 1건만 노출
-// (원본 행은 삭제하지 않는다 — 목록·건수·페이지네이션에만 적용)
-export const notDuplicateListing = sql`NOT EXISTS (SELECT 1 FROM businesses d WHERE d.type = ${businesses.type} AND d.name = ${businesses.name} AND d.address = ${businesses.address} AND d.status = 'active' AND d.id < ${businesses.id})`;
+// 같은 업체가 출처 두 곳(CSV·공공데이터포털)에서 중복 적재된 경우 대표 1건만 노출한다.
+// 판정·대표 선택 기준은 lib/listing-identity.js(사이트맵과 공유). 원본 행은 삭제하지 않는다.
+export const notDuplicateListing = sql.raw(notDuplicateListingSql("businesses"));
 
 // ── 지역×업종 영업장 목록 ──────────────────────────────────────────────────────
 // unstable_cache는 args를 자동으로 키에 포함시킴
@@ -107,6 +108,10 @@ export const getCachedBusinessListing = unstable_cache(
 );
 
 // ── 업종 전체의 가장 최근 업체 정보 갱신일 (지역 0건이 수집 전인지 판별) ────────
+// 해시가 같은 행은 갱신하지 않아 max(last_synced_at)은 '마지막 변경'에 가깝다. 전체 수집이 완전히 성공한 시각을
+// 기록하는 ETL(업종별 job)은 그 시각이 더 늦으면 그것을 수집일로 쓴다.
+const TYPE_SYNC_JOB: Record<string, string> = { vet: "animal-hospitals" };
+
 export const getCachedTypeSourceAsOf = unstable_cache(
   async (type: string) => {
     const row = await db
@@ -114,9 +119,14 @@ export const getCachedTypeSourceAsOf = unstable_cache(
       .from(businesses)
       .where(and(eq(businesses.type, type), eq(businesses.status, "active")))
       .get();
-    return row?.asOf ?? null;
+    const job = TYPE_SYNC_JOB[type];
+    const state = job
+      ? await db.select({ at: etlSyncState.lastSuccessfulAt }).from(etlSyncState).where(eq(etlSyncState.jobName, job)).get()
+      : undefined;
+    const rowAsOf = row?.asOf ?? null;
+    return state?.at && (!rowAsOf || state.at > rowAsOf) ? state.at : rowAsOf;
   },
-  ["businesses", "type-as-of"],
+  ["businesses", "type-as-of", "v2"],
   { revalidate: 86400, tags: ["businesses"] }
 );
 

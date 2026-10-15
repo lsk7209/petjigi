@@ -54,7 +54,10 @@ test("보호센터 사이트맵 최소 센터 수가 색인 정책과 같다", (
 
 test("지역×업종 목록은 업체 수 하한 이상일 때만 사이트맵에 들어간다", () => {
   assert.match(config, /LISTING_MIN_SITEMAP = 3;/);
-  assert.match(config, /HAVING COUNT\(DISTINCT b\.id\) >= \?/);
+  // 업체 수 조회 SQL은 목록 페이지와 공유하는 lib/listing-identity.js에서 온다(중복 제거 포함)
+  const identity = fs.readFileSync("lib/listing-identity.js", "utf8");
+  assert.match(identity, /HAVING COUNT\(DISTINCT b\.id\) >= \?/);
+  assert.match(identity, /notDuplicateListingSql\("b"\)/);
 });
 
 test("regions 시드의 시군구 slug는 같은 이름끼리만 공유한다(다른 이름이 같은 slug를 쓰면 목록이 섞인다)", () => {
@@ -65,4 +68,9 @@ test("regions 시드의 시군구 slug는 같은 이름끼리만 공유한다(�
   }
   const mixed = [...bySlug].filter(([, names]) => names.size > 1).map(([slug]) => slug);
   assert.deepEqual(mixed, []);
+});
+
+test("DB 환경변수가 없으면 사이트맵 생성이 실패한다(명시적 fixture 빌드만 예외)", () => {
+  assert.match(config, /SITEMAP_ALLOW_NO_DB === "1"/);
+  assert.match(config, /throw new Error\("TURSO_DATABASE_URL 누락/);
 });

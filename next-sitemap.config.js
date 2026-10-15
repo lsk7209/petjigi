@@ -2,6 +2,7 @@
 /* eslint-disable @typescript-eslint/no-require-imports */
 const fs = require("node:fs");
 const path = require("node:path");
+const { listingSitemapSql } = require("./lib/listing-identity");
 /* eslint-enable @typescript-eslint/no-require-imports */
 
 // 여러 시도가 같은 slug를 쓰는 시군구(동구·서구 등): 페이지는 noindex이므로 사이트맵에서 제외
@@ -29,13 +30,17 @@ const SHELTER_MIN_INDEXABLE = 2; // lib/shelter-index-policy.ts MIN_INDEXABLE_SH
 // 조회 실패 시 조용히 비우면 색인 URL 수백 건이 사라지므로 빌드를 실패시킨다(이전 배포 유지).
 let dynamicSets;
 async function loadDynamicSets() {
-  if (!process.env.TURSO_DATABASE_URL) return null;
+  if (!process.env.TURSO_DATABASE_URL) {
+    // 운영 빌드에서 DB 환경변수가 빠지면 지역 목록 URL이 조용히 사라지고 필터도 꺼진다 — 명시적 허용 없이는 실패시킨다.
+    if (process.env.SITEMAP_ALLOW_NO_DB === "1") return null;
+    throw new Error("TURSO_DATABASE_URL 누락: 사이트맵 지역 URL을 만들 수 없다(DB 없는 fixture 빌드는 SITEMAP_ALLOW_NO_DB=1)");
+  }
   // eslint-disable-next-line @typescript-eslint/no-require-imports
   const { createClient } = require("@libsql/client");
   const client = createClient({ url: process.env.TURSO_DATABASE_URL, authToken: process.env.TURSO_AUTH_TOKEN });
   try {
     const listings = (await client.execute({
-      sql: "SELECT r.sigungu_slug AS slug, b.type AS type FROM businesses b JOIN regions r ON b.address_sigungu = r.sigungu WHERE b.status = 'active' GROUP BY r.sigungu_slug, b.type HAVING COUNT(DISTINCT b.id) >= ?",
+      sql: listingSitemapSql(),
       args: [LISTING_MIN_SITEMAP],
     })).rows;
     const shelters = (await client.execute({

@@ -20,3 +20,9 @@ test("CSV 적재(ld-vet-)와 같은 관리번호는 중복 행을 만들지 않�
   assert.match(src, /ld-vet-\$\{row\.MNG_NO\}/);
   assert.match(src, /if \(twin && twinId\)[\s\S]*continue;/);
 });
+
+test("전체 페이지·totalCount를 모두 읽었을 때만 성공 시각을 갱신한다", () => {
+  assert.match(src, /classifyEtlRun\(outcomes, \{ expectedPages: totalPages, expectedItems: first\.total \}\)/);
+  assert.match(src, /run\.outcome !== "complete"[\s\S]*process\.exitCode = 1[\s\S]*recordSuccess/);
+  assert.match(src, /first\.total <= 0/);
+});

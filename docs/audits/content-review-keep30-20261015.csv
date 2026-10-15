@@ -1,0 +1,31 @@
+﻿URL,제목,본문글자(공백제외),출처수,면책문구,확인상태,발견사항,교정제안(미적용),승인필요
+/blog/pet-insurance-comparison-method,펫보험 제대로 비교하는 방법 — 5가지 핵심 기준 완전 정리,1309,2,Y,NOT_REVIEWED_AGAINST_SOURCE,수치·출처 원문 미대조(이번 범위에서 전수 원문 검증 불가),—,—
+/guide/dog-adoption-checklist,강아지 입양 전 체크리스트 — 준비부터 동물등록까지,1202,3,N,NOT_REVIEWED_AGAINST_SOURCE,수치·출처 원문 미대조(이번 범위에서 전수 원문 검증 불가),—,—
+/guide/animal-hospital-guide,동물병원 선택 가이드 — 믿을 수 있는 병원 고르는 기준,1238,2,Y,NOT_REVIEWED_AGAINST_SOURCE,수치·출처 원문 미대조(이번 범위에서 전수 원문 검증 불가),—,—
+/blog/dog-toxic-foods,강아지가 먹으면 안 되는 음식 완전 정리 (2026년 기준),1803,4,N,CONFIRMED_UNSUPPORTED,"초콜릿 ""체중 1kg당 1oz(약 28g)""과 마카데미아 ""1kg당 2.2g(ASPCA)""은 인용된 ASPCA 페이지에 수치가 없음(10-15 조회). 초콜릿 수치는 단위상 위험 하한을 과대 설정할 소지","수치 삭제 후 ""종류·양·체중을 알리고 즉시 수의사/중독 상담 문의""로 교체. 수치를 쓰려면 Merck 원문 쪽수까지 대조",필요(YMYL)
+/blog/cat-litter-box-guide,고양이 화장실 위치·개수·청소 주기 완벽 정리,1626,4,N,SUSPECTED_UNSUPPORTED,화장실 기피 원인 30%/25%/20% 수치를 International Cat Care 출처로 제시 — 원문 미확인,원문 확인 전 수치 삭제 또는 정성 표현,필요
+/blog/cat-food-label-guide,고양이 사료 원료 표시 읽는 법 — 좋은 사료 고르는 기준,1546,4,N,QUALIFIED,"AAFCO 26%/타우린 0.1·0.2%는 일치 가능하나 AAFCO는 모델 기준이라 ""의무화"" 표현 과함","""AAFCO 권고 기준""으로 표현 완화",권장
+/blog/cat-eye-discharge-guide,고양이 눈곱이 많아졌다면 — 원인별 증상과 대처법,1570,4,Y,NOT_REVIEWED_AGAINST_SOURCE,수치·출처 원문 미대조(이번 범위에서 전수 원문 검증 불가),—,—
+/blog/dog-patella-luxation,강아지 슬개골 탈구 — 증상·등급·수술 기준 완전 가이드,1460,2,Y,CONFIRMED_MISATTRIBUTED,"""수술 성공률 90% 이상""은 ACVS 페이지에서 보호자 만족도(""Over 90% of owners are satisfied"")이며 성공률 아님. 출처에 ""(원문 대조 대기)"" 내부 메모 노출","""보호자 만족도 90% 이상(ACVS)""로 정정, 출처 메모 제거",필요(YMYL)
+/blog/dog-food-allergy-elimination-diet-test,강아지 알레르기 사료 찾는 법 — 식이 제거 테스트 8주 완전 가이드,1799,2,Y,NEEDS_PRIMARY_SOURCE,"Mueller 2016 ""원문 대조 대기"" 노출, 8주 기간은 본문이 수의사 조정 명시",원문(BMC Vet Res) 대조,필요(YMYL)
+/guide/microchip-registration-complete-guide,반려동물 마이크로칩 등록 완벽 가이드 — 절차·비용·주의사항,1752,3,N,NEEDS_PRIMARY_SOURCE,"과태료 20/40/60만·변경 10/20/40만 — 출처에 ""법령 원문 대조 대기/원문 미확인"" 메모 노출",law.go.kr 별표 원문 대조 후 메모 제거,필요(법령)
+/blog/petloss-return-to-daily-life,펫로스 후 일상으로 돌아가기 — 직장과 사회생활을 다시 시작하는 방법,1577,1,Y,NOT_REVIEWED_AGAINST_SOURCE,수치·출처 원문 미대조(이번 범위에서 전수 원문 검증 불가),—,—
+/blog/dog-first-adoption-kit,강아지 처음 입양 준비물 체크리스트 — 첫 날 전에 갖춰야 할 것들,1616,2,N,NEEDS_PRIMARY_SOURCE,"동물보호법·WSAVA 2016 출처에 ""원문 대조 대기"" 노출",원문 대조 후 메모 제거,필요
+/blog/pet-bite-liability-guide,반려동물이 사람을 물었을 때 — 법적 책임과 배상,1432,3,Y,NEEDS_PRIMARY_SOURCE,민법 759조·맹견사육허가제(2024-04-27) 법령 의존,원문 대조,필요(법령)
+/guide/memorial-ceremony,반려동물 장례 절차 안내 — 접수부터 봉안까지,1347,3,Y,NOT_REVIEWED_AGAINST_SOURCE,수치·출처 원문 미대조(이번 범위에서 전수 원문 검증 불가),—,—
+/blog/online-vet-consultation-guide,온라인 수의사 상담 — 활용법과 한계 완전 가이드,1523,0,Y,NO_SOURCES,수의사법 처방 제한을 주장하나 sources 0건,수의사법 조문 출처 추가,필요(법령)
+/blog/senior-young-pet-introduction,노령 반려동물과 어린 반려동물 합사 완전 가이드,2209,2,Y,NOT_REVIEWED_AGAINST_SOURCE,수치·출처 원문 미대조(이번 범위에서 전수 원문 검증 불가),—,—
+/blog/pet-insurance-claim-guide,펫보험 청구 준비 — 서류·접수·지급 결과 확인,1318,2,Y,NOT_REVIEWED_AGAINST_SOURCE,수치·출처 원문 미대조(이번 범위에서 전수 원문 검증 불가),—,—
+/blog/cat-dog-harmony-guide,고양이와 강아지 평화로운 공존 — 관계 심화 완전 가이드,2093,2,Y,NOT_REVIEWED_AGAINST_SOURCE,수치·출처 원문 미대조(이번 범위에서 전수 원문 검증 불가),—,—
+/guide/senior-pet-adoption-complete-guide,노령 반려동물 입양 완벽 가이드 — 노견·노묘 입양의 장단점과 준비,1631,3,Y,NOT_REVIEWED_AGAINST_SOURCE,수치·출처 원문 미대조(이번 범위에서 전수 원문 검증 불가),—,—
+/blog/dog-homemade-treats,강아지 수제 간식 레시피 5가지 — 집에서 안전하게 만드는 법,1701,4,N,NOT_REVIEWED_AGAINST_SOURCE,수치·출처 원문 미대조(이번 범위에서 전수 원문 검증 불가),—,—
+/blog/cat-obesity-diet-management-guide,고양이 비만 관리 가이드 — 체중 측정부터 다이어트 사료 전환까지 단계별,1520,2,N,NOT_REVIEWED_AGAINST_SOURCE,수치·출처 원문 미대조(이번 범위에서 전수 원문 검증 불가),—,—
+/blog/dog-walk-guide,강아지 산책 완전 가이드 — 시간·횟수·리드줄 에티켓까지,1977,3,N,NOT_REVIEWED_AGAINST_SOURCE,수치·출처 원문 미대조(이번 범위에서 전수 원문 검증 불가),—,—
+/blog/newborn-and-pet-guide,신생아와 반려동물 — 안전한 공존 준비 완전 가이드,2210,3,Y,NOT_REVIEWED_AGAINST_SOURCE,수치·출처 원문 미대조(이번 범위에서 전수 원문 검증 불가),—,—
+/blog/child-pet-relationship-guide,아이와 반려동물 — 건강한 관계 형성 완전 가이드,1976,3,Y,NOT_REVIEWED_AGAINST_SOURCE,수치·출처 원문 미대조(이번 범위에서 전수 원문 검증 불가),—,—
+/blog/dog-grain-free-diet-guide,강아지 그레인프리 사료 완전 가이드 — 효과·위험·선택 기준,2364,3,Y,NOT_REVIEWED_AGAINST_SOURCE,수치·출처 원문 미대조(이번 범위에서 전수 원문 검증 불가),—,—
+/blog/dog-camping-guide,강아지와 캠핑 완전 가이드 — 준비물·안전·야외 생활 팁,2181,3,Y,NOT_REVIEWED_AGAINST_SOURCE,수치·출처 원문 미대조(이번 범위에서 전수 원문 검증 불가),—,—
+/blog/maltese-care-guide,말티즈 완전 케어 가이드 — 특성·건강·미용·훈련,2028,4,Y,NOT_REVIEWED_AGAINST_SOURCE,수치·출처 원문 미대조(이번 범위에서 전수 원문 검증 불가),—,—
+/blog/smart-home-pet-guide,스마트 홈과 반려동물 — 자동화 기기 활용 완전 가이드,2011,2,Y,NOT_REVIEWED_AGAINST_SOURCE,수치·출처 원문 미대조(이번 범위에서 전수 원문 검증 불가),—,—
+/blog/working-from-home-pet-guide,재택근무와 반려동물 — 집중력과 유대감을 동시에,2038,2,Y,NOT_REVIEWED_AGAINST_SOURCE,수치·출처 원문 미대조(이번 범위에서 전수 원문 검증 불가),—,—
+/blog/cat-senior-diet-transition,노령묘 식이 전환 가이드 — 7세부터 달라지는 영양 요구,2232,3,Y,NOT_REVIEWED_AGAINST_SOURCE,수치·출처 원문 미대조(이번 범위에서 전수 원문 검증 불가),—,—
