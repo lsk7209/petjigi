@@ -103,7 +103,7 @@ export const getCachedBusinessListing = unstable_cache(
 
     return { items, totalCount, sourceAsOf: totalRow?.sourceAsOf ?? null, ...pageWindow };
   },
-  ["businesses", "listing"],
+  ["businesses", "listing", "v2"],
   { revalidate: 86400, tags: ["businesses"] }
 );
 
