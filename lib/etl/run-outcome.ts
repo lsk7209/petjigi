@@ -22,6 +22,8 @@ export interface EtlRunClassification {
 export interface ClassifyOptions {
   /** 첫 페이지 응답의 totalCount로부터 계산한 예상 페이지 수. */
   expectedPages: number;
+  /** 첫 페이지 totalCount. 지정하면 처리한 아이템이 이보다 적을 때 complete로 보지 않는다(중간 페이지 누락·중복 페이지 방어). */
+  expectedItems?: number;
 }
 
 /**
@@ -48,8 +50,10 @@ export function classifyEtlRun(
     totalItems += page.itemCount;
   }
 
-  const outcome: EtlRunOutcome =
-    pages.length >= options.expectedPages ? "complete" : "partial";
+  const enough =
+    pages.length >= options.expectedPages &&
+    (options.expectedItems === undefined || totalItems >= options.expectedItems);
+  const outcome: EtlRunOutcome = enough ? "complete" : "partial";
 
   return { outcome, totalItems, pagesProcessed: pages.length };
 }

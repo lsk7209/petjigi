@@ -4,6 +4,7 @@ import type { Metadata } from "next";
 import { publicContentCondition } from "@/lib/content-publication-sql";
 import { notFound } from "next/navigation";
 import Link from "next/link";
+import { notDuplicateListing } from "@/lib/db-queries";
 import { db } from "@/db/client";
 import { businesses, contents } from "@/db/schema";
 import { and, eq, ne, sql, desc } from "drizzle-orm";
@@ -17,7 +18,7 @@ import { CategoryCta } from "@/components/content/category-cta";
 import { ShareButtons } from "@/components/content/share-buttons";
 import { AdSlot } from "@/components/ads/ad-slot";
 import { adsPolicyAttrs } from "@/lib/ads-policy";
-import { evaluateBusinessDetailEligibility } from "@/lib/seo/indexability-policy";
+import { evaluateDetailTarget } from "@/lib/business-detail-match";
 import { classifyListing } from "@/lib/listing-state";
 import { DataCoverage } from "@/components/business/data-coverage";
 import { AdPolicyProvider } from "@/components/providers/ad-policy-provider";
@@ -75,17 +76,14 @@ export async function generateMetadata({
   const name = decodeURIComponent(slug);
   const typeLabel = TYPE_LABEL[type] ?? type;
 
-  const { region, match } = await resolveBusinessDetail(type, sigungu, name);
+  const target = await resolveBusinessDetail(type, sigungu, name);
+  const { region, match } = target;
   if (match.kind === "missing") notFound();
   const location = region.sigunguName ?? sigungu;
   const title = `${name} ${typeLabel} | ${location} | 펫지기`;
   const description = `${location} ${name} ${typeLabel} — 위치, 연락처, 주변 시설 정보. 공공데이터 기반.`;
   // URL만으로 지역이나 업체가 하나로 정해지지 않는 페이지는 색인하지 않는다(목록과 같은 정책).
-  const eligibility = evaluateBusinessDetailEligibility({
-    ambiguous: region.kind === "ambiguous" || match.kind === "ambiguous",
-    business: match.kind === "resolved" ? match.business : {},
-    categoryId: TYPE_CATEGORY[type] ?? 1,
-  });
+  const eligibility = evaluateDetailTarget(target, TYPE_CATEGORY[type] ?? 1);
   const robots = eligibility.indexable ? undefined : { index: false, follow: true };
 
   return {
@@ -122,7 +120,8 @@ export default async function BusinessDetailPage({
   const { sigungu: type, type: sigungu, slug } = await params;
   const name = decodeURIComponent(slug);
 
-  const { region, match } = await resolveBusinessDetail(type, sigungu, name);
+  const target = await resolveBusinessDetail(type, sigungu, name);
+  const { region, match } = target;
   if (match.kind === "missing") notFound();
   if (match.kind === "ambiguous") {
     return (
@@ -139,14 +138,14 @@ export default async function BusinessDetailPage({
   const nearby = await db
     .select()
     .from(businesses)
-    .where(and(sameRegionCondition(business), eq(businesses.status, "active"), ne(businesses.id, business.id)))
+    .where(and(sameRegionCondition(business), eq(businesses.status, "active"), notDuplicateListing, ne(businesses.id, business.id)))
     .limit(6);
 
   const sameTypeCount = await db
     .select({ count: sql<number>`count(*)` })
     .from(businesses)
     .where(
-      and(eq(businesses.type, type), sameRegionCondition(business), eq(businesses.status, "active"))
+      and(eq(businesses.type, type), sameRegionCondition(business), eq(businesses.status, "active"), notDuplicateListing)
     )
     .get();
 
@@ -165,7 +164,7 @@ export default async function BusinessDetailPage({
     .orderBy(desc(contents.publishedAt))
     .limit(3);
 
-  const eligibility = evaluateBusinessDetailEligibility({ ambiguous: false, business, categoryId });
+  const eligibility = evaluateDetailTarget(target, categoryId);
   const syncedAt = business.lastSyncedAt?.slice(0, 10) ?? null;
   const staleAsOf = syncedAt && classifyListing(1, syncedAt).stale ? syncedAt : null;
   const schema = localBusinessSchema({ business, canonicalUrl: pageUrl });

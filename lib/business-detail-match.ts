@@ -10,6 +10,7 @@
  */
 
 import type { RegionSlugView } from "./region-identity";
+import { evaluateBusinessDetailEligibility, type BusinessUniqueFields, type PageEligibility } from "./seo/indexability-policy";
 
 export interface BusinessCandidate {
   id: string;
@@ -58,4 +59,16 @@ export function matchBusinessInRegion<T extends BusinessCandidate>(
 ): BusinessMatchResult<T> {
   if (region.kind === "missing" || !region.sigunguName) return { kind: "missing" };
   return pickUniqueBusinessMatch(candidates, { sigungu: region.sigunguName });
+}
+
+/**
+ * 상세 페이지의 색인·광고·JSON-LD 판정. metadata와 본문이 같은 입력으로 같은 결과를 쓰도록 한 곳에서 계산한다.
+ * 지역이 모호하면(업체 후보가 하나여도) 지역 URL이 하나로 정해지지 않으므로 제외한다.
+ */
+export function evaluateDetailTarget(target: { region: RegionSlugView; match: BusinessMatchResult<BusinessCandidate & BusinessUniqueFields> }, categoryId: number): PageEligibility {
+  return evaluateBusinessDetailEligibility({
+    ambiguous: target.region.kind === "ambiguous" || target.match.kind === "ambiguous",
+    business: target.match.kind === "resolved" ? target.match.business : {},
+    categoryId,
+  });
 }

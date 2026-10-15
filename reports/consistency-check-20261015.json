@@ -1,0 +1,7 @@
+{"baseline":"48cf954","scope":"local synthetic SQLite + static review; production DB not read","checks":[
+{"name":"sitemap_vs_listing_count","before":"sitemap counted 4 raw rows, listing 2","after":"both 2 (excluded)","verified":"unit"},
+{"name":"representative_row","before":"min id","after":"latest last_synced_at, tie min id","verified":"unit"},
+{"name":"unidentifiable_address_merge","before":"'' and masked merged","after":"not merged","verified":"unit"},
+{"name":"detail_meta_vs_body_eligibility","before":"split","after":"single evaluateDetailTarget","verified":"unit"},
+{"name":"sido_rank_cross_sido","before":"sigungu-name only","after":"sido variants","verified":"code"},
+{"name":"production_counts","status":"BLOCKED"}]}

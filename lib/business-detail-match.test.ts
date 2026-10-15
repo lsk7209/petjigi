@@ -74,3 +74,28 @@ test("R02 같은 지역·같은 이름의 서로 다른 업체도 ambiguous", ()
 test("R02 미등록 지역은 후보가 있어도 missing(404 유지)", () => {
   assert.equal(matchBusinessInRegion(missingRegion, [VET_A_SEOUL]).kind, "missing");
 });
+
+import { evaluateDetailTarget } from "./business-detail-match";
+import type { RegionSlugView } from "./region-identity";
+
+const view = (kind: RegionSlugView["kind"]): RegionSlugView => ({
+  kind, sigunguName: "강서구", sidoName: kind === "ambiguous" ? "" : "서울특별시", sidoSlug: null, ambiguousSidoNames: [],
+});
+const biz = { id: "1", type: "vet", name: "가", addressSigungu: "강서구", status: "active", address: "서울 강서구 1", phone: null, lat: null, lng: null, licenseDate: null };
+
+test("지역이 모호하면 업체 후보가 하나여도 색인·광고·JSON-LD 모두 제외한다", () => {
+  const e = evaluateDetailTarget({ region: view("ambiguous"), match: { kind: "resolved", business: biz } }, 3);
+  assert.equal(e.indexable, false);
+  assert.equal(e.adEligible, false);
+  assert.equal(e.structuredDataEligible, false);
+});
+
+test("지역·업체가 확정되고 고유 정보가 있으면 모두 허용한다", () => {
+  const e = evaluateDetailTarget({ region: view("resolved"), match: { kind: "resolved", business: biz } }, 3);
+  assert.equal(e.indexable && e.adEligible && e.structuredDataEligible, true);
+});
+
+test("동명 업체 여러 개는 제외한다", () => {
+  const e = evaluateDetailTarget({ region: view("resolved"), match: { kind: "ambiguous", candidates: [biz, { ...biz, id: "2" }] } }, 3);
+  assert.equal(e.indexable, false);
+});

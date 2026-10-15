@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
+import { notDuplicateListing } from "@/lib/db-queries";
 import { db } from "@/db/client";
 import { businesses, contents, regions } from "@/db/schema";
 import { or, and, eq, inArray } from "drizzle-orm";
@@ -81,6 +82,7 @@ export async function GET(req: NextRequest) {
         .where(
           and(
             eq(businesses.status, "active"),
+            notDuplicateListing,
             or(likeEscaped(businesses.name, pattern), likeEscaped(businesses.address, pattern))
           )
         )
