@@ -1,4 +1,4 @@
-# Status | 마지막: 2026-10-13
+# Status | 마지막: 2026-10-15
 ## 현재 작업
 (000) 애드센스 재점검: PR #71 병합, 운영 DB 22건 반영 완료(10-13, 시드=운영 30/30, 백업 .backup-prod). petjigi.kr은 OVH VPS(ssh -F ~/.ssh/ovh1_config ovh1, Coolify 컨테이너)가 서빙(Vercel 아님). 10-13 de35b5b 이미지(ovh-petjigi-production:de35b5b-20261013-v1)로 교체 완료, 사이트맵 453건 라이브. 롤백: /data/coolify/services/zlpoefjoahqbwf0dswhrvc7w/docker-compose.yml.before-de35b5b 복원 후 compose up -d web. 빌드는 가용메모리 5GiB 필요(NODE_OPTIONS 힙 2GiB). 이전 메모: 사이트맵 지역/센터 398건 누락 수정, 시드 22건 보강(운영 반영 승인 대기), deploy.yml 상태검증. 보고서 docs/audits/petjigi-adsense-remediation-20261013.md. 결정 대기: 운영 DB 반영, push/배포, Consent 기본값, 얇은 지역 53건.
 (00) 애드센스 승인 전 콘텐츠 축소: PR #68~#70 병합·배포 완료. 2026-10-12 운영 --apply 완료(652건 draft: blog 557·guide 64·condition 31, 공개 30건). 스냅샷 .backup-prod/unpublish-contents/snapshot.json, 복구 --restore --yes. 다음: ISR 캐시 만료 후 /condition→/category/health·사이트맵 확인, audit:live, GSC 사이트맵 재제출. docs/unpublish-20261012.md
@@ -57,3 +57,4 @@
 - Gemini 키 2종 모두 사용 불가(AQ. 토큰 401, AIzaSy 만료)
 - Turso 토큰(turso2.txt) 폐기 필요(기존). 키파일 일부가 이번 세션 화면에 출력됨 → Anthropic·바이낸스 키 교체 권장
 - 업체 3곳 미만 지역 목록(265개)은 noindex,follow(LISTING_MIN_INDEXABLE=3, 사이트맵 하한과 테스트로 동일 고정)
+- 홈에 /tools 진입점(PR #85) 자동배포로 반영(10-15). 다음 확인: 10-20경 GSC 색인, 11-13 전 빌드용 Turso 토큰 갱신
