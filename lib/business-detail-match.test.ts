@@ -76,7 +76,6 @@ test("R02 미등록 지역은 후보가 있어도 missing(404 유지)", () => {
 });
 
 import { evaluateDetailTarget } from "./business-detail-match";
-import type { RegionSlugView } from "./region-identity";
 
 const view = (kind: RegionSlugView["kind"]): RegionSlugView => ({
   kind, sigunguName: "강서구", sidoName: kind === "ambiguous" ? "" : "서울특별시", sidoSlug: null, ambiguousSidoNames: [],
