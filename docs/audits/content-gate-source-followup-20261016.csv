@@ -1,0 +1,5 @@
+content_id,url,file,status,high_risk,result,issues
+blog-cat-food-label-guide,/blog/cat-food-label-guide,db/seeds/blog-posts.ts,published,true,PASS_OR_NOT_APPLICABLE,
+blog-cat-litter-box-guide,/blog/cat-litter-box-guide,db/seeds/blog-posts.ts,published,true,PASS_OR_NOT_APPLICABLE,
+blog-dog-first-adoption-kit,/blog/dog-first-adoption-kit,db/seeds/blog-posts.ts,published,true,PASS_OR_NOT_APPLICABLE,
+blog-245,/blog/dog-food-allergy-elimination-diet-test,db/seeds/blog-posts-25.ts,published,true,PASS_OR_NOT_APPLICABLE,

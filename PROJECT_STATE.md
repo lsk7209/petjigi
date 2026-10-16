@@ -10,7 +10,9 @@ R06 method/results: `docs/db-query-measurement.md` and `docs/db-query-measuremen
 
 Delivered code commit: `faa1691`, pushed to the review branch above and confirmed with `git ls-remote`. Documentation followup is on the same branch. No main merge or hosting/account mutation. Raw browser logs/screenshots remain local and untracked.
 
-Remaining: qualified whole-article medical/legal/source review; approved production content reconciliation (including toxic-food YMYL/disclaimer, not just body); AdSense/GSC/operator evidence; data API/geocoding access; October 20 GSC inspection. Production runtime is unverified. No claim of AdSense readiness or publication completion.
+Followup: four additional local seed corrections (food allergy, litter box, food labels, adoption kit) passed content gate (4 records/0 blockers), 18 focused tests, seed lint, typecheck and protected-field comparison. Evidence: `docs/audits/content-source-followup-20261016.md`. GSC ownership/performance and GA4 overview were verified read-only; targeted results are in `docs/audits/account-evidence-20261016.json`. AdSense remains unknown. No production reconciliation performed.
+
+Remaining: qualified whole-article medical/legal/source review; approved production content reconciliation (including YMYL/disclaimer, not just body); AdSense/operator evidence; data API/geocoding access; October 20 GSC URL inspection. Production runtime is unverified. No claim of AdSense readiness or publication completion.
 
 Existing default-branch Dependabot alerts observed at push: braces high (no patched version supplied by advisory), postcss-selector-parser medium, esbuild development-only medium. Production dependency paths are next-sitemap→fast-glob→micromatch→braces and @tailwindcss/typography→postcss-selector-parser. No dependency upgrade or reachability/security-complete claim in this task; review separately before release.
 
