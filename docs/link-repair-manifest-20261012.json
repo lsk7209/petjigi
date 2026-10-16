@@ -1680,8 +1680,15 @@
         "body"
       ],
       "bodyBeforeSha256": "122e696a188f8bb584c19026d6ec7cb4b400a93771633c50f5120693f461f6cc",
-      "bodyAfterSha256": "70ec50b56eb87d61b5a8f5a861d956a9434f3dd7a1e9c5120039d47b5454ce08",
-      "bodyTextSha256": "a0dd38d15f4f273c1e9ac3c6451cbe79598edff4f82d5d2e5320c339864c3ea8",
+      "bodyAfterSha256": "507d41820080e591575abf88cc9dbd564b92ff8f194e953178f89c6da62e22a7",
+      "bodyTextSha256": "94d6b5b3f7e725568b9413ed2a133dd9e05ac7f5f063abba67ecb027091dbfb2",
+      "sourceFollowup": {
+        "commit": "cea9e71",
+        "evidence": "docs/audits/content-source-followup-20261016.md",
+        "previousBodyAfterSha256": "70ec50b56eb87d61b5a8f5a861d956a9434f3dd7a1e9c5120039d47b5454ce08",
+        "previousBodyTextSha256": "a0dd38d15f4f273c1e9ac3c6451cbe79598edff4f82d5d2e5320c339864c3ea8",
+        "note": "Source correction changed prose; both repaired internal destinations remain. Historical production manifest is unchanged."
+      },
       "replacements": [
         {
           "from": "/blog/dog-grain-free-complete-guide",

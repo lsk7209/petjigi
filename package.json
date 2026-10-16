@@ -200,6 +200,8 @@
   },
   "pnpm": {
     "overrides": {
+      "@tailwindcss/typography>postcss-selector-parser": "7.1.6",
+      "@esbuild-kit/core-utils>esbuild": "0.25.12",
       "@babel/core": "^7.29.6",
       "baseline-browser-mapping": ">=2.11.0",
       "browserslist": ">=4.28.7",

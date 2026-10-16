@@ -2,6 +2,7 @@
   "measuredAt": "2026-10-16T02:53:57.445Z",
   "productionAccess": false,
   "commit": "73767e3b110352bf2f7ee55d724a1c6a82c4994c",
+  "commitContext": "HEAD at measurement time, before instrumentation changes were committed. sourceHash identifies the measured files; their hash still matches the implementation delivered in faa1691. This is not a clean checkout measurement of commit 73767e3.",
   "sourceHash": "be44e43d66821d25769446bb020c18c8dd3a91ab824cc7d4a6af21edfc145d41",
   "fixtureHash": "0b1aae623f574eaddc23c8bd7593e737a88651195e780f0da3d36733d19b183b",
   "method": "Synthetic SQLite; opt-in production build/start; first HTTP request and repeat in one process (build may warm data caches); headers correlate metadata/page scopes. Ancillary layouts/components outside these scopes are not measured. Measurement mode makes business-detail dynamic and bypasses its normal route cache; no production route-cache/performance conclusions. Scope times overlap; requestMs measures full HTTP response separately.",
