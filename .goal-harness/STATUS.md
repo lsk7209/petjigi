@@ -1,5 +1,7 @@
 # STATUS
 
+> Historical September harness. Current continuation: `resume-20261016/STATUS.md`; project summary: `../PROJECT_STATE.md`.
+
 Current State: DONE_WITH_EXTERNAL_GAPS
 Current Phase: Safe local implementation and verification complete
 Completed: Baseline, code fixes, five read-only audits, all required artifacts, 102 regression tests, typecheck, full lint, dependency audit, schema-complete 72-page build, local HTTP smoke, public host/canonical inspection, crawler-readable rescue noindex policy, metadata-route sitemap exclusions, and deployment-header policy repair

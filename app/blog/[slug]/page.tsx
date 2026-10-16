@@ -1,3 +1,4 @@
+import { measuredRoute } from "@/lib/db-measured-route";
 import type { Metadata } from "next";
 import { parseStoredSources } from "@/lib/content-sources";
 import { buildToc } from "@/lib/toc";
@@ -58,7 +59,7 @@ export async function generateStaticParams() {
   }
 }
 
-export async function generateMetadata({
+async function generateMetadataImpl({
   params,
 }: {
   params: Promise<{ slug: string }>;
@@ -181,7 +182,7 @@ const CATEGORY_EMOJI: Record<number, string> = {
   1: "🐾", 2: "🥗", 3: "💊", 4: "📋", 5: "✂️", 6: "🕊️",
 };
 
-export default async function BlogPostPage({
+async function BlogPostPage({
   params,
 }: {
   params: Promise<{ slug: string }>;
@@ -502,3 +503,6 @@ export default async function BlogPostPage({
     </>
   );
 }
+
+export const generateMetadata = measuredRoute("blog-detail", "metadata", generateMetadataImpl);
+export default measuredRoute("blog-detail", "page", BlogPostPage);

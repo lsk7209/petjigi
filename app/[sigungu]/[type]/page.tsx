@@ -1,3 +1,4 @@
+import { measuredRoute } from "@/lib/db-measured-route";
 import { VisitQuestions } from "@/components/business/visit-questions";
 import { faqCountAnswer, listingScopeWording, staleNotice } from "@/lib/business-status-wording";
 import { evaluateListingEligibility } from "@/lib/seo/indexability-policy";
@@ -127,7 +128,7 @@ const TYPE_META: Record<
   },
 };
 
-export async function generateMetadata({
+async function generateMetadataImpl({
   params,
   searchParams,
 }: {
@@ -202,7 +203,7 @@ function buildFaq(type: string, location: string, typeLabel: string, count: numb
   ];
 }
 
-export default async function SigunguTypePage({
+async function SigunguTypePage({
   params,
   searchParams,
 }: {
@@ -608,3 +609,6 @@ export default async function SigunguTypePage({
     </AdPolicyProvider>
   );
 }
+
+export const generateMetadata = measuredRoute("business-list", "metadata", generateMetadataImpl);
+export default measuredRoute("business-list", "page", SigunguTypePage);

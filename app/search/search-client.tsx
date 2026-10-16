@@ -45,6 +45,7 @@ export default function SearchClient() {
   const requestIdRef = useRef(0);
 
   const executeSearch = async (searchQuery: string) => {
+    const myRequestId = ++requestIdRef.current;
     if (timer.current) {
       clearTimeout(timer.current);
       timer.current = null;
@@ -60,7 +61,6 @@ export default function SearchClient() {
       return;
     }
 
-    const myRequestId = ++requestIdRef.current;
     const controller = new AbortController();
     abortRef.current = controller;
     setLoading(true);
@@ -72,17 +72,17 @@ export default function SearchClient() {
       });
       if (!res.ok) throw new Error();
       const json: SearchResponse = await res.json();
-      if (myRequestId !== requestIdRef.current) return;
+      if (controller.signal.aborted || myRequestId !== requestIdRef.current) return;
       setData(json);
       track.search({ query: searchQuery, resultsCount: json.returnedCount });
     } catch (err) {
       if (err instanceof DOMException && err.name === "AbortError") {
         return;
       }
-      if (myRequestId !== requestIdRef.current) return;
+      if (controller.signal.aborted || myRequestId !== requestIdRef.current) return;
       setError("검색 중 오류가 발생했습니다. 잠시 후 다시 시도해주세요.");
     } finally {
-      if (myRequestId === requestIdRef.current) setLoading(false);
+      if (!controller.signal.aborted && myRequestId === requestIdRef.current) setLoading(false);
     }
   };
 
@@ -135,10 +135,13 @@ export default function SearchClient() {
           value={query}
           onChange={(e) => {
             const nextQuery = e.target.value;
+            // Invalidate synchronously, including the debounce window and short input.
+            ++requestIdRef.current;
             setQuery(nextQuery);
+            setError("");
+            setLoading(false);
             if (nextQuery.trim().length < 2) {
               setData(null);
-              setLoading(false);
             }
           }}
           placeholder="동물병원, 가이드 검색…"
@@ -155,11 +158,9 @@ export default function SearchClient() {
 
       {error && <p role="alert" className="text-sm text-red-500 mb-4">{error}</p>}
 
-      {!query.trim() && (
-        <p id="site-search-help" className="text-sm text-[var(--brand-text-secondary)]">
-          2글자 이상 입력하면 자동으로 검색됩니다.
-        </p>
-      )}
+      <p id="site-search-help" className="text-sm text-[var(--brand-text-secondary)]">
+        2글자 이상 입력하면 자동으로 검색됩니다.
+      </p>
 
       {data && (
         <div>

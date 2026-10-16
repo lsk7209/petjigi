@@ -8,6 +8,7 @@
     "start": "next start",
     "lint": "eslint",
     "test:e2e": "node tests/e2e/run.mjs",
+    "measure:db": "node scripts/measure-db.mjs",
     "test": "tsx --test \"lib/**/*.test.ts\" \"scripts/**/*.test.ts\" \"etl/**/*.test.ts\" \"tests/**/*.test.mjs\" \"tests/**/*.test.ts\"",
     "audit:internal-links": "tsx scripts/audit-internal-links.ts",
     "audit:structured-data": "tsx scripts/audit-structured-data.ts",

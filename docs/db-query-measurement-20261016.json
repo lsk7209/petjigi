@@ -1,0 +1,251 @@
+{
+  "measuredAt": "2026-10-16T02:53:57.445Z",
+  "productionAccess": false,
+  "commit": "73767e3b110352bf2f7ee55d724a1c6a82c4994c",
+  "sourceHash": "be44e43d66821d25769446bb020c18c8dd3a91ab824cc7d4a6af21edfc145d41",
+  "fixtureHash": "0b1aae623f574eaddc23c8bd7593e737a88651195e780f0da3d36733d19b183b",
+  "method": "Synthetic SQLite; opt-in production build/start; first HTTP request and repeat in one process (build may warm data caches); headers correlate metadata/page scopes. Ancillary layouts/components outside these scopes are not measured. Measurement mode makes business-detail dynamic and bypasses its normal route cache; no production route-cache/performance conclusions. Scope times overlap; requestMs measures full HTTP response separately.",
+  "rowsRead": "unmeasured",
+  "samples": [
+    {
+      "route": "blog-detail",
+      "phase": "first",
+      "requestMs": 623.1318000000028,
+      "queryCount": 5,
+      "duplicateQueries": 0,
+      "returnedRows": 6,
+      "rowsRead": null,
+      "unmeasuredOperations": 0,
+      "queries": [
+        {
+          "hash": "7cb610976b5ff0e5c94fc603c94dc6363df5621d736392896fad3d53c7ffede2",
+          "count": 1,
+          "durationMs": 1.8321999999998297,
+          "returnedRows": 1,
+          "failures": 0
+        },
+        {
+          "hash": "1e4962497d4212883debcff69b212b09e5948921862f3a542592a212dbcdeb21",
+          "count": 1,
+          "durationMs": 6.524499999999989,
+          "returnedRows": 1,
+          "failures": 0
+        },
+        {
+          "hash": "c13ce096ff2b66b0f2367905116ea6314ebb4dbd0a29f03e15f056a767b55454",
+          "count": 1,
+          "durationMs": 4.890799999999672,
+          "returnedRows": 1,
+          "failures": 0
+        },
+        {
+          "hash": "6e3314f4c497c51784fa6b6a2f00a142051ef95e2846724398231976b4983724",
+          "count": 1,
+          "durationMs": 3.109299999999621,
+          "returnedRows": 3,
+          "failures": 0
+        },
+        {
+          "hash": "03b752558b7488cb7411afcb4519eed5f2d3f6bff16d63953f922caf257ed935",
+          "count": 1,
+          "durationMs": 1.390400000000227,
+          "returnedRows": 0,
+          "failures": 0
+        }
+      ]
+    },
+    {
+      "route": "blog-detail",
+      "phase": "repeat",
+      "requestMs": 85.61499999999796,
+      "queryCount": 5,
+      "duplicateQueries": 0,
+      "returnedRows": 6,
+      "rowsRead": null,
+      "unmeasuredOperations": 0,
+      "queries": [
+        {
+          "hash": "7cb610976b5ff0e5c94fc603c94dc6363df5621d736392896fad3d53c7ffede2",
+          "count": 1,
+          "durationMs": 4.380300000000261,
+          "returnedRows": 1,
+          "failures": 0
+        },
+        {
+          "hash": "1e4962497d4212883debcff69b212b09e5948921862f3a542592a212dbcdeb21",
+          "count": 1,
+          "durationMs": 6.4409999999998035,
+          "returnedRows": 1,
+          "failures": 0
+        },
+        {
+          "hash": "c13ce096ff2b66b0f2367905116ea6314ebb4dbd0a29f03e15f056a767b55454",
+          "count": 1,
+          "durationMs": 4.304099999999835,
+          "returnedRows": 1,
+          "failures": 0
+        },
+        {
+          "hash": "6e3314f4c497c51784fa6b6a2f00a142051ef95e2846724398231976b4983724",
+          "count": 1,
+          "durationMs": 2.9766999999997097,
+          "returnedRows": 3,
+          "failures": 0
+        },
+        {
+          "hash": "03b752558b7488cb7411afcb4519eed5f2d3f6bff16d63953f922caf257ed935",
+          "count": 1,
+          "durationMs": 0.8757000000000517,
+          "returnedRows": 0,
+          "failures": 0
+        }
+      ]
+    },
+    {
+      "route": "business-list",
+      "phase": "first",
+      "requestMs": 89.48969999999827,
+      "queryCount": 0,
+      "duplicateQueries": 0,
+      "returnedRows": 0,
+      "rowsRead": null,
+      "unmeasuredOperations": 0,
+      "queries": []
+    },
+    {
+      "route": "business-list",
+      "phase": "repeat",
+      "requestMs": 46.5031999999992,
+      "queryCount": 0,
+      "duplicateQueries": 0,
+      "returnedRows": 0,
+      "rowsRead": null,
+      "unmeasuredOperations": 0,
+      "queries": []
+    },
+    {
+      "route": "business-detail",
+      "phase": "first",
+      "requestMs": 77.04780000000028,
+      "queryCount": 4,
+      "duplicateQueries": 0,
+      "returnedRows": 9,
+      "rowsRead": null,
+      "unmeasuredOperations": 0,
+      "queries": [
+        {
+          "hash": "38f1d120a3b39a505ea0a43686c81b46bc6111a93934d0fcc7a1a2bb1a211776",
+          "count": 1,
+          "durationMs": 0.9523999999996704,
+          "returnedRows": 1,
+          "failures": 0
+        },
+        {
+          "hash": "83114a0e4d6a1aac4d50759c610fcd978ce4fb18aa7c3f33012fe83412f316f9",
+          "count": 1,
+          "durationMs": 1.9783000000002176,
+          "returnedRows": 4,
+          "failures": 0
+        },
+        {
+          "hash": "c12129a06c43a0f4cc3d27e02218384a4d439ab53a150d1ea918abf1cfc057b8",
+          "count": 1,
+          "durationMs": 1.3028999999996813,
+          "returnedRows": 1,
+          "failures": 0
+        },
+        {
+          "hash": "55e95b57b75c2aed0cacc7adab52b0f97d5322760a95c55d9c45a3cd5b823e58",
+          "count": 1,
+          "durationMs": 0.9628999999999905,
+          "returnedRows": 3,
+          "failures": 0
+        }
+      ]
+    },
+    {
+      "route": "business-detail",
+      "phase": "repeat",
+      "requestMs": 83.6073000000033,
+      "queryCount": 4,
+      "duplicateQueries": 0,
+      "returnedRows": 9,
+      "rowsRead": null,
+      "unmeasuredOperations": 0,
+      "queries": [
+        {
+          "hash": "38f1d120a3b39a505ea0a43686c81b46bc6111a93934d0fcc7a1a2bb1a211776",
+          "count": 1,
+          "durationMs": 0.8810000000003129,
+          "returnedRows": 1,
+          "failures": 0
+        },
+        {
+          "hash": "83114a0e4d6a1aac4d50759c610fcd978ce4fb18aa7c3f33012fe83412f316f9",
+          "count": 1,
+          "durationMs": 6.991499999999633,
+          "returnedRows": 4,
+          "failures": 0
+        },
+        {
+          "hash": "c12129a06c43a0f4cc3d27e02218384a4d439ab53a150d1ea918abf1cfc057b8",
+          "count": 1,
+          "durationMs": 3.2221000000004096,
+          "returnedRows": 1,
+          "failures": 0
+        },
+        {
+          "hash": "55e95b57b75c2aed0cacc7adab52b0f97d5322760a95c55d9c45a3cd5b823e58",
+          "count": 1,
+          "durationMs": 4.402300000000196,
+          "returnedRows": 3,
+          "failures": 0
+        }
+      ]
+    },
+    {
+      "route": "search-api",
+      "phase": "first",
+      "requestMs": 152.87399999999616,
+      "queryCount": 3,
+      "duplicateQueries": 0,
+      "returnedRows": 8,
+      "rowsRead": null,
+      "unmeasuredOperations": 0,
+      "queries": [
+        {
+          "hash": "bd19ecbb549171619b9fa0f6c2dc5a065b6a900c3a55cf4b46877689e5cfe511",
+          "count": 1,
+          "durationMs": 2.395100000000184,
+          "returnedRows": 5,
+          "failures": 0
+        },
+        {
+          "hash": "87946586f45cff80426e97ff302096c3d6feb2b30cd7d298db535299a2e4014e",
+          "count": 1,
+          "durationMs": 0.537499999999909,
+          "returnedRows": 1,
+          "failures": 0
+        },
+        {
+          "hash": "9c09927ee2773824169edc9905db21ff1c50ca8c2fb3d0146729e2ce29dc1216",
+          "count": 1,
+          "durationMs": 1.3520000000003165,
+          "returnedRows": 2,
+          "failures": 0
+        }
+      ]
+    },
+    {
+      "route": "search-api",
+      "phase": "repeat",
+      "requestMs": 10.24529999999504,
+      "queryCount": 0,
+      "duplicateQueries": 0,
+      "returnedRows": 0,
+      "rowsRead": null,
+      "unmeasuredOperations": 0,
+      "queries": []
+    }
+  ]
+}
