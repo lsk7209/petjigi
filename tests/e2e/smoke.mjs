@@ -6,7 +6,7 @@ import { chromium } from 'playwright-core';
 const PORT = 3198;
 const BASE = `http://127.0.0.1:${PORT}`;
 const CHROME = process.env.CHROME_PATH || 'C:/Program Files/Google/Chrome/Application/chrome.exe';
-const VIEWPORTS = [[360, 800], [768, 1024], [1440, 900]];
+const VIEWPORTS = [[360, 800], [390, 900], [768, 1024], [1440, 900]];
 const PAGES = [
   ['/', 'h1'], ['/guide', 'h1'], ['/guide/fixture-guide', 'h1'], ['/guide/animal-hospital-guide', '#practical-tool'],
   ['/blog/pet-insurance-guide', '#practical-tool'], ['/guide/microchip-registration-complete-guide', '#practical-tool'],
@@ -30,6 +30,7 @@ try {
     for (const [w, h] of VIEWPORTS) {
       await check(`${path} @${w}`, async () => {
         const ctx = await browser.newContext({ viewport: { width: w, height: h }, javaScriptEnabled: w !== 360 });
+        await ctx.route(url => url.origin !== BASE, route => route.fulfill({ body: '' }));
         const page = await ctx.newPage();
         const res = await page.goto(BASE + path);
         assert.equal(res.status(), 200);

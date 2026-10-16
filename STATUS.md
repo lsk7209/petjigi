@@ -1,4 +1,6 @@
 # Status | 마지막: 2026-10-15
+
+> 2026-10-16 재개 정본: [PROJECT_STATE.md](PROJECT_STATE.md). 아래 기록은 과거 시점이며, 10월 15일 수정은 PR #87~#89로 main(73767e3)에 병합되어 있음. 이번 세션의 운영 배포 상태는 미검증.
 ## 현재 작업
 (0000) 일관성 감사 10-15: fix/consistency-audit-20261015 로컬 완료(미push·미배포, 병합=자동배포). 업체 중복 제거 공통화(사이트맵 포함)·상세 색인 판정 단일화·비교표 미분류·동물병원 ETL 완전수집 판정. 보고서 docs/audits/petjigi-consistency-audit-20261015.md, 콘텐츠 정정 제안 CSV 동일 폴더(ACVS 90%=만족도, ASPCA 수치 부재 등). 결정 대기: 병합/배포, 콘텐츠 정정 반영.
 (000) 애드센스 재점검: PR #71 병합, 운영 DB 22건 반영 완료(10-13, 시드=운영 30/30, 백업 .backup-prod). petjigi.kr은 OVH VPS(ssh -F ~/.ssh/ovh1_config ovh1, Coolify 컨테이너)가 서빙(Vercel 아님). 10-13 de35b5b 이미지(ovh-petjigi-production:de35b5b-20261013-v1)로 교체 완료, 사이트맵 453건 라이브. 롤백: /data/coolify/services/zlpoefjoahqbwf0dswhrvc7w/docker-compose.yml.before-de35b5b 복원 후 compose up -d web. 빌드는 가용메모리 5GiB 필요(NODE_OPTIONS 힙 2GiB). 이전 메모: 사이트맵 지역/센터 398건 누락 수정, 시드 22건 보강(운영 반영 승인 대기), deploy.yml 상태검증. 보고서 docs/audits/petjigi-adsense-remediation-20261013.md. 결정 대기: 운영 DB 반영, push/배포, Consent 기본값, 얇은 지역 53건.

@@ -1,0 +1,3 @@
+content_id,url,file,status,high_risk,result,issues
+blog-dog-patella-luxation,/blog/dog-patella-luxation,db/seeds/blog-posts-2.ts,published,true,PASS_OR_NOT_APPLICABLE,
+blog-dog-toxic-foods,/blog/dog-toxic-foods,db/seeds/blog-posts.ts,published,true,PASS_OR_NOT_APPLICABLE,

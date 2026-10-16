@@ -8,6 +8,7 @@
     "start": "next start",
     "lint": "eslint",
     "test:e2e": "node tests/e2e/run.mjs",
+    "measure:db": "node scripts/measure-db.mjs",
     "test": "tsx --test \"lib/**/*.test.ts\" \"scripts/**/*.test.ts\" \"etl/**/*.test.ts\" \"tests/**/*.test.mjs\" \"tests/**/*.test.ts\"",
     "audit:internal-links": "tsx scripts/audit-internal-links.ts",
     "audit:structured-data": "tsx scripts/audit-structured-data.ts",
@@ -199,6 +200,8 @@
   },
   "pnpm": {
     "overrides": {
+      "@tailwindcss/typography>postcss-selector-parser": "7.1.6",
+      "@esbuild-kit/core-utils>esbuild": "0.25.12",
       "@babel/core": "^7.29.6",
       "baseline-browser-mapping": ">=2.11.0",
       "browserslist": ">=4.28.7",

@@ -1,3 +1,4 @@
+import { measuredRoute } from "@/lib/db-measured-route";
 import { NextRequest, NextResponse } from "next/server";
 import { notDuplicateListing } from "@/lib/db-queries";
 import { db } from "@/db/client";
@@ -22,7 +23,7 @@ const SEARCH_CACHE = new Map<string, CacheEntry>();
 const CACHE_TTL_MS = 60_000;
 
 // GET /api/search?q=검색어&type=business|guide
-export async function GET(req: NextRequest) {
+async function search(req: NextRequest) {
   const { searchParams } = req.nextUrl;
   const q = (searchParams.get("q") ?? "").trim();
   const type = searchParams.get("type"); // 'business' | 'guide' | null (전체)
@@ -182,3 +183,5 @@ export async function GET(req: NextRequest) {
     },
   });
 }
+
+export const GET = measuredRoute("search-api", "handler", search);

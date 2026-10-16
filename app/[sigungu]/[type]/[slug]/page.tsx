@@ -1,3 +1,4 @@
+import { measuredRoute } from "@/lib/db-measured-route";
 import { collectedDateLabel } from "@/lib/business-data-coverage";
 import { VisitQuestions } from "@/components/business/visit-questions";
 import type { Metadata } from "next";
@@ -66,7 +67,7 @@ const TYPE_CATEGORY: Record<string, CategoryId> = {
   exhibition: 5,
 };
 
-export async function generateMetadata({
+async function generateMetadataImpl({
   params,
 }: {
   params: Promise<{ sigungu: string; type: string; slug: string }>;
@@ -112,7 +113,7 @@ export async function generateMetadata({
   };
 }
 
-export default async function BusinessDetailPage({
+async function BusinessDetailPage({
   params,
 }: {
   params: Promise<{ sigungu: string; type: string; slug: string }>;
@@ -382,3 +383,6 @@ export default async function BusinessDetailPage({
     </AdPolicyProvider>
   );
 }
+
+export const generateMetadata = measuredRoute("business-detail", "metadata", generateMetadataImpl);
+export default measuredRoute("business-detail", "page", BusinessDetailPage);

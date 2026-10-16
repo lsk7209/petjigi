@@ -1,0 +1,74 @@
+{
+  "checkedAt": "2026-10-16",
+  "gsc": {
+    "data": [
+      {
+        "dimensions": {},
+        "clicks": 0,
+        "impressions": 14,
+        "ctr": 0,
+        "position": 6.357142857142857
+      }
+    ],
+    "query": {
+      "siteUrl": "https://petjigi.kr/",
+      "startDate": "2026-09-16",
+      "endDate": "2026-10-13",
+      "dimensions": [],
+      "type": "web",
+      "dataState": "final",
+      "rowLimit": 30,
+      "sortOrder": "clicks_descending",
+      "observedDateRange": null,
+      "responseAggregationType": "byProperty"
+    },
+    "dateRange": {
+      "startDate": "2026-09-16",
+      "endDate": "2026-10-13",
+      "timeZone": "America/Los_Angeles"
+    },
+    "source": "Google Search Console searchanalytics.query",
+    "warnings": [
+      "Search Console returns top rows and may omit anonymized or internally limited data; these are not exhaustive raw records."
+    ]
+  },
+  "ga4": {
+    "data": [
+      {
+        "dimensions": {},
+        "metrics": {
+          "activeUsers": "649",
+          "sessions": "701",
+          "screenPageViews": "1638",
+          "engagementRate": "0.68188302425107"
+        }
+      }
+    ],
+    "query": {
+      "propertyId": "538418545",
+      "reportType": "overview",
+      "dimensions": [],
+      "metrics": [
+        "activeUsers",
+        "sessions",
+        "screenPageViews",
+        "engagementRate"
+      ],
+      "rowLimit": 100,
+      "rowCount": 1
+    },
+    "dateRange": {
+      "startDate": "2026-09-16",
+      "endDate": "2026-10-13",
+      "timeZone": "Asia/Seoul"
+    },
+    "source": "Google Analytics Data runReport",
+    "warnings": [
+      "GA4 reporting is processed data and can change with reporting delays."
+    ]
+  },
+  "adsense": {
+    "status": "UNKNOWN",
+    "reason": "Site Intelligence exact domain resolution returned not_found; no account settings changed."
+  }
+}
