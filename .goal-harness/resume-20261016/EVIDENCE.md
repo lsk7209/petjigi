@@ -36,3 +36,10 @@ No production credentials or production DB used. Production runtime is unverifie
 - Primary ASPCA/ACVS pages checked live; two narrow local seed corrections written directly in this session. Initial --base=HEAD gate saw zero committed records and is not counted. Local gate found an untracked time claim after toxic-food YMYL classification was fixed; removed unsafe delay/unsupported onset wording instead of weakening the gate. Final content gate: 2 records, 0 blockers. Status/publication/reviewer evidence preserved; no live application.
 - Final read-only Luna/max instrumentation review: no substantiated BLOCKER/HIGH. Scope/cache/timing/privacy limits documented. Broader medical/legal review is incomplete.
 - Delivery target: codex/search-db-metrics-20261016; GitHub push only, no main merge/hosting mutation. Raw delivery output retained locally after execution.
+
+## GitHub delivery
+
+- Code/docs commit faa169157a7028c59ade2216aef103fc1bed1770 pushed to origin/codex/search-db-metrics-20261016; git ls-remote returned the same SHA. Tracked working tree clean afterward; only output/playwright remained untracked (local logs/screenshots).
+- Existing default-branch security alerts from GitHub API: #100 braces high <=3.0.3, no patched version listed; #101 postcss-selector-parser medium <7.1.6; #1 esbuild development-only medium <=0.24.2. `pnpm why --prod` resolves braces via next-sitemap/fast-glob/micromatch and selector-parser via typography. These preexisting dependency alerts were not introduced/resolved by this change; no unsupported exploitability assessment is made.
+- Prior generated gate CSV preserved at its HEAD version; this session's two-record result saved separately as docs/audits/content-gate-20261016.csv.
+- Final typecheck and staged diff check passed; local test ports have no listeners. Documentation-only delivery checkpoint follows the code commit on the same branch.

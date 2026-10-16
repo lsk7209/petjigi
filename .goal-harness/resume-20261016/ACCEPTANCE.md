@@ -11,4 +11,4 @@
 | ASPCA/ACVS priority source mismatches locally corrected with primary evidence | PASS_LOCAL | content-source-check-20261016.md, local content gate 2/0 |
 | Final default build/full e2e after R06 | PASS | r06-full-e2e.log, 136/136; final seed wording separately gated/linted |
 | Production contents, account verification and full expert review | OUTSIDE_LOCAL_COMPLETION | no production credentials/account evidence; remaining source claims identified |
-| Commit and GitHub branch push | READY | authorized review branch; no main auto-deploy |
+| Commit and GitHub branch push | PASS | faa1691 pushed; ls-remote matches; no main auto-deploy |
