@@ -1891,65 +1891,164 @@ const SEED_CONTENTS: NewContent[] = [
     slug: "cat-food-guide",
     type: "guide",
     category: 2,
-    title: "고양이 사료 선택 가이드 — 습식·건식·생식 비교와 성분 보는 법",
-    metaTitle: "고양이 사료 선택 가이드 | 습식·건식·원료 성분 분석 | 펫지기",
+    title: "고양이 사료 선택 가이드 — 습식·건식 비교와 탄수화물·단백질 성분표 보는 법",
+    metaTitle: "고양이 사료 선택 가이드 | 습식·건식·DM 탄수화물 계산법 | 펫지기",
     metaDescription:
-      "고양이 사료 종류(습식·건식·생식)별 장단점과 성분 표시 보는 법, 나이별 추천 기준을 정리했습니다. AAFCO·FEDIAF 기준 충족 여부 확인 방법도 안내합니다.",
-    body: `<h2>고양이에게 올바른 영양이 중요한 이유</h2>
-<p>고양이는 육식 동물(Obligate Carnivore)입니다. 개와 달리 타우린·아라키돈산·비타민 A를 음식에서 직접 섭취해야 하며, 단백질 요구량이 매우 높습니다. 영양 불균형은 요로계 질환(FLUTD), 신장 질환, 비만 등 다양한 건강 문제로 이어집니다.</p>
-
-<h2>사료 종류 비교</h2>
-
-<h3>건식 사료 (드라이 키블)</h3>
+      "육식동물 고양이의 필수 영양소(타우린·단백질), 습식과 건식 사료의 장단점 비교, 성분표의 탄수화물(NFE) 및 건물(DM) 기준 계산법과 생애주기별 사료 선택 기준을 정리했습니다.",
+    body: `<p>고양이는 탄수화물이 아닌 단백질과 지방을 주 에너지원으로 삼는 <strong>완전 육식동물(Obligate Carnivore)</strong>이다. 개와 달리 아미노산 대사 경로가 엄격하게 육식에 고정되어 있어 식이에 단백질이 부족하면 체내 근육 단백질을 스스로 분해해 에너지를 생성한다. 고양이의 생리학적 대사 특성을 바탕으로 건식·습식 사료의 차이점, 라벨 성분표에서 탄수화물(NFE)과 건물(DM) 함량을 정확하게 계산하는 방법, 생애주기별 필수 영양 요건을 정리했다.</p>
+<h2>1. 고양이 신진대사의 4가지 고유 특성</h2>
+<p>고양이 사료를 평가할 때는 사람이나 개의 영양 상식을 그대로 대입하지 않고, 고양이만의 독특한 대사 경로를 먼저 이해해야 한다.</p>
 <ul>
-  <li><strong>장점</strong>: 보관 편리, 치석 제거 효과(일부 제품), 비용 효율적</li>
-  <li><strong>단점</strong>: 수분 함량 낮음(8~12%) — 수분 섭취량 보충 필요, 탄수화물 함량이 높은 제품 많음</li>
-  <li><strong>주의</strong>: 비뇨기 질환이 있거나 물을 잘 마시지 않는 고양이에게는 습식 혼합 급여 권장</li>
+<li><strong>타우린(Taurine) 체내 합성 불가</strong>: 고양이는 체내에서 타우린을 합성하는 효소 활성이 극히 낮아, 반드시 동물성 단백질 식이를 통해 매일 섭취해야 한다. 타우린이 결핍되면 확장성 심근병증(DCM)과 비가역적 중심 망막 변성(실명)이 발생할 수 있다.</li>
+<li><strong>아르기닌(Arginine) 결핍 취약성</strong>: 단 한 끼의 식사라도 아르기닌이 결핍된 먹이를 먹으면 단백질 대사 부산물인 암모니아를 요소로 전환하지 못해 치명적인 고암모니아혈증이 발생할 수 있다.</li>
+<li><strong>비타민 A와 아라키돈산 필수</strong>: 식물성 베타카로틴을 활성 비타민 A로 전환하지 못하며, 식물성 기름의 리놀레산을 필수 지방산인 아라키돈산으로 합성할 수 없다. 따라서 동물성 지방과 간 등 동물성 원료 섭취가 필수적이다.</li>
+<li><strong>탄수화물 대사 능력 제한</strong>: 타액에 아밀라아제 효소가 없으며 췌장 아밀라아제 활성도 낮다. 포도당을 에너지원으로 쓰는 효율이 떨어지므로, 고탄수화물 식단은 소화 부담과 비만, 당뇨병 위험을 높일 수 있다.</li>
 </ul>
-
-<h3>습식 사료 (캔·파우치)</h3>
+<h2>2. 사료 형태 비교: 습식 vs 건식 vs 생식</h2>
+<p>사막 동물인 리비아들고양이에서 유래한 고양이는 갈증을 느끼는 중추가 둔감하여 스스로 물을 충분히 마시지 않는 경향이 있다. 따라서 사료의 수분 함량이 비뇨기 건강과 직결된다.</p>
+<table>
+<caption>고양이 사료 유형별 영양 특성 및 장단점 비교</caption>
+<thead>
+<tr>
+<th>구분</th>
+<th>건식 사료 (드라이 키블)</th>
+<th>습식 사료 (캔·파우치)</th>
+<th>생식 / 동결건조 자연식</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>수분 함량</td>
+<td>8~10% (매우 낮음)</td>
+<td>75~82% (자연 상태와 유사)</td>
+<td>자연 상태 약 70%, 동결건조 3~5%</td>
+</tr>
+<tr>
+<td>단백질 & 탄수화물</td>
+<td>키블 알갱이 성형을 위해 탄수화물(전분) 비율이 다소 높음 (25~40% 이상)</td>
+<td>순수 동물성 원료 중심, 고단백 저탄수화물 설계에 유리</td>
+<td>고단백·최소 탄수화물 구성</td>
+</tr>
+<tr>
+<td>장점</td>
+<td>보관과 급여가 편리하고 경제적이며 에너지 밀도가 높음</td>
+<td>자연스러운 음수량 충족으로 하부요로계 질환(FLUTD)과 신부전 예방에 유리</td>
+<td>자연 상태에 가까운 육류 기호성과 최소 가공</td>
+</tr>
+<tr>
+<td>주의사항</td>
+<td>물 섭취량이 부족하면 만성 탈수와 요로 결석 위험 증가</td>
+<td>개봉 후 산패가 빨라 냉장 보관 및 조기 소진 필수</td>
+<td>영양 설계 균형이 무너지기 쉬우며 살모넬라 등 병원균 위생 관리 엄격 필요</td>
+</tr>
+</tbody>
+</table>
+<h2>3. 라벨에 없는 탄수화물(NFE)과 건물(DM) 직접 계산법</h2>
+<p>국내외 사료 라벨의 보증성분표에는 탄수화물 함량이 직접 표기되지 않는다. 포장지에 기재된 5대 보증 성분을 바탕으로 <strong>가용무질소물(NFE, Nitrogen-Free Extract)</strong>을 계산하여 탄수화물 비중을 추정할 수 있다.</p>
+<p><strong>탄수화물(NFE) 추정 공식</strong>:<br />
+<code>탄수화물(%) = 100 − [조단백(%) + 조지방(%) + 조섬유(%) + 조회분(%) + 수분(%)]</code></p>
+<p>또한 건식과 습식을 같은 기준에서 비교하기 위해서는 수분을 제외한 <strong>건물 기준(Dry Matter, DM)</strong>으로 환산해야 한다.</p>
+<p><strong>건물 기준(DM) 탄수화물 환산 공식</strong>:<br />
+<code>건물 기준 탄수화물(%) = [라벨 탄수화물(%) ÷ (100 − 수분(%))] × 100</code></p>
+<table>
+<caption>건식과 습식의 실질 건물 기준 탄수화물 비교 예시</caption>
+<thead>
+<tr>
+<th>항목</th>
+<th>건식 사료 예시 (수분 10%)</th>
+<th>습식 캔 사료 예시 (수분 78%)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>등록 성분 (라벨 표기)</td>
+<td>조단백 34%, 조지방 15%, 조섬유 3%, 조회분 8%, 수분 10%</td>
+<td>조단백 11%, 조지방 6%, 조섬유 1%, 조회분 2%, 수분 78%</td>
+</tr>
+<tr>
+<td>추정 탄수화물(NFE)</td>
+<td>100 - (34 + 15 + 3 + 8 + 10) = <strong>30%</strong></td>
+<td>100 - (11 + 6 + 1 + 2 + 78) = <strong>2%</strong></td>
+</tr>
+<tr>
+<td>건물 기준(DM) 탄수화물</td>
+<td>30 ÷ (100 - 10) × 100 = <strong>33.3%</strong></td>
+<td>2 ÷ (100 - 78) × 100 = <strong>9.1%</strong></td>
+</tr>
+</tbody>
+</table>
+<p>고양이는 건물 기준 탄수화물 함량이 10~15% 이하인 식단에서 자연스러운 대사 균형을 유지하기 쉽다. 따라서 비만이나 혈당 관리가 필요한 성묘라면 습식 사료 위주의 식단 편성이 권장된다.</p>
+<h2>4. 사료 성분표 확인 4대 핵심 기준</h2>
+<ol>
+<li><strong>1순위 원재료의 명확성</strong>: 두루뭉술한 '가금육', '육류 부산물' 대신 '닭고기', '칠면조', '연어'처럼 구체적인 동물성 원료 명칭이 1번에 표기되어야 한다.</li>
+<li><strong>완전균형식(Complete & Balanced) 문구</strong>: 미국 AAFCO 또는 유럽 FEDIAF 영양 기준을 충족하는 주식용 제품인지 확인한다. '간식', '보충사료', '토퍼'로 분류된 제품은 주식으로 급여하지 않는다.</li>
+<li><strong>칼슘과 인의 비율(Ca:P)</strong>: 정상적인 골격과 신장 건강을 위해 칼슘과 인의 비율은 1.1:1 ~ 1.3:1 수준을 유지해야 한다. 특히 7세 이상의 노령묘는 신장 부담을 줄이기 위해 건물 기준 인(P) 함량이 0.8% 이하로 조절된 제품이 권장된다.</li>
+<li><strong>인공 첨가물 최소화</strong>: 고양이의 기호성을 인위적으로 자극하기 위한 인공 향료, 보존제(BHA, BHT), 설탕(카라멜 색소)이 배제된 제품을 선택한다.</li>
+</ol>
+<h2>5. 생애주기별 사료 선택 기준</h2>
 <ul>
-  <li><strong>장점</strong>: 수분 함량 높음(70~80%) — 신장·방광 건강에 유리, 단백질 함량 높고 탄수화물 낮음</li>
-  <li><strong>단점</strong>: 비용 높음, 개봉 후 빠른 소비 필요, 치석 관리 건식보다 불리</li>
-  <li><strong>추천 대상</strong>: FLUTD 이력, 만성신부전 고양이, 물을 잘 마시지 않는 고양이</li>
+<li><strong>자묘·성장기(키튼, 1세 미만)</strong>: 체중 대비 에너지와 단백질 소모가 가장 큰 시기이다. 건물 기준 조단백 30% 이상, 뼈와 신경 발달을 돕는 칼슘과 DHA가 풍부한 키튼 전용 또는 전연령(All Life Stages) 사료를 급여한다.</li>
+<li><strong>성묘기(1~7세)</strong>: 중성화 수술을 거친 실내 성묘는 기초대사량이 20~30% 감소하므로 체중 관리가 중요하다. 고단백·중지방·저탄수화물 식단과 함께 정량 배식(제한 급여)을 유지한다.</li>
+<li><strong>노령묘기(7세 이상)</strong>: 소화 흡수율이 저하되고 근육 손실(Sarcopenia)이 시작될 수 있다. 고품질의 소화하기 쉬운 동물성 단백질을 공급하되, 정기적인 혈액 검사를 통해 신장 수치를 모니터링하며 수의사와 인 섭취 수준을 조율한다.</li>
 </ul>
-
-<h3>생식 / 자연식</h3>
+<h2>사료 선택 전 필수 확인 점검표</h2>
+<table>
+<caption>고양이 사료 구매 전 4단계 체크리스트</caption>
+<thead>
+<tr>
+<th>단계</th>
+<th>점검 항목</th>
+<th>확인 기준</th>
+<th>부적합 시 조치</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1단계</td>
+<td>주식 여부</td>
+<td>'완전사료', 'Complete & Balanced' 표기 확인</td>
+<td>'간식' 표기 시 주식 사용 불가</td>
+</tr>
+<tr>
+<td>2단계</td>
+<td>원재료 1순위</td>
+<td>명확한 동물성 단백질원 (생육 또는 건조육)</td>
+<td>곡물이나 식물성 단백질 분말이 1순위면 재검토</td>
+</tr>
+<tr>
+<td>3단계</td>
+<td>탄수화물 비율</td>
+<td>건물 기준(DM) 추정 탄수화물 15% 이하 권장</td>
+<td>건식 전용 급여 시 습식 캔 혼합 급여로 탄수화물 희석</td>
+</tr>
+<tr>
+<td>4단계</td>
+<td>음수 관리</td>
+<td>하루 권장 음수량 (체중 1kg당 약 40~50ml) 충족</td>
+<td>습식 사료 비중 확대 및 분수대형 수반 배치</td>
+</tr>
+</tbody>
+</table>
+<h2>연관 가이드 및 실용 도구</h2>
 <ul>
-  <li><strong>장점</strong>: 자연에 가까운 식이, 탄수화물 최소화</li>
-  <li><strong>단점</strong>: 영양 불균형 위험(전문 처방 없이는 어려움), 살모넬라·리스테리아 감염 위험, 비용 높음</li>
-  <li><strong>주의</strong>: 생식을 선택한다면 반드시 수의사·영양사 처방 레시피를 사용하고 사람용 안전 기준으로 취급하세요.</li>
+<li><a href="/guide/dog-food-label-guide">강아지 사료 라벨의 별도 확인 기준</a></li>
+<li><a href="/blog/cat-food-label-guide">고양이 사료 원료 표시 읽는 법</a></li>
+<li><a href="/guide/indoor-cat-enrichment-guide">실내 고양이 환경 풍부화 가이드</a></li>
+<li><a href="/tools">반려동물 실용 도구 및 건강 계산기</a></li>
 </ul>
-
-<h2>사료 성분 표시 보는 법</h2>
-<p>원료는 무게 순으로 기재됩니다. 첫 번째 성분이 가장 많이 들어 있습니다.</p>
+<h2>1차 근거 및 공식 출처</h2>
 <ul>
-  <li><strong>첫 번째 원료가 육류여야 합니다</strong>: "닭고기", "연어", "참치" 등 (명시된 육류 원료 > 육류 분말/부산물 혼합 제품)</li>
-  <li><strong>AAFCO 또는 FEDIAF 기준 충족 표시 확인</strong>: "Complete and Balanced" 또는 "완전 영양"</li>
-  <li><strong>생애주기 표시 확인</strong>: "All Life Stages", "Adult", "Senior" — 나이에 맞는 제품 선택</li>
-  <li><strong>타우린 포함 여부</strong>: 고양이 전용 사료에는 반드시 타우린이 포함돼야 합니다.</li>
-</ul>
-
-<h2>생애주기별 선택 기준</h2>
-<ul>
-  <li><strong>키튼(1세 미만)</strong>: 키튼용 또는 All Life Stages 사료 — 단백질·칼슘·DHA 함량 높은 제품</li>
-  <li><strong>성묘(1~7세)</strong>: Adult 고양이용, 체중에 맞는 급여량 준수</li>
-  <li><strong>노령묘(7세+)</strong>: Senior 또는 신장 지지 포뮬러 — 인 함량 낮고 단백질 소화율 높은 제품. 수의사와 상담 권장</li>
-</ul>
-
-<h2>급여량과 비만 예방</h2>
-<ul>
-  <li>중성화 고양이는 에너지 요구량이 20~30% 감소합니다 — 사료량도 줄여야 합니다.</li>
-  <li>자유 급식(사료를 항상 채워두기)은 비만의 주원인이 됩니다. 정해진 시간에 정해진 양을 급여하세요.</li>
-  <li>이상 체중 기준: 갈비뼈를 손으로 느낄 수 있되 눈에 보이지 않아야 합니다.</li>
-</ul>
-<h2>함께 확인할 준비</h2>
-<ul><li><a href="/guide/dog-food-label-guide">강아지 사료 라벨의 별도 확인 기준</a></li></ul>`,
+<li><a href="https://www.aafco.org/consumers/understanding-pet-food/reading-labels/" target="_blank" rel="noopener noreferrer">AAFCO 공식 가이드: 고양이 사료 영양 프로필 및 라벨 해석 (Reading Pet Food Labels)</a></li>
+<li><a href="https://fediaf.org/images/FEDIAF_Nutritional_Guidelines_2024.pdf" target="_blank" rel="noopener noreferrer">FEDIAF 유럽 펫푸드 영양 가이드라인 2024 (Nutritional Guidelines for Complete and Complementary Pet Food)</a></li>
+<li><a href="https://wsava.org/wp-content/uploads/2021/04/Selecting-a-pet-food-for-your-pet-updated-2021_WSAVA-Global-Nutrition-Toolkit.pdf" target="_blank" rel="noopener noreferrer">WSAVA 글로벌 영양 위원회: 반려동물 사료 선택 지침 (WSAVA Global Nutrition Toolkit)</a></li>
+<li><a href="https://www.vet.cornell.edu/departments-centers-and-institutes/cornell-feline-health-center/health-information/feline-health-topics/feeding-your-cat" target="_blank" rel="noopener noreferrer">코넬 대학교 고양이 건강 센터: 고양이 영양 및 올바른 급여 가이드 (Cornell Feline Health Center: Feeding Your Cat)</a></li>
+</ul>`,
     disclaimer: null,
     sources: [
-      "Association of American Feed Control Officials (AAFCO) — Model Regulations Cat Nutrient Profiles (2024)",
-      "FEDIAF — Nutritional Guidelines for Complete and Complementary Pet Food (2023)",
-      "대한수의사회 반려동물 영양 가이드라인 (2022)",
+      "https://www.aafco.org/consumers/understanding-pet-food/reading-labels/",
+      "https://fediaf.org/images/FEDIAF_Nutritional_Guidelines_2024.pdf",
+      "https://wsava.org/wp-content/uploads/2021/04/Selecting-a-pet-food-for-your-pet-updated-2021_WSAVA-Global-Nutrition-Toolkit.pdf",
+      "https://www.vet.cornell.edu/departments-centers-and-institutes/cornell-feline-health-center/health-information/feline-health-topics/feeding-your-cat",
     ],
     ymyl: false,
     status: "published",
