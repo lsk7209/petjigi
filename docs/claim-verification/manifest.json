@@ -134,6 +134,29 @@
           "notes": "AAFCO는 직접 규제·인증·승인 기관이 아니라는 FAQ와 대조. 접근한 영양프로파일 PDF는 과거 proposed 문서라 현재의 일괄 의무 수치를 검증한 것으로 사용하지 않음."
         }
       ]
+    },
+    {
+      "slug": "memorial-cost",
+      "claims": [
+        {
+          "claimId": "memorial-kca-guidance-20261011",
+          "snippet": "한국소비자원의 소비자 피해 예방 지침에서도 장례식장 방문 전 기본 화장 비용뿐만 아니라 부가 옵션을 포함한 예상 총비용을 유선으로 명확히 확인하도록 권고합니다.",
+          "sourceUrl": "https://www.kca.go.kr",
+          "sourceType": "official",
+          "status": "qualified",
+          "checkedAt": "2026-10-11",
+          "notes": "한국소비자원 반려동물 장례 서비스 실태조사 및 소비자 피해 예방 가이드 원문 대조. 추가 선택 옵션 강매 주의 및 사전 총견적 확인 권고 반영."
+        },
+        {
+          "claimId": "memorial-scope-20261011",
+          "snippet": "농림축산식품부 동물보호법에 따른 동물장묘업 관리 기준 및 한국소비자원의 반려동물 장례 서비스 실태조사 권고를 바탕으로 작성되었습니다.",
+          "sourceUrl": "https://www.animal.go.kr",
+          "sourceType": "official",
+          "status": "qualified",
+          "checkedAt": "2026-10-11",
+          "notes": "1차 출처 근거 범위 및 한계 명시."
+        }
+      ]
     }
   ]
 }
