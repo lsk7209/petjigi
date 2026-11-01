@@ -134,6 +134,29 @@
           "notes": "AAFCO는 직접 규제·인증·승인 기관이 아니라는 FAQ와 대조. 접근한 영양프로파일 PDF는 과거 proposed 문서라 현재의 일괄 의무 수치를 검증한 것으로 사용하지 않음."
         }
       ]
+    },
+    {
+      "slug": "pet-health-checkup-guide",
+      "claims": [
+        {
+          "claimId": "checkup-aaha-senior-20261011",
+          "snippet": "미국동물병원협회(AAHA) 노령 진료 지침에서도 개와 고양이의 기준을 명확히 구분합니다.",
+          "sourceUrl": "https://www.aaha.org/aaha-guidelines/2023-aaha-senior-care-guidelines/",
+          "sourceType": "professional_guideline",
+          "status": "qualified",
+          "checkedAt": "2026-10-11",
+          "notes": "2023 AAHA Senior Care Guidelines 원문 대조. 개와 고양이의 연령 단계별 생리적 변화 및 위험 평가 기준 구분을 안내하며 개별 검사 항목 결정은 담당 수의사 판단에 따름."
+        },
+        {
+          "claimId": "checkup-aaha-scope-20261011",
+          "snippet": "AAHA 노령 진료 지침은 개·고양이 생활 단계 및 환자별 검사 계획을 설명하는 자료입니다.",
+          "sourceUrl": "https://www.aaha.org/aaha-guidelines/2023-aaha-senior-care-guidelines/",
+          "sourceType": "professional_guideline",
+          "status": "qualified",
+          "checkedAt": "2026-10-11",
+          "notes": "AAHA 시니어 케어 가이드라인의 목적 및 적용 범위를 안내하는 1차 출처 링크 설명."
+        }
+      ]
     }
   ]
 }
