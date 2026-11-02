@@ -134,6 +134,29 @@
           "notes": "AAFCO는 직접 규제·인증·승인 기관이 아니라는 FAQ와 대조. 접근한 영양프로파일 PDF는 과거 proposed 문서라 현재의 일괄 의무 수치를 검증한 것으로 사용하지 않음."
         }
       ]
+    },
+    {
+      "slug": "pet-quality-of-life-assessment",
+      "claims": [
+        {
+          "claimId": "qol-aaha-hhhhhmm-20261011",
+          "snippet": "수의 종양학자 앨리스 빌라로보스 박사가 고안하고 미국동물병원협회(AAHA) 생애말기 케어 가이드라인에서 인용하는 'HHHHHMM 척도'의 실무 평가법과 좋은 날·나쁜 날 기록법을 정리했습니다.",
+          "sourceUrl": "https://www.aaha.org/aaha-guidelines/end-of-life-care/",
+          "sourceType": "professional_guideline",
+          "status": "qualified",
+          "checkedAt": "2026-10-11",
+          "notes": "2016 AAHA/IAAHPC End-of-Life Care Guidelines 원문 대조. Alice Villalobos의 HHHHHMM QoL 척도 인용 및 안락사·완화 치료 의사 결정 시의 상태 모니터링 목적 확인."
+        },
+        {
+          "claimId": "qol-scope-20261011",
+          "snippet": "앨리스 빌라로보스 박사의 HHHHHMM 삶의 질 평가 척도 및 AAHA/IAAHPC 동물 생애말기 케어 가이드라인, 세계소동물수의사회(WSAVA) 동물복지 지침을 바탕으로 작성되었습니다.",
+          "sourceUrl": "https://www.aaha.org/aaha-guidelines/end-of-life-care/",
+          "sourceType": "professional_guideline",
+          "status": "qualified",
+          "checkedAt": "2026-10-11",
+          "notes": "가이드라인 1차 출처 범위 명시."
+        }
+      ]
     }
   ]
 }
