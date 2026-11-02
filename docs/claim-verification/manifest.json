@@ -134,6 +134,38 @@
           "notes": "AAFCO는 직접 규제·인증·승인 기관이 아니라는 FAQ와 대조. 접근한 영양프로파일 PDF는 과거 proposed 문서라 현재의 일괄 의무 수치를 검증한 것으로 사용하지 않음."
         }
       ]
+    },
+    {
+      "slug": "pet-euthanasia-decision-guide",
+      "claims": [
+        {
+          "claimId": "euthanasia-avma-protocol-20261011",
+          "snippet": "미국수의사회(AVMA) 안락사 가이드라인과 미국동물병원협회(AAHA) 생애말기 케어 지침을 바탕으로 보호자가 객관적으로 상태를 판단하고 수의사와 상의할 수 있는 임상 기준과 2단계 표준 절차를 정리했습니다.",
+          "sourceUrl": "https://www.avma.org/resources-tools/avma-policies/avma-guidelines-euthanasia-animals",
+          "sourceType": "professional_guideline",
+          "status": "qualified",
+          "checkedAt": "2026-10-11",
+          "notes": "2020 AVMA Guidelines for the Euthanasia of Animals 및 2016 AAHA/IAAHPC End-of-Life Care Guidelines 원문 대조. 임상적 안락사 의사 결정 기준 및 2단계 프로토콜 범위 확인."
+        },
+        {
+          "claimId": "euthanasia-twostage-steps-20261011",
+          "snippet": "미국수의사회(AVMA) 안락사 가이드라인에 따른 표준적인 소동물 안락사는 환자가 공포나 통증을 전혀 느끼지 않도록 2단계로 진행됩니다.",
+          "sourceUrl": "https://www.avma.org/resources-tools/avma-policies/avma-guidelines-euthanasia-animals",
+          "sourceType": "professional_guideline",
+          "status": "qualified",
+          "checkedAt": "2026-10-11",
+          "notes": "AVMA Guidelines Section on Companion Animals (pp. 52-62) 대조. 정맥 주사 전 사전 진정/전신마취 유도 및 바르비투르산염 투여를 통한 2단계 인도적 절차 권고 확인."
+        },
+        {
+          "claimId": "euthanasia-scope-20261011",
+          "snippet": "미국수의사회(AVMA) 동물 안락사 가이드라인(2020), 미국동물병원협회(AAHA) 및 IAAHPC 생애말기 케어 가이드라인, 세계소동물수의사회(WSAVA) 동물복지 지침을 바탕으로 작성되었습니다.",
+          "sourceUrl": "https://www.avma.org/resources-tools/avma-policies/avma-guidelines-euthanasia-animals",
+          "sourceType": "professional_guideline",
+          "status": "qualified",
+          "checkedAt": "2026-10-11",
+          "notes": "가이드라인 1차 출처 범위 명시."
+        }
+      ]
     }
   ]
 }
