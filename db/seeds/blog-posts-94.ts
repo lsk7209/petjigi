@@ -195,53 +195,77 @@ const BLOG_POSTS: NewContent[] = [
     slug: "pet-quality-of-life-assessment",
     type: "blog",
     category: 6,
-    title: "반려동물 삶의 질 평가 — '아직 괜찮은가'를 객관적으로 보는 방법",
-    subtitle: "HHHHHMM 스케일 사용법, 좋은 날·나쁜 날 비율, 안락사 결정 참고 도구",
-    metaTitle: "반려동물 삶의 질 평가 — HHHHHMM 스케일 사용법 가이드 | 펫지기",
-    metaDescription: "반려동물의 삶의 질을 객관적으로 평가하는 방법. HHHHHMM 스케일 사용법, 좋은 날과 나쁜 날 비율 분석, 안락사 결정에 참고하는 방법을 정리했습니다.",
-    body: `<p>"아직 괜찮은가, 아니면 이제 놓아줘야 하는가." 이 질문에 객관적인 기준이 있다면 보호자에게 큰 도움이 된다.</p>
-
-<h2>왜 객관적 평가가 필요한가</h2>
-<p>사랑하는 존재를 잃고 싶지 않은 마음이 판단을 흐릴 수 있다. 반대로 고통을 더 이상 보고 싶지 않은 마음이 성급한 결정을 만들기도 한다. 객관적 평가 도구가 감정과 판단 사이에서 기준점이 된다.</p>
-
-<h2>HHHHHMM 스케일</h2>
-<p>수의 종양학자 앨리스 빌라로보스가 개발한 7가지 항목 평가 도구다. 각 항목을 0~10점으로 평가한다.</p>
+    title: "반려동물 삶의 질 평가 — HHHHHMM 척도와 일상 모니터링 가이드",
+    subtitle: "앨리스 빌라로보스 7대 지표·좋은 날 나쁜 날 캘린더·수의사 완화치료 상담 기준",
+    metaTitle: "반려동물 삶의 질 평가 | HHHHHMM 척도·모니터링 기준 | 펫지기",
+    metaDescription: "노령 및 말기 반려동물의 삶의 질을 객관적으로 점검하는 HHHHHMM 척도 7대 영역, 좋은 날과 나쁜 날 캘린더 기록법 및 수의사 상담 기준을 안내합니다.",
+    body: `<p>만성 질환을 앓고 있거나 노령기에 접어든 반려동물을 돌보는 보호자에게 가장 힘들고 두려운 순간은 '아이의 고통이 어느 정도인지, 지금의 치료가 아이에게 의미가 있는지'를 판단해야 할 때입니다. 보호자의 주관적인 슬픔이나 두려움만으로는 객관적인 상태를 가늠하기 어렵기 때문에, 수의학계에서는 삶의 질(QoL, Quality of Life)을 다각도로 평가하는 표준 도구를 활용합니다. 수의 종양학자 앨리스 빌라로보스 박사가 고안하고 미국동물병원협회(AAHA) 생애말기 케어 가이드라인에서 인용하는 'HHHHHMM 척도'의 실무 평가법과 좋은 날·나쁜 날 기록법을 정리했습니다.</p>
+<h2>1. HHHHHMM 7대 영역별 평가표 (0~10점 척도).</h2>
+<p>HHHHHMM은 동물의 기본 생명 유지 및 정서적 안녕을 평가하는 7개 핵심 항목의 앞 글자를 딴 도구입니다. 각 항목을 0점(최악)부터 10점(이상적 정상)까지 평가합니다.</p>
+<table>
+<thead>
+<tr><th>평가 영역.</th><th>점검 지표 및 관찰 기준.</th><th>채점 가이드 (0~10점).</th></tr>
+</thead>
+<tbody>
+<tr><td><strong>1. Hurt (통증 조절)</strong></td><td>통증이 충분히 제어되는가? 호흡이 편안한가?</td><td>10점: 통증 징후 없음 / 0점: 호흡 곤란이나 극심한 통증 지속.</td></tr>
+<tr><td><strong>2. Hunger (식욕·섭식)</strong></td><td>스스로 밥을 먹는가? 영양 공급이 유지되는가?</td><td>10점: 자발적 정상 식사 / 0점: 튜브 급여도 거부하거나 구토 지속.</td></tr>
+<tr><td><strong>3. Hydration (수분 섭취)</strong></td><td>탈수 증상이 없는가? 수분을 충분히 섭취하는가?</td><td>10점: 촉촉한 잇몸 점막 / 0점: 피부 탄력 상실 및 심각한 탈수.</td></tr>
+<tr><td><strong>4. Hygiene (위생 상태)</strong></td><td>대소변 오염 없이 청결을 유지할 수 있는가?</td><td>10점: 스스로 배변 뒤 청결 유지 / 0점: 욕창 발생 및 배변 오염 방치.</td></tr>
+<tr><td><strong>5. Happiness (행복감)</strong></td><td>가족을 향해 반응하며 주변에 호기심을 보이는가?</td><td>10점: 꼬리 치며 교감 / 0점: 무반응, 완전한 고립 및 극심한 불안.</td></tr>
+<tr><td><strong>6. Mobility (이동성)</strong></td><td>스스로 일어나 원하는 곳으로 걸을 수 있는가?</td><td>10점: 자발적 기립 및 보행 / 0점: 보조 없이 전혀 일어나지 못함.</td></tr>
+<tr><td><strong>7. More Good Days (좋은 날의 비율)</strong></td><td>나쁜 날보다 편안하고 즐거운 날이 더 많은가?</td><td>10점: 편안한 날 연속 / 0점: 고통스럽고 힘든 날이 대부분.</td></tr>
+</tbody>
+</table>
+<h2>2. 종합 점수 해석 및 수의사 상담 기준.</h2>
+<p>7개 항목의 총점은 70점 만점입니다. 점수는 절대적인 단절 기준이 아니며 상태의 변화 추이를 관찰하는 지표입니다.</p>
 <ul>
-<li><strong>H</strong>urt(통증): 통증이 조절되고 있는가</li>
-<li><strong>H</strong>unger(식욕): 먹고 있는가</li>
-<li><strong>H</strong>ydration(수분): 수분 섭취가 충분한가</li>
-<li><strong>H</strong>ygiene(위생): 청결을 유지할 수 있는가</li>
-<li><strong>H</strong>appiness(행복): 기쁨·관심을 보이는가</li>
-<li><strong>M</strong>obility(이동성): 원하는 만큼 움직일 수 있는가</li>
-<li><strong>M</strong>ore good days(좋은 날): 나쁜 날보다 좋은 날이 많은가</li>
+<li><strong>총점 35점 초과</strong>: 현재의 완화 치료와 지지 요법으로 기본적인 삶의 질이 유지되고 있는 상태입니다. 정기적으로 점수를 기록하며 통증 관리 약물을 점검합니다.</li>
+<li><strong>총점 35점 이하</strong>: 반려동물이 일상에서 느끼는 고통과 불편감이 편안함을 넘어섰음을 시사합니다. 통증 약물의 증량이나 추가적인 완화 처치를 수의사와 긴급히 상의해야 합니다.</li>
+<li><strong>특정 단일 항목의 0점</strong>: 총점이 35점 이상이라 하더라도 통증(Hurt) 조절이 전혀 되지 않아 호흡 곤란을 겪거나, 수일간 극심한 고통이 지속된다면 즉각적인 의료적 개입이 필요합니다.</li>
 </ul>
-
-<h2>점수 해석</h2>
-<div class="callout-cat">
-<strong>HHHHHMM 점수 해석</strong><br>
-• 총점 70점 이상: 삶의 질 유지 가능<br>
-• 35~70점: 경계 구간 — 주 단위 평가 반복<br>
-• 35점 미만: 안락사를 진지하게 고려할 시점<br>
-▶ 단, 점수는 참고 도구이지 절대 기준이 아님
-</div>
-
-<h2>좋은 날·나쁜 날 달력</h2>
-<p>매일 "오늘은 좋은 날인가, 나쁜 날인가"를 달력에 표시한다. 나쁜 날이 좋은 날보다 많아지는 시점이 결정을 고려할 기준점이 된다.</p>
-
-<h2>마지막으로</h2>
-<p>이 도구는 결정을 대신해주지 않는다. 그러나 감정이 아닌 상태에 근거한 판단을 도와준다. 수의사와 함께 정기적으로 평가하는 것이 가장 좋다.</p>`,
+<h2>3. 좋은 날 vs 나쁜 날 캘린더 기록법.</h2>
+<p>노령이나 말기 환자는 하루 안에서도 컨디션 기복이 심하기 때문에, 매일 저녁 달력에 하루의 전반적인 상태를 표시하는 방법이 매우 효과적입니다.</p>
+<table>
+<thead>
+<tr><th>일일 평가 구분.</th><th>보호자 관찰 판단 기준.</th><th>캘린더 표시 및 대응.</th></tr>
+</thead>
+<tbody>
+<tr><td><strong>좋은 날 (Good Day)</strong></td><td>스스로 밥을 먹고, 가족의 목소리에 반응하며 편안히 쉬는 날.</td><td>초록색 스티커 또는 동그라미(O) 표시.</td></tr>
+<tr><td><strong>보통 날 (Neutral Day)</strong></td><td>움직임은 줄었으나 뚜렷한 통증 징후 없이 잔잔히 머무는 날.</td><td>세모(△) 표시 및 컨디션 메모.</td></tr>
+<tr><td><strong>나쁜 날 (Bad Day)</strong></td><td>종일 신음하거나 끙끙 앓고, 식사를 거부하며 숨이 가쁜 날.</td><td>빨간색 스티커 또는 엑스(X) 표시.</td></tr>
+</tbody>
+</table>
+<p>한 주 동안 나쁜 날(X)이 좋은 날(O)보다 많아지거나, 나쁜 날이 연속 3일 이상 이어질 때는 아이의 삶의 질이 한계에 도달했다는 신호일 수 있으므로 수의사와 상담 일정을 잡아야 합니다.</p>
+<h2>4. 보호자의 돌봄 소진과 의사 결정의 무게.</h2>
+<p>생애 말기 돌봄은 신체적으로나 감정적으로 보호자를 깊이 소진시킵니다. "내가 너무 일찍 포기하는 것은 아닐까", "반대로 내 욕심으로 아이의 고통을 연장하고 있는 것은 아닐까"라는 죄책감은 모든 보호자가 겪는 자연스러운 감정입니다. 혼자서 모든 짐을 짊어지려 하지 마시고, 가족 구성원과 역할을 나누며 신뢰할 수 있는 주치의 수의사와 객관적인 지표를 바탕으로 대화를 나누세요.</p>
+<h2>함께 확인할 준비.</h2>
+<ul>
+<li><a href="/guide/memorial-ceremony">허가 업체·인계·총견적 확인</a>.</li>
+<li><a href="/guide/petloss-care-guide">펫로스 증후군과 사별 애도 — 일상 회복과 전문 지원 안내</a>.</li>
+<li><a href="/guide/petloss-faq">반려동물 장례 자주 묻는 질문 — 법적 절차·유해 처리·실무 Q&A</a>.</li>
+<li><a href="/blog/pet-death-admin-checklist">반려동물 사후 행정 처리 — 등록 말소부터 보험금 청구까지</a>.</li>
+</ul>
+<h2>이 글의 근거와 범위</h2>
+<p>자료 확인일: 2026-10-11. 앨리스 빌라로보스 박사의 HHHHHMM 삶의 질 평가 척도 및 AAHA/IAAHPC 동물 생애말기 케어 가이드라인, 세계소동물수의사회(WSAVA) 동물복지 지침을 바탕으로 작성되었습니다. 본 글은 객관적인 상태 모니터링을 돕기 위한 참고 자료이며, 개별적인 의학적 진단이나 안락사 처방을 대신하지 않습니다. 이 글에는 외부 전문 검토 기록이 없습니다.</p>
+<ul>
+<li><a href="https://www.aaha.org/aaha-guidelines/end-of-life-care/" target="_blank" rel="noopener noreferrer">AAHA/IAAHPC: End-of-Life Care Guidelines</a></li>
+<li><a href="https://www.avma.org/resources-tools/pet-owners/pet-loss-support" target="_blank" rel="noopener noreferrer">AVMA: Euthanasia and Pet Loss Support Guidelines</a></li>
+<li><a href="https://wsava.org/guidelines/animal-welfare-guidelines/" target="_blank" rel="noopener noreferrer">WSAVA: Animal Welfare Guidelines</a></li>
+</ul>`,
     authorName: "펫지기 에디터",
     authorCredential: "반려동물 생애말 돌봄 정보 큐레이터",
-    ymyl: false,
-    sources: JSON.stringify([
-      "Villalobos, A.E. — Quality of Life Scale Helps Make Final Call. Veterinary Practice News 2004",
-      "한국수의완화의학연구회 삶의 질 평가 가이드라인",
-    ]),
-    disclaimer: null,
+    ymyl: true,
+    sources: [
+      "https://www.aaha.org/aaha-guidelines/end-of-life-care/",
+      "https://www.avma.org/resources-tools/pet-owners/pet-loss-support",
+      "https://wsava.org/guidelines/animal-welfare-guidelines/",
+    ],
+    disclaimer:
+      "본 가이드는 노령 및 말기 환자의 삶의 질을 객관적으로 관찰하기 위한 평가 도구(HHHHHMM) 안내이며, 의학적 진단이나 안락사 결정을 대신하지 않습니다. 평가 결과에 따른 통증 조절 및 완화 치료 계획은 반드시 담당 수의사와 상의하세요.",
     status: "published",
     publishedAt: "2026-11-08T09:00:00.000Z",
     createdAt: NOW,
-    updatedAt: NOW,
+    updatedAt: "2026-10-11T12:00:00.000Z",
   },
 
   {
