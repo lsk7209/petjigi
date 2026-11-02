@@ -151,73 +151,80 @@ const BLOG_POSTS: NewContent[] = [
     slug: "pet-euthanasia-decision-guide",
     type: "blog",
     category: 6,
-    title: "안락사 — 결정을 앞두고 있는 보호자에게",
-    subtitle: "편안한 죽음을 선택하는 기준, 수의사와 대화하는 법, 결정 후 찾아오는 감정들",
-    metaTitle: "반려동물 안락사 결정 — 보호자를 위한 가이드 | 펫지기",
-    metaDescription: "반려동물 안락사 결정은 세상에서 가장 어려운 선택 중 하나입니다. 결정 기준, 수의사와 대화하는 법, 결정 후 마음 돌보기를 담았습니다.",
-    body: `<p>이 글을 읽고 있다면, 지금 매우 힘든 시간을 보내고 있을 것이다. 당신이 사랑하는 존재의 마지막을 앞두고, 그 결정의 무게를 혼자 지고 있을 것이다.</p>
-
-<p>안락사(Euthanasia)는 그리스어로 '좋은 죽음(eu + thanatos)'을 의미한다. 극심한 고통 없이 평화롭게 떠날 수 있도록 돕는 것이다. 이것은 포기가 아니라 마지막 사랑의 행위다.</p>
-
-<h2>결정을 도울 수 있는 기준</h2>
-<p>완벽한 기준은 없다. 그러나 수의사들이 보호자와 함께 사용하는 몇 가지 지표가 있다.</p>
-
-<h3>삶의 질 평가 (HHHHHMM Scale)</h3>
-<p>수의종양학자 앨리스 빌라리에요 박사가 개발한 척도로, 7개 항목을 각 10점 만점으로 평가한다. 총 35점 이상이면 삶의 질이 유지되는 것으로 본다.</p>
-
+    title: "반려동물 안락사 의사 결정 — 임상 기준과 인도적 작별 가이드",
+    subtitle: "AVMA 안락사 가이드라인·2단계 의학적 절차·수의사 면담 질문표·보호자 죄책감 완화",
+    metaTitle: "반려동물 안락사 결정 기준과 절차 | 인도적 작별 가이드 | 펫지기",
+    metaDescription: "반려동물 생애 말기 고통을 덜어주기 위한 안락사 결정 기준, AVMA 표준 2단계 진정·마취 절차, 수의사 사전 상담 질문표 및 보호자 심리 회복을 안내합니다.",
+    body: `<p>만성 질환의 말기 단계에 있거나 노령으로 회복 불가능한 고통을 겪는 반려동물을 돌보는 보호자에게 안락사(Euthanasia)는 가장 무겁고 어려운 선택입니다. 수의학에서 안락사는 '좋은 죽음(eu + thanatos)'이라는 어원처럼, 치료적 한계에 부딪힌 환자가 겪는 극심한 신체적 고통을 인도적으로 덜어주기 위한 마지막 완화 치료의 연장선으로 정의됩니다. 미국수의사회(AVMA) 안락사 가이드라인과 미국동물병원협회(AAHA) 생애말기 케어 지침을 바탕으로 보호자가 객관적으로 상태를 판단하고 수의사와 상의할 수 있는 임상 기준과 2단계 표준 절차를 정리했습니다.</p>
+<h2>1. 객관적 안락사 의사 결정 점검 지표 (4대 임상 기준).</h2>
+<p>보호자의 감정적 죄책감만으로는 아이의 고통 상태를 정확히 판단하기 어렵기 때문에, 수의학계에서는 환자의 생체 반응과 일상 유지 능력을 종합적으로 평가합니다.</p>
+<table>
+<thead>
+<tr><th>점검 영역.</th><th>관찰 지표 및 악화 신호.</th><th>의학적 판단 기준.</th></tr>
+</thead>
+<tbody>
+<tr><td><strong>1. 통증 및 호흡 조절</strong></td><td>마약성 진통제 투여에도 헐떡임, 신음, 호흡 곤란이 지속되는가?</td><td>약물로 조절되지 않는 극심한 만성 통증과 산소 결핍.</td></tr>
+<tr><td><strong>2. 자발적 섭식 및 수화</strong></td><td>스스로 물이나 음식을 먹지 못하고 강제 급여도 구토하는가?</td><td>영양 및 전해질 공급이 불가능하여 대사성 쇼크 위험.</td></tr>
+<tr><td><strong>3. 의식 및 교감 반응</strong></td><td>가족을 알아보지 못하고 극심한 불안, 비틀거림, 고립을 보이는가?</td><td>인지 기능 상실 및 뇌신경계 질환 진행으로 정서적 안녕 붕괴.</td></tr>
+<tr><td><strong>4. 나쁜 날의 연속성</strong></td><td>고통스럽고 무기력한 날이 연속으로 이어져 삶의 질이 무너졌는가?</td><td>자발적 기립 불가 및 24시간 간병에도 악화되는 비가역적 상태.</td></tr>
+</tbody>
+</table>
+<h2>2. 수의사 사전 상담 질문표 (보호자 체크리스트).</h2>
+<p>진료실에서 당황하거나 슬픔으로 인해 핵심적인 질문을 놓치지 않도록, 사전에 질문 리스트를 메모하여 담당 수의사와 객관적인 상태를 점검하는 것이 권장됩니다.</p>
+<table>
+<thead>
+<tr><th>상담 주제.</th><th>수의사에게 확인할 질문 문구.</th><th>상담 목적 및 참고 사항.</th></tr>
+</thead>
+<tbody>
+<tr><td><strong>현재 통증 수준.</strong></td><td>"지금 아이가 느끼는 통증은 약물로 충분히 제어되고 있나요?".</td><td>현재 진통 프로토콜의 유효성과 용량 조절 한계 확인.</td></tr>
+<tr><td><strong>향후 질환 경과.</strong></td><td>"치료를 계속 유지할 때 앞으로 어떤 증상이 악화될 것으로 예상되나요?".</td><td>심부전, 신부전, 종양 파열 등 급성 응급 쇼크 가능성 대비.</td></tr>
+<tr><td><strong>의학적 완화 한계.</strong></td><td>"지금 시점에서 치료를 이어가는 것이 아이에게 도움이 되나요, 아니면 고통의 연장인가요?".</td><td>치료 목적과 환자의 고통 경감 사이의 임상적 판단 청취.</td></tr>
+<tr><td><strong>응급 악화 대응.</strong></td><td>"야간이나 주말에 갑작스러운 호흡 곤란이나 발작이 오면 어떻게 대처해야 하나요?".</td><td>야간·휴일 응급 연계 진료 체계 사전 파악.</td></tr>
+</tbody>
+</table>
+<h2>3. AVMA 표준 2단계 안락사 절차 (Two-Stage Protocol).</h2>
+<p>미국수의사회(AVMA) 안락사 가이드라인에 따른 표준적인 소동물 안락사는 환자가 공포나 통증을 전혀 느끼지 않도록 2단계로 진행됩니다.</p>
+<table>
+<thead>
+<tr><th>단계 구분.</th><th>투여 약제 및 임상 작용.</th><th>환자 상태 및 보호자 참관.</th></tr>
+</thead>
+<tbody>
+<tr><td><strong>1단계: 심층 진정 및 마취 유도</strong></td><td>진정제(진정·진통제)를 정맥 카테터로 투여하여 완전한 무통 수면 유도.</td><td>수분 내에 깊은 잠에 빠지며 통증과 불안, 의식이 완전히 사라짐.</td></tr>
+<tr><td><strong>2단계: 심정지 및 최종 임종</strong></td><td>전신마취 상태에서 중추신경계와 심장을 멈추는 최종 약제(바르비투르산염 등) 투여.</td><td>호흡과 심장이 고통 없이 멈추며, 수의사가 청진과 동공 반사로 최종 임종 확인.</td></tr>
+</tbody>
+</table>
+<p>보호자는 1단계와 2단계 전 과정에서 아이의 곁을 지키며 손을 얹고 작별 인사를 나눌 수 있습니다. 만약 감정적으로 참관이 어렵다면 대기실에 머무는 것도 결코 잘못된 선택이 아닙니다.</p>
+<h2>4. 결정 후 찾아오는 감정과 죄책감 완화.</h2>
+<p>안락사를 결정한 보호자가 가장 깊게 겪는 감정은 "내가 아이의 생명을 함부로 앗아간 것은 아닐까", "조금 더 버텨볼 수 있지 않았을까"라는 죄책감입니다. 그러나 수의학적으로 회복 가능성이 없는 극심한 고통 속에서 시간을 끄는 것은 생명의 연장이 아닌 고통의 연장이 될 수 있습니다. 아이에게 편안하고 평화로운 안식을 선물한 것은 보호자가 건넬 수 있는 가장 용기 있고 헌신적인 사랑의 행위입니다.</p>
+<h2>함께 확인할 준비.</h2>
 <ul>
-<li><strong>H — Hurt (통증)</strong>: 통증이 잘 조절되고 있는가</li>
-<li><strong>H — Hunger (식욕)</strong>: 먹고 마실 수 있는가</li>
-<li><strong>H — Hydration (수분)</strong>: 탈수 징후가 없는가</li>
-<li><strong>H — Hygiene (위생)</strong>: 스스로 몸을 깨끗이 유지할 수 있는가</li>
-<li><strong>H — Happiness (행복)</strong>: 주변에 관심을 보이고 반응하는가</li>
-<li><strong>M — Mobility (이동)</strong>: 움직이거나 자세를 바꿀 수 있는가</li>
-<li><strong>M — More good days than bad</strong>: 좋은 날이 힘든 날보다 많은가</li>
+<li><a href="/guide/memorial-cost">반려동물 장례 비용 안내 — 항목별 견적 확인과 추가금 주의사항</a>.</li>
+<li><a href="/guide/memorial-ceremony">허가 업체·인계·총견적 확인</a>.</li>
+<li><a href="/guide/petloss-care-guide">펫로스 증후군과 사별 애도 — 일상 회복과 전문 지원 안내</a>.</li>
+<li><a href="/guide/petloss-faq">반려동물 장례 자주 묻는 질문 — 법적 절차·유해 처리·실무 Q&A</a>.</li>
+<li><a href="/blog/pet-death-admin-checklist">반려동물 사후 행정 처리 — 등록 말소부터 보험금 청구까지</a>.</li>
 </ul>
-
-<h2>수의사와 대화하는 법</h2>
-<p>이 질문들을 직접 하기 어렵다면 글로 써서 가져가도 된다.</p>
+<h2>이 글의 근거와 범위</h2>
+<p>자료 확인일: 2026-10-11. 미국수의사회(AVMA) 동물 안락사 가이드라인(2020), 미국동물병원협회(AAHA) 및 IAAHPC 생애말기 케어 가이드라인, 세계소동물수의사회(WSAVA) 동물복지 지침을 바탕으로 작성되었습니다. 본 글은 객관적인 상태 파악과 의사 결정을 돕기 위한 참고 자료이며, 개별적인 의학적 진단이나 안락사 처방을 대신하지 않습니다. 이 글에는 외부 전문 검토 기록이 없습니다.</p>
 <ul>
-<li>"지금 어느 정도의 통증을 느끼고 있을까요?"</li>
-<li>"앞으로 어떤 과정이 진행될 것으로 예상하시나요?"</li>
-<li>"지금이 보내줄 시점인가요, 아니면 아직 더 있을 수 있는 시간이 있나요?"</li>
-<li>"제가 결정을 더 미루면 어떤 일이 생길 수 있나요?"</li>
-</ul>
-
-<p>좋은 수의사는 이 질문들에 솔직하게 답해줄 것이다. 그리고 당신의 결정을 판단하지 않는다.</p>
-
-<h2>절차에 대해</h2>
-<p>안락사는 일반적으로 두 단계로 이루어진다. 먼저 진정제를 투여해 깊이 잠들게 하고, 이후 심장을 멈추는 약물을 투여한다. 전 과정이 수분 내에 완료되며, 반려동물은 고통 없이 잠드는 것처럼 떠난다.</p>
-
-<p>곁에 있고 싶다면 있어도 된다. 곁에 있기 어렵다면 그래도 된다. 어느 쪽이든 틀리지 않았다.</p>
-
-<h2>결정 후 찾아오는 감정들</h2>
-<p>결정하고 난 뒤에도, 혹은 보내고 난 뒤에도 이런 감정들이 찾아올 수 있다.</p>
-<ul>
-<li><strong>죄책감</strong>: "내가 너무 일찍 결정한 것은 아닐까", "조금 더 버텨볼 수 있었을 텐데"</li>
-<li><strong>안도감</strong>: 그리고 그 안도감에 대한 죄책감</li>
-<li><strong>공허함</strong>: 일상의 모든 곳에서 느껴지는 부재</li>
-</ul>
-
-<p>이 모든 감정은 정상이다. 당신이 그 동물을 얼마나 사랑했는지를 말해주는 것이다.</p>
-
-<h2>마지막으로</h2>
-<p>이 결정을 내리는 사람은 당신뿐이다. 수의사도, 가족도, 이 글도 결정을 대신할 수 없다. 다만 기억해주길 바란다 — 당신이 그 아이의 고통을 끝내주기로 선택했다면, 그것은 당신이 그 아이를 너무나 사랑했기 때문이다.</p>
-
-<p>충분히 잘 해왔다.</p>`,
+<li><a href="https://www.avma.org/resources-tools/avma-policies/avma-guidelines-euthanasia-animals" target="_blank" rel="noopener noreferrer">AVMA: Guidelines for the Euthanasia of Animals (2020)</a></li>
+<li><a href="https://www.aaha.org/aaha-guidelines/end-of-life-care/" target="_blank" rel="noopener noreferrer">AAHA/IAAHPC: End-of-Life Care Guidelines</a></li>
+<li><a href="https://wsava.org/guidelines/animal-welfare-guidelines/" target="_blank" rel="noopener noreferrer">WSAVA: Animal Welfare Guidelines</a></li>
+</ul>`,
     authorName: "펫지기 에디터",
     authorCredential: "반려동물 생애말 돌봄 정보 큐레이터",
     ymyl: true,
-    sources: JSON.stringify([
-      "Villalobos, A. — HHHHHMM Scale for Pet Quality of Life",
-      "American Veterinary Medical Association — Euthanasia Guidelines 2020",
-      "국내 반려동물 호스피스·완화케어 연구 2024",
-    ]),
-    disclaimer: "이 글은 정보 제공을 목적으로 하며 구체적인 의료적 판단은 담당 수의사와 상담하시기 바랍니다.",
+    sources: [
+      "https://www.avma.org/resources-tools/avma-policies/avma-guidelines-euthanasia-animals",
+      "https://www.aaha.org/aaha-guidelines/end-of-life-care/",
+      "https://wsava.org/guidelines/animal-welfare-guidelines/",
+    ],
+    disclaimer:
+      "본 가이드는 노령 및 말기 반려동물의 인도적 안락사 결정을 돕기 위한 수의학적 표준 지침(AVMA/AAHA) 기반 정보이며, 최종 결정과 약물 처방은 반드시 주치의 수의사와 충분한 상담을 거쳐야 합니다.",
     status: "published",
     publishedAt: "2026-06-20T11:00:00.000Z",
     createdAt: NOW,
-    updatedAt: NOW,
+    updatedAt: "2026-10-11T12:00:00.000Z",
   },
 
   // ─── 314 / Cat3 / Macro-E(비교분석) / Lens-L3 / Hook-H2 / Outro-O1 / Angle-RA3
