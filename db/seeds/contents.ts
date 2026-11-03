@@ -647,73 +647,80 @@ const SEED_CONTENTS: NewContent[] = [
     slug: "pet-toxic-foods-complete-guide",
     type: "guide",
     category: 2,
-    title: "반려동물에게 위험한 음식 완전 정리 — 개·고양이 공통·종별",
-    metaTitle: "반려동물 위험 음식 | 개·고양이 금지 먹이 완전 목록 | 펫지기",
+    title: "반려동물에게 위험한 음식 — 개·고양이 치명 독성과 응급 대응 가이드",
+    metaTitle: "반려동물 위험 음식 | 개·고양이 치명 독성·응급 대응표 | 펫지기",
     metaDescription:
-      "포도, 초콜릿, 양파, 자일리톨 등 개와 고양이에게 절대 금지인 음식과 위험한 이유를 수의학 자료 기반으로 정리했습니다.",
-    body: `<h2>왜 사람 음식이 반려동물에게 위험한가?</h2>
-<p>사람과 반려동물은 음식을 처리하는 대사 경로가 다릅니다. 사람에게 무해하거나 심지어 건강에 좋은 음식이 개·고양이에게는 독으로 작용할 수 있습니다. 아래 목록은 수의학 독성학 자료를 기반으로 작성했습니다.</p>
-
-<h2>개와 고양이 공통 위험 음식</h2>
-
-<h3>포도·건포도·커런트</h3>
-<p><strong>위험도: 매우 높음</strong><br>
-신부전을 유발합니다. 소량(포도 1~2알)으로도 심각한 신장 손상이 보고되었습니다. 특정 개체는 더 민감하게 반응합니다. 섭취 즉시 수의사 연락.</p>
-
-<h3>양파·마늘·파·부추·쪽파</h3>
-<p><strong>위험도: 높음</strong><br>
-적혈구를 산화·파괴하는 티오황산염 성분이 들어 있습니다. 가열해도 독성이 사라지지 않습니다. 지속적 소량 섭취(탕, 소스)도 누적으로 위험합니다.</p>
-
-<h3>초콜릿·코코아·카카오</h3>
-<p><strong>위험도: 높음</strong><br>
-테오브로민과 카페인이 심장·신경에 독성을 나타냅니다. 다크 초콜릿이 밀크 초콜릿보다 훨씬 위험합니다. 체중 1kg당 약 100~200mg의 테오브로민이 치명적일 수 있습니다.</p>
-
-<h3>자일리톨 (Xylitol) 함유 식품</h3>
-<p><strong>위험도: 매우 높음 (개)</strong><br>
-껌, 일부 사탕, 토마토 케첩, 팝콘, 치약에 포함된 자일리톨은 개에게 심각한 저혈당·간부전을 유발합니다. 고양이는 상대적으로 덜 민감하지만 역시 피해야 합니다.</p>
-
-<h3>알코올·효모 반죽</h3>
-<p><strong>위험도: 높음</strong><br>
-소량의 알코올도 저혈당·중추신경 억제를 유발합니다. 효모 반죽은 위장에서 발효되며 에탄올과 가스를 생성해 복통·위 파열 위험이 있습니다.</p>
-
-<h3>카페인 (커피·차·에너지드링크)</h3>
-<p><strong>위험도: 높음</strong><br>
-심박 수 증가, 경련, 사망 위험. 체중이 적을수록 위험도가 높습니다.</p>
-
-<h3>마카다미아 너트</h3>
-<p><strong>위험도: 중간~높음 (개)</strong><br>
-구토, 고열, 후지 마비 증상을 유발합니다. 독성 기전은 아직 완전히 밝혀지지 않았습니다.</p>
-
-<h3>아보카도</h3>
-<p><strong>위험도: 중간</strong><br>
-퍼신(Persin) 성분이 심근 손상, 호흡 곤란, 구토를 일으킬 수 있습니다. 씨·껍질이 특히 위험합니다.</p>
-
-<h2>고양이에게 추가로 위험한 음식</h2>
+      "포도, 양파, 초콜릿, 자일리톨 등 개와 고양이에게 치명적인 독성 식품 5종, 중독 기전, 섭취 사고 시 4단계 응급 대응 요령을 안내합니다.",
+    body: `<p>사람에게는 유익하거나 무해한 식재료라도 개와 고양이에게는 대사 경로의 차이로 인해 치명적인 중독과 급성 장기 손상을 유발할 수 있습니다. 미국동물학대방지협회 동물독극물통제센터(ASPCA APCC) 및 머크 수의학 매뉴얼 독성학 지침을 바탕으로 개와 고양이의 주요 치명 독성 식품, 중독 유발 기전, 섭취 사고 시 4단계 응급 대응 수칙을 정리했습니다.</p>
+<h2>1. 개·고양이 5대 치명 독성 식품 및 중독 기전.</h2>
+<p>소량 섭취로도 급성 신부전, 용혈성 빈혈, 심근 독성을 일으키는 고위험 식품은 가정 내 보관부터 철저한 주의가 필요합니다.</p>
+<table>
+<thead>
+<tr><th>독성 식품군.</th><th>주요 독성 유발 성분.</th><th>표적 장기 및 임상 중독 징후.</th></tr>
+</thead>
+<tbody>
+<tr><td><strong>포도 및 건포도</strong></td><td>타르타르산 (Tartaric Acid) 및 주석산염.</td><td>급성 신부전, 구토, 무기력, 핍뇨 또는 무뇨 발생.</td></tr>
+<tr><td><strong>양파·마늘·파류</strong></td><td>N-프로필 디설파이드 등 유기 황화합물.</td><td>적혈구 산화 손상, 하인즈 소체성 용혈성 빈혈, 혈뇨, 황달.</td></tr>
+<tr><td><strong>초콜릿 및 카카오</strong></td><td>메틸크산틴계 테오브로민 및 카페인.</td><td>심박수 급증, 부정맥, 중추신경 흥분, 떨림 및 발작.</td></tr>
+<tr><td><strong>자일리톨 감미료</strong></td><td>당알코올계 자일리톨 (Xylitol).</td><td>급격한 인슐린 분비로 인한 중증 저혈당 및 급성 간부전.</td></tr>
+<tr><td><strong>알코올 및 효모 반죽</strong></td><td>에탄올 및 발효 가스.</td><td>중추신경 억제, 대사성 산증, 위 팽창 및 파열 위험.</td></tr>
+</tbody>
+</table>
+<p>특히 포도와 자일리톨은 개체별 감수성 차이가 매우 커서 극소량 섭취만으로도 중증 장기 부전으로 진행될 수 있으므로 예방이 최우선입니다.</p>
+<h2>2. 섭취 사고 발생 시 보호자 4단계 응급 대응 수칙.</h2>
+<p>반려동물이 위험 음식을 섭취했거나 섭취가 의심될 때는 민간요법에 시간을 지체하지 말고 신속히 진료를 받아야 합니다.</p>
+<table>
+<thead>
+<tr><th>대응 단계.</th><th>보호자 실천 요령.</th><th>핵심 주의 사항.</th></tr>
+</thead>
+<tbody>
+<tr><td><strong>1단계: 즉각 격리</strong></td><td>입안에 남은 음식 잔여물을 조심스럽게 제거하고 환자를 격리.</td><td>무리하게 손을 깊숙이 넣어 물리지 않도록 주의.</td></tr>
+<tr><td><strong>2단계: 정보 확인</strong></td><td>섭취한 식품의 정확한 명칭, 포장지 라벨, 섭취량과 시간 확인.</td><td>수의사가 중독 독성 용량을 계산하는 핵심 근거로 활용.</td></tr>
+<tr><td><strong>3단계: 병원 유선 연락</strong></td><td>가까운 동물병원 또는 응급 진료소에 전화하여 상황 설명.</td><td>내원 전 필요한 응급 이동 준비 안내 청취.</td></tr>
+<tr><td><strong>4단계: 신속 이송</strong></td><td>남은 음식이나 포장지 샘플을 지참하여 병원으로 즉시 이동.</td><td>가정 내 소금물이나 과산화수소 강제 구토 시도 절대 금지.</td></tr>
+</tbody>
+</table>
+<p>가정에서 억지로 소금물이나 과산화수소를 먹여 구토를 유도하는 행위는 식도 천공, 흡인성 폐렴, 치명적인 고나트륨혈증을 일으켜 환자를 더 큰 위험에 빠뜨릴 수 있습니다.</p>
+<h2>3. 추가 주의 식품 및 일상 급여 원칙.</h2>
+<p>직접적인 급성 독성 외에도 장기적인 대사 장애나 소화기 폐색을 유발할 수 있는 식품들입니다.</p>
+<table>
+<thead>
+<tr><th>식품 구분.</th><th>위험 기전 및 문제점.</th><th>보호자 급여 관리 원칙.</th></tr>
+</thead>
+<tbody>
+<tr><td><strong>조리된 동물 뼈</strong></td><td>가열 시 날카롭게 부러져 식도 및 위장관 천공 유발.</td><td>익힌 뼈는 절대 급여하지 않으며 단단한 뼈간식도 주의.</td></tr>
+<tr><td><strong>고양이 날생선 및 날달걀</strong></td><td>티아미나아제로 인한 비타민 B1 결핍 및 아비딘 성분.</td><td>반드시 가열 조리된 형태로만 소량 급여하거나 제한.</td></tr>
+<tr><td><strong>마카다미아 너트</strong></td><td>개의 신경계 및 근육 독성 유발 (후지 마비, 고열).</td><td>견과류는 지방 함량이 높아 췌장염 위험도 동반하므로 회피.</td></tr>
+<tr><td><strong>고염분·고지방 가공육</strong></td><td>나트륨 과다 및 급성 췌장염 유발.</td><td>사람용 소시지, 햄, 국물 요리 급여 일체 금지.</td></tr>
+</tbody>
+</table>
+<h2>함께 확인할 준비.</h2>
 <ul>
-  <li><strong>참치 과다</strong>: 수은 축적, 비타민 E 결핍, 고양이 지방 축적증 유발. 간식으로 주 1~2회 소량만</li>
-  <li><strong>우유·유제품</strong>: 성묘 대부분은 유당불내증으로 설사 유발. 고양이 전용 우유 사용</li>
-  <li><strong>생선 생뼈</strong>: 가시 천공 위험. 조리된 닭뼈도 날카롭게 부러져 위험</li>
-  <li><strong>날달걀 흰자</strong>: 아비딘 성분이 비오틴 흡수를 방해 (비타민 B7 결핍)</li>
+<li><a href="/guide/pet-first-aid-guide">반려동물 응급처치 가이드 — 위급 상황별 대처법과 구급함 준비</a>.</li>
+<li><a href="/guide/dog-food-label-guide">강아지 사료 라벨 읽는 법 — 성분 분석표와 AAFCO 영양 기준</a>.</li>
+<li><a href="/guide/cat-food-guide">고양이 사료 고르는 법 — 필수 영양소와 라벨 확인 가이드</a>.</li>
+<li><a href="/guide/pet-health-checkup-guide">반려동물 건강검진 가이드 — 연령별 필수 검사 항목과 준비 사항</a>.</li>
+<li><a href="/guide/senior-dog-care-guide">노령견 돌봄 가이드 — 시니어 반려견 건강검진과 환경 관리</a>.</li>
 </ul>
-
-<h2>섭취 의심 시 즉각 행동 요령</h2>
-<ol>
-  <li>섭취한 음식 종류와 양을 파악합니다.</li>
-  <li>즉시 동물병원 또는 24시간 응급 클리닉에 전화합니다.</li>
-  <li>임의로 구토를 유발하지 마세요 — 일부 물질은 구토 시 더 큰 손상을 줄 수 있습니다.</li>
-  <li>포장지·음식 샘플을 가져가면 수의사 진단에 도움이 됩니다.</li>
-</ol>`,
-    disclaimer: null,
+<h2>이 글의 근거와 범위</h2>
+<p>자료 확인일: 2026-10-11. 미국동물학대방지협회 동물독극물통제센터(ASPCA APCC) 독성 가이드라인, 머크 수의학 매뉴얼 소동물 식품 유해요소 지침, 미국식품의약국(FDA) 반려동물 위험 물질 안내를 바탕으로 작성되었습니다. 본 글은 일반적인 식품 안전 및 독성 예방을 돕기 위한 참고 자료이며, 개별적인 의학적 진단이나 응급 처방을 대신하지 않습니다. 이 글에는 외부 전문 검토 기록이 없습니다.</p>
+<ul>
+<li><a href="https://www.aspca.org/pet-care/animal-poison-control/people-foods-avoid-feeding-your-pets" target="_blank" rel="noopener noreferrer">ASPCA APCC: People Foods to Avoid Feeding Your Pets</a></li>
+<li><a href="https://www.merckvetmanual.com/toxicology/food-hazards/food-hazards-in-small-animals" target="_blank" rel="noopener noreferrer">Merck Veterinary Manual: Food Hazards in Small Animals</a></li>
+<li><a href="https://www.fda.gov/animal-veterinary/animal-health-literacy/potentially-dangerous-items-your-pet" target="_blank" rel="noopener noreferrer">U.S. FDA: Potentially Dangerous Items for Your Pet</a></li>
+</ul>`,
+    disclaimer:
+      "본 가이드는 반려동물 독성 물질에 관한 수의학(ASPCA/Merck) 독성학 정보 안내이며, 섭취 사고 발생 시 자의적 민간요법이나 구토 유발을 시도하지 말고 즉시 동물병원 또는 야간 응급 진료소에 연락해야 합니다.",
     sources: [
-      "ASPCA Animal Poison Control Center — Toxic and Non-Toxic Plants & Foods (2024)",
-      "Pet Poison Helpline — Food Hazards List (2024)",
-      "대한수의사회 반려동물 독성물질 대응 가이드라인 (2023)",
+      "https://www.aspca.org/pet-care/animal-poison-control/people-foods-avoid-feeding-your-pets",
+      "https://www.merckvetmanual.com/toxicology/food-hazards/food-hazards-in-small-animals",
+      "https://www.fda.gov/animal-veterinary/animal-health-literacy/potentially-dangerous-items-your-pet",
     ],
-    ymyl: false,
+    ymyl: true,
     status: "published",
     publishedAt: "2026-05-16T00:00:00.000Z",
     createdAt: NOW,
-    updatedAt: NOW,
+    updatedAt: "2026-10-11T12:00:00.000Z",
   },
 
   // ── 12. 노령견 케어 가이드 (카테고리 5, published) ────────────────────────────

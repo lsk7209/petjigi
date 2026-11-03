@@ -134,6 +134,29 @@
           "notes": "AAFCO는 직접 규제·인증·승인 기관이 아니라는 FAQ와 대조. 접근한 영양프로파일 PDF는 과거 proposed 문서라 현재의 일괄 의무 수치를 검증한 것으로 사용하지 않음."
         }
       ]
+    },
+    {
+      "slug": "pet-toxic-foods-complete-guide",
+      "claims": [
+        {
+          "claimId": "pet-toxic-foods-aspca-merck-20261011",
+          "snippet": "미국동물학대방지협회 동물독극물통제센터(ASPCA APCC) 및 머크 수의학 매뉴얼 독성학 지침을 바탕으로 개와 고양이의 주요 치명 독성 식품, 중독 유발 기전, 섭취 사고 시 4단계 응급 대응 수칙을 정리했습니다.",
+          "sourceUrl": "https://www.aspca.org/pet-care/animal-poison-control/people-foods-avoid-feeding-your-pets",
+          "sourceType": "professional_guideline",
+          "status": "qualified",
+          "checkedAt": "2026-10-11",
+          "notes": "ASPCA APCC People Foods to Avoid Feeding Your Pets 및 Merck Veterinary Manual Food Hazards 원문 대조. 포도, 양파, 초콜릿, 자일리톨 치명 독성 및 4단계 응급 대응 수칙 확인."
+        },
+        {
+          "claimId": "pet-toxic-foods-scope-20261011",
+          "snippet": "미국동물학대방지협회 동물독극물통제센터(ASPCA APCC) 독성 가이드라인, 머크 수의학 매뉴얼 소동물 식품 유해요소 지침, 미국식품의약국(FDA) 반려동물 위험 물질 안내를 바탕으로 작성되었습니다.",
+          "sourceUrl": "https://www.aspca.org/pet-care/animal-poison-control/people-foods-avoid-feeding-your-pets",
+          "sourceType": "professional_guideline",
+          "status": "qualified",
+          "checkedAt": "2026-10-11",
+          "notes": "가이드라인 1차 출처 범위 명시."
+        }
+      ]
     }
   ]
 }
