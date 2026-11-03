@@ -134,6 +134,29 @@
           "notes": "AAFCO는 직접 규제·인증·승인 기관이 아니라는 FAQ와 대조. 접근한 영양프로파일 PDF는 과거 proposed 문서라 현재의 일괄 의무 수치를 검증한 것으로 사용하지 않음."
         }
       ]
+    },
+    {
+      "slug": "dog-heat-stroke-guide",
+      "claims": [
+        {
+          "claimId": "dog-heat-stroke-avma-aaha-20261011",
+          "snippet": "미국수의사회(AVMA) 열사병 안전 지침과 미국동물병원협회(AAHA) 응급 가이드라인을 바탕으로 강아지 열사병의 진행 단계별 증상, 올바른 점진적 냉각 처치 순서, 여름철 필수 안전 예방 수칙을 정리했습니다.",
+          "sourceUrl": "https://www.avma.org/resources/pet-owners/petcare/pets-vehicles-and-heat",
+          "sourceType": "professional_guideline",
+          "status": "qualified",
+          "checkedAt": "2026-10-11",
+          "notes": "AVMA Pets in Vehicles and Heat Safety 및 AAHA Heatstroke in Dogs 가이드라인 원문 대조. 점진적 미온수 냉각 처치 및 얼음물 금기 사항 확인."
+        },
+        {
+          "claimId": "dog-heat-stroke-scope-20261011",
+          "snippet": "미국수의사회(AVMA) 반려동물 차량 및 고온 안전 지침, 미국동물병원협회(AAHA) 열사병 관리 지침, 머크 수의학 매뉴얼 소동물 열사병 개요를 바탕으로 작성되었습니다.",
+          "sourceUrl": "https://www.avma.org/resources/pet-owners/petcare/pets-vehicles-and-heat",
+          "sourceType": "professional_guideline",
+          "status": "qualified",
+          "checkedAt": "2026-10-11",
+          "notes": "가이드라인 1차 출처 범위 명시."
+        }
+      ]
     }
   ]
 }
