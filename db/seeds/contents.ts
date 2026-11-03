@@ -4155,70 +4155,77 @@ const SEED_CONTENTS: NewContent[] = [
     slug: "senior-cat-care-guide",
     type: "guide",
     category: 3,
-    title: "노령 고양이 케어 가이드 — 7세 이후 건강 관리",
-    metaTitle: "노령 고양이 케어 | 7세 이후 건강검진·식이·증상 체크 | 펫지기",
+    title: "노령 고양이 케어 가이드 — AAFP·ISFM 시니어 지침과 일상 관리",
+    metaTitle: "노령묘 케어 가이드 | AAFP·ISFM 시니어 검진·환경 적응표 | 펫지기",
     metaDescription:
-      "고양이는 7세 이후 노령기에 접어듭니다. 노령 고양이에서 흔한 질환, 정기 검진 주기, 식이 관리, 환경 개선 방법을 정리했습니다.",
-    body: `<h2>고양이의 노령기 — 언제부터?</h2>
-<p>고양이는 7~10세를 '노령기(Senior)', 11세 이상을 '초노령기(Geriatric)'로 분류합니다. 노령 고양이는 겉으로 건강해 보여도 내부 장기 기능이 서서히 저하될 수 있어 정기적인 건강 모니터링이 중요합니다.</p>
-
-<h2>노령 고양이에서 흔한 질환</h2>
+      "고양이 노령기(7~10세) 및 초노령기(11세 이상)의 주요 질환 신호, AAFP/ISFM 권장 6개월 검진 주기, 만성 질환 조기 감지 및 실내 환경 적응법을 안내합니다.",
+    body: `<p>고양이는 통증과 질병을 숨기는 본능이 강하기 때문에 보호자가 이상을 감지했을 때는 이미 장기 기능이 상당 부분 손상되었을 가능성이 높습니다. 특히 7세 이후부터는 겉모습이 건강해 보여도 신장, 내분비계, 관절 등에서 서서히 퇴행성 변화가 시작됩니다. 미국고양이수의사회(AAFP)와 세계고양이의학협회(ISFM) 시니어 가이드라인, 세계소동물수의사회(WSAVA) 영양 지침을 바탕으로 노령묘의 생애 단계별 검진 프로토콜, 주요 질환 감지 신호, 실내 환경 개선 수칙을 정리했습니다.</p>
+<h2>1. 고양이 생애 단계별 분류와 6개월 단위 건강검진.</h2>
+<p>AAFP/ISFM 분류 체계에서는 고양이의 연령에 따라 성묘 후기, 노령기, 초노령기로 세분화하여 단계별 건강 관리를 안내합니다.</p>
+<table>
+<thead>
+<tr><th>생애 단계 구분.</th><th>연령 범위.</th><th>권장 검진 주기 및 핵심 스크리닝 항목.</th></tr>
+</thead>
+<tbody>
+<tr><td><strong>성묘 후기 (Mature Adult)</strong></td><td>만 7~10세.</td><td>연 1회 이상: 기본 신체검사, 혈압 측정, 혈구 및 생화학 기초 검사.</td></tr>
+<tr><td><strong>노령기 (Senior)</strong></td><td>만 11~14세.</td><td>6개월 주기: 신장 지표(SDMA/크레아티닌), 요비중 검사, 전신 혈압 스크리닝.</td></tr>
+<tr><td><strong>초노령기 (Geriatric)</strong></td><td>만 15세 이상.</td><td>6개월 주기: T4 갑상선 호르몬 검사, 흉복부 영상 평가, 관절 통증 평가.</td></tr>
+</tbody>
+</table>
+<p>노령기에는 겉으로 드러나는 임상 징후가 없더라도 6개월 간격으로 정기 혈압 및 혈액·소변 검사를 진행하여 만성 질환을 조기에 발견하는 것이 안전합니다.</p>
+<h2>2. 노령묘 4대 만성 질환 조기 감지 체크리스트.</h2>
+<p>노령 고양이에게 자주 발생하는 만성 질환은 일상적인 행동 변화로 신호를 보냅니다.</p>
+<table>
+<thead>
+<tr><th>질환 구분.</th><th>가정 내 대표 관찰 징후.</th><th>보호자 확인 및 수의사 상담 기준.</th></tr>
+</thead>
+<tbody>
+<tr><td><strong>만성 신장병 (CKD)</strong></td><td>음수량과 배뇨량이 눈에 띄게 늘고 털이 푸석해짐.</td><td>체중 감소와 다뇨 증상 발견 시 요비중 및 혈청 검사 필요.</td></tr>
+<tr><td><strong>갑상선기능항진증</strong></td><td>식욕이 매우 왕성한데도 체중이 빠지고 성격이 예민해짐.</td><td>노령묘 체중 감소 지속 시 T4 호르몬 수치 측정.</td></tr>
+<tr><td><strong>전신 고혈압</strong></td><td>동공이 풀려 있거나 멍하니 벽을 바라보고 잦은 밤 울음.</td><td>신장병 및 심장 질환 환자는 정기적인 도플러 혈압 측정 필수.</td></tr>
+<tr><td><strong>골관절염 (OA)</strong></td><td>높은 곳으로의 점프를 망설이고 엉덩이나 등 그루밍을 소홀히 함.</td><td>모래 화장실 문턱 넘기를 힘들어하거나 배변 실수 발생 시 관절 평가.</td></tr>
+</tbody>
+</table>
+<h2>3. 노령묘를 위한 무장애(Barrier-free) 환경 개선표.</h2>
+<p>관절염과 감각 저하를 겪는 노령 고양이의 스트레스를 줄이기 위해 실내 생활 동선을 친화적으로 재조정해야 합니다.</p>
+<table>
+<thead>
+<tr><th>생활 영역.</th><th>실내 개선 세부 지침.</th><th>보호자 실천 목적.</th></tr>
+</thead>
+<tbody>
+<tr><td><strong>화장실 환경.</strong></td><td>입구 턱이 5cm 이하로 낮고 면적이 넓은 화장실 배치.</td><td>관절 통증으로 인한 배뇨 실수 예방 및 편안한 진입 보장.</td></tr>
+<tr><td><strong>음수 및 식사.</strong></td><td>집안 곳곳에 넓은 수반 배치 및 관절염 예방 높이 조절 식기 사용.</td><td>목과 허리 숙임 부담을 덜고 자연스러운 자발 음수량 유도.</td></tr>
+<tr><td><strong>수직 동선.</strong></td><td>캣타워와 소파 주변에 완만한 스텝 및 계단 추가 설치.</td><td>점프 착지 시의 관절 충격 완화 및 좋아하는 높은 공간 접근 유지.</td></tr>
+<tr><td><strong>온도 및 쉼터.</strong></td><td>외풍이 없는 낮은 위치에 따뜻하고 푹신한 수면 방석 제공.</td><td>체온 조절 능력이 떨어진 노령묘의 체온 유지 및 안정감 제공.</td></tr>
+</tbody>
+</table>
+<h2>함께 확인할 준비.</h2>
 <ul>
-  <li><strong>만성 신부전(CKD)</strong>: 고양이 노령기 가장 흔한 질환. 조기 발견이 핵심</li>
-  <li><strong>갑상선 기능 항진증(Hyperthyroidism)</strong>: 체중 감소 + 식욕 증가 + 다음·다뇨</li>
-  <li><strong>고혈압</strong>: 종종 신부전·갑상선 기능 항진증과 동반</li>
-  <li><strong>관절염</strong>: 점프 회피, 그루밍 감소</li>
-  <li><strong>당뇨병</strong>: 다음·다뇨·체중 감소</li>
-  <li><strong>치주 질환</strong>: 통증으로 식욕 감소</li>
-  <li><strong>인지 기능 장애(CDS)</strong>: 길 잃음, 밤 울음, 방향감각 이상</li>
+<li><a href="/condition/cat-chronic-kidney-disease">고양이 만성 신장병 — 조기 발견과 식이 관리 안내</a>.</li>
+<li><a href="/condition/cat-hyperthyroidism">고양이 갑상선기능항진증 — 증상과 관리 가이드</a>.</li>
+<li><a href="/guide/indoor-cat-enrichment-guide">실내 고양이 환경 풍부화 가이드 — 5대 핵심 원칙과 실천법</a>.</li>
+<li><a href="/guide/senior-dog-care-guide">노령견 돌봄 가이드 — 시니어 반려견 건강검진과 환경 관리</a>.</li>
+<li><a href="/guide/petloss-care-guide">펫로스 증후군과 사별 애도 — 일상 회복과 전문 지원 안내</a>.</li>
 </ul>
-
-<h2>정기 검진 주기</h2>
+<h2>이 글의 근거와 범위</h2>
+<p>자료 확인일: 2026-10-11. 미국고양이수의사회(AAFP) 시니어 케어 가이드라인, 세계고양이의학협회(ISFM) 노령묘 관리 지침, 세계소동물수의사회(WSAVA) 글로벌 영양 가이드라인을 바탕으로 작성되었습니다. 본 글은 노령묘 건강 관리와 생활 환경 개선을 돕기 위한 참고 자료이며, 개별적인 의학적 진단이나 치료 처방을 대신하지 않습니다. 이 글에는 외부 전문 검토 기록이 없습니다.</p>
 <ul>
-  <li><strong>7~10세</strong>: 연 2회 신체 검사 + 혈액·소변 검사</li>
-  <li><strong>11세 이상</strong>: 6개월마다 혈액·소변·혈압 검사</li>
-  <li>신부전 위험 조기 발견을 위해 SDMA 검사(신부전 조기 마커) 포함 권장</li>
-</ul>
-
-<h2>노령 고양이 식이 관리</h2>
-<ul>
-  <li><strong>노령 전용 사료</strong>: 단백질 품질 우수, 신장 부담 낮은 인(P) 함량 관리</li>
-  <li><strong>수분 섭취 증가</strong>: 습식 사료 비중 높이기, 음수대 여러 곳 배치</li>
-  <li><strong>칼로리 모니터링</strong>: 활동량 감소로 비만 위험 증가 — 적정 체중 유지</li>
-  <li><strong>체중 감소 감지</strong>: 매달 체중 측정. 급격한 체중 감소는 즉시 수의사 상담</li>
-</ul>
-
-<h2>환경 개선</h2>
-<ul>
-  <li><strong>화장실 접근성</strong>: 관절염 고양이를 위해 입구가 낮은 화장실 사용</li>
-  <li><strong>침대·쉼터</strong>: 따뜻하고 쉽게 오르내릴 수 있는 낮은 위치 배치</li>
-  <li><strong>계단·경사로</strong>: 높은 곳 접근을 위한 경사로 설치</li>
-  <li><strong>그루밍 지원</strong>: 등·꼬리 주변은 스스로 닦기 어려우므로 보호자가 빗질 보조</li>
-  <li><strong>급격한 변화 최소화</strong>: 낯선 환경·동물 도입은 노령 고양이에게 큰 스트레스</li>
-</ul>
-
-<h2>주의해야 할 증상 변화</h2>
-<ul>
-  <li>물 소비량 갑자기 증가</li>
-  <li>화장실 밖 배변·배뇨</li>
-  <li>식욕 급격히 감소 또는 증가</li>
-  <li>체중 감소 (1~2주 내 10% 이상)</li>
-  <li>밤에 갑자기 큰 소리로 울기</li>
-  <li>털 상태 악화, 그루밍 거부</li>
-</ul>
-<p>위 증상 중 하나라도 발견되면 즉시 수의사 상담을 권장합니다.</p>`,
+<li><a href="https://catvets.com/guidelines/practice-guidelines/senior-care-guidelines" target="_blank" rel="noopener noreferrer">AAFP: Senior Care Guidelines</a></li>
+<li><a href="https://icatcare.org/advice/elderly-cats/" target="_blank" rel="noopener noreferrer">ISFM: Care of Older Cats</a></li>
+<li><a href="https://wsava.org/global-guidelines/global-nutrition-guidelines/" target="_blank" rel="noopener noreferrer">WSAVA: Global Nutrition Guidelines</a></li>
+</ul>`,
     disclaimer:
-      "본 정보는 수의학 참고 자료로 제공되며 의학적 진단과 치료를 대체하지 않습니다. 노령 고양이는 증상이 미약하게 시작되는 경우가 많으므로 정기 검진을 통한 조기 발견이 매우 중요합니다.",
+      "본 가이드는 노령묘 건강 관리 및 생활 환경 개선을 위한 수의학 지침(AAFP/ISFM) 기반 정보이며, 개별 환자의 진단이나 치료 처방을 대신하지 않습니다. 이상 징후 발견 시 반드시 주치의 수의사와 상의하세요.",
     sources: [
-      "ISFM (International Society of Feline Medicine) Senior Cat Guidelines (2021)",
-      "AAFP Senior Care Guidelines (2021)",
-      "대한수의사회 고양이 노령 관리 임상 지침 (2023)",
+      "https://catvets.com/guidelines/practice-guidelines/senior-care-guidelines",
+      "https://icatcare.org/advice/elderly-cats/",
+      "https://wsava.org/global-guidelines/global-nutrition-guidelines/",
     ],
     ymyl: true,
     status: "published",
     publishedAt: "2026-05-22T00:00:00.000Z",
     createdAt: NOW,
-    updatedAt: NOW,
+    updatedAt: "2026-10-11T12:00:00.000Z",
   },
 
   // ── 62. 강아지 갑상선 기능 저하증 (condition, cat.3, YMYL) ──────────────
