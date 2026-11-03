@@ -722,66 +722,78 @@ const SEED_CONTENTS: NewContent[] = [
     slug: "senior-dog-care-guide",
     type: "guide",
     category: 5,
-    title: "노령견 케어 가이드 — 7세 이후 건강·생활 관리",
-    metaTitle: "노령견 케어 | 7세 이후 건강검진·식이·운동 관리 | 펫지기",
+    title: "노령견 돌봄 가이드 — AAHA 시니어 케어 지침과 일상 관리",
+    metaTitle: "노령견 돌봄 가이드 | AAHA 시니어 검진·DISHA 인지장애 점검표 | 펫지기",
     metaDescription:
-      "강아지 7세 이후 노화 신호와 건강검진 주기, 관절·치아·인지기능 관리 방법을 정리했습니다. 노령견 삶의 질을 높이는 실용 가이드.",
-    body: `<h2>강아지는 언제부터 노령견인가?</h2>
-<p>일반적으로 소형견은 만 10~12세, 중형견은 8~10세, 대형견은 6~8세부터 '시니어'로 분류합니다. 대형견일수록 노화가 빨리 진행됩니다. 나이보다 중요한 것은 각 반려견의 건강 상태이며, 주치 수의사와 함께 관리 계획을 세우세요.</p>
-
-<h2>노화의 주요 신호</h2>
+      "노령견의 생애 단계별 건강검진 주기, 인지기능장애(DISHA) 자가 점검표, 관절·영양 관리 및 실내 낙상 방지 환경 조성을 체계적으로 안내합니다.",
+    body: `<p>반려견이 7세를 넘어서면 신체 대사와 면역 체계가 서서히 변화하며 노령기(Senior)에 접어듭니다. 사람과 마찬가지로 반려견의 노화 역시 겉으로 드러나는 털의 백발화뿐 아니라 관절, 심장, 신장, 인지 기능 등 다양한 장기의 퇴행성 변화를 동반합니다. 미국동물병원협회(AAHA) 시니어 케어 가이드라인과 세계소동물수의사회(WSAVA) 영양 지침을 바탕으로 노령견의 건강검진 주기, 인지기능장애(DISHA) 점검표, 일상 환경 관리법을 정리했습니다.</p>
+<h2>1. 체급별 노령 진입 시기와 6개월 단위 건강검진.</h2>
+<p>반려견은 체급과 품종에 따라 기대 수명과 노화 속도가 다릅니다. 대형견은 소형견보다 상대적으로 일찍 노령기에 도달하므로 조기 스크리닝이 중요합니다.</p>
+<table>
+<thead>
+<tr><th>체급 구분.</th><th>노령기 진입 추정 연령.</th><th>6개월 주기 필수 점검 항목.</th></tr>
+</thead>
+<tbody>
+<tr><td><strong>소형견 (10kg 미만)</strong></td><td>만 10~11세 이후.</td><td>신체검사, 혈압 측정, 기본 혈액 검사(CBC/생화학), 요검사.</td></tr>
+<tr><td><strong>중형견 (10~25kg)</strong></td><td>만 8~9세 이후.</td><td>신체검사, 혈압, 신장·간 지표, 관절 가동 범위 평가.</td></tr>
+<tr><td><strong>대형견 (25kg 이상)</strong></td><td>만 6~7세 이후.</td><td>신체검사, 심장 청진, 관절 방사선, 복부 초음파 검진.</td></tr>
+</tbody>
+</table>
+<p>노령기 질환은 초기 증상이 뚜렷하지 않은 경우가 많으므로 연 1회 검진에 머물지 않고 6개월 간격으로 기초 검사를 진행하는 것이 권장됩니다.</p>
+<h2>2. 반려견 인지기능장애 증후군(CDS) DISHA 자가 점검표.</h2>
+<p>노령견에게 흔히 나타나는 치매 증상은 인지기능장애 증후군(Canine Cognitive Dysfunction, CDS)으로 불리며, 조기에 발견할수록 영양 보조와 환경 조성을 통해 진행을 늦출 수 있습니다.</p>
+<table>
+<thead>
+<tr><th>DISHA 영역.</th><th>대표 관찰 징후.</th><th>보호자 일상 관찰 기준.</th></tr>
+</thead>
+<tbody>
+<tr><td><strong>D (Disorientation)</strong></td><td>방향 감각 상실.</td><td>익숙한 집 안 구석에 갇혀 돌아서지 못하거나 벽을 멍하니 응시함.</td></tr>
+<tr><td><strong>I (Interactions)</strong></td><td>교감 및 상호작용 변화.</td><td>가족을 보고도 반기지 않거나 반대로 지나치게 불안해하며 매달림.</td></tr>
+<tr><td><strong>S (Sleep-Wake Cycles)</strong></td><td>수면 패턴 역전.</td><td>낮에는 온종일 깊이 자고 밤에는 잠들지 못하며 서성거림.</td></tr>
+<tr><td><strong>H (House-soiling)</strong></td><td>배변 실수.</td><td>오랫동안 가려오던 배변 패드가 아닌 엉뚱한 장소에 실수를 반복함.</td></tr>
+<tr><td><strong>A (Activity Changes)</strong></td><td>활동성 저하 및 배회.</td><td>산책과 장난감에 흥미를 잃고, 목적 없이 실내를 서성거리거나 빙빙 돎.</td></tr>
+</tbody>
+</table>
+<h2>3. 실내 환경 개선과 관절 낙상 방지 체크리스트.</h2>
+<p>근육량이 줄고 관절 연골이 닳아 있는 노령견에게 미끄러운 바닥은 관절 손상과 낙상 골절의 주된 위험 요소입니다.</p>
+<table>
+<thead>
+<tr><th>관리 항목.</th><th>실내 개선 세부 지침.</th><th>보호자 실천 목적.</th></tr>
+</thead>
+<tbody>
+<tr><td><strong>미끄럼 방지 매트.</strong></td><td>거실 및 주 동선에 논슬립 매트를 틈 없이 배치.</td><td>기립 시 다리 벌림 방지 및 슬개골·고관절 충격 완화.</td></tr>
+<tr><td><strong>완만한 경사로.</strong></td><td>소파와 침대 주변에 계단 대신 넓은 램프 설치.</td><td>수직 낙하 충격 예방 및 척추 디스크 질환 보호.</td></tr>
+<tr><td><strong>식기 높이 조절.</strong></td><td>가슴 높이에 맞춘 식기와 물그릇 사용.</td><td>고개를 깊이 숙이지 않아 경추 및 소화기 압박 완화.</td></tr>
+<tr><td><strong>산책 방식 조정.</strong></td><td>장시간 무리한 1회 산책 대신 평지 중심 15~20분 분할 산책.</td><td>심폐 부담을 줄이면서 잔존 근력 유지 및 후각 자극 제공.</td></tr>
+</tbody>
+</table>
+<h2>함께 확인할 준비.</h2>
 <ul>
-  <li><strong>관절·보행 변화</strong>: 계단 오르기 꺼림, 자리에서 일어날 때 시간이 걸림, 뒷다리 약해짐</li>
-  <li><strong>시력·청력 저하</strong>: 낯선 환경에서 혼란, 큰 소리에 반응이 줄어듦</li>
-  <li><strong>수면 증가</strong>: 하루 수면 시간이 14~16시간 이상으로 늘어남</li>
-  <li><strong>식욕 변화</strong>: 식사를 거르거나 먹는 속도가 느려짐</li>
-  <li><strong>체중 변화</strong>: 근육량 감소(근감소증) 또는 대사 저하로 인한 체중 증가</li>
-  <li><strong>인지기능 저하(CDS)</strong>: 밤에 목적 없이 배회, 익숙한 장소에서 길을 잃는 것처럼 행동</li>
+<li><a href="/guide/pet-health-checkup-guide">반려동물 건강검진 가이드 — 연령별 필수 검사 항목과 준비 사항</a>.</li>
+<li><a href="/condition/dog-arthritis">강아지 관절염 증상과 관리 — 조기 징후와 생활 환경 가이드</a>.</li>
+<li><a href="/guide/dog-dental-care-guide">강아지 치아·구강 관리 — 스케일링과 가정 내 양치질 요령</a>.</li>
+<li><a href="/guide/senior-cat-care-guide">노령묘 케어 가이드 — 시니어 고양이 건강 관리 지침</a>.</li>
+<li><a href="/guide/petloss-care-guide">펫로스 증후군과 사별 애도 — 일상 회복과 전문 지원 안내</a>.</li>
 </ul>
-
-<h2>노령견 건강검진 주기</h2>
-<p>7세 이상부터는 연 1회 검진으로는 부족합니다. 일반적으로 아래 주기를 권장합니다.</p>
+<h2>이 글의 근거와 범위</h2>
+<p>자료 확인일: 2026-10-11. 미국동물병원협회(AAHA) 시니어 케어 가이드라인, 세계소동물수의사회(WSAVA) 글로벌 영양 가이드라인, 미국수의사회(AVMA) 시니어 펫 케어 지침을 바탕으로 작성되었습니다. 본 글은 노령견 건강 관리와 환경 조성을 돕기 위한 참고 자료이며, 개별적인 의학적 진단이나 치료 처방을 대신하지 않습니다. 이 글에는 외부 전문 검토 기록이 없습니다.</p>
 <ul>
-  <li><strong>신체 검사 + 기초 혈액 검사</strong>: 6개월마다</li>
-  <li><strong>소변 검사 + 혈압 측정</strong>: 6~12개월마다</li>
-  <li><strong>흉부 X-레이 + 복부 초음파</strong>: 연 1회 (심장·폐·복강 이상 조기 발견)</li>
-  <li><strong>안과·구강 검사</strong>: 연 1회</li>
-</ul>
-
-<h2>노령견 식이 관리</h2>
-<ul>
-  <li><strong>시니어 사료로 전환</strong>: 칼로리 낮추고 관절 보호 성분(글루코사민, 콘드로이틴) 강화된 제품 선택</li>
-  <li><strong>급여 횟수 조정</strong>: 1일 2~3회 소량씩. 식후 위가 꽉 차면 위장 부담 증가</li>
-  <li><strong>수분 섭취 확인</strong>: 신장 기능 저하 예방을 위해 습식 사료 혼합 급여 고려</li>
-  <li><strong>보조제 상담</strong>: 오메가-3(어유), 항산화제는 수의사 처방 후 복용</li>
-</ul>
-
-<h2>관절·운동 관리</h2>
-<ul>
-  <li>짧고 자주 산책: 장시간 1회보다 20~30분씩 2~3회 권장</li>
-  <li>미끄럼 방지 매트: 마루·타일에 카펫·매트 깔기 (관절 부담 감소)</li>
-  <li>계단 램프: 소파·침대 올라가기 위한 완만한 경사로 제공</li>
-  <li>수중 물리치료: 관절에 부담 없이 근력 유지 가능</li>
-</ul>
-
-<h2>인지기능 저하(CDS) 관리</h2>
-<ul>
-  <li>일정한 하루 루틴 유지 (식사·산책·취침 시간 고정)</li>
-  <li>후각 자극 게임: 음식 숨기기 놀이로 두뇌 활성화</li>
-  <li>야간 배회 시 야간 조명 설치로 안전 확보</li>
-  <li>수의사 처방 인지기능 보조 사료 또는 약물 고려</li>
+<li><a href="https://www.aaha.org/aaha-guidelines/senior-care-overview/" target="_blank" rel="noopener noreferrer">AAHA: Senior Care Guidelines for Dogs and Cats</a></li>
+<li><a href="https://wsava.org/global-guidelines/global-nutrition-guidelines/" target="_blank" rel="noopener noreferrer">WSAVA: Global Nutrition Guidelines</a></li>
+<li><a href="https://www.avma.org/resources-tools/pet-owners/petcare/senior-pet-care-faq" target="_blank" rel="noopener noreferrer">AVMA: Senior Pet Care FAQ</a></li>
 </ul>`,
-    disclaimer: null,
+    disclaimer:
+      "본 가이드는 노령견 건강 관리 및 생활 환경 개선을 위한 수의학 지침(AAHA/WSAVA) 기반 정보이며, 개별 환자의 진단이나 치료 처방을 대신하지 않습니다. 이상 증상 발견 시 반드시 주치의 수의사와 상의하세요.",
     sources: [
-      "American Animal Hospital Association — Senior Care Guidelines (2023)",
-      "대한수의사회 반려동물 노령 관리 지침 (2022)",
-      "Journal of Veterinary Internal Medicine — Canine Cognitive Dysfunction (2022)",
+      "https://www.aaha.org/aaha-guidelines/senior-care-overview/",
+      "https://wsava.org/global-guidelines/global-nutrition-guidelines/",
+      "https://www.avma.org/resources-tools/pet-owners/petcare/senior-pet-care-faq",
     ],
-    ymyl: false,
+    ymyl: true,
     status: "published",
     publishedAt: "2026-05-17T00:00:00.000Z",
     createdAt: NOW,
-    updatedAt: NOW,
+    updatedAt: "2026-10-11T12:00:00.000Z",
   },
 
   // ── 13. 강아지 치아·구강 관리 (카테고리 5, published) ────────────────────────
