@@ -2855,82 +2855,78 @@ const SEED_CONTENTS: NewContent[] = [
     slug: "dog-heat-stroke-guide",
     type: "guide",
     category: 3,
-    title: "강아지 열사병 — 증상·응급처치·예방법",
-    metaTitle: "강아지 열사병 증상·응급처치·예방 | 여름 필수 가이드 | 펫지기",
+    title: "강아지 열사병 — 증상 단계별 응급처치와 냉각 처치 가이드",
+    metaTitle: "강아지 열사병 증상·냉각 응급처치 | 여름철 안전 수칙 | 펫지기",
     metaDescription:
-      "강아지 열사병(열 탈진) 초기 증상, 즉시 할 수 있는 응급처치 방법, 여름철 예방 수칙을 수의사 검토 정보로 안내합니다.",
-    body: `<h2>열사병은 생명을 위협하는 응급 상황입니다</h2>
-<p>강아지는 발바닥 땀샘과 헐떡임(panting)으로만 체온을 조절합니다. 기온·습도가 높거나 환기가 안 되는 공간에 갇히면 체온이 빠르게 41℃ 이상으로 올라 다장기 부전으로 이어질 수 있습니다. <strong>열사병은 수분 이내에 치명적이 될 수 있습니다.</strong></p>
-
-<h2>고위험 상황</h2>
+      "강아지 열사병(열 탈진) 단계별 증상, 미온수를 이용한 점진적 냉각 처치 순서, 얼음물 금기 사항 및 여름철 산책 예방 수칙을 정리했습니다.",
+    body: `<p>강아지는 사람과 달리 피부에 땀샘이 거의 없어 헐떡임(Panting)과 발바닥 패드로만 체온을 조절합니다. 고온 다습한 환경이나 밀폐된 공간에 노출될 경우 체온 조절 중추가 마비되며 수분 만에 치명적인 급성 열사병(Heatstroke)으로 진행될 수 있습니다. 미국수의사회(AVMA) 열사병 안전 지침과 미국동물병원협회(AAHA) 응급 가이드라인을 바탕으로 강아지 열사병의 진행 단계별 증상, 올바른 점진적 냉각 처치 순서, 여름철 필수 안전 예방 수칙을 정리했습니다.</p>
+<h2>1. 열 스트레스 진행 단계 및 위험 증상.</h2>
+<p>초기 열 탈진 상태에서 체온 상승을 막지 못하면 전신 염증 반응과 다발성 장기 부전으로 진행되므로 빠른 인지가 생명을 좌우합니다.</p>
+<table>
+<thead>
+<tr><th>진행 단계.</th><th>주요 관찰 증상.</th><th>위험도 및 보호자 행동.</th></tr>
+</thead>
+<tbody>
+<tr><td><strong>1단계: 열 스트레스 (Heat Stress)</strong></td><td>가쁜 호흡, 끈적한 침 분비, 구강 점막이 붉게 충혈됨.</td><td>즉시 시원한 그늘로 이동하고 휴식 및 미온수 공급.</td></tr>
+<tr><td><strong>2단계: 열 탈진 (Heat Exhaustion)</strong></td><td>걸음걸이 비틀거림, 구토 및 설사, 체온 40°C 초과 상승.</td><td>미온수로 몸을 적시며 송풍 냉각 시작 및 병원 이동 준비.</td></tr>
+<tr><td><strong>3단계: 중증 열사병 (Heatstroke)</strong></td><td>의식 소실, 경련, 잇몸 점막 청자색 변색, 심장 허탈.</td><td>호흡 기도 확보하며 응급 동물병원으로 즉각 후송.</td></tr>
+</tbody>
+</table>
+<p>특히 불독, 퍼그, 시추와 같은 단두종 품종이나 노령견, 비만견은 상부 호흡기 구조상 체온 발산 효율이 크게 떨어지므로 조기 대처가 필수적입니다.</p>
+<h2>2. 올바른 점진적 냉각 처치 요령과 절대 금기 사항.</h2>
+<p>열사병 응급 처치의 핵심은 '급격한 냉각'이 아닌 '점진적인 체온 정상화'입니다.</p>
+<table>
+<thead>
+<tr><th>처치 항목.</th><th>올바른 응급 실천 지침.</th><th>절대 금기 사항 (피해야 할 조치).</th></tr>
+</thead>
+<tbody>
+<tr><td><strong>수분 도포</strong></td><td>상온의 미온수를 목 뒤, 겨드랑이, 서혜부, 발바닥에 적시기.</td><td>얼음물에 담그거나 얼음팩 직접 밀착 금지 (말초 혈관 수축 및 열 갇힘 유발).</td></tr>
+<tr><td><strong>송풍 증발</strong></td><td>선풍기나 차량 에어컨 바람을 쐬어 수분 증발열로 냉각 촉진.</td><td>환기가 안 되는 밀폐된 상자나 차가운 물에 젖은 두꺼운 수건 감싸기 금지.</td></tr>
+<tr><td><strong>음수 공급</strong></td><td>의식이 온전할 때만 자발적으로 소량의 물을 핥아 먹도록 유도.</td><td>의식이 희미한 환자의 입에 주사기 등으로 억지로 물 주입 금지 (기도 흡인 위험).</td></tr>
+<tr><td><strong>이송 중 케어</strong></td><td>차량 내부 온도를 시원하게 유지하며 동물병원에 사전 유선 연락.</td><td>알코올 솜으로 발바닥 문지르기 금지 (피부 흡수 및 알코올 중독 위험).</td></tr>
+</tbody>
+</table>
+<p>급격하게 얼음물을 끼얹으면 피부 표면의 혈관이 급격히 수축하여 심부의 열이 밖으로 방출되지 못하고, 전율(떨림) 반응으로 인해 오히려 내부 체온이 급상승할 수 있습니다.</p>
+<h2>3. 고위험 상황 및 여름철 안전 외출 체크리스트.</h2>
+<p>열사병은 야외 운동뿐 아니라 환기가 부족한 실내나 차량 내에서 빈번하게 발생합니다.</p>
+<table>
+<thead>
+<tr><th>위험 요인.</th><th>안전 예방 세부 지침.</th><th>보호자 주의 사항.</th></tr>
+</thead>
+<tbody>
+<tr><td><strong>차량 내 방치.</strong></td><td>창문을 열어두어도 차량 내부는 단시간에 고온이 되므로 혼자 두지 않음.</td><td>시동이나 에어컨 고장 가능성에 대비하여 항시 동반 하차.</td></tr>
+<tr><td><strong>산책 시간대.</strong></td><td>해가 뜨기 전 이른 아침이나 지면 복사열이 식은 일몰 이후 산책.</td><td>낮 시간대 아스팔트는 복사열로 인해 체감 온도가 극도로 높음.</td></tr>
+<tr><td><strong>노면 상태 확인.</strong></td><td>산책 전 보호자가 손등으로 바닥을 직접 만져보고 열감 확인.</td><td>지열로 인한 발바닥 패드 화상 및 전신 열사병 예방.</td></tr>
+<tr><td><strong>음수 및 휴식.</strong></td><td>휴대용 보랭 물병을 지참하여 그늘에서 자주 수분 섭취.</td><td>무리한 달리기나 프리스비 훈련을 지양하고 평지 걷기 유지.</td></tr>
+</tbody>
+</table>
+<h2>함께 확인할 준비.</h2>
 <ul>
-  <li>🚗 <strong>뜨거운 차 안</strong>: 외부 25℃에서 차량 실내는 10분 이내 40℃ 돌파</li>
-  <li>☀️ 직사광선 아래 야외 운동·훈련</li>
-  <li>🏠 통풍이 없는 실내(비닐하우스, 베란다)</li>
-  <li>습도가 높은 환경 — 습도가 높으면 헐떡임 효율이 급감</li>
+<li><a href="/guide/pet-first-aid-guide">반려동물 응급처치 가이드 — 위급 상황별 대처법과 구급함 준비</a>.</li>
+<li><a href="/guide/pet-health-checkup-guide">반려동물 건강검진 가이드 — 연령별 필수 검사 항목과 준비 사항</a>.</li>
+<li><a href="/guide/senior-dog-care-guide">노령견 돌봄 가이드 — 시니어 반려견 건강검진과 환경 관리</a>.</li>
+<li><a href="/condition/dog-heartworm">강아지 심장사상충 — 예방약 투약 주기와 감염 진단</a>.</li>
+<li><a href="/guide/petloss-care-guide">펫로스 증후군과 사별 애도 — 일상 회복과 전문 지원 안내</a>.</li>
 </ul>
-
-<h2>고위험 품종</h2>
+<h2>이 글의 근거와 범위</h2>
+<p>자료 확인일: 2026-10-11. 미국수의사회(AVMA) 반려동물 차량 및 고온 안전 지침, 미국동물병원협회(AAHA) 열사병 관리 지침, 머크 수의학 매뉴얼 소동물 열사병 개요를 바탕으로 작성되었습니다. 본 글은 응급 처치와 안전 예방을 돕기 위한 참고 자료이며, 개별적인 의학적 진단이나 치료 처방을 대신하지 않습니다. 이 글에는 외부 전문 검토 기록이 없습니다.</p>
 <ul>
-  <li>단두종(불독, 퍼그, 프렌치불독, 시추, 페키니즈): 기도가 좁아 헐떡임 효율 낮음</li>
-  <li>비만견, 노령견, 심장·호흡기 질환 보유견</li>
-  <li>검은 털 또는 두꺼운 이중모 품종</li>
-</ul>
-
-<h2>열사병 증상 — 단계별</h2>
-<h3>초기 (체온 39~40℃)</h3>
-<ul>
-  <li>과도하고 거친 헐떡임</li>
-  <li>잇몸·혀가 선홍색에서 점차 진한 붉은색으로 변함</li>
-  <li>침 과다 분비, 불안·초조</li>
-</ul>
-<h3>중증 (체온 40~41℃+)</h3>
-<ul>
-  <li>비틀거림, 쓰러짐</li>
-  <li>구토·설사</li>
-  <li>잇몸이 창백하거나 흰색으로 변함</li>
-  <li>의식 저하, 경련</li>
-</ul>
-
-<h2>즉시 할 수 있는 응급처치</h2>
-<ol>
-  <li><strong>그늘·냉방 공간으로 즉시 이동</strong></li>
-  <li><strong>미지근한 물(차가운 물 X)로 몸 전체 적시기</strong> — 차가운 물은 피부 혈관을 수축시켜 체온 발산을 방해합니다.</li>
-  <li><strong>선풍기 또는 에어컨으로 증발 냉각 촉진</strong></li>
-  <li><strong>발바닥 사이에 알코올 솜 닦기</strong> (증발 효과)</li>
-  <li><strong>의식이 있다면 물 조금씩 마시게 하기</strong> — 억지로 물을 먹이면 기도 흡인 위험</li>
-  <li><strong>즉시 동물병원 이동</strong> — 응급처치 후에도 반드시 수의사 진료 필요</li>
-</ol>
-<p>⛔ 얼음물·얼음팩 직접 접촉 금지 — 저체온증 위험 및 말초 혈관 수축</p>
-
-<h2>동물병원에서의 치료</h2>
-<ul>
-  <li>정맥 수액 요법 (체온 조절 + 탈수 교정)</li>
-  <li>산소 공급</li>
-  <li>파종성 혈관내 응고증(DIC), 급성 신부전 등 합병증 모니터링</li>
-</ul>
-
-<h2>예방 수칙</h2>
-<ul>
-  <li>차 안에 절대 혼자 두지 마세요 — "잠깐"도 안 됩니다.</li>
-  <li>여름 산책은 오전 7시 이전 또는 오후 6시 이후</li>
-  <li>아스팔트 온도 확인 — 손등 5초 테스트</li>
-  <li>산책 시 물통 필수 휴대</li>
-  <li>쿨매트, 쿨링 조끼 활용</li>
-  <li>고위험 품종은 여름철 야외 활동 최소화</li>
+<li><a href="https://www.avma.org/resources/pet-owners/petcare/pets-vehicles-and-heat" target="_blank" rel="noopener noreferrer">AVMA: Pets in Vehicles and Heat Safety</a></li>
+<li><a href="https://www.aaha.org/resources/heatstroke-in-dogs/" target="_blank" rel="noopener noreferrer">AAHA: Heatstroke in Dogs</a></li>
+<li><a href="https://www.merckvetmanual.com/emergency-medicine-and-critical-care/heatstroke/overview-of-heatstroke-in-animals" target="_blank" rel="noopener noreferrer">Merck Veterinary Manual: Overview of Heatstroke in Animals</a></li>
 </ul>`,
     disclaimer:
-      "열사병은 응급 상황입니다. 위의 응급처치 후에도 반드시 동물병원을 방문해야 합니다. 가정 처치만으로는 내부 장기 손상 여부를 확인할 수 없습니다.",
+      "본 가이드는 강아지 열사병 응급 상황 시 점진적 체온 하강 및 안전 예방을 위한 수의학(AVMA/AAHA) 지침 정보이며, 응급처치 진행과 동시에 반드시 동물병원으로 즉시 이동하여 전문 의료진의 진료를 받아야 합니다.",
     sources: [
-      "Bruchim Y, et al. Heatstroke in Dogs: A Retrospective Study of 54 Cases. Vet Emerg Crit Care. 2006",
-      "BSAVA Manual of Canine and Feline Emergency and Critical Care (3rd ed.)",
-      "대한수의사회 응급처치 임상 지침 (2022)",
+      "https://www.avma.org/resources/pet-owners/petcare/pets-vehicles-and-heat",
+      "https://www.aaha.org/resources/heatstroke-in-dogs/",
+      "https://www.merckvetmanual.com/emergency-medicine-and-critical-care/heatstroke/overview-of-heatstroke-in-animals",
     ],
     ymyl: true,
     status: "published",
     publishedAt: "2026-05-21T00:00:00.000Z",
     createdAt: NOW,
-    updatedAt: NOW,
+    updatedAt: "2026-10-11T12:00:00.000Z",
   },
 
   // ── 43. 고양이 구토 (condition, cat.3, YMYL) ──────────────────────────────
