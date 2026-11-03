@@ -134,6 +134,29 @@
           "notes": "AAFCO는 직접 규제·인증·승인 기관이 아니라는 FAQ와 대조. 접근한 영양프로파일 PDF는 과거 proposed 문서라 현재의 일괄 의무 수치를 검증한 것으로 사용하지 않음."
         }
       ]
+    },
+    {
+      "slug": "senior-dog-care-guide",
+      "claims": [
+        {
+          "claimId": "senior-dog-care-aaha-wsava-20261011",
+          "snippet": "미국동물병원협회(AAHA) 시니어 케어 가이드라인과 세계소동물수의사회(WSAVA) 영양 지침을 바탕으로 노령견의 건강검진 주기, 인지기능장애(DISHA) 점검표, 일상 환경 관리법을 정리했습니다.",
+          "sourceUrl": "https://www.aaha.org/aaha-guidelines/senior-care-overview/",
+          "sourceType": "professional_guideline",
+          "status": "qualified",
+          "checkedAt": "2026-10-11",
+          "notes": "2023 AAHA Senior Care Guidelines for Dogs and Cats 및 WSAVA Global Nutrition Guidelines 원문 대조. 6개월 주기 시니어 건강검진 및 DISHA 평가 기준 확인."
+        },
+        {
+          "claimId": "senior-dog-care-scope-20261011",
+          "snippet": "미국동물병원협회(AAHA) 시니어 케어 가이드라인, 세계소동물수의사회(WSAVA) 글로벌 영양 가이드라인, 미국수의사회(AVMA) 시니어 펫 케어 지침을 바탕으로 작성되었습니다.",
+          "sourceUrl": "https://www.aaha.org/aaha-guidelines/senior-care-overview/",
+          "sourceType": "professional_guideline",
+          "status": "qualified",
+          "checkedAt": "2026-10-11",
+          "notes": "가이드라인 1차 출처 범위 명시."
+        }
+      ]
     }
   ]
 }
