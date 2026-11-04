@@ -134,6 +134,20 @@
           "notes": "AAFCO는 직접 규제·인증·승인 기관이 아니라는 FAQ와 대조. 접근한 영양프로파일 PDF는 과거 proposed 문서라 현재의 일괄 의무 수치를 검증한 것으로 사용하지 않음."
         }
       ]
+    },
+    {
+      "slug": "cat-litter-guide",
+      "claims": [
+        {
+          "claimId": "cat-litter-aafp-isfm-20261011",
+          "snippet": "본 가이드는 미국고양이수의사회(AAFP) 및 세계고양이의학협회(ISFM)의 고양이 환경 지침과 배뇨 장애 진단 관리 가이드라인을 바탕으로 작성되었습니다.",
+          "sourceUrl": "https://catvets.com/guidelines/practice-guidelines/inappropriate-elimination-guidelines",
+          "sourceType": "professional_guideline",
+          "status": "qualified",
+          "checkedAt": "2026-10-11",
+          "notes": "AAFP/ISFM Feline Inappropriate Elimination Guidelines 및 Environmental Needs Guidelines 원문 대조. N+1 화장실 배치, 1.5배 규격, 미향 응고형 점토 모래 선호도, FLUTD 응급 감별 지침 확인."
+        }
+      ]
     }
   ]
 }

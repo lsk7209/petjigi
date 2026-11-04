@@ -1790,95 +1790,197 @@ const SEED_CONTENTS: NewContent[] = [
     updatedAt: NOW,
   },
 
-  // ── 27. 고양이 화장실·모래 완전 가이드 (guide, cat.5, published) ──────────────
+  // ── 27. 고양이 화장실·모래 완전 가이드 (guide, cat.5, YMYL, published) ──────────────
   {
     id: "seed-guide-cat-litter-guide",
     slug: "cat-litter-guide",
     type: "guide",
     category: 5,
-    title: "고양이 화장실·모래 선택 가이드 — 종류별 비교와 위치 설정",
-    metaTitle: "고양이 화장실·모래 선택 가이드 | 종류·위치·청소 방법 | 펫지기",
+    title: "고양이 화장실·모래 선택 가이드 — 종류별 비교·배치 기준과 위생 관리 프로토콜",
+    metaTitle: "고양이 화장실·모래 선택 가이드 | 종류별 비교·배치 원칙·위생 관리 | 펫지기",
     metaDescription:
-      "고양이 화장실 종류(일반형·후드형·자동형)와 모래(벤토나이트·두부·실리카·목재) 비교. 위치 설정과 청소 주기를 정리했습니다.",
-    body: `<h2>고양이 화장실의 기본 원칙</h2>
-<p>고양이가 화장실을 잘 사용하지 않는 것은 가장 흔한 행동 문제 중 하나입니다. 화장실 문제의 대부분은 올바른 화장실 선택, 위치, 청소 주기로 예방할 수 있습니다.</p>
-<p><strong>황금 규칙</strong>: 고양이 수 + 1개 이상의 화장실을 준비하세요.</p>
+      "세계고양이의학협회(ISFM) 및 미국고양이수의사회(AAFP) 환경 가이드라인 기반 화장실 형태·모래 종류 비교, 1.5배 규격·N+1 배치 원칙, 일일 위생 관리 및 배뇨 이상 감별법을 정리했습니다.",
+    body: `<h2>고양이 화장실의 핵심 환경 지침과 생리적 특성</h2>
+<p>고양이는 사막 조상(Felis lybica)으로부터 진화하여 배설 후 고운 모래로 흔적을 묻어 천적으로부터 자신을 보호하는 강한 야생 본능을 지니고 있습니다. 배설 행동은 반려묘에게 하루 중 가장 무방비하고 취약한 순간이므로 시야가 차단되거나 탈출 경로가 막히면 극심한 스트레스를 겪게 됩니다.</p>
+<p>국제 수의 행동학계의 환경 평가 기준에 따르면 화장실은 고양이의 기본 복지와 영역 안정을 결정짓는 핵심 물리적 자원으로 분류됩니다.</p>
 
-<h2>화장실 종류 비교</h2>
+<h2>화장실 형태별 비교와 행동학적 장단점</h2>
+<p>시중에 판매되는 다양한 형태의 화장실은 고양이의 생리적 선호도와 보호자의 편의성 사이에 뚜렷한 차이가 존재합니다.</p>
+<div class="table-wrap">
+  <table>
+    <thead>
+      <tr>
+        <th scope="col">형태 구분</th>
+        <th scope="col">고양이 선호도</th>
+        <th scope="col">환기 및 냄새 축적</th>
+        <th scope="col">도주로 확보 및 안전성</th>
+        <th scope="col">추천 대상 및 주의점</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>오픈형(평판형)</strong></td>
+        <td>최상 (선호도 1위).</td>
+        <td>통기성 우수, 암모니아 가스 축적 없음.</td>
+        <td>360도 시야 확보 및 사방 탈출 가능.</td>
+        <td>모든 고양이에게 1순위 권장되며 다묘 가정에서 갈등을 예방합니다.</td>
+      </tr>
+      <tr>
+        <td><strong>후드형(돔형)</strong></td>
+        <td>보통 이하.</td>
+        <td>환기 불량으로 내부 암모니아 악취 집중.</td>
+        <td>출입구가 1개뿐이어 매복 공격에 취약.</td>
+        <td>모래 비산 방지용이나 환기 불량으로 배뇨 거부를 유발할 수 있습니다.</td>
+      </tr>
+      <tr>
+        <td><strong>탑엔트리(상부 진입형)</strong></td>
+        <td>낮음.</td>
+        <td>바닥 모래 상태 미확인, 환기 불량.</td>
+        <td>점프 착지 및 탈출 지연으로 공포감 유발.</td>
+        <td>관절염이 있는 노령묘나 어린 자묘에게 사용이 금기됩니다.</td>
+      </tr>
+      <tr>
+        <td><strong>자동 화장실(전동형)</strong></td>
+        <td>개체별 편차 큼.</td>
+        <td>배설물 즉시 밀폐로 냄새 저감 우수.</td>
+        <td>회전 모터 및 센서 오작동 리스크 존재.</td>
+        <td>작동 소음 공포로 배뇨 거부가 발생할 수 있으므로 전원 차단 적응이 선행되어야 합니다.</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
 
-<h3>오픈형 (일반형)</h3>
+<h2>화장실 규격과 배치 황금률</h2>
+<p>화장실의 물리적 크기와 실내 배치는 배뇨 실수를 예방하는 결정적 요소입니다.</p>
 <ul>
-  <li><strong>장점</strong>: 통기성 좋음, 대부분의 고양이가 선호, 청소 쉬움</li>
-  <li><strong>단점</strong>: 모래 비산이 많음, 냄새가 외부로 퍼질 수 있음</li>
-  <li><strong>추천 대상</strong>: 화장실 거부가 없는 고양이, 처음 화장실을 세팅할 때</li>
+  <li><strong>1.5배 크기 규격</strong>: 화장실의 길이는 고양이 코끝부터 꼬리 시작점까지 몸길이의 최소 1.5배 이상이어야 합니다. 성묘 기준 가로 50cm, 세로 70cm 이상의 특대형 화장실이 권장됩니다.</li>
+  <li><strong>N+1 개수 원칙</strong>: 화장실 개수는 '고양이 수(N) + 1개'를 기본 공식으로 합니다. 1묘 가정은 2개, 2묘 가정은 최소 3개의 화장실이 필요합니다.</li>
+  <li><strong>공간 분산 원칙</strong>: 화장실 3개를 같은 방에 나란히 배치하면 고양이는 이를 '1개의 화장실'로 인식합니다. 서로 시각적으로 차단된 독립된 방과 동선에 나누어 배치해야 합니다.</li>
+  <li><strong>회피해야 할 설치 장소</strong>: 세탁기나 건조기, 보일러실 옆 등 갑작스러운 진동과 소음이 발생하는 장소나 사료·물그릇 바로 옆은 피해야 합니다.</li>
 </ul>
 
-<h3>후드형 (뚜껑형)</h3>
+<h2>모래(Substrate) 종류별 특성 및 선호도 비교</h2>
+<p>고양이는 발바닥 육구에 닿는 모래의 촉감에 매우 예민합니다.</p>
+<div class="table-wrap">
+  <table>
+    <thead>
+      <tr>
+        <th scope="col">모래 원료</th>
+        <th scope="col">원료 및 입자 특성</th>
+        <th scope="col">고양이 선호도</th>
+        <th scope="col">응고력 및 탈취력</th>
+        <th scope="col">분진(먼지) 발생</th>
+        <th scope="col">관리 핵심 주의사항</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>벤토나이트(점토)</strong></td>
+        <td>천연 광물 점토, 미세 입자.</td>
+        <td>최상 (야생 모래 촉감 유사).</td>
+        <td>응고력과 소변 냄새 흡착력 최우수.</td>
+        <td>제품에 따라 미세 분진 차이 큼.</td>
+        <td>변기 배출 절대 불가, 5~7cm 적정 두께를 유지해야 바닥 눌어붙음을 방지합니다.</td>
+      </tr>
+      <tr>
+        <td><strong>두부·카사바 모래</strong></td>
+        <td>콩비지 및 전분 압축 펠릿.</td>
+        <td>보통 (굵은 펠릿 거부 가능).</td>
+        <td>준수하나 습도 높을 때 응고력 저하.</td>
+        <td>분진 발생 적음.</td>
+        <td>고온다습 시 곰팡이 주의, 변기 일시 투입 시 배관 막힘 위험이 있습니다.</td>
+      </tr>
+      <tr>
+        <td><strong>우드 펠릿(소나무)</strong></td>
+        <td>압축 톱밥 펠릿(붕괴형).</td>
+        <td>낮음 (낯선 수지 향 기피).</td>
+        <td>소변 흡수 후 가루 분해(거름망 필요).</td>
+        <td>펠릿 자체 분진 적으나 톱밥 축적.</td>
+        <td>대변 냄새 차단력이 약하며 발바닥 촉감 거부로 배뇨 참기를 유발할 수 있습니다.</td>
+      </tr>
+      <tr>
+        <td><strong>실리카겔(크리스털)</strong></td>
+        <td>규산나트륨 다공성 비드.</td>
+        <td>낮음 (사각거리는 소리 기피).</td>
+        <td>수분 흡수력 우수, 응고 안 됨.</td>
+        <td>분진 적음.</td>
+        <td>소변 누적 시 강한 암모니아 냄새가 발생하며 알갱이 삼킴 사고에 주의해야 합니다.</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<p>임상 행동 지침에 따르면 고양이는 인공 향료가 첨가되지 않은(Unscented), 부드러운 입자의 응고형 점토 모래를 가장 안정적으로 이용합니다.</p>
+
+<h2>일일 청소 및 정기 세척 프로토콜</h2>
+<p>청결하지 않은 화장실은 고양이가 소변을 참게 만들어 비뇨기계 질환을 유발하는 주요 원인이 됩니다.</p>
+<div class="table-wrap">
+  <table>
+    <thead>
+      <tr>
+        <th scope="col">주기</th>
+        <th scope="col">관리 항목</th>
+        <th scope="col">표준 작업 절차</th>
+        <th scope="col">건강 점검 포인트</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>매일 1~2회</strong></td>
+        <td>감자·맛동산 수거(Scooping)</td>
+        <td>굳은 소변 덩어리와 대변 즉시 수거.</td>
+        <td>소변 덩어리 크기 축소나 혈뇨 여부를 매일 확인.</td>
+      </tr>
+      <tr>
+        <td><strong>주 1~2회</strong></td>
+        <td>모래 보충</td>
+        <td>퍼낸 만큼 새 모래를 채워 5~7cm 높이 유지.</td>
+        <td>바닥에 눌어붙지 않아야 세균 번식 억제.</td>
+      </tr>
+      <tr>
+        <td><strong>월 1회</strong></td>
+        <td>전체 세척(Deep Clean)</td>
+        <td>기존 모래 폐기 후 미온수와 무향 주방세제로 세척.</td>
+        <td>락스 및 감귤계 세제 사용 금지, 완전 건조 후 새 모래 투입.</td>
+      </tr>
+      <tr>
+        <td><strong>연 1회</strong></td>
+        <td>화장실 통 교체</td>
+        <td>오래된 플라스틱 통 폐기 및 새 화장실 교체.</td>
+        <td>발톱 스크래치 미세 틈새에 서식하는 세균막 차단.</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<h2>화장실 밖 배뇨(House Soiling) 원인 감별과 응급 대처</h2>
+<p>화장실 관리는 환경 조성과 비뇨기 건강 관리의 기본입니다. 본 가이드는 미국고양이수의사회(AAFP) 및 세계고양이의학협회(ISFM)의 고양이 환경 지침과 배뇨 장애 진단 관리 가이드라인을 바탕으로 작성되었습니다.</p>
+<p>고양이가 화장실이 아닌 이불, 소파, 바닥에 소변을 보는 행동은 보호자에 대한 불만 표출이 아니라 질병의 신호이거나 환경적 거부의 표현입니다.</p>
 <ul>
-  <li><strong>장점</strong>: 모래 비산 감소, 냄새 억제, 사생활 보호</li>
-  <li><strong>단점</strong>: 공기 순환이 줄어 냄새 축적 빠름(청소 더 자주 필요), 큰 고양이는 협소할 수 있음</li>
-  <li><strong>추천 대상</strong>: 모래 비산이 심한 고양이, 집 인테리어 중시</li>
+  <li><strong>응급 질환 신호 (즉각 내원)</strong>: 화장실에 자주 가지만 소변이 전혀 나오지 않거나 방울 단위로만 나오는 경우(요도 폐색), 혈뇨, 배뇨 시 고통스러운 울음, 생식기 과도 핥기 등은 생명을 위협하는 하부요로계 질환(FLUTD) 신호입니다. 요도 폐색의 응급 대처법은 <a href="/condition/cat-flutd">고양이 하부요로기질환(FLUTD) 가이드</a>를 반드시 확인하시기 바랍니다.</li>
+  <li><strong>노령묘 관절 통증</strong>: 10세 이상의 노령묘는 관절염으로 인해 높은 턱을 넘지 못해 화장실 바로 앞에 실수를 할 수 있습니다. <a href="/guide/senior-cat-care-guide">노령 고양이 케어 가이드</a>를 참고하여 진입 턱이 5cm 이하인 저상형 화장실로 교체해야 합니다.</li>
+  <li><strong>환경적 거부 요인</strong>: 모래 종류의 갑작스러운 변경, 청소 불량, 좁은 화장실 크기, 다묘 간의 영역 다툼 등이 원인일 수 있습니다. 실내 영역 배치와 수직 공간 조성은 <a href="/guide/indoor-cat-enrichment-guide">실내 고양이 환경 풍부화 가이드</a>를 함께 점검하시기 바랍니다.</li>
 </ul>
 
-<h3>자동 청소형 (전동형)</h3>
-<ul>
-  <li><strong>장점</strong>: 자동으로 배설물 제거, 보호자 편의성 높음</li>
-  <li><strong>단점</strong>: 가격 높음, 소음에 예민한 고양이는 거부 가능, 고장 시 관리 복잡</li>
-  <li><strong>추천 대상</strong>: 바쁜 보호자, 다묘 가정</li>
-</ul>
+<h2>화장실 관리 자주 묻는 질문 (FAQ)</h2>
+<div class="faq-list">
+  <h3>Q1. 고양이 모래를 다른 종류로 교체할 때 올바른 방법은 무엇인가요?</h3>
+  <p>모래를 하루아침에 전량 교체하면 배뇨 거부로 이어질 수 있습니다. 기존 모래와 새 모래를 8:2 비율로 섞기 시작하여, 1~2주 동안 점진적으로 새 모래 비율을 늘려가며 교체해야 합니다. 여유 화장실 1개에 새 모래만 단독으로 담아 선호도를 비교 테스트하는 방법도 권장됩니다.</p>
 
-<h2>모래 종류 비교</h2>
+  <h3>Q2. 화장실 냄새 제거를 위해 유향 탈취 스프레이를 사용해도 되나요?</h3>
+  <p>인공 향료가 든 탈취제나 방향제는 사람에게는 향긋하지만 고양이에게는 강력한 후각 스트레스를 유발하여 화장실을 기피하게 만듭니다. 화장실 냄새는 하루 2회 수거와 정기적인 전체 세척으로 관리해야 하며, 탈취 보조제가 필요하다면 무향 활성탄(야자 숯가루)을 소량 섞어주는 방식을 권장합니다.</p>
 
-<h3>벤토나이트(응고형 클레이) 모래</h3>
-<ul>
-  <li>응고력·탈취력 우수, 가격 합리적</li>
-  <li>무거움, 먼지 많음, 폐 질환 위험(먼지 적은 제품 선택 권장)</li>
-</ul>
-
-<h3>두부·옥수수 모래</h3>
-<ul>
-  <li>천연 소재, 가벼움, 먼지 적음, 변기 배출 가능(제품마다 다름)</li>
-  <li>응고력이 클레이보다 약할 수 있음, 곰팡이 주의(습기 관리 필요)</li>
-</ul>
-
-<h3>실리카 모래</h3>
-<ul>
-  <li>탈취력 최상, 교체 주기 길음(월 1~2회)</li>
-  <li>응고되지 않음(액체 흡수), 고양이에 따라 발바닥 불편 가능</li>
-</ul>
-
-<h3>목재(소나무·편백) 모래</h3>
-<ul>
-  <li>자연 향, 친환경</li>
-  <li>고양이에 따라 낯선 향에 거부 반응 가능</li>
-</ul>
-
-<h2>화장실 위치 설정</h2>
-<ul>
-  <li>조용하고 사생활이 보장되는 곳에 배치 (화장실·세탁기 옆은 소음으로 기피 유발)</li>
-  <li>식사 공간과 멀리 떨어진 곳</li>
-  <li>한 층에 최소 1개 이상 배치</li>
-  <li>노령묘·관절 문제가 있는 경우 낮은 입구 화장실 사용</li>
-</ul>
-
-<h2>청소 주기</h2>
-<ul>
-  <li><strong>매일</strong>: 고형 배설물 및 응고된 소변 덩어리 제거</li>
-  <li><strong>주 1~2회</strong>: 모래 보충 (응고형 기준)</li>
-  <li><strong>월 1~2회</strong>: 화장실 통 전체 세척 후 새 모래 교체</li>
-  <li><strong>실리카 모래</strong>: 고형물만 매일 제거, 월 1~2회 전량 교체</li>
-</ul>
-
-<h2>화장실 거부 해결 팁</h2>
-<p>고양이가 갑자기 화장실을 거부한다면 의학적 원인(FLUTD, 방광염 등)을 먼저 배제해야 합니다. 의학적 문제가 없다면 화장실 크기·모래 종류·위치 변화를 점검하세요.</p>
-<h2>함께 확인할 준비</h2>
-<ul><li><a href="/guide/indoor-cat-enrichment-guide">집 전체 자원과 동선 점검</a></li></ul>`,
-    disclaimer: null,
+  <h3>Q3. 다묘 가정에서 화장실 갈등을 최소화하려면 어떻게 해야 하나요?</h3>
+  <p>화장실 입구가 마주 보지 않도록 배치하고, 벽이나 가구로 시야를 차단하여 볼일을 보는 동안 공격받지 않는다는 심리적 안전감을 주어야 합니다. 또한 탈출로가 막히는 후드형 대신 사방이 트인 대형 오픈형 화장실을 사용하는 것이 갈등 예방에 필수적입니다.</p>
+</div>`,
+    disclaimer:
+      "본 가이드는 세계고양이의학협회(ISFM) 및 미국고양이수의사회(AAFP)의 고양이 환경 관리 및 배뇨 행동 지침을 바탕으로 제작된 정보 제공용 문서이며, 수의사의 의학적 진단 및 치료를 대신할 수 없습니다. 배뇨 곤란, 혈뇨, 잦은 화장실 드나듦 등 하부요로계 이상 징후가 관찰되면 즉시 동물병원에서 진료를 받으시기 바랍니다.",
     sources: [
-      "Overall KL. Manual of Clinical Behavioral Medicine for Dogs and Cats. Elsevier (2013)",
-      "Ellis SLH et al. ISFM and AAFP Feline Environmental Needs Guidelines. J Feline Med Surg (2013)",
+      "AAFP and ISFM Guidelines for the Diagnosis and Management of Feline Inappropriate Elimination: https://catvets.com/guidelines/practice-guidelines/inappropriate-elimination-guidelines",
+      "ISFM and AAFP Feline Environmental Needs Guidelines: https://journals.sagepub.com/doi/pdf/10.1177/1098612X13477537",
+      "Cornell Feline Health Center — Feline Behavior: House Soiling: https://www.vet.cornell.edu/departments-centers-and-institutes/cornell-feline-health-center/health-information/feline-health-topics/feline-behavior-problems-house-soiling",
+      "Overall KL — Manual of Clinical Behavioral Medicine for Dogs and Cats (Feline Elimination Problems)",
     ],
-    ymyl: false,
+    ymyl: true,
     status: "published",
     publishedAt: "2026-05-18T00:00:00.000Z",
     createdAt: NOW,
@@ -1944,7 +2046,7 @@ const SEED_CONTENTS: NewContent[] = [
   <li>이상 체중 기준: 갈비뼈를 손으로 느낄 수 있되 눈에 보이지 않아야 합니다.</li>
 </ul>
 <h2>함께 확인할 준비</h2>
-<ul><li><a href="/guide/dog-food-label-guide">강아지 사료 라벨의 별도 확인 기준</a></li></ul>`,
+<ul><li><a href="/guide/dog-food-label-guide">강아지 사료 라벨의 별도 확인 기준</a></li><li><a href="/guide/cat-litter-guide">고양이 화장실·모래 선택 가이드</a></li></ul>`,
     disclaimer: null,
     sources: [
       "Association of American Feed Control Officials (AAFCO) — Model Regulations Cat Nutrient Profiles (2024)",
