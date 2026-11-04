@@ -134,6 +134,20 @@
           "notes": "AAFCO는 직접 규제·인증·승인 기관이 아니라는 FAQ와 대조. 접근한 영양프로파일 PDF는 과거 proposed 문서라 현재의 일괄 의무 수치를 검증한 것으로 사용하지 않음."
         }
       ]
+    },
+    {
+      "slug": "cat-flutd",
+      "claims": [
+        {
+          "claimId": "cat-flutd-scope-20261011",
+          "snippet": "세계고양이의학협회(ISFM/iCatCare) 고양이 하부요로계 질환 컨센서스 가이드라인, 코넬 고양이 건강센터(Cornell Feline Health Center) FLUTD 임상 지침, 미국고양이수의사회(AAFP) 환경 풍부화 가이드라인을 바탕으로 작성되었습니다.",
+          "sourceUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11816079/",
+          "sourceType": "professional_guideline",
+          "status": "qualified",
+          "checkedAt": "2026-10-11",
+          "notes": "2025 iCatCare/ISFM Consensus Guidelines on Lower Urinary Tract Diseases in Cats 및 AAFP Environmental Needs Guidelines 원문 대조. FIC 병태생리, 요도 폐색 응급 징후 및 N+1 화장실 배치 지침 확인."
+        }
+      ]
     }
   ]
 }

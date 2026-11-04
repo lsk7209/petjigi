@@ -870,72 +870,78 @@ const SEED_CONTENTS: NewContent[] = [
     slug: "cat-flutd",
     type: "condition",
     category: 3,
-    title: "고양이 하부요로기질환 (FLUTD)",
-    metaTitle: "고양이 하부요로기질환(FLUTD) — 증상·원인·치료 | 펫지기",
+    title: "고양이 하부요로기질환 (FLUTD) — 원인별 대처와 요도 폐색 응급 가이드",
+    metaTitle: "고양이 FLUTD 증상·특발성 방광염 | 요도 폐색 응급 가이드 | 펫지기",
     metaDescription:
-      "고양이 화장실 빈번한 방문, 혈뇨, 소변 실패(요도 막힘)는 FLUTD 신호입니다. 원인·진단·치료·식이 관리를 수의학 자료로 정리했습니다.",
-    body: `<h2>FLUTD란?</h2>
-<p>FLUTD(Feline Lower Urinary Tract Disease, 고양이 하부요로기질환)는 방광과 요도에 영향을 주는 일련의 질환군을 뜻합니다. 고양이에게 가장 흔한 질환 중 하나로, 특히 요도 막힘(요도 폐색)은 즉시 진료가 필요한 응급 상황이며, 치료가 늦어지면 24~48시간 이내에 생명이 위험해질 수 있습니다(수컷 고양이는 요도가 길고 좁아 위험이 더 높습니다).</p>
-
-<h2>주요 원인 유형</h2>
+      "고양이 화장실 빈번 방문, 혈뇨, 요도 폐색 응급 징후와 특발성 방광염(FIC) 스트레스 요인, 화장실 N+1 배치 및 음수 증진 수칙을 정리했습니다.",
+    body: `<p>고양이 하부요로기질환(FLUTD, Feline Lower Urinary Tract Disease)은 방광과 요도에 발생하는 일련의 염증성 및 폐색성 질환군을 통칭합니다. 특히 수컷 고양이는 요도가 길고 좁아 점액 마개나 미세 결석으로 인해 요도가 완전히 막히는 '요도 폐색(Urethral Obstruction)'이 발생하기 쉬우며, 이는 수 시간 내에 급성 요독증과 심장 마비를 초래할 수 있는 최고 수준의 응급 질환입니다. 세계고양이의학협회(ISFM/iCatCare) 비뇨기 가이드라인과 코넬 고양이 건강센터(Cornell Feline Health Center) 임상 지침을 바탕으로 FLUTD의 주요 원인별 특징, 요도 폐색 감지 신호, 환경 스트레스 완화 및 음수 관리법을 정리했습니다.</p>
+<h2>1. FLUTD 3대 주요 원인 및 감별 특징.</h2>
+<p>하부요로기질환은 증상이 유사하더라도 원인에 따라 치료와 관리 방향이 완전히 달라집니다.</p>
+<table>
+<thead>
+<tr><th>원인 질환군.</th><th>발병 기전 및 위험 인자.</th><th>주요 임상 특징 및 감별점.</th></tr>
+</thead>
+<tbody>
+<tr><td><strong>특발성 방광염 (FIC)</strong></td><td>신경계 및 방광 점막의 과민 반응, 환경 스트레스.</td><td>FLUTD 원인 중 가장 높은 비중, 무균성 염증, 재발성.</td></tr>
+<tr><td><strong>요로 결석증 (Urolithiasis)</strong></td><td>스트루바이트 또는 옥살산칼슘 미세 결정 형성.</td><td>소변 pH 불균형, 요관·방광 자극, 혈뇨 및 배뇨통 유발.</td></tr>
+<tr><td><strong>폐색성 요도 질환 (UO)</strong></td><td>점액 플러그, 혈괴, 결석에 의한 물리적 요도 막힘.</td><td>수컷 고양이 호발, 소변 배출 완전 실패, 즉각적인 응급 처치 필수.</td></tr>
+</tbody>
+</table>
+<p>특히 특발성 방광염(FIC)은 세균 감염이 아닌 스트레스 호르몬과 방광벽 보호막(GAG층) 결손으로 인해 발생하므로 항생제 남용을 피하고 환경 개선이 우선되어야 합니다.</p>
+<h2>2. 요도 폐색 응급 징후와 비폐색성 증상 비교.</h2>
+<p>소변을 전혀 보지 못하는 폐색 상태는 방광 파열과 고칼륨혈증을 일으키므로 즉각적인 구분이 필요합니다.</p>
+<table>
+<thead>
+<tr><th>구분 항목.</th><th>비폐색성 방광염 증상.</th><th>폐색성 요도 응급 징후 (즉시 내원).</th></tr>
+</thead>
+<tbody>
+<tr><td><strong>배뇨 상태</strong></td><td>자주 화장실에 가며 소량씩 배뇨 성공.</td><td>화장실에서 힘을 주지만 소변이 한 방울도 나오지 않음.</td></tr>
+<tr><td><strong>통증 반응</strong></td><td>배뇨 시 가벼운 불편감 및 생식기 그루밍.</td><td>극심한 복통으로 웅크려 비명을 지르고 하복부 팽만.</td></tr>
+<tr><td><strong>전신 상태</strong></td><td>식욕과 활동성이 비교적 유지됨.</td><td>기력 상실, 반복적인 구토, 저체온, 의식 저하.</td></tr>
+<tr><td><strong>대응 수칙</strong></td><td>당일 내 동물병원 진료 및 진통 수액 처치.</td><td>지체 없이 인근 응급 동물병원으로 즉각 후송.</td></tr>
+</tbody>
+</table>
+<p>수컷 고양이가 화장실을 들락거리며 배뇨 자세로 울부짖는다면 단순 변비로 오인하지 말고 방광 요도 폐색을 우선적으로 의심해야 합니다.</p>
+<h2>3. 재발 방지를 위한 화장실 세팅 및 음수 환경 체크리스트.</h2>
+<p>고양이 요로계 질환의 장기적인 예방과 재발 억제는 자발적 음수량 증대와 스트레스 없는 화장실 환경에 달려 있습니다.</p>
+<table>
+<thead>
+<tr><th>환경 항목.</th><th>실내 개선 세부 지침.</th><th>보호자 실천 목적.</th></tr>
+</thead>
+<tbody>
+<tr><td><strong>화장실 개수</strong></td><td>전체 고양이 수(N) + 1개 원칙을 준수하여 분산 배치.</td><td>다묘 가정 내 화장실 영역 다툼 및 배뇨 참음 예방.</td></tr>
+<tr><td><strong>화장실 형태</strong></td><td>몸길이의 1.5배 이상 넓고 사방이 트인 오픈형 선호.</td><td>밀폐형 구조에서 발생하는 악취 갇힘 및 공포감 해소.</td></tr>
+<tr><td><strong>모래 청결</strong></td><td>먼지가 적고 부드러운 벤토나이트 모래를 매일 2회 이상 청소.</td><td>오염된 화장실 기피로 인한 방광 내 소변 정체 방지.</td></tr>
+<tr><td><strong>음수 다변화</strong></td><td>습식 캔 급여 비중 확대 및 집안 곳곳에 수반 배치.</td><td>소변 비중을 낮추고 결정 형성을 막는 지속적 수분 공급.</td></tr>
+</tbody>
+</table>
+<h2>함께 확인할 준비.</h2>
 <ul>
-  <li><strong>특발성 방광염(FIC)</strong>: 뚜렷한 기질적 원인 없이 스트레스·환경 변화로 발생. 가장 흔한 원인</li>
-  <li><strong>방광 결석·결정(Crystals)</strong>: 스트루바이트 또는 수산칼슘 결정. 식이와 관련</li>
-  <li><strong>요도 폐색</strong>: 결석·점액 마개 등으로 요도가 막힘. 수컷·중성화 수컷은 요도가 길고 좁아 암컷보다 위험이 높음</li>
-  <li><strong>세균성 방광염</strong>: 노령 고양이·면역 저하 고양이에서 더 흔함</li>
+<li><a href="/guide/indoor-cat-enrichment-guide">실내 고양이 환경 풍부화 가이드 — 5대 핵심 원칙과 실천법</a>.</li>
+<li><a href="/condition/cat-chronic-kidney-disease">고양이 만성 신장병 — 조기 발견과 식이 관리 안내</a>.</li>
+<li><a href="/guide/cat-litter-guide">고양이 모래와 화장실 가이드 — 종류별 장단점과 교체 요령</a>.</li>
+<li><a href="/guide/cat-food-guide">고양이 사료 고르는 법 — 필수 영양소와 라벨 확인 가이드</a>.</li>
+<li><a href="/guide/senior-cat-care-guide">노령 고양이 케어 가이드 — 시니어 반려묘 건강검진과 환경 적응</a>.</li>
 </ul>
-
-<h2>증상 — 즉시 병원이 필요한 신호</h2>
+<h2>이 글의 근거와 범위</h2>
+<p>자료 확인일: 2026-10-11. 세계고양이의학협회(ISFM/iCatCare) 고양이 하부요로계 질환 컨센서스 가이드라인, 코넬 고양이 건강센터(Cornell Feline Health Center) FLUTD 임상 지침, 미국고양이수의사회(AAFP) 환경 풍부화 가이드라인을 바탕으로 작성되었습니다. 본 글은 일반적인 건강 정보와 환경 관리를 돕기 위한 참고 자료이며, 개별적인 의학적 진단이나 응급 처방을 대신하지 않습니다. 이 글에는 외부 전문 검토 기록이 없습니다.</p>
 <ul>
-  <li>화장실을 자주 방문하지만 소변이 나오지 않음 (긴박뇨)</li>
-  <li>소변 중 통증으로 울음 소리</li>
-  <li>혈뇨 (소변이 빨간색 또는 분홍빛)</li>
-  <li>소변을 화장실 밖에 봄 (긴박뇨로 실수)</li>
-  <li><strong>소변을 보려고 반복해서 힘주지만 거의 또는 전혀 나오지 않음 → 지금 바로 동물병원에 연락하고 진료받기. 요도 폐색이 의심되면 특정 시간이 지나기를 기다리지 마세요</strong></li>
-  <li>복부 통증, 무기력, 식욕 저하, 구토 (요도 폐색 시 빠르게 악화)</li>
-</ul>
-
-<h2>진단</h2>
-<ul>
-  <li>소변 검사 (분석·배양): 결정·세균·혈구 확인</li>
-  <li>복부 방사선·초음파: 결석·방광벽 두께 확인</li>
-  <li>혈액 검사: 신부전 동반 여부 확인</li>
-</ul>
-
-<h2>치료</h2>
-<h3>요도 폐색 (응급)</h3>
-<ul>
-  <li>요도 카테터 삽입으로 막힌 요도 개방</li>
-  <li>수액 치료로 신장 기능 회복</li>
-  <li>입원 치료 필요 (1~3일 이상)</li>
-</ul>
-<h3>특발성 방광염(FIC)</h3>
-<ul>
-  <li>스트레스 요인 제거 (환경 풍부화, 화장실 위치·개수 조정)</li>
-  <li>수분 섭취 증가: 습식 사료 전환 또는 흐르는 물 급수기</li>
-  <li>진통제·항경련제 처방</li>
-</ul>
-
-<h2>예방 — 식이·환경 관리</h2>
-<ul>
-  <li><strong>습식 사료 급여</strong>: 수분 섭취가 FLUTD 예방의 핵심. 습식 비중을 높이거나 건식에 물 추가</li>
-  <li><strong>화장실 청결</strong>: 하루 1~2회 이상 청소. 고양이 수 + 1개 원칙</li>
-  <li><strong>스트레스 감소</strong>: 이사·새 동물 도입 시 점진적 적응, 안정된 루틴 유지</li>
-  <li><strong>처방식 사료</strong>: 결석 형성 이력이 있다면 수의사 처방 비뇨기 케어 사료 권장</li>
+<li><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC11816079/" target="_blank" rel="noopener noreferrer">iCatCare/ISFM: Consensus Guidelines on Lower Urinary Tract Diseases in Cats</a></li>
+<li><a href="https://www.vet.cornell.edu/departments-centers-and-institutes/cornell-feline-health-center/health-information/feline-health-topics/feline-lower-urinary-tract-disease" target="_blank" rel="noopener noreferrer">Cornell Feline Health Center: Feline Lower Urinary Tract Disease</a></li>
+<li><a href="https://catvets.com/guidelines/practice-guidelines/environmental-needs-guidelines" target="_blank" rel="noopener noreferrer">AAFP/ISFM: Feline Environmental Needs Guidelines</a></li>
 </ul>`,
     disclaimer:
-      "본 콘텐츠는 정보 제공 목적으로만 작성되었으며, 의학적 진단·치료를 대체하지 않습니다. 특히 고양이가 소변을 보려 힘주는데 거의 또는 전혀 나오지 않는다면 요도 폐색이 의심되므로 기다리지 말고 즉시 수의 치료를 받아야 합니다. 증상이 의심될 경우 즉시 동물병원을 방문하세요.",
+      "본 콘텐츠는 수의학 정보 제공 목적으로 작성되었으며, 의학적 진단과 치료를 대체하지 않습니다. 특히 고양이가 소변을 보려 힘주는데 전혀 배뇨하지 못한다면 요도 폐색이 의심되므로 지체 없이 즉시 동물병원 응급 진료를 받아야 합니다.",
     sources: [
-      "Hostutler RA et al. — Feline Idiopathic Cystitis, Vet Clin North Am Small Anim Pract (2005)",
-      "Cornell Feline Health Center — Feline Lower Urinary Tract Disease (vet.cornell.edu)",
-      "WSAVA Lower Urinary Tract Disease Guidelines (2020)",
-      "대한수의사회 고양이 비뇨기 질환 관리 지침 (2023)",
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC11816079/",
+      "https://www.vet.cornell.edu/departments-centers-and-institutes/cornell-feline-health-center/health-information/feline-health-topics/feline-lower-urinary-tract-disease",
+      "https://catvets.com/guidelines/practice-guidelines/environmental-needs-guidelines",
     ],
     ymyl: true,
     status: "published",
     publishedAt: "2026-05-18T00:00:00.000Z",
     createdAt: NOW,
-    updatedAt: NOW,
+    updatedAt: "2026-10-11T12:00:00.000Z",
   },
 
   // ── 15. 강아지 심장사상충 (카테고리 3, YMYL, condition) ──────────────────────
