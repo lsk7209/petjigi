@@ -1708,86 +1708,78 @@ const SEED_CONTENTS: NewContent[] = [
     slug: "puppy-first-year-guide",
     type: "guide",
     category: 1,
-    title: "퍼피 첫 해 완전 가이드 — 입양부터 1세까지",
-    metaTitle: "퍼피 첫 해 가이드 | 예방접종·이유식·훈련·사회화 | 펫지기",
+    title: "퍼피 첫 1년 양육 가이드 — 예방접종·사회화·성장기 영양 관리",
+    metaTitle: "퍼피 첫 해 가이드 | AAHA 예방접종·AVSAB 사회화 체크리스트 | 펫지기",
     metaDescription:
-      "강아지를 처음 맞이하는 첫 해, 예방접종·영양·기본 훈련·사회화까지 월령별로 정리한 퍼피 완전 가이드입니다.",
-    body: `<h2>퍼피 입양 전 준비사항</h2>
-<p>강아지를 데려오기 전 집을 퍼피 안전하게 만드세요. 전선, 쓰레기통, 세제, 독성 식물은 손이 닿지 않는 곳에 두고, 화장실 위치, 잠자리, 급식 공간을 미리 정해두세요.</p>
+      "강아지 생후 1년 월령별 성장 마일스톤, AAHA 기초 백신 접종 주기, AVSAB 사회화 민감기 체크리스트 및 성장기 영양 관리법을 정리했습니다.",
+    body: `<p>반려견의 생애 첫 1년은 평생의 건강과 정서적 안정, 사회성을 결정짓는 가장 결정적인 골든타임입니다. 이 시기에는 급격한 신체 성장과 함께 기초 면역 형성, 영구치 맹출, 행동 발달이 복합적으로 일어납니다. 미국동물병원협회(AAHA) 개 예방접종 가이드라인과 미국동물행동수의학회(AVSAB) 사회화 지침, 세계소동물수의사회(WSAVA) 영양 기준을 바탕으로 퍼피의 월령별 마일스톤, 사회화 훈련 체크리스트, 성장기 영양 관리법을 정리했습니다.</p>
+<h2>1. 생후 1년 월령별 핵심 성장 마일스톤 및 필수 건강 프로토콜.</h2>
+<p>모체이행항체가 감소하는 시기에 맞춰 적절한 간격으로 기초 접종을 완료하고 단계별 발달을 지원해야 합니다.</p>
+<table>
+<thead>
+<tr><th>월령 구분.</th><th>예방접종 및 법정 방역.</th><th>신체 발달 및 양육 핵심 과제.</th></tr>
+</thead>
+<tbody>
+<tr><td><strong>생후 8~12주 (2~3개월령)</strong></td><td>종합백신(DHPPL) 1~2차 및 내외부 구충.</td><td>집 적응, 크레이트 안전 공간 인식, 배변 유도 훈련 시작.</td></tr>
+<tr><td><strong>생후 12~16주 (3~4개월령)</strong></td><td>종합백신 3~5차, 코로나·켄넬코프 백신 접종.</td><td>사회화 황금기 노출, 빗질 및 발톱 깎기 핸들링 적응.</td></tr>
+<tr><td><strong>생후 4~6개월 (이갈이 시기)</strong></td><td>광견병 백신 접종 및 내장형 동물등록 절차 진행.</td><td>유치 탈락 및 영구치 맹출 확인, 전용 터그 장난감 제공.</td></tr>
+<tr><td><strong>생후 6~12개월 (청소년기)</strong></td><td>항체가 검사 및 중성화 수술 상담 진행.</td><td>성호르몬 분비에 따른 에너지 발산, 성견 사료 점진적 전환.</td></tr>
+</tbody>
+</table>
+<p>예방접종은 주치의 수의사의 임상 소견과 항체가 형성 상태에 따라 2~4주 간격으로 체계적으로 진행하는 것이 표준입니다.</p>
+<h2>2. 미국동물행동수의학회(AVSAB) 권장 사회화 민감기 체크리스트.</h2>
+<p>생후 3주부터 14주 사이의 사회화 창기(Socialization Window) 동안 겪은 긍정적 경험은 성견이 되었을 때의 두려움과 공격성을 현저히 줄여줍니다.</p>
+<table>
+<thead>
+<tr><th>사회화 자극 영역.</th><th>일상 속 긍정 노출 항목.</th><th>보호자 실천 요령.</th></tr>
+</thead>
+<tbody>
+<tr><td><strong>환경 소음 적응</strong></td><td>청소기, 헤어드라이어, 천둥 번개 음원, 차량 경적.</td><td>작은 음량부터 시작하여 맛있는 간식을 주며 즐거운 놀이로 인식.</td></tr>
+<tr><td><strong>신체 핸들링</strong></td><td>발바닥 패드, 귓속, 입천장 및 꼬리 만지기.</td><td>동물병원 진료와 위생 미용 시 거부감이 생기지 않도록 매일 터치.</td></tr>
+<tr><td><strong>다양한 대상 접촉</strong></td><td>모자나 우비를 입은 사람, 휠체어, 유모차, 안전한 접종견.</td><td>무리하게 다가가게 강요하지 않고 스스로 안전함을 느끼도록 관찰.</td></tr>
+<tr><td><strong>보행 노면 감각</strong></td><td>잔디, 흙길, 아스팔트, 나무 데크, 미끄럼 방지 매트.</td><td>다양한 질감의 바닥을 밟아보며 발바닥 감각을 자극.</td></tr>
+</tbody>
+</table>
+<p>마지막 접종 전이라도 완전히 통제된 안전한 실내나 이동 가방을 활용하여 낯선 시각·청각 자극에 노출시키는 조기 사회화가 중요합니다.</p>
+<h2>3. 퍼피 성장기 급여 및 영양 관리 원칙.</h2>
+<p>성장기 강아지는 성견에 비해 단위 체중당 2배 이상의 높은 에너지와 단백질을 필요로 합니다.</p>
+<table>
+<thead>
+<tr><th>성장 월령 단계.</th><th>1일 급여 횟수 및 방법.</th><th>핵심 영양 관리 수칙.</th></tr>
+</thead>
+<tbody>
+<tr><td><strong>생후 2~4개월령</strong></td><td>1일 4회 소량 분할 급여.</td><td>위 용적이 작고 저혈당 쇼크 위험이 있으므로 규칙적 분할 급여.</td></tr>
+<tr><td><strong>생후 4~6개월령</strong></td><td>1일 3회 균등 분할 급여.</td><td>급격한 골격 성장에 맞춘 AAFCO 기준 고단백 퍼피 전용식 유지.</td></tr>
+<tr><td><strong>생후 6~12개월령</strong></td><td>1일 2회 성견 급여 루틴 전환.</td><td>대형견 품종은 골이형성증 예방을 위해 칼슘-인 균형 사료 필수.</td></tr>
+</tbody>
+</table>
+<h2>함께 확인할 준비.</h2>
 <ul>
-  <li>급식 그릇·물그릇, 크레이트(이동장) 또는 펜, 배변패드, 산책 줄·하네스, 장난감·씹는 간식</li>
-  <li>입양 후 3일 이내: 초기 건강검진 예약 (기존 질환·구충 상태 확인)</li>
-  <li>근처 24시간 응급 동물병원 위치·전화번호 사전 파악</li>
+<li><a href="/guide/dog-adoption-checklist">강아지 입양 체크리스트 — 데려오기 전 준비물과 환경 점검</a>.</li>
+<li><a href="/guide/dog-vaccination-schedule">강아지 예방접종 스케줄 — 월령별 필수·선택 접종 안내</a>.</li>
+<li><a href="/guide/dog-basic-training-guide">강아지 기본 훈련 가이드 — 배변·하우스·기초 예절 교육</a>.</li>
+<li><a href="/guide/dog-food-label-guide">강아지 사료 라벨 읽는 법 — 성분 분석표와 AAFCO 영양 기준</a>.</li>
+<li><a href="/guide/senior-dog-care-guide">노령견 돌봄 가이드 — 시니어 반려견 건강검진과 환경 관리</a>.</li>
 </ul>
-
-<h2>월령별 핵심 체크리스트</h2>
-
-<h3>생후 8~10주 — 첫 입양 시기</h3>
+<h2>이 글의 근거와 범위</h2>
+<p>자료 확인일: 2026-10-11. 미국동물병원협회(AAHA) 개 예방접종 가이드라인, 미국동물행동수의학회(AVSAB) 강아지 사회화 지침, 세계소동물수의사회(WSAVA) 글로벌 영양 가이드라인을 바탕으로 작성되었습니다. 본 글은 일반적인 양육 및 건강 관리를 돕기 위한 참고 자료이며, 개별적인 의학적 진단이나 백신 처방을 대신하지 않습니다. 이 글에는 외부 전문 검토 기록이 없습니다.</p>
 <ul>
-  <li>1차 종합백신(DHPPL) 접종 또는 접종 여부 확인</li>
-  <li>구충 (회충·조충 구충제 투여)</li>
-  <li>집 적응 기간: 조용한 환경에서 24~48시간 탐색 시간 주기</li>
-  <li>이름 부르기 + 보상 기반 훈련 시작</li>
-</ul>
-
-<h3>생후 10~12주 — 사회화 황금기</h3>
-<ul>
-  <li>2차 종합백신 접종</li>
-  <li>다양한 사람·소리·장소에 긍정적으로 노출 (사회화 창기 마감 전 집중)</li>
-  <li>배변 훈련 꾸준히: 식후 15분, 낮잠 후, 놀이 후 화장실로 안내</li>
-  <li>크레이트 훈련 시작 — 안전한 공간으로 인식하게 긍정 연계</li>
-</ul>
-
-<h3>생후 12~16주</h3>
-<ul>
-  <li>3~5차 종합백신 완성 (수의사 일정에 따라)</li>
-  <li>켄넬코프, 코로나장염, 인플루엔자 접종</li>
-  <li>기초 명령 훈련: "앉아", "기다려", "이리와" — 짧은 세션(5분 이내) 반복</li>
-  <li>목줄·하네스 적응 훈련</li>
-</ul>
-
-<h3>생후 4~6개월</h3>
-<ul>
-  <li>광견병 접종 (생후 3개월 이상, 연 1회 갱신)</li>
-  <li>동물등록 (생후 2개월 이상 의무 등록)</li>
-  <li>유치→영구치 교체 시기: 씹는 장난감 충분히 제공, 치아 발달 모니터링</li>
-  <li>중성화 수술 시기 수의사와 상담 (일반적으로 5~9개월 사이)</li>
-</ul>
-
-<h3>생후 6~12개월</h3>
-<ul>
-  <li>청소년기 에너지 최고조 — 하루 2회 충분한 운동</li>
-  <li>그룹 강아지 교실 또는 행동 수업 참여 권장</li>
-  <li>연 1회 정기 건강검진 루틴 확립</li>
-  <li>성견 사료로의 전환 시기 (수의사 권고에 따라)</li>
-</ul>
-
-<h2>퍼피 영양 — 기본 원칙</h2>
-<ul>
-  <li>AAFCO "All Life Stages" 또는 "Puppy" 영양 기준 충족 제품 선택</li>
-  <li>대형견 퍼피는 "Large Breed Puppy" 전용 사료: 칼슘·인 비율이 중요</li>
-  <li>하루 급여량을 3~4회로 나눠 급여 (생후 4개월 이후 3회, 6개월 이후 2회로 줄여나감)</li>
-  <li>과식·과체중 방지: 갈비뼈가 손으로 만져지되 눈으로 보이지 않는 상태가 이상적</li>
-</ul>
-
-<h2>퍼피 행동 문제 대처</h2>
-<ul>
-  <li><strong>물기</strong>: "아야" 소리 후 놀이 중단 — 이빨이 피부에 닿으면 즉시 중단 신호</li>
-  <li><strong>짖기</strong>: 원인 파악 (무서움·지루함·주의 요구) 후 욕구 해소</li>
-  <li><strong>분리불안</strong>: 단계적으로 혼자 있는 시간 늘리기, 떠나고 돌아올 때 과도한 반응 자제</li>
-  <li><strong>씹기</strong>: 허용된 씹는 장난감으로 리다이렉션</li>
+<li><a href="https://www.aaha.org/aaha-guidelines/2022-aaha-canine-vaccination-guidelines/" target="_blank" rel="noopener noreferrer">AAHA: Canine Vaccination Guidelines</a></li>
+<li><a href="https://avsab.org/resources/position-statements/" target="_blank" rel="noopener noreferrer">AVSAB: Position Statement on Puppy Socialization</a></li>
+<li><a href="https://wsava.org/global-guidelines/global-nutrition-guidelines/" target="_blank" rel="noopener noreferrer">WSAVA: Global Nutrition Guidelines</a></li>
 </ul>`,
-    disclaimer: null,
+    disclaimer:
+      "본 가이드는 강아지 첫 1년 성장 주기별 건강 및 양육 지침(AAHA/AVSAB) 기반 안내이며, 개별 환자의 예방접종 차수와 건강 상태는 주치의 수의사와 상의해야 합니다.",
     sources: [
-      "American Veterinary Society of Animal Behavior — Puppy Socialization Guidelines (2022)",
-      "AAHA Canine Vaccination Guidelines (2022)",
-      "농림축산검역본부 동물등록제 안내 (2024)",
+      "https://www.aaha.org/aaha-guidelines/2022-aaha-canine-vaccination-guidelines/",
+      "https://avsab.org/resources/position-statements/",
+      "https://wsava.org/global-guidelines/global-nutrition-guidelines/",
     ],
-    ymyl: false,
+    ymyl: true,
     status: "published",
     publishedAt: "2026-05-17T00:00:00.000Z",
     createdAt: NOW,
-    updatedAt: NOW,
+    updatedAt: "2026-10-11T12:00:00.000Z",
   },
 
   // ── 27. 고양이 화장실·모래 완전 가이드 (guide, cat.5, published) ──────────────
