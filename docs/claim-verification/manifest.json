@@ -134,6 +134,20 @@
           "notes": "AAFCO는 직접 규제·인증·승인 기관이 아니라는 FAQ와 대조. 접근한 영양프로파일 PDF는 과거 proposed 문서라 현재의 일괄 의무 수치를 검증한 것으로 사용하지 않음."
         }
       ]
+    },
+    {
+      "slug": "dog-separation-anxiety-guide",
+      "claims": [
+        {
+          "claimId": "separation-anxiety-aaha-avsab-20261011",
+          "snippet": "본 가이드는 미국동물행동수의학회(AVSAB) 분리불안 치료 지침, 머크 수의학 매뉴얼(Merck Veterinary Manual) 임상 가이드라인, 미국동물병원협회(AAHA) 개 라이프스테이지 행동 건강 권고를 바탕으로 작성되었습니다.",
+          "sourceUrl": "https://www.aaha.org/resources/canine-life-stage-guidelines/",
+          "sourceType": "professional_guideline",
+          "status": "qualified",
+          "checkedAt": "2026-10-11",
+          "notes": "2019 AAHA Canine Life Stage Guidelines 및 AVSAB Position Statement on Separation Anxiety 원문 대조. 탈감작 훈련, 출발 단서 중립화, 행동 치료제 보조 요법 및 처벌 금기 지침 확인."
+        }
+      ]
     }
   ]
 }

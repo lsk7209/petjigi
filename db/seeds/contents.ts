@@ -281,7 +281,8 @@ const SEED_CONTENTS: NewContent[] = [
   <li>훈련 장소가 너무 자극적(소음·다른 개)이지 않은가?</li>
   <li>명령어가 가족마다 다르지 않은가? (통일 필수)</li>
   <li>훈련 시간이 너무 길지 않은가? (집중력 한계 5분)</li>
-</ul>`,
+</ul>
+<p>기초 훈련 과정에서 보호자의 부재 시 극도의 불안을 보이거나 출입문을 긁고 지속적으로 짖는 행동이 관찰된다면 <a href="/guide/dog-separation-anxiety-guide">강아지 분리불안 해결 가이드</a>를 참고하여 단계별 탈감작 훈련을 진행하시기 바랍니다.</p>`,
     disclaimer: null,
     sources: [
       "Karen Pryor — Don't Shoot the Dog (1984, 긍정 강화 훈련 바이블)",
@@ -1371,78 +1372,265 @@ const SEED_CONTENTS: NewContent[] = [
     updatedAt: NOW,
   },
 
-  // ── 21. 강아지 분리불안 해결법 (카테고리 5, published) ───────────────────────
+  // ── 21. 강아지 분리불안 해결법 (카테고리 5, YMYL, published) ───────────────────────
   {
     id: "seed-guide-dog-separation-anxiety",
     slug: "dog-separation-anxiety-guide",
     type: "guide",
     category: 5,
-    title: "강아지 분리불안 해결법 — 원인부터 단계별 훈련까지",
-    metaTitle: "강아지 분리불안 해결 | 원인·증상·훈련 단계별 방법 | 펫지기",
+    title: "강아지 분리불안 해결 가이드 — 원인 감별부터 단계별 탈감작 훈련과 임상 지침까지",
+    metaTitle: "강아지 분리불안 해결 | 원인 감별·단계별 탈감작 훈련·임상 지침 | 펫지기",
     metaDescription:
-      "강아지가 혼자 있을 때 짖기·파괴·배변 실수를 반복한다면 분리불안일 수 있습니다. 원인 분석과 단계별 탈감작 훈련 방법을 정리했습니다.",
-    body: `<h2>분리불안이란?</h2>
-<p>분리불안(Separation Anxiety)은 강아지가 보호자와 분리되거나 혼자 남겨질 때 극도의 스트레스와 공포를 경험하는 행동 장애입니다. 단순한 '보고 싶음'이 아니라 공황 상태에 가까운 반응으로, 강아지에게 실제 고통을 줍니다.</p>
+      "미국동물행동수의학회(AVSAB) 및 머크 수의학 매뉴얼 기반 강아지 분리불안 감별 진단, 출발 단서 중립화, 단계별 부재 시간 확장 프로토콜, 환경 풍부화 관리법을 정리했습니다.",
+    body: `<h2>분리불안의 정의와 행동학적 원인</h2>
+<p>분리불안(Separation Anxiety)은 반려견이 애착 대상인 보호자와 물리적으로 분리되거나 혼자 남겨졌을 때 극심한 공황과 고통을 겪는 임상적 행동 장애입니다. 이는 단순한 응석이나 훈련 부족으로 인한 심심풀이 행동이 아니며, 뇌의 자율신경계가 과활성화되어 스트레스 호르몬인 코르티솔이 급증하는 심리적 질환입니다.</p>
+<p>보호자가 외출 준비를 시작하는 순간부터 침 흘림, 떨림, 거친 호흡을 보이며, 부재 중에는 문이나 창틀을 긁어 발톱이 빠지거나 치아가 파절되는 심각한 자해로 이어질 수 있습니다.</p>
 
-<h2>분리불안 증상</h2>
+<h2>분리불안 vs 유사 행동 감별 진단</h2>
+<p>혼자 있을 때 나타나는 모든 파괴 행동이나 짖음이 분리불안에 해당하는 것은 아닙니다. 원인을 잘못 진단하고 접근하면 오히려 반려견의 스트레스가 가중될 수 있으므로 정확한 감별이 선행되어야 합니다.</p>
+<div class="table-wrap">
+  <table>
+    <thead>
+      <tr>
+        <th scope="col">구분</th>
+        <th scope="col">발현 시점</th>
+        <th scope="col">주요 행동 양상</th>
+        <th scope="col">보호자 귀가 시 반응</th>
+        <th scope="col">감별 및 대처 핵심</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>분리불안</strong></td>
+        <td>외출 준비 시점 또는 외출 후 5~15분 이내.</td>
+        <td>출입문 및 창틀 집중 파괴, 지속적인 하울링, 침 흘림, 음식 거부.</td>
+        <td>15분 이상 극단적인 과흥분 지속, 헐떡임.</td>
+        <td>보호자 부재 시에만 발생하며, 단계별 탈감작과 행동 치료가 필수적입니다.</td>
+      </tr>
+      <tr>
+        <td><strong>무료함 및 에너지 과잉</strong></td>
+        <td>외출 후 수 시간 경과 시점.</td>
+        <td>가구 모서리, 신발, 휴지 등 손에 닿는 물건 탐색 및 저작.</td>
+        <td>통상적인 반가움 표시 후 5분 이내 안정.</td>
+        <td>산책 시간 확대와 지능형 노즈워크 장난감 제공으로 호전됩니다.</td>
+      </tr>
+      <tr>
+        <td><strong>노령견 인지기능장애(DISHA)</strong></td>
+        <td>시간대와 무관하며 야간에 심화.</td>
+        <td>벽을 보고 멍하니 서 있기, 구석에 끼여 후진하지 못함, 배변 실수.</td>
+        <td>보호자를 알아보는 반응이 둔화되거나 덤덤함.</td>
+        <td>10세 이상 노령견에서 호발하며 정밀 인지기능 평가와 항산화 관리가 필요합니다.</td>
+      </tr>
+      <tr>
+        <td><strong>비뇨기계 질환(방광염·신부전)</strong></td>
+        <td>보호자의 재실 여부와 무관.</td>
+        <td>잦은 배뇨 시도, 핍뇨, 혈뇨, 배뇨 시 통증 호소.</td>
+        <td>평소와 동일한 건강 상태 반응.</td>
+        <td>행동학적 원인이 아니므로 동물병원에서 요검사와 혈액 검사가 선행되어야 합니다.</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<p>노령견에서 이전에 없던 배변 실수나 혼란 증세가 나타난다면 행동 훈련에 앞서 <a href="/guide/senior-dog-care-guide">노령견 케어 가이드</a>를 참고하여 인지기능장애증후군(DISHA)과 비뇨기 질환 여부를 수의사와 상담하시기 바랍니다.</p>
+
+<h2>출발 단서 중립화(Pre-departure Cue Neutralization) 프로토콜</h2>
+<p>강아지는 보호자가 외출하기 전 반복하는 일상 루틴(열쇠 집기, 외출복 착용, 가방 챙기기, 도어락 작동음)을 불안을 유발하는 조건 자극(Conditioned Stimulus)으로 학습합니다. 이 단서와 실제 외출 사이의 연결 고리를 해체하는 중립화 훈련이 분리 훈련의 기초 단계입니다.</p>
+<div class="table-wrap">
+  <table>
+    <thead>
+      <tr>
+        <th scope="col">훈련 단계</th>
+        <th scope="col">자극 단서</th>
+        <th scope="col">보호자의 구체적 행동</th>
+        <th scope="col">권장 반복 빈도</th>
+        <th scope="col">다음 단계 진행 기준</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>1단계: 소지품 자극</strong></td>
+        <td>열쇠 및 차키 소리.</td>
+        <td>열쇠를 집어 들고 흔든 뒤 다시 내려놓고 소파에 앉아 휴식.</td>
+        <td>하루 5~8회 비주기적 반복.</td>
+        <td>열쇠 소리를 들어도 고개만 들거나 무관심하게 누워 있을 때.</td>
+      </tr>
+      <tr>
+        <td><strong>2단계: 복장 자극</strong></td>
+        <td>외출용 코트 및 가방 착용.</td>
+        <td>외출복을 입고 가방을 멘 채 거실에서 청소하거나 식사.</td>
+        <td>하루 3~5회 반복.</td>
+        <td>보호자의 옷차림 변화에도 꼬리를 내리거나 헐떡이지 않을 때.</td>
+      </tr>
+      <tr>
+        <td><strong>3단계: 현관 조작음</strong></td>
+        <td>도어락 터치 및 손잡이 조작.</td>
+        <td>현관문 손잡이를 딸깍거리거나 도어락을 터치한 뒤 거실로 복귀.</td>
+        <td>하루 5~10회 반복.</td>
+        <td>현관문 소리에 즉각 벌떡 일어나지 않고 차분히 방석에 머물 때.</td>
+      </tr>
+      <tr>
+        <td><strong>4단계: 현관문 개폐</strong></td>
+        <td>현관문 살짝 열기.</td>
+        <td>문을 5~10cm 열었다가 즉시 닫고 실내로 진입.</td>
+        <td>하루 5~8회 반복.</td>
+        <td>문이 열리고 닫히는 시각·청각 자극에 흥분 없이 안정 상태를 유지할 때.</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<h2>단계별 부재 시간 확장 프로토콜(Graduated Absences)</h2>
+<p>탈감작 훈련의 절대 원칙은 반려견이 공포와 공황을 느끼지 않는 '역치 이하(Sub-threshold)' 시간 범위에서만 진행하는 것입니다. 하품, 입술 핥기, 귀 뒤로 젖힘, 헐떡임 등 미세한 스트레스 시그널이 관찰된다면 이미 역치를 초과한 것이므로 시간을 줄여야 합니다.</p>
+<div class="table-wrap">
+  <table>
+    <thead>
+      <tr>
+        <th scope="col">단계 구분</th>
+        <th scope="col">목표 분리 시간</th>
+        <th scope="col">보호자 위치 및 이동</th>
+        <th scope="col">귀가 루틴 및 반응</th>
+        <th scope="col">성공 판정 기준</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>기초 1단계</strong></td>
+        <td>1~5초.</td>
+        <td>현관문을 완전히 닫고 문 밖 복도 대기 후 즉시 귀가.</td>
+        <td>눈을 마주치지 않고 담담하게 실내 진입.</td>
+        <td>문 긁기, 낑낑거림 없이 제자리에 머문 경우.</td>
+      </tr>
+      <tr>
+        <td><strong>기초 2단계</strong></td>
+        <td>15~30초.</td>
+        <td>복도 끝이나 엘리베이터 앞까지 이동 후 복귀.</td>
+        <td>과도한 인사나 칭찬 없이 자연스럽게 행동.</td>
+        <td>현관문 앞에서 서성이지 않고 차분함을 유지한 경우.</td>
+      </tr>
+      <tr>
+        <td><strong>발전 3단계</strong></td>
+        <td>1~2분.</td>
+        <td>계단을 이용해 다른 층으로 이동 후 복귀.</td>
+        <td>외출 전 간식을 제공했다면 남은 잔여물 정리.</td>
+        <td>CCTV 모니터링 상 하품이나 입술 핥기 등 스트레스 신호가 없는 경우.</td>
+      </tr>
+      <tr>
+        <td><strong>발전 4단계</strong></td>
+        <td>5~10분.</td>
+        <td>건물 1층 또는 주차장으로 내려가 대기 후 복귀.</td>
+        <td>평소와 동일한 리듬으로 신발 벗고 휴식.</td>
+        <td>누워서 쉬거나 간식 장난감에 집중하는 안정 행동을 보인 경우.</td>
+      </tr>
+      <tr>
+        <td><strong>심화 5단계</strong></td>
+        <td>20~30분.</td>
+        <td>인근 마트나 편의점 등 실제 용무 후 복귀.</td>
+        <td>귀가 후 5분간 반려견이 완전히 진정될 때까지 대기.</td>
+        <td>30분 동안 하울링이나 배변 실수 없이 독립적 수면 또는 휴식 유지.</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<p>훈련 시간은 선형적으로만 늘려서는 안 됩니다. 5분 성공 후 다음 회차에서는 2분, 그 다음 회차에서 6분처럼 난이도를 불규칙하게 섞어주어야 반려견이 부재 시간의 예측 실패로 인한 불안에 빠지지 않습니다.</p>
+
+<h2>일일 분리불안 훈련 기록표 예시</h2>
+<p>CCTV를 통해 관찰된 반려견의 미세 행동 반응을 일일 기록표로 체계화하면 역치 지점을 정확히 파악할 수 있습니다.</p>
+<div class="table-wrap">
+  <table>
+    <thead>
+      <tr>
+        <th scope="col">회차</th>
+        <th scope="col">훈련 일시</th>
+        <th scope="col">목표 시간</th>
+        <th scope="col">적용 단서 조합</th>
+        <th scope="col">관찰된 신체 언어(CCTV)</th>
+        <th scope="col">판정 결과</th>
+        <th scope="col">다음 회차 조정 계획</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>1회차</td>
+        <td>1일차 오전 10:00</td>
+        <td>20초</td>
+        <td>열쇠 + 코트 착용 후 문 닫기.</td>
+        <td>현관문을 응시하며 귀를 세우고 앉아 대기.</td>
+        <td>성공</td>
+        <td>동일 조건에서 30초로 점진적 확장.</td>
+      </tr>
+      <tr>
+        <td>2회차</td>
+        <td>1일차 오후 04:00</td>
+        <td>40초</td>
+        <td>가방 착용 후 도어락 잠금.</td>
+        <td>25초 경과 시점에 하품 2회 및 문 앞 서성거림 관찰.</td>
+        <td>경계(역치 초과)</td>
+        <td>다음 회차 20초로 시간 축소 후 안정감 재확립.</td>
+      </tr>
+      <tr>
+        <td>3회차</td>
+        <td>2일차 오전 11:00</td>
+        <td>20초</td>
+        <td>도어락 잠금 후 복도 대기.</td>
+        <td>방석에 엎드려 차분하게 주변 관찰.</td>
+        <td>성공</td>
+        <td>20초 안정 상태 3회 반복 확립.</td>
+      </tr>
+      <tr>
+        <td>4회차</td>
+        <td>2일차 오후 03:00</td>
+        <td>35초</td>
+        <td>일상복 상태에서 현관문 닫기.</td>
+        <td>문 닫힘 후 방석에서 편안한 자세 유지.</td>
+        <td>성공</td>
+        <td>50초 구간 단계적 진입 준비.</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<h2>환경 풍부화와 안전 구역(Safety Zone) 조성</h2>
+<h3>1. 켄넬(이동장) 사용 시 주의사항</h3>
+<p>폐쇄 공간에 대한 공포(Barrier Frustration)가 있는 반려견을 켄넬에 강제로 가두면 탈출을 시도하다 치아가 부러지거나 발톱이 찢어지는 심각한 부상을 입을 수 있습니다. 켄넬 훈련이 사전에 긍정적으로 형성되지 않았다면 <a href="/guide/carrier-training-guide">반려동물 이동장 적응 훈련 가이드</a>를 참고하여 문을 열어둔 상태에서 자발적 피난처로 인식시키는 훈련을 먼저 진행해야 합니다. 밀폐된 케이지 대신 안전 펜스로 넓은 독립 공간(Safety Zone)을 구획하고 평소 좋아하는 방석과 보호자의 체취가 밴 의류를 배치하는 방식이 권장됩니다.</p>
+
+<h3>2. 핥기 행동 유도(Licking)와 간식 장난감</h3>
+<p>반려견이 무언가를 지속적으로 핥는 동작은 뇌에서 엔도르핀과 세로토닌 분비를 촉진하여 심박수를 낮추고 안정감을 유도합니다. 출발 직전 핥기 매트(Lick Mat)나 KONG® 고무 장난감 내부에 습식 사료를 채워 얼려 제공하면 외출 후 초기 15~30분의 취약 구간 동안 불안 대신 긍정적인 탐색에 몰입하도록 유도할 수 있습니다.</p>
+
+<h3>3. 감각 자극 차단과 진정 보조제</h3>
+<p>창밖의 차량이나 행인 등 외부 시각 자극은 블라인드로 차단하고, 백색 소음(White Noise)이나 부드러운 클래식 음악을 재생하여 현관 밖 소음을 분산시킵니다. 어미 개의 모유 수유기 진정 페로몬을 합성한 DAP(Dog Appeasing Pheromone, Adaptil) 디퓨저를 안전 구역 콘센트에 설치하면 보조적인 스트레스 완화에 도움이 됩니다.</p>
+
+<h3>4. 일상 산책과 에너지 소산</h3>
+<p>외출 직전 30분 이상의 여유 있는 야외 산책과 노즈워크는 체내 과잉 에너지를 소모시켜 외출 후 수면을 유도합니다. 견종과 연령에 맞춘 적정 활동량은 <a href="/guide/dog-exercise-guide">반려견 산책 및 활동량 가이드</a>를 확인하시기 바랍니다.</p>
+
+<h2>의학적 약물 치료 병행 기준과 수의사 진료 의뢰</h2>
+<p class="guide-scope-note">본 가이드는 미국동물행동수의학회(AVSAB) 분리불안 치료 지침, 머크 수의학 매뉴얼(Merck Veterinary Manual) 임상 가이드라인, 미국동물병원협회(AAHA) 개 라이프스테이지 행동 건강 권고를 바탕으로 작성되었습니다.</p>
+<p>심각한 자해를 동반하거나 탈감작 훈련 중에도 극심한 공황 반응으로 학습 자체가 불가능한 중증 분리불안은 동물병원 내원을 통한 전문 수의행동의학적 진료가 병행되어야 합니다.</p>
 <ul>
-  <li><strong>보호자 떠나기 직전</strong>: 침 흘리기, 떨기, 문 앞에서 안 떨어지기</li>
-  <li><strong>혼자 있는 동안</strong>: 지속적 짖기·울기, 파괴 행동(가구·문틀), 화장실 훈련된 개의 배변 실수</li>
-  <li><strong>보호자 귀가 시</strong>: 과도하게 흥분된 반응이 10분 이상 지속</li>
-  <li>CCTV·이웃 민원으로 발견되는 경우도 많음</li>
+  <li><strong>행동 치료제의 의학적 역할</strong>: 미국 식품의약국(FDA) 승인을 받은 클로미프라민(Clomipramine)이나 플루옥세틴(Fluoxetine) 같은 약물은 강아지를 무기력하게 만드는 수면제가 아닙니다. 뇌 내 신경전달물질의 균형을 맞추어 반려견이 학습할 수 있는 안정된 심리 상태를 형성해 주는 치료 보조제입니다.</li>
+  <li><strong>단기 진정제 처방</strong>: 보호자의 긴급한 외출이 불가피하여 훈련 단계를 지키기 어려울 때, 급성 공황을 예방하기 위해 트라조돈(Trazodone)이나 가바펜틴(Gabapentin)이 단기 처방될 수 있습니다. 모든 약물은 수의사의 정밀 진단과 간·신장 기능 평가 후 처방되어야 합니다.</li>
+  <li><strong>처벌의 절대 금기</strong>: 귀가 후 어질러진 집안을 보고 소리를 지르거나 체벌하는 행위, 전기 충격 목줄, 짖음 방지 진동기 사용은 엄격히 금지됩니다. 개는 과거의 행동과 현재의 처벌을 인과적으로 연결하지 못하며, 보호자의 귀가를 공포의 대상으로 인식해 분리불안과 공격성을 치명적으로 악화시킵니다.</li>
 </ul>
 
-<h2>분리불안과 훈련 부족의 차이</h2>
-<ul>
-  <li>분리불안: 보호자가 없을 때만 증상 발생, 혼자 있는 시간 5분 이내에도 시작</li>
-  <li>단순 파괴 행동: 심심함·과잉 에너지가 원인, 산책·운동으로 호전됨</li>
-  <li>확인 방법: 외출 후 10분간 CCTV 영상 촬영으로 확인 권장</li>
-</ul>
+<h2>분리불안 대응 자주 묻는 질문 (FAQ)</h2>
+<div class="faq-list">
+  <h3>Q1. 둘째 강아지를 입양하면 분리불안이 자연스럽게 해결되나요?</h3>
+  <p>그렇지 않습니다. 분리불안은 동종 개체에 대한 의존이 아니라 특정 보호자와의 병리적 애착 관계에서 기인하는 경우가 대부분입니다. 따라서 둘째를 입양하더라도 보호자가 외출하면 여전히 불안을 느끼며, 오히려 새로 입양된 반려견이 기존 개의 불안 행동을 모방 학습하여 두 마리 모두 분리불안을 겪을 위험이 높습니다.</p>
 
-<h2>단계별 탈감작 훈련 (Desensitization)</h2>
-<h3>1단계: 출발 신호 중립화</h3>
-<ul>
-  <li>외출과 연관된 행동(열쇠 집기, 코트 입기)을 외출 없이도 반복해 자극을 중립화</li>
-  <li>하루 여러 차례 열쇠를 집었다 내려놓기만 함</li>
-</ul>
-<h3>2단계: 짧은 분리 연습</h3>
-<ul>
-  <li>문 너머로 나갔다 즉시 돌아오기(2초) → 3초 → 5초 → 1분 → 5분 순으로 점진적 연장</li>
-  <li>성공 기준: 짖음·긁기 없이 기다렸을 때만 시간 연장</li>
-  <li>실패 시 이전 단계로 되돌아가기</li>
-</ul>
-<h3>3단계: 안전 공간 만들기</h3>
-<ul>
-  <li>켄넬(이동장) 훈련: 켄넬을 좋은 경험과 연결 (그 안에서 간식·밥 주기)</li>
-  <li>강요 없이 자발적으로 들어가게 유도</li>
-  <li>켄넬은 처벌 도구가 아닌 안전 피난처로 인식시키기</li>
-</ul>
-<h3>4단계: 출발·귀가 루틴 무감동화</h3>
-<ul>
-  <li>출발 전 10~15분, 귀가 후 10분은 강아지에게 관심 주지 않기</li>
-  <li>조용히 안정된 후에 인사하기 — 과도한 이별·귀가 인사는 분리불안을 강화함</li>
-</ul>
+  <h3>Q2. 훈련 기간은 일반적으로 얼마나 소요되나요?</h3>
+  <p>경증 분리불안은 수 주 내에 부재 시간을 1~2시간으로 연장할 수 있으나, 중증의 경우 6개월에서 1년 이상의 장기적인 탈감작 프로토콜과 약물 치료 병행이 필요합니다. 조급하게 부재 시간을 늘리기보다 강아지의 안정 임계점을 철저히 지키는 신중한 접근이 전체 훈련 기간을 단축시키는 핵심입니다.</p>
 
-<h2>보조 도구 활용</h2>
-<ul>
-  <li><strong>퍼즐 피더·콩 장난감</strong>: 출발 직전에만 제공 → 외출을 기대하는 경험으로 전환</li>
-  <li><strong>칼밍 음악·백색 소음</strong>: 시각 자극 차단, 안정 효과</li>
-  <li><strong>페로몬 제품(Adaptil)</strong>: 엄마 개 페로몬 모방. 스트레스 완화 보조</li>
-</ul>
-
-<h2>중증 분리불안 시 수의사 상담</h2>
-<ul>
-  <li>탈감작 훈련에도 진전이 없으면 수의행동학 전문의 상담 권장</li>
-  <li>필요 시 항불안 약물 처방 (행동 수정 훈련과 병행)</li>
-  <li>훈련 전 갑상선·통증 등 기질적 원인 배제를 위한 신체 검진 권장</li>
-</ul>`,
-    disclaimer: null,
+  <h3>Q3. 기초 복종 훈련이 분리불안 개선에 실질적인 도움이 되나요?</h3>
+  <p><a href="/guide/dog-basic-training-guide">강아지 기초 훈련 가이드</a>에서 다루는 '기다려(Stay)' 명령과 독립된 방석에서 머무는 자리잡기(Place) 훈련은 보호자와 물리적 거리를 유지하면서도 심리적 안정감을 경험하게 돕습니다. 보호자의 시야 내에서 서서히 거리를 벌려나가는 훈련을 선행하면 현관문 밖 분리 훈련의 적응력이 한층 높아집니다.</p>
+</div>`,
+    disclaimer:
+      "본 가이드는 미국동물행동수의학회(AVSAB) 및 머크 수의학 매뉴얼(Merck Veterinary Manual)의 임상 행동의학 지침을 바탕으로 제작된 정보 제공용 문서이며, 수의사의 의학적·행동의학적 진단 및 치료를 대신할 수 없습니다. 심각한 자해, 식욕 부진, 극심한 공황 반응을 보이는 경우 동물병원에 내원하여 기질적 질환 감별과 전문 진료를 받으시기 바랍니다.",
     sources: [
-      "Overall KL — Clinical Behavioral Medicine for Small Animals (2013)",
-      "American Veterinary Society of Animal Behavior — Position Statement on Separation Anxiety (2023)",
-      "Landsberg GM et al. — Behavior Problems of the Dog and Cat, 3rd Ed. (2013)",
+      "American Veterinary Society of Animal Behavior (AVSAB) — Position Statement on the Treatment of Separation Anxiety: https://avsab.org/resources/position-statements/",
+      "Merck Veterinary Manual — Behavioral Problems of Dogs: Separation Anxiety in Dogs: https://www.merckvetmanual.com/behavior/behavioral-problems-of-dogs/separation-anxiety-in-dogs",
+      "American Animal Hospital Association (AAHA) — Canine Life Stage Guidelines & Behavioral Health: https://www.aaha.org/resources/canine-life-stage-guidelines/",
+      "Overall KL — Clinical Behavioral Medicine for Small Animals (Protocol for Desensitization and Counterconditioning)",
     ],
-    ymyl: false,
+    ymyl: true,
     status: "published",
     publishedAt: "2026-05-20T00:00:00.000Z",
     createdAt: NOW,
@@ -4355,7 +4543,7 @@ const SEED_CONTENTS: NewContent[] = [
   <li>차멀미가 있는 강아지는 소량 식사 후 1~2시간 뒤 탑승 권장</li>
 </ul>
 <h2>함께 확인할 준비</h2>
-<ul><li><a href="/guide/dog-adoption-checklist">입양 첫날 준비</a></li><li><a href="/guide/animal-hospital-guide">병원에 가져갈 기록과 방문 전 질문</a></li></ul>`,
+<ul><li><a href="/guide/dog-adoption-checklist">입양 첫날 준비</a></li><li><a href="/guide/animal-hospital-guide">병원에 가져갈 기록과 방문 전 질문</a></li><li><a href="/guide/dog-separation-anxiety-guide">강아지 분리불안 해결 가이드</a></li></ul>`,
     disclaimer: null,
     sources: [
       "American Association of Feline Practitioners (AAFP) Cat Friendly Practice Guidelines (2021)",
