@@ -85,7 +85,7 @@ const SEED_CONTENTS: NewContent[] = [
 <h2>동물등록은 현재 상태부터 확인</h2>
 <p>동물보호법 시행령의 등록대상동물 규정은 일반적으로 반려 목적으로 기르는 2개월령 이상 개를 대상으로 한다. 이미 등록된 개라면 신규 등록과 소유자 변경을 구분해야 한다. 적용 예외, 방법, 수수료와 변경 신고는 관할 지자체에 확인하고, 모든 개·고양이의 의무가 같다고 가정하지 않는다.</p>
 <h2>상황별로 이어서 확인하기</h2>
-<ul><li><a href="/guide/microchip-registration-complete-guide">동물등록 절차와 변경 신고 확인</a></li><li><a href="/guide/shelter-animal-adoption-guide">보호소 상담·방문·입양 준비</a></li><li><a href="/guide/carrier-training-guide">이동장에 익숙해지는 준비</a></li></ul>
+<ul><li><a href="/guide/microchip-registration-complete-guide">동물등록 절차와 변경 신고 확인</a></li><li><a href="/guide/shelter-animal-adoption-guide">보호소 상담·방문·입양 준비</a></li><li><a href="/guide/carrier-training-guide">이동장에 익숙해지는 준비</a></li><li><a href="/guide/dog-dental-care-guide">생애 주기별 치아·구강 관리 가이드</a></li></ul>
 <p>자료 확인일: 2026-10-11. 입양 조건과 비용은 개별 기관에 다시 확인한다.</p>
 <h2>근거를 직접 확인하기</h2>
 <ul><li><a href="https://www.avma.org/resources/pet-owners/petcare/selecting-pet-dog" target="_blank" rel="noopener noreferrer">AVMA의 개 입양 준비 안내</a></li><li><a href="https://www.animal.go.kr/front/awtis/protection/protectionList.do?menuNo=1000000060" target="_blank" rel="noopener noreferrer">국가동물보호정보시스템 보호 공고</a></li><li><a href="https://www.law.go.kr/lsLinkCommonInfo.do?lsJoLnkSeq=1030927001" target="_blank" rel="noopener noreferrer">동물보호법 시행령 등록대상 규정</a></li></ul>`,
@@ -790,70 +790,139 @@ const SEED_CONTENTS: NewContent[] = [
     slug: "dog-dental-care-guide",
     type: "guide",
     category: 5,
-    title: "강아지 치아·구강 관리 — 칫솔질부터 스케일링까지",
-    metaTitle: "강아지 치아 관리 | 칫솔질·스케일링·구강 질환 예방 | 펫지기",
+    title:
+      "강아지 치아·구강 관리 가이드 — 칫솔질 훈련법·치주 질환 4단계·안전 스케일링 수칙",
+    metaTitle: "강아지 치아 관리 가이드 | 칫솔질 훈련·치주 질환 단계·스케일링 | 펫지기",
     metaDescription:
-      "강아지 구강 관리의 핵심인 칫솔질 방법, 치석 제거, 스케일링 시기, 구강 질환 조기 신호를 정리했습니다.",
-    body: `<h2>왜 구강 관리가 중요한가?</h2>
-<p>3세 이상 강아지의 약 80%가 치주 질환을 앓고 있습니다. 구강 세균은 혈액을 통해 심장·신장·간에 영향을 미쳐 전신 질환으로 이어질 수 있습니다. 정기적인 칫솔질은 반려견의 수명을 최대 2~3년 연장할 수 있다는 연구도 있습니다.</p>
+      "미국수의치과협회(AVDC) 및 AAHA 기준 강아지 구강 관리 가이드. 4단계 치주 질환 판별, 2주 칫솔질 적응 로드맵, VOHC 인증 구강 보조제 비교, 전신마취 스케일링 안전 수칙을 정리했습니다.",
+    body: `<h2>반려견 치주 질환의 단계별 진행과 특징</h2>
+<p>미국수의치과협회(AVDC)의 임상 기준에 따르면 치주 질환은 치태(플라그)가 침 속 미네랄과 결합하여 치석으로 석회화되면서 치주 인대와 치조골을 파괴하는 과정으로 진행됩니다.</p>
+<div class="table-wrap">
+  <table>
+    <thead>
+      <tr>
+        <th scope="col">진행 단계</th>
+        <th scope="col">잇몸 및 치아 상태</th>
+        <th scope="col">조직 손상도</th>
+        <th scope="col">치료 및 관리 방향</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>1단계 (치은염).</strong></td>
+        <td>잇몸선 발적 및 부종, 경미한 구취 발생.</td>
+        <td>치주 부착 손상 없음 (가역적 단계).</td>
+        <td>매일 칫솔질과 정기적인 스케일링으로 정상 회복이 가능합니다.</td>
+      </tr>
+      <tr>
+        <td><strong>2단계 (초기 치주염).</strong></td>
+        <td>잇몸 출혈 및 치은 퇴축 시작, 치석 축적.</td>
+        <td>치주 지지 조직 손상 경미.</td>
+        <td>전신마취 스케일링과 치주 포켓 세정을 병행합니다.</td>
+      </tr>
+      <tr>
+        <td><strong>3단계 (중등도 치주염).</strong></td>
+        <td>잇몸 주머니(치주낭) 심화 및 통증 유발.</td>
+        <td>치조골 흡수 진행 및 치근 노출.</td>
+        <td>잇몸 치료(치근 활택술) 또는 선별적 발치가 필요할 수 있습니다.</td>
+      </tr>
+      <tr>
+        <td><strong>4단계 (중증 치주염).</strong></td>
+        <td>심한 통증, 지속적인 고름, 치아 심한 흔들림.</td>
+        <td>치조골 소실 심화 및 치근단 농양 위험.</td>
+        <td>동요 치아 발치 및 구비강 누공 예방 외과 수술이 권장됩니다.</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
 
-<h2>올바른 칫솔질 방법</h2>
-
-<h3>준비물</h3>
-<ul>
-  <li>반려동물 전용 칫솔 (손가락 칫솔 또는 소형 헤드 칫솔)</li>
-  <li>반려동물 전용 치약 (불소 없는 제품 필수 — 사람용 치약은 독성)</li>
-</ul>
-
-<h3>단계별 방법 (처음 시도 시)</h3>
+<h2>단계별 칫솔질 적응 훈련 로드맵</h2>
+<p>칫솔질을 억지로 강행하면 입을 만지는 것에 거부감을 느끼게 되므로 2주 이상의 점진적인 둔감화가 필요합니다.</p>
 <ol>
-  <li><strong>1주차</strong>: 손가락에 치약을 묻혀 치아·잇몸을 부드럽게 만져 치약 맛에 익숙하게</li>
-  <li><strong>2주차</strong>: 손가락 칫솔로 앞니부터 닦기 시작. 30초 이내</li>
-  <li><strong>3주차 이후</strong>: 일반 칫솔로 전환, 원형 운동으로 잇몸선까지 닦기. 목표 2분</li>
-  <li>칫솔질 후 항상 칭찬·간식으로 긍정 경험 형성</li>
+  <li><strong>1단계 (맛 적응):</strong> 손가락 끝에 반려견 전용 효소 치약을 묻혀 핥아먹게 하면서 긍정적 보상을 연결합니다.</li>
+  <li><strong>2단계 (입술 들기 및 잇몸 터치):</strong> 입술을 가볍게 들어 올린 뒤 손가락이나 덴탈 거즈로 앞니 바깥쪽 잇몸을 부드럽게 문지릅니다.</li>
+  <li><strong>3단계 (칫솔 도입):</strong> 소형 헤드 칫솔에 치약을 묻혀 바깥쪽 어금니 표면을 45도 각도로 원을 그리며 닦습니다. 혀와 타액이 닿는 안쪽 치면보다 바깥쪽 치면에 치석이 집중적으로 쌓입니다.</li>
+  <li><strong>4단계 (습관화 및 보상):</strong> 전체 치아 표면을 부드럽게 닦은 뒤 즉시 산책이나 칭찬으로 확실한 보상을 제공합니다.</li>
 </ol>
 
-<h3>칫솔질 빈도</h3>
+<h2>구강 관리 보조 도구 비교 및 VOHC 인증 기준</h2>
+<p>기계적 칫솔질을 완전히 대체할 수 있는 단독 도구는 없으나 보조 요법을 병행하면 치태 억제율을 높일 수 있습니다. 미국수의구강건강협회(VOHC) 인증 마크(VOHC Accepted)를 획득한 제품을 선별하는 것이 안전합니다.</p>
+<div class="table-wrap">
+  <table>
+    <thead>
+      <tr>
+        <th scope="col">보조 도구 분류</th>
+        <th scope="col">작용 기전</th>
+        <th scope="col">권장 활용법</th>
+        <th scope="col">핵심 주의사항</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>VOHC 인증 덴탈 껌</strong></td>
+        <td>저작 시 치면 마찰로 치태 형성 억제.</td>
+        <td>체중에 맞는 규격 1일 1개 급여.</td>
+        <td>급하게 삼키는 반려견은 질식이나 장폐색 위험이 있으므로 보호자가 잡고 씹히도록 유도합니다.</td>
+      </tr>
+      <tr>
+        <td><strong>워터 첨가제 및 치간 젤</strong></td>
+        <td>구강 내 혐기성 세균 증식 억제.</td>
+        <td>음수대 물에 희석하거나 잇몸선 도포.</td>
+        <td>알코올이나 자일리톨 성분이 포함되지 않은 전용 제품인지 확인해야 합니다.</td>
+      </tr>
+      <tr>
+        <td><strong>덴탈 와이프 (구강 티슈)</strong></td>
+        <td>치태의 물리적 닦아내기.</td>
+        <td>칫솔 거부감이 심한 초기 훈련 시 활용.</td>
+        <td>치아 사이 틈새나 치은낭 안쪽의 치석은 닦아낼 수 없으므로 칫솔로 점진 전환해야 합니다.</td>
+      </tr>
+      <tr>
+        <td><strong>동물 뼈 및 단단한 뿔</strong></td>
+        <td>물리적 마모 유도.</td>
+        <td>수의학적으로 권장되지 않음.</td>
+        <td>치아 파절(치관 파절) 및 위장 천공 위험이 높아 추천하지 않습니다.</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<h2>동물병원 전문 스케일링 안전 수칙</h2>
+<p>칫솔질로 제거되지 않는 단단한 치석은 동물병원에서 초음파 스케일링을 통해 제거해야 합니다. 주요 수의 치과 가이드라인에서는 안전한 기도 확보와 치은 연하(잇몸 속)의 완벽한 치석 세척을 위해 전신마취 하의 정밀 구강 처치를 권장합니다.</p>
 <ul>
-  <li>이상적: 매일 (혹은 주 3~4회 이상)</li>
-  <li>최소: 주 2~3회 이하로는 치석 예방 효과가 크게 떨어집니다</li>
+  <li><strong>마취 전 정밀 검사</strong>: 혈액 화학 검사, 전해질, 흉부 방사선 검사를 통해 간·신장 기능과 심장 안전성을 사전에 확인합니다.</li>
+  <li><strong>기관 튜브 삽관 호흡 마취</strong>: 초음파 스케일러에서 분사되는 세균성 미세 분무가 기도로 흘러들어 흡인성 폐렴을 일으키는 사고를 방지하기 위해 필수적입니다.</li>
+  <li><strong>치과 방사선 촬영(Dental X-ray)</strong>: 육안으로 보이지 않는 잇몸뼈(치조골) 흡수와 치근 농양을 진단하기 위해 전악 방사선 촬영을 진행합니다.</li>
+  <li><strong>폴리싱(Polishing, 치면 연마)</strong>: 스케일링으로 미세하게 거칠어진 치아 표면을 매끄럽게 연마하여 세균이 다시 부착되는 속도를 늦춥니다.</li>
+  <li><strong>무마취 스케일링의 위험성</strong>: 무마취 스케일링은 겉으로 보이는 치관 일부만 긁어낼 뿐, 질환의 근원인 잇몸 아래(치은 연하) 치석을 전혀 제거할 수 없으며 날카로운 기구로 인한 잇몸 손상과 호흡기 세균 감염 위험이 높아 수의치과협회에서 강력히 금지합니다.</li>
 </ul>
 
-<h2>칫솔질 대안 도구 비교</h2>
-<table>
-  <thead>
-    <tr><th>도구</th><th>효과</th><th>주의사항</th></tr>
-  </thead>
-  <tbody>
-    <tr><td>덴탈 껌·스틱</td><td>기계적 치석 제거 보조</td><td>주성분 확인 (자일리톨 금지), 과식 주의</td></tr>
-    <tr><td>구강 청결제 (물에 첨가)</td><td>세균 억제</td><td>알코올 없는 제품 선택</td></tr>
-    <tr><td>덴탈 와이프·거즈</td><td>잇몸 마사지 효과</td><td>칫솔질 대체 불가, 보조 사용</td></tr>
-    <tr><td>로우하이드·우육 뼈</td><td>물리적 치석 제거</td><td>소화 위험 있어 수의사 상담 후 선택</td></tr>
-  </tbody>
-</table>
-
-<h2>스케일링 — 시기와 절차</h2>
-<p>칫솔질만으로 제거되지 않은 치석은 전문 스케일링이 필요합니다.</p>
+<h2>구강 질환 의심 신호 및 연계 건강 관리</h2>
+<p>심한 입 냄새, 침 흘림, 앞발로 입을 비비는 행동, 한쪽으로만 씹거나 딱딱한 간식을 거부하는 증상은 심각한 치통의 신호입니다. 구강 세균은 혈류를 타고 심장 판막증과 만성 신장 질환을 악화시킬 수 있으므로 조기 발견이 중요합니다.</p>
 <ul>
-  <li><strong>권장 주기</strong>: 소형견 연 1~2회, 대형견 1~3년에 1회 (치석 형성 속도에 따라 조정)</li>
-  <li><strong>절차</strong>: 전신마취 → 초음파 스케일링 → 치아 연마(폴리싱) → 불소 도포</li>
-  <li><strong>비용</strong>: 10~30만 원 내외 (병원·규모에 따라 상이)</li>
-  <li><strong>전마취 전 혈액 검사 권장</strong>: 전신마취 안전성 확인</li>
+  <li>입양 초기 건강 관리와 준비 사항은 <a href="/guide/dog-adoption-checklist">강아지 입양 체크리스트</a>를 확인하시기 바랍니다.</li>
+  <li>나이 든 반려견의 마취 안전성과 만성 질환 관리는 <a href="/guide/senior-dog-care-guide">노령견 돌봄 가이드</a>를 참고하시기 바랍니다.</li>
+  <li>정기 건강검진 항목과 마취 전 혈액 검사 기준은 <a href="/guide/pet-health-checkup-guide">반려동물 건강검진 가이드</a>에서 상세히 다루고 있습니다.</li>
+  <li>생애 초기 유치 잔존 여부와 영구치 맹출 관리는 <a href="/guide/puppy-first-year-guide">강아지 생애 첫 1년 성장 가이드</a>를 확인하시기 바랍니다.</li>
+  <li>치과 전문 장비를 갖춘 병원 선택 요령은 <a href="/guide/animal-hospital-guide">동물병원 선택 및 진료 준비 가이드</a>를 참조하시기 바랍니다.</li>
 </ul>
 
-<h2>치주 질환 조기 신호</h2>
-<ul>
-  <li>입 냄새(구취): 가장 흔한 초기 신호</li>
-  <li>잇몸 빨개짐·출혈: 칫솔질 시 피가 남</li>
-  <li>치아 색 변화: 노랗거나 갈색 치석 형성</li>
-  <li>씹기 불편: 딱딱한 음식 거부, 한쪽으로만 씹음</li>
-  <li>침 과다 분비: 구강 통증 신호</li>
-</ul>`,
+<h2>강아지 치아 관리 자주 묻는 질문 (FAQ)</h2>
+<div class="faq-list">
+  <h3>Q1. 사람용 치약을 개에게 사용해도 되나요?</h3>
+  <p>절대 안 됩니다. 사람용 치약에 포함된 불소(Fluoride)와 발포제, 인공 감미료인 자일리톨(Xylitol)은 삼키는 반려견에게 급성 저혈당, 간부전, 신경 중독을 일으키는 유독 물질입니다. 반드시 삼켜도 무해한 반려동물 전용 효소 치약을 사용해야 합니다.</p>
+
+  <h3>Q2. 칫솔질은 하루 중 언제 하는 것이 가장 효과적인가요?</h3>
+  <p>저녁 식사를 마친 뒤 취침 전이 가장 이상적입니다. 수면 중에는 타액 분비량이 줄어 세균 증식이 빨라지므로 자기 전에 음식물 찌꺼기와 치태를 제거하는 것이 치석 예방에 매우 효과적입니다.</p>
+
+  <h3>Q3. 스케일링은 얼마의 주기로 받는 것이 좋은가요?</h3>
+  <p>치석 형성 속도와 잇몸 건강에 따라 개체별 차이가 큽니다. 치열이 촘촘한 소형견이나 단두종 품종은 1년에 1회, 중대형견은 1~2년에 1회 정기 검진을 통해 치석과 치주낭 상태를 확인한 뒤 수의사와 상의하여 진행 시점을 결정합니다.</p>
+</div>`,
     disclaimer: null,
     sources: [
-      "VOHC (Veterinary Oral Health Council) — Accepted Products List (2024)",
-      "대한수의사회 구강 관리 권고 기준 (2023)",
-      "American Veterinary Dental College — Home Care Guide (2024)",
+      "American Veterinary Dental College (AVDC) — Stages of Periodontal Disease: https://avdc.org/periodontal-disease/",
+      "Veterinary Oral Health Council (VOHC) — Accepted Products for Dogs: https://vohc.org/accepted-products/",
+      "American Animal Hospital Association (AAHA) — Dental Care Guidelines for Dogs and Cats: https://www.aaha.org/resources/dental-care-guidelines/",
+      "World Small Animal Veterinary Association (WSAVA) — Global Dental Guidelines: https://wsava.org/global-guidelines/global-dental-guidelines/",
     ],
     ymyl: false,
     status: "published",
