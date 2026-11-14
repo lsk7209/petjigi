@@ -158,7 +158,7 @@ const SEED_CONTENTS: NewContent[] = [
 <p>집에 도착하기 전에 안전하고 편안한 생활 환경을 미리 완비해 두어야 사고를 예방할 수 있습니다.</p>
 <ul>
   <li><strong>안전한 이동장(크레이트)</strong>: 체구에 맞고 환기가 원활한 켄넬을 준비하여 차량 이동 시 안전하게 고정합니다. 이동장 적응은 <a href="/guide/carrier-training-guide">반려동물 이동장 적응 훈련 가이드</a>를 참고하시기 바랍니다.</li>
-  <li><strong>전용 안전 울타리와 배변 패드</strong>: 활동 공간을 초기에 제한하여 배변 성공률을 높입니다. 체계적인 훈련법은 <a href="/guide/puppy-potty-training">강아지 배변 훈련 가이드</a>를 확인하시기 바랍니다.</li>
+  <li><strong>전용 안전 울타리와 배변 패드</strong>: 활동 공간을 초기에 제한하여 배변 성공률을 높이고 실내 사고를 예방합니다.</li>
   <li><strong>기존 급여 사료</strong>: 보호소나 기존 보호자로부터 먹이던 사료를 받아 최소 일주일간 동일하게 급여하며, 급작스러운 사료 교체로 인한 소화기 장애를 방지합니다.</li>
   <li><strong>실내 위험 요소 격리</strong>: 물어뜯기 쉬운 전선, 삼킬 수 있는 작은 물건, 독성 식물과 사람용 의약품은 강아지가 닿지 않는 곳으로 치워둡니다.</li>
 </ul>
@@ -174,11 +174,11 @@ const SEED_CONTENTS: NewContent[] = [
 <h2>생애 주기별 연계 돌봄 및 교육</h2>
 <p>입양은 새로운 가족의 삶이 시작되는 첫걸음이며 체계적인 교육과 건강 관리가 뒤따라야 합니다.</p>
 <ul>
-  <li>생후 초기 필수 백신 접종과 성장 주기는 <a href="/guide/puppy-first-year-guide">강아지 생애 첫 1년 성장 가이드</a>에서 확인할 수 있습니다.</li>
-  <li>생애 초기 사회화와 환경 적응은 <a href="/guide/puppy-socialization-guide">강아지 사회화 훈련 가이드</a>를 참고하시기 바랍니다.</li>
-  <li>긍정 강화를 활용한 기초 예절 훈련은 <a href="/guide/dog-basic-training-guide">강아지 기초 훈련 가이드</a>를 참조하시기 바랍니다.</li>
-  <li>혼자 남겨지는 시간에 대한 불안 완화는 <a href="/guide/dog-separation-anxiety-guide">강아지 분리불안 가이드</a>를 확인하시기 바랍니다.</li>
-  <li>생애 초기 유치 관리 및 구강 건강은 <a href="/guide/dog-dental-care-guide">강아지 치아 및 구강 관리 가이드</a>를 확인하시기 바랍니다.</li>
+  <li>생후 초기 필수 백신 접종과 성장 주기 확인: 기초 면역 형성을 위한 예방접종 일정을 수립합니다.</li>
+  <li>생애 초기 사회화와 환경 적응: 낯선 소리와 자극에 긍정적인 경험을 쌓도록 돕습니다.</li>
+  <li>긍정 강화를 활용한 기초 예절 훈련: 칭찬과 보상을 중심으로 안정적인 생활 습관을 형성합니다.</li>
+  <li>혼자 남겨지는 시간에 대한 불안 완화: 짧은 시간부터 시작하여 점진적으로 독립심을 키워줍니다.</li>
+  <li>생애 초기 유치 관리 및 구강 건강: 칫솔질에 서서히 적응시키며 치아 건강을 관리합니다.</li>
 </ul>
 
 <h2>강아지 입양 자주 묻는 질문 (FAQ)</h2>
@@ -191,13 +191,21 @@ const SEED_CONTENTS: NewContent[] = [
 
   <h3>Q3. 입양 후 바로 목욕을 시켜도 되나요?</h3>
   <p>입양 직후의 강아지는 환경 변화로 면역력이 떨어져 있습니다. 곧바로 물목욕을 시키면 급격한 체온 저하와 스트레스로 질병에 취약해질 수 있으므로, 오염된 부위만 따뜻한 물수건으로 가볍게 닦아주고 본격적인 목욕은 최소 3~5일간 환경에 적응한 뒤 진행하는 것이 안전합니다.</p>
-</div>`,
+</div>
+
+<h2>근거 자료 및 공식 출처</h2>
+<ul>
+  <li><a href="https://www.avma.org/resources/pet-owners/petcare/selecting-pet-dog" target="_blank" rel="noopener noreferrer">미국수의사회(AVMA) — 반려견 입양 및 선택 기준 안내</a></li>
+  <li><a href="https://www.aaha.org/resources/life-stage-guidelines/" target="_blank" rel="noopener noreferrer">미국동물병원협회(AAHA) — 반려견 생애주기별 건강 관리 표준</a></li>
+  <li><a href="https://www.animal.go.kr/front/awtis/protection/protectionList.do?menuNo=1000000060" target="_blank" rel="noopener noreferrer">국가동물보호정보시스템 — 유기동물 보호 공고 및 입양 절차</a></li>
+  <li><a href="https://www.law.go.kr/lsLinkCommonInfo.do?lsJoLnkSeq=1030927001" target="_blank" rel="noopener noreferrer">대한민국 법제처 — 동물보호법 시행령 등록대상동물 규정</a></li>
+</ul>`,
     disclaimer: null,
     sources: [
-      "American Veterinary Medical Association (AVMA) — Selecting and Caring for a Dog: https://www.avma.org/resources/pet-owners/petcare/selecting-pet-dog",
-      "American Animal Hospital Association (AAHA) — Canine Life Stage Guidelines: https://www.aaha.org/resources/life-stage-guidelines/",
-      "국가동물보호정보시스템 — 유기동물 입양 및 등록 안내: https://www.animal.go.kr/",
-      "대한민국 법제처 — 동물보호법 및 시행령 등록대상동물 규정: https://www.law.go.kr/",
+      "https://www.avma.org/resources/pet-owners/petcare/selecting-pet-dog",
+      "https://www.aaha.org/resources/life-stage-guidelines/",
+      "https://www.animal.go.kr/front/awtis/protection/protectionList.do?menuNo=1000000060",
+      "https://www.law.go.kr/lsLinkCommonInfo.do?lsJoLnkSeq=1030927001",
     ],
     ymyl: false,
     status: "published",
