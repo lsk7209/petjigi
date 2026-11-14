@@ -66,35 +66,147 @@ const SEED_CONTENTS: NewContent[] = [
     slug: "dog-adoption-checklist",
     type: "guide",
     category: 1,
-    title: "강아지 입양 전 체크리스트 — 준비부터 동물등록까지",
-    metaTitle: "강아지 입양 체크리스트 | 준비·비용·동물등록 | 펫지기",
+    title:
+      "강아지 입양 전 체크리스트 — 5대 준비 기준·3-3-3 적응 법칙·동물등록 및 첫 진료 준비",
+    metaTitle:
+      "강아지 입양 체크리스트 | 5대 준비 기준·3-3-3 적응 법칙·동물등록 | 펫지기",
     metaDescription:
-      "강아지 입양 전 가족·주거·돌봄 계획, 실제 견적을 적는 예산표, 인계받을 건강 기록과 첫날 준비, 동물등록 확인 순서를 안내합니다.",
-    body: `<p>강아지를 데려오기 전에 확인할 핵심은 물건 목록보다 <strong>누가 돌보고, 어디에서 지내며, 예상 밖 상황을 어떻게 감당할지</strong>다. 아래 표를 가족과 함께 채워보자. 필요한 시간과 비용은 나이·건강·생활환경에 따라 달라 일률적인 최소 시간이나 월 비용으로 판단하지 않는다.</p>
-<h2>입양을 결정하기 전 가족 점검표</h2>
-<table><caption>빈칸이 남으면 입양 전에 해결할 질문</caption><thead><tr><th>확인 항목</th><th>적어둘 결정</th><th>아직 결정하지 못했다면</th></tr></thead><tbody><tr><td>주거 조건</td><td>임대차 조건·공동주택 규약, 안전한 휴식 공간</td><td>관리주체나 임대인에게 확인</td></tr><tr><td>평일 돌봄</td><td>급여·배변·산책 담당과 부재 시간</td><td>돌봄 대체자와 이용 조건 확인</td></tr><tr><td>가족 동의</td><td>알레르기·두려움·역할 분담</td><td>동거인과 먼저 합의</td></tr><tr><td>장기 변화</td><td>이사·출장·질병 때 돌봄 방법</td><td>대체 돌봄과 이동 계획 준비</td></tr></tbody></table>
-<h2>초기·반복·비상 지출을 나눠 적기</h2>
-<p>인터넷의 평균 비용을 그대로 예산으로 쓰지 말고 실제 판매처·병원·돌봄 서비스에 문의한 견적을 적는다. 아래는 <strong>예산 작성용 빈 양식</strong>이며 실제 가격이나 권장 지출액이 아니다.</p>
-<table><thead><tr><th>구분</th><th>포함할 항목</th><th>내 견적·문의일</th></tr></thead><tbody><tr><td>초기</td><td>이동장, 식기, 침구, 목줄·하네스, 첫 진료와 등록</td><td>_____원 / _____</td></tr><tr><td>반복</td><td>사료, 배변용품, 정기 진료, 미용·돌봄</td><td>_____원 / _____</td></tr><tr><td>비상</td><td>예상하지 못한 진료, 보호자 부재 때 위탁</td><td>준비 방법: _____</td></tr></tbody></table>
-<h2>입양 경로와 인계받을 기록</h2>
-<p>보호소 공고는 국가동물보호정보시스템에서 확인하고 입양 가능 여부와 상담·방문 절차는 해당 보호센터에 직접 문의한다. 민간 단체나 판매자를 이용하는 경우에도 동물의 이력, 계약 내용, 문의 담당자를 확인한다. 특정 협회 가입이나 가격만으로 건강·책임 있는 돌봄을 보증할 수 없다.</p>
-<ul><li>추정 생년월일, 현재 먹는 사료와 생활 습관</li><li>예방접종·기생충 관리·진료 기록과 투약 중인 약</li><li>기존 동물등록 번호와 소유자 변경 필요 여부</li><li>알려진 행동 특성, 낯선 사람·동물에 대한 반응</li><li>계약·인계 서류, 상담 연락처, 인계 뒤 문의 방법</li></ul>
-<h2>데려오는 날과 첫 진료 준비</h2>
-<ol><li>탈출·삼킴·전선 위험을 치우고 조용한 휴식 장소와 물을 준비한다.</li><li>안전한 이동장을 이용하고, 집에 오면 만지거나 사진을 찍으려고 강요하지 않는다.</li><li>기존 급여 정보를 받아 식사 계획을 확인한다. 적응을 이유로 물을 제한하지 않는다.</li><li>가까운 병원에 초기 검진을 문의하고 인계받은 기록을 가져간다. 접종·기생충 관리·중성화는 개체별로 상담한다.</li></ol>
-<p>식욕 저하나 설사·무기력 등을 단순 적응 문제로 단정해 오래 기다리지 말고 병원에 문의한다. 방문 준비는 <a href="/guide/animal-hospital-guide">동물병원 선택 가이드</a>에서 확인할 수 있다.</p>
-<h2>동물등록은 현재 상태부터 확인</h2>
-<p>동물보호법 시행령의 등록대상동물 규정은 일반적으로 반려 목적으로 기르는 2개월령 이상 개를 대상으로 한다. 이미 등록된 개라면 신규 등록과 소유자 변경을 구분해야 한다. 적용 예외, 방법, 수수료와 변경 신고는 관할 지자체에 확인하고, 모든 개·고양이의 의무가 같다고 가정하지 않는다.</p>
-<h2>상황별로 이어서 확인하기</h2>
-<ul><li><a href="/guide/microchip-registration-complete-guide">동물등록 절차와 변경 신고 확인</a></li><li><a href="/guide/shelter-animal-adoption-guide">보호소 상담·방문·입양 준비</a></li><li><a href="/guide/carrier-training-guide">이동장에 익숙해지는 준비</a></li></ul>
-<p>자료 확인일: 2026-10-11. 입양 조건과 비용은 개별 기관에 다시 확인한다.</p>
-<h2>근거를 직접 확인하기</h2>
-<ul><li><a href="https://www.avma.org/resources/pet-owners/petcare/selecting-pet-dog" target="_blank" rel="noopener noreferrer">AVMA의 개 입양 준비 안내</a></li><li><a href="https://www.animal.go.kr/front/awtis/protection/protectionList.do?menuNo=1000000060" target="_blank" rel="noopener noreferrer">국가동물보호정보시스템 보호 공고</a></li><li><a href="https://www.law.go.kr/lsLinkCommonInfo.do?lsJoLnkSeq=1030927001" target="_blank" rel="noopener noreferrer">동물보호법 시행령 등록대상 규정</a></li></ul>`,
+      "미국수의사회(AVMA) 및 동물복지 기준 강아지 입양 체크리스트. 입양 전 5대 환경 점검, 입양 후 3-3-3 적응 법칙, 필수 안전 용품과 동물등록 절차, 첫 병원 진료 준비를 정리했습니다.",
+    body: `<h2>입양 전 가족 환경 점검과 5대 준비 기준</h2>
+<p>반려견 입양은 15년 이상의 긴 생애를 책임지는 중대한 결정입니다. 동물복지 및 수의학 가이드라인에 따른 입양 전 필수 점검 항목입니다.</p>
+<div class="table-wrap">
+  <table>
+    <thead>
+      <tr>
+        <th scope="col">점검 영역</th>
+        <th scope="col">핵심 확인 질문</th>
+        <th scope="col">사전 합의 및 준비 과제</th>
+        <th scope="col">주의사항</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>주거 환경.</strong></td>
+        <td>공동주택 규약 및 임대차 계약상 반려동물 사육이 허용되는가?</td>
+        <td>관리사무소 확인 및 낙상·탈출 방지 안전문 설치.</td>
+        <td>베란다 난간 틈새와 현관 중문 유무를 사전 점검합니다.</td>
+      </tr>
+      <tr>
+        <td><strong>돌봄 시간.</strong></td>
+        <td>하루 중 반려견이 홀로 남겨지는 시간이 과도하지 않은가?</td>
+        <td>가족 구성원 간 산책·배변·식사 전담 순번 지정.</td>
+        <td>어린 강아지는 잦은 배변 유도와 사회화가 필요합니다.</td>
+      </tr>
+      <tr>
+        <td><strong>가족 합의.</strong></td>
+        <td>동거 가족 전원이 입양에 동의하며 알레르기가 없는가?</td>
+        <td>가족 전원 알레르기 사전 검사 및 양육 의사 합치.</td>
+        <td>한 사람의 일방적 결정은 파양 위험을 높입니다.</td>
+      </tr>
+      <tr>
+        <td><strong>경제적 계획.</strong></td>
+        <td>정기 진료비, 사료비, 예상치 못한 의료비를 감당할 수 있는가?</td>
+        <td>초기 필수 용품과 응급 의료비 예비 자금 마련.</td>
+        <td>노령기 만성 질환 대비 저축 계획을 수립합니다.</td>
+      </tr>
+      <tr>
+        <td><strong>장기 변화.</strong></td>
+        <td>이사, 결혼, 출산, 이직 등 미래 변화에도 함께할 수 있는가?</td>
+        <td>생애 주기 전체를 함께할 보호자의 책임 의지 확립.</td>
+        <td>생활 양식 변화 시 대체 돌봄 체계를 준비합니다.</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<h2>입양 후 적응을 돕는 '3-3-3 원칙'</h2>
+<p>새로운 환경에 입양된 유기견이나 어린 강아지가 심리적 안정을 찾기까지는 시간이 걸립니다. 수의행동학계에서 통용되는 '3-3-3 원칙'을 바탕으로 반려견의 상태를 세심하게 배려해야 합니다.</p>
+<div class="table-wrap">
+  <table>
+    <thead>
+      <tr>
+        <th scope="col">적응 기간</th>
+        <th scope="col">심리 및 행동 상태</th>
+        <th scope="col">보호자의 권장 대처법</th>
+        <th scope="col">절대 주의점</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>최초 3일.</strong></td>
+        <td>극심한 혼란과 긴장, 식욕 저하, 구석에 웅크림.</td>
+        <td>조용하고 아늑한 전용 쉼터를 제공하고 혼자 쉬게 둠.</td>
+        <td>지나치게 만지거나 사진 촬영을 강요하지 않습니다.</td>
+      </tr>
+      <tr>
+        <td><strong>3주 경과.</strong></td>
+        <td>새로운 환경에 익숙해지며 실제 성격과 호기심 표출.</td>
+        <td>일정한 급여·배변·취침 루틴을 정착시키고 기본 훈련 시작.</td>
+        <td>통제되지 않은 낯선 손님 초대는 자제합니다.</td>
+      </tr>
+      <tr>
+        <td><strong>3개월 경과.</strong></td>
+        <td>가족 구성원으로 완전히 안착하고 깊은 유대감 형성.</td>
+        <td>꾸준한 긍정 강화 교육과 사회화 활동 지속.</td>
+        <td>갑작스러운 생활 패턴 변경은 분리불안을 부를 수 있습니다.</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<h2>입양 당일 필수 준비물과 안전 공간 설계</h2>
+<p>집에 도착하기 전에 안전하고 편안한 생활 환경을 미리 완비해 두어야 사고를 예방할 수 있습니다.</p>
+<ul>
+  <li><strong>안전한 이동장(크레이트)</strong>: 체구에 맞고 환기가 원활한 켄넬을 준비하여 차량 이동 시 안전하게 고정합니다. 이동장 적응은 <a href="/guide/carrier-training-guide">반려동물 이동장 적응 훈련 가이드</a>를 참고하시기 바랍니다.</li>
+  <li><strong>전용 안전 울타리와 배변 패드</strong>: 활동 공간을 초기에 제한하여 배변 성공률을 높이고 실내 사고를 예방합니다.</li>
+  <li><strong>기존 급여 사료</strong>: 보호소나 기존 보호자로부터 먹이던 사료를 받아 최소 일주일간 동일하게 급여하며, 급작스러운 사료 교체로 인한 소화기 장애를 방지합니다.</li>
+  <li><strong>실내 위험 요소 격리</strong>: 물어뜯기 쉬운 전선, 삼킬 수 있는 작은 물건, 독성 식물과 사람용 의약품은 강아지가 닿지 않는 곳으로 치워둡니다.</li>
+</ul>
+
+<h2>법적 동물등록 및 건강 기록 인계</h2>
+<p>관련 동물등록 규정에 따라 반려 목적으로 함께하는 개는 지자체 의무 등록 절차를 밟아야 합니다.</p>
+<ul>
+  <li><strong>동물등록 방식</strong>: 쌀알 크기의 마이크로칩을 체내에 삽입하는 내장형 무선식별장치 방식과 목걸이 형태의 외장형 태그 방식 중 선택할 수 있습니다. 훼손 및 분실 위험이 없는 내장형 방식이 분실 방지에 가장 효과적입니다. 세부 절차는 <a href="/guide/microchip-registration-complete-guide">동물등록 절차 및 변경 신고 가이드</a>를 확인하시기 바랍니다.</li>
+  <li><strong>인계 서류 확인</strong>: 이전 보호자나 지자체 동물보호센터로부터 동물등록 변경 신고서, 종합 백신 및 광견병 접종 수첩, 구충 투약 내역서를 정확히 인계받아야 합니다. 보호소 입양 절차는 <a href="/guide/shelter-animal-adoption-guide">보호소 유기동물 입양 가이드</a>를 참조하시기 바랍니다.</li>
+  <li><strong>초기 건강검진 예약</strong>: 입양 후 일주일 이내에 동물병원을 방문하여 분변 검사, 귓속 검이경 검사, 기초 신체검사를 진행합니다. 병원 방문 준비는 <a href="/guide/animal-hospital-guide">동물병원 선택 및 진료 준비 가이드</a>를 참고하시기 바랍니다.</li>
+</ul>
+
+<h2>생애 주기별 연계 돌봄 및 교육</h2>
+<p>입양은 새로운 가족의 삶이 시작되는 첫걸음이며 체계적인 교육과 건강 관리가 뒤따라야 합니다.</p>
+<ul>
+  <li>생후 초기 필수 백신 접종과 성장 주기 확인: 기초 면역 형성을 위한 예방접종 일정을 수립합니다.</li>
+  <li>생애 초기 사회화와 환경 적응: 낯선 소리와 자극에 긍정적인 경험을 쌓도록 돕습니다.</li>
+  <li>긍정 강화를 활용한 기초 예절 훈련: 칭찬과 보상을 중심으로 안정적인 생활 습관을 형성합니다.</li>
+  <li>혼자 남겨지는 시간에 대한 불안 완화: 짧은 시간부터 시작하여 점진적으로 독립심을 키워줍니다.</li>
+  <li>생애 초기 유치 관리 및 구강 건강: 칫솔질에 서서히 적응시키며 치아 건강을 관리합니다.</li>
+</ul>
+
+<h2>강아지 입양 자주 묻는 질문 (FAQ)</h2>
+<div class="faq-list">
+  <h3>Q1. 입양 첫날 밤에 강아지가 낑낑거리며 울면 안아주어야 하나요?</h3>
+  <p>어미나 동배 형제와 떨어져 낯선 공간에 홀로 남겨졌을 때 느끼는 자연스러운 불안감입니다. 안아서 달래주기보다는 이동장이나 잠자리 옆에 따뜻한 온수 주머니를 수건에 감싸 넣어주고, 심장 박동과 유사한 규칙적 소리나 체취가 묻은 담요를 놓아주어 안정을 찾도록 돕는 것이 좋습니다.</p>
+
+  <h3>Q2. 기존에 키우던 반려견과의 첫 만남은 어떻게 진행하나요?</h3>
+  <p>집 안이라는 한정된 영역에서 바로 대면하면 영역 방어 본능으로 충돌이 일어날 수 있습니다. 냄새가 섞이지 않은 중립적인 야외 공간에서 일정한 거리를 두고 나란히 평행 산책을 하면서 서로의 존재에 차분하게 적응하도록 유도해야 합니다.</p>
+
+  <h3>Q3. 입양 후 바로 목욕을 시켜도 되나요?</h3>
+  <p>입양 직후의 강아지는 환경 변화로 면역력이 떨어져 있습니다. 곧바로 물목욕을 시키면 급격한 체온 저하와 스트레스로 질병에 취약해질 수 있으므로, 오염된 부위만 따뜻한 물수건으로 가볍게 닦아주고 본격적인 목욕은 최소 3~5일간 환경에 적응한 뒤 진행하는 것이 안전합니다.</p>
+</div>
+
+<h2>근거 자료 및 공식 출처</h2>
+<ul>
+  <li><a href="https://www.avma.org/resources/pet-owners/petcare/selecting-pet-dog" target="_blank" rel="noopener noreferrer">미국수의사회(AVMA) — 반려견 입양 및 선택 기준 안내</a></li>
+  <li><a href="https://www.aaha.org/resources/life-stage-guidelines/" target="_blank" rel="noopener noreferrer">미국동물병원협회(AAHA) — 반려견 생애주기별 건강 관리 표준</a></li>
+  <li><a href="https://www.animal.go.kr/front/awtis/protection/protectionList.do?menuNo=1000000060" target="_blank" rel="noopener noreferrer">국가동물보호정보시스템 — 유기동물 보호 공고 및 입양 절차</a></li>
+  <li><a href="https://www.law.go.kr/lsLinkCommonInfo.do?lsJoLnkSeq=1030927001" target="_blank" rel="noopener noreferrer">대한민국 법제처 — 동물보호법 시행령 등록대상동물 규정</a></li>
+</ul>`,
     disclaimer: null,
     sources: [
       "https://www.avma.org/resources/pet-owners/petcare/selecting-pet-dog",
+      "https://www.aaha.org/resources/life-stage-guidelines/",
       "https://www.animal.go.kr/front/awtis/protection/protectionList.do?menuNo=1000000060",
-      "https://www.law.go.kr/lsLinkCommonInfo.do?lsJoLnkSeq=1030927001"
-],
+      "https://www.law.go.kr/lsLinkCommonInfo.do?lsJoLnkSeq=1030927001",
+    ],
     ymyl: false,
     status: "published",
     publishedAt: "2026-05-05T00:00:00.000Z",
