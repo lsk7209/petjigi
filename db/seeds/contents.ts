@@ -4355,7 +4355,7 @@ const SEED_CONTENTS: NewContent[] = [
   <li>차멀미가 있는 강아지는 소량 식사 후 1~2시간 뒤 탑승 권장</li>
 </ul>
 <h2>함께 확인할 준비</h2>
-<ul><li><a href="/guide/dog-adoption-checklist">입양 첫날 준비</a></li><li><a href="/guide/animal-hospital-guide">병원에 가져갈 기록과 방문 전 질문</a></li></ul>`,
+<ul><li><a href="/guide/dog-grooming-guide">홈그루밍 및 목욕 관리 가이드</a></li><li><a href="/guide/dog-adoption-checklist">입양 첫날 준비</a></li><li><a href="/guide/animal-hospital-guide">병원에 가져갈 기록과 방문 전 질문</a></li></ul>`,
     disclaimer: null,
     sources: [
       "American Association of Feline Practitioners (AAFP) Cat Friendly Practice Guidelines (2021)",
@@ -4559,57 +4559,139 @@ const SEED_CONTENTS: NewContent[] = [
     slug: "dog-grooming-guide",
     type: "guide",
     category: 5,
-    title: "강아지 목욕·미용 가이드 — 주기·방법·집에서 하는 법",
-    metaTitle: "강아지 목욕 주기·방법·홈그루밍 | 품종별 미용 | 펫지기",
+    title:
+      "강아지 목욕·미용 가이드 — 피모 유형별 목욕 주기·홈그루밍 4대 관리·클리퍼 증후군 예방",
+    metaTitle:
+      "강아지 목욕 주기·홈그루밍 가이드 | 피모별 관리·귀청소·발톱 | 펫지기",
     metaDescription:
-      "강아지 목욕 주기, 올바른 목욕 방법, 귀 청소·발톱 관리 등 집에서 할 수 있는 홈그루밍 가이드와 미용실 이용 팁을 안내합니다.",
-    body: `<h2>강아지 목욕 주기</h2>
-<p>품종·털 길이·활동량에 따라 다르지만 일반적으로:</p>
-<ul>
-  <li><strong>단모종(비글·래브라도 등)</strong>: 월 1~2회</li>
-  <li><strong>장모종(말티즈·요크셔테리어 등)</strong>: 2~3주마다</li>
-  <li><strong>이중모 품종(허스키·웰시코기)</strong>: 월 1회 + 정기 브러싱</li>
-  <li><strong>활동량 많은 강아지</strong>: 더 자주 필요할 수 있음</li>
-</ul>
-<p>너무 잦은 목욕은 피부 보호막(피지층)을 손상시키므로 주의하세요.</p>
+      "수의피부과학 기준 강아지 목욕 및 홈그루밍 가이드. 표피 pH 특성과 피모 유형별 목욕 주기, 5단계 목욕 순서, 귀 청소·발톱 깎기·항문낭 관리와 클리퍼 증후군 예방 수칙을 정리했습니다.",
+    body: `<h2>개 피부 생리와 피모 유형별 목욕 주기</h2>
+<p>반려견의 표피층은 사람보다 훨씬 얇고 약알칼리성(pH 7.0~7.5)을 띠고 있어 사람용 약산성(pH 5.5) 샴푸를 사용하면 각질층이 손상됩니다. 피모 유형과 생활 환경에 따른 수의학적 목욕 및 관리 기준입니다.</p>
+<div class="table-wrap">
+  <table>
+    <thead>
+      <tr>
+        <th scope="col">피모 유형</th>
+        <th scope="col">대표 품종</th>
+        <th scope="col">권장 목욕 주기</th>
+        <th scope="col">전용 브러시 및 핵심 관리</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>단모종 (Short Coat).</strong></td>
+        <td>비글, 닥스훈트, 불독.</td>
+        <td>월 1회 내외.</td>
+        <td>고무 브러시로 죽은 털 제거 및 윤기 유지.</td>
+      </tr>
+      <tr>
+        <td><strong>장모종 (Long Coat).</strong></td>
+        <td>말티즈, 시츄, 요크셔테리어.</td>
+        <td>2~3주에 1회.</td>
+        <td>핀 브러시와 일자 콤으로 매일 엉킴 방지 빗질.</td>
+      </tr>
+      <tr>
+        <td><strong>이중모 (Double Coat).</strong></td>
+        <td>포메라니안, 사모예드, 웰시코기.</td>
+        <td>월 1회 내외.</td>
+        <td>언더코트 디셰딩 툴과 슬리커 브러시로 속털 솎아내기.</td>
+      </tr>
+      <tr>
+        <td><strong>권모종 (Curly Coat).</strong></td>
+        <td>푸들, 비숑 프리제.</td>
+        <td>3~4주에 1회.</td>
+        <td>슬리커 브러시로 엉킨 털을 푼 뒤 가위 미용 병행.</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
 
-<h2>올바른 목욕 순서</h2>
+<h2>단계별 홈그루밍 목욕 프로토콜</h2>
+<p>체계적인 순서로 목욕을 진행해야 반려견의 공포심을 줄이고 피부 질환을 예방할 수 있습니다.</p>
 <ol>
-  <li><strong>브러싱 먼저</strong>: 엉킨 털을 풀어야 샴푸가 고루 스며듦</li>
-  <li><strong>귀에 솜 넣기</strong>: 물이 귓속으로 들어가지 않도록</li>
-  <li><strong>미지근한 물로 적시기</strong>: 강아지 체온(38~39°C)보다 약간 낮은 온도 (약 36~37°C)</li>
-  <li><strong>강아지 전용 샴푸 사용</strong>: 사람용 샴푸는 pH가 달라 피부 자극 유발</li>
-  <li><strong>꼼꼼한 헹굼</strong>: 샴푸 잔여물이 남으면 피부염 유발 — 여러 번 헹굼</li>
-  <li><strong>수건 드라이 후 헤어드라이어</strong>: 저온·멀찍이서 사용, 귀 안쪽까지 건조</li>
+  <li><strong>1단계 (사전 브러싱):</strong> 물에 젖으면 엉킨 털이 더욱 단단하게 뭉치므로 목욕 전 반드시 전신 빗질로 엉킨 부위를 풀어줍니다.</li>
+  <li><strong>2단계 (미온수 적시기):</strong> 반려견의 체온보다 약간 낮은 미온수(36~37도)를 발끝, 엉덩이, 등, 목 순서로 천천히 적십니다. 귀에 물이 들어가지 않도록 귓바퀴를 손가락으로 가볍게 접어 보호합니다.</li>
+  <li><strong>3단계 (전용 샴푸 도포 및 마사지):</strong> 희석한 반려견 전용 저자극 샴푸로 거품을 내어 피부 속까지 마사지하듯 세정합니다.</li>
+  <li><strong>4단계 (철저한 헹굼):</strong> 샴푸 찌꺼기가 남으면 가려움증과 농피증을 유발하므로 맑은 물이 나올 때까지 충분히 헹구어냅니다.</li>
+  <li><strong>5단계 (수건 건조 및 드라이어 건조):</strong> 흡수력 좋은 타월로 물기를 최대한 제거한 뒤, 드라이어의 바람을 미온풍으로 설정하고 손으로 온도를 확인하며 속털까지 완벽하게 말립니다.</li>
 </ol>
 
-<h2>귀 청소</h2>
+<h2>홈그루밍 필수 4대 위생 관리</h2>
+<p>목욕 외에도 정기적으로 챙겨야 할 4대 위생 케어 영역입니다.</p>
+<div class="table-wrap">
+  <table>
+    <thead>
+      <tr>
+        <th scope="col">관리 영역</th>
+        <th scope="col">권장 주기</th>
+        <th scope="col">올바른 관리 방법</th>
+        <th scope="col">핵심 주의사항</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>귀 청소</strong></td>
+        <td>1~2주에 1회.</td>
+        <td>전용 이어 클리너를 외이도에 넣고 마사지 후 털어내게 유도.</td>
+        <td>면봉으로 귀 안쪽을 후비면 귀지가 밀려들어가 외이염을 악화시킵니다.</td>
+      </tr>
+      <tr>
+        <td><strong>발톱 깎기</strong></td>
+        <td>2~3주에 1회.</td>
+        <td>혈관(퀵)에서 2mm 앞부분을 45도 각도로 조금씩 다듬기.</td>
+        <td>출혈에 대비해 전용 지혈 분말(Kwik Stop)을 상비합니다.</td>
+      </tr>
+      <tr>
+        <td><strong>발바닥 패드 털 정리</strong></td>
+        <td>2~3주에 1회.</td>
+        <td>패드 사이로 삐져나온 털을 미니 클리퍼로 평평하게 깎기.</td>
+        <td>발바닥 털이 길면 관절 슬개골 탈구 및 미끄러짐 사고를 유발합니다.</td>
+      </tr>
+      <tr>
+        <td><strong>항문낭 짜기</strong></td>
+        <td>월 1회 내외 (목욕 시).</td>
+        <td>항문 기준 4시와 8시 방향을 아래에서 위로 밀어 올리듯 압박.</td>
+        <td>과도하게 힘을 주면 항문낭 파열이나 염증을 유발하므로 주의합니다.</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<h2>미용 시 절대 금기 사항 및 클리퍼 증후군 경고</h2>
 <ul>
-  <li>목욕 후 또는 월 1~2회 전용 이어 클리너 사용</li>
-  <li>면봉을 귀 안쪽 깊이 넣지 말 것 — 귀도(외이도) 입구만 닦기</li>
-  <li>귀에서 냄새가 나거나 강아지가 머리를 흔들면 귀 감염 의심 → 수의사 방문</li>
+  <li><strong>이중모 견종 삭모(빡빡이 미용) 금지</strong>: 포메라니안, 스피츠, 허스키 등의 이중모 견종을 클리퍼로 짧게 밀면 털뿌리가 손상되어 털이 다시 자라지 않거나 얼룩덜룩하게 자라는 클리퍼 증후군(Post-clipping Alopecia)이 발생할 수 있습니다. 가위 컷이나 숱을 쳐내는 방식을 권장합니다.</li>
+  <li><strong>드라이어 고온 직가열 금지</strong>: 드라이어 노즐을 한 부위에 고정하거나 뜨거운 바람을 지속 가하면 얇은 피부에 저온 화상을 입힐 수 있으므로 지속적으로 노즐을 흔들며 말려야 합니다.</li>
+  <li><strong>발톱 출혈 시 당황하지 않기</strong>: 실수로 혈관을 건드렸을 때는 지혈제를 환부에 묻혀 손가락으로 30초간 강하게 압박합니다. 지혈 응급처치는 <a href="/guide/pet-first-aid-guide">반려동물 응급처치 가이드</a>를 참고하시기 바랍니다.</li>
 </ul>
 
-<h2>발톱 관리</h2>
+<h2>생애 주기별 연계 돌봄 및 홈케어</h2>
+<p>위생 관리는 스트레스 없는 둔감화 훈련과 일상 건강 관리의 연장선입니다.</p>
 <ul>
-  <li>실내견은 한 달에 1~2회 손질 필요 (실외 활동 많은 강아지는 자연 마모)</li>
-  <li>강아지 전용 발톱 깎기 사용 — 혈관(퀵, Quick) 위치 확인 후 조금씩 깎기</li>
-  <li>어두운 발톱은 조심스럽게 조금씩 — 밝은 발톱은 핑크색 혈관이 보임</li>
+  <li>미용실 이동 시 스트레스 완화와 이동장 적응은 <a href="/guide/carrier-training-guide">반려동물 이동장 적응 훈련 가이드</a>를 참고하시기 바랍니다.</li>
+  <li>어린 강아지의 빗질 및 손길 둔감화는 <a href="/guide/puppy-socialization-guide">강아지 사회화 훈련 가이드</a>를 참고하시기 바랍니다.</li>
+  <li>생애 초기 예방접종과 첫 미용 시점은 <a href="/guide/puppy-first-year-guide">강아지 생애 첫 1년 성장 가이드</a>에서 확인할 수 있습니다.</li>
+  <li>겨울철 건조한 피부 각질과 발바닥 관리는 <a href="/guide/dog-winter-care-guide">강아지 겨울철 케어 가이드</a>를 확인하시기 바랍니다.</li>
+  <li>여름철 체온 조절과 열사병 예방 수칙은 <a href="/guide/dog-heat-stroke-guide">강아지 열사병 예방 가이드</a>를 참조하시기 바랍니다.</li>
+  <li>미용과 함께 진행하는 일상 구강 관리는 <a href="/guide/dog-dental-care-guide">강아지 치아 및 구강 관리 가이드</a>를 확인하시기 바랍니다.</li>
 </ul>
 
-<h2>눈물자국 관리</h2>
-<p>말티즈·시츄 등에서 흔한 눈물자국(적갈색)은 일주일에 2~3회 전용 클리너로 닦아주고, 눈 주변 털을 정기적으로 다듬어 줍니다.</p>
+<h2>강아지 목욕·미용 자주 묻는 질문 (FAQ)</h2>
+<div class="faq-list">
+  <h3>Q1. 산책 후 매번 물로 발을 씻겨도 괜찮은가요?</h3>
+  <p>산책 후 매번 물로 씻기면 발바닥 패드와 발가락 틈새가 항상 축축해져 세균과 효모균 번식으로 인한 지간염(발 습진)을 일으키기 쉽습니다. 가벼운 오염은 젖은 수건이나 전용 워터리스 폼 클렌저로 닦아내고 완전히 말려주는 관리가 바람직합니다.</p>
 
-<h2>미용실 방문 주기</h2>
-<ul>
-  <li><strong>클리핑 필요 품종(말티즈·푸들·비숑 등)</strong>: 4~8주마다</li>
-  <li><strong>자연모 품종</strong>: 2~3개월마다</li>
-  <li>발 사이 털, 항문 주변 털은 위생상 정기적으로 정리 필수</li>
-</ul>`,
+  <h3>Q2. 드라이어 소리를 너무 무서워하는데 어떻게 말려야 하나요?</h3>
+  <p>소음과 강한 바람에 대한 공포 때문입니다. 흡수력이 뛰어난 전용 타월로 물기를 70% 이상 털어낸 뒤, 드라이어를 가장 약한 세기로 멀리 두고 간식을 주며 둔감화 훈련을 병행하거나, 저소음 펫 드라이룸을 활용할 수 있습니다.</p>
+
+  <h3>Q3. 엉킨 털을 가위로 잘라내다가 살을 찝히는 사고가 잦다는데 안전한 방법이 있나요?</h3>
+  <p>털이 피부 바로 밑까지 엉켰을 때 가위로 자르면 얇은 피부가 함께 잘려 큰 상처를 입을 수 있습니다. 엉킨 부위 밑에 쇠빗(콤)을 피부와 털 사이에 끼워 보호막을 만든 뒤 가위질을 하거나, 엉킴 풀기 전용 디탱글러 스프레이를 뿌려 빗으로 조심스럽게 풀어내야 합니다.</p>
+</div>`,
     disclaimer: null,
     sources: [
-      "Gorrel C, Lindqvist A. Veterinary Dentistry for the General Practitioner (2013)",
-      "대한반려동물미용사협회 홈그루밍 가이드라인 (2022)",
+      "American Animal Hospital Association (AAHA) — Canine Life Stage Guidelines & Grooming: https://www.aaha.org/resources/life-stage-guidelines/",
+      "World Small Animal Veterinary Association (WSAVA) — Guidelines for the Recognition, Assessment and Treatment of Pain: https://wsava.org/global-guidelines/",
+      "American Kennel Club (AKC) — Dog Grooming Tips & Coat Care: https://www.akc.org/expert-advice/grooming/",
+      "Veterinary Dermatology Journal — Canine Skin Barrier Function and pH: https://onlinelibrary.wiley.com/journal/13653164",
     ],
     ymyl: false,
     status: "published",
