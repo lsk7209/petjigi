@@ -85,7 +85,7 @@ const SEED_CONTENTS: NewContent[] = [
 <h2>동물등록은 현재 상태부터 확인</h2>
 <p>동물보호법 시행령의 등록대상동물 규정은 일반적으로 반려 목적으로 기르는 2개월령 이상 개를 대상으로 한다. 이미 등록된 개라면 신규 등록과 소유자 변경을 구분해야 한다. 적용 예외, 방법, 수수료와 변경 신고는 관할 지자체에 확인하고, 모든 개·고양이의 의무가 같다고 가정하지 않는다.</p>
 <h2>상황별로 이어서 확인하기</h2>
-<ul><li><a href="/guide/microchip-registration-complete-guide">동물등록 절차와 변경 신고 확인</a></li><li><a href="/guide/shelter-animal-adoption-guide">보호소 상담·방문·입양 준비</a></li><li><a href="/guide/carrier-training-guide">이동장에 익숙해지는 준비</a></li></ul>
+<ul><li><a href="/guide/microchip-registration-complete-guide">동물등록 절차와 변경 신고 확인</a></li><li><a href="/guide/shelter-animal-adoption-guide">보호소 상담·방문·입양 준비</a></li><li><a href="/guide/carrier-training-guide">이동장에 익숙해지는 준비</a></li><li><a href="/guide/puppy-potty-training">퍼피 기초 배변 훈련 가이드</a></li></ul>
 <p>자료 확인일: 2026-10-11. 입양 조건과 비용은 개별 기관에 다시 확인한다.</p>
 <h2>근거를 직접 확인하기</h2>
 <ul><li><a href="https://www.avma.org/resources/pet-owners/petcare/selecting-pet-dog" target="_blank" rel="noopener noreferrer">AVMA의 개 입양 준비 안내</a></li><li><a href="https://www.animal.go.kr/front/awtis/protection/protectionList.do?menuNo=1000000060" target="_blank" rel="noopener noreferrer">국가동물보호정보시스템 보호 공고</a></li><li><a href="https://www.law.go.kr/lsLinkCommonInfo.do?lsJoLnkSeq=1030927001" target="_blank" rel="noopener noreferrer">동물보호법 시행령 등록대상 규정</a></li></ul>`,
@@ -4964,61 +4964,131 @@ const SEED_CONTENTS: NewContent[] = [
     slug: "puppy-potty-training",
     type: "guide",
     category: 1,
-    title: "강아지 배변훈련 완전 가이드 — 퍼피부터 성견까지 단계별 방법",
-    metaTitle: "강아지 배변훈련 방법·기간·실패 대처법 | 펫지기",
+    title:
+      "강아지 배변 훈련 가이드 — 월령별 생리 발달·무결점 4단계 프로토콜·실내외 배변 전환법",
+    metaTitle:
+      "강아지 배변 훈련 가이드 | 월령별 발달·무결점 프로토콜·실내외 전환 | 펫지기",
     metaDescription:
-      "강아지 배변훈련 성공 비결: 퍼피 기초 훈련부터 실내·실외 전환, 실수 대처법, 훈련 기간 단축 팁까지 단계별로 안내합니다.",
-    body: `<h2>배변훈련, 언제 시작할까?</h2>
-<p>생후 8주 이후부터 시작할 수 있습니다. 근육 조절 능력은 생후 16~20주 정도에 완성되므로, 이 시기 이전에는 실수가 잦더라도 정상입니다. 인내심 있는 반복 훈련이 핵심입니다.</p>
+      "동물행동학 기준 강아지 배변 훈련 완전 가이드. 월령별 방광 조절 능력, 이안 던바 박사의 무결점 4단계 프로토콜, 실내 패드 및 실외 배변 전환, 실수 시 금기 사항을 정리했습니다.",
+    body: `<h2>강아지 생리적 배변 조절 발달과 훈련 시작 시기</h2>
+<p>어린 강아지의 방광과 괄약근 조절 능력은 생후 16주에서 20주령 사이에 점진적으로 완성됩니다. 수의행동학 임상 가이드라인에 따른 월령별 배변 조절 특징입니다.</p>
+<div class="table-wrap">
+  <table>
+    <thead>
+      <tr>
+        <th scope="col">발달 월령</th>
+        <th scope="col">괄약근 조절 능력</th>
+        <th scope="col">신체적 최대 참는 시간</th>
+        <th scope="col">핵심 훈련 관리 포인트</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>생후 2개월 (8주령).</strong></td>
+        <td>자율신경계 조절 미숙, 반사적 배변.</td>
+        <td>약 1~2시간 내외.</td>
+        <td>울타리 내 패드 적응 및 식후 즉시 배변 유도.</td>
+      </tr>
+      <tr>
+        <td><strong>생후 3개월 (12주령).</strong></td>
+        <td>배변 전 냄새 맡기 등 사전 신호 표출.</td>
+        <td>약 2~3시간 내외.</td>
+        <td>배변 패드 면적을 줄이며 지정 장소로 고정.</td>
+      </tr>
+      <tr>
+        <td><strong>생후 4개월 (16주령).</strong></td>
+        <td>괄약근 의도적 조절 시작.</td>
+        <td>약 3~4시간 내외.</td>
+        <td>실내 패드와 실외 배변의 신호 연결 훈련 병행.</td>
+      </tr>
+      <tr>
+        <td><strong>생후 6개월 이후.</strong></td>
+        <td>성견 수준의 방광 조절력 확립.</td>
+        <td>약 6시간 내외 (개체차 존재).</td>
+        <td>규칙적인 배변 산책 루틴 정착.</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
 
-<h2>기본 원칙</h2>
-<ul>
-  <li><strong>즉각 칭찬</strong>: 올바른 장소에서 배변하면 즉시 (3초 이내) 칭찬·간식 보상</li>
-  <li><strong>실수 시 체벌 금지</strong>: 체벌은 불안감을 높여 훈련을 방해함 — 조용히 치우기</li>
-  <li><strong>일관성</strong>: 모든 가족이 같은 방법과 명령어를 사용</li>
-  <li><strong>규칙적인 일과</strong>: 식사·수면·놀이 후 15~20분 내 배변 유도</li>
-</ul>
-
-<h2>실내 패드 훈련 (단계별)</h2>
+<h2>무결점 배변 훈련(Errorless Housetraining) 4단계 프로토콜</h2>
+<p>세계적인 동물행동학자 이안 던바(Ian Dunbar) 박사의 무결점 배변 훈련법은 반려견이 실수를 경험할 틈을 주지 않고 성공 확률을 극대화하는 관리 기법입니다.</p>
 <ol>
-  <li><strong>패드 위치 결정</strong>: 조용하고 눈에 잘 보이는 한 장소에 고정</li>
-  <li><strong>타이밍 포착</strong>: 강아지가 냄새를 맡거나 빙빙 돌면 패드로 유도</li>
-  <li><strong>명령어 연결</strong>: 패드 위에서 배변하는 동안 "쉬야" 또는 "응가"를 부드럽게 말함</li>
-  <li><strong>즉시 보상</strong>: 배변 완료 직후 칭찬 + 간식</li>
-  <li><strong>점진적 패드 축소</strong>: 훈련이 익숙해지면 패드 수를 줄여 배변 장소 고정</li>
+  <li><strong>1단계 (공간 구획 및 크레이트 활용):</strong> 개는 본능적으로 자신의 잠자리와 식사 공간을 배변으로 더럽히지 않으려 합니다. 이동장이나 작은 켄넬을 편안한 쉼터로 인식시키는 작업은 <a href="/guide/carrier-training-guide">반려동물 이동장 적응 훈련 가이드</a>를 참고하여 진행합니다.</li>
+  <li><strong>2단계 (배변 유발 타이밍 포착):</strong> 기상 직후, 사료 섭취 직후, 격렬한 놀이를 마친 뒤에는 즉시 반려견을 안고 배변 패드로 데려갑니다.</li>
+  <li><strong>3단계 (신호어와 즉각적 보상 연결):</strong> 패드 위에서 빙글빙글 돌며 자세를 잡을 때 부드러운 목소리로 특정 신호어를 말하고, 배변이 끝나는 즉시 3초 이내에 가장 좋아하는 특별 간식과 높은 톤의 칭찬으로 보상합니다.</li>
+  <li><strong>4단계 (자유 공간 점진적 확장):</strong> 지정된 패드에서 연속으로 성공하면 방 한 칸씩 안전 울타리를 넓혀주며 집 전체로 활동 반경을 넓혀갑니다.</li>
 </ol>
 
-<h2>실외 배변 훈련으로 전환</h2>
+<h2>실내 패드 훈련 vs 실외 배변 훈련 비교</h2>
+<p>보호자의 생활 패턴과 주거 환경에 따라 실내 배변과 실외 배변 중 적합한 방식을 선택해야 합니다.</p>
+<div class="table-wrap">
+  <table>
+    <thead>
+      <tr>
+        <th scope="col">훈련 유형</th>
+        <th scope="col">핵심 장점</th>
+        <th scope="col">주요 단점 및 한계</th>
+        <th scope="col">권장 주거 환경</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>실내 패드 배변</strong></td>
+        <td>날씨나 보호자 외출 시간에 구애받지 않고 배뇨 가능.</td>
+        <td>카펫이나 발매트 등 푹신한 섬유를 패드로 오인할 위험.</td>
+        <td>아파트, 다세대 주택, 1인 직장인 가구.</td>
+      </tr>
+      <tr>
+        <td><strong>실외 산책 배변</strong></td>
+        <td>집 안 위생 청결 유지, 영역 표시 본능 충족.</td>
+        <td>폭우·한파 등 기상 악화 시에도 반드시 외출 필수, 요로 질환 주의.</td>
+        <td>단독주택, 하루 3회 이상 정기 산책이 가능한 가구.</td>
+      </tr>
+      <tr>
+        <td><strong>실내외 복합 배변</strong></td>
+        <td>가장 이상적, 비상시 실내 해결 가능하여 방광 건강 유지.</td>
+        <td>초기 훈련 기간이 길고 신호 구분이 명확해야 함.</td>
+        <td>모든 반려 가구의 최종 권장 목표.</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<h2>배변 실수 시 절대 하지 말아야 할 3대 행동</h2>
 <ul>
-  <li>예방접종 완료(생후 약 16주) 후 실외 훈련 시작 권장</li>
-  <li>매일 같은 시간, 같은 장소로 산책 — 냄새가 배변 욕구 자극</li>
-  <li>야외에서 배변 성공 시 실내 패드 점진적으로 제거</li>
+  <li><strong>배변 흔적에 코 문지르기 금지</strong>: 과거의 잘못된 체벌 방식으로 반려견은 배변 행위 자체를 주인이 화내는 이유로 잘못 학습하여 보호자가 안 볼 때 대변을 먹어 치우는 식분증(Coprophagia)이나 구석에 숨어서 배변하는 이상 행동을 유발합니다.</li>
+  <li><strong>사후 체벌 및 소리 지르기 금지</strong>: 이미 배변을 마친 뒤 시간이 지나 혼내면 반려견은 혼나는 이유와 배변 실수를 전혀 연결 짓지 못하고 보호자를 공포의 대상으로 인식하게 됩니다.</li>
+  <li><strong>일반 락스나 암모니아 세제로 닦기 금지</strong>: 암모니아 성분은 소변 냄새와 유사하여 오히려 같은 장소에 다시 마킹을 유도합니다. 반드시 반려동물 전용 효소 분해 탈취제를 사용하여 소변 페로몬을 근본적으로 제거해야 합니다.</li>
 </ul>
 
-<h2>배변 주기 관리 (퍼피 기준)</h2>
+<h2>생애 주기별 연계 돌봄 및 교육</h2>
+<p>배변 훈련의 기초는 입양 첫날의 주거 환경 설계와 올바른 성장 관리에서 시작됩니다.</p>
 <ul>
-  <li>식사 후 15~30분 내</li>
-  <li>수면 후 즉시</li>
-  <li>놀이 중·후</li>
-  <li>생후 월령 × 1시간이 최대 참는 시간의 대략적 기준 (예: 3개월 = 약 3시간)</li>
+  <li>입양 첫날 울타리와 패드 배치 요령은 <a href="/guide/dog-adoption-checklist">강아지 입양 체크리스트</a>를 확인하시기 바랍니다.</li>
+  <li>생애 첫해 예방접종 및 건강 주기는 <a href="/guide/puppy-first-year-guide">강아지 생애 첫 1년 성장 가이드</a>를 참고하시기 바랍니다.</li>
+  <li>클리커와 긍정 강화를 활용한 기본 훈련은 <a href="/guide/dog-basic-training-guide">강아지 기초 훈련 가이드</a>에서 상세히 다루고 있습니다.</li>
+  <li>실외 배변 시 낯선 환경에 대한 두려움 해소는 <a href="/guide/puppy-socialization-guide">강아지 사회화 훈련 가이드</a>를 확인하시기 바랍니다.</li>
+  <li>배변 분리 불안으로 인한 실내 마킹 대처는 <a href="/guide/dog-separation-anxiety-guide">강아지 분리불안 가이드</a>를 참조하시기 바랍니다.</li>
 </ul>
 
-<h2>자주 실수하는 장소 대처법</h2>
-<ul>
-  <li>효소 기반 전용 세정제로 완전히 냄새 제거 — 잔여 냄새는 재실수 유발</li>
-  <li>같은 장소에 패드를 잠시 놓아 배변 장소로 재인식시키거나, 접근을 차단</li>
-</ul>
+<h2>강아지 배변 훈련 자주 묻는 질문 (FAQ)</h2>
+<div class="faq-list">
+  <h3>Q1. 패드 바로 옆이나 모서리에 소변을 흘리는 이유는 무엇인가요?</h3>
+  <p>강아지는 앞발이 패드에 닿으면 자신이 패드 위에 올라와 있다고 착각합니다. 배변 공간이 체구에 비해 좁을 때 자주 발생하므로 패드를 2~3장 넓게 이어 붙여주거나 모서리 턱이 있는 전용 배변판을 활용하면 성공률을 높일 수 있습니다.</p>
 
-<h2>훈련이 잘 안 될 때 점검 사항</h2>
-<ul>
-  <li>보상 타이밍이 늦지 않은지 (배변 후 즉시 보상)</li>
-  <li>패드 위치가 자주 바뀌지 않는지</li>
-  <li>건강 문제(요로감염·소화 불량)로 인한 잦은 실수 여부 — 지속 시 수의사 상담</li>
-</ul>`,
+  <h3>Q2. 잘 가리던 성견이 갑자기 엉뚱한 곳에 소변을 보기 시작했습니다.</h3>
+  <p>방광염, 요로 결석, 신장 질환, 호르몬 이상 등 비뇨기 질환의 신호일 수 있습니다. 통증 때문에 평소 배변 장소를 피하는 경우가 많으므로 단순 반항으로 치부하지 말고 동물병원에서 뇨검사와 초음파 검진을 우선 받아야 합니다.</p>
+
+  <h3>Q3. 실외 배변만 고집해서 비가 오나 눈이 오나 나가야 하는데 실내 패드도 쓰게 할 수 있나요?</h3>
+  <p>인조잔디 패드나 야외에서 묻혀온 흙, 낙엽을 실내 배변판 위에 올려두어 냄새와 촉감을 익숙하게 만든 뒤 점진적으로 일반 패드로 교체하는 인조잔디 트레이 전환 훈련을 적용할 수 있습니다.</p>
+</div>`,
     disclaimer: null,
     sources: [
-      "Reid PJ. Excel-erated Learning: Explaining in Plain English How Dogs Learn. James & Kenneth (1996)",
-      "한국반려동물행동상담사협회 퍼피 훈련 가이드 (2022)",
+      "American Animal Hospital Association (AAHA) — Canine Life Stage Guidelines & House Training: https://www.aaha.org/resources/life-stage-guidelines/",
+      "Association of Professional Dog Trainers (APDT) — House Training 101: https://apdt.com/resource-center/house-training-101/",
+      "Dr. Ian Dunbar — Errorless Housetraining Protocol: https://www.dogstardaily.com/training/errorless-housetraining",
+      "Merck Veterinary Manual — Behavioral Elimination Disorders in Dogs: https://www.merckvetmanual.com/behavior/normal-social-behavior-and-behavioral-problems-of-domestic-animals/behavioral-problems-of-dogs",
     ],
     ymyl: false,
     status: "published",
