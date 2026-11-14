@@ -3771,62 +3771,128 @@ const SEED_CONTENTS: NewContent[] = [
     slug: "pet-treats-guide",
     type: "guide",
     category: 2,
-    title: "반려동물 간식 선택 가이드 — 성분·급여량·추천 유형",
-    metaTitle: "반려동물 간식 선택 방법 | 성분·급여량·추천 간식 종류 | 펫지기",
+    title:
+      "반려동물 간식 선택 가이드 — 10% 칼로리 상한선·원재료 라벨 판독·치아 파절 방지",
+    metaTitle:
+      "반려동물 간식 선택 가이드 | 10% 칼로리·성분 라벨·치아 안전 | 펫지기",
     metaDescription:
-      "강아지·고양이 간식 선택 시 확인해야 할 성분, 적정 급여량(칼로리 10% 규칙), 좋은 간식과 피해야 할 성분을 정리했습니다.",
-    body: `<h2>간식이 필요한 이유, 그리고 주의점</h2>
-<p>간식은 훈련 보상, 치아 관리, 관계 강화에 유용합니다. 하지만 칼로리 과잉으로 비만을 유발하거나, 나쁜 성분이 건강을 해칠 수 있습니다. "10% 규칙"을 기억하세요 — 간식은 하루 총 칼로리의 10% 이내로 제한합니다.</p>
+      "세계소동물수의사회(WSAVA) 영양 가이드라인 기반 반려동물 간식 선택법. 체급별 10% 칼로리 상한선, 원재료 라벨 판독법, 치아 파절을 부르는 딱딱한 간식 구별법, VOHC 인증 치과 트릿 기준을 정리했습니다.",
+    body: `<h2>간식의 역할과 '10% 칼로리 상한선' 원칙</h2>
+<p>간식은 긍정 강화 훈련, 유대감 형성, 투약 보조에 효과적인 도구입니다. 하지만 주식(사료)이 아닌 간식으로 과도한 열량을 섭취하면 필수 영양소 불균형과 비만, 췌장염을 유발할 수 있습니다. 세계소동물수의사회(WSAVA)와 미국동물병원협회(AAHA)는 <strong>하루 총 권장 섭취 칼로리(DER)의 10% 이내</strong>로 간식을 엄격히 제한할 것을 권고합니다.</p>
+<div class="table-wrap">
+  <table>
+    <thead>
+      <tr>
+        <th scope="col">체급 및 개체</th>
+        <th scope="col">1일 평균 필요 열량 (DER)</th>
+        <th scope="col">1일 간식 칼로리 상한선 (10%)</th>
+        <th scope="col">간식 환산 예시 (상한선 기준)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>초소형견 / 소형묘 (3kg)</strong></td>
+        <td>약 190~210 kcal</td>
+        <td><strong>최대 20 kcal</strong></td>
+        <td>고양이 액상 츄르 1포(약 14kcal) 또는 육포 조각 1/2개.</td>
+      </tr>
+      <tr>
+        <td><strong>소형견 / 성묘 (5kg)</strong></td>
+        <td>약 280~310 kcal</td>
+        <td><strong>최대 30 kcal</strong></td>
+        <td>소형 덴탈껌 1/2개(약 25kcal) 또는 동결건조 트릿 6~8알.</td>
+      </tr>
+      <tr>
+        <td><strong>중형견 (10kg)</strong></td>
+        <td>약 480~530 kcal</td>
+        <td><strong>최대 50 kcal</strong></td>
+        <td>중형견 덴탈껌 1개(약 50kcal) 또는 닭가슴살 큐브 4~5개.</td>
+      </tr>
+      <tr>
+        <td><strong>대형견 (20kg)</strong></td>
+        <td>약 800~870 kcal</td>
+        <td><strong>최대 85 kcal</strong></td>
+        <td>대형 육포 1줄(약 45kcal) + 트레이닝 트릿 10여 알.</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<p>소형견이나 고양이는 덴탈껌 하나, 육포 한 줄만으로도 일일 간식 허용 칼로리를 순식간에 초과할 수 있습니다. 간식을 급여한 날에는 간식의 열량만큼 정규 사료 양을 반드시 줄여 전체 칼로리 균형을 맞춰야 합니다.</p>
 
-<h2>10% 규칙 — 적정 간식량 계산법</h2>
-<p>예를 들어 4kg 소형견의 하루 권장 칼로리가 300kcal라면 간식은 30kcal 이내로 유지해야 합니다. 간식 봉투의 100g당 칼로리를 확인해 하루 급여량을 계산하세요.</p>
-
-<h2>좋은 간식 성분 체크리스트</h2>
+<h2>간식 라벨 판독법과 흔한 오해 바로잡기</h2>
+<p>간식을 고를 때는 화려한 마케팅 문구보다 포장지 뒷면의 원재료 등록 성분표를 객관적으로 읽어야 합니다.</p>
 <ul>
-  <li><strong>첫 번째 원재료가 단백질</strong>: 닭고기·소고기·생선 등 육류가 첫 번째 성분이어야 합니다</li>
-  <li><strong>단일 원료 제품</strong>: 성분이 단순할수록 알레르기 위험 감소</li>
-  <li><strong>AAFCO 또는 FEDIAF 적합 기준</strong>: 인증 마크 확인</li>
-  <li><strong>방부제·색소 최소화</strong>: 천연 방부제(비타민 E·C) 사용 제품 선호</li>
-  <li><strong>한국 기준</strong>: 농림축산식품부 반려동물 사료 등록 확인</li>
+  <li><strong>AAFCO 인증 마크라는 오해</strong>: AAFCO(미국사료관리협회)는 규제 기관이 아니며 어떤 제품에도 인증 마크를 발급하지 않습니다. 간식은 법적으로 '간식용(Intermittent or Supplementary Feeding Only)'으로 분류되므로, 완전 균형 주식을 대체할 수 없다는 점을 인지해야 합니다. 사료 라벨 읽는 법은 <a href="/guide/dog-food-label-guide">주식 사료 라벨 판독 가이드</a>를 참고하시기 바랍니다.</li>
+  <li><strong>제1원료 단백질원 확인</strong>: '육류 부산물'이나 모호한 '가금류' 표기보다 '닭고기', '연어', '소고기' 등 명확한 단일 육류 단백질원이 최상단에 표기된 제품이 알레르기 추적에 안전합니다.</li>
+  <li><strong>당분 및 글리세린 첨가 주의</strong>: 촉촉한 식감을 내기 위해 첨가되는 인공 감미료, 소르비톨, 과도한 식물성 글리세린은 장내 미생물총을 교란하고 비만을 촉진하므로 최소화된 제품을 선택합니다.</li>
+  <li><strong>치명적 독성 성분 배제</strong>: 자일리톨(저혈당·급성 간부전 유발), 양파·마늘 분말, 포도 추출물, 인공 방부제(BHA, BHT)가 포함되지 않았는지 점검해야 합니다. 금지 음식 세부 목록은 <a href="/guide/pet-toxic-foods-complete-guide">반려동물 위험 음식 완전 목록</a>을 확인하시기 바랍니다.</li>
 </ul>
 
-<h2>피해야 할 성분</h2>
-<ul>
-  <li><strong>자일리톨</strong>: 강아지에게 치명적 독성 (저혈당·간부전)</li>
-  <li><strong>소금 과잉</strong>: 신장에 부담, 나트륨 함량 확인</li>
-  <li><strong>인공 색소·MSG</strong>: 불필요하며 알레르기 유발 가능</li>
-  <li><strong>BHA·BHT</strong>: 합성 방부제, 피하는 것이 좋음</li>
-  <li><strong>포도·건포도, 양파·마늘, 초콜릿, 아보카도 성분</strong>: 강아지·고양이에 독성</li>
-</ul>
+<h2>제형별 간식 특징 및 치아 안전성 점검</h2>
+<p>간식의 물리적 단단함(경도)은 치아 건강에 결정적인 영향을 미칩니다. 부적절하게 단단한 간식은 어금니 골절을 유발합니다.</p>
+<div class="table-wrap">
+  <table>
+    <thead>
+      <tr>
+        <th scope="col">간식 유형</th>
+        <th scope="col">장점 및 추천 용도</th>
+        <th scope="col">치아 파절 위험도</th>
+        <th scope="col">안전 급여 주의점</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>동결건조(Freeze-dried)</strong></td>
+        <td>열 가공 없이 원재료 영양 보존, 알레르기 배제식이 활용 우수.</td>
+        <td>안전 (매우 낮음)</td>
+        <td>가볍게 부스러져 안전하나 수분 함량이 낮으므로 음수량 병행 확인.</td>
+      </tr>
+      <tr>
+        <td><strong>트레이닝 트릿 (소립형)</strong></td>
+        <td>작은 크기(완두콩 크기)로 신속한 보상 가능, 칼로리 통제 용이.</td>
+        <td>안전 (매우 낮음)</td>
+        <td>긍정 강화 교육에 최적. 세부 훈련법은 <a href="/guide/dog-basic-training-guide">강아지 기초 훈련 가이드</a> 참조.</td>
+      </tr>
+      <tr>
+        <td><strong>VOHC 인증 덴탈 트릿</strong></td>
+        <td>치석 및 플라크 축적 억제 효과가 과학적으로 입증된 기능성 간식.</td>
+        <td>적정 (탄력적)</td>
+        <td>체중에 맞는 규격을 선택하고 삼킴 사고를 방지하기 위해 관찰 급여.</td>
+      </tr>
+      <tr>
+        <td><strong>단단한 뼈 간식·우족·녹각</strong></td>
+        <td>오랜 시간 씹으며 스트레스 해소 효과.</td>
+        <td><strong>매우 위험 (파절 다발)</strong></td>
+        <td>사람 손톱으로 눌러 자국이 남지 않는 단단한 간식은 제4전구치 파절을 일으킵니다.</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<p>치과 수의사들은 <strong>'손톱 규칙(Fingernail Rule)'</strong>을 권고합니다. 보호자의 엄지손톱으로 간식 표면을 강하게 눌렀을 때 약간의 자국이 남지 않을 정도로 딱딱한 뼈 간식, 소뿔, 플라스틱 장난감은 치아를 부러뜨릴 수 있어 피해야 합니다. 정기 구강 관리는 <a href="/guide/dog-dental-care-guide">강아지 치아 및 구강 관리 가이드</a>를 참고하시기 바랍니다.</p>
 
-<h2>간식 유형별 특징</h2>
-<h3>강아지 간식</h3>
-<ul>
-  <li><strong>육포 간식</strong>: 고단백, 훈련 보상에 탁월. 소금 함량 낮은 제품 선택</li>
-  <li><strong>덴탈 껌</strong>: 치석 제거에 도움. 크기와 경도가 강아지 체형에 맞아야 함</li>
-  <li><strong>동결건조 간식</strong>: 원재료 영양 보존 우수. 비싸지만 성분이 단순</li>
-  <li><strong>퍼피 전용</strong>: 칼슘·인 비율이 성견과 달라 퍼피용 별도 선택 권장</li>
-</ul>
-<h3>고양이 간식</h3>
-<ul>
-  <li><strong>액상 간식(크림 타입)</strong>: 수분 보충에 유리. 당분·타우린 함량 확인</li>
-  <li><strong>동결건조 육류</strong>: 고단백, 수분 섭취 독려를 위해 물에 불려 급여 가능</li>
-  <li><strong>덴탈 간식</strong>: 고양이 구내염 예방을 위한 치아 관리 간식 활용</li>
-</ul>
+<h2>반려동물 간식 자주 묻는 질문 (FAQ)</h2>
+<div class="faq-list">
+  <h3>Q1. 당근이나 오이 같은 채소는 칼로리가 낮으니 마음껏 먹여도 되나요?</h3>
+  <p>당근, 오이, 양배추 등은 시판 간식에 비해 칼로리가 낮고 식이섬유가 풍부해 훌륭한 대체 간식입니다. 하지만 채소라 하더라도 일일 권장 칼로리의 10%를 넘겨 다량 섭취하면 위장 내 가스 형성, 소화 불량, 연변을 유발할 수 있으며, 주식의 단백질 및 필수 미네랄 흡수를 방해하므로 소량씩 깍둑썰기하여 급여해야 합니다.</p>
 
-<h2>간식을 훈련에 활용하는 팁</h2>
+  <h3>Q2. 사료는 거부하고 맛있는 간식만 달라고 조를 때는 어떻게 대처하나요?</h3>
+  <p>간식에 입맛이 길들여진 편식 상태입니다. 이때 간식을 주면 '사료를 안 먹으면 더 맛있는 것을 준다'는 보상 회로가 강화됩니다. 최소 1~2주간 모든 간식 급여를 완전히 중단하고, 정해진 시간에 사료를 준 뒤 20분이 지나면 밥그릇을 치우는 규칙적 급여 훈련을 진행해야 합니다.</p>
+
+  <h3>Q3. VOHC 마크가 있는 간식은 일반 덴탈껌과 어떻게 다른가요?</h3>
+  <p>VOHC(세계수의치과건강협의회)는 미국수의치과협회(AVDC)가 설립한 국제 표준 기구입니다. 제조사의 광고 문구와 달리, VOHC 인장(Seal of Acceptance)을 획득한 제품은 엄격한 프로토콜에 따라 실제 동물 임상 시험을 거쳐 플라크 및 치석 감소 효능이 10~20% 이상 입증된 제품만을 승인합니다.</p>
+</div>
+
+<h2>근거 자료 및 공식 출처</h2>
 <ul>
-  <li>훈련 보상 간식은 작게(콩알 크기 이하) 잘라 사용하면 과식 방지</li>
-  <li>정기 식사 전 간식은 식욕을 감소시킬 수 있으므로 식사 후 또는 식사 사이 시간에 급여</li>
-  <li>알레르기 반응(가려움·구토·설사) 발생 시 해당 간식 즉시 중단 후 수의사 상담</li>
-</ul>
-<h2>함께 확인할 준비</h2>
-<ul><li><a href="/guide/dog-food-label-guide">주식과 보충식을 구분하는 사료 라벨 확인</a></li></ul>`,
+  <li><a href="https://wsava.org/global-guidelines/global-nutrition-guidelines/" target="_blank" rel="noopener noreferrer">세계소동물수의사회(WSAVA) — 글로벌 영양 위원회 지침 및 반려동물 식품 평가 툴킷</a></li>
+  <li><a href="https://www.fda.gov/animal-veterinary/animal-health-literacy/pet-food" target="_blank" rel="noopener noreferrer">미국 식품의약국(FDA) — 반려동물 사료 및 간식 안전 라벨 판독 안내</a></li>
+  <li><a href="https://vohc.org/accepted-products/" target="_blank" rel="noopener noreferrer">세계수의치과건강협의회(VOHC) — 공인 반려동물 치과 간식 제품 목록</a></li>
+</ul>`,
     disclaimer: null,
     sources: [
-      "AAFCO (Association of American Feed Control Officials) Nutrient Profiles (2024)",
-      "WSAVA Global Nutrition Guidelines (2022)",
-      "농림축산식품부 반려동물 사료 관리 지침 (2023)",
+      "https://wsava.org/global-guidelines/global-nutrition-guidelines/",
+      "https://www.fda.gov/animal-veterinary/animal-health-literacy/pet-food",
+      "https://vohc.org/accepted-products/",
     ],
     ymyl: false,
     status: "published",
