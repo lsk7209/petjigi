@@ -85,7 +85,7 @@ const SEED_CONTENTS: NewContent[] = [
 <h2>동물등록은 현재 상태부터 확인</h2>
 <p>동물보호법 시행령의 등록대상동물 규정은 일반적으로 반려 목적으로 기르는 2개월령 이상 개를 대상으로 한다. 이미 등록된 개라면 신규 등록과 소유자 변경을 구분해야 한다. 적용 예외, 방법, 수수료와 변경 신고는 관할 지자체에 확인하고, 모든 개·고양이의 의무가 같다고 가정하지 않는다.</p>
 <h2>상황별로 이어서 확인하기</h2>
-<ul><li><a href="/guide/microchip-registration-complete-guide">동물등록 절차와 변경 신고 확인</a></li><li><a href="/guide/shelter-animal-adoption-guide">보호소 상담·방문·입양 준비</a></li><li><a href="/guide/carrier-training-guide">이동장에 익숙해지는 준비</a></li></ul>
+<ul><li><a href="/guide/microchip-registration-complete-guide">동물등록 절차와 변경 신고 확인</a></li><li><a href="/guide/shelter-animal-adoption-guide">보호소 상담·방문·입양 준비</a></li><li><a href="/guide/carrier-training-guide">이동장에 익숙해지는 준비</a></li><li><a href="/guide/puppy-socialization-guide">생애 초기 사회화 훈련 로드맵</a></li></ul>
 <p>자료 확인일: 2026-10-11. 입양 조건과 비용은 개별 기관에 다시 확인한다.</p>
 <h2>근거를 직접 확인하기</h2>
 <ul><li><a href="https://www.avma.org/resources/pet-owners/petcare/selecting-pet-dog" target="_blank" rel="noopener noreferrer">AVMA의 개 입양 준비 안내</a></li><li><a href="https://www.animal.go.kr/front/awtis/protection/protectionList.do?menuNo=1000000060" target="_blank" rel="noopener noreferrer">국가동물보호정보시스템 보호 공고</a></li><li><a href="https://www.law.go.kr/lsLinkCommonInfo.do?lsJoLnkSeq=1030927001" target="_blank" rel="noopener noreferrer">동물보호법 시행령 등록대상 규정</a></li></ul>`,
@@ -2709,65 +2709,138 @@ const SEED_CONTENTS: NewContent[] = [
     slug: "puppy-socialization-guide",
     type: "guide",
     category: 5,
-    title: "강아지 사회화 훈련 가이드 — 결정적 시기와 올바른 방법",
-    metaTitle: "강아지 사회화 훈련 방법 | 결정적 시기·단계별 가이드 | 펫지기",
+    title:
+      "강아지 사회화 훈련 가이드 — 결정적 시기(3~16주령)·4대 영역 체크리스트·AVSAB 예방접종 지침",
+    metaTitle:
+      "강아지 사회화 훈련 가이드 | 3~16주령 단계·4대 체크리스트·접종 전 외출 | 펫지기",
     metaDescription:
-      "강아지 사회화의 결정적 시기(3~16주령), 사람·동물·환경 적응 훈련법, 흔한 실수와 주의사항을 전문 훈련사 기준으로 안내합니다.",
-    body: `<h2>사회화란 무엇인가요?</h2>
-<p>사회화(socialization)는 강아지가 다양한 사람, 동물, 환경, 소리에 긍정적으로 적응하는 과정입니다. 사회화가 잘 된 강아지는 낯선 상황에서도 불안·공격성 없이 안정적으로 행동합니다. 반대로 사회화가 부족하면 분리불안, 공격성, 과도한 짖음 등 문제 행동의 원인이 됩니다.</p>
+      "미국동물행동수의사회(AVSAB) 임상 지침 기준 강아지 사회화 가이드. 3~16주령 주령별 발달 단계, 백신 접종 전 안전 사회화 원칙, 4대 핵심 영역 체크리스트와 금기 사항을 정리했습니다.",
+    body: `<h2>강아지 사회화 민감기(Sensitive Period) 주령별 발달 단계</h2>
+<p>미국동물행동수의사회(AVSAB) 및 주요 수의학 연구에 따르면 생후 3주부터 16주까지는 뇌의 신경 가소성이 극대화되어 평생의 기질과 행동 패턴이 형성되는 결정적 사회화 시기입니다.</p>
+<div class="table-wrap">
+  <table>
+    <thead>
+      <tr>
+        <th scope="col">발달 주령</th>
+        <th scope="col">신경 발달 및 행동 특징</th>
+        <th scope="col">핵심 사회화 과제</th>
+        <th scope="col">보호자 관리 주의점</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>3주령 ~ 5주령.</strong></td>
+        <td>감각 기관 완성 및 동배 상호작용 시작.</td>
+        <td>물기 강도 조절(Bite Inhibition) 학습.</td>
+        <td>어미견과 동배 형제와의 충분한 교감이 필수적입니다.</td>
+      </tr>
+      <tr>
+        <td><strong>6주령 ~ 8주령.</strong></td>
+        <td>호기심이 공포심을 능가하는 초기 탐색기.</td>
+        <td>부드러운 인간 스킨십 및 다양한 실내 소리 적응.</td>
+        <td>무리한 격리나 거친 핸들링을 피하고 긍정적 보상을 제공합니다.</td>
+      </tr>
+      <tr>
+        <td><strong>8주령 ~ 12주령.</strong></td>
+        <td>사회화 최적기 및 1차 공포기(Fear Period).</td>
+        <td>새로운 사람, 표면 감각, 안전한 성견 접촉.</td>
+        <td>공포기에 강한 충격을 받으면 영구적 트라우마가 되므로 주의합니다.</td>
+      </tr>
+      <tr>
+        <td><strong>12주령 ~ 16주령.</strong></td>
+        <td>외부 환경 탐색 확장 및 사회화 창 마감기.</td>
+        <td>대중교통, 동물병원 긍정 방문, 도시 환경 적응.</td>
+        <td>사회화 민감기가 지나기 전에 다양한 일상 환경을 경험시킵니다.</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
 
-<h2>결정적 시기 — 3~16주령</h2>
-<p>생후 3~16주는 강아지 뇌가 새로운 경험을 가장 유연하게 받아들이는 황금기입니다. 이 시기에 긍정적 경험을 많이 쌓을수록 평생 안정적인 성격이 형성됩니다.</p>
+<h2>예방접종 완료 전 사회화 원칙 (AVSAB 공식 지침)</h2>
+<p>많은 보호자가 모든 백신 접종이 끝날 때까지 외출을 전면 금지해야 한다고 오해합니다. 그러나 미국동물행동수의사회(AVSAB)는 행동 문제로 인한 안락사나 파양 위험이 전염병 위험보다 훨씬 높다고 경고합니다.</p>
 <ul>
-  <li><strong>3~5주</strong>: 동배 형제·어미와의 상호작용 (브리더 책임 구간)</li>
-  <li><strong>5~8주</strong>: 사람 핸들링 경험 시작 (브리더·입양 준비 구간)</li>
-  <li><strong>8~12주</strong>: 입양 초기 — 가장 강력한 사회화 효과</li>
-  <li><strong>12~16주</strong>: 경험을 확장하고 새로운 환경 노출 지속</li>
+  <li><strong>안전한 사회화 시작 시점</strong>: 1차 종합 예방접종을 마친 뒤 일주일이 지나면 통제된 환경에서 사회화를 시작할 수 있습니다.</li>
+  <li><strong>안고 산책하기(Carried Walks)</strong>: 백신 접종이 완료되기 전에는 땅에 발을 디디지 않고 보호자의 품에 안기거나 이동 가방에 넣은 상태로 바깥 소리와 풍경을 관찰하게 합니다. 이동장 적응은 <a href="/guide/carrier-training-guide">반려동물 이동장 적응 훈련 가이드</a>를 참고하시기 바랍니다.</li>
+  <li><strong>검증된 개체와의 만남</strong>: 접종 이력이 확실하고 공격성이 없는 건강한 성견과 깨끗한 실내 공간에서 만나 긍정적인 상호작용을 나눕니다.</li>
+  <li><strong>다중 이용 시설 회피</strong>: 불특정 다수의 반려견이 오가는 공공 놀이터나 잔디밭 산책로는 접종 완료 전까지 방문을 피해야 합니다.</li>
 </ul>
 
-<h2>사회화 체크리스트 — 경험시켜야 할 것들</h2>
-<h3>사람</h3>
+<h2>사회화 필수 4대 영역 체크리스트</h2>
+<p>단순히 낯선 환경에 데려가는 것만으로는 부족하며, 일상에서 마주할 4가지 영역을 체계적으로 경험시켜야 합니다.</p>
+<div class="table-wrap">
+  <table>
+    <thead>
+      <tr>
+        <th scope="col">사회화 영역</th>
+        <th scope="col">구체적 노출 대상</th>
+        <th scope="col">올바른 노출 방법</th>
+        <th scope="col">보상 전략</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>다양한 사람</strong></td>
+        <td>어린이, 어르신, 모자·안경·우비 착용자, 휠체어.</td>
+        <td>억지로 다가가지 않고 상대방이 간식을 던져주게 유도.</td>
+        <td>안정된 자세를 보일 때 즉시 칭찬과 보상.</td>
+      </tr>
+      <tr>
+        <td><strong>생활 환경 소리</strong></td>
+        <td>진공청소기, 드라이어, 초인종, 오토바이 소음.</td>
+        <td>먼 거리나 낮은 음량에서 점진적으로 소리를 키움.</td>
+        <td>소리가 발생하는 순간 맛있는 간식 투여.</td>
+      </tr>
+      <tr>
+        <td><strong>바닥 표면 감각</strong></td>
+        <td>타일, 인조잔디, 젖은 흙, 배수구 그레이팅.</td>
+        <td>줄을 당기지 않고 스스로 냄새 맡고 밟도록 유도.</td>
+        <td>발을 딛는 순간 밝은 음성으로 격려.</td>
+      </tr>
+      <tr>
+        <td><strong>의료·위생 터치</strong></td>
+        <td>발바닥 패드 만지기, 귓바퀴 들추기, 빗질.</td>
+        <td>신체 부위를 만진 뒤 즉시 맛있는 간식을 주는 연습.</td>
+        <td>병원 검진 시 치료 없이 간식만 받고 귀가.</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<h2>사회화 훈련 시 절대 금기 사항</h2>
+<ol>
+  <li><strong>침습 요법(Flooding, 홍수 요법) 금지</strong>: 두려워하는 대상에 강제로 접근시키거나 억지로 안겨주는 행위는 공포심을 극대화하여 평생의 공포증(Phobia)을 유발합니다.</li>
+  <li><strong>불안 반응에 대한 처벌 금지</strong>: 낯선 대상을 보고 짖거나 뒤로 물러설 때 줄을 강하게 당기거나 혼내면 대상에 대한 적대감과 경계심이 오히려 강화됩니다.</li>
+  <li><strong>스트레스 카밍 시그널 무시 금지</strong>: 하품하기, 입술 핥기, 시선 회피, 몸 털기 등의 불안 신호가 나타나면 즉시 자극원과의 거리를 넓혀주어야 합니다.</li>
+</ol>
+
+<h2>생애 주기별 연계 돌봄 및 교육</h2>
+<p>사회화는 단기 훈련으로 끝나지 않으며 올바른 기본 예절과 건강 관리가 뒷받침되어야 합니다.</p>
 <ul>
-  <li>다양한 연령대 (어린이, 노인), 다양한 외모(모자, 안경, 수염, 마스크 착용자)</li>
-  <li>남성·여성, 다양한 목소리 톤</li>
-  <li>유니폼 착용자 (배달원, 청소부 등)</li>
-</ul>
-<h3>환경</h3>
-<ul>
-  <li>자동차 소음, 오토바이, 공사 소음, 천둥소리</li>
-  <li>엘리베이터, 계단, 미끄러운 바닥, 그레이팅</li>
-  <li>동물병원 방문 (치료 없이 간식만 받는 긍정 연습)</li>
-  <li>반려동물 동반 카페, 공원, 시장</li>
-</ul>
-<h3>다른 동물</h3>
-<ul>
-  <li>예방접종 완료된 건강한 강아지·성견과 통제된 만남</li>
-  <li>고양이·소형 동물에 익숙해지기 (다묘·다견 가정 준비 시)</li>
+  <li>새 가족을 맞이하는 첫날 체크리스트는 <a href="/guide/dog-adoption-checklist">강아지 입양 체크리스트</a>를 확인하시기 바랍니다.</li>
+  <li>생애 초기 필수 백신 접종과 성장 모니터링은 <a href="/guide/puppy-first-year-guide">강아지 생애 첫 1년 성장 가이드</a>에서 확인할 수 있습니다.</li>
+  <li>사회화 시기 시작하는 긍정 강화 교육은 <a href="/guide/dog-basic-training-guide">강아지 기초 훈련 가이드</a>를 참고하시기 바랍니다.</li>
+  <li>보호자와의 건강한 애착 형성 및 홀로 남겨지는 연습은 <a href="/guide/dog-separation-anxiety-guide">강아지 분리불안 가이드</a>를 참조하시기 바랍니다.</li>
+  <li>겨울철 눈길과 제설제 노면 적응은 <a href="/guide/dog-winter-care-guide">강아지 겨울철 케어 가이드</a>를 확인하시기 바랍니다.</li>
+  <li>대중교통 탑승 예절과 외출 수칙은 <a href="/guide/pet-friendly-travel-guide">반려동물 동반 여행 준비 가이드</a>에서 안내합니다.</li>
 </ul>
 
-<h2>올바른 사회화 방법</h2>
-<ul>
-  <li><strong>긍정 강화</strong>: 새로운 경험 직후 간식이나 칭찬으로 "안전하다"는 신호를 줍니다.</li>
-  <li><strong>단계별 노출</strong>: 소리는 낮은 볼륨 → 점진적으로 높이기. 거리는 멀리 → 천천히 가까이.</li>
-  <li><strong>강요 금지</strong>: 두려움을 보이면 즉시 자극을 줄이세요. 억지로 접근시키면 역효과가 납니다.</li>
-  <li><strong>짧고 자주</strong>: 1회에 5~15분 짧은 세션을 하루 2~3회 반복합니다.</li>
-</ul>
+<h2>강아지 사회화 자주 묻는 질문 (FAQ)</h2>
+<div class="faq-list">
+  <h3>Q1. 사회화 황금기를 놓친 성견은 사회화가 불가능한가요?</h3>
+  <p>그렇지 않습니다. 비록 어린 강아지보다 시간과 인내가 더 많이 필요하지만, 둔감화(Desensitization)와 역조건 형성(Counter-conditioning)을 통해 낯선 대상에 대한 부정적 감정을 긍정적 연상으로 서서히 바꿀 수 있습니다.</p>
 
-<h2>흔한 실수</h2>
-<ul>
-  <li>예방접종 완료 전 다른 강아지와 접촉 (감염 위험) — 실내 사회화 클래스나 검증된 성견부터 시작</li>
-  <li>나쁜 경험을 억지로 극복시키려는 "홍수 요법" — 트라우마로 역전될 수 있습니다.</li>
-  <li>사회화를 16주 이후로 미루기 — 결정적 시기가 지나면 효과가 현저히 감소합니다.</li>
-  <li>한 가지 환경만 반복 — 다양성이 핵심입니다.</li>
-</ul>
+  <h3>Q2. 다른 강아지를 보면 지나치게 흥분해서 짖는데 어떻게 해야 하나요?</h3>
+  <p>흥분이 폭발하는 임계점(Threshold) 이내로 너무 가까이 접근했기 때문입니다. 강아지가 상대방을 인지하면서도 차분함을 유지할 수 있는 충분한 거리를 확보한 뒤, 보호자에게 집중할 때 간식으로 보상하는 훈련을 반복해야 합니다.</p>
 
-<h2>사회화 이후 — 평생 유지</h2>
-<p>성견이 된 후에도 새로운 경험을 꾸준히 제공해야 사회화가 유지됩니다. 특히 장기간 외출이 없거나 이사·새 가족 구성원 추가 등 생활 변화 시 재사회화 훈련이 도움이 됩니다.</p>`,
+  <h3>Q3. 하루에 몇 번, 얼마 동안 사회화 연습을 하는 것이 좋은가요?</h3>
+  <p>강아지의 집중력은 짧기 때문에 한 번에 긴 시간을 훈련하는 것보다 5분에서 10분 정도의 짧고 긍정적인 세션을 하루에 서너 번 나누어 진행하는 것이 훨씬 효과적입니다.</p>
+</div>`,
     disclaimer: null,
     sources: [
-      "AVSAB (American Veterinary Society of Animal Behavior) — Puppy Socialization Position Statement (2021)",
-      "Dunbar I. Before and After Getting Your Puppy (2004)",
-      "KAB(한국동물행동학회) 반려동물 행동 교육 지침 (2023)",
+      "American Veterinary Society of Animal Behavior (AVSAB) — Position Statement on Puppy Socialization: https://avsab.org/resources/position-statements/",
+      "American Animal Hospital Association (AAHA) — Canine Life Stage Guidelines & Behavior: https://www.aaha.org/resources/life-stage-guidelines/",
+      "Dr. Ian Dunbar — Before and After Getting Your Puppy Socialization Checklist: https://www.dogstardaily.com/",
+      "American Kennel Club (AKC) — Puppy Socialization Checklist: https://www.akc.org/expert-advice/training/puppy-socialization-checklist/",
     ],
     ymyl: false,
     status: "published",
