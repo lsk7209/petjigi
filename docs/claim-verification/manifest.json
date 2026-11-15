@@ -134,6 +134,29 @@
           "notes": "AAFCO는 직접 규제·인증·승인 기관이 아니라는 FAQ와 대조. 접근한 영양프로파일 PDF는 과거 proposed 문서라 현재의 일괄 의무 수치를 검증한 것으로 사용하지 않음."
         }
       ]
+    },
+    {
+      "slug": "dog-bite-liability-guide",
+      "claims": [
+        {
+          "claimId": "claim-001",
+          "snippet": "과실치사죄(형법 제267조) : 물림 사고로 피해자가 사망에 이른 경우 2년 이하의 금고 또는 700만 원 이하의 벌금에 처해질 수 있습니다.",
+          "sourceUrl": null,
+          "sourceType": "unknown",
+          "status": "needs_review",
+          "checkedAt": null,
+          "notes": "원문 대조 전 — 자동 추출 후보"
+        },
+        {
+          "claimId": "claim-002",
+          "snippet": "근거를 직접 확인하기 국가법령정보센터 동물보호법 및 시행령 전문 국가동물보호정보시스템 맹견 관리 및 펫티켓 가이드 AAHA 동물병원 방문 및 안정 관리 지침",
+          "sourceUrl": null,
+          "sourceType": "unknown",
+          "status": "needs_review",
+          "checkedAt": null,
+          "notes": "원문 대조 전 — 자동 추출 후보"
+        }
+      ]
     }
   ]
 }
