@@ -3019,73 +3019,143 @@ const SEED_CONTENTS: NewContent[] = [
     slug: "cat-indoor-safety-guide",
     type: "guide",
     category: 5,
-    title: "고양이 실내 안전 가이드 — 위험 요소 완벽 점검",
-    metaTitle: "고양이 실내 안전 점검 리스트 | 독성 식물·추락 방지 | 펫지기",
+    title:
+      "고양이 실내 안전 가이드 — 5대 중독 식물·낙하 방지 방묘창 규격·선형 이물 응급 대응",
+    metaTitle:
+      "고양이 실내 안전 가이드 | 중독 식물·방묘창 규격·이물 응급 | 펫지기",
     metaDescription:
-      "고양이에게 위험한 실내 환경 요소(독성 식물, 추락 위험, 끈류, 화학물질)를 점검하고 안전한 집을 만드는 방법을 안내합니다.",
-    body: `<h2>실내 고양이도 위험에 노출되어 있습니다</h2>
-<p>실내 생활이 실외보다 안전하지만, 집 안에도 고양이에게 치명적인 위험 요소가 숨어 있습니다. 입양 전, 또는 새로운 물건을 들이기 전에 반드시 점검하세요.</p>
+      "미국동물학대방지협회(ASPCA) 및 수의독성학 기준 고양이 실내 안전 점검 가이드. 치명적 중독 식물 5종과 기전, 고층 추락 증후군 방지 방묘창 3대 규격, 혀 해부학적 특성으로 인한 선형 이물 사고 응급 프로토콜을 정리했습니다.",
+    body: `<h2>실내 5대 치명적 독성 식물과 중독 기전</h2>
+<p>고양이는 호기심이나 섬유질 섭취 본능으로 실내 식물을 씹거나 핥는 습성이 있습니다. 일부 관상용 식물은 고양이의 간과 신장에 치명적인 손상을 입히므로 가정 내 반입을 엄격히 금지해야 합니다.</p>
+<div class="table-wrap">
+  <table>
+    <thead>
+      <tr>
+        <th scope="col">식물 분류</th>
+        <th scope="col">독성 성분 및 기전</th>
+        <th scope="col">노출 시 주요 임상 증상</th>
+        <th scope="col">위험 등급</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>백합과 식물 (백합, 튤립, 은방울꽃)</strong></td>
+        <td>미지의 수용성 신독소. 꽃잎, 줄기, 꽃가루, 화분 받침 물까지 치명적.</td>
+        <td>노출 초기 구토와 침흘림, 수일 내 비가역적 급성 신세뇨관 괴사 및 무뇨증.</td>
+        <td><strong>최고 위험 (치명적 응급)</strong></td>
+      </tr>
+      <tr>
+        <td><strong>소철 (Sago Palm)</strong></td>
+        <td>사이카신(Cycasin) 배당체. 씨앗과 잎 전체에 고농도 분포.</td>
+        <td>심한 구토, 흑색변, 황달, 급성 간부전 및 파종성 혈관내 응고.</td>
+        <td><strong>최고 위험 (치명적 응급)</strong></td>
+      </tr>
+      <tr>
+        <td><strong>천남성과 (몬스테라, 디펜바키아, 스킨답서스)</strong></td>
+        <td>불용성 수산칼슘(Calcium oxalate) 미세 침상 결정.</td>
+        <td>구강 점막 자극, 입술 및 혀 부종, 과도한 침흘림, 연하 곤란.</td>
+        <td>위험 (상세 관찰 필요)</td>
+      </tr>
+      <tr>
+        <td><strong>진달래과 (철쭉, 아잘레아)</strong></td>
+        <td>그라야노톡신(Grayanotoxin). 심근 세포 나트륨 채널 교란.</td>
+        <td>부정맥, 서맥, 혈압 강하, 보행 실조 및 허탈.</td>
+        <td>위험 (즉시 진료 필요)</td>
+      </tr>
+      <tr>
+        <td><strong>알로에과 (알로에 베라)</strong></td>
+        <td>안트라퀴논계 배당체 알로인. 장 점막 과다 자극.</td>
+        <td>심한 수양성 설사, 복통, 탈수 및 기력 저하.</td>
+        <td>경고 (주의 관찰)</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<p>반면 캣그래스(귀리, 보리 새싹), 캣닢, 테이블야자, 보스턴고사리는 무독성 안전 식물로 분류됩니다. 식물성 섬유질을 원하는 고양이에게는 전용 캣그래스를 제공하는 것이 안전합니다.</p>
 
-<h2>1. 독성 식물</h2>
-<p>고양이는 식물을 씹거나 핥는 경우가 많아 독성 식물에 의한 중독이 흔합니다.</p>
-<h3>절대 금지 식물</h3>
+<h2>고층 추락 증후군(High-Rise Syndrome)과 방묘창 3대 규격</h2>
+<p>창밖의 날아가는 새나 곤충을 응시하던 고양이가 사냥 본능으로 순간적으로 뛰어내려 발생하는 실족 사고를 '고층 추락 증후군'이라 부릅니다. 일반 방충망은 안전장치가 될 수 없습니다.</p>
+<div class="table-wrap">
+  <table>
+    <thead>
+      <tr>
+        <th scope="col">방어 구역</th>
+        <th scope="col">추락 및 탈출 위험 요인</th>
+        <th scope="col">필수 시공 규격</th>
+        <th scope="col">절대 금기 사항</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>창문 및 베란다 샷시</strong></td>
+        <td>고양이의 체중과 발톱 힘으로 방충망이 찢어지거나 레일에서 통째로 이탈.</td>
+        <td>스테인리스 재질 격자망 또는 두꺼운 금속 와이어 메쉬를 창틀에 피스로 직접 고정.</td>
+        <td>일반 섬유 방충망 단독 사용 및 노후 방충망 방치 금지.</td>
+      </tr>
+      <tr>
+        <td><strong>환기 창문 틈새</strong></td>
+        <td>머리뼈가 통과하면 유연한 척추 구조로 인해 좁은 틈새로 전신 탈출 가능.</td>
+        <td>창문 개폐 폭을 제한하는 창문용 금속 스토퍼(안전 잠금장치) 설치.</td>
+        <td>보호자 부재 시 환기 목적의 창문 개방 방치 금지.</td>
+      </tr>
+      <tr>
+        <td><strong>현관 출입문</strong></td>
+        <td>택배 수령, 배달원 방문, 귀가 시 열린 문틈으로 돌발 질주 탈출.</td>
+        <td>바닥부터 높이 충분한 세로살 형태의 현관 전용 방묘문 설치.</td>
+        <td>발판이 될 수 있는 높은 신발장이나 상자를 현관문 근처에 두는 행위 금지.</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<h2>선형 이물(Linear Foreign Body)과 고양이 혀의 해부학적 위험</h2>
+<p>고양이의 혀 표면에는 수많은 미세 돌기인 <strong>사상유두(Filiform papillae)</strong>가 목구멍 방향으로 촘촘히 누워 있습니다. 이 구조는 털을 빗는 그루밍과 사냥감 고기를 뼈에서 발라내는 데 유리하지만, 실이나 끈이 한 번 걸리면 뱉어내지 못하고 반사적으로 꿀꺽 삼키게 만듭니다.</p>
 <ul>
-  <li><strong>백합류(lily)</strong>: 화분 흙, 꽃가루만 닿아도 급성 신부전 유발 — 단 한 잎도 위험</li>
-  <li><strong>알로에 베라</strong>: 구토·설사·떨림</li>
-  <li><strong>수선화(나르시서스)</strong>: 구토·경련</li>
-  <li><strong>디펜바키아(만년청)</strong>: 구강 점막 자극·부종</li>
-  <li><strong>포인세티아</strong>: 구토·설사 (치명적이지는 않으나 위험)</li>
-  <li><strong>포도·건포도</strong>: 급성 신부전</li>
+  <li><strong>선형 이물 삼킴의 위험성</strong>: 삼킨 실의 한쪽 끝이 혀뿌리나 위 유문부에 걸린 상태에서 장이 연동 운동을 시작하면, 장관이 실을 따라 아코디언처럼 주름지며 뭉쳐집니다. 이 과정에서 장벽이 톱으로 썰리듯 찢어지는 장 천공과 복막염이 발생합니다.</li>
+  <li><strong>위험 물품 관리</strong>: 바느질 실과 바늘, 낚싯줄, 털실, 선물 포장용 리본, 고무줄, 헤어타이, 비닐 끈은 뚜껑이 있는 서랍에 밀폐 보관해야 합니다.</li>
+  <li><strong>선형 이물 응급 수칙</strong>: 입이나 항문 밖으로 실 끝이 삐져나와 있더라도 <strong>절대 손으로 잡아당기면 안 됩니다</strong>. 억지로 당기는 순간 주름잡힌 내장이 찢어져 치명상을 입습니다. 겉으로 나온 실은 가위로 여유 있게 자른 뒤 즉시 외과 수술이 가능한 24시간 동물병원으로 이송해야 합니다.</li>
 </ul>
-<h3>비교적 안전한 식물</h3>
-<p>캣그래스(귀리·보리 새싹), 캣닙, 스파이더 플랜트 등은 고양이에게 무독성입니다.</p>
 
-<h2>2. 추락 방지 (고층 낙하 증후군)</h2>
-<p>고양이는 높은 곳을 좋아하지만, 고층 창문에서의 추락은 심각한 부상을 유발합니다.</p>
+<h2>고양이 간 대사 취약 화학물질 및 생활 안전 수칙</h2>
+<p>고양이는 간에서 독성 물질을 분해하는 글루쿠론산 결합 효소계 활성이 결핍되어 있어 사람이나 개에게 안전한 화학물질도 치명적인 독이 됩니다.</p>
 <ul>
-  <li>모든 창문에 방충망 또는 전용 캣넷(cat net) 설치</li>
-  <li>방충망은 고양이 무게에 충분히 견디는 강화 제품 사용</li>
-  <li>베란다·테라스는 탈출 방지 펜스 설치</li>
+  <li><strong>사람용 해열진통제 절대 금기</strong>: 아세트아미노펜(타이레놀 등)은 소량 복용만으로도 적혈구 헤모글로빈이 산화되는 메트헤모글로빈혈증과 급성 간괴사를 일으킵니다. 사람용 약품은 반드시 밀폐 보관합니다.</li>
+  <li><strong>에센셜 오일과 방향제</strong>: 티트리, 유칼립투스, 페퍼민트, 시트러스 계열 아로마 오일의 테르펜 성분은 고양이의 호흡기와 피부를 통해 흡수되어 신경 마비와 저체온증을 부릅니다. 디퓨저와 캔들 사용을 중단해야 합니다.</li>
+  <li><strong>세제 및 락스 사용 후 건조</strong>: 염소계 표백제나 바닥 세정제는 희석액이라 하더라도 고양이가 젖은 바닥을 밟은 뒤 발바닥을 그루밍하면서 체내로 섭취될 수 있습니다. 청소 후에는 깨끗한 물로 헹구고 완전히 건조될 때까지 격리해야 합니다.</li>
+  <li><strong>전선 피복 보호</strong>: 어린 고양이는 전선을 씹다가 구강 화상이나 감전을 입을 수 있으므로 난연 전선 보호관(스파이럴 튜브)을 씌워야 합니다.</li>
 </ul>
 
-<h2>3. 끈·실·고무줄 — 장폐색 위험</h2>
+<h2>고양이 실내 안전 자주 묻는 질문 (FAQ)</h2>
+<div class="faq-list">
+  <h3>Q1. 백합 꽃가루가 고양이 털에 조금 묻었는데 물티슈로 닦아내면 괜찮나요?</h3>
+  <p>물티슈로 닦는 것만으로는 부족하며 즉각적인 수의학적 조치가 필요합니다. 털에 묻은 극소량의 꽃가루를 고양이가 그루밍하면서 섭취하면 수시간 내에 급성 신부전이 시작됩니다. 털을 따뜻한 물과 샴푸로 완전히 세척하여 추가 섭취를 차단하고, 꽃가루를 섭취했을 가능성에 대비해 즉시 동물병원에서 수액 처치와 신장 수치 모니터링을 받아야 합니다.</p>
+
+  <h3>Q2. 아로마 디퓨저를 고양이가 닿지 않는 높은 선반에 두면 안전한가요?</h3>
+  <p>안전하지 않습니다. 에센셜 오일의 미세 분자는 공기 중에 기화되어 실내 전체로 퍼지며, 고양이의 호흡기로 흡입되거나 털 표면에 가라앉습니다. 고양이는 털에 앉은 잔류 물질을 그루밍하며 지속적으로 체내에 축적하므로, 고양이가 생활하는 실내에서는 에센셜 오일 분무형 디퓨저를 사용하지 않는 것이 원칙입니다.</p>
+
+  <h3>Q3. 고양이가 전선을 자꾸 물어뜯는데 어떻게 방지하나요?</h3>
+  <p>전선에 두꺼운 플라스틱 전선 보호관을 씌우거나 가구 뒤편으로 전선을 숨겨 물리적 접근을 차단해야 합니다. 또한 씹는 욕구가 해소되지 않아 전선에 집착하는 경우가 많으므로, 안전한 캣닢 인형이나 말린 마따따비 막대 같은 대체 씹기 놀잇감을 충분히 제공해 관심을 유도하는 것이 효과적입니다.</p>
+</div>
+
+<h2>상황별 연계 가이드</h2>
 <ul>
-  <li>노끈, 낚싯줄, 실, 고무밴드, 머리끈 등은 삼키면 장폐색(linear foreign body) 유발</li>
-  <li>장난감의 끈은 감독 없이 두지 마세요</li>
-  <li>바늘·실 세트 사용 후 즉시 수납</li>
+  <li>입양 초기 주거 점검은 <a href="/guide/cat-adoption-checklist">고양이 입양 전 체크리스트</a>를 참고하시기 바랍니다.</li>
+  <li>안전한 실내 영역 확장은 <a href="/guide/indoor-cat-enrichment-guide">실내 고양이 환경 풍부화 가이드</a>에서 확인할 수 있습니다.</li>
+  <li>응급 진료 및 병원 동행 준비는 <a href="/guide/animal-hospital-guide">동물병원 선택 및 진료 준비 가이드</a>를 확인하시기 바랍니다.</li>
+  <li>병원 이동 스트레스 완화는 <a href="/guide/carrier-training-guide">반려동물 이동장 적응 훈련 가이드</a>를 참조하시기 바랍니다.</li>
 </ul>
 
-<h2>4. 화학물질 및 약품</h2>
+<h2>근거 자료 및 공식 출처</h2>
 <ul>
-  <li><strong>에센셜 오일</strong>: 티트리·페퍼민트·유칼립투스·계피오일 등 — 디퓨저 분무도 위험</li>
-  <li><strong>세제·락스</strong>: 희석 후에도 발바닥 흡수 위험 — 환기 후 건조 확인</li>
-  <li><strong>항균 물티슈(페놀 계열)</strong>: 고양이 간 대사 불가 성분 포함 제품 주의</li>
-  <li><strong>인간용 NSAIDs (아스피린·이부프로펜·아세트아미노펜)</strong>: 소량도 치명적</li>
-</ul>
-
-<h2>5. 전선 및 전자제품</h2>
-<ul>
-  <li>충전 케이블·전선은 고양이가 씹을 수 있어 감전 위험</li>
-  <li>케이블 보호 커버 또는 케이블 박스 활용</li>
-  <li>세탁기·건조기는 사용 전 고양이 확인 — 숨어 들어가는 경우가 있음</li>
-</ul>
-
-<h2>6. 화장실·욕실</h2>
-<ul>
-  <li>변기 뚜껑 항상 닫기 — 어린 고양이 익수 위험</li>
-  <li>변기 세정제(블루 계열) 독성</li>
-  <li>샴푸·린스·화장품 수납장에 잠금 고려</li>
-</ul>
-
-<h2>응급 연락처</h2>
-<p>독성 물질 섭취가 의심되면 24시간 동물병원에 즉시 연락하세요. 국내 동물 독성 정보는 농림축산검역본부(1588-4060)에서 안내받을 수 있습니다.</p>
-<h2>함께 확인할 준비</h2>
-<ul><li><a href="/guide/indoor-cat-enrichment-guide">위험을 줄인 뒤 환경 개선하기</a></li></ul>`,
+  <li><a href="https://www.aspca.org/pet-care/animal-poison-control/toxic-and-non-toxic-plants" target="_blank" rel="noopener noreferrer">미국동물학대방지협회(ASPCA) — 독성 및 무독성 식물 데이터베이스</a></li>
+  <li><a href="https://www.vet.cornell.edu/departments-centers-and-institutes/cornell-feline-health-center/health-information/feline-health-topics/" target="_blank" rel="noopener noreferrer">코넬대학교 수의과대학 고양이 보건 센터 — 고양이 생활 유해 물질 및 건강 정보</a></li>
+  <li><a href="https://catvets.com/guidelines/practice-guidelines/environmental-needs-guidelines" target="_blank" rel="noopener noreferrer">미국고양이의학협회(AAFP) &amp; 국제고양이의학협회(ISFM) — 고양이 환경 요구 가이드라인</a></li>
+</ul>`,
     disclaimer: null,
     sources: [
-      "ASPCA Animal Poison Control Center — Toxic and Non-Toxic Plants (2024)",
-      "Hovda LR, et al. Blackwell's Five-Minute Veterinary Consult Clinical Companion — Small Animal Toxicology (2016)",
-      "대한수의사회 반려동물 가정 안전 지침 (2023)",
+      "https://www.aspca.org/pet-care/animal-poison-control/toxic-and-non-toxic-plants",
+      "https://www.vet.cornell.edu/departments-centers-and-institutes/cornell-feline-health-center/health-information/feline-health-topics/",
+      "https://catvets.com/guidelines/practice-guidelines/environmental-needs-guidelines",
     ],
     ymyl: false,
     status: "published",
