@@ -4304,69 +4304,119 @@ const SEED_CONTENTS: NewContent[] = [
     title: "반려동물 이동장 훈련 — 고양이·강아지 스트레스 없이 적응시키기",
     metaTitle: "반려동물 이동장 훈련 | 고양이·강아지 케이지 적응 방법 | 펫지기",
     metaDescription:
-      "고양이·강아지가 이동장(캐리어·켄넬)을 무서워하지 않도록 적응시키는 단계별 훈련 방법을 안내합니다. 동물병원 방문 스트레스를 크게 줄일 수 있습니다.",
-    body: `<h2>왜 이동장 훈련이 중요한가?</h2>
-<p>대부분의 반려동물은 이동장을 '나쁜 일이 생기기 전 잠깐 갇히는 곳'으로 기억합니다. 평소 이동장을 안전하고 편안한 공간으로 인식시키면, 동물병원 방문·이사·여행 시 스트레스를 크게 줄일 수 있습니다.</p>
+      "고양이·강아지가 이동장(캐리어·켄넬)을 편안한 은신처로 인식하도록 돕는 4단계 적응 훈련법과 유형별 선택 기준, 외출 안전 수칙을 안내합니다.",
+    body: `<h2>이동장 훈련의 필요성과 둔감화 원리</h2>
+<p>반려동물에게 이동장(캐리어 또는 켄넬)은 낯선 공간이자 병원 방문이나 이동 과정의 긴장감을 연상시키는 대상이 되기 쉽습니다. 평소 이동장을 생활공간의 일부로 두고 긍정적인 경험을 쌓아두면 이동 스트레스를 줄이고 진료 협조도를 높일 수 있습니다.</p>
+<p>행동의학에서는 낯선 자극에 대한 불안을 완화하는 체계적 탈감작(Desensitization)과 간식이나 칭찬으로 즐거운 감정을 연결하는 역조건형성(Counter-Conditioning)을 핵심 원리로 안내합니다. 화재나 지진 같은 응급 대피 상황에서도 이동장에 익숙한 동물은 신속하고 안전하게 피신할 수 있습니다.</p>
 
-<h2>이동장 선택</h2>
+<h2>반려동물 체형과 이동 목적별 이동장 선택 기준</h2>
+<p>이동장은 체중에 맞추는 것뿐만 아니라 반려동물이 안에서 편안하게 서 있고 몸을 돌려 누울 수 있는 공간 여유가 필수적입니다.</p>
+<table>
+  <thead>
+    <tr>
+      <th>유형</th>
+      <th>주요 특징 및 권장 대상</th>
+      <th>장단점 및 안전 요건</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>상단 개폐형 하드 켄넬</strong></td>
+      <td>고양이 및 소형견 권장. 지붕과 상단 문이 분리되는 구조</td>
+      <td>진료 시 억지로 당겨내지 않고 윗뚜껑만 열어 진찰 가능. 세척이 쉽고 충격 흡수 우수</td>
+    </tr>
+    <tr>
+      <td><strong>전면 단단한 플라스틱 켄넬</strong></td>
+      <td>중소형견 및 장거리 차량 이동 권장. 통풍창과 견고한 래치 구비</td>
+      <td>내구성이 뛰어나고 안전벨트 고정에 적합. 부피가 커서 보관 공간 필요</td>
+    </tr>
+    <tr>
+      <td><strong>소프트 패브릭 캐리어</strong></td>
+      <td>대중교통 이동이나 도보 외출용. 어깨끈 및 쿠션 패드 포함</td>
+      <td>가볍고 휴대가 간편함. 긁거나 물어뜯는 습관이 있는 동물은 지퍼 탈출 위험 주의</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2>단계별 이동장 적응 4단계 로드맵</h2>
+<p>무리하게 밀어 넣거나 문을 급하게 닫으면 공포심이 커져 훈련 기간이 길어질 수 있습니다. 단계별로 차분히 성공 경험을 누적합니다.</p>
+
+<h3>1단계: 일상 공간 노출과 안전지대 형성</h3>
 <ul>
-  <li><strong>고양이</strong>: 위가 열리는 상자형(탑 오프닝) 권장 — 검진 시 고양이를 꺼내기 쉬움</li>
-  <li><strong>소형견</strong>: 천 재질 소프트 케리어 또는 하드 케이스 모두 가능</li>
-  <li>크기: 반려동물이 일어서고 돌아설 수 있을 만큼 충분히 커야 함</li>
+  <li>이동장의 상단 뚜껑을 분리하거나 문을 활짝 열어 거실이나 자주 쉬는 장소에 항상 둡니다.</li>
+  <li>평소 사용하던 담요나 보호자의 냄새가 밴 옷감을 깔아 아늑한 은신처 분위기를 만듭니다.</li>
+  <li>억지로 밀어 넣지 않고 자발적으로 냄새를 맡고 다가오도록 시간을 둡니다.</li>
 </ul>
 
-<h2>단계별 이동장 적응 훈련</h2>
-<h3>1단계: 이동장을 생활 공간에 두기</h3>
+<h3>2단계: 간식과 식사를 통한 긍정 연상 구축</h3>
 <ul>
-  <li>이동장 문을 열어둔 채 거실 등 편안한 공간에 배치</li>
-  <li>억지로 집어넣지 않고, 자발적으로 탐색하도록 둠</li>
-  <li>이동장 안에 좋아하는 담요·장난감을 넣어 매력적인 공간으로 연출</li>
-</ul>
-<h3>2단계: 간식으로 긍정 연결</h3>
-<ul>
-  <li>이동장 입구에 간식을 놓고, 자발적으로 들어갈 때 칭찬·보상</li>
-  <li>처음에는 입구 근처, 점차 안쪽 깊이 간식 배치</li>
-  <li>절대 강제로 밀어 넣지 않음</li>
-</ul>
-<h3>3단계: 문 닫는 연습</h3>
-<ul>
-  <li>반려동물이 이동장 안에서 편안해지면 문을 잠깐 닫았다가 즉시 열기</li>
-  <li>차분하게 반응하면 칭찬 + 간식</li>
-  <li>점진적으로 문 닫힌 시간 연장 (10초 → 1분 → 5분)</li>
-</ul>
-<h3>4단계: 들어 옮기기 연습</h3>
-<ul>
-  <li>이동장째 짧은 거리를 이동 — 집 안에서 다른 방으로 옮기기</li>
-  <li>차에 잠깐 태웠다가 돌아오기</li>
-  <li>처음에는 짧게, 좋은 경험으로 마무리</li>
+  <li>이동장 입구 주변부터 시작하여 조금씩 안쪽 깊숙한 곳으로 좋아하는 간식을 놓아둡니다.</li>
+  <li>자발적으로 들어가 간식을 먹거나 휴식을 취하면 부드러운 목소리로 칭찬합니다.</li>
+  <li>적응이 진전되면 평소 식기 자체를 이동장 내부로 옮겨 긍정적인 감정을 강화합니다.</li>
 </ul>
 
-<h2>고양이 특별 팁</h2>
+<h3>3단계: 문 닫기 연습과 체류 시간 점진적 확장</h3>
 <ul>
-  <li>페리웨이(Feliway) 스프레이를 이동장 안에 뿌리면 안정 효과</li>
-  <li>이동장을 고양이의 쉬는 공간(침대·소파 옆)에 항상 놔두어 '일상의 공간'으로 인식</li>
-  <li>병원 방문 전 이동장에 3~4시간 안정 기간 확보</li>
+  <li>반려동물이 편안하게 머무를 때 문을 살짝 닫았다가 바로 열어주고 즉시 보상합니다.</li>
+  <li>닫힌 상태에서 문 틈으로 간식을 건네며 5초, 15초, 30초, 1분 단위로 시간을 늘립니다.</li>
+  <li>불안해하거나 문을 긁기 전에 문을 열어주어 침착함을 유지하도록 돕습니다.</li>
 </ul>
 
-<h2>강아지 특별 팁</h2>
+<h3>4단계: 들어 올리기와 실내외 이동 적응</h3>
 <ul>
-  <li>쿨다운 명령('하우스' 또는 '들어가')을 이동장과 연결해 훈련</li>
-  <li>여행 전날 케리어 안에서 자게 하거나 간식을 주면 좋은 연상 강화</li>
-  <li>차멀미가 있는 강아지는 소량 식사 후 1~2시간 뒤 탑승 권장</li>
+  <li>문이 닫힌 상태에서 이동장을 수평으로 안정되게 들어 올린 뒤 집 안의 다른 방으로 천천히 이동해 봅니다.</li>
+  <li>시동을 걸지 않은 차 안에 탑승하여 쉬어보는 연습부터 시작합니다.</li>
+  <li>차량 시동 소리와 진동에 익숙해진 뒤 5분 내외의 가까운 거리 주행을 시도합니다.</li>
 </ul>
-<h2>함께 확인할 준비</h2>
-<ul><li><a href="/guide/dog-adoption-checklist">입양 첫날 준비</a></li><li><a href="/guide/animal-hospital-guide">병원에 가져갈 기록과 방문 전 질문</a></li></ul>`,
+
+<h2>고양이와 강아지 종별 특화 적응 수칙</h2>
+
+<h3>고양이 안정을 위한 환경 조성</h3>
+<ul>
+  <li><strong>합성 페로몬 스프레이 활용</strong>: 외출 15분 전 이동장 내부 모서리와 담요에 분사하여 화학적 안정감을 줍니다.</li>
+  <li><strong>시각 차단용 얇은 수건</strong>: 이동 중 외부 시각 자극에 민감한 고양이를 위해 통풍을 방해하지 않는 얇은 천으로 이동장을 덮어줍니다.</li>
+  <li><strong>바닥이 아닌 높은 선반 배치</strong>: 병원 대기실 등에서 낯선 개와 눈이 마주치지 않도록 이동장을 무릎 위나 의자 위에 올려둡니다.</li>
+</ul>
+
+<h3>강아지 하우스 훈련과 차멀미 관리</h3>
+<ul>
+  <li><strong>언어 신호 큐 부여</strong>: '하우스' 또는 '들어가' 명령어를 이동장 진입 행동과 연결하여 일관된 신호를 형성합니다.</li>
+  <li><strong>오래 씹을 수 있는 장난감 활용</strong>: 이동장 안에서 KONG 장난감이나 간식이 든 노즈워크를 제공하여 긴장을 풀도록 유도합니다.</li>
+  <li><strong>차량 이동 전 공복 유지</strong>: 멀미가 잦은 강아지는 탑승 2~3시간 전부터 사료 급여를 중단하고 물만 조금씩 먹입니다.</li>
+</ul>
+
+<h2>차량 및 대중교통 탑승 시 안전 가이드라인</h2>
+<ul>
+  <li><strong>차량 안전벨트 체결</strong>: 급제동 시 쏠림을 방지하기 위해 안전벨트를 손잡이나 전용 고정 스트랩에 단단히 결착합니다.</li>
+  <li><strong>에어컨 및 직사광선 조절</strong>: 창가 직사광선이 내리쬐거나 찬 에어컨 바람이 이동장 환기구로 직접 닿지 않도록 방향을 조정합니다.</li>
+  <li><strong>인식표 부착</strong>: 예기치 못한 탈출 사고에 대비하여 이동장 외부에 보호자 연락처와 등록번호가 적힌 네임택을 부착합니다.</li>
+</ul>
+
+<h2>상황별로 이어서 확인하기</h2>
+<ul>
+  <li><a href="/guide/animal-hospital-guide">병원에 가져갈 기록과 방문 전 질문</a></li>
+  <li><a href="/guide/dog-adoption-checklist">입양 첫날 준비</a></li>
+  <li><a href="/guide/pet-first-aid-guide">응급 상황 대처와 이송 안내</a></li>
+</ul>
+<p>자료 확인일: 2026-10-11. 적응 속도는 동물마다 다르므로 불안 징후가 나타나면 이전 단계로 돌아가 여유를 두고 진행합니다.</p>
+
+<h2>근거를 직접 확인하기</h2>
+<ul>
+  <li><a href="https://catvets.com/guidelines/practice-guidelines/cat-friendly-guidelines" target="_blank" rel="noopener noreferrer">AAFP/ISFM Cat Friendly Practice Guidelines (고양이 친화 진료 및 이동 지침)</a></li>
+  <li><a href="https://avsab.org/resources/position-statements/" target="_blank" rel="noopener noreferrer">AVSAB Position Statements on Humane Training and Behavior (인도적 행동 훈련 지침)</a></li>
+  <li><a href="https://www.avma.org/resources-tools/pet-owners/petcare/transporting-animals-basic-pet-safety" target="_blank" rel="noopener noreferrer">AVMA Safe Pet Transportation Guidelines (반려동물 안전 수송 기본 지침)</a></li>
+</ul>`,
     disclaimer: null,
     sources: [
-      "American Association of Feline Practitioners (AAFP) Cat Friendly Practice Guidelines (2021)",
-      "AVSAB Positive Reinforcement Position Statement (2021)",
-      "대한수의사회 반려동물 행동 복지 가이드 (2022)",
+      "https://catvets.com/guidelines/practice-guidelines/cat-friendly-guidelines",
+      "https://avsab.org/resources/position-statements/",
+      "https://www.avma.org/resources-tools/pet-owners/petcare/transporting-animals-basic-pet-safety",
     ],
     ymyl: false,
     status: "published",
     publishedAt: "2026-05-22T00:00:00.000Z",
     createdAt: NOW,
-    updatedAt: NOW,
+    updatedAt: "2026-10-11T12:00:00.000Z",
   },
 
   // ── 64. 강아지 파보바이러스 (condition, cat.3, YMYL) ─────────────────────
